@@ -10,39 +10,39 @@ import type { TLConstructor } from './schema.tl.crc32_pb.js'
  */
 export abstract class BindAuthKeyInner {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName: string
+  abstract readonly predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$: TLConstructor
+  abstract readonly constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 nonce = 3;
+   * @generated from field: optional int64 nonce = 3;
    */
-  abstract readonly nonce: bigint
+  abstract readonly nonce?: bigint
 
   /**
-   * @generated from field: int64 temp_auth_key_id = 4;
+   * @generated from field: optional int64 temp_auth_key_id = 4;
    */
-  abstract readonly tempAuthKeyId: bigint
+  abstract readonly tempAuthKeyId?: bigint
 
   /**
-   * @generated from field: int64 perm_auth_key_id = 5;
+   * @generated from field: optional int64 perm_auth_key_id = 5;
    */
-  abstract readonly permAuthKeyId: bigint
+  abstract readonly permAuthKeyId?: bigint
 
   /**
-   * @generated from field: int64 temp_session_id = 6;
+   * @generated from field: optional int64 temp_session_id = 6;
    */
-  abstract readonly tempSessionId: bigint
+  abstract readonly tempSessionId?: bigint
 
   /**
-   * @generated from field: int32 expires_at = 7;
+   * @generated from field: optional int32 expires_at = 7;
    */
-  abstract readonly expiresAt: number
+  abstract readonly expiresAt?: number
 }
 
 /**
@@ -50,9 +50,9 @@ export abstract class BindAuthKeyInner {
  */
 export abstract class TLBindAuthKeyInner {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.BindAuthKeyInner data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BindAuthKeyInner data2 = 1;
    */
-  abstract readonly data2: BindAuthKeyInner[]
+  abstract readonly data2?: BindAuthKeyInner
 }
 
 /**
@@ -60,34 +60,34 @@ export abstract class TLBindAuthKeyInner {
  */
 export abstract class ClientDHInnerData {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName: string
+  abstract readonly predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$: TLConstructor
+  abstract readonly constructor$?: TLConstructor
 
   /**
-   * @generated from field: bytes nonce = 3;
+   * @generated from field: optional bytes nonce = 3;
    */
-  abstract readonly nonce: Uint8Array
+  abstract readonly nonce?: Uint8Array
 
   /**
-   * @generated from field: bytes server_nonce = 4;
+   * @generated from field: optional bytes server_nonce = 4;
    */
-  abstract readonly serverNonce: Uint8Array
+  abstract readonly serverNonce?: Uint8Array
 
   /**
-   * @generated from field: int64 retry_id = 5;
+   * @generated from field: optional int64 retry_id = 5;
    */
-  abstract readonly retryId: bigint
+  abstract readonly retryId?: bigint
 
   /**
-   * @generated from field: string g_b = 6;
+   * @generated from field: optional string g_b = 6;
    */
-  abstract readonly gB: string
+  abstract readonly gB?: string
 }
 
 /**
@@ -95,9 +95,9 @@ export abstract class ClientDHInnerData {
  */
 export abstract class TLClientDHInnerData {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ClientDHInnerData data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ClientDHInnerData data2 = 1;
    */
-  abstract readonly data2: ClientDHInnerData[]
+  abstract readonly data2?: ClientDHInnerData
 }
 
 /**
@@ -105,14 +105,14 @@ export abstract class TLClientDHInnerData {
  */
 export abstract class DestroyAuthKeyRes {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName: string
+  abstract readonly predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$: TLConstructor
+  abstract readonly constructor$?: TLConstructor
 }
 
 /**
@@ -120,9 +120,9 @@ export abstract class DestroyAuthKeyRes {
  */
 export abstract class TLDestroyAuthKeyOk {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.DestroyAuthKeyRes data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DestroyAuthKeyRes data2 = 1;
    */
-  abstract readonly data2: DestroyAuthKeyRes[]
+  abstract readonly data2?: DestroyAuthKeyRes
 }
 
 /**
@@ -130,9 +130,9 @@ export abstract class TLDestroyAuthKeyOk {
  */
 export abstract class TLDestroyAuthKeyNone {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.DestroyAuthKeyRes data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DestroyAuthKeyRes data2 = 1;
    */
-  abstract readonly data2: DestroyAuthKeyRes[]
+  abstract readonly data2?: DestroyAuthKeyRes
 }
 
 /**
@@ -140,9 +140,9 @@ export abstract class TLDestroyAuthKeyNone {
  */
 export abstract class TLDestroyAuthKeyFail {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.DestroyAuthKeyRes data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DestroyAuthKeyRes data2 = 1;
    */
-  abstract readonly data2: DestroyAuthKeyRes[]
+  abstract readonly data2?: DestroyAuthKeyRes
 }
 
 /**
@@ -150,54 +150,54 @@ export abstract class TLDestroyAuthKeyFail {
  */
 export abstract class PQInnerData {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName: string
+  abstract readonly predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$: TLConstructor
+  abstract readonly constructor$?: TLConstructor
 
   /**
-   * @generated from field: string pq = 3;
+   * @generated from field: optional string pq = 3;
    */
-  abstract readonly pq: string
+  abstract readonly pq?: string
 
   /**
-   * @generated from field: string p = 4;
+   * @generated from field: optional string p = 4;
    */
-  abstract readonly p: string
+  abstract readonly p?: string
 
   /**
-   * @generated from field: string q = 5;
+   * @generated from field: optional string q = 5;
    */
-  abstract readonly q: string
+  abstract readonly q?: string
 
   /**
-   * @generated from field: bytes nonce = 6;
+   * @generated from field: optional bytes nonce = 6;
    */
-  abstract readonly nonce: Uint8Array
+  abstract readonly nonce?: Uint8Array
 
   /**
-   * @generated from field: bytes server_nonce = 7;
+   * @generated from field: optional bytes server_nonce = 7;
    */
-  abstract readonly serverNonce: Uint8Array
+  abstract readonly serverNonce?: Uint8Array
 
   /**
-   * @generated from field: bytes new_nonce = 8;
+   * @generated from field: optional bytes new_nonce = 8;
    */
-  abstract readonly newNonce: Uint8Array
+  abstract readonly newNonce?: Uint8Array
 
   /**
-   * @generated from field: int32 dc = 9;
+   * @generated from field: optional int32 dc = 9;
    */
-  abstract readonly dc: number
+  abstract readonly dc?: number
 
   /**
-   * @generated from field: int32 expires_in = 10;
+   * @generated from field: optional int32 expires_in = 10;
    */
-  abstract readonly expiresIn: number
+  abstract readonly expiresIn?: number
 }
 
 /**
@@ -205,9 +205,9 @@ export abstract class PQInnerData {
  */
 export abstract class TLPQInnerData {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
    */
-  abstract readonly data2: PQInnerData[]
+  abstract readonly data2?: PQInnerData
 }
 
 /**
@@ -215,9 +215,9 @@ export abstract class TLPQInnerData {
  */
 export abstract class TLPQInnerDataDc {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
    */
-  abstract readonly data2: PQInnerData[]
+  abstract readonly data2?: PQInnerData
 }
 
 /**
@@ -225,9 +225,9 @@ export abstract class TLPQInnerDataDc {
  */
 export abstract class TLPQInnerDataTemp {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
    */
-  abstract readonly data2: PQInnerData[]
+  abstract readonly data2?: PQInnerData
 }
 
 /**
@@ -235,9 +235,9 @@ export abstract class TLPQInnerDataTemp {
  */
 export abstract class TLPQInnerDataTempDc {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
    */
-  abstract readonly data2: PQInnerData[]
+  abstract readonly data2?: PQInnerData
 }
 
 /**
@@ -245,34 +245,34 @@ export abstract class TLPQInnerDataTempDc {
  */
 export abstract class ResPQ {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName: string
+  abstract readonly predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$: TLConstructor
+  abstract readonly constructor$?: TLConstructor
 
   /**
-   * @generated from field: bytes nonce = 3;
+   * @generated from field: optional bytes nonce = 3;
    */
-  abstract readonly nonce: Uint8Array
+  abstract readonly nonce?: Uint8Array
 
   /**
-   * @generated from field: bytes server_nonce = 4;
+   * @generated from field: optional bytes server_nonce = 4;
    */
-  abstract readonly serverNonce: Uint8Array
+  abstract readonly serverNonce?: Uint8Array
 
   /**
-   * @generated from field: string pq = 5;
+   * @generated from field: optional string pq = 5;
    */
-  abstract readonly pq: string
+  abstract readonly pq?: string
 
   /**
-   * @generated from field: int64 server_public_key_fingerprints = 6;
+   * @generated from field: repeated int64 server_public_key_fingerprints = 6;
    */
-  abstract readonly serverPublicKeyFingerprints: bigint
+  abstract readonly serverPublicKeyFingerprints: bigint[]
 }
 
 /**
@@ -280,9 +280,9 @@ export abstract class ResPQ {
  */
 export abstract class TLResPQ {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ResPQ data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ResPQ data2 = 1;
    */
-  abstract readonly data2: ResPQ[]
+  abstract readonly data2?: ResPQ
 }
 
 /**
@@ -290,34 +290,34 @@ export abstract class TLResPQ {
  */
 export abstract class ServerDHParams {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName: string
+  abstract readonly predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$: TLConstructor
+  abstract readonly constructor$?: TLConstructor
 
   /**
-   * @generated from field: bytes nonce = 3;
+   * @generated from field: optional bytes nonce = 3;
    */
-  abstract readonly nonce: Uint8Array
+  abstract readonly nonce?: Uint8Array
 
   /**
-   * @generated from field: bytes server_nonce = 4;
+   * @generated from field: optional bytes server_nonce = 4;
    */
-  abstract readonly serverNonce: Uint8Array
+  abstract readonly serverNonce?: Uint8Array
 
   /**
-   * @generated from field: bytes new_nonce_hash = 5;
+   * @generated from field: optional bytes new_nonce_hash = 5;
    */
-  abstract readonly newNonceHash: Uint8Array
+  abstract readonly newNonceHash?: Uint8Array
 
   /**
-   * @generated from field: string encrypted_answer = 6;
+   * @generated from field: optional string encrypted_answer = 6;
    */
-  abstract readonly encryptedAnswer: string
+  abstract readonly encryptedAnswer?: string
 }
 
 /**
@@ -325,9 +325,9 @@ export abstract class ServerDHParams {
  */
 export abstract class TLServerDHParamsFail {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ServerDHParams data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ServerDHParams data2 = 1;
    */
-  abstract readonly data2: ServerDHParams[]
+  abstract readonly data2?: ServerDHParams
 }
 
 /**
@@ -335,9 +335,9 @@ export abstract class TLServerDHParamsFail {
  */
 export abstract class TLServerDHParamsOk {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ServerDHParams data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ServerDHParams data2 = 1;
    */
-  abstract readonly data2: ServerDHParams[]
+  abstract readonly data2?: ServerDHParams
 }
 
 /**
@@ -345,44 +345,44 @@ export abstract class TLServerDHParamsOk {
  */
 export abstract class ServerDHInnerData {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName: string
+  abstract readonly predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$: TLConstructor
+  abstract readonly constructor$?: TLConstructor
 
   /**
-   * @generated from field: bytes nonce = 3;
+   * @generated from field: optional bytes nonce = 3;
    */
-  abstract readonly nonce: Uint8Array
+  abstract readonly nonce?: Uint8Array
 
   /**
-   * @generated from field: bytes server_nonce = 4;
+   * @generated from field: optional bytes server_nonce = 4;
    */
-  abstract readonly serverNonce: Uint8Array
+  abstract readonly serverNonce?: Uint8Array
 
   /**
-   * @generated from field: int32 g = 5;
+   * @generated from field: optional int32 g = 5;
    */
-  abstract readonly g: number
+  abstract readonly g?: number
 
   /**
-   * @generated from field: string dh_prime = 6;
+   * @generated from field: optional string dh_prime = 6;
    */
-  abstract readonly dhPrime: string
+  abstract readonly dhPrime?: string
 
   /**
-   * @generated from field: string g_a = 7;
+   * @generated from field: optional string g_a = 7;
    */
-  abstract readonly gA: string
+  abstract readonly gA?: string
 
   /**
-   * @generated from field: int32 server_time = 8;
+   * @generated from field: optional int32 server_time = 8;
    */
-  abstract readonly serverTime: number
+  abstract readonly serverTime?: number
 }
 
 /**
@@ -390,9 +390,9 @@ export abstract class ServerDHInnerData {
  */
 export abstract class TLServerDHInnerData {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ServerDHInnerData data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ServerDHInnerData data2 = 1;
    */
-  abstract readonly data2: ServerDHInnerData[]
+  abstract readonly data2?: ServerDHInnerData
 }
 
 /**
@@ -400,39 +400,39 @@ export abstract class TLServerDHInnerData {
  */
 export abstract class SetClientDHParamsAnswer {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName: string
+  abstract readonly predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$: TLConstructor
+  abstract readonly constructor$?: TLConstructor
 
   /**
-   * @generated from field: bytes nonce = 3;
+   * @generated from field: optional bytes nonce = 3;
    */
-  abstract readonly nonce: Uint8Array
+  abstract readonly nonce?: Uint8Array
 
   /**
-   * @generated from field: bytes server_nonce = 4;
+   * @generated from field: optional bytes server_nonce = 4;
    */
-  abstract readonly serverNonce: Uint8Array
+  abstract readonly serverNonce?: Uint8Array
 
   /**
-   * @generated from field: bytes new_nonce_hash1 = 5;
+   * @generated from field: optional bytes new_nonce_hash1 = 5;
    */
-  abstract readonly newNonceHash1: Uint8Array
+  abstract readonly newNonceHash1?: Uint8Array
 
   /**
-   * @generated from field: bytes new_nonce_hash2 = 6;
+   * @generated from field: optional bytes new_nonce_hash2 = 6;
    */
-  abstract readonly newNonceHash2: Uint8Array
+  abstract readonly newNonceHash2?: Uint8Array
 
   /**
-   * @generated from field: bytes new_nonce_hash3 = 7;
+   * @generated from field: optional bytes new_nonce_hash3 = 7;
    */
-  abstract readonly newNonceHash3: Uint8Array
+  abstract readonly newNonceHash3?: Uint8Array
 }
 
 /**
@@ -440,9 +440,9 @@ export abstract class SetClientDHParamsAnswer {
  */
 export abstract class TLDhGenOk {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SetClientDHParamsAnswer data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SetClientDHParamsAnswer data2 = 1;
    */
-  abstract readonly data2: SetClientDHParamsAnswer[]
+  abstract readonly data2?: SetClientDHParamsAnswer
 }
 
 /**
@@ -450,9 +450,9 @@ export abstract class TLDhGenOk {
  */
 export abstract class TLDhGenRetry {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SetClientDHParamsAnswer data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SetClientDHParamsAnswer data2 = 1;
    */
-  abstract readonly data2: SetClientDHParamsAnswer[]
+  abstract readonly data2?: SetClientDHParamsAnswer
 }
 
 /**
@@ -460,7 +460,7 @@ export abstract class TLDhGenRetry {
  */
 export abstract class TLDhGenFail {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SetClientDHParamsAnswer data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SetClientDHParamsAnswer data2 = 1;
    */
-  abstract readonly data2: SetClientDHParamsAnswer[]
+  abstract readonly data2?: SetClientDHParamsAnswer
 }

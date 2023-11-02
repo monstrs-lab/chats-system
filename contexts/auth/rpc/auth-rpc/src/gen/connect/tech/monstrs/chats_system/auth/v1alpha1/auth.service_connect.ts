@@ -3,68 +3,47 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { MethodKind }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  from '@bufbuild/protobuf'
+import { MethodKind }                        from '@bufbuild/protobuf'
 
-import { Bool }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        from '../../core/v1alpha1/schema.tl.core_types_pb.js'
-import { Int32 }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 from '../../core/v1alpha1/schema.tl.core_types_pb.js'
-import { Int64 }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          from '../../core/v1alpha1/schema.tl.core_types_pb.js'
-import { String }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  from '../../core/v1alpha1/schema.tl.core_types_pb.js'
-import { AccountAuthorizations }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       from '../../core/v1alpha1/schema.tl.sync_pb.js'
-import { AuthKeyInfo }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          from '../../core/v1alpha1/schema.tl.sync_pb.js'
-import { Authorization }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           from '../../core/v1alpha1/schema.tl.sync_pb.js'
-import { FutureSalts }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 from '../../core/v1alpha1/schema.tl.transport_pb.js'
-import { AuthKeyStateData }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            from './auth.service_pb.js'
-
-import { TLAuthsessionBindAuthKeyUser }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              from './auth.service_pb.js'
-
-import { TLAuthsessionBindTempAuthKey }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                from './auth.service_pb.js'
-
-import { TLAuthsessionGetAuthorization }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 from './auth.service_pb.js'
-
-import { TLAuthsessionGetAuthorizations }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 from './auth.service_pb.js'
-
-import { TLAuthsessionGetAuthStateData }                                                                                                                                                                                                                                                                                                                                                                                                                                                  from './auth.service_pb.js'
-
-import { TLAuthsessionGetClient }                                                                                                                                                                                                                                                                                                                                                                                                                          from './auth.service_pb.js'
-
-import { TLAuthsessionGetFutureSalts }                                                                                                                                                                                                                                                                                                                                                                                             from './auth.service_pb.js'
-
-import { TLAuthsessionGetLangCode }                                                                                                                                                                                                                                                                                                                                                                   from './auth.service_pb.js'
-
-import { TLAuthsessionGetLangPack }                                                                                                                                                                                                                                                                                                                                         from './auth.service_pb.js'
-
-import { TLAuthsessionGetLayer }                                                                                                                                                                                                                                                                                                                  from './auth.service_pb.js'
-
-import { TLAuthsessionGetPermAuthKeyId }                                                                                                                                                                                                                                                                                   from './auth.service_pb.js'
-
-import { TLAuthsessionGetPushSessionId }                                                                                                                                                                                                                                                    from './auth.service_pb.js'
-
-import { TLAuthsessionGetUserId }                                                                                                                                                                                                                            from './auth.service_pb.js'
-
-import { TLAuthsessionQueryAuthKey }                                                                                                                                                                                                 from './auth.service_pb.js'
-
-import { TLAuthsessionResetAuthorization }                                                                                                                                                                from './auth.service_pb.js'
-
-import { TLAuthsessionSetAuthKey }                                                                                                                                       from './auth.service_pb.js'
-
-import { TLAuthsessionSetClientSessionInfo }                                                                                                    from './auth.service_pb.js'
-
-import { TLAuthsessionSetInitConnection }                                                                    from './auth.service_pb.js'
-
-import { TLAuthsessionSetLayer }                                             from './auth.service_pb.js'
-
-import { TLAuthsessionUnbindAuthKeyUser }             from './auth.service_pb.js'
-
-import { VectorLong } from './auth.service_pb.js'
+import { Bool }                              from '../../core/v1alpha1/schema.tl.core_types_pb.js'
+import { Int32 }                             from '../../core/v1alpha1/schema.tl.core_types_pb.js'
+import { Int64 }                             from '../../core/v1alpha1/schema.tl.core_types_pb.js'
+import { String }                            from '../../core/v1alpha1/schema.tl.core_types_pb.js'
+import { AccountAuthorizations }             from '../../core/v1alpha1/schema.tl.sync_pb.js'
+import { AuthKeyInfo }                       from '../../core/v1alpha1/schema.tl.sync_pb.js'
+import { Authorization }                     from '../../core/v1alpha1/schema.tl.sync_pb.js'
+import { FutureSalts }                       from '../../core/v1alpha1/schema.tl.transport_pb.js'
+import { AuthKeyStateData }                  from './auth.service_pb.js'
+import { TLAuthsessionBindAuthKeyUser }      from './auth.service_pb.js'
+import { TLAuthsessionBindTempAuthKey }      from './auth.service_pb.js'
+import { TLAuthsessionGetAuthorization }     from './auth.service_pb.js'
+import { TLAuthsessionGetAuthorizations }    from './auth.service_pb.js'
+import { TLAuthsessionGetAuthStateData }     from './auth.service_pb.js'
+import { TLAuthsessionGetClient }            from './auth.service_pb.js'
+import { TLAuthsessionGetFutureSalts }       from './auth.service_pb.js'
+import { TLAuthsessionGetLangCode }          from './auth.service_pb.js'
+import { TLAuthsessionGetLangPack }          from './auth.service_pb.js'
+import { TLAuthsessionGetLayer }             from './auth.service_pb.js'
+import { TLAuthsessionGetPermAuthKeyId }     from './auth.service_pb.js'
+import { TLAuthsessionGetPushSessionId }     from './auth.service_pb.js'
+import { TLAuthsessionGetUserId }            from './auth.service_pb.js'
+import { TLAuthsessionQueryAuthKey }         from './auth.service_pb.js'
+import { TLAuthsessionResetAuthorization }   from './auth.service_pb.js'
+import { TLAuthsessionSetAuthKey }           from './auth.service_pb.js'
+import { TLAuthsessionSetClientSessionInfo } from './auth.service_pb.js'
+import { TLAuthsessionSetInitConnection }    from './auth.service_pb.js'
+import { TLAuthsessionSetLayer }             from './auth.service_pb.js'
+import { TLAuthsessionUnbindAuthKeyUser }    from './auth.service_pb.js'
+import { VectorLong }                        from './auth.service_pb.js'
 
 /**
- * @generated from service tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession
+ * @generated from service tech.monstrs.chats_system.auth.v1alpha1.AuthService
  */
-export const RPCAuthsession = {
-  typeName: 'tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession',
+export const AuthService = {
+  typeName: 'tech.monstrs.chats_system.auth.v1alpha1.AuthService',
   methods: {
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession.getAuthorizations
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.getAuthorizations
      */
     getAuthorizations: {
       name: 'getAuthorizations',
@@ -73,7 +52,7 @@ export const RPCAuthsession = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession.resetAuthorization
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.resetAuthorization
      */
     resetAuthorization: {
       name: 'resetAuthorization',
@@ -82,7 +61,7 @@ export const RPCAuthsession = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession.getLayer
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.getLayer
      */
     getLayer: {
       name: 'getLayer',
@@ -91,7 +70,7 @@ export const RPCAuthsession = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession.getLangPack
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.getLangPack
      */
     getLangPack: {
       name: 'getLangPack',
@@ -100,7 +79,7 @@ export const RPCAuthsession = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession.getClient
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.getClient
      */
     getClient: {
       name: 'getClient',
@@ -109,7 +88,7 @@ export const RPCAuthsession = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession.getLangCode
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.getLangCode
      */
     getLangCode: {
       name: 'getLangCode',
@@ -118,7 +97,7 @@ export const RPCAuthsession = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession.getUserId
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.getUserId
      */
     getUserId: {
       name: 'getUserId',
@@ -127,7 +106,7 @@ export const RPCAuthsession = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession.getPushSessionId
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.getPushSessionId
      */
     getPushSessionId: {
       name: 'getPushSessionId',
@@ -136,7 +115,7 @@ export const RPCAuthsession = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession.getFutureSalts
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.getFutureSalts
      */
     getFutureSalts: {
       name: 'getFutureSalts',
@@ -145,7 +124,7 @@ export const RPCAuthsession = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession.queryAuthKey
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.queryAuthKey
      */
     queryAuthKey: {
       name: 'queryAuthKey',
@@ -154,7 +133,7 @@ export const RPCAuthsession = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession.setAuthKey
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.setAuthKey
      */
     setAuthKey: {
       name: 'setAuthKey',
@@ -163,7 +142,7 @@ export const RPCAuthsession = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession.bindAuthKeyUser
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.bindAuthKeyUser
      */
     bindAuthKeyUser: {
       name: 'bindAuthKeyUser',
@@ -172,7 +151,7 @@ export const RPCAuthsession = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession.unbindAuthKeyUser
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.unbindAuthKeyUser
      */
     unbindAuthKeyUser: {
       name: 'unbindAuthKeyUser',
@@ -181,7 +160,7 @@ export const RPCAuthsession = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession.getPermAuthKeyId
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.getPermAuthKeyId
      */
     getPermAuthKeyId: {
       name: 'getPermAuthKeyId',
@@ -190,7 +169,7 @@ export const RPCAuthsession = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession.bindTempAuthKey
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.bindTempAuthKey
      */
     bindTempAuthKey: {
       name: 'bindTempAuthKey',
@@ -199,7 +178,7 @@ export const RPCAuthsession = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession.setClientSessionInfo
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.setClientSessionInfo
      */
     setClientSessionInfo: {
       name: 'setClientSessionInfo',
@@ -208,7 +187,7 @@ export const RPCAuthsession = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession.getAuthorization
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.getAuthorization
      */
     getAuthorization: {
       name: 'getAuthorization',
@@ -217,7 +196,7 @@ export const RPCAuthsession = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession.getAuthStateData
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.getAuthStateData
      */
     getAuthStateData: {
       name: 'getAuthStateData',
@@ -226,7 +205,7 @@ export const RPCAuthsession = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession.setLayer
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.setLayer
      */
     setLayer: {
       name: 'setLayer',
@@ -235,7 +214,7 @@ export const RPCAuthsession = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.RPCAuthsession.setInitConnection
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.setInitConnection
      */
     setInitConnection: {
       name: 'setInitConnection',

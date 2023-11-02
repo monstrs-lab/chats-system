@@ -10,24 +10,24 @@ import type { TLConstructor } from './schema.tl.crc32_pb.js'
  */
 export interface AccessPointRule {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: string phone_prefix_rules = 3;
+   * @generated from field: optional string phone_prefix_rules = 3;
    */
-  phonePrefixRules: string
+  phonePrefixRules?: string
 
   /**
-   * @generated from field: int32 dc_id = 4;
+   * @generated from field: optional int32 dc_id = 4;
    */
-  dcId: number
+  dcId?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.IpPort ips = 5;
@@ -40,9 +40,9 @@ export interface AccessPointRule {
  */
 export interface TLAccessPointRule {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.AccessPointRule data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccessPointRule data2 = 1;
    */
-  data2: AccessPointRule[]
+  data2?: AccessPointRule
 }
 
 /**
@@ -50,34 +50,34 @@ export interface TLAccessPointRule {
  */
 export interface BadMsgNotification {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 bad_msg_id = 3;
+   * @generated from field: optional int64 bad_msg_id = 3;
    */
-  badMsgId: bigint
+  badMsgId?: bigint
 
   /**
-   * @generated from field: int32 bad_msg_seqno = 4;
+   * @generated from field: optional int32 bad_msg_seqno = 4;
    */
-  badMsgSeqno: number
+  badMsgSeqno?: number
 
   /**
-   * @generated from field: int32 error_code = 5;
+   * @generated from field: optional int32 error_code = 5;
    */
-  errorCode: number
+  errorCode?: number
 
   /**
-   * @generated from field: int64 new_server_salt = 6;
+   * @generated from field: optional int64 new_server_salt = 6;
    */
-  newServerSalt: bigint
+  newServerSalt?: bigint
 }
 
 /**
@@ -85,9 +85,9 @@ export interface BadMsgNotification {
  */
 export interface TLBadMsgNotification {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.BadMsgNotification data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BadMsgNotification data2 = 1;
    */
-  data2: BadMsgNotification[]
+  data2?: BadMsgNotification
 }
 
 /**
@@ -95,9 +95,9 @@ export interface TLBadMsgNotification {
  */
 export interface TLBadServerSalt {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.BadMsgNotification data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BadMsgNotification data2 = 1;
    */
-  data2: BadMsgNotification[]
+  data2?: BadMsgNotification
 }
 
 /**
@@ -105,19 +105,19 @@ export interface TLBadServerSalt {
  */
 export interface DestroySessionRes {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 session_id = 3;
+   * @generated from field: optional int64 session_id = 3;
    */
-  sessionId: bigint
+  sessionId?: bigint
 }
 
 /**
@@ -125,9 +125,9 @@ export interface DestroySessionRes {
  */
 export interface TLDestroySessionOk {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.DestroySessionRes data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DestroySessionRes data2 = 1;
    */
-  data2: DestroySessionRes[]
+  data2?: DestroySessionRes
 }
 
 /**
@@ -135,9 +135,9 @@ export interface TLDestroySessionOk {
  */
 export interface TLDestroySessionNone {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.DestroySessionRes data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DestroySessionRes data2 = 1;
    */
-  data2: DestroySessionRes[]
+  data2?: DestroySessionRes
 }
 
 /**
@@ -145,29 +145,29 @@ export interface TLDestroySessionNone {
  */
 export interface FutureSalt {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int32 valid_since = 3;
+   * @generated from field: optional int32 valid_since = 3;
    */
-  validSince: number
+  validSince?: number
 
   /**
-   * @generated from field: int32 valid_until = 4;
+   * @generated from field: optional int32 valid_until = 4;
    */
-  validUntil: number
+  validUntil?: number
 
   /**
-   * @generated from field: int64 salt = 5;
+   * @generated from field: optional int64 salt = 5;
    */
-  salt: bigint
+  salt?: bigint
 }
 
 /**
@@ -175,9 +175,9 @@ export interface FutureSalt {
  */
 export interface TLFutureSalt {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.FutureSalt data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.FutureSalt data2 = 1;
    */
-  data2: FutureSalt[]
+  data2?: FutureSalt
 }
 
 /**
@@ -185,24 +185,24 @@ export interface TLFutureSalt {
  */
 export interface FutureSalts {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 req_msg_id = 3;
+   * @generated from field: optional int64 req_msg_id = 3;
    */
-  reqMsgId: bigint
+  reqMsgId?: bigint
 
   /**
-   * @generated from field: int32 now = 4;
+   * @generated from field: optional int32 now = 4;
    */
-  now: number
+  now?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.TLFutureSalt salts = 5;
@@ -215,9 +215,9 @@ export interface FutureSalts {
  */
 export interface TLFutureSalts {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.FutureSalts data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.FutureSalts data2 = 1;
    */
-  data2: FutureSalts[]
+  data2?: FutureSalts
 }
 
 /**
@@ -225,29 +225,29 @@ export interface TLFutureSalts {
  */
 export interface HttpWait {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int32 max_delay = 3;
+   * @generated from field: optional int32 max_delay = 3;
    */
-  maxDelay: number
+  maxDelay?: number
 
   /**
-   * @generated from field: int32 wait_after = 4;
+   * @generated from field: optional int32 wait_after = 4;
    */
-  waitAfter: number
+  waitAfter?: number
 
   /**
-   * @generated from field: int32 max_wait = 5;
+   * @generated from field: optional int32 max_wait = 5;
    */
-  maxWait: number
+  maxWait?: number
 }
 
 /**
@@ -255,9 +255,9 @@ export interface HttpWait {
  */
 export interface TLHttpWait {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.HttpWait data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HttpWait data2 = 1;
    */
-  data2: HttpWait[]
+  data2?: HttpWait
 }
 
 /**
@@ -265,29 +265,29 @@ export interface TLHttpWait {
  */
 export interface IpPort {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int32 ipv4 = 3;
+   * @generated from field: optional int32 ipv4 = 3;
    */
-  ipv4: number
+  ipv4?: number
 
   /**
-   * @generated from field: int32 port = 4;
+   * @generated from field: optional int32 port = 4;
    */
-  port: number
+  port?: number
 
   /**
-   * @generated from field: bytes secret = 5;
+   * @generated from field: optional bytes secret = 5;
    */
-  secret: Uint8Array
+  secret?: Uint8Array
 }
 
 /**
@@ -295,9 +295,9 @@ export interface IpPort {
  */
 export interface TLIpPort {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.IpPort data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.IpPort data2 = 1;
    */
-  data2: IpPort[]
+  data2?: IpPort
 }
 
 /**
@@ -305,9 +305,9 @@ export interface TLIpPort {
  */
 export interface TLIpPortSecret {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.IpPort data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.IpPort data2 = 1;
    */
-  data2: IpPort[]
+  data2?: IpPort
 }
 
 /**
@@ -315,34 +315,34 @@ export interface TLIpPortSecret {
  */
 export interface MsgDetailedInfo {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 msg_id = 3;
+   * @generated from field: optional int64 msg_id = 3;
    */
-  msgId: bigint
+  msgId?: bigint
 
   /**
-   * @generated from field: int64 answer_msg_id = 4;
+   * @generated from field: optional int64 answer_msg_id = 4;
    */
-  answerMsgId: bigint
+  answerMsgId?: bigint
 
   /**
-   * @generated from field: int32 bytes = 5;
+   * @generated from field: optional int32 bytes = 5;
    */
-  bytes: number
+  bytes?: number
 
   /**
-   * @generated from field: int32 status = 6;
+   * @generated from field: optional int32 status = 6;
    */
-  status: number
+  status?: number
 }
 
 /**
@@ -350,9 +350,9 @@ export interface MsgDetailedInfo {
  */
 export interface TLMsgDetailedInfo {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MsgDetailedInfo data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MsgDetailedInfo data2 = 1;
    */
-  data2: MsgDetailedInfo[]
+  data2?: MsgDetailedInfo
 }
 
 /**
@@ -360,9 +360,9 @@ export interface TLMsgDetailedInfo {
  */
 export interface TLMsgNewDetailedInfo {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MsgDetailedInfo data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MsgDetailedInfo data2 = 1;
    */
-  data2: MsgDetailedInfo[]
+  data2?: MsgDetailedInfo
 }
 
 /**
@@ -370,19 +370,19 @@ export interface TLMsgNewDetailedInfo {
  */
 export interface MsgResendReq {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 msg_ids = 3;
+   * @generated from field: repeated int64 msg_ids = 3;
    */
-  msgIds: bigint
+  msgIds: bigint[]
 }
 
 /**
@@ -390,9 +390,9 @@ export interface MsgResendReq {
  */
 export interface TLMsgResendReq {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MsgResendReq data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MsgResendReq data2 = 1;
    */
-  data2: MsgResendReq[]
+  data2?: MsgResendReq
 }
 
 /**
@@ -400,19 +400,19 @@ export interface TLMsgResendReq {
  */
 export interface MsgsAck {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 msg_ids = 3;
+   * @generated from field: repeated int64 msg_ids = 3;
    */
-  msgIds: bigint
+  msgIds: bigint[]
 }
 
 /**
@@ -420,9 +420,9 @@ export interface MsgsAck {
  */
 export interface TLMsgsAck {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MsgsAck data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MsgsAck data2 = 1;
    */
-  data2: MsgsAck[]
+  data2?: MsgsAck
 }
 
 /**
@@ -430,24 +430,24 @@ export interface TLMsgsAck {
  */
 export interface MsgsAllInfo {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 msg_ids = 3;
+   * @generated from field: repeated int64 msg_ids = 3;
    */
-  msgIds: bigint
+  msgIds: bigint[]
 
   /**
-   * @generated from field: string info = 4;
+   * @generated from field: optional string info = 4;
    */
-  info: string
+  info?: string
 }
 
 /**
@@ -455,9 +455,9 @@ export interface MsgsAllInfo {
  */
 export interface TLMsgsAllInfo {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MsgsAllInfo data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MsgsAllInfo data2 = 1;
    */
-  data2: MsgsAllInfo[]
+  data2?: MsgsAllInfo
 }
 
 /**
@@ -465,24 +465,24 @@ export interface TLMsgsAllInfo {
  */
 export interface MsgsStateInfo {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 req_msg_id = 3;
+   * @generated from field: optional int64 req_msg_id = 3;
    */
-  reqMsgId: bigint
+  reqMsgId?: bigint
 
   /**
-   * @generated from field: string info = 4;
+   * @generated from field: optional string info = 4;
    */
-  info: string
+  info?: string
 }
 
 /**
@@ -490,9 +490,9 @@ export interface MsgsStateInfo {
  */
 export interface TLMsgsStateInfo {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MsgsStateInfo data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MsgsStateInfo data2 = 1;
    */
-  data2: MsgsStateInfo[]
+  data2?: MsgsStateInfo
 }
 
 /**
@@ -500,19 +500,19 @@ export interface TLMsgsStateInfo {
  */
 export interface MsgsStateReq {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 msg_ids = 3;
+   * @generated from field: repeated int64 msg_ids = 3;
    */
-  msgIds: bigint
+  msgIds: bigint[]
 }
 
 /**
@@ -520,9 +520,9 @@ export interface MsgsStateReq {
  */
 export interface TLMsgsStateReq {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MsgsStateReq data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MsgsStateReq data2 = 1;
    */
-  data2: MsgsStateReq[]
+  data2?: MsgsStateReq
 }
 
 /**
@@ -530,29 +530,29 @@ export interface TLMsgsStateReq {
  */
 export interface NewSession {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 first_msg_id = 3;
+   * @generated from field: optional int64 first_msg_id = 3;
    */
-  firstMsgId: bigint
+  firstMsgId?: bigint
 
   /**
-   * @generated from field: int64 unique_id = 4;
+   * @generated from field: optional int64 unique_id = 4;
    */
-  uniqueId: bigint
+  uniqueId?: bigint
 
   /**
-   * @generated from field: int64 server_salt = 5;
+   * @generated from field: optional int64 server_salt = 5;
    */
-  serverSalt: bigint
+  serverSalt?: bigint
 }
 
 /**
@@ -560,9 +560,9 @@ export interface NewSession {
  */
 export interface TLNewSessionCreated {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.NewSession data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.NewSession data2 = 1;
    */
-  data2: NewSession[]
+  data2?: NewSession
 }
 
 /**
@@ -570,24 +570,24 @@ export interface TLNewSessionCreated {
  */
 export interface Pong {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 msg_id = 3;
+   * @generated from field: optional int64 msg_id = 3;
    */
-  msgId: bigint
+  msgId?: bigint
 
   /**
-   * @generated from field: int64 ping_id = 4;
+   * @generated from field: optional int64 ping_id = 4;
    */
-  pingId: bigint
+  pingId?: bigint
 }
 
 /**
@@ -595,9 +595,9 @@ export interface Pong {
  */
 export interface TLPong {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Pong data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Pong data2 = 1;
    */
-  data2: Pong[]
+  data2?: Pong
 }
 
 /**
@@ -605,29 +605,29 @@ export interface TLPong {
  */
 export interface RpcDropAnswer {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 msg_id = 3;
+   * @generated from field: optional int64 msg_id = 3;
    */
-  msgId: bigint
+  msgId?: bigint
 
   /**
-   * @generated from field: int32 seq_no = 4;
+   * @generated from field: optional int32 seq_no = 4;
    */
-  seqNo: number
+  seqNo?: number
 
   /**
-   * @generated from field: int32 bytes = 5;
+   * @generated from field: optional int32 bytes = 5;
    */
-  bytes: number
+  bytes?: number
 }
 
 /**
@@ -635,9 +635,9 @@ export interface RpcDropAnswer {
  */
 export interface TLRpcAnswerUnknown {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.RpcDropAnswer data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RpcDropAnswer data2 = 1;
    */
-  data2: RpcDropAnswer[]
+  data2?: RpcDropAnswer
 }
 
 /**
@@ -645,9 +645,9 @@ export interface TLRpcAnswerUnknown {
  */
 export interface TLRpcAnswerDroppedRunning {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.RpcDropAnswer data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RpcDropAnswer data2 = 1;
    */
-  data2: RpcDropAnswer[]
+  data2?: RpcDropAnswer
 }
 
 /**
@@ -655,9 +655,9 @@ export interface TLRpcAnswerDroppedRunning {
  */
 export interface TLRpcAnswerDropped {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.RpcDropAnswer data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RpcDropAnswer data2 = 1;
    */
-  data2: RpcDropAnswer[]
+  data2?: RpcDropAnswer
 }
 
 /**
@@ -665,24 +665,24 @@ export interface TLRpcAnswerDropped {
  */
 export interface RpcError {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int32 error_code = 3;
+   * @generated from field: optional int32 error_code = 3;
    */
-  errorCode: number
+  errorCode?: number
 
   /**
-   * @generated from field: string error_message = 4;
+   * @generated from field: optional string error_message = 4;
    */
-  errorMessage: string
+  errorMessage?: string
 }
 
 /**
@@ -690,9 +690,9 @@ export interface RpcError {
  */
 export interface TLRpcError {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.RpcError data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RpcError data2 = 1;
    */
-  data2: RpcError[]
+  data2?: RpcError
 }
 
 /**
@@ -700,29 +700,29 @@ export interface TLRpcError {
  */
 export interface TlsBlock {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: string data = 3;
+   * @generated from field: optional string data = 3;
    */
-  data: string
+  data?: string
 
   /**
-   * @generated from field: int32 length = 4;
+   * @generated from field: optional int32 length = 4;
    */
-  length: number
+  length?: number
 
   /**
-   * @generated from field: int32 seed = 5;
+   * @generated from field: optional int32 seed = 5;
    */
-  seed: number
+  seed?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.TlsBlock entries = 6;
@@ -735,9 +735,9 @@ export interface TlsBlock {
  */
 export interface TLTlsBlockString {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.TlsBlock data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TlsBlock data2 = 1;
    */
-  data2: TlsBlock[]
+  data2?: TlsBlock
 }
 
 /**
@@ -745,9 +745,9 @@ export interface TLTlsBlockString {
  */
 export interface TLTlsBlockRandom {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.TlsBlock data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TlsBlock data2 = 1;
    */
-  data2: TlsBlock[]
+  data2?: TlsBlock
 }
 
 /**
@@ -755,9 +755,9 @@ export interface TLTlsBlockRandom {
  */
 export interface TLTlsBlockZero {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.TlsBlock data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TlsBlock data2 = 1;
    */
-  data2: TlsBlock[]
+  data2?: TlsBlock
 }
 
 /**
@@ -765,9 +765,9 @@ export interface TLTlsBlockZero {
  */
 export interface TLTlsBlockDomain {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.TlsBlock data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TlsBlock data2 = 1;
    */
-  data2: TlsBlock[]
+  data2?: TlsBlock
 }
 
 /**
@@ -775,9 +775,9 @@ export interface TLTlsBlockDomain {
  */
 export interface TLTlsBlockGrease {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.TlsBlock data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TlsBlock data2 = 1;
    */
-  data2: TlsBlock[]
+  data2?: TlsBlock
 }
 
 /**
@@ -785,9 +785,9 @@ export interface TLTlsBlockGrease {
  */
 export interface TLTlsBlockPublicKey {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.TlsBlock data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TlsBlock data2 = 1;
    */
-  data2: TlsBlock[]
+  data2?: TlsBlock
 }
 
 /**
@@ -795,9 +795,9 @@ export interface TLTlsBlockPublicKey {
  */
 export interface TLTlsBlockScope {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.TlsBlock data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TlsBlock data2 = 1;
    */
-  data2: TlsBlock[]
+  data2?: TlsBlock
 }
 
 /**
@@ -805,14 +805,14 @@ export interface TLTlsBlockScope {
  */
 export interface TlsClientHello {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.TlsBlock blocks = 3;
@@ -825,9 +825,9 @@ export interface TlsClientHello {
  */
 export interface TLTlsClientHello {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.TlsClientHello data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TlsClientHello data2 = 1;
    */
-  data2: TlsClientHello[]
+  data2?: TlsClientHello
 }
 
 /**
@@ -835,24 +835,24 @@ export interface TLTlsClientHello {
  */
 export interface HelpConfigSimple {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int32 date = 3;
+   * @generated from field: optional int32 date = 3;
    */
-  date: number
+  date?: number
 
   /**
-   * @generated from field: int32 expires = 4;
+   * @generated from field: optional int32 expires = 4;
    */
-  expires: number
+  expires?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.AccessPointRule rules = 5;
@@ -865,7 +865,7 @@ export interface HelpConfigSimple {
  */
 export interface TLHelpConfigSimple {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.HelpConfigSimple data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpConfigSimple data2 = 1;
    */
-  data2: HelpConfigSimple[]
+  data2?: HelpConfigSimple
 }

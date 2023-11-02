@@ -10,14 +10,14 @@ import type { TLConstructor } from './schema.tl.crc32_pb.js'
  */
 export abstract class Bool {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName: string
+  abstract readonly predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$: TLConstructor
+  abstract readonly constructor$?: TLConstructor
 }
 
 /**
@@ -25,9 +25,9 @@ export abstract class Bool {
  */
 export abstract class TLBoolFalse {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Bool data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool data2 = 1;
    */
-  abstract readonly data2: Bool[]
+  abstract readonly data2?: Bool
 }
 
 /**
@@ -35,9 +35,9 @@ export abstract class TLBoolFalse {
  */
 export abstract class TLBoolTrue {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Bool data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool data2 = 1;
    */
-  abstract readonly data2: Bool[]
+  abstract readonly data2?: Bool
 }
 
 /**
@@ -45,19 +45,19 @@ export abstract class TLBoolTrue {
  */
 export abstract class Double {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName: string
+  abstract readonly predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$: TLConstructor
+  abstract readonly constructor$?: TLConstructor
 
   /**
-   * @generated from field: float v = 3;
+   * @generated from field: optional float v = 3;
    */
-  abstract readonly v: number
+  abstract readonly v?: number
 }
 
 /**
@@ -65,9 +65,9 @@ export abstract class Double {
  */
 export abstract class TLDouble {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Double data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Double data2 = 1;
    */
-  abstract readonly data2: Double[]
+  abstract readonly data2?: Double
 }
 
 /**
@@ -75,24 +75,24 @@ export abstract class TLDouble {
  */
 export abstract class Error {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName: string
+  abstract readonly predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$: TLConstructor
+  abstract readonly constructor$?: TLConstructor
 
   /**
-   * @generated from field: int32 code = 3;
+   * @generated from field: optional int32 code = 3;
    */
-  abstract readonly code: number
+  abstract readonly code?: number
 
   /**
-   * @generated from field: string text = 4;
+   * @generated from field: optional string text = 4;
    */
-  abstract readonly text: string
+  abstract readonly text?: string
 }
 
 /**
@@ -100,9 +100,9 @@ export abstract class Error {
  */
 export abstract class TLError {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Error data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Error data2 = 1;
    */
-  abstract readonly data2: Error[]
+  abstract readonly data2?: Error
 }
 
 /**
@@ -110,19 +110,19 @@ export abstract class TLError {
  */
 export abstract class Int32 {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName: string
+  abstract readonly predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$: TLConstructor
+  abstract readonly constructor$?: TLConstructor
 
   /**
-   * @generated from field: int32 v = 3;
+   * @generated from field: optional int32 v = 3;
    */
-  abstract readonly v: number
+  abstract readonly v?: number
 }
 
 /**
@@ -130,9 +130,9 @@ export abstract class Int32 {
  */
 export abstract class TLInt32 {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Int32 data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Int32 data2 = 1;
    */
-  abstract readonly data2: Int32[]
+  abstract readonly data2?: Int32
 }
 
 /**
@@ -140,19 +140,19 @@ export abstract class TLInt32 {
  */
 export abstract class Int64 {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName: string
+  abstract readonly predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$: TLConstructor
+  abstract readonly constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 v = 3;
+   * @generated from field: optional int64 v = 3;
    */
-  abstract readonly v: bigint
+  abstract readonly v?: bigint
 }
 
 /**
@@ -160,9 +160,9 @@ export abstract class Int64 {
  */
 export abstract class TLLong {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Int64 data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Int64 data2 = 1;
    */
-  abstract readonly data2: Int64[]
+  abstract readonly data2?: Int64
 }
 
 /**
@@ -170,9 +170,9 @@ export abstract class TLLong {
  */
 export abstract class TLInt64 {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Int64 data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Int64 data2 = 1;
    */
-  abstract readonly data2: Int64[]
+  abstract readonly data2?: Int64
 }
 
 /**
@@ -180,14 +180,14 @@ export abstract class TLInt64 {
  */
 export abstract class Null {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName: string
+  abstract readonly predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$: TLConstructor
+  abstract readonly constructor$?: TLConstructor
 }
 
 /**
@@ -195,9 +195,9 @@ export abstract class Null {
  */
 export abstract class TLNull {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Null data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Null data2 = 1;
    */
-  abstract readonly data2: Null[]
+  abstract readonly data2?: Null
 }
 
 /**
@@ -205,19 +205,19 @@ export abstract class TLNull {
  */
 export abstract class String {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName: string
+  abstract readonly predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$: TLConstructor
+  abstract readonly constructor$?: TLConstructor
 
   /**
-   * @generated from field: string v = 3;
+   * @generated from field: optional string v = 3;
    */
-  abstract readonly v: string
+  abstract readonly v?: string
 }
 
 /**
@@ -225,9 +225,9 @@ export abstract class String {
  */
 export abstract class TLString {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.String data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.String data2 = 1;
    */
-  abstract readonly data2: String[]
+  abstract readonly data2?: String
 }
 
 /**
@@ -235,14 +235,14 @@ export abstract class TLString {
  */
 export abstract class True {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName: string
+  abstract readonly predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$: TLConstructor
+  abstract readonly constructor$?: TLConstructor
 }
 
 /**
@@ -250,7 +250,7 @@ export abstract class True {
  */
 export abstract class TLTrue {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.True data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.True data2 = 1;
    */
-  abstract readonly data2: True[]
+  abstract readonly data2?: True
 }

@@ -8,14 +8,14 @@
  */
 export interface TakeoutMessageRange {
   /**
-   * @generated from field: int32 min_id = 1;
+   * @generated from field: optional int32 min_id = 1;
    */
-  minId: number
+  minId?: number
 
   /**
-   * @generated from field: int32 max_id = 2;
+   * @generated from field: optional int32 max_id = 2;
    */
-  maxId: number
+  maxId?: number
 }
 
 /**
@@ -23,14 +23,14 @@ export interface TakeoutMessageRange {
  */
 export interface Takeout {
   /**
-   * @generated from field: int64 id = 1;
+   * @generated from field: optional int64 id = 1;
    */
-  id: bigint
+  id?: bigint
 
   /**
-   * @generated from field: repeated metadata.TakeoutMessageRange range = 2;
+   * @generated from field: optional metadata.TakeoutMessageRange range = 2;
    */
-  range: TakeoutMessageRange[]
+  range?: TakeoutMessageRange
 }
 
 /**
@@ -38,72 +38,72 @@ export interface Takeout {
  */
 export interface RpcMetadata {
   /**
-   * @generated from field: string server_id = 1;
+   * @generated from field: optional string server_id = 1;
    */
-  serverId: string
+  serverId?: string
 
   /**
-   * @generated from field: string client_addr = 3;
+   * @generated from field: optional string client_addr = 3;
    */
-  clientAddr: string
+  clientAddr?: string
 
   /**
-   * @generated from field: int64 auth_id = 4;
+   * @generated from field: optional int64 auth_id = 4;
    */
-  authId: bigint
+  authId?: bigint
 
   /**
-   * @generated from field: int64 session_id = 5;
+   * @generated from field: optional int64 session_id = 5;
    */
-  sessionId: bigint
+  sessionId?: bigint
 
   /**
-   * @generated from field: int64 receive_time = 8;
+   * @generated from field: optional int64 receive_time = 8;
    */
-  receiveTime: bigint
+  receiveTime?: bigint
 
   /**
-   * @generated from field: int64 user_id = 11;
+   * @generated from field: optional int64 user_id = 11;
    */
-  userId: bigint
+  userId?: bigint
 
   /**
-   * @generated from field: int64 client_msg_id = 12;
+   * @generated from field: optional int64 client_msg_id = 12;
    */
-  clientMsgId: bigint
+  clientMsgId?: bigint
 
   /**
-   * @generated from field: bool is_bot = 13;
+   * @generated from field: optional bool is_bot = 13;
    */
-  isBot: boolean
+  isBot?: boolean
 
   /**
-   * @generated from field: int32 layer = 14;
+   * @generated from field: optional int32 layer = 14;
    */
-  layer: number
+  layer?: number
 
   /**
-   * @generated from field: string client = 15;
+   * @generated from field: optional string client = 15;
    */
-  client: string
+  client?: string
 
   /**
-   * @generated from field: bool is_admin = 16;
+   * @generated from field: optional bool is_admin = 16;
    */
-  isAdmin: boolean
+  isAdmin?: boolean
 
   /**
-   * @generated from field: repeated metadata.Takeout takeout = 20;
+   * @generated from field: optional metadata.Takeout takeout = 20;
    */
-  takeout: Takeout[]
+  takeout?: Takeout
 
   /**
-   * @generated from field: string langpack = 21;
+   * @generated from field: optional string langpack = 21;
    */
-  langpack: string
+  langpack?: string
 
   /**
-   * @generated from field: int64 perm_auth_key_id = 22;
+   * @generated from field: optional int64 perm_auth_key_id = 22;
    */
-  permAuthKeyId: bigint
+  permAuthKeyId?: bigint
 }

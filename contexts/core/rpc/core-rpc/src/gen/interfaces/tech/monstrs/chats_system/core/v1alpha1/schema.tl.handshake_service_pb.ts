@@ -10,14 +10,14 @@ import type { TLConstructor } from './schema.tl.crc32_pb.js'
  */
 export interface TLReqPq {
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: bytes nonce = 3;
+   * @generated from field: optional bytes nonce = 3;
    */
-  nonce: Uint8Array
+  nonce?: Uint8Array
 }
 
 /**
@@ -25,14 +25,14 @@ export interface TLReqPq {
  */
 export interface TLReqPqMulti {
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: bytes nonce = 3;
+   * @generated from field: optional bytes nonce = 3;
    */
-  nonce: Uint8Array
+  nonce?: Uint8Array
 }
 
 /**
@@ -40,39 +40,39 @@ export interface TLReqPqMulti {
  */
 export interface TLReqDHParams {
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: bytes nonce = 3;
+   * @generated from field: optional bytes nonce = 3;
    */
-  nonce: Uint8Array
+  nonce?: Uint8Array
 
   /**
-   * @generated from field: bytes server_nonce = 4;
+   * @generated from field: optional bytes server_nonce = 4;
    */
-  serverNonce: Uint8Array
+  serverNonce?: Uint8Array
 
   /**
-   * @generated from field: string p = 5;
+   * @generated from field: optional string p = 5;
    */
-  p: string
+  p?: string
 
   /**
-   * @generated from field: string q = 6;
+   * @generated from field: optional string q = 6;
    */
-  q: string
+  q?: string
 
   /**
-   * @generated from field: int64 public_key_fingerprint = 7;
+   * @generated from field: optional int64 public_key_fingerprint = 7;
    */
-  publicKeyFingerprint: bigint
+  publicKeyFingerprint?: bigint
 
   /**
-   * @generated from field: string encrypted_data = 8;
+   * @generated from field: optional string encrypted_data = 8;
    */
-  encryptedData: string
+  encryptedData?: string
 }
 
 /**
@@ -80,24 +80,24 @@ export interface TLReqDHParams {
  */
 export interface TLSetClientDHParams {
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: bytes nonce = 3;
+   * @generated from field: optional bytes nonce = 3;
    */
-  nonce: Uint8Array
+  nonce?: Uint8Array
 
   /**
-   * @generated from field: bytes server_nonce = 4;
+   * @generated from field: optional bytes server_nonce = 4;
    */
-  serverNonce: Uint8Array
+  serverNonce?: Uint8Array
 
   /**
-   * @generated from field: string encrypted_data = 5;
+   * @generated from field: optional string encrypted_data = 5;
    */
-  encryptedData: string
+  encryptedData?: string
 }
 
 /**
@@ -105,7 +105,7 @@ export interface TLSetClientDHParams {
  */
 export interface TLDestroyAuthKey {
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 }

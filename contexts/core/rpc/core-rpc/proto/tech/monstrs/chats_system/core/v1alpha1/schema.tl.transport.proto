@@ -5,278 +5,278 @@ package tech.monstrs.chats_system.core.v1alpha1;
 import "tech/monstrs/chats_system/core/v1alpha1/schema.tl.crc32.proto";
 
 message AccessPointRule {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  string phone_prefix_rules = 3;
-  int32 dc_id = 4;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  optional string phone_prefix_rules = 3;
+  optional int32 dc_id = 4;
   repeated IpPort ips = 5;
 }
 
 message TLAccessPointRule {
-  repeated AccessPointRule data2 = 1;
+  optional AccessPointRule data2 = 1;
 }
 
 message BadMsgNotification {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  int64 bad_msg_id = 3;
-  int32 bad_msg_seqno = 4;
-  int32 error_code = 5;
-  int64 new_server_salt = 6;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  optional int64 bad_msg_id = 3;
+  optional int32 bad_msg_seqno = 4;
+  optional int32 error_code = 5;
+  optional int64 new_server_salt = 6;
 }
 
 message TLBadMsgNotification {
-  repeated BadMsgNotification data2 = 1;
+  optional BadMsgNotification data2 = 1;
 }
 
 message TLBadServerSalt {
-  repeated BadMsgNotification data2 = 1;
+  optional BadMsgNotification data2 = 1;
 }
 
 message DestroySessionRes {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  int64 session_id = 3;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  optional int64 session_id = 3;
 }
 
 message TLDestroySessionOk {
-  repeated DestroySessionRes data2 = 1;
+  optional DestroySessionRes data2 = 1;
 }
 
 message TLDestroySessionNone {
-  repeated DestroySessionRes data2 = 1;
+  optional DestroySessionRes data2 = 1;
 }
 
 message FutureSalt {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  int32 valid_since = 3;
-  int32 valid_until = 4;
-  int64 salt = 5;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  optional int32 valid_since = 3;
+  optional int32 valid_until = 4;
+  optional int64 salt = 5;
 }
 
 message TLFutureSalt {
-  repeated FutureSalt data2 = 1;
+  optional FutureSalt data2 = 1;
 }
 
 message FutureSalts {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  int64 req_msg_id = 3;
-  int32 now = 4;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  optional int64 req_msg_id = 3;
+  optional int32 now = 4;
   repeated TLFutureSalt salts = 5;
 }
 
 message TLFutureSalts {
-  repeated FutureSalts data2 = 1;
+  optional FutureSalts data2 = 1;
 }
 
 message HttpWait {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  int32 max_delay = 3;
-  int32 wait_after = 4;
-  int32 max_wait = 5;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  optional int32 max_delay = 3;
+  optional int32 wait_after = 4;
+  optional int32 max_wait = 5;
 }
 
 message TLHttpWait {
-  repeated HttpWait data2 = 1;
+  optional HttpWait data2 = 1;
 }
 
 message IpPort {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  int32 ipv4 = 3;
-  int32 port = 4;
-  bytes secret = 5;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  optional int32 ipv4 = 3;
+  optional int32 port = 4;
+  optional bytes secret = 5;
 }
 
 message TLIpPort {
-  repeated IpPort data2 = 1;
+  optional IpPort data2 = 1;
 }
 
 message TLIpPortSecret {
-  repeated IpPort data2 = 1;
+  optional IpPort data2 = 1;
 }
 
 message MsgDetailedInfo {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  int64 msg_id = 3;
-  int64 answer_msg_id = 4;
-  int32 bytes = 5;
-  int32 status = 6;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  optional int64 msg_id = 3;
+  optional int64 answer_msg_id = 4;
+  optional int32 bytes = 5;
+  optional int32 status = 6;
 }
 
 message TLMsgDetailedInfo {
-  repeated MsgDetailedInfo data2 = 1;
+  optional MsgDetailedInfo data2 = 1;
 }
 
 message TLMsgNewDetailedInfo {
-  repeated MsgDetailedInfo data2 = 1;
+  optional MsgDetailedInfo data2 = 1;
 }
 
 message MsgResendReq {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  int64 msg_ids = 3;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  repeated int64 msg_ids = 3;
 }
 
 message TLMsgResendReq {
-  repeated MsgResendReq data2 = 1;
+  optional MsgResendReq data2 = 1;
 }
 
 message MsgsAck {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  int64 msg_ids = 3;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  repeated int64 msg_ids = 3;
 }
 
 message TLMsgsAck {
-  repeated MsgsAck data2 = 1;
+  optional MsgsAck data2 = 1;
 }
 
 message MsgsAllInfo {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  int64 msg_ids = 3;
-  string info = 4;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  repeated int64 msg_ids = 3;
+  optional string info = 4;
 }
 
 message TLMsgsAllInfo {
-  repeated MsgsAllInfo data2 = 1;
+  optional MsgsAllInfo data2 = 1;
 }
 
 message MsgsStateInfo {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  int64 req_msg_id = 3;
-  string info = 4;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  optional int64 req_msg_id = 3;
+  optional string info = 4;
 }
 
 message TLMsgsStateInfo {
-  repeated MsgsStateInfo data2 = 1;
+  optional MsgsStateInfo data2 = 1;
 }
 
 message MsgsStateReq {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  int64 msg_ids = 3;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  repeated int64 msg_ids = 3;
 }
 
 message TLMsgsStateReq {
-  repeated MsgsStateReq data2 = 1;
+  optional MsgsStateReq data2 = 1;
 }
 
 message NewSession {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  int64 first_msg_id = 3;
-  int64 unique_id = 4;
-  int64 server_salt = 5;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  optional int64 first_msg_id = 3;
+  optional int64 unique_id = 4;
+  optional int64 server_salt = 5;
 }
 
 message TLNewSessionCreated {
-  repeated NewSession data2 = 1;
+  optional NewSession data2 = 1;
 }
 
 message Pong {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  int64 msg_id = 3;
-  int64 ping_id = 4;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  optional int64 msg_id = 3;
+  optional int64 ping_id = 4;
 }
 
 message TLPong {
-  repeated Pong data2 = 1;
+  optional Pong data2 = 1;
 }
 
 message RpcDropAnswer {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  int64 msg_id = 3;
-  int32 seq_no = 4;
-  int32 bytes = 5;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  optional int64 msg_id = 3;
+  optional int32 seq_no = 4;
+  optional int32 bytes = 5;
 }
 
 message TLRpcAnswerUnknown {
-  repeated RpcDropAnswer data2 = 1;
+  optional RpcDropAnswer data2 = 1;
 }
 
 message TLRpcAnswerDroppedRunning {
-  repeated RpcDropAnswer data2 = 1;
+  optional RpcDropAnswer data2 = 1;
 }
 
 message TLRpcAnswerDropped {
-  repeated RpcDropAnswer data2 = 1;
+  optional RpcDropAnswer data2 = 1;
 }
 
 message RpcError {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  int32 error_code = 3;
-  string error_message = 4;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  optional int32 error_code = 3;
+  optional string error_message = 4;
 }
 
 message TLRpcError {
-  repeated RpcError data2 = 1;
+  optional RpcError data2 = 1;
 }
 
 message TlsBlock {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  string data = 3;
-  int32 length = 4;
-  int32 seed = 5;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  optional string data = 3;
+  optional int32 length = 4;
+  optional int32 seed = 5;
   repeated TlsBlock entries = 6;
 }
 
 message TLTlsBlockString {
-  repeated TlsBlock data2 = 1;
+  optional TlsBlock data2 = 1;
 }
 
 message TLTlsBlockRandom {
-  repeated TlsBlock data2 = 1;
+  optional TlsBlock data2 = 1;
 }
 
 message TLTlsBlockZero {
-  repeated TlsBlock data2 = 1;
+  optional TlsBlock data2 = 1;
 }
 
 message TLTlsBlockDomain {
-  repeated TlsBlock data2 = 1;
+  optional TlsBlock data2 = 1;
 }
 
 message TLTlsBlockGrease {
-  repeated TlsBlock data2 = 1;
+  optional TlsBlock data2 = 1;
 }
 
 message TLTlsBlockPublicKey {
-  repeated TlsBlock data2 = 1;
+  optional TlsBlock data2 = 1;
 }
 
 message TLTlsBlockScope {
-  repeated TlsBlock data2 = 1;
+  optional TlsBlock data2 = 1;
 }
 
 message TlsClientHello {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
   repeated TlsBlock blocks = 3;
 }
 
 message TLTlsClientHello {
-  repeated TlsClientHello data2 = 1;
+  optional TlsClientHello data2 = 1;
 }
 
 message HelpConfigSimple {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  int32 date = 3;
-  int32 expires = 4;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  optional int32 date = 3;
+  optional int32 expires = 4;
   repeated AccessPointRule rules = 5;
 }
 
 message TLHelpConfigSimple {
-  repeated HelpConfigSimple data2 = 1;
+  optional HelpConfigSimple data2 = 1;
 }

@@ -3,22 +3,21 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { TLConstructor } from "./schema.tl.crc32_pb.js";
+import type { TLConstructor } from './schema.tl.crc32_pb.js'
 
 /**
  * @generated from message tech.monstrs.chats_system.core.v1alpha1.TLRpcDropAnswer
  */
 export interface TLRpcDropAnswer {
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 req_msg_id = 3;
+   * @generated from field: optional int64 req_msg_id = 3;
    */
-  reqMsgId: bigint;
-
+  reqMsgId?: bigint
 }
 
 /**
@@ -26,15 +25,14 @@ export interface TLRpcDropAnswer {
  */
 export interface TLGetFutureSalts {
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int32 num = 3;
+   * @generated from field: optional int32 num = 3;
    */
-  num: number;
-
+  num?: number
 }
 
 /**
@@ -42,15 +40,14 @@ export interface TLGetFutureSalts {
  */
 export interface TLPing {
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 ping_id = 3;
+   * @generated from field: optional int64 ping_id = 3;
    */
-  pingId: bigint;
-
+  pingId?: bigint
 }
 
 /**
@@ -58,20 +55,19 @@ export interface TLPing {
  */
 export interface TLPingDelayDisconnect {
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 ping_id = 3;
+   * @generated from field: optional int64 ping_id = 3;
    */
-  pingId: bigint;
+  pingId?: bigint
 
   /**
-   * @generated from field: int32 disconnect_delay = 4;
+   * @generated from field: optional int32 disconnect_delay = 4;
    */
-  disconnectDelay: number;
-
+  disconnectDelay?: number
 }
 
 /**
@@ -79,15 +75,14 @@ export interface TLPingDelayDisconnect {
  */
 export interface TLDestroySession {
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 session_id = 3;
+   * @generated from field: optional int64 session_id = 3;
    */
-  sessionId: bigint;
-
+  sessionId?: bigint
 }
 
 /**
@@ -95,10 +90,9 @@ export interface TLDestroySession {
  */
 export interface TLTestUseError {
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -106,9 +100,7 @@ export interface TLTestUseError {
  */
 export interface TLTestUseConfigSimple {
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor;
-
+  constructor$?: TLConstructor
 }
-

@@ -10,14 +10,14 @@ import type { TLConstructor } from './schema.tl.crc32_pb.js'
  */
 export interface Bool {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 }
 
 /**
@@ -25,9 +25,9 @@ export interface Bool {
  */
 export interface TLBoolFalse {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Bool data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool data2 = 1;
    */
-  data2: Bool[]
+  data2?: Bool
 }
 
 /**
@@ -35,9 +35,9 @@ export interface TLBoolFalse {
  */
 export interface TLBoolTrue {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Bool data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool data2 = 1;
    */
-  data2: Bool[]
+  data2?: Bool
 }
 
 /**
@@ -45,19 +45,19 @@ export interface TLBoolTrue {
  */
 export interface Double {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: float v = 3;
+   * @generated from field: optional float v = 3;
    */
-  v: number
+  v?: number
 }
 
 /**
@@ -65,9 +65,9 @@ export interface Double {
  */
 export interface TLDouble {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Double data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Double data2 = 1;
    */
-  data2: Double[]
+  data2?: Double
 }
 
 /**
@@ -75,24 +75,24 @@ export interface TLDouble {
  */
 export interface Error {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int32 code = 3;
+   * @generated from field: optional int32 code = 3;
    */
-  code: number
+  code?: number
 
   /**
-   * @generated from field: string text = 4;
+   * @generated from field: optional string text = 4;
    */
-  text: string
+  text?: string
 }
 
 /**
@@ -100,9 +100,9 @@ export interface Error {
  */
 export interface TLError {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Error data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Error data2 = 1;
    */
-  data2: Error[]
+  data2?: Error
 }
 
 /**
@@ -110,19 +110,19 @@ export interface TLError {
  */
 export interface Int32 {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int32 v = 3;
+   * @generated from field: optional int32 v = 3;
    */
-  v: number
+  v?: number
 }
 
 /**
@@ -130,9 +130,9 @@ export interface Int32 {
  */
 export interface TLInt32 {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Int32 data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Int32 data2 = 1;
    */
-  data2: Int32[]
+  data2?: Int32
 }
 
 /**
@@ -140,19 +140,19 @@ export interface TLInt32 {
  */
 export interface Int64 {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 v = 3;
+   * @generated from field: optional int64 v = 3;
    */
-  v: bigint
+  v?: bigint
 }
 
 /**
@@ -160,9 +160,9 @@ export interface Int64 {
  */
 export interface TLLong {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Int64 data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Int64 data2 = 1;
    */
-  data2: Int64[]
+  data2?: Int64
 }
 
 /**
@@ -170,9 +170,9 @@ export interface TLLong {
  */
 export interface TLInt64 {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Int64 data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Int64 data2 = 1;
    */
-  data2: Int64[]
+  data2?: Int64
 }
 
 /**
@@ -180,14 +180,14 @@ export interface TLInt64 {
  */
 export interface Null {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 }
 
 /**
@@ -195,9 +195,9 @@ export interface Null {
  */
 export interface TLNull {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Null data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Null data2 = 1;
    */
-  data2: Null[]
+  data2?: Null
 }
 
 /**
@@ -205,19 +205,19 @@ export interface TLNull {
  */
 export interface String {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: string v = 3;
+   * @generated from field: optional string v = 3;
    */
-  v: string
+  v?: string
 }
 
 /**
@@ -225,9 +225,9 @@ export interface String {
  */
 export interface TLString {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.String data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.String data2 = 1;
    */
-  data2: String[]
+  data2?: String
 }
 
 /**
@@ -235,14 +235,14 @@ export interface TLString {
  */
 export interface True {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 }
 
 /**
@@ -250,7 +250,7 @@ export interface True {
  */
 export interface TLTrue {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.True data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.True data2 = 1;
    */
-  data2: True[]
+  data2?: True
 }

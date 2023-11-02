@@ -3,26 +3,18 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions }                                                                      from '@bufbuild/protobuf'
+import type { BinaryReadOptions } from '@bufbuild/protobuf'
+import type { FieldList }         from '@bufbuild/protobuf'
+import type { JsonReadOptions }   from '@bufbuild/protobuf'
+import type { JsonValue }         from '@bufbuild/protobuf'
+import type { PartialMessage }    from '@bufbuild/protobuf'
+import type { PlainMessage }      from '@bufbuild/protobuf'
 
-import type { FieldList }                                                           from '@bufbuild/protobuf'
+import { Message }                from '@bufbuild/protobuf'
+import { proto3 }                 from '@bufbuild/protobuf'
 
-import type { JsonReadOptions }                                          from '@bufbuild/protobuf'
-
-import type { JsonValue }                               from '@bufbuild/protobuf'
-
-import type { PartialMessage }               from '@bufbuild/protobuf'
-
-import type { PlainMessage } from '@bufbuild/protobuf'
-
-import { Message }                                                                                     from '@bufbuild/protobuf'
-
-import { proto3 }                                                                             from '@bufbuild/protobuf'
-
-import { protoInt64 }                                                                 from '@bufbuild/protobuf'
-
-import { AuthKeyInfo }                                                                                 from '../../core/v1alpha1/schema.tl.sync_pb.js'
-import { FutureSalt }                                                                                  from '../../core/v1alpha1/schema.tl.transport_pb.js'
+import { AuthKeyInfo }            from '../../core/v1alpha1/schema.tl.sync_pb.js'
+import { FutureSalt }             from '../../core/v1alpha1/schema.tl.transport_pb.js'
 
 /**
  * @generated from enum tech.monstrs.chats_system.auth.v1alpha1.TLConstructor
@@ -175,44 +167,44 @@ proto3.util.setEnumType(TLConstructor, 'tech.monstrs.chats_system.auth.v1alpha1.
  */
 export class AuthKeyStateData extends Message<AuthKeyStateData> {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName = ''
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId = protoInt64.zero
+  authKeyId?: bigint
 
   /**
-   * @generated from field: int64 user_id = 4;
+   * @generated from field: optional int64 user_id = 4;
    */
-  userId = protoInt64.zero
+  userId?: bigint
 
   /**
-   * @generated from field: int32 key_state = 5;
+   * @generated from field: optional int32 key_state = 5;
    */
-  keyState = 0
+  keyState?: number
 
   /**
-   * @generated from field: int32 layer = 6;
+   * @generated from field: optional int32 layer = 6;
    */
-  layer = 0
+  layer?: number
 
   /**
-   * @generated from field: int32 client_type = 7;
+   * @generated from field: optional int32 client_type = 7;
    */
-  clientType = 0
+  clientType?: number
 
   /**
-   * @generated from field: int64 android_push_session_id = 8;
+   * @generated from field: optional int64 android_push_session_id = 8;
    */
-  androidPushSessionId = protoInt64.zero
+  androidPushSessionId?: bigint
 
   constructor(data?: PartialMessage<AuthKeyStateData>) {
     super()
@@ -222,14 +214,20 @@ export class AuthKeyStateData extends Message<AuthKeyStateData> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.AuthKeyStateData'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 4, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 5, name: 'key_state', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 6, name: 'layer', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 7, name: 'client_type', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 8, name: 'android_push_session_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 4, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 5, name: 'key_state', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 6, name: 'layer', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 7, name: 'client_type', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
+    {
+      no: 8,
+      name: 'android_push_session_id',
+      kind: 'scalar',
+      T: 3 /* ScalarType.INT64 */,
+      opt: true,
+    },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AuthKeyStateData {
@@ -257,9 +255,9 @@ export class AuthKeyStateData extends Message<AuthKeyStateData> {
  */
 export class TLAuthKeyStateData extends Message<TLAuthKeyStateData> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.auth.v1alpha1.AuthKeyStateData data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.AuthKeyStateData data2 = 1;
    */
-  data2: AuthKeyStateData[] = []
+  data2?: AuthKeyStateData
 
   constructor(data?: PartialMessage<TLAuthKeyStateData>) {
     super()
@@ -269,7 +267,7 @@ export class TLAuthKeyStateData extends Message<TLAuthKeyStateData> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.TLAuthKeyStateData'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: AuthKeyStateData, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: AuthKeyStateData, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLAuthKeyStateData {
@@ -300,74 +298,74 @@ export class TLAuthKeyStateData extends Message<TLAuthKeyStateData> {
  */
 export class ClientSession extends Message<ClientSession> {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName = ''
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId = protoInt64.zero
+  authKeyId?: bigint
 
   /**
-   * @generated from field: string ip = 4;
+   * @generated from field: optional string ip = 4;
    */
-  ip = ''
+  ip?: string
 
   /**
-   * @generated from field: int32 layer = 5;
+   * @generated from field: optional int32 layer = 5;
    */
-  layer = 0
+  layer?: number
 
   /**
-   * @generated from field: int32 api_id = 6;
+   * @generated from field: optional int32 api_id = 6;
    */
-  apiId = 0
+  apiId?: number
 
   /**
-   * @generated from field: string device_model = 7;
+   * @generated from field: optional string device_model = 7;
    */
-  deviceModel = ''
+  deviceModel?: string
 
   /**
-   * @generated from field: string system_version = 8;
+   * @generated from field: optional string system_version = 8;
    */
-  systemVersion = ''
+  systemVersion?: string
 
   /**
-   * @generated from field: string app_version = 9;
+   * @generated from field: optional string app_version = 9;
    */
-  appVersion = ''
+  appVersion?: string
 
   /**
-   * @generated from field: string system_lang_code = 10;
+   * @generated from field: optional string system_lang_code = 10;
    */
-  systemLangCode = ''
+  systemLangCode?: string
 
   /**
-   * @generated from field: string lang_pack = 11;
+   * @generated from field: optional string lang_pack = 11;
    */
-  langPack = ''
+  langPack?: string
 
   /**
-   * @generated from field: string lang_code = 12;
+   * @generated from field: optional string lang_code = 12;
    */
-  langCode = ''
+  langCode?: string
 
   /**
-   * @generated from field: string proxy = 13;
+   * @generated from field: optional string proxy = 13;
    */
-  proxy = ''
+  proxy?: string
 
   /**
-   * @generated from field: string params = 14;
+   * @generated from field: optional string params = 14;
    */
-  params = ''
+  params?: string
 
   constructor(data?: PartialMessage<ClientSession>) {
     super()
@@ -377,20 +375,20 @@ export class ClientSession extends Message<ClientSession> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.ClientSession'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 4, name: 'ip', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: 'layer', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 6, name: 'api_id', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 7, name: 'device_model', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 8, name: 'system_version', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 9, name: 'app_version', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 10, name: 'system_lang_code', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 11, name: 'lang_pack', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 12, name: 'lang_code', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 13, name: 'proxy', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 14, name: 'params', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 4, name: 'ip', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 5, name: 'layer', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 6, name: 'api_id', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 7, name: 'device_model', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 8, name: 'system_version', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 9, name: 'app_version', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 10, name: 'system_lang_code', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 11, name: 'lang_pack', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 12, name: 'lang_code', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 13, name: 'proxy', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 14, name: 'params', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClientSession {
@@ -418,9 +416,9 @@ export class ClientSession extends Message<ClientSession> {
  */
 export class TLClientSession extends Message<TLClientSession> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.auth.v1alpha1.ClientSession data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.ClientSession data2 = 1;
    */
-  data2: ClientSession[] = []
+  data2?: ClientSession
 
   constructor(data?: PartialMessage<TLClientSession>) {
     super()
@@ -430,7 +428,7 @@ export class TLClientSession extends Message<TLClientSession> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.TLClientSession'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: ClientSession, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: ClientSession, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLClientSession {
@@ -458,19 +456,19 @@ export class TLClientSession extends Message<TLClientSession> {
  */
 export class TLAuthsessionGetAuthorizations extends Message<TLAuthsessionGetAuthorizations> {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 user_id = 3;
+   * @generated from field: optional int64 user_id = 3;
    */
-  userId = protoInt64.zero
+  userId?: bigint
 
   /**
-   * @generated from field: int64 exclude_auth_keyId = 4;
+   * @generated from field: optional int64 exclude_auth_keyId = 4;
    */
-  excludeAuthKeyId = protoInt64.zero
+  excludeAuthKeyId?: bigint
 
   constructor(data?: PartialMessage<TLAuthsessionGetAuthorizations>) {
     super()
@@ -481,9 +479,9 @@ export class TLAuthsessionGetAuthorizations extends Message<TLAuthsessionGetAuth
   static readonly typeName =
     'tech.monstrs.chats_system.auth.v1alpha1.TLAuthsessionGetAuthorizations'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 4, name: 'exclude_auth_keyId', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 4, name: 'exclude_auth_keyId', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
   ])
 
   static fromBinary(
@@ -520,24 +518,24 @@ export class TLAuthsessionGetAuthorizations extends Message<TLAuthsessionGetAuth
  */
 export class TLAuthsessionResetAuthorization extends Message<TLAuthsessionResetAuthorization> {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 user_id = 3;
+   * @generated from field: optional int64 user_id = 3;
    */
-  userId = protoInt64.zero
+  userId?: bigint
 
   /**
-   * @generated from field: int64 auth_key_id = 4;
+   * @generated from field: optional int64 auth_key_id = 4;
    */
-  authKeyId = protoInt64.zero
+  authKeyId?: bigint
 
   /**
-   * @generated from field: int64 hash = 5;
+   * @generated from field: optional int64 hash = 5;
    */
-  hash = protoInt64.zero
+  hash?: bigint
 
   constructor(data?: PartialMessage<TLAuthsessionResetAuthorization>) {
     super()
@@ -548,10 +546,10 @@ export class TLAuthsessionResetAuthorization extends Message<TLAuthsessionResetA
   static readonly typeName =
     'tech.monstrs.chats_system.auth.v1alpha1.TLAuthsessionResetAuthorization'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 4, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 5, name: 'hash', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 4, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 5, name: 'hash', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
   ])
 
   static fromBinary(
@@ -588,14 +586,14 @@ export class TLAuthsessionResetAuthorization extends Message<TLAuthsessionResetA
  */
 export class TLAuthsessionGetLayer extends Message<TLAuthsessionGetLayer> {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId = protoInt64.zero
+  authKeyId?: bigint
 
   constructor(data?: PartialMessage<TLAuthsessionGetLayer>) {
     super()
@@ -605,8 +603,8 @@ export class TLAuthsessionGetLayer extends Message<TLAuthsessionGetLayer> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.TLAuthsessionGetLayer'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
   ])
 
   static fromBinary(
@@ -640,14 +638,14 @@ export class TLAuthsessionGetLayer extends Message<TLAuthsessionGetLayer> {
  */
 export class TLAuthsessionGetLangPack extends Message<TLAuthsessionGetLangPack> {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId = protoInt64.zero
+  authKeyId?: bigint
 
   constructor(data?: PartialMessage<TLAuthsessionGetLangPack>) {
     super()
@@ -657,8 +655,8 @@ export class TLAuthsessionGetLangPack extends Message<TLAuthsessionGetLangPack> 
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.TLAuthsessionGetLangPack'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
   ])
 
   static fromBinary(
@@ -695,14 +693,14 @@ export class TLAuthsessionGetLangPack extends Message<TLAuthsessionGetLangPack> 
  */
 export class TLAuthsessionGetClient extends Message<TLAuthsessionGetClient> {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId = protoInt64.zero
+  authKeyId?: bigint
 
   constructor(data?: PartialMessage<TLAuthsessionGetClient>) {
     super()
@@ -712,8 +710,8 @@ export class TLAuthsessionGetClient extends Message<TLAuthsessionGetClient> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.TLAuthsessionGetClient'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
   ])
 
   static fromBinary(
@@ -750,14 +748,14 @@ export class TLAuthsessionGetClient extends Message<TLAuthsessionGetClient> {
  */
 export class TLAuthsessionGetLangCode extends Message<TLAuthsessionGetLangCode> {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId = protoInt64.zero
+  authKeyId?: bigint
 
   constructor(data?: PartialMessage<TLAuthsessionGetLangCode>) {
     super()
@@ -767,8 +765,8 @@ export class TLAuthsessionGetLangCode extends Message<TLAuthsessionGetLangCode> 
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.TLAuthsessionGetLangCode'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
   ])
 
   static fromBinary(
@@ -805,14 +803,14 @@ export class TLAuthsessionGetLangCode extends Message<TLAuthsessionGetLangCode> 
  */
 export class TLAuthsessionGetUserId extends Message<TLAuthsessionGetUserId> {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId = protoInt64.zero
+  authKeyId?: bigint
 
   constructor(data?: PartialMessage<TLAuthsessionGetUserId>) {
     super()
@@ -822,8 +820,8 @@ export class TLAuthsessionGetUserId extends Message<TLAuthsessionGetUserId> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.TLAuthsessionGetUserId'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
   ])
 
   static fromBinary(
@@ -860,24 +858,24 @@ export class TLAuthsessionGetUserId extends Message<TLAuthsessionGetUserId> {
  */
 export class TLAuthsessionGetPushSessionId extends Message<TLAuthsessionGetPushSessionId> {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 user_id = 3;
+   * @generated from field: optional int64 user_id = 3;
    */
-  userId = protoInt64.zero
+  userId?: bigint
 
   /**
-   * @generated from field: int64 auth_key_id = 4;
+   * @generated from field: optional int64 auth_key_id = 4;
    */
-  authKeyId = protoInt64.zero
+  authKeyId?: bigint
 
   /**
-   * @generated from field: int32 token_type = 5;
+   * @generated from field: optional int32 token_type = 5;
    */
-  tokenType = 0
+  tokenType?: number
 
   constructor(data?: PartialMessage<TLAuthsessionGetPushSessionId>) {
     super()
@@ -887,10 +885,10 @@ export class TLAuthsessionGetPushSessionId extends Message<TLAuthsessionGetPushS
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.TLAuthsessionGetPushSessionId'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 4, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 5, name: 'token_type', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 4, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 5, name: 'token_type', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
   ])
 
   static fromBinary(
@@ -927,19 +925,19 @@ export class TLAuthsessionGetPushSessionId extends Message<TLAuthsessionGetPushS
  */
 export class TLAuthsessionGetFutureSalts extends Message<TLAuthsessionGetFutureSalts> {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId = protoInt64.zero
+  authKeyId?: bigint
 
   /**
-   * @generated from field: int32 num = 4;
+   * @generated from field: optional int32 num = 4;
    */
-  num = 0
+  num?: number
 
   constructor(data?: PartialMessage<TLAuthsessionGetFutureSalts>) {
     super()
@@ -949,9 +947,9 @@ export class TLAuthsessionGetFutureSalts extends Message<TLAuthsessionGetFutureS
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.TLAuthsessionGetFutureSalts'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 4, name: 'num', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 4, name: 'num', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
   ])
 
   static fromBinary(
@@ -988,14 +986,14 @@ export class TLAuthsessionGetFutureSalts extends Message<TLAuthsessionGetFutureS
  */
 export class TLAuthsessionQueryAuthKey extends Message<TLAuthsessionQueryAuthKey> {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId = protoInt64.zero
+  authKeyId?: bigint
 
   constructor(data?: PartialMessage<TLAuthsessionQueryAuthKey>) {
     super()
@@ -1005,8 +1003,8 @@ export class TLAuthsessionQueryAuthKey extends Message<TLAuthsessionQueryAuthKey
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.TLAuthsessionQueryAuthKey'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
   ])
 
   static fromBinary(
@@ -1043,24 +1041,24 @@ export class TLAuthsessionQueryAuthKey extends Message<TLAuthsessionQueryAuthKey
  */
 export class TLAuthsessionSetAuthKey extends Message<TLAuthsessionSetAuthKey> {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.AuthKeyInfo auth_key = 3;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthKeyInfo auth_key = 3;
    */
-  authKey: AuthKeyInfo[] = []
+  authKey?: AuthKeyInfo
 
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.FutureSalt future_salt = 4;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.FutureSalt future_salt = 4;
    */
-  futureSalt: FutureSalt[] = []
+  futureSalt?: FutureSalt
 
   /**
-   * @generated from field: int32 expires_in = 5;
+   * @generated from field: optional int32 expires_in = 5;
    */
-  expiresIn = 0
+  expiresIn?: number
 
   constructor(data?: PartialMessage<TLAuthsessionSetAuthKey>) {
     super()
@@ -1070,10 +1068,10 @@ export class TLAuthsessionSetAuthKey extends Message<TLAuthsessionSetAuthKey> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.TLAuthsessionSetAuthKey'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'auth_key', kind: 'message', T: AuthKeyInfo, repeated: true },
-    { no: 4, name: 'future_salt', kind: 'message', T: FutureSalt, repeated: true },
-    { no: 5, name: 'expires_in', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key', kind: 'message', T: AuthKeyInfo, opt: true },
+    { no: 4, name: 'future_salt', kind: 'message', T: FutureSalt, opt: true },
+    { no: 5, name: 'expires_in', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
   ])
 
   static fromBinary(
@@ -1110,19 +1108,19 @@ export class TLAuthsessionSetAuthKey extends Message<TLAuthsessionSetAuthKey> {
  */
 export class TLAuthsessionBindAuthKeyUser extends Message<TLAuthsessionBindAuthKeyUser> {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId = protoInt64.zero
+  authKeyId?: bigint
 
   /**
-   * @generated from field: int64 user_id = 4;
+   * @generated from field: optional int64 user_id = 4;
    */
-  userId = protoInt64.zero
+  userId?: bigint
 
   constructor(data?: PartialMessage<TLAuthsessionBindAuthKeyUser>) {
     super()
@@ -1132,9 +1130,9 @@ export class TLAuthsessionBindAuthKeyUser extends Message<TLAuthsessionBindAuthK
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.TLAuthsessionBindAuthKeyUser'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 4, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 4, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
   ])
 
   static fromBinary(
@@ -1171,19 +1169,19 @@ export class TLAuthsessionBindAuthKeyUser extends Message<TLAuthsessionBindAuthK
  */
 export class TLAuthsessionUnbindAuthKeyUser extends Message<TLAuthsessionUnbindAuthKeyUser> {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId = protoInt64.zero
+  authKeyId?: bigint
 
   /**
-   * @generated from field: int64 user_id = 4;
+   * @generated from field: optional int64 user_id = 4;
    */
-  userId = protoInt64.zero
+  userId?: bigint
 
   constructor(data?: PartialMessage<TLAuthsessionUnbindAuthKeyUser>) {
     super()
@@ -1194,9 +1192,9 @@ export class TLAuthsessionUnbindAuthKeyUser extends Message<TLAuthsessionUnbindA
   static readonly typeName =
     'tech.monstrs.chats_system.auth.v1alpha1.TLAuthsessionUnbindAuthKeyUser'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 4, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 4, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
   ])
 
   static fromBinary(
@@ -1233,14 +1231,14 @@ export class TLAuthsessionUnbindAuthKeyUser extends Message<TLAuthsessionUnbindA
  */
 export class TLAuthsessionGetPermAuthKeyId extends Message<TLAuthsessionGetPermAuthKeyId> {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId = protoInt64.zero
+  authKeyId?: bigint
 
   constructor(data?: PartialMessage<TLAuthsessionGetPermAuthKeyId>) {
     super()
@@ -1250,8 +1248,8 @@ export class TLAuthsessionGetPermAuthKeyId extends Message<TLAuthsessionGetPermA
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.TLAuthsessionGetPermAuthKeyId'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
   ])
 
   static fromBinary(
@@ -1288,29 +1286,29 @@ export class TLAuthsessionGetPermAuthKeyId extends Message<TLAuthsessionGetPermA
  */
 export class TLAuthsessionBindTempAuthKey extends Message<TLAuthsessionBindTempAuthKey> {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 perm_auth_key_id = 3;
+   * @generated from field: optional int64 perm_auth_key_id = 3;
    */
-  permAuthKeyId = protoInt64.zero
+  permAuthKeyId?: bigint
 
   /**
-   * @generated from field: int64 nonce = 4;
+   * @generated from field: optional int64 nonce = 4;
    */
-  nonce = protoInt64.zero
+  nonce?: bigint
 
   /**
-   * @generated from field: int32 expires_at = 5;
+   * @generated from field: optional int32 expires_at = 5;
    */
-  expiresAt = 0
+  expiresAt?: number
 
   /**
-   * @generated from field: bytes encrypted_message = 6;
+   * @generated from field: optional bytes encrypted_message = 6;
    */
-  encryptedMessage = new Uint8Array(0)
+  encryptedMessage?: Uint8Array
 
   constructor(data?: PartialMessage<TLAuthsessionBindTempAuthKey>) {
     super()
@@ -1320,11 +1318,11 @@ export class TLAuthsessionBindTempAuthKey extends Message<TLAuthsessionBindTempA
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.TLAuthsessionBindTempAuthKey'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'perm_auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 4, name: 'nonce', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 5, name: 'expires_at', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 6, name: 'encrypted_message', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'perm_auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 4, name: 'nonce', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 5, name: 'expires_at', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 6, name: 'encrypted_message', kind: 'scalar', T: 12 /* ScalarType.BYTES */, opt: true },
   ])
 
   static fromBinary(
@@ -1361,14 +1359,14 @@ export class TLAuthsessionBindTempAuthKey extends Message<TLAuthsessionBindTempA
  */
 export class TLAuthsessionSetClientSessionInfo extends Message<TLAuthsessionSetClientSessionInfo> {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.auth.v1alpha1.ClientSession data = 3;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.ClientSession data = 3;
    */
-  data: ClientSession[] = []
+  data?: ClientSession
 
   constructor(data?: PartialMessage<TLAuthsessionSetClientSessionInfo>) {
     super()
@@ -1379,8 +1377,8 @@ export class TLAuthsessionSetClientSessionInfo extends Message<TLAuthsessionSetC
   static readonly typeName =
     'tech.monstrs.chats_system.auth.v1alpha1.TLAuthsessionSetClientSessionInfo'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'data', kind: 'message', T: ClientSession, repeated: true },
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'data', kind: 'message', T: ClientSession, opt: true },
   ])
 
   static fromBinary(
@@ -1423,14 +1421,14 @@ export class TLAuthsessionSetClientSessionInfo extends Message<TLAuthsessionSetC
  */
 export class TLAuthsessionGetAuthorization extends Message<TLAuthsessionGetAuthorization> {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId = protoInt64.zero
+  authKeyId?: bigint
 
   constructor(data?: PartialMessage<TLAuthsessionGetAuthorization>) {
     super()
@@ -1440,8 +1438,8 @@ export class TLAuthsessionGetAuthorization extends Message<TLAuthsessionGetAutho
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.TLAuthsessionGetAuthorization'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
   ])
 
   static fromBinary(
@@ -1478,14 +1476,14 @@ export class TLAuthsessionGetAuthorization extends Message<TLAuthsessionGetAutho
  */
 export class TLAuthsessionGetAuthStateData extends Message<TLAuthsessionGetAuthStateData> {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId = protoInt64.zero
+  authKeyId?: bigint
 
   constructor(data?: PartialMessage<TLAuthsessionGetAuthStateData>) {
     super()
@@ -1495,8 +1493,8 @@ export class TLAuthsessionGetAuthStateData extends Message<TLAuthsessionGetAuthS
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.TLAuthsessionGetAuthStateData'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
   ])
 
   static fromBinary(
@@ -1533,24 +1531,24 @@ export class TLAuthsessionGetAuthStateData extends Message<TLAuthsessionGetAuthS
  */
 export class TLAuthsessionSetLayer extends Message<TLAuthsessionSetLayer> {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId = protoInt64.zero
+  authKeyId?: bigint
 
   /**
-   * @generated from field: string ip = 4;
+   * @generated from field: optional string ip = 4;
    */
-  ip = ''
+  ip?: string
 
   /**
-   * @generated from field: int32 layer = 5;
+   * @generated from field: optional int32 layer = 5;
    */
-  layer = 0
+  layer?: number
 
   constructor(data?: PartialMessage<TLAuthsessionSetLayer>) {
     super()
@@ -1560,10 +1558,10 @@ export class TLAuthsessionSetLayer extends Message<TLAuthsessionSetLayer> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.TLAuthsessionSetLayer'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 4, name: 'ip', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: 'layer', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 4, name: 'ip', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 5, name: 'layer', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
   ])
 
   static fromBinary(
@@ -1597,64 +1595,64 @@ export class TLAuthsessionSetLayer extends Message<TLAuthsessionSetLayer> {
  */
 export class TLAuthsessionSetInitConnection extends Message<TLAuthsessionSetInitConnection> {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId = protoInt64.zero
+  authKeyId?: bigint
 
   /**
-   * @generated from field: string ip = 4;
+   * @generated from field: optional string ip = 4;
    */
-  ip = ''
+  ip?: string
 
   /**
-   * @generated from field: int32 api_id = 5;
+   * @generated from field: optional int32 api_id = 5;
    */
-  apiId = 0
+  apiId?: number
 
   /**
-   * @generated from field: string device_model = 6;
+   * @generated from field: optional string device_model = 6;
    */
-  deviceModel = ''
+  deviceModel?: string
 
   /**
-   * @generated from field: string system_version = 7;
+   * @generated from field: optional string system_version = 7;
    */
-  systemVersion = ''
+  systemVersion?: string
 
   /**
-   * @generated from field: string app_version = 8;
+   * @generated from field: optional string app_version = 8;
    */
-  appVersion = ''
+  appVersion?: string
 
   /**
-   * @generated from field: string system_lang_code = 9;
+   * @generated from field: optional string system_lang_code = 9;
    */
-  systemLangCode = ''
+  systemLangCode?: string
 
   /**
-   * @generated from field: string lang_pack = 10;
+   * @generated from field: optional string lang_pack = 10;
    */
-  langPack = ''
+  langPack?: string
 
   /**
-   * @generated from field: string lang_code = 11;
+   * @generated from field: optional string lang_code = 11;
    */
-  langCode = ''
+  langCode?: string
 
   /**
-   * @generated from field: string proxy = 12;
+   * @generated from field: optional string proxy = 12;
    */
-  proxy = ''
+  proxy?: string
 
   /**
-   * @generated from field: string params = 13;
+   * @generated from field: optional string params = 13;
    */
-  params = ''
+  params?: string
 
   constructor(data?: PartialMessage<TLAuthsessionSetInitConnection>) {
     super()
@@ -1665,18 +1663,18 @@ export class TLAuthsessionSetInitConnection extends Message<TLAuthsessionSetInit
   static readonly typeName =
     'tech.monstrs.chats_system.auth.v1alpha1.TLAuthsessionSetInitConnection'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 4, name: 'ip', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: 'api_id', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 6, name: 'device_model', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 7, name: 'system_version', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 8, name: 'app_version', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 9, name: 'system_lang_code', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 10, name: 'lang_pack', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 11, name: 'lang_code', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 12, name: 'proxy', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 13, name: 'params', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 4, name: 'ip', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 5, name: 'api_id', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 6, name: 'device_model', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 7, name: 'system_version', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 8, name: 'app_version', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 9, name: 'system_lang_code', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 10, name: 'lang_pack', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 11, name: 'lang_code', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 12, name: 'proxy', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 13, name: 'params', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
   ])
 
   static fromBinary(
@@ -1713,9 +1711,9 @@ export class TLAuthsessionSetInitConnection extends Message<TLAuthsessionSetInit
  */
 export class VectorLong extends Message<VectorLong> {
   /**
-   * @generated from field: int64 datas = 1;
+   * @generated from field: repeated int64 datas = 1;
    */
-  datas = protoInt64.zero
+  datas: bigint[] = []
 
   constructor(data?: PartialMessage<VectorLong>) {
     super()
@@ -1725,7 +1723,7 @@ export class VectorLong extends Message<VectorLong> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.VectorLong'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'datas', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: 'datas', kind: 'scalar', T: 3 /* ScalarType.INT64 */, repeated: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VectorLong {

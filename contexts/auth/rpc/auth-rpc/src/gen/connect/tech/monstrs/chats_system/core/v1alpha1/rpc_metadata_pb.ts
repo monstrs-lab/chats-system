@@ -3,37 +3,29 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions }                                                                      from '@bufbuild/protobuf'
+import type { BinaryReadOptions } from '@bufbuild/protobuf'
+import type { FieldList }         from '@bufbuild/protobuf'
+import type { JsonReadOptions }   from '@bufbuild/protobuf'
+import type { JsonValue }         from '@bufbuild/protobuf'
+import type { PartialMessage }    from '@bufbuild/protobuf'
+import type { PlainMessage }      from '@bufbuild/protobuf'
 
-import type { FieldList }                                                           from '@bufbuild/protobuf'
-
-import type { JsonReadOptions }                                          from '@bufbuild/protobuf'
-
-import type { JsonValue }                               from '@bufbuild/protobuf'
-
-import type { PartialMessage }               from '@bufbuild/protobuf'
-
-import type { PlainMessage } from '@bufbuild/protobuf'
-
-import { Message }                                                                                     from '@bufbuild/protobuf'
-
-import { proto3 }                                                                             from '@bufbuild/protobuf'
-
-import { protoInt64 }                                                                 from '@bufbuild/protobuf'
+import { Message }                from '@bufbuild/protobuf'
+import { proto3 }                 from '@bufbuild/protobuf'
 
 /**
  * @generated from message metadata.TakeoutMessageRange
  */
 export class TakeoutMessageRange extends Message<TakeoutMessageRange> {
   /**
-   * @generated from field: int32 min_id = 1;
+   * @generated from field: optional int32 min_id = 1;
    */
-  minId = 0
+  minId?: number
 
   /**
-   * @generated from field: int32 max_id = 2;
+   * @generated from field: optional int32 max_id = 2;
    */
-  maxId = 0
+  maxId?: number
 
   constructor(data?: PartialMessage<TakeoutMessageRange>) {
     super()
@@ -43,8 +35,8 @@ export class TakeoutMessageRange extends Message<TakeoutMessageRange> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'metadata.TakeoutMessageRange'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'min_id', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: 'max_id', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: 'min_id', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 2, name: 'max_id', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TakeoutMessageRange {
@@ -75,14 +67,14 @@ export class TakeoutMessageRange extends Message<TakeoutMessageRange> {
  */
 export class Takeout extends Message<Takeout> {
   /**
-   * @generated from field: int64 id = 1;
+   * @generated from field: optional int64 id = 1;
    */
-  id = protoInt64.zero
+  id?: bigint
 
   /**
-   * @generated from field: repeated metadata.TakeoutMessageRange range = 2;
+   * @generated from field: optional metadata.TakeoutMessageRange range = 2;
    */
-  range: TakeoutMessageRange[] = []
+  range?: TakeoutMessageRange
 
   constructor(data?: PartialMessage<Takeout>) {
     super()
@@ -92,8 +84,8 @@ export class Takeout extends Message<Takeout> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'metadata.Takeout'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: 'range', kind: 'message', T: TakeoutMessageRange, repeated: true },
+    { no: 1, name: 'id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 2, name: 'range', kind: 'message', T: TakeoutMessageRange, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Takeout {
@@ -121,74 +113,74 @@ export class Takeout extends Message<Takeout> {
  */
 export class RpcMetadata extends Message<RpcMetadata> {
   /**
-   * @generated from field: string server_id = 1;
+   * @generated from field: optional string server_id = 1;
    */
-  serverId = ''
+  serverId?: string
 
   /**
-   * @generated from field: string client_addr = 3;
+   * @generated from field: optional string client_addr = 3;
    */
-  clientAddr = ''
+  clientAddr?: string
 
   /**
-   * @generated from field: int64 auth_id = 4;
+   * @generated from field: optional int64 auth_id = 4;
    */
-  authId = protoInt64.zero
+  authId?: bigint
 
   /**
-   * @generated from field: int64 session_id = 5;
+   * @generated from field: optional int64 session_id = 5;
    */
-  sessionId = protoInt64.zero
+  sessionId?: bigint
 
   /**
-   * @generated from field: int64 receive_time = 8;
+   * @generated from field: optional int64 receive_time = 8;
    */
-  receiveTime = protoInt64.zero
+  receiveTime?: bigint
 
   /**
-   * @generated from field: int64 user_id = 11;
+   * @generated from field: optional int64 user_id = 11;
    */
-  userId = protoInt64.zero
+  userId?: bigint
 
   /**
-   * @generated from field: int64 client_msg_id = 12;
+   * @generated from field: optional int64 client_msg_id = 12;
    */
-  clientMsgId = protoInt64.zero
+  clientMsgId?: bigint
 
   /**
-   * @generated from field: bool is_bot = 13;
+   * @generated from field: optional bool is_bot = 13;
    */
-  isBot = false
+  isBot?: boolean
 
   /**
-   * @generated from field: int32 layer = 14;
+   * @generated from field: optional int32 layer = 14;
    */
-  layer = 0
+  layer?: number
 
   /**
-   * @generated from field: string client = 15;
+   * @generated from field: optional string client = 15;
    */
-  client = ''
+  client?: string
 
   /**
-   * @generated from field: bool is_admin = 16;
+   * @generated from field: optional bool is_admin = 16;
    */
-  isAdmin = false
+  isAdmin?: boolean
 
   /**
-   * @generated from field: repeated metadata.Takeout takeout = 20;
+   * @generated from field: optional metadata.Takeout takeout = 20;
    */
-  takeout: Takeout[] = []
+  takeout?: Takeout
 
   /**
-   * @generated from field: string langpack = 21;
+   * @generated from field: optional string langpack = 21;
    */
-  langpack = ''
+  langpack?: string
 
   /**
-   * @generated from field: int64 perm_auth_key_id = 22;
+   * @generated from field: optional int64 perm_auth_key_id = 22;
    */
-  permAuthKeyId = protoInt64.zero
+  permAuthKeyId?: bigint
 
   constructor(data?: PartialMessage<RpcMetadata>) {
     super()
@@ -198,20 +190,20 @@ export class RpcMetadata extends Message<RpcMetadata> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'metadata.RpcMetadata'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'server_id', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: 'client_addr', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: 'auth_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 5, name: 'session_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 8, name: 'receive_time', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 11, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 12, name: 'client_msg_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 13, name: 'is_bot', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
-    { no: 14, name: 'layer', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 15, name: 'client', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 16, name: 'is_admin', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
-    { no: 20, name: 'takeout', kind: 'message', T: Takeout, repeated: true },
-    { no: 21, name: 'langpack', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 22, name: 'perm_auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: 'server_id', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 3, name: 'client_addr', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 4, name: 'auth_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 5, name: 'session_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 8, name: 'receive_time', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 11, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 12, name: 'client_msg_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 13, name: 'is_bot', kind: 'scalar', T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 14, name: 'layer', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 15, name: 'client', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 16, name: 'is_admin', kind: 'scalar', T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 20, name: 'takeout', kind: 'message', T: Takeout, opt: true },
+    { no: 21, name: 'langpack', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 22, name: 'perm_auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RpcMetadata {

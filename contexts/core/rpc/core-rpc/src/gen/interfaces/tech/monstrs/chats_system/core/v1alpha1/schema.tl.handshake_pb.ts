@@ -10,39 +10,39 @@ import type { TLConstructor } from './schema.tl.crc32_pb.js'
  */
 export interface BindAuthKeyInner {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 nonce = 3;
+   * @generated from field: optional int64 nonce = 3;
    */
-  nonce: bigint
+  nonce?: bigint
 
   /**
-   * @generated from field: int64 temp_auth_key_id = 4;
+   * @generated from field: optional int64 temp_auth_key_id = 4;
    */
-  tempAuthKeyId: bigint
+  tempAuthKeyId?: bigint
 
   /**
-   * @generated from field: int64 perm_auth_key_id = 5;
+   * @generated from field: optional int64 perm_auth_key_id = 5;
    */
-  permAuthKeyId: bigint
+  permAuthKeyId?: bigint
 
   /**
-   * @generated from field: int64 temp_session_id = 6;
+   * @generated from field: optional int64 temp_session_id = 6;
    */
-  tempSessionId: bigint
+  tempSessionId?: bigint
 
   /**
-   * @generated from field: int32 expires_at = 7;
+   * @generated from field: optional int32 expires_at = 7;
    */
-  expiresAt: number
+  expiresAt?: number
 }
 
 /**
@@ -50,9 +50,9 @@ export interface BindAuthKeyInner {
  */
 export interface TLBindAuthKeyInner {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.BindAuthKeyInner data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BindAuthKeyInner data2 = 1;
    */
-  data2: BindAuthKeyInner[]
+  data2?: BindAuthKeyInner
 }
 
 /**
@@ -60,34 +60,34 @@ export interface TLBindAuthKeyInner {
  */
 export interface ClientDHInnerData {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: bytes nonce = 3;
+   * @generated from field: optional bytes nonce = 3;
    */
-  nonce: Uint8Array
+  nonce?: Uint8Array
 
   /**
-   * @generated from field: bytes server_nonce = 4;
+   * @generated from field: optional bytes server_nonce = 4;
    */
-  serverNonce: Uint8Array
+  serverNonce?: Uint8Array
 
   /**
-   * @generated from field: int64 retry_id = 5;
+   * @generated from field: optional int64 retry_id = 5;
    */
-  retryId: bigint
+  retryId?: bigint
 
   /**
-   * @generated from field: string g_b = 6;
+   * @generated from field: optional string g_b = 6;
    */
-  gB: string
+  gB?: string
 }
 
 /**
@@ -95,9 +95,9 @@ export interface ClientDHInnerData {
  */
 export interface TLClientDHInnerData {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ClientDHInnerData data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ClientDHInnerData data2 = 1;
    */
-  data2: ClientDHInnerData[]
+  data2?: ClientDHInnerData
 }
 
 /**
@@ -105,14 +105,14 @@ export interface TLClientDHInnerData {
  */
 export interface DestroyAuthKeyRes {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 }
 
 /**
@@ -120,9 +120,9 @@ export interface DestroyAuthKeyRes {
  */
 export interface TLDestroyAuthKeyOk {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.DestroyAuthKeyRes data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DestroyAuthKeyRes data2 = 1;
    */
-  data2: DestroyAuthKeyRes[]
+  data2?: DestroyAuthKeyRes
 }
 
 /**
@@ -130,9 +130,9 @@ export interface TLDestroyAuthKeyOk {
  */
 export interface TLDestroyAuthKeyNone {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.DestroyAuthKeyRes data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DestroyAuthKeyRes data2 = 1;
    */
-  data2: DestroyAuthKeyRes[]
+  data2?: DestroyAuthKeyRes
 }
 
 /**
@@ -140,9 +140,9 @@ export interface TLDestroyAuthKeyNone {
  */
 export interface TLDestroyAuthKeyFail {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.DestroyAuthKeyRes data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DestroyAuthKeyRes data2 = 1;
    */
-  data2: DestroyAuthKeyRes[]
+  data2?: DestroyAuthKeyRes
 }
 
 /**
@@ -150,54 +150,54 @@ export interface TLDestroyAuthKeyFail {
  */
 export interface PQInnerData {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: string pq = 3;
+   * @generated from field: optional string pq = 3;
    */
-  pq: string
+  pq?: string
 
   /**
-   * @generated from field: string p = 4;
+   * @generated from field: optional string p = 4;
    */
-  p: string
+  p?: string
 
   /**
-   * @generated from field: string q = 5;
+   * @generated from field: optional string q = 5;
    */
-  q: string
+  q?: string
 
   /**
-   * @generated from field: bytes nonce = 6;
+   * @generated from field: optional bytes nonce = 6;
    */
-  nonce: Uint8Array
+  nonce?: Uint8Array
 
   /**
-   * @generated from field: bytes server_nonce = 7;
+   * @generated from field: optional bytes server_nonce = 7;
    */
-  serverNonce: Uint8Array
+  serverNonce?: Uint8Array
 
   /**
-   * @generated from field: bytes new_nonce = 8;
+   * @generated from field: optional bytes new_nonce = 8;
    */
-  newNonce: Uint8Array
+  newNonce?: Uint8Array
 
   /**
-   * @generated from field: int32 dc = 9;
+   * @generated from field: optional int32 dc = 9;
    */
-  dc: number
+  dc?: number
 
   /**
-   * @generated from field: int32 expires_in = 10;
+   * @generated from field: optional int32 expires_in = 10;
    */
-  expiresIn: number
+  expiresIn?: number
 }
 
 /**
@@ -205,9 +205,9 @@ export interface PQInnerData {
  */
 export interface TLPQInnerData {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
    */
-  data2: PQInnerData[]
+  data2?: PQInnerData
 }
 
 /**
@@ -215,9 +215,9 @@ export interface TLPQInnerData {
  */
 export interface TLPQInnerDataDc {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
    */
-  data2: PQInnerData[]
+  data2?: PQInnerData
 }
 
 /**
@@ -225,9 +225,9 @@ export interface TLPQInnerDataDc {
  */
 export interface TLPQInnerDataTemp {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
    */
-  data2: PQInnerData[]
+  data2?: PQInnerData
 }
 
 /**
@@ -235,9 +235,9 @@ export interface TLPQInnerDataTemp {
  */
 export interface TLPQInnerDataTempDc {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
    */
-  data2: PQInnerData[]
+  data2?: PQInnerData
 }
 
 /**
@@ -245,34 +245,34 @@ export interface TLPQInnerDataTempDc {
  */
 export interface ResPQ {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: bytes nonce = 3;
+   * @generated from field: optional bytes nonce = 3;
    */
-  nonce: Uint8Array
+  nonce?: Uint8Array
 
   /**
-   * @generated from field: bytes server_nonce = 4;
+   * @generated from field: optional bytes server_nonce = 4;
    */
-  serverNonce: Uint8Array
+  serverNonce?: Uint8Array
 
   /**
-   * @generated from field: string pq = 5;
+   * @generated from field: optional string pq = 5;
    */
-  pq: string
+  pq?: string
 
   /**
-   * @generated from field: int64 server_public_key_fingerprints = 6;
+   * @generated from field: repeated int64 server_public_key_fingerprints = 6;
    */
-  serverPublicKeyFingerprints: bigint
+  serverPublicKeyFingerprints: bigint[]
 }
 
 /**
@@ -280,9 +280,9 @@ export interface ResPQ {
  */
 export interface TLResPQ {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ResPQ data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ResPQ data2 = 1;
    */
-  data2: ResPQ[]
+  data2?: ResPQ
 }
 
 /**
@@ -290,34 +290,34 @@ export interface TLResPQ {
  */
 export interface ServerDHParams {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: bytes nonce = 3;
+   * @generated from field: optional bytes nonce = 3;
    */
-  nonce: Uint8Array
+  nonce?: Uint8Array
 
   /**
-   * @generated from field: bytes server_nonce = 4;
+   * @generated from field: optional bytes server_nonce = 4;
    */
-  serverNonce: Uint8Array
+  serverNonce?: Uint8Array
 
   /**
-   * @generated from field: bytes new_nonce_hash = 5;
+   * @generated from field: optional bytes new_nonce_hash = 5;
    */
-  newNonceHash: Uint8Array
+  newNonceHash?: Uint8Array
 
   /**
-   * @generated from field: string encrypted_answer = 6;
+   * @generated from field: optional string encrypted_answer = 6;
    */
-  encryptedAnswer: string
+  encryptedAnswer?: string
 }
 
 /**
@@ -325,9 +325,9 @@ export interface ServerDHParams {
  */
 export interface TLServerDHParamsFail {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ServerDHParams data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ServerDHParams data2 = 1;
    */
-  data2: ServerDHParams[]
+  data2?: ServerDHParams
 }
 
 /**
@@ -335,9 +335,9 @@ export interface TLServerDHParamsFail {
  */
 export interface TLServerDHParamsOk {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ServerDHParams data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ServerDHParams data2 = 1;
    */
-  data2: ServerDHParams[]
+  data2?: ServerDHParams
 }
 
 /**
@@ -345,44 +345,44 @@ export interface TLServerDHParamsOk {
  */
 export interface ServerDHInnerData {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: bytes nonce = 3;
+   * @generated from field: optional bytes nonce = 3;
    */
-  nonce: Uint8Array
+  nonce?: Uint8Array
 
   /**
-   * @generated from field: bytes server_nonce = 4;
+   * @generated from field: optional bytes server_nonce = 4;
    */
-  serverNonce: Uint8Array
+  serverNonce?: Uint8Array
 
   /**
-   * @generated from field: int32 g = 5;
+   * @generated from field: optional int32 g = 5;
    */
-  g: number
+  g?: number
 
   /**
-   * @generated from field: string dh_prime = 6;
+   * @generated from field: optional string dh_prime = 6;
    */
-  dhPrime: string
+  dhPrime?: string
 
   /**
-   * @generated from field: string g_a = 7;
+   * @generated from field: optional string g_a = 7;
    */
-  gA: string
+  gA?: string
 
   /**
-   * @generated from field: int32 server_time = 8;
+   * @generated from field: optional int32 server_time = 8;
    */
-  serverTime: number
+  serverTime?: number
 }
 
 /**
@@ -390,9 +390,9 @@ export interface ServerDHInnerData {
  */
 export interface TLServerDHInnerData {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ServerDHInnerData data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ServerDHInnerData data2 = 1;
    */
-  data2: ServerDHInnerData[]
+  data2?: ServerDHInnerData
 }
 
 /**
@@ -400,39 +400,39 @@ export interface TLServerDHInnerData {
  */
 export interface SetClientDHParamsAnswer {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: bytes nonce = 3;
+   * @generated from field: optional bytes nonce = 3;
    */
-  nonce: Uint8Array
+  nonce?: Uint8Array
 
   /**
-   * @generated from field: bytes server_nonce = 4;
+   * @generated from field: optional bytes server_nonce = 4;
    */
-  serverNonce: Uint8Array
+  serverNonce?: Uint8Array
 
   /**
-   * @generated from field: bytes new_nonce_hash1 = 5;
+   * @generated from field: optional bytes new_nonce_hash1 = 5;
    */
-  newNonceHash1: Uint8Array
+  newNonceHash1?: Uint8Array
 
   /**
-   * @generated from field: bytes new_nonce_hash2 = 6;
+   * @generated from field: optional bytes new_nonce_hash2 = 6;
    */
-  newNonceHash2: Uint8Array
+  newNonceHash2?: Uint8Array
 
   /**
-   * @generated from field: bytes new_nonce_hash3 = 7;
+   * @generated from field: optional bytes new_nonce_hash3 = 7;
    */
-  newNonceHash3: Uint8Array
+  newNonceHash3?: Uint8Array
 }
 
 /**
@@ -440,9 +440,9 @@ export interface SetClientDHParamsAnswer {
  */
 export interface TLDhGenOk {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SetClientDHParamsAnswer data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SetClientDHParamsAnswer data2 = 1;
    */
-  data2: SetClientDHParamsAnswer[]
+  data2?: SetClientDHParamsAnswer
 }
 
 /**
@@ -450,9 +450,9 @@ export interface TLDhGenOk {
  */
 export interface TLDhGenRetry {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SetClientDHParamsAnswer data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SetClientDHParamsAnswer data2 = 1;
    */
-  data2: SetClientDHParamsAnswer[]
+  data2?: SetClientDHParamsAnswer
 }
 
 /**
@@ -460,7 +460,7 @@ export interface TLDhGenRetry {
  */
 export interface TLDhGenFail {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SetClientDHParamsAnswer data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SetClientDHParamsAnswer data2 = 1;
    */
-  data2: SetClientDHParamsAnswer[]
+  data2?: SetClientDHParamsAnswer
 }

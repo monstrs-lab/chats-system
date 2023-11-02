@@ -5,87 +5,87 @@ package tech.monstrs.chats_system.core.v1alpha1;
 import "tech/monstrs/chats_system/core/v1alpha1/schema.tl.crc32.proto";
 
 message Bool {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
 }
 
 message TLBoolFalse {
-  repeated Bool data2 = 1;
+  optional Bool data2 = 1;
 }
 
 message TLBoolTrue {
-  repeated Bool data2 = 1;
+  optional Bool data2 = 1;
 }
 
 message Double {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  float v = 3;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  optional float v = 3;
 }
 
 message TLDouble {
-  repeated Double data2 = 1;
+  optional Double data2 = 1;
 }
 
 message Error {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  int32 code = 3;
-  string text = 4;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  optional int32 code = 3;
+  optional string text = 4;
 }
 
 message TLError {
-  repeated Error data2 = 1;
+  optional Error data2 = 1;
 }
 
 message Int32 {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  int32 v = 3;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  optional int32 v = 3;
 }
 
 message TLInt32 {
-  repeated Int32 data2 = 1;
+  optional Int32 data2 = 1;
 }
 
 message Int64 {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  int64 v = 3;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  optional int64 v = 3;
 }
 
 message TLLong {
-  repeated Int64 data2 = 1;
+  optional Int64 data2 = 1;
 }
 
 message TLInt64 {
-  repeated Int64 data2 = 1;
+  optional Int64 data2 = 1;
 }
 
 message Null {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
 }
 
 message TLNull {
-  repeated Null data2 = 1;
+  optional Null data2 = 1;
 }
 
 message String {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
-  string v = 3;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
+  optional string v = 3;
 }
 
 message TLString {
-  repeated String data2 = 1;
+  optional String data2 = 1;
 }
 
 message True {
-  string predicate_name = 1;
-  TLConstructor constructor = 2;
+  optional string predicate_name = 1;
+  optional TLConstructor constructor = 2;
 }
 
 message TLTrue {
-  repeated True data2 = 1;
+  optional True data2 = 1;
 }

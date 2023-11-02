@@ -3,39 +3,31 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions }                                                                      from '@bufbuild/protobuf'
+import type { BinaryReadOptions } from '@bufbuild/protobuf'
+import type { FieldList }         from '@bufbuild/protobuf'
+import type { JsonReadOptions }   from '@bufbuild/protobuf'
+import type { JsonValue }         from '@bufbuild/protobuf'
+import type { PartialMessage }    from '@bufbuild/protobuf'
+import type { PlainMessage }      from '@bufbuild/protobuf'
 
-import type { FieldList }                                                           from '@bufbuild/protobuf'
+import { Message }                from '@bufbuild/protobuf'
+import { proto3 }                 from '@bufbuild/protobuf'
 
-import type { JsonReadOptions }                                          from '@bufbuild/protobuf'
-
-import type { JsonValue }                               from '@bufbuild/protobuf'
-
-import type { PartialMessage }               from '@bufbuild/protobuf'
-
-import type { PlainMessage } from '@bufbuild/protobuf'
-
-import { Message }                                                                                     from '@bufbuild/protobuf'
-
-import { proto3 }                                                                             from '@bufbuild/protobuf'
-
-import { protoInt64 }                                                                 from '@bufbuild/protobuf'
-
-import { TLConstructor }                                                                               from './schema.tl.crc32_pb.js'
+import { TLConstructor }          from './schema.tl.crc32_pb.js'
 
 /**
  * @generated from message tech.monstrs.chats_system.core.v1alpha1.Bool
  */
 export class Bool extends Message<Bool> {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName = ''
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   constructor(data?: PartialMessage<Bool>) {
     super()
@@ -45,8 +37,8 @@ export class Bool extends Message<Bool> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.Bool'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
+    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Bool {
@@ -74,9 +66,9 @@ export class Bool extends Message<Bool> {
  */
 export class TLBoolFalse extends Message<TLBoolFalse> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Bool data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool data2 = 1;
    */
-  data2: Bool[] = []
+  data2?: Bool
 
   constructor(data?: PartialMessage<TLBoolFalse>) {
     super()
@@ -86,7 +78,7 @@ export class TLBoolFalse extends Message<TLBoolFalse> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLBoolFalse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: Bool, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: Bool, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLBoolFalse {
@@ -114,9 +106,9 @@ export class TLBoolFalse extends Message<TLBoolFalse> {
  */
 export class TLBoolTrue extends Message<TLBoolTrue> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Bool data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool data2 = 1;
    */
-  data2: Bool[] = []
+  data2?: Bool
 
   constructor(data?: PartialMessage<TLBoolTrue>) {
     super()
@@ -126,7 +118,7 @@ export class TLBoolTrue extends Message<TLBoolTrue> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLBoolTrue'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: Bool, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: Bool, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLBoolTrue {
@@ -154,19 +146,19 @@ export class TLBoolTrue extends Message<TLBoolTrue> {
  */
 export class Double extends Message<Double> {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName = ''
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: float v = 3;
+   * @generated from field: optional float v = 3;
    */
-  v = 0
+  v?: number
 
   constructor(data?: PartialMessage<Double>) {
     super()
@@ -176,9 +168,9 @@ export class Double extends Message<Double> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.Double'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'v', kind: 'scalar', T: 2 /* ScalarType.FLOAT */ },
+    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'v', kind: 'scalar', T: 2 /* ScalarType.FLOAT */, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Double {
@@ -206,9 +198,9 @@ export class Double extends Message<Double> {
  */
 export class TLDouble extends Message<TLDouble> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Double data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Double data2 = 1;
    */
-  data2: Double[] = []
+  data2?: Double
 
   constructor(data?: PartialMessage<TLDouble>) {
     super()
@@ -218,7 +210,7 @@ export class TLDouble extends Message<TLDouble> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLDouble'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: Double, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: Double, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLDouble {
@@ -246,24 +238,24 @@ export class TLDouble extends Message<TLDouble> {
  */
 export class Error extends Message<Error> {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName = ''
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int32 code = 3;
+   * @generated from field: optional int32 code = 3;
    */
-  code = 0
+  code?: number
 
   /**
-   * @generated from field: string text = 4;
+   * @generated from field: optional string text = 4;
    */
-  text = ''
+  text?: string
 
   constructor(data?: PartialMessage<Error>) {
     super()
@@ -273,10 +265,10 @@ export class Error extends Message<Error> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.Error'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'code', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 4, name: 'text', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'code', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 4, name: 'text', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Error {
@@ -304,9 +296,9 @@ export class Error extends Message<Error> {
  */
 export class TLError extends Message<TLError> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Error data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Error data2 = 1;
    */
-  data2: Error[] = []
+  data2?: Error
 
   constructor(data?: PartialMessage<TLError>) {
     super()
@@ -316,7 +308,7 @@ export class TLError extends Message<TLError> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLError'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: Error, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: Error, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLError {
@@ -344,19 +336,19 @@ export class TLError extends Message<TLError> {
  */
 export class Int32 extends Message<Int32> {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName = ''
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int32 v = 3;
+   * @generated from field: optional int32 v = 3;
    */
-  v = 0
+  v?: number
 
   constructor(data?: PartialMessage<Int32>) {
     super()
@@ -366,9 +358,9 @@ export class Int32 extends Message<Int32> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.Int32'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'v', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'v', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Int32 {
@@ -396,9 +388,9 @@ export class Int32 extends Message<Int32> {
  */
 export class TLInt32 extends Message<TLInt32> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Int32 data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Int32 data2 = 1;
    */
-  data2: Int32[] = []
+  data2?: Int32
 
   constructor(data?: PartialMessage<TLInt32>) {
     super()
@@ -408,7 +400,7 @@ export class TLInt32 extends Message<TLInt32> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLInt32'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: Int32, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: Int32, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLInt32 {
@@ -436,19 +428,19 @@ export class TLInt32 extends Message<TLInt32> {
  */
 export class Int64 extends Message<Int64> {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName = ''
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 v = 3;
+   * @generated from field: optional int64 v = 3;
    */
-  v = protoInt64.zero
+  v?: bigint
 
   constructor(data?: PartialMessage<Int64>) {
     super()
@@ -458,9 +450,9 @@ export class Int64 extends Message<Int64> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.Int64'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'v', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'v', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Int64 {
@@ -488,9 +480,9 @@ export class Int64 extends Message<Int64> {
  */
 export class TLLong extends Message<TLLong> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Int64 data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Int64 data2 = 1;
    */
-  data2: Int64[] = []
+  data2?: Int64
 
   constructor(data?: PartialMessage<TLLong>) {
     super()
@@ -500,7 +492,7 @@ export class TLLong extends Message<TLLong> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLLong'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: Int64, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: Int64, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLLong {
@@ -528,9 +520,9 @@ export class TLLong extends Message<TLLong> {
  */
 export class TLInt64 extends Message<TLInt64> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Int64 data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Int64 data2 = 1;
    */
-  data2: Int64[] = []
+  data2?: Int64
 
   constructor(data?: PartialMessage<TLInt64>) {
     super()
@@ -540,7 +532,7 @@ export class TLInt64 extends Message<TLInt64> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLInt64'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: Int64, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: Int64, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLInt64 {
@@ -568,14 +560,14 @@ export class TLInt64 extends Message<TLInt64> {
  */
 export class Null extends Message<Null> {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName = ''
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   constructor(data?: PartialMessage<Null>) {
     super()
@@ -585,8 +577,8 @@ export class Null extends Message<Null> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.Null'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
+    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Null {
@@ -614,9 +606,9 @@ export class Null extends Message<Null> {
  */
 export class TLNull extends Message<TLNull> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Null data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Null data2 = 1;
    */
-  data2: Null[] = []
+  data2?: Null
 
   constructor(data?: PartialMessage<TLNull>) {
     super()
@@ -626,7 +618,7 @@ export class TLNull extends Message<TLNull> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLNull'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: Null, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: Null, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLNull {
@@ -654,19 +646,19 @@ export class TLNull extends Message<TLNull> {
  */
 export class String extends Message<String> {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName = ''
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: string v = 3;
+   * @generated from field: optional string v = 3;
    */
-  v = ''
+  v?: string
 
   constructor(data?: PartialMessage<String>) {
     super()
@@ -676,9 +668,9 @@ export class String extends Message<String> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.String'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'v', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'v', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): String {
@@ -706,9 +698,9 @@ export class String extends Message<String> {
  */
 export class TLString extends Message<TLString> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.String data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.String data2 = 1;
    */
-  data2: String[] = []
+  data2?: String
 
   constructor(data?: PartialMessage<TLString>) {
     super()
@@ -718,7 +710,7 @@ export class TLString extends Message<TLString> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLString'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: String, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: String, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLString {
@@ -746,14 +738,14 @@ export class TLString extends Message<TLString> {
  */
 export class True extends Message<True> {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName = ''
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   constructor(data?: PartialMessage<True>) {
     super()
@@ -763,8 +755,8 @@ export class True extends Message<True> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.True'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
+    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): True {
@@ -792,9 +784,9 @@ export class True extends Message<True> {
  */
 export class TLTrue extends Message<TLTrue> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.True data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.True data2 = 1;
    */
-  data2: True[] = []
+  data2?: True
 
   constructor(data?: PartialMessage<TLTrue>) {
     super()
@@ -804,7 +796,7 @@ export class TLTrue extends Message<TLTrue> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLTrue'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: True, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: True, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLTrue {

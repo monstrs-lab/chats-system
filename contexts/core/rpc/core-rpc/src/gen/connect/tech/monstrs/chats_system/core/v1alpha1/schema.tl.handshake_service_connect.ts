@@ -3,21 +3,33 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { TLDestroyAuthKey, TLReqDHParams, TLReqPq, TLReqPqMulti, TLSetClientDHParams } from "./schema.tl.handshake_service_pb.js";
-import { DestroyAuthKeyRes, ResPQ, ServerDHParams, SetClientDHParamsAnswer } from "./schema.tl.handshake_pb.js";
-import { MethodKind } from "@bufbuild/protobuf";
+import { MethodKind }                                                                  from '@bufbuild/protobuf'
+
+import { DestroyAuthKeyRes }                                                           from './schema.tl.handshake_pb.js'
+import { ResPQ }                                                    from './schema.tl.handshake_pb.js'
+import { ServerDHParams }                                    from './schema.tl.handshake_pb.js'
+import { SetClientDHParamsAnswer }           from './schema.tl.handshake_pb.js'
+import { TLDestroyAuthKey }                                                            from './schema.tl.handshake_service_pb.js'
+
+import { TLReqDHParams }                                             from './schema.tl.handshake_service_pb.js'
+
+import { TLReqPq }                                    from './schema.tl.handshake_service_pb.js'
+
+import { TLReqPqMulti }                      from './schema.tl.handshake_service_pb.js'
+
+import { TLSetClientDHParams } from './schema.tl.handshake_service_pb.js'
 
 /**
  * @generated from service tech.monstrs.chats_system.core.v1alpha1.RPCAuthKey
  */
 export const RPCAuthKey = {
-  typeName: "tech.monstrs.chats_system.core.v1alpha1.RPCAuthKey",
+  typeName: 'tech.monstrs.chats_system.core.v1alpha1.RPCAuthKey',
   methods: {
     /**
      * @generated from rpc tech.monstrs.chats_system.core.v1alpha1.RPCAuthKey.req_pq
      */
     req_pq: {
-      name: "req_pq",
+      name: 'req_pq',
       I: TLReqPq,
       O: ResPQ,
       kind: MethodKind.Unary,
@@ -26,7 +38,7 @@ export const RPCAuthKey = {
      * @generated from rpc tech.monstrs.chats_system.core.v1alpha1.RPCAuthKey.req_pq_multi
      */
     req_pq_multi: {
-      name: "req_pq_multi",
+      name: 'req_pq_multi',
       I: TLReqPqMulti,
       O: ResPQ,
       kind: MethodKind.Unary,
@@ -35,7 +47,7 @@ export const RPCAuthKey = {
      * @generated from rpc tech.monstrs.chats_system.core.v1alpha1.RPCAuthKey.req_DH_params
      */
     req_DH_params: {
-      name: "req_DH_params",
+      name: 'req_DH_params',
       I: TLReqDHParams,
       O: ServerDHParams,
       kind: MethodKind.Unary,
@@ -44,7 +56,7 @@ export const RPCAuthKey = {
      * @generated from rpc tech.monstrs.chats_system.core.v1alpha1.RPCAuthKey.set_client_DH_params
      */
     set_client_DH_params: {
-      name: "set_client_DH_params",
+      name: 'set_client_DH_params',
       I: TLSetClientDHParams,
       O: SetClientDHParamsAnswer,
       kind: MethodKind.Unary,
@@ -53,11 +65,10 @@ export const RPCAuthKey = {
      * @generated from rpc tech.monstrs.chats_system.core.v1alpha1.RPCAuthKey.destroy_auth_key
      */
     destroy_auth_key: {
-      name: "destroy_auth_key",
+      name: 'destroy_auth_key',
       I: TLDestroyAuthKey,
       O: DestroyAuthKeyRes,
       kind: MethodKind.Unary,
     },
-  }
-} as const;
-
+  },
+} as const

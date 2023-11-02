@@ -14,32 +14,32 @@ service RPCAuthKey {
 }
 
 message TLReqPq {
-  TLConstructor constructor = 1;
-  bytes nonce = 3;
+  optional TLConstructor constructor = 1;
+  optional bytes nonce = 3;
 }
 
 message TLReqPqMulti {
-  TLConstructor constructor = 1;
-  bytes nonce = 3;
+  optional TLConstructor constructor = 1;
+  optional bytes nonce = 3;
 }
 
 message TLReqDHParams {
-  TLConstructor constructor = 1;
-  bytes nonce = 3;
-  bytes server_nonce = 4;
-  string p = 5;
-  string q = 6;
-  int64 public_key_fingerprint = 7;
-  string encrypted_data = 8;
+  optional TLConstructor constructor = 1;
+  optional bytes nonce = 3;
+  optional bytes server_nonce = 4;
+  optional string p = 5;
+  optional string q = 6;
+  optional int64 public_key_fingerprint = 7;
+  optional string encrypted_data = 8;
 }
 
 message TLSetClientDHParams {
-  TLConstructor constructor = 1;
-  bytes nonce = 3;
-  bytes server_nonce = 4;
-  string encrypted_data = 5;
+  optional TLConstructor constructor = 1;
+  optional bytes nonce = 3;
+  optional bytes server_nonce = 4;
+  optional string encrypted_data = 5;
 }
 
 message TLDestroyAuthKey {
-  TLConstructor constructor = 1;
+  optional TLConstructor constructor = 1;
 }

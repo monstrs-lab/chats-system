@@ -3,64 +3,56 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions }                                                                      from '@bufbuild/protobuf'
+import type { BinaryReadOptions } from '@bufbuild/protobuf'
+import type { FieldList }         from '@bufbuild/protobuf'
+import type { JsonReadOptions }   from '@bufbuild/protobuf'
+import type { JsonValue }         from '@bufbuild/protobuf'
+import type { PartialMessage }    from '@bufbuild/protobuf'
+import type { PlainMessage }      from '@bufbuild/protobuf'
 
-import type { FieldList }                                                           from '@bufbuild/protobuf'
+import { Message }                from '@bufbuild/protobuf'
+import { proto3 }                 from '@bufbuild/protobuf'
 
-import type { JsonReadOptions }                                          from '@bufbuild/protobuf'
-
-import type { JsonValue }                               from '@bufbuild/protobuf'
-
-import type { PartialMessage }               from '@bufbuild/protobuf'
-
-import type { PlainMessage } from '@bufbuild/protobuf'
-
-import { Message }                                                                                     from '@bufbuild/protobuf'
-
-import { proto3 }                                                                             from '@bufbuild/protobuf'
-
-import { protoInt64 }                                                                 from '@bufbuild/protobuf'
-
-import { TLConstructor }                                                                               from './schema.tl.crc32_pb.js'
+import { TLConstructor }          from './schema.tl.crc32_pb.js'
 
 /**
  * @generated from message tech.monstrs.chats_system.core.v1alpha1.BindAuthKeyInner
  */
 export class BindAuthKeyInner extends Message<BindAuthKeyInner> {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName = ''
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 nonce = 3;
+   * @generated from field: optional int64 nonce = 3;
    */
-  nonce = protoInt64.zero
+  nonce?: bigint
 
   /**
-   * @generated from field: int64 temp_auth_key_id = 4;
+   * @generated from field: optional int64 temp_auth_key_id = 4;
    */
-  tempAuthKeyId = protoInt64.zero
+  tempAuthKeyId?: bigint
 
   /**
-   * @generated from field: int64 perm_auth_key_id = 5;
+   * @generated from field: optional int64 perm_auth_key_id = 5;
    */
-  permAuthKeyId = protoInt64.zero
+  permAuthKeyId?: bigint
 
   /**
-   * @generated from field: int64 temp_session_id = 6;
+   * @generated from field: optional int64 temp_session_id = 6;
    */
-  tempSessionId = protoInt64.zero
+  tempSessionId?: bigint
 
   /**
-   * @generated from field: int32 expires_at = 7;
+   * @generated from field: optional int32 expires_at = 7;
    */
-  expiresAt = 0
+  expiresAt?: number
 
   constructor(data?: PartialMessage<BindAuthKeyInner>) {
     super()
@@ -70,13 +62,13 @@ export class BindAuthKeyInner extends Message<BindAuthKeyInner> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.BindAuthKeyInner'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'nonce', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 4, name: 'temp_auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 5, name: 'perm_auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 6, name: 'temp_session_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 7, name: 'expires_at', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'nonce', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 4, name: 'temp_auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 5, name: 'perm_auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 6, name: 'temp_session_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 7, name: 'expires_at', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BindAuthKeyInner {
@@ -104,9 +96,9 @@ export class BindAuthKeyInner extends Message<BindAuthKeyInner> {
  */
 export class TLBindAuthKeyInner extends Message<TLBindAuthKeyInner> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.BindAuthKeyInner data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BindAuthKeyInner data2 = 1;
    */
-  data2: BindAuthKeyInner[] = []
+  data2?: BindAuthKeyInner
 
   constructor(data?: PartialMessage<TLBindAuthKeyInner>) {
     super()
@@ -116,7 +108,7 @@ export class TLBindAuthKeyInner extends Message<TLBindAuthKeyInner> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLBindAuthKeyInner'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: BindAuthKeyInner, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: BindAuthKeyInner, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLBindAuthKeyInner {
@@ -147,34 +139,34 @@ export class TLBindAuthKeyInner extends Message<TLBindAuthKeyInner> {
  */
 export class ClientDHInnerData extends Message<ClientDHInnerData> {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName = ''
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: bytes nonce = 3;
+   * @generated from field: optional bytes nonce = 3;
    */
-  nonce = new Uint8Array(0)
+  nonce?: Uint8Array
 
   /**
-   * @generated from field: bytes server_nonce = 4;
+   * @generated from field: optional bytes server_nonce = 4;
    */
-  serverNonce = new Uint8Array(0)
+  serverNonce?: Uint8Array
 
   /**
-   * @generated from field: int64 retry_id = 5;
+   * @generated from field: optional int64 retry_id = 5;
    */
-  retryId = protoInt64.zero
+  retryId?: bigint
 
   /**
-   * @generated from field: string g_b = 6;
+   * @generated from field: optional string g_b = 6;
    */
-  gB = ''
+  gB?: string
 
   constructor(data?: PartialMessage<ClientDHInnerData>) {
     super()
@@ -184,12 +176,12 @@ export class ClientDHInnerData extends Message<ClientDHInnerData> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.ClientDHInnerData'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
-    { no: 4, name: 'server_nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
-    { no: 5, name: 'retry_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 6, name: 'g_b', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */, opt: true },
+    { no: 4, name: 'server_nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */, opt: true },
+    { no: 5, name: 'retry_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 6, name: 'g_b', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClientDHInnerData {
@@ -217,9 +209,9 @@ export class ClientDHInnerData extends Message<ClientDHInnerData> {
  */
 export class TLClientDHInnerData extends Message<TLClientDHInnerData> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ClientDHInnerData data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ClientDHInnerData data2 = 1;
    */
-  data2: ClientDHInnerData[] = []
+  data2?: ClientDHInnerData
 
   constructor(data?: PartialMessage<TLClientDHInnerData>) {
     super()
@@ -229,7 +221,7 @@ export class TLClientDHInnerData extends Message<TLClientDHInnerData> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLClientDHInnerData'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: ClientDHInnerData, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: ClientDHInnerData, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLClientDHInnerData {
@@ -260,14 +252,14 @@ export class TLClientDHInnerData extends Message<TLClientDHInnerData> {
  */
 export class DestroyAuthKeyRes extends Message<DestroyAuthKeyRes> {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName = ''
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   constructor(data?: PartialMessage<DestroyAuthKeyRes>) {
     super()
@@ -277,8 +269,8 @@ export class DestroyAuthKeyRes extends Message<DestroyAuthKeyRes> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.DestroyAuthKeyRes'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
+    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DestroyAuthKeyRes {
@@ -306,9 +298,9 @@ export class DestroyAuthKeyRes extends Message<DestroyAuthKeyRes> {
  */
 export class TLDestroyAuthKeyOk extends Message<TLDestroyAuthKeyOk> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.DestroyAuthKeyRes data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DestroyAuthKeyRes data2 = 1;
    */
-  data2: DestroyAuthKeyRes[] = []
+  data2?: DestroyAuthKeyRes
 
   constructor(data?: PartialMessage<TLDestroyAuthKeyOk>) {
     super()
@@ -318,7 +310,7 @@ export class TLDestroyAuthKeyOk extends Message<TLDestroyAuthKeyOk> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLDestroyAuthKeyOk'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: DestroyAuthKeyRes, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: DestroyAuthKeyRes, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLDestroyAuthKeyOk {
@@ -349,9 +341,9 @@ export class TLDestroyAuthKeyOk extends Message<TLDestroyAuthKeyOk> {
  */
 export class TLDestroyAuthKeyNone extends Message<TLDestroyAuthKeyNone> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.DestroyAuthKeyRes data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DestroyAuthKeyRes data2 = 1;
    */
-  data2: DestroyAuthKeyRes[] = []
+  data2?: DestroyAuthKeyRes
 
   constructor(data?: PartialMessage<TLDestroyAuthKeyNone>) {
     super()
@@ -361,7 +353,7 @@ export class TLDestroyAuthKeyNone extends Message<TLDestroyAuthKeyNone> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLDestroyAuthKeyNone'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: DestroyAuthKeyRes, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: DestroyAuthKeyRes, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLDestroyAuthKeyNone {
@@ -392,9 +384,9 @@ export class TLDestroyAuthKeyNone extends Message<TLDestroyAuthKeyNone> {
  */
 export class TLDestroyAuthKeyFail extends Message<TLDestroyAuthKeyFail> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.DestroyAuthKeyRes data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DestroyAuthKeyRes data2 = 1;
    */
-  data2: DestroyAuthKeyRes[] = []
+  data2?: DestroyAuthKeyRes
 
   constructor(data?: PartialMessage<TLDestroyAuthKeyFail>) {
     super()
@@ -404,7 +396,7 @@ export class TLDestroyAuthKeyFail extends Message<TLDestroyAuthKeyFail> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLDestroyAuthKeyFail'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: DestroyAuthKeyRes, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: DestroyAuthKeyRes, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLDestroyAuthKeyFail {
@@ -435,54 +427,54 @@ export class TLDestroyAuthKeyFail extends Message<TLDestroyAuthKeyFail> {
  */
 export class PQInnerData extends Message<PQInnerData> {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName = ''
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: string pq = 3;
+   * @generated from field: optional string pq = 3;
    */
-  pq = ''
+  pq?: string
 
   /**
-   * @generated from field: string p = 4;
+   * @generated from field: optional string p = 4;
    */
-  p = ''
+  p?: string
 
   /**
-   * @generated from field: string q = 5;
+   * @generated from field: optional string q = 5;
    */
-  q = ''
+  q?: string
 
   /**
-   * @generated from field: bytes nonce = 6;
+   * @generated from field: optional bytes nonce = 6;
    */
-  nonce = new Uint8Array(0)
+  nonce?: Uint8Array
 
   /**
-   * @generated from field: bytes server_nonce = 7;
+   * @generated from field: optional bytes server_nonce = 7;
    */
-  serverNonce = new Uint8Array(0)
+  serverNonce?: Uint8Array
 
   /**
-   * @generated from field: bytes new_nonce = 8;
+   * @generated from field: optional bytes new_nonce = 8;
    */
-  newNonce = new Uint8Array(0)
+  newNonce?: Uint8Array
 
   /**
-   * @generated from field: int32 dc = 9;
+   * @generated from field: optional int32 dc = 9;
    */
-  dc = 0
+  dc?: number
 
   /**
-   * @generated from field: int32 expires_in = 10;
+   * @generated from field: optional int32 expires_in = 10;
    */
-  expiresIn = 0
+  expiresIn?: number
 
   constructor(data?: PartialMessage<PQInnerData>) {
     super()
@@ -492,16 +484,16 @@ export class PQInnerData extends Message<PQInnerData> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.PQInnerData'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'pq', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: 'p', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: 'q', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: 'nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
-    { no: 7, name: 'server_nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
-    { no: 8, name: 'new_nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
-    { no: 9, name: 'dc', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 10, name: 'expires_in', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'pq', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 4, name: 'p', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 5, name: 'q', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 6, name: 'nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */, opt: true },
+    { no: 7, name: 'server_nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */, opt: true },
+    { no: 8, name: 'new_nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */, opt: true },
+    { no: 9, name: 'dc', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 10, name: 'expires_in', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PQInnerData {
@@ -529,9 +521,9 @@ export class PQInnerData extends Message<PQInnerData> {
  */
 export class TLPQInnerData extends Message<TLPQInnerData> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
    */
-  data2: PQInnerData[] = []
+  data2?: PQInnerData
 
   constructor(data?: PartialMessage<TLPQInnerData>) {
     super()
@@ -541,7 +533,7 @@ export class TLPQInnerData extends Message<TLPQInnerData> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLPQInnerData'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: PQInnerData, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: PQInnerData, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLPQInnerData {
@@ -569,9 +561,9 @@ export class TLPQInnerData extends Message<TLPQInnerData> {
  */
 export class TLPQInnerDataDc extends Message<TLPQInnerDataDc> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
    */
-  data2: PQInnerData[] = []
+  data2?: PQInnerData
 
   constructor(data?: PartialMessage<TLPQInnerDataDc>) {
     super()
@@ -581,7 +573,7 @@ export class TLPQInnerDataDc extends Message<TLPQInnerDataDc> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLPQInnerDataDc'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: PQInnerData, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: PQInnerData, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLPQInnerDataDc {
@@ -609,9 +601,9 @@ export class TLPQInnerDataDc extends Message<TLPQInnerDataDc> {
  */
 export class TLPQInnerDataTemp extends Message<TLPQInnerDataTemp> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
    */
-  data2: PQInnerData[] = []
+  data2?: PQInnerData
 
   constructor(data?: PartialMessage<TLPQInnerDataTemp>) {
     super()
@@ -621,7 +613,7 @@ export class TLPQInnerDataTemp extends Message<TLPQInnerDataTemp> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLPQInnerDataTemp'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: PQInnerData, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: PQInnerData, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLPQInnerDataTemp {
@@ -649,9 +641,9 @@ export class TLPQInnerDataTemp extends Message<TLPQInnerDataTemp> {
  */
 export class TLPQInnerDataTempDc extends Message<TLPQInnerDataTempDc> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PQInnerData data2 = 1;
    */
-  data2: PQInnerData[] = []
+  data2?: PQInnerData
 
   constructor(data?: PartialMessage<TLPQInnerDataTempDc>) {
     super()
@@ -661,7 +653,7 @@ export class TLPQInnerDataTempDc extends Message<TLPQInnerDataTempDc> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLPQInnerDataTempDc'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: PQInnerData, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: PQInnerData, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLPQInnerDataTempDc {
@@ -692,34 +684,34 @@ export class TLPQInnerDataTempDc extends Message<TLPQInnerDataTempDc> {
  */
 export class ResPQ extends Message<ResPQ> {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName = ''
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: bytes nonce = 3;
+   * @generated from field: optional bytes nonce = 3;
    */
-  nonce = new Uint8Array(0)
+  nonce?: Uint8Array
 
   /**
-   * @generated from field: bytes server_nonce = 4;
+   * @generated from field: optional bytes server_nonce = 4;
    */
-  serverNonce = new Uint8Array(0)
+  serverNonce?: Uint8Array
 
   /**
-   * @generated from field: string pq = 5;
+   * @generated from field: optional string pq = 5;
    */
-  pq = ''
+  pq?: string
 
   /**
-   * @generated from field: int64 server_public_key_fingerprints = 6;
+   * @generated from field: repeated int64 server_public_key_fingerprints = 6;
    */
-  serverPublicKeyFingerprints = protoInt64.zero
+  serverPublicKeyFingerprints: bigint[] = []
 
   constructor(data?: PartialMessage<ResPQ>) {
     super()
@@ -729,12 +721,18 @@ export class ResPQ extends Message<ResPQ> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.ResPQ'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
-    { no: 4, name: 'server_nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
-    { no: 5, name: 'pq', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: 'server_public_key_fingerprints', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */, opt: true },
+    { no: 4, name: 'server_nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */, opt: true },
+    { no: 5, name: 'pq', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    {
+      no: 6,
+      name: 'server_public_key_fingerprints',
+      kind: 'scalar',
+      T: 3 /* ScalarType.INT64 */,
+      repeated: true,
+    },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResPQ {
@@ -762,9 +760,9 @@ export class ResPQ extends Message<ResPQ> {
  */
 export class TLResPQ extends Message<TLResPQ> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ResPQ data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ResPQ data2 = 1;
    */
-  data2: ResPQ[] = []
+  data2?: ResPQ
 
   constructor(data?: PartialMessage<TLResPQ>) {
     super()
@@ -774,7 +772,7 @@ export class TLResPQ extends Message<TLResPQ> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLResPQ'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: ResPQ, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: ResPQ, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLResPQ {
@@ -802,34 +800,34 @@ export class TLResPQ extends Message<TLResPQ> {
  */
 export class ServerDHParams extends Message<ServerDHParams> {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName = ''
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: bytes nonce = 3;
+   * @generated from field: optional bytes nonce = 3;
    */
-  nonce = new Uint8Array(0)
+  nonce?: Uint8Array
 
   /**
-   * @generated from field: bytes server_nonce = 4;
+   * @generated from field: optional bytes server_nonce = 4;
    */
-  serverNonce = new Uint8Array(0)
+  serverNonce?: Uint8Array
 
   /**
-   * @generated from field: bytes new_nonce_hash = 5;
+   * @generated from field: optional bytes new_nonce_hash = 5;
    */
-  newNonceHash = new Uint8Array(0)
+  newNonceHash?: Uint8Array
 
   /**
-   * @generated from field: string encrypted_answer = 6;
+   * @generated from field: optional string encrypted_answer = 6;
    */
-  encryptedAnswer = ''
+  encryptedAnswer?: string
 
   constructor(data?: PartialMessage<ServerDHParams>) {
     super()
@@ -839,12 +837,12 @@ export class ServerDHParams extends Message<ServerDHParams> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.ServerDHParams'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
-    { no: 4, name: 'server_nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
-    { no: 5, name: 'new_nonce_hash', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
-    { no: 6, name: 'encrypted_answer', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */, opt: true },
+    { no: 4, name: 'server_nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */, opt: true },
+    { no: 5, name: 'new_nonce_hash', kind: 'scalar', T: 12 /* ScalarType.BYTES */, opt: true },
+    { no: 6, name: 'encrypted_answer', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ServerDHParams {
@@ -872,9 +870,9 @@ export class ServerDHParams extends Message<ServerDHParams> {
  */
 export class TLServerDHParamsFail extends Message<TLServerDHParamsFail> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ServerDHParams data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ServerDHParams data2 = 1;
    */
-  data2: ServerDHParams[] = []
+  data2?: ServerDHParams
 
   constructor(data?: PartialMessage<TLServerDHParamsFail>) {
     super()
@@ -884,7 +882,7 @@ export class TLServerDHParamsFail extends Message<TLServerDHParamsFail> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLServerDHParamsFail'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: ServerDHParams, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: ServerDHParams, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLServerDHParamsFail {
@@ -915,9 +913,9 @@ export class TLServerDHParamsFail extends Message<TLServerDHParamsFail> {
  */
 export class TLServerDHParamsOk extends Message<TLServerDHParamsOk> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ServerDHParams data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ServerDHParams data2 = 1;
    */
-  data2: ServerDHParams[] = []
+  data2?: ServerDHParams
 
   constructor(data?: PartialMessage<TLServerDHParamsOk>) {
     super()
@@ -927,7 +925,7 @@ export class TLServerDHParamsOk extends Message<TLServerDHParamsOk> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLServerDHParamsOk'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: ServerDHParams, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: ServerDHParams, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLServerDHParamsOk {
@@ -958,44 +956,44 @@ export class TLServerDHParamsOk extends Message<TLServerDHParamsOk> {
  */
 export class ServerDHInnerData extends Message<ServerDHInnerData> {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName = ''
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: bytes nonce = 3;
+   * @generated from field: optional bytes nonce = 3;
    */
-  nonce = new Uint8Array(0)
+  nonce?: Uint8Array
 
   /**
-   * @generated from field: bytes server_nonce = 4;
+   * @generated from field: optional bytes server_nonce = 4;
    */
-  serverNonce = new Uint8Array(0)
+  serverNonce?: Uint8Array
 
   /**
-   * @generated from field: int32 g = 5;
+   * @generated from field: optional int32 g = 5;
    */
-  g = 0
+  g?: number
 
   /**
-   * @generated from field: string dh_prime = 6;
+   * @generated from field: optional string dh_prime = 6;
    */
-  dhPrime = ''
+  dhPrime?: string
 
   /**
-   * @generated from field: string g_a = 7;
+   * @generated from field: optional string g_a = 7;
    */
-  gA = ''
+  gA?: string
 
   /**
-   * @generated from field: int32 server_time = 8;
+   * @generated from field: optional int32 server_time = 8;
    */
-  serverTime = 0
+  serverTime?: number
 
   constructor(data?: PartialMessage<ServerDHInnerData>) {
     super()
@@ -1005,14 +1003,14 @@ export class ServerDHInnerData extends Message<ServerDHInnerData> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.ServerDHInnerData'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
-    { no: 4, name: 'server_nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
-    { no: 5, name: 'g', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 6, name: 'dh_prime', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 7, name: 'g_a', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 8, name: 'server_time', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */, opt: true },
+    { no: 4, name: 'server_nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */, opt: true },
+    { no: 5, name: 'g', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 6, name: 'dh_prime', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 7, name: 'g_a', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 8, name: 'server_time', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ServerDHInnerData {
@@ -1040,9 +1038,9 @@ export class ServerDHInnerData extends Message<ServerDHInnerData> {
  */
 export class TLServerDHInnerData extends Message<TLServerDHInnerData> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ServerDHInnerData data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ServerDHInnerData data2 = 1;
    */
-  data2: ServerDHInnerData[] = []
+  data2?: ServerDHInnerData
 
   constructor(data?: PartialMessage<TLServerDHInnerData>) {
     super()
@@ -1052,7 +1050,7 @@ export class TLServerDHInnerData extends Message<TLServerDHInnerData> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLServerDHInnerData'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: ServerDHInnerData, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: ServerDHInnerData, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLServerDHInnerData {
@@ -1083,39 +1081,39 @@ export class TLServerDHInnerData extends Message<TLServerDHInnerData> {
  */
 export class SetClientDHParamsAnswer extends Message<SetClientDHParamsAnswer> {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName = ''
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$ = TLConstructor.CRC32_UNKNOWN
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: bytes nonce = 3;
+   * @generated from field: optional bytes nonce = 3;
    */
-  nonce = new Uint8Array(0)
+  nonce?: Uint8Array
 
   /**
-   * @generated from field: bytes server_nonce = 4;
+   * @generated from field: optional bytes server_nonce = 4;
    */
-  serverNonce = new Uint8Array(0)
+  serverNonce?: Uint8Array
 
   /**
-   * @generated from field: bytes new_nonce_hash1 = 5;
+   * @generated from field: optional bytes new_nonce_hash1 = 5;
    */
-  newNonceHash1 = new Uint8Array(0)
+  newNonceHash1?: Uint8Array
 
   /**
-   * @generated from field: bytes new_nonce_hash2 = 6;
+   * @generated from field: optional bytes new_nonce_hash2 = 6;
    */
-  newNonceHash2 = new Uint8Array(0)
+  newNonceHash2?: Uint8Array
 
   /**
-   * @generated from field: bytes new_nonce_hash3 = 7;
+   * @generated from field: optional bytes new_nonce_hash3 = 7;
    */
-  newNonceHash3 = new Uint8Array(0)
+  newNonceHash3?: Uint8Array
 
   constructor(data?: PartialMessage<SetClientDHParamsAnswer>) {
     super()
@@ -1125,13 +1123,13 @@ export class SetClientDHParamsAnswer extends Message<SetClientDHParamsAnswer> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.SetClientDHParamsAnswer'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor) },
-    { no: 3, name: 'nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
-    { no: 4, name: 'server_nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
-    { no: 5, name: 'new_nonce_hash1', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
-    { no: 6, name: 'new_nonce_hash2', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
-    { no: 7, name: 'new_nonce_hash3', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
+    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */, opt: true },
+    { no: 4, name: 'server_nonce', kind: 'scalar', T: 12 /* ScalarType.BYTES */, opt: true },
+    { no: 5, name: 'new_nonce_hash1', kind: 'scalar', T: 12 /* ScalarType.BYTES */, opt: true },
+    { no: 6, name: 'new_nonce_hash2', kind: 'scalar', T: 12 /* ScalarType.BYTES */, opt: true },
+    { no: 7, name: 'new_nonce_hash3', kind: 'scalar', T: 12 /* ScalarType.BYTES */, opt: true },
   ])
 
   static fromBinary(
@@ -1168,9 +1166,9 @@ export class SetClientDHParamsAnswer extends Message<SetClientDHParamsAnswer> {
  */
 export class TLDhGenOk extends Message<TLDhGenOk> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SetClientDHParamsAnswer data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SetClientDHParamsAnswer data2 = 1;
    */
-  data2: SetClientDHParamsAnswer[] = []
+  data2?: SetClientDHParamsAnswer
 
   constructor(data?: PartialMessage<TLDhGenOk>) {
     super()
@@ -1180,7 +1178,7 @@ export class TLDhGenOk extends Message<TLDhGenOk> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLDhGenOk'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: SetClientDHParamsAnswer, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: SetClientDHParamsAnswer, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLDhGenOk {
@@ -1208,9 +1206,9 @@ export class TLDhGenOk extends Message<TLDhGenOk> {
  */
 export class TLDhGenRetry extends Message<TLDhGenRetry> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SetClientDHParamsAnswer data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SetClientDHParamsAnswer data2 = 1;
    */
-  data2: SetClientDHParamsAnswer[] = []
+  data2?: SetClientDHParamsAnswer
 
   constructor(data?: PartialMessage<TLDhGenRetry>) {
     super()
@@ -1220,7 +1218,7 @@ export class TLDhGenRetry extends Message<TLDhGenRetry> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLDhGenRetry'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: SetClientDHParamsAnswer, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: SetClientDHParamsAnswer, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLDhGenRetry {
@@ -1248,9 +1246,9 @@ export class TLDhGenRetry extends Message<TLDhGenRetry> {
  */
 export class TLDhGenFail extends Message<TLDhGenFail> {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SetClientDHParamsAnswer data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SetClientDHParamsAnswer data2 = 1;
    */
-  data2: SetClientDHParamsAnswer[] = []
+  data2?: SetClientDHParamsAnswer
 
   constructor(data?: PartialMessage<TLDhGenFail>) {
     super()
@@ -1260,7 +1258,7 @@ export class TLDhGenFail extends Message<TLDhGenFail> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.core.v1alpha1.TLDhGenFail'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'data2', kind: 'message', T: SetClientDHParamsAnswer, repeated: true },
+    { no: 1, name: 'data2', kind: 'message', T: SetClientDHParamsAnswer, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLDhGenFail {

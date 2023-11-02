@@ -131,44 +131,44 @@ export enum TLConstructor {
  */
 export interface AuthKeyStateData {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId: bigint
+  authKeyId?: bigint
 
   /**
-   * @generated from field: int64 user_id = 4;
+   * @generated from field: optional int64 user_id = 4;
    */
-  userId: bigint
+  userId?: bigint
 
   /**
-   * @generated from field: int32 key_state = 5;
+   * @generated from field: optional int32 key_state = 5;
    */
-  keyState: number
+  keyState?: number
 
   /**
-   * @generated from field: int32 layer = 6;
+   * @generated from field: optional int32 layer = 6;
    */
-  layer: number
+  layer?: number
 
   /**
-   * @generated from field: int32 client_type = 7;
+   * @generated from field: optional int32 client_type = 7;
    */
-  clientType: number
+  clientType?: number
 
   /**
-   * @generated from field: int64 android_push_session_id = 8;
+   * @generated from field: optional int64 android_push_session_id = 8;
    */
-  androidPushSessionId: bigint
+  androidPushSessionId?: bigint
 }
 
 /**
@@ -176,9 +176,9 @@ export interface AuthKeyStateData {
  */
 export interface TLAuthKeyStateData {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.auth.v1alpha1.AuthKeyStateData data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.AuthKeyStateData data2 = 1;
    */
-  data2: AuthKeyStateData[]
+  data2?: AuthKeyStateData
 }
 
 /**
@@ -186,74 +186,74 @@ export interface TLAuthKeyStateData {
  */
 export interface ClientSession {
   /**
-   * @generated from field: string predicate_name = 1;
+   * @generated from field: optional string predicate_name = 1;
    */
-  predicateName: string
+  predicateName?: string
 
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 2;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId: bigint
+  authKeyId?: bigint
 
   /**
-   * @generated from field: string ip = 4;
+   * @generated from field: optional string ip = 4;
    */
-  ip: string
+  ip?: string
 
   /**
-   * @generated from field: int32 layer = 5;
+   * @generated from field: optional int32 layer = 5;
    */
-  layer: number
+  layer?: number
 
   /**
-   * @generated from field: int32 api_id = 6;
+   * @generated from field: optional int32 api_id = 6;
    */
-  apiId: number
+  apiId?: number
 
   /**
-   * @generated from field: string device_model = 7;
+   * @generated from field: optional string device_model = 7;
    */
-  deviceModel: string
+  deviceModel?: string
 
   /**
-   * @generated from field: string system_version = 8;
+   * @generated from field: optional string system_version = 8;
    */
-  systemVersion: string
+  systemVersion?: string
 
   /**
-   * @generated from field: string app_version = 9;
+   * @generated from field: optional string app_version = 9;
    */
-  appVersion: string
+  appVersion?: string
 
   /**
-   * @generated from field: string system_lang_code = 10;
+   * @generated from field: optional string system_lang_code = 10;
    */
-  systemLangCode: string
+  systemLangCode?: string
 
   /**
-   * @generated from field: string lang_pack = 11;
+   * @generated from field: optional string lang_pack = 11;
    */
-  langPack: string
+  langPack?: string
 
   /**
-   * @generated from field: string lang_code = 12;
+   * @generated from field: optional string lang_code = 12;
    */
-  langCode: string
+  langCode?: string
 
   /**
-   * @generated from field: string proxy = 13;
+   * @generated from field: optional string proxy = 13;
    */
-  proxy: string
+  proxy?: string
 
   /**
-   * @generated from field: string params = 14;
+   * @generated from field: optional string params = 14;
    */
-  params: string
+  params?: string
 }
 
 /**
@@ -261,9 +261,9 @@ export interface ClientSession {
  */
 export interface TLClientSession {
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.auth.v1alpha1.ClientSession data2 = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.ClientSession data2 = 1;
    */
-  data2: ClientSession[]
+  data2?: ClientSession
 }
 
 /**
@@ -271,19 +271,19 @@ export interface TLClientSession {
  */
 export interface TLAuthsessionGetAuthorizations {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 user_id = 3;
+   * @generated from field: optional int64 user_id = 3;
    */
-  userId: bigint
+  userId?: bigint
 
   /**
-   * @generated from field: int64 exclude_auth_keyId = 4;
+   * @generated from field: optional int64 exclude_auth_keyId = 4;
    */
-  excludeAuthKeyId: bigint
+  excludeAuthKeyId?: bigint
 }
 
 /**
@@ -291,24 +291,24 @@ export interface TLAuthsessionGetAuthorizations {
  */
 export interface TLAuthsessionResetAuthorization {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 user_id = 3;
+   * @generated from field: optional int64 user_id = 3;
    */
-  userId: bigint
+  userId?: bigint
 
   /**
-   * @generated from field: int64 auth_key_id = 4;
+   * @generated from field: optional int64 auth_key_id = 4;
    */
-  authKeyId: bigint
+  authKeyId?: bigint
 
   /**
-   * @generated from field: int64 hash = 5;
+   * @generated from field: optional int64 hash = 5;
    */
-  hash: bigint
+  hash?: bigint
 }
 
 /**
@@ -316,14 +316,14 @@ export interface TLAuthsessionResetAuthorization {
  */
 export interface TLAuthsessionGetLayer {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId: bigint
+  authKeyId?: bigint
 }
 
 /**
@@ -331,14 +331,14 @@ export interface TLAuthsessionGetLayer {
  */
 export interface TLAuthsessionGetLangPack {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId: bigint
+  authKeyId?: bigint
 }
 
 /**
@@ -346,14 +346,14 @@ export interface TLAuthsessionGetLangPack {
  */
 export interface TLAuthsessionGetClient {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId: bigint
+  authKeyId?: bigint
 }
 
 /**
@@ -361,14 +361,14 @@ export interface TLAuthsessionGetClient {
  */
 export interface TLAuthsessionGetLangCode {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId: bigint
+  authKeyId?: bigint
 }
 
 /**
@@ -376,14 +376,14 @@ export interface TLAuthsessionGetLangCode {
  */
 export interface TLAuthsessionGetUserId {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId: bigint
+  authKeyId?: bigint
 }
 
 /**
@@ -391,24 +391,24 @@ export interface TLAuthsessionGetUserId {
  */
 export interface TLAuthsessionGetPushSessionId {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 user_id = 3;
+   * @generated from field: optional int64 user_id = 3;
    */
-  userId: bigint
+  userId?: bigint
 
   /**
-   * @generated from field: int64 auth_key_id = 4;
+   * @generated from field: optional int64 auth_key_id = 4;
    */
-  authKeyId: bigint
+  authKeyId?: bigint
 
   /**
-   * @generated from field: int32 token_type = 5;
+   * @generated from field: optional int32 token_type = 5;
    */
-  tokenType: number
+  tokenType?: number
 }
 
 /**
@@ -416,19 +416,19 @@ export interface TLAuthsessionGetPushSessionId {
  */
 export interface TLAuthsessionGetFutureSalts {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId: bigint
+  authKeyId?: bigint
 
   /**
-   * @generated from field: int32 num = 4;
+   * @generated from field: optional int32 num = 4;
    */
-  num: number
+  num?: number
 }
 
 /**
@@ -436,14 +436,14 @@ export interface TLAuthsessionGetFutureSalts {
  */
 export interface TLAuthsessionQueryAuthKey {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId: bigint
+  authKeyId?: bigint
 }
 
 /**
@@ -451,24 +451,24 @@ export interface TLAuthsessionQueryAuthKey {
  */
 export interface TLAuthsessionSetAuthKey {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.AuthKeyInfo auth_key = 3;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthKeyInfo auth_key = 3;
    */
-  authKey: AuthKeyInfo[]
+  authKey?: AuthKeyInfo
 
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.FutureSalt future_salt = 4;
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.FutureSalt future_salt = 4;
    */
-  futureSalt: FutureSalt[]
+  futureSalt?: FutureSalt
 
   /**
-   * @generated from field: int32 expires_in = 5;
+   * @generated from field: optional int32 expires_in = 5;
    */
-  expiresIn: number
+  expiresIn?: number
 }
 
 /**
@@ -476,19 +476,19 @@ export interface TLAuthsessionSetAuthKey {
  */
 export interface TLAuthsessionBindAuthKeyUser {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId: bigint
+  authKeyId?: bigint
 
   /**
-   * @generated from field: int64 user_id = 4;
+   * @generated from field: optional int64 user_id = 4;
    */
-  userId: bigint
+  userId?: bigint
 }
 
 /**
@@ -496,19 +496,19 @@ export interface TLAuthsessionBindAuthKeyUser {
  */
 export interface TLAuthsessionUnbindAuthKeyUser {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId: bigint
+  authKeyId?: bigint
 
   /**
-   * @generated from field: int64 user_id = 4;
+   * @generated from field: optional int64 user_id = 4;
    */
-  userId: bigint
+  userId?: bigint
 }
 
 /**
@@ -516,14 +516,14 @@ export interface TLAuthsessionUnbindAuthKeyUser {
  */
 export interface TLAuthsessionGetPermAuthKeyId {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId: bigint
+  authKeyId?: bigint
 }
 
 /**
@@ -531,29 +531,29 @@ export interface TLAuthsessionGetPermAuthKeyId {
  */
 export interface TLAuthsessionBindTempAuthKey {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 perm_auth_key_id = 3;
+   * @generated from field: optional int64 perm_auth_key_id = 3;
    */
-  permAuthKeyId: bigint
+  permAuthKeyId?: bigint
 
   /**
-   * @generated from field: int64 nonce = 4;
+   * @generated from field: optional int64 nonce = 4;
    */
-  nonce: bigint
+  nonce?: bigint
 
   /**
-   * @generated from field: int32 expires_at = 5;
+   * @generated from field: optional int32 expires_at = 5;
    */
-  expiresAt: number
+  expiresAt?: number
 
   /**
-   * @generated from field: bytes encrypted_message = 6;
+   * @generated from field: optional bytes encrypted_message = 6;
    */
-  encryptedMessage: Uint8Array
+  encryptedMessage?: Uint8Array
 }
 
 /**
@@ -561,14 +561,14 @@ export interface TLAuthsessionBindTempAuthKey {
  */
 export interface TLAuthsessionSetClientSessionInfo {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: repeated tech.monstrs.chats_system.auth.v1alpha1.ClientSession data = 3;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.ClientSession data = 3;
    */
-  data: ClientSession[]
+  data?: ClientSession
 }
 
 /**
@@ -576,14 +576,14 @@ export interface TLAuthsessionSetClientSessionInfo {
  */
 export interface TLAuthsessionGetAuthorization {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId: bigint
+  authKeyId?: bigint
 }
 
 /**
@@ -591,14 +591,14 @@ export interface TLAuthsessionGetAuthorization {
  */
 export interface TLAuthsessionGetAuthStateData {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId: bigint
+  authKeyId?: bigint
 }
 
 /**
@@ -606,24 +606,24 @@ export interface TLAuthsessionGetAuthStateData {
  */
 export interface TLAuthsessionSetLayer {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId: bigint
+  authKeyId?: bigint
 
   /**
-   * @generated from field: string ip = 4;
+   * @generated from field: optional string ip = 4;
    */
-  ip: string
+  ip?: string
 
   /**
-   * @generated from field: int32 layer = 5;
+   * @generated from field: optional int32 layer = 5;
    */
-  layer: number
+  layer?: number
 }
 
 /**
@@ -631,64 +631,64 @@ export interface TLAuthsessionSetLayer {
  */
 export interface TLAuthsessionSetInitConnection {
   /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$: TLConstructor
+  constructor$?: TLConstructor
 
   /**
-   * @generated from field: int64 auth_key_id = 3;
+   * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId: bigint
+  authKeyId?: bigint
 
   /**
-   * @generated from field: string ip = 4;
+   * @generated from field: optional string ip = 4;
    */
-  ip: string
+  ip?: string
 
   /**
-   * @generated from field: int32 api_id = 5;
+   * @generated from field: optional int32 api_id = 5;
    */
-  apiId: number
+  apiId?: number
 
   /**
-   * @generated from field: string device_model = 6;
+   * @generated from field: optional string device_model = 6;
    */
-  deviceModel: string
+  deviceModel?: string
 
   /**
-   * @generated from field: string system_version = 7;
+   * @generated from field: optional string system_version = 7;
    */
-  systemVersion: string
+  systemVersion?: string
 
   /**
-   * @generated from field: string app_version = 8;
+   * @generated from field: optional string app_version = 8;
    */
-  appVersion: string
+  appVersion?: string
 
   /**
-   * @generated from field: string system_lang_code = 9;
+   * @generated from field: optional string system_lang_code = 9;
    */
-  systemLangCode: string
+  systemLangCode?: string
 
   /**
-   * @generated from field: string lang_pack = 10;
+   * @generated from field: optional string lang_pack = 10;
    */
-  langPack: string
+  langPack?: string
 
   /**
-   * @generated from field: string lang_code = 11;
+   * @generated from field: optional string lang_code = 11;
    */
-  langCode: string
+  langCode?: string
 
   /**
-   * @generated from field: string proxy = 12;
+   * @generated from field: optional string proxy = 12;
    */
-  proxy: string
+  proxy?: string
 
   /**
-   * @generated from field: string params = 13;
+   * @generated from field: optional string params = 13;
    */
-  params: string
+  params?: string
 }
 
 /**
@@ -696,7 +696,7 @@ export interface TLAuthsessionSetInitConnection {
  */
 export interface VectorLong {
   /**
-   * @generated from field: int64 datas = 1;
+   * @generated from field: repeated int64 datas = 1;
    */
-  datas: bigint
+  datas: bigint[]
 }
