@@ -37,7 +37,7 @@ import { ConnectRpcMethod }                       from '@monstrs/nestjs-connectr
 import { ConnectRpcService }                      from '@monstrs/nestjs-connectrpc'
 import { Controller }                             from '@nestjs/common'
 
-import { AuthService }                            from '@chats-system/auth-rpc/connect'
+import { AuthService }                            from '@chats-system/auth-rpc'
 
 @Controller()
 @ConnectRpcService(AuthService)

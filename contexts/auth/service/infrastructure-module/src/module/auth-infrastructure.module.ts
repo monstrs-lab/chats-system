@@ -1,5 +1,6 @@
 import type { MikroOrmModuleOptions }         from '@mikro-orm/nestjs'
 import type { DynamicModule }                 from '@nestjs/common'
+import type { OnModuleInit }                  from '@nestjs/common'
 
 import { MikroORM }                           from '@mikro-orm/core'
 import { MikroOrmModule }                     from '@mikro-orm/nestjs'
@@ -19,7 +20,7 @@ import { AuthInfrastructureModuleConfig }     from './auth-infrastructure.module
 import { AUTH_INFRASTRUCTURE_MODULE_OPTIONS } from './auth-infrastructure.module.constants.js'
 
 @Module({})
-export class AuthInfrastructureModule {
+export class AuthInfrastructureModule implements OnModuleInit {
   constructor(private readonly orm: MikroORM) {}
 
   static register(): DynamicModule {
