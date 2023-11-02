@@ -28,6 +28,10 @@ const RAW_RUNTIME_STATE =
     {\
       "name": "@chats-system/core-rpc",\
       "reference": "workspace:contexts/core/rpc/core-rpc"\
+    },\
+    {\
+      "name": "@chats-system/session-rpc",\
+      "reference": "workspace:contexts/session/rpc/session-rpc"\
     }\
   ],\
   "enableTopLevelFallback": true,\
@@ -37,6 +41,7 @@ const RAW_RUNTIME_STATE =
     ["@chats-system/auth-rpc", ["virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#workspace:contexts/auth/rpc/auth-rpc", "workspace:contexts/auth/rpc/auth-rpc"]],\
     ["@chats-system/auth-service-entrypoint", ["workspace:contexts/auth/service/service-entrypoint"]],\
     ["@chats-system/core-rpc", ["virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#workspace:contexts/core/rpc/core-rpc", "workspace:contexts/core/rpc/core-rpc"]],\
+    ["@chats-system/session-rpc", ["workspace:contexts/session/rpc/session-rpc"]],\
     ["chats-system", ["workspace:."]]\
   ],\
   "fallbackPool": [\
@@ -1430,6 +1435,21 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./contexts/core/rpc/core-rpc/",\
         "packageDependencies": [\
           ["@chats-system/core-rpc", "workspace:contexts/core/rpc/core-rpc"],\
+          ["@bufbuild/buf", "npm:1.27.2"],\
+          ["@bufbuild/protobuf", "npm:1.4.1"],\
+          ["@bufbuild/protoc-gen-es", "virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:1.4.1"],\
+          ["@connectrpc/protoc-gen-connect-es", "virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:0.13.2"],\
+          ["@monstrs/protoc-gen-abstractions", "virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:0.0.5"],\
+          ["@monstrs/protoc-gen-interfaces", "virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:0.0.4"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@chats-system/session-rpc", [\
+      ["workspace:contexts/session/rpc/session-rpc", {\
+        "packageLocation": "./contexts/session/rpc/session-rpc/",\
+        "packageDependencies": [\
+          ["@chats-system/session-rpc", "workspace:contexts/session/rpc/session-rpc"],\
           ["@bufbuild/buf", "npm:1.27.2"],\
           ["@bufbuild/protobuf", "npm:1.4.1"],\
           ["@bufbuild/protoc-gen-es", "virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:1.4.1"],\

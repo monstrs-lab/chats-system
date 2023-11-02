@@ -1,13 +1,14 @@
-import { EntityRepository }                         from '@mikro-orm/core'
-import { InjectRepository }                         from '@mikro-orm/nestjs'
-import { Injectable }                               from '@nestjs/common'
+import type { AuthData }           from '../data/index.js'
 
-import { Authorization }                            from '@chats-system/core-rpc'
-import { PREDICATE_AUTH_KEY_INFO }                  from '@chats-system/core-rpc'
+import { EntityRepository }        from '@mikro-orm/core'
+import { InjectRepository }        from '@mikro-orm/nestjs'
+import { Injectable }              from '@nestjs/common'
 
-import type { AuthData }                                 from '../data/index.js'
-import { AuthUserEntity }                           from '../entities/index.js'
-import { AuthsService }                             from './auths.service.js'
+import { Authorization }           from '@chats-system/core-rpc'
+import { PREDICATE_AUTH_KEY_INFO } from '@chats-system/core-rpc'
+
+import { AuthUserEntity }          from '../entities/index.js'
+import { AuthsService }            from './auths.service.js'
 
 @Injectable()
 export class AuthorizationsService {

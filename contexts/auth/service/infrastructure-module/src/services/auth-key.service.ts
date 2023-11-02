@@ -88,7 +88,7 @@ export class AuthKeyService {
   async unsafeBindKeyId(
     authKeyId: bigint,
     bindType:
-      typeof AUTH_KEY_TYPE_MEDIA_TEMP
+      | typeof AUTH_KEY_TYPE_MEDIA_TEMP
       | typeof AUTH_KEY_TYPE_PERM
       | typeof AUTH_KEY_TYPE_TEMP,
     bindKeyId: bigint
