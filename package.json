@@ -1,9 +1,8 @@
 {
-  "name": "rewards-system",
+  "name": "chats-system",
   "private": true,
   "workspaces": [
-    "service/*",
-    "rpc/*"
+    "contexts/**/*"
   ],
   "resolutions": {
     "pg": "8.10.0"

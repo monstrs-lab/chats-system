@@ -10,14 +10,24 @@ const RAW_RUNTIME_STATE =
   ],\
   "dependencyTreeRoots": [\
     {\
-      "name": "rewards-system",\
+      "name": "chats-system",\
       "reference": "workspace:."\
+    },\
+    {\
+      "name": "@chats-system/auth-rpc",\
+      "reference": "workspace:contexts/auth/rpc/auth-rpc"\
+    },\
+    {\
+      "name": "@chats-system/core-rpc",\
+      "reference": "workspace:contexts/core/rpc/core-rpc"\
     }\
   ],\
   "enableTopLevelFallback": true,\
   "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
   "fallbackExclusionList": [\
-    ["rewards-system", ["workspace:."]]\
+    ["@chats-system/auth-rpc", ["workspace:contexts/auth/rpc/auth-rpc"]],\
+    ["@chats-system/core-rpc", ["workspace:contexts/core/rpc/core-rpc"]],\
+    ["chats-system", ["workspace:."]]\
   ],\
   "fallbackPool": [\
   ],\
@@ -833,6 +843,177 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@bufbuild/buf", [\
+      ["npm:1.27.2", {\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-buf-npm-1.27.2-c56b019279/node_modules/@bufbuild/buf/",\
+        "packageDependencies": [\
+          ["@bufbuild/buf", "npm:1.27.2"],\
+          ["@bufbuild/buf-darwin-arm64", "npm:1.27.2"],\
+          ["@bufbuild/buf-darwin-x64", "npm:1.27.2"],\
+          ["@bufbuild/buf-linux-aarch64", "npm:1.27.2"],\
+          ["@bufbuild/buf-linux-x64", "npm:1.27.2"],\
+          ["@bufbuild/buf-win32-arm64", "npm:1.27.2"],\
+          ["@bufbuild/buf-win32-x64", "npm:1.27.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@bufbuild/buf-darwin-arm64", [\
+      ["npm:1.27.2", {\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-buf-darwin-arm64-npm-1.27.2-59d836cc33/node_modules/@bufbuild/buf-darwin-arm64/",\
+        "packageDependencies": [\
+          ["@bufbuild/buf-darwin-arm64", "npm:1.27.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@bufbuild/buf-darwin-x64", [\
+      ["npm:1.27.2", {\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-buf-darwin-x64-npm-1.27.2-83fa100396/node_modules/@bufbuild/buf-darwin-x64/",\
+        "packageDependencies": [\
+          ["@bufbuild/buf-darwin-x64", "npm:1.27.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@bufbuild/buf-linux-aarch64", [\
+      ["npm:1.27.2", {\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-buf-linux-aarch64-npm-1.27.2-a35f582e88/node_modules/@bufbuild/buf-linux-aarch64/",\
+        "packageDependencies": [\
+          ["@bufbuild/buf-linux-aarch64", "npm:1.27.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@bufbuild/buf-linux-x64", [\
+      ["npm:1.27.2", {\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-buf-linux-x64-npm-1.27.2-c9b589e57b/node_modules/@bufbuild/buf-linux-x64/",\
+        "packageDependencies": [\
+          ["@bufbuild/buf-linux-x64", "npm:1.27.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@bufbuild/buf-win32-arm64", [\
+      ["npm:1.27.2", {\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-buf-win32-arm64-npm-1.27.2-f6cb720cc3/node_modules/@bufbuild/buf-win32-arm64/",\
+        "packageDependencies": [\
+          ["@bufbuild/buf-win32-arm64", "npm:1.27.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@bufbuild/buf-win32-x64", [\
+      ["npm:1.27.2", {\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-buf-win32-x64-npm-1.27.2-517687d20e/node_modules/@bufbuild/buf-win32-x64/",\
+        "packageDependencies": [\
+          ["@bufbuild/buf-win32-x64", "npm:1.27.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@bufbuild/protobuf", [\
+      ["npm:1.4.1", {\
+        "packageLocation": "./.yarn/cache/@bufbuild-protobuf-npm-1.4.1-d266194cab-d81e5a53ef.zip/node_modules/@bufbuild/protobuf/",\
+        "packageDependencies": [\
+          ["@bufbuild/protobuf", "npm:1.4.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@bufbuild/protoc-gen-es", [\
+      ["npm:1.4.1", {\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-protoc-gen-es-virtual-5c0db19802/node_modules/@bufbuild/protoc-gen-es/",\
+        "packageDependencies": [\
+          ["@bufbuild/protoc-gen-es", "npm:1.4.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:1.4.1", {\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-protoc-gen-es-virtual-5c0db19802/node_modules/@bufbuild/protoc-gen-es/",\
+        "packageDependencies": [\
+          ["@bufbuild/protoc-gen-es", "virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:1.4.1"],\
+          ["@bufbuild/protobuf", "npm:1.4.1"],\
+          ["@bufbuild/protoplugin", "npm:1.4.1"],\
+          ["@types/bufbuild__protobuf", null]\
+        ],\
+        "packagePeers": [\
+          "@bufbuild/protobuf",\
+          "@types/bufbuild__protobuf"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@bufbuild/protoplugin", [\
+      ["npm:1.4.1", {\
+        "packageLocation": "./.yarn/cache/@bufbuild-protoplugin-npm-1.4.1-b1c761270c-1d37b0c705.zip/node_modules/@bufbuild/protoplugin/",\
+        "packageDependencies": [\
+          ["@bufbuild/protoplugin", "npm:1.4.1"],\
+          ["@bufbuild/protobuf", "npm:1.4.1"],\
+          ["@typescript/vfs", "npm:1.5.0"],\
+          ["typescript", "patch:typescript@npm%3A4.5.2#optional!builtin<compat/typescript>::version=4.5.2&hash=bcec9a"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@chats-system/auth-rpc", [\
+      ["workspace:contexts/auth/rpc/auth-rpc", {\
+        "packageLocation": "./contexts/auth/rpc/auth-rpc/",\
+        "packageDependencies": [\
+          ["@chats-system/auth-rpc", "workspace:contexts/auth/rpc/auth-rpc"],\
+          ["@bufbuild/buf", "npm:1.27.2"],\
+          ["@bufbuild/protobuf", "npm:1.4.1"],\
+          ["@bufbuild/protoc-gen-es", "virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:1.4.1"],\
+          ["@connectrpc/protoc-gen-connect-es", "virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:0.13.2"],\
+          ["@monstrs/protoc-gen-abstractions", "virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:0.0.5"],\
+          ["@monstrs/protoc-gen-interfaces", "virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:0.0.4"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@chats-system/core-rpc", [\
+      ["workspace:contexts/core/rpc/core-rpc", {\
+        "packageLocation": "./contexts/core/rpc/core-rpc/",\
+        "packageDependencies": [\
+          ["@chats-system/core-rpc", "workspace:contexts/core/rpc/core-rpc"],\
+          ["@bufbuild/buf", "npm:1.27.2"],\
+          ["@bufbuild/protobuf", "npm:1.4.1"],\
+          ["@bufbuild/protoc-gen-es", "virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:1.4.1"],\
+          ["@connectrpc/protoc-gen-connect-es", "virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:0.13.2"],\
+          ["@monstrs/protoc-gen-abstractions", "virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:0.0.5"],\
+          ["@monstrs/protoc-gen-interfaces", "virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:0.0.4"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@connectrpc/protoc-gen-connect-es", [\
+      ["npm:0.13.2", {\
+        "packageLocation": "./.yarn/unplugged/@connectrpc-protoc-gen-connect-es-virtual-88764709a2/node_modules/@connectrpc/protoc-gen-connect-es/",\
+        "packageDependencies": [\
+          ["@connectrpc/protoc-gen-connect-es", "npm:0.13.2"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:0.13.2", {\
+        "packageLocation": "./.yarn/unplugged/@connectrpc-protoc-gen-connect-es-virtual-88764709a2/node_modules/@connectrpc/protoc-gen-connect-es/",\
+        "packageDependencies": [\
+          ["@connectrpc/protoc-gen-connect-es", "virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:0.13.2"],\
+          ["@bufbuild/protobuf", "npm:1.4.1"],\
+          ["@bufbuild/protoc-gen-es", "virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:1.4.1"],\
+          ["@bufbuild/protoplugin", "npm:1.4.1"],\
+          ["@connectrpc/connect", null],\
+          ["@types/bufbuild__protoc-gen-es", null],\
+          ["@types/connectrpc__connect", null]\
+        ],\
+        "packagePeers": [\
+          "@bufbuild/protoc-gen-es",\
+          "@connectrpc/connect",\
+          "@types/bufbuild__protoc-gen-es",\
+          "@types/connectrpc__connect"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@emotion/css-prettifier", [\
       ["npm:1.1.3", {\
         "packageLocation": "./.yarn/cache/@emotion-css-prettifier-npm-1.1.3-a02e878ac9-9ce3d7e585.zip/node_modules/@emotion/css-prettifier/",\
@@ -1432,6 +1613,52 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@monstrs/jest-resolver", "npm:0.3.3"],\
           ["ts-jest-resolver", "npm:2.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@monstrs/protoc-gen-abstractions", [\
+      ["npm:0.0.5", {\
+        "packageLocation": "./.yarn/cache/@monstrs-protoc-gen-abstractions-npm-0.0.5-3eadd16bfe-fcb2b3e9d8.zip/node_modules/@monstrs/protoc-gen-abstractions/",\
+        "packageDependencies": [\
+          ["@monstrs/protoc-gen-abstractions", "npm:0.0.5"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:0.0.5", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-protoc-gen-abstractions-virtual-2dedfe54f4/0/cache/@monstrs-protoc-gen-abstractions-npm-0.0.5-3eadd16bfe-fcb2b3e9d8.zip/node_modules/@monstrs/protoc-gen-abstractions/",\
+        "packageDependencies": [\
+          ["@monstrs/protoc-gen-abstractions", "virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:0.0.5"],\
+          ["@bufbuild/protobuf", "npm:1.4.1"],\
+          ["@bufbuild/protoplugin", "npm:1.4.1"],\
+          ["@types/bufbuild__protobuf", null]\
+        ],\
+        "packagePeers": [\
+          "@bufbuild/protobuf",\
+          "@types/bufbuild__protobuf"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@monstrs/protoc-gen-interfaces", [\
+      ["npm:0.0.4", {\
+        "packageLocation": "./.yarn/cache/@monstrs-protoc-gen-interfaces-npm-0.0.4-4e7e6d7429-d02c45f21e.zip/node_modules/@monstrs/protoc-gen-interfaces/",\
+        "packageDependencies": [\
+          ["@monstrs/protoc-gen-interfaces", "npm:0.0.4"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:0.0.4", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-protoc-gen-interfaces-virtual-1075deaa9b/0/cache/@monstrs-protoc-gen-interfaces-npm-0.0.4-4e7e6d7429-d02c45f21e.zip/node_modules/@monstrs/protoc-gen-interfaces/",\
+        "packageDependencies": [\
+          ["@monstrs/protoc-gen-interfaces", "virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:0.0.4"],\
+          ["@bufbuild/protobuf", "npm:1.4.1"],\
+          ["@bufbuild/protoplugin", "npm:1.4.1"],\
+          ["@types/bufbuild__protobuf", null]\
+        ],\
+        "packagePeers": [\
+          "@bufbuild/protobuf",\
+          "@types/bufbuild__protobuf"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2212,6 +2439,16 @@ const RAW_RUNTIME_STATE =
           ["@typescript-eslint/visitor-keys", "npm:6.8.0"],\
           ["@typescript-eslint/types", "npm:6.8.0"],\
           ["eslint-visitor-keys", "npm:3.4.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@typescript/vfs", [\
+      ["npm:1.5.0", {\
+        "packageLocation": "./.yarn/cache/@typescript-vfs-npm-1.5.0-f8621cadc2-9b5d0a8086.zip/node_modules/@typescript/vfs/",\
+        "packageDependencies": [\
+          ["@typescript/vfs", "npm:1.5.0"],\
+          ["debug", "virtual:4758feee42453c0e31b0d2032a7b1362d6b06281699830d2da9a056f2cca72bd2c5cfdb74005fdf03a64876be8eaca2dd7b0fc2dc59d14318badf19cb22ba18e#npm:4.3.4"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3160,6 +3397,18 @@ const RAW_RUNTIME_STATE =
           ["char-regex", "npm:1.0.2"]\
         ],\
         "linkType": "HARD"\
+      }]\
+    ]],\
+    ["chats-system", [\
+      ["workspace:.", {\
+        "packageLocation": "./",\
+        "packageDependencies": [\
+          ["chats-system", "workspace:."],\
+          ["@monstrs/tools-runtime", "npm:0.2.17"],\
+          ["@types/node", "npm:20.8.7"],\
+          ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
+        ],\
+        "linkType": "SOFT"\
       }]\
     ]],\
     ["chownr", [\
@@ -7157,18 +7406,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["rewards-system", [\
-      ["workspace:.", {\
-        "packageLocation": "./",\
-        "packageDependencies": [\
-          ["rewards-system", "workspace:."],\
-          ["@monstrs/tools-runtime", "npm:0.2.17"],\
-          ["@types/node", "npm:20.8.7"],\
-          ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
-        ],\
-        "linkType": "SOFT"\
-      }]\
-    ]],\
     ["rimraf", [\
       ["npm:3.0.2", {\
         "packageLocation": "./.yarn/cache/rimraf-npm-3.0.2-2cb7dac69a-9cb7757acb.zip/node_modules/rimraf/",\
@@ -8087,6 +8324,13 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["typescript", [\
+      ["patch:typescript@npm%3A4.5.2#optional!builtin<compat/typescript>::version=4.5.2&hash=bcec9a", {\
+        "packageLocation": "./.yarn/cache/typescript-patch-06dd159578-90eaf5227b.zip/node_modules/typescript/",\
+        "packageDependencies": [\
+          ["typescript", "patch:typescript@npm%3A4.5.2#optional!builtin<compat/typescript>::version=4.5.2&hash=bcec9a"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441", {\
         "packageLocation": "./.yarn/cache/typescript-patch-3914634c3a-062c1cee19.zip/node_modules/typescript/",\
         "packageDependencies": [\

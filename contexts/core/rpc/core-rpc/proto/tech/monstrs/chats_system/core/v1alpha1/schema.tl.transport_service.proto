@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package tech.monstrs.chats_system.core.v1alpha1;
+
+import "tech/monstrs/chats_system/core/v1alpha1/schema.tl.crc32.proto";
+
+message TLRpcDropAnswer {
+  TLConstructor constructor = 1;
+  int64 req_msg_id = 3;
+}
+
+message TLGetFutureSalts {
+  TLConstructor constructor = 1;
+  int32 num = 3;
+}
+
+message TLPing {
+  TLConstructor constructor = 1;
+  int64 ping_id = 3;
+}
+
+message TLPingDelayDisconnect {
+  TLConstructor constructor = 1;
+  int64 ping_id = 3;
+  int32 disconnect_delay = 4;
+}
+
+message TLDestroySession {
+  TLConstructor constructor = 1;
+  int64 session_id = 3;
+}
+
+message TLTestUseError {
+  TLConstructor constructor = 1;
+}
+
+message TLTestUseConfigSimple {
+  TLConstructor constructor = 1;
+}

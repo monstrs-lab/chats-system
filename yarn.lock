@@ -424,6 +424,163 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@bufbuild/buf-darwin-arm64@npm:1.27.2":
+  version: 1.27.2
+  resolution: "@bufbuild/buf-darwin-arm64@npm:1.27.2"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@bufbuild/buf-darwin-x64@npm:1.27.2":
+  version: 1.27.2
+  resolution: "@bufbuild/buf-darwin-x64@npm:1.27.2"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@bufbuild/buf-linux-aarch64@npm:1.27.2":
+  version: 1.27.2
+  resolution: "@bufbuild/buf-linux-aarch64@npm:1.27.2"
+  conditions: os=linux & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@bufbuild/buf-linux-x64@npm:1.27.2":
+  version: 1.27.2
+  resolution: "@bufbuild/buf-linux-x64@npm:1.27.2"
+  conditions: os=linux & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@bufbuild/buf-win32-arm64@npm:1.27.2":
+  version: 1.27.2
+  resolution: "@bufbuild/buf-win32-arm64@npm:1.27.2"
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@bufbuild/buf-win32-x64@npm:1.27.2":
+  version: 1.27.2
+  resolution: "@bufbuild/buf-win32-x64@npm:1.27.2"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@bufbuild/buf@npm:^1.26.1":
+  version: 1.27.2
+  resolution: "@bufbuild/buf@npm:1.27.2"
+  dependencies:
+    "@bufbuild/buf-darwin-arm64": "npm:1.27.2"
+    "@bufbuild/buf-darwin-x64": "npm:1.27.2"
+    "@bufbuild/buf-linux-aarch64": "npm:1.27.2"
+    "@bufbuild/buf-linux-x64": "npm:1.27.2"
+    "@bufbuild/buf-win32-arm64": "npm:1.27.2"
+    "@bufbuild/buf-win32-x64": "npm:1.27.2"
+  dependenciesMeta:
+    "@bufbuild/buf-darwin-arm64":
+      optional: true
+    "@bufbuild/buf-darwin-x64":
+      optional: true
+    "@bufbuild/buf-linux-aarch64":
+      optional: true
+    "@bufbuild/buf-linux-x64":
+      optional: true
+    "@bufbuild/buf-win32-arm64":
+      optional: true
+    "@bufbuild/buf-win32-x64":
+      optional: true
+  bin:
+    buf: bin/buf
+    protoc-gen-buf-breaking: bin/protoc-gen-buf-breaking
+    protoc-gen-buf-lint: bin/protoc-gen-buf-lint
+  checksum: fb651c6fcbda0b8c7771dd9fe3dc80cb4f2e981c26e9b0734c923f27da65e3ce3152681634522ace1d4f25a8f138607ff643719619a4283bbfdea3e2f68073d9
+  languageName: node
+  linkType: hard
+
+"@bufbuild/protobuf@npm:1.4.1, @bufbuild/protobuf@npm:^1.2.1, @bufbuild/protobuf@npm:^1.3.1":
+  version: 1.4.1
+  resolution: "@bufbuild/protobuf@npm:1.4.1"
+  checksum: d81e5a53ef6c61f9c77297a9f22b7fb529b221f6c57af64e8d0a10ddec8d02cc76243b9458c9985c77f6a251af39ecd2efb9c738407704d45e12174bf8065810
+  languageName: node
+  linkType: hard
+
+"@bufbuild/protoc-gen-es@npm:^1.3.1":
+  version: 1.4.1
+  resolution: "@bufbuild/protoc-gen-es@npm:1.4.1"
+  dependencies:
+    "@bufbuild/protoplugin": "npm:1.4.1"
+  peerDependencies:
+    "@bufbuild/protobuf": 1.4.1
+  peerDependenciesMeta:
+    "@bufbuild/protobuf":
+      optional: true
+  bin:
+    protoc-gen-es: bin/protoc-gen-es
+  checksum: 52d8aeebc347f52ad6d52f9e7cd6c30d957605c11388513f4ce0c597c6dcd4e77efa309ff09e3ed6094a3da877031ea31332b0e2619bca3a2aeb5807c4179130
+  languageName: node
+  linkType: hard
+
+"@bufbuild/protoplugin@npm:1.4.1, @bufbuild/protoplugin@npm:^1.2.1, @bufbuild/protoplugin@npm:^1.3.1":
+  version: 1.4.1
+  resolution: "@bufbuild/protoplugin@npm:1.4.1"
+  dependencies:
+    "@bufbuild/protobuf": "npm:1.4.1"
+    "@typescript/vfs": "npm:^1.4.0"
+    typescript: "npm:4.5.2"
+  checksum: 1d37b0c705fd79ac18c0088c452ca8b6b886a71c185828a81cab9605c663c279f28860ee796d8543b7bd9ebecf7799cdc8a7bc49ef3509a620b5176966f5fae1
+  languageName: node
+  linkType: hard
+
+"@chats-system/auth-rpc@workspace:contexts/auth/rpc/auth-rpc":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/auth-rpc@workspace:contexts/auth/rpc/auth-rpc"
+  dependencies:
+    "@bufbuild/buf": "npm:^1.26.1"
+    "@bufbuild/protobuf": "npm:^1.3.1"
+    "@bufbuild/protoc-gen-es": "npm:^1.3.1"
+    "@connectrpc/protoc-gen-connect-es": "npm:^0.13.2"
+    "@monstrs/protoc-gen-abstractions": "npm:^0.0.5"
+    "@monstrs/protoc-gen-interfaces": "npm:^0.0.4"
+  peerDependencies:
+    "@bufbuild/protobuf": ^1
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/core-rpc@workspace:contexts/core/rpc/core-rpc":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/core-rpc@workspace:contexts/core/rpc/core-rpc"
+  dependencies:
+    "@bufbuild/buf": "npm:^1.26.1"
+    "@bufbuild/protobuf": "npm:^1.3.1"
+    "@bufbuild/protoc-gen-es": "npm:^1.3.1"
+    "@connectrpc/protoc-gen-connect-es": "npm:^0.13.2"
+    "@monstrs/protoc-gen-abstractions": "npm:^0.0.5"
+    "@monstrs/protoc-gen-interfaces": "npm:^0.0.4"
+  peerDependencies:
+    "@bufbuild/protobuf": ^1
+  languageName: unknown
+  linkType: soft
+
+"@connectrpc/protoc-gen-connect-es@npm:^0.13.2":
+  version: 0.13.2
+  resolution: "@connectrpc/protoc-gen-connect-es@npm:0.13.2"
+  dependencies:
+    "@bufbuild/protobuf": "npm:^1.2.1"
+    "@bufbuild/protoplugin": "npm:^1.2.1"
+  peerDependencies:
+    "@bufbuild/protoc-gen-es": ^1.2.1
+    "@connectrpc/connect": 0.13.2
+  peerDependenciesMeta:
+    "@bufbuild/protoc-gen-es":
+      optional: true
+    "@connectrpc/connect":
+      optional: true
+  bin:
+    protoc-gen-connect-es: bin/protoc-gen-connect-es
+  checksum: a2f99ad26d6a12401ec38058f8ff24db2ea19179e0085f1778334a5725d145d7af2011ccb522f238c6492d28380d705bf71cb5ba8de98d2518fe7338475833a7
+  languageName: node
+  linkType: hard
+
 "@emotion/css-prettifier@npm:^1.1.3":
   version: 1.1.3
   resolution: "@emotion/css-prettifier@npm:1.1.3"
@@ -911,6 +1068,38 @@ __metadata:
   dependencies:
     ts-jest-resolver: "npm:^2.0.1"
   checksum: 67979c5237a5b8860079a8871b5a9198d5bc455fffb7de8f24e4c798b5fc52b57811a5ec169b0b2ca2da60ca742c0069739b6109ea7467ba42b5101c44faa00e
+  languageName: node
+  linkType: hard
+
+"@monstrs/protoc-gen-abstractions@npm:^0.0.5":
+  version: 0.0.5
+  resolution: "@monstrs/protoc-gen-abstractions@npm:0.0.5"
+  dependencies:
+    "@bufbuild/protoplugin": "npm:^1.3.1"
+  peerDependencies:
+    "@bufbuild/protobuf": ^1
+  peerDependenciesMeta:
+    "@bufbuild/protobuf":
+      optional: true
+  bin:
+    protoc-gen-abstractions: bin/protoc-gen-abstractions
+  checksum: fcb2b3e9d8c196f168ec8c1f5dc9e3b5d476d833e9af5fceceb1256280caec8612b132db5bb86d30594310bafcf04783ab79e5da2a5f653dba7b76fe733c8e9f
+  languageName: node
+  linkType: hard
+
+"@monstrs/protoc-gen-interfaces@npm:^0.0.4":
+  version: 0.0.4
+  resolution: "@monstrs/protoc-gen-interfaces@npm:0.0.4"
+  dependencies:
+    "@bufbuild/protoplugin": "npm:^1.3.1"
+  peerDependencies:
+    "@bufbuild/protobuf": ^1
+  peerDependenciesMeta:
+    "@bufbuild/protobuf":
+      optional: true
+  bin:
+    protoc-gen-interfaces: bin/protoc-gen-interfaces
+  checksum: d02c45f21ece693b742ee65965defb0c837e45951980e1c3651e83f8024dbd407c64a161a462d02a271df61f07457ae609f8199714bcd5d79b0a8dd98a50463b
   languageName: node
   linkType: hard
 
@@ -1431,6 +1620,15 @@ __metadata:
     "@typescript-eslint/types": "npm:6.8.0"
     eslint-visitor-keys: "npm:^3.4.1"
   checksum: 71c3080eea8928eb6337889f767f2d5ee666aa87edd376fdeafabeb9b99171760c074d3bf413d7227920c9ad0ba7e93207cace8394793442fb3bc7ead438a24d
+  languageName: node
+  linkType: hard
+
+"@typescript/vfs@npm:^1.4.0":
+  version: 1.5.0
+  resolution: "@typescript/vfs@npm:1.5.0"
+  dependencies:
+    debug: "npm:^4.1.1"
+  checksum: 9b5d0a80864f1c7920cb353ffb5e0f6c8234edba53bd846a1264699cf3bad4a560818db2b724a8d165cd44f385d8ffc429cc4fc3a26061a52b31948ccb797edc
   languageName: node
   linkType: hard
 
@@ -2200,6 +2398,16 @@ __metadata:
   checksum: 57a09a86371331e0be35d9083ba429e86c4f4648ecbe27455dbfb343037c16ee6fdc7f6b61f433a57cc5ded5561d71c56a150e018f40c2ffb7bc93a26dae341e
   languageName: node
   linkType: hard
+
+"chats-system@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "chats-system@workspace:."
+  dependencies:
+    "@monstrs/tools-runtime": "npm:^0.2.17"
+    "@types/node": "npm:^20.6.5"
+    typescript: "npm:^5.2.2"
+  languageName: unknown
+  linkType: soft
 
 "chownr@npm:^2.0.0":
   version: 2.0.0
@@ -5680,16 +5888,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rewards-system@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "rewards-system@workspace:."
-  dependencies:
-    "@monstrs/tools-runtime": "npm:^0.2.17"
-    "@types/node": "npm:^20.6.5"
-    typescript: "npm:^5.2.2"
-  languageName: unknown
-  linkType: soft
-
 "rimraf@npm:^3.0.2":
   version: 3.0.2
   resolution: "rimraf@npm:3.0.2"
@@ -6459,6 +6657,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@npm:4.5.2":
+  version: 4.5.2
+  resolution: "typescript@npm:4.5.2"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 8fc40b886018889ad2099cb1b477c4f0373528c9fca83860ad33e898fe19ada22568477aca91741fbeabf0402e203f0e2d6d14ed6973ad826893cc13b2dfd459
+  languageName: node
+  linkType: hard
+
 "typescript@npm:^5.2.2":
   version: 5.2.2
   resolution: "typescript@npm:5.2.2"
@@ -6466,6 +6674,16 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 91ae3e6193d0ddb8656d4c418a033f0f75dec5e077ebbc2bd6d76439b93f35683936ee1bdc0e9cf94ec76863aa49f27159b5788219b50e1cd0cd6d110aa34b07
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A4.5.2#optional!builtin<compat/typescript>":
+  version: 4.5.2
+  resolution: "typescript@patch:typescript@npm%3A4.5.2#optional!builtin<compat/typescript>::version=4.5.2&hash=bcec9a"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 90eaf5227b6a755da1a77665b24b958a8bc79b12b435c4254255ceada6ac6eb7905678b37c23c4f63a298b7ed6bee8fc87df78b98d0b0e7f0e30e873334121fd
   languageName: node
   linkType: hard
 

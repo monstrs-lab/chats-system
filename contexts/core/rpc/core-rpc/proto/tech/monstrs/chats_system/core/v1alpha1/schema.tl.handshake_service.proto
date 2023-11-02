@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package tech.monstrs.chats_system.core.v1alpha1;
+
+import "tech/monstrs/chats_system/core/v1alpha1/schema.tl.crc32.proto";
+import "tech/monstrs/chats_system/core/v1alpha1/schema.tl.handshake.proto";
+
+service RPCAuthKey {
+  rpc req_pq (TLReqPq) returns (ResPQ) {}
+  rpc req_pq_multi (TLReqPqMulti) returns (ResPQ) {}
+  rpc req_DH_params (TLReqDHParams) returns (ServerDHParams) {}
+  rpc set_client_DH_params (TLSetClientDHParams) returns (SetClientDHParamsAnswer) {}
+  rpc destroy_auth_key (TLDestroyAuthKey) returns (DestroyAuthKeyRes) {}
+}
+
+message TLReqPq {
+  TLConstructor constructor = 1;
+  bytes nonce = 3;
+}
+
+message TLReqPqMulti {
+  TLConstructor constructor = 1;
+  bytes nonce = 3;
+}
+
+message TLReqDHParams {
+  TLConstructor constructor = 1;
+  bytes nonce = 3;
+  bytes server_nonce = 4;
+  string p = 5;
+  string q = 6;
+  int64 public_key_fingerprint = 7;
+  string encrypted_data = 8;
+}
+
+message TLSetClientDHParams {
+  TLConstructor constructor = 1;
+  bytes nonce = 3;
+  bytes server_nonce = 4;
+  string encrypted_data = 5;
+}
+
+message TLDestroyAuthKey {
+  TLConstructor constructor = 1;
+}

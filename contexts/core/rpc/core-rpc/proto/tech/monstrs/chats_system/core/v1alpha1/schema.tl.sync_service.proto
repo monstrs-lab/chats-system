@@ -1,0 +1,4586 @@
+syntax = "proto3";
+
+package tech.monstrs.chats_system.core.v1alpha1;
+
+import "google/protobuf/wrappers.proto";
+import "tech/monstrs/chats_system/core/v1alpha1/schema.tl.core_types.proto";
+import "tech/monstrs/chats_system/core/v1alpha1/schema.tl.crc32.proto";
+import "tech/monstrs/chats_system/core/v1alpha1/schema.tl.sync.proto";
+
+service RPCAccount {
+  rpc account_updateProfile (TLAccountUpdateProfile) returns (User) {}
+  rpc account_updateStatus (TLAccountUpdateStatus) returns (Bool) {}
+  rpc account_getPrivacy (TLAccountGetPrivacy) returns (AccountPrivacyRules) {}
+  rpc account_setPrivacy (TLAccountSetPrivacy) returns (AccountPrivacyRules) {}
+  rpc account_deleteAccount (TLAccountDeleteAccount) returns (Bool) {}
+  rpc account_getAccountTTL (TLAccountGetAccountTTL) returns (AccountDaysTTL) {}
+  rpc account_setAccountTTL (TLAccountSetAccountTTL) returns (Bool) {}
+  rpc account_sendChangePhoneCode (TLAccountSendChangePhoneCode) returns (AuthSentCode) {}
+  rpc account_changePhone (TLAccountChangePhone) returns (User) {}
+  rpc account_resetAuthorization (TLAccountResetAuthorization) returns (Bool) {}
+  rpc account_sendConfirmPhoneCode (TLAccountSendConfirmPhoneCode) returns (AuthSentCode) {}
+  rpc account_confirmPhone (TLAccountConfirmPhone) returns (Bool) {}
+  rpc account_getGlobalPrivacySettings (TLAccountGetGlobalPrivacySettings) returns (GlobalPrivacySettings) {}
+  rpc account_setGlobalPrivacySettings (TLAccountSetGlobalPrivacySettings) returns (GlobalPrivacySettings) {}
+  rpc messages_setDefaultHistoryTTL (TLMessagesSetDefaultHistoryTTL) returns (Bool) {}
+  rpc messages_getDefaultHistoryTTL (TLMessagesGetDefaultHistoryTTL) returns (DefaultHistoryTTL) {}
+  rpc account_updateVerified (TLAccountUpdateVerified) returns (User) {}
+}
+
+service RPCAntiSpam {
+  rpc channels_toggleAntiSpam (TLChannelsToggleAntiSpam) returns (Updates) {}
+  rpc channels_reportAntiSpamFalsePositive (TLChannelsReportAntiSpamFalsePositive) returns (Bool) {}
+}
+
+service RPCAuthorization {
+  rpc auth_sendCode (TLAuthSendCode) returns (AuthSentCode) {}
+  rpc auth_signUp (TLAuthSignUp) returns (AuthAuthorization) {}
+  rpc auth_signIn (TLAuthSignIn) returns (AuthAuthorization) {}
+  rpc auth_logOut (TLAuthLogOut) returns (AuthLoggedOut) {}
+  rpc auth_resetAuthorizations (TLAuthResetAuthorizations) returns (Bool) {}
+  rpc auth_exportAuthorization (TLAuthExportAuthorization) returns (AuthExportedAuthorization) {}
+  rpc auth_importAuthorization (TLAuthImportAuthorization) returns (AuthAuthorization) {}
+  rpc auth_bindTempAuthKey (TLAuthBindTempAuthKey) returns (Bool) {}
+  rpc auth_importBotAuthorization (TLAuthImportBotAuthorization) returns (AuthAuthorization) {}
+  rpc auth_checkPassword (TLAuthCheckPassword) returns (AuthAuthorization) {}
+  rpc auth_requestPasswordRecovery (TLAuthRequestPasswordRecovery) returns (AuthPasswordRecovery) {}
+  rpc auth_recoverPassword (TLAuthRecoverPassword) returns (AuthAuthorization) {}
+  rpc auth_resendCode (TLAuthResendCode) returns (AuthSentCode) {}
+  rpc auth_cancelCode (TLAuthCancelCode) returns (Bool) {}
+  rpc auth_dropTempAuthKeys (TLAuthDropTempAuthKeys) returns (Bool) {}
+  rpc auth_checkRecoveryPassword (TLAuthCheckRecoveryPassword) returns (Bool) {}
+  rpc auth_importWebTokenAuthorization (TLAuthImportWebTokenAuthorization) returns (AuthAuthorization) {}
+  rpc auth_requestFirebaseSms (TLAuthRequestFirebaseSms) returns (Bool) {}
+  rpc auth_resetLoginEmail (TLAuthResetLoginEmail) returns (AuthSentCode) {}
+  rpc account_sendVerifyEmailCode (TLAccountSendVerifyEmailCode) returns (AccountSentEmailCode) {}
+  rpc account_verifyEmail32DA4CF (TLAccountVerifyEmail32DA4CF) returns (AccountEmailVerified) {}
+  rpc account_resetPassword (TLAccountResetPassword) returns (AccountResetPasswordResult) {}
+  rpc account_setAuthorizationTTL (TLAccountSetAuthorizationTTL) returns (Bool) {}
+  rpc account_changeAuthorizationSettings (TLAccountChangeAuthorizationSettings) returns (Bool) {}
+  rpc account_invalidateSignInCodes (TLAccountInvalidateSignInCodes) returns (Bool) {}
+  rpc account_verifyEmailECBA39DB (TLAccountVerifyEmailECBA39DB) returns (Bool) {}
+  rpc auth_toggleBan (TLAuthToggleBan) returns (PredefinedUser) {}
+}
+
+service RPCAutoDownload {
+  rpc account_getAutoDownloadSettings (TLAccountGetAutoDownloadSettings) returns (AccountAutoDownloadSettings) {}
+  rpc account_saveAutoDownloadSettings (TLAccountSaveAutoDownloadSettings) returns (Bool) {}
+}
+
+service RPCAutosave {
+  rpc account_getAutoSaveSettings (TLAccountGetAutoSaveSettings) returns (AccountAutoSaveSettings) {}
+  rpc account_saveAutoSaveSettings (TLAccountSaveAutoSaveSettings) returns (Bool) {}
+  rpc account_deleteAutoSaveExceptions (TLAccountDeleteAutoSaveExceptions) returns (Bool) {}
+}
+
+service RPCBotAdminRight {
+  rpc bots_setBotBroadcastDefaultAdminRights (TLBotsSetBotBroadcastDefaultAdminRights) returns (Bool) {}
+  rpc bots_setBotGroupDefaultAdminRights (TLBotsSetBotGroupDefaultAdminRights) returns (Bool) {}
+}
+
+service RPCBotMenu {
+  rpc messages_getAttachMenuBots (TLMessagesGetAttachMenuBots) returns (AttachMenuBots) {}
+  rpc messages_getAttachMenuBot (TLMessagesGetAttachMenuBot) returns (AttachMenuBotsBot) {}
+  rpc messages_toggleBotInAttachMenu (TLMessagesToggleBotInAttachMenu) returns (Bool) {}
+}
+
+service RPCBotMenuButton {
+  rpc bots_setBotMenuButton (TLBotsSetBotMenuButton) returns (Bool) {}
+  rpc bots_getBotMenuButton (TLBotsGetBotMenuButton) returns (BotMenuButton) {}
+}
+
+service RPCBots {
+  rpc bots_setBotCommands (TLBotsSetBotCommands) returns (Bool) {}
+  rpc bots_resetBotCommands (TLBotsResetBotCommands) returns (Bool) {}
+  rpc bots_getBotCommands (TLBotsGetBotCommands) returns (VectorBotCommand) {}
+  rpc bots_setBotInfo (TLBotsSetBotInfo) returns (Bool) {}
+  rpc bots_getBotInfoDCD914FD (TLBotsGetBotInfoDCD914FD) returns (BotsBotInfo) {}
+  rpc bots_canSendMessage (TLBotsCanSendMessage) returns (Bool) {}
+  rpc bots_allowSendMessage (TLBotsAllowSendMessage) returns (Updates) {}
+  rpc bots_getBotInfo75EC12E6 (TLBotsGetBotInfo75EC12E6) returns (VectorString) {}
+}
+
+service RPCChannels {
+  rpc channels_readHistory (TLChannelsReadHistory) returns (Bool) {}
+  rpc channels_deleteMessages (TLChannelsDeleteMessages) returns (MessagesAffectedMessages) {}
+  rpc channels_getMessages (TLChannelsGetMessages) returns (MessagesMessages) {}
+  rpc channels_getParticipants (TLChannelsGetParticipants) returns (ChannelsChannelParticipants) {}
+  rpc channels_getParticipant (TLChannelsGetParticipant) returns (ChannelsChannelParticipant) {}
+  rpc channels_getChannels (TLChannelsGetChannels) returns (MessagesChats) {}
+  rpc channels_getFullChannel (TLChannelsGetFullChannel) returns (MessagesChatFull) {}
+  rpc channels_createChannel (TLChannelsCreateChannel) returns (Updates) {}
+  rpc channels_editAdmin (TLChannelsEditAdmin) returns (Updates) {}
+  rpc channels_editTitle (TLChannelsEditTitle) returns (Updates) {}
+  rpc channels_editPhoto (TLChannelsEditPhoto) returns (Updates) {}
+  rpc channels_joinChannel (TLChannelsJoinChannel) returns (Updates) {}
+  rpc channels_leaveChannel (TLChannelsLeaveChannel) returns (Updates) {}
+  rpc channels_inviteToChannel (TLChannelsInviteToChannel) returns (Updates) {}
+  rpc channels_deleteChannel (TLChannelsDeleteChannel) returns (Updates) {}
+  rpc channels_exportMessageLink (TLChannelsExportMessageLink) returns (ExportedMessageLink) {}
+  rpc channels_toggleSignatures (TLChannelsToggleSignatures) returns (Updates) {}
+  rpc channels_getAdminedPublicChannels (TLChannelsGetAdminedPublicChannels) returns (MessagesChats) {}
+  rpc channels_editBanned (TLChannelsEditBanned) returns (Updates) {}
+  rpc channels_getAdminLog (TLChannelsGetAdminLog) returns (ChannelsAdminLogResults) {}
+  rpc channels_setStickers (TLChannelsSetStickers) returns (Bool) {}
+  rpc channels_readMessageContents (TLChannelsReadMessageContents) returns (Bool) {}
+  rpc channels_deleteHistory9BAA9647 (TLChannelsDeleteHistory9BAA9647) returns (Updates) {}
+  rpc channels_togglePreHistoryHidden (TLChannelsTogglePreHistoryHidden) returns (Updates) {}
+  rpc channels_getGroupsForDiscussion (TLChannelsGetGroupsForDiscussion) returns (MessagesChats) {}
+  rpc channels_setDiscussionGroup (TLChannelsSetDiscussionGroup) returns (Bool) {}
+  rpc channels_editCreator (TLChannelsEditCreator) returns (Updates) {}
+  rpc channels_editLocation (TLChannelsEditLocation) returns (Bool) {}
+  rpc channels_toggleSlowMode (TLChannelsToggleSlowMode) returns (Updates) {}
+  rpc channels_getInactiveChannels (TLChannelsGetInactiveChannels) returns (MessagesInactiveChats) {}
+  rpc channels_deleteParticipantHistory (TLChannelsDeleteParticipantHistory) returns (MessagesAffectedHistory) {}
+  rpc channels_toggleParticipantsHidden (TLChannelsToggleParticipantsHidden) returns (Updates) {}
+  rpc channels_deleteHistoryAF369D42 (TLChannelsDeleteHistoryAF369D42) returns (Bool) {}
+}
+
+service RPCChatInvites {
+  rpc messages_exportChatInvite (TLMessagesExportChatInvite) returns (ExportedChatInvite) {}
+  rpc messages_checkChatInvite (TLMessagesCheckChatInvite) returns (ChatInvite) {}
+  rpc messages_importChatInvite (TLMessagesImportChatInvite) returns (Updates) {}
+  rpc messages_getExportedChatInvites (TLMessagesGetExportedChatInvites) returns (MessagesExportedChatInvites) {}
+  rpc messages_getExportedChatInvite (TLMessagesGetExportedChatInvite) returns (MessagesExportedChatInvite) {}
+  rpc messages_editExportedChatInvite (TLMessagesEditExportedChatInvite) returns (MessagesExportedChatInvite) {}
+  rpc messages_deleteRevokedExportedChatInvites (TLMessagesDeleteRevokedExportedChatInvites) returns (Bool) {}
+  rpc messages_deleteExportedChatInvite (TLMessagesDeleteExportedChatInvite) returns (Bool) {}
+  rpc messages_getAdminsWithInvites (TLMessagesGetAdminsWithInvites) returns (MessagesChatAdminsWithInvites) {}
+  rpc messages_getChatInviteImporters (TLMessagesGetChatInviteImporters) returns (MessagesChatInviteImporters) {}
+  rpc messages_hideChatJoinRequest (TLMessagesHideChatJoinRequest) returns (Updates) {}
+  rpc messages_hideAllChatJoinRequests (TLMessagesHideAllChatJoinRequests) returns (Updates) {}
+  rpc channels_toggleJoinToSend (TLChannelsToggleJoinToSend) returns (Updates) {}
+  rpc channels_toggleJoinRequest (TLChannelsToggleJoinRequest) returns (Updates) {}
+}
+
+service RPCChats {
+  rpc messages_getChats (TLMessagesGetChats) returns (MessagesChats) {}
+  rpc messages_getFullChat (TLMessagesGetFullChat) returns (MessagesChatFull) {}
+  rpc messages_editChatTitle (TLMessagesEditChatTitle) returns (Updates) {}
+  rpc messages_editChatPhoto (TLMessagesEditChatPhoto) returns (Updates) {}
+  rpc messages_addChatUser (TLMessagesAddChatUser) returns (Updates) {}
+  rpc messages_deleteChatUser (TLMessagesDeleteChatUser) returns (Updates) {}
+  rpc messages_createChat (TLMessagesCreateChat) returns (Updates) {}
+  rpc messages_editChatAdmin (TLMessagesEditChatAdmin) returns (Bool) {}
+  rpc messages_migrateChat (TLMessagesMigrateChat) returns (Updates) {}
+  rpc messages_getCommonChats (TLMessagesGetCommonChats) returns (MessagesChats) {}
+  rpc messages_editChatAbout (TLMessagesEditChatAbout) returns (Bool) {}
+  rpc messages_editChatDefaultBannedRights (TLMessagesEditChatDefaultBannedRights) returns (Updates) {}
+  rpc messages_deleteChat (TLMessagesDeleteChat) returns (Bool) {}
+  rpc messages_getMessageReadParticipants31C1C44F (TLMessagesGetMessageReadParticipants31C1C44F) returns (VectorReadParticipantDate) {}
+  rpc channels_convertToGigagroup (TLChannelsConvertToGigagroup) returns (Updates) {}
+  rpc messages_getAllChats (TLMessagesGetAllChats) returns (MessagesChats) {}
+  rpc messages_getMessageReadParticipants2C6F97B7 (TLMessagesGetMessageReadParticipants2C6F97B7) returns (VectorLong) {}
+}
+
+service RPCConfiguration {
+  rpc help_getConfig (TLHelpGetConfig) returns (Config) {}
+  rpc help_getNearestDc (TLHelpGetNearestDc) returns (NearestDc) {}
+  rpc help_getAppUpdate (TLHelpGetAppUpdate) returns (HelpAppUpdate) {}
+  rpc help_getInviteText (TLHelpGetInviteText) returns (HelpInviteText) {}
+  rpc help_getSupport (TLHelpGetSupport) returns (HelpSupport) {}
+  rpc help_getAppChangelog (TLHelpGetAppChangelog) returns (Updates) {}
+  rpc help_getAppConfig61E3F854 (TLHelpGetAppConfig61E3F854) returns (HelpAppConfig) {}
+  rpc help_getSupportName (TLHelpGetSupportName) returns (HelpSupportName) {}
+  rpc help_dismissSuggestion (TLHelpDismissSuggestion) returns (Bool) {}
+  rpc help_getCountriesList (TLHelpGetCountriesList) returns (HelpCountriesList) {}
+  rpc help_getAppConfig98914110 (TLHelpGetAppConfig98914110) returns (JSONValue) {}
+}
+
+service RPCContacts {
+  rpc account_getContactSignUpNotification (TLAccountGetContactSignUpNotification) returns (Bool) {}
+  rpc account_setContactSignUpNotification (TLAccountSetContactSignUpNotification) returns (Bool) {}
+  rpc contacts_getContactIDs (TLContactsGetContactIDs) returns (VectorInt) {}
+  rpc contacts_getStatuses (TLContactsGetStatuses) returns (VectorContactStatus) {}
+  rpc contacts_getContacts (TLContactsGetContacts) returns (ContactsContacts) {}
+  rpc contacts_importContacts (TLContactsImportContacts) returns (ContactsImportedContacts) {}
+  rpc contacts_deleteContacts (TLContactsDeleteContacts) returns (Updates) {}
+  rpc contacts_deleteByPhones (TLContactsDeleteByPhones) returns (Bool) {}
+  rpc contacts_block (TLContactsBlock) returns (Bool) {}
+  rpc contacts_unblock (TLContactsUnblock) returns (Bool) {}
+  rpc contacts_getBlocked (TLContactsGetBlocked) returns (ContactsBlocked) {}
+  rpc contacts_search (TLContactsSearch) returns (ContactsFound) {}
+  rpc contacts_getTopPeers (TLContactsGetTopPeers) returns (ContactsTopPeers) {}
+  rpc contacts_resetTopPeerRating (TLContactsResetTopPeerRating) returns (Bool) {}
+  rpc contacts_resetSaved (TLContactsResetSaved) returns (Bool) {}
+  rpc contacts_getSaved (TLContactsGetSaved) returns (VectorSavedContact) {}
+  rpc contacts_toggleTopPeers (TLContactsToggleTopPeers) returns (Bool) {}
+  rpc contacts_addContact (TLContactsAddContact) returns (Updates) {}
+  rpc contacts_acceptContact (TLContactsAcceptContact) returns (Updates) {}
+  rpc contacts_getLocated (TLContactsGetLocated) returns (Updates) {}
+  rpc contacts_editCloseFriends (TLContactsEditCloseFriends) returns (Bool) {}
+  rpc contacts_setBlocked (TLContactsSetBlocked) returns (Bool) {}
+}
+
+service RPCCreditCards {
+  rpc payments_getBankCardData (TLPaymentsGetBankCardData) returns (PaymentsBankCardData) {}
+}
+
+service RPCCustomEmojis {
+  rpc account_getDefaultProfilePhotoEmojis (TLAccountGetDefaultProfilePhotoEmojis) returns (EmojiList) {}
+  rpc account_getDefaultGroupPhotoEmojis (TLAccountGetDefaultGroupPhotoEmojis) returns (EmojiList) {}
+  rpc messages_getCustomEmojiDocuments (TLMessagesGetCustomEmojiDocuments) returns (VectorDocument) {}
+  rpc messages_getEmojiStickers (TLMessagesGetEmojiStickers) returns (MessagesAllStickers) {}
+  rpc messages_getFeaturedEmojiStickers (TLMessagesGetFeaturedEmojiStickers) returns (MessagesFeaturedStickers) {}
+  rpc messages_getEmojiGroups (TLMessagesGetEmojiGroups) returns (MessagesEmojiGroups) {}
+  rpc messages_getEmojiStatusGroups (TLMessagesGetEmojiStatusGroups) returns (MessagesEmojiGroups) {}
+  rpc messages_getEmojiProfilePhotoGroups (TLMessagesGetEmojiProfilePhotoGroups) returns (MessagesEmojiGroups) {}
+  rpc messages_searchCustomEmoji (TLMessagesSearchCustomEmoji) returns (EmojiList) {}
+}
+
+service RPCDeepLinks {
+  rpc messages_startBot (TLMessagesStartBot) returns (Updates) {}
+  rpc help_getRecentMeUrls (TLHelpGetRecentMeUrls) returns (HelpRecentMeUrls) {}
+  rpc help_getDeepLinkInfo (TLHelpGetDeepLinkInfo) returns (HelpDeepLinkInfo) {}
+}
+
+service RPCDialogs {
+  rpc messages_getDialogs (TLMessagesGetDialogs) returns (MessagesDialogs) {}
+  rpc messages_setTyping (TLMessagesSetTyping) returns (Bool) {}
+  rpc messages_getPeerSettings (TLMessagesGetPeerSettings) returns (MessagesPeerSettings) {}
+  rpc messages_getPeerDialogs (TLMessagesGetPeerDialogs) returns (MessagesPeerDialogs) {}
+  rpc messages_toggleDialogPin (TLMessagesToggleDialogPin) returns (Bool) {}
+  rpc messages_reorderPinnedDialogs (TLMessagesReorderPinnedDialogs) returns (Bool) {}
+  rpc messages_getPinnedDialogs (TLMessagesGetPinnedDialogs) returns (MessagesPeerDialogs) {}
+  rpc messages_sendScreenshotNotification (TLMessagesSendScreenshotNotification) returns (Updates) {}
+  rpc messages_markDialogUnread (TLMessagesMarkDialogUnread) returns (Bool) {}
+  rpc messages_getDialogUnreadMarks (TLMessagesGetDialogUnreadMarks) returns (VectorDialogPeer) {}
+  rpc messages_getOnlines (TLMessagesGetOnlines) returns (ChatOnlines) {}
+  rpc messages_hidePeerSettingsBar (TLMessagesHidePeerSettingsBar) returns (Bool) {}
+  rpc messages_setHistoryTTL (TLMessagesSetHistoryTTL) returns (Updates) {}
+}
+
+service RPCDrafts {
+  rpc messages_saveDraft (TLMessagesSaveDraft) returns (Bool) {}
+  rpc messages_getAllDrafts (TLMessagesGetAllDrafts) returns (Updates) {}
+  rpc messages_clearAllDrafts (TLMessagesClearAllDrafts) returns (Bool) {}
+}
+
+service RPCEmoji {
+  rpc messages_getEmojiKeywords (TLMessagesGetEmojiKeywords) returns (EmojiKeywordsDifference) {}
+  rpc messages_getEmojiKeywordsDifference (TLMessagesGetEmojiKeywordsDifference) returns (EmojiKeywordsDifference) {}
+  rpc messages_getEmojiKeywordsLanguages (TLMessagesGetEmojiKeywordsLanguages) returns (VectorEmojiLanguage) {}
+  rpc messages_getEmojiURL (TLMessagesGetEmojiURL) returns (EmojiURL) {}
+}
+
+service RPCEmojiStatus {
+  rpc account_updateEmojiStatus (TLAccountUpdateEmojiStatus) returns (Bool) {}
+  rpc account_getDefaultEmojiStatuses (TLAccountGetDefaultEmojiStatuses) returns (AccountEmojiStatuses) {}
+  rpc account_getRecentEmojiStatuses (TLAccountGetRecentEmojiStatuses) returns (AccountEmojiStatuses) {}
+  rpc account_clearRecentEmojiStatuses (TLAccountClearRecentEmojiStatuses) returns (Bool) {}
+}
+
+service RPCFiles {
+  rpc messages_getDocumentByHash (TLMessagesGetDocumentByHash) returns (Document) {}
+  rpc messages_uploadMedia (TLMessagesUploadMedia) returns (MessageMedia) {}
+  rpc messages_uploadEncryptedFile (TLMessagesUploadEncryptedFile) returns (EncryptedFile) {}
+  rpc messages_getExtendedMedia (TLMessagesGetExtendedMedia) returns (Updates) {}
+  rpc upload_saveFilePart (TLUploadSaveFilePart) returns (Bool) {}
+  rpc upload_getFile (TLUploadGetFile) returns (UploadFile) {}
+  rpc upload_saveBigFilePart (TLUploadSaveBigFilePart) returns (Bool) {}
+  rpc upload_getWebFile (TLUploadGetWebFile) returns (UploadWebFile) {}
+  rpc upload_getCdnFile (TLUploadGetCdnFile) returns (UploadCdnFile) {}
+  rpc upload_reuploadCdnFile (TLUploadReuploadCdnFile) returns (VectorFileHash) {}
+  rpc upload_getCdnFileHashes (TLUploadGetCdnFileHashes) returns (VectorFileHash) {}
+  rpc upload_getFileHashes (TLUploadGetFileHashes) returns (VectorFileHash) {}
+  rpc help_getCdnConfig (TLHelpGetCdnConfig) returns (CdnConfig) {}
+}
+
+service RPCFolders {
+  rpc messages_getDialogFilters (TLMessagesGetDialogFilters) returns (VectorDialogFilter) {}
+  rpc messages_getSuggestedDialogFilters (TLMessagesGetSuggestedDialogFilters) returns (VectorDialogFilterSuggested) {}
+  rpc messages_updateDialogFilter (TLMessagesUpdateDialogFilter) returns (Bool) {}
+  rpc messages_updateDialogFiltersOrder (TLMessagesUpdateDialogFiltersOrder) returns (Bool) {}
+  rpc folders_editPeerFolders (TLFoldersEditPeerFolders) returns (Updates) {}
+  rpc chatlists_exportChatlistInvite (TLChatlistsExportChatlistInvite) returns (ChatlistsExportedChatlistInvite) {}
+  rpc chatlists_deleteExportedInvite (TLChatlistsDeleteExportedInvite) returns (Bool) {}
+  rpc chatlists_editExportedInvite (TLChatlistsEditExportedInvite) returns (ExportedChatlistInvite) {}
+  rpc chatlists_getExportedInvites (TLChatlistsGetExportedInvites) returns (ChatlistsExportedInvites) {}
+  rpc chatlists_checkChatlistInvite (TLChatlistsCheckChatlistInvite) returns (ChatlistsChatlistInvite) {}
+  rpc chatlists_joinChatlistInvite (TLChatlistsJoinChatlistInvite) returns (Updates) {}
+  rpc chatlists_getChatlistUpdates (TLChatlistsGetChatlistUpdates) returns (ChatlistsChatlistUpdates) {}
+  rpc chatlists_joinChatlistUpdates (TLChatlistsJoinChatlistUpdates) returns (Updates) {}
+  rpc chatlists_hideChatlistUpdates (TLChatlistsHideChatlistUpdates) returns (Bool) {}
+  rpc chatlists_getLeaveChatlistSuggestions (TLChatlistsGetLeaveChatlistSuggestions) returns (VectorPeer) {}
+  rpc chatlists_leaveChatlist (TLChatlistsLeaveChatlist) returns (Updates) {}
+  rpc folders_deleteFolder (TLFoldersDeleteFolder) returns (Updates) {}
+}
+
+service RPCForums {
+  rpc channels_toggleForum (TLChannelsToggleForum) returns (Updates) {}
+  rpc channels_createForumTopic (TLChannelsCreateForumTopic) returns (Updates) {}
+  rpc channels_getForumTopics (TLChannelsGetForumTopics) returns (MessagesForumTopics) {}
+  rpc channels_getForumTopicsByID (TLChannelsGetForumTopicsByID) returns (MessagesForumTopics) {}
+  rpc channels_editForumTopic (TLChannelsEditForumTopic) returns (Updates) {}
+  rpc channels_updatePinnedForumTopic (TLChannelsUpdatePinnedForumTopic) returns (Updates) {}
+  rpc channels_deleteTopicHistory (TLChannelsDeleteTopicHistory) returns (MessagesAffectedHistory) {}
+  rpc channels_reorderPinnedForumTopics (TLChannelsReorderPinnedForumTopics) returns (Updates) {}
+}
+
+service RPCFragment {
+  rpc account_reorderUsernames (TLAccountReorderUsernames) returns (Bool) {}
+  rpc account_toggleUsername (TLAccountToggleUsername) returns (Bool) {}
+  rpc channels_reorderUsernames (TLChannelsReorderUsernames) returns (Bool) {}
+  rpc channels_toggleUsername (TLChannelsToggleUsername) returns (Bool) {}
+  rpc channels_deactivateAllUsernames (TLChannelsDeactivateAllUsernames) returns (Bool) {}
+  rpc bots_reorderUsernames (TLBotsReorderUsernames) returns (Bool) {}
+  rpc bots_toggleUsername (TLBotsToggleUsername) returns (Bool) {}
+}
+
+service RPCGames {
+  rpc messages_setGameScore (TLMessagesSetGameScore) returns (Updates) {}
+  rpc messages_setInlineGameScore (TLMessagesSetInlineGameScore) returns (Bool) {}
+  rpc messages_getGameHighScores (TLMessagesGetGameHighScores) returns (MessagesHighScores) {}
+  rpc messages_getInlineGameHighScores (TLMessagesGetInlineGameHighScores) returns (MessagesHighScores) {}
+}
+
+service RPCGdpr {
+  rpc account_initTakeoutSession (TLAccountInitTakeoutSession) returns (AccountTakeout) {}
+  rpc account_finishTakeoutSession (TLAccountFinishTakeoutSession) returns (Bool) {}
+  rpc messages_getSplitRanges (TLMessagesGetSplitRanges) returns (VectorMessageRange) {}
+  rpc channels_getLeftChannels (TLChannelsGetLeftChannels) returns (MessagesChats) {}
+}
+
+service RPCGifs {
+  rpc messages_getSavedGifs (TLMessagesGetSavedGifs) returns (MessagesSavedGifs) {}
+  rpc messages_saveGif (TLMessagesSaveGif) returns (Bool) {}
+}
+
+service RPCGroupCalls {
+  rpc phone_createGroupCall (TLPhoneCreateGroupCall) returns (Updates) {}
+  rpc phone_joinGroupCall (TLPhoneJoinGroupCall) returns (Updates) {}
+  rpc phone_leaveGroupCall (TLPhoneLeaveGroupCall) returns (Updates) {}
+  rpc phone_inviteToGroupCall (TLPhoneInviteToGroupCall) returns (Updates) {}
+  rpc phone_discardGroupCall (TLPhoneDiscardGroupCall) returns (Updates) {}
+  rpc phone_toggleGroupCallSettings (TLPhoneToggleGroupCallSettings) returns (Updates) {}
+  rpc phone_getGroupCall (TLPhoneGetGroupCall) returns (PhoneGroupCall) {}
+  rpc phone_getGroupParticipants (TLPhoneGetGroupParticipants) returns (PhoneGroupParticipants) {}
+  rpc phone_checkGroupCall (TLPhoneCheckGroupCall) returns (VectorInt) {}
+  rpc phone_toggleGroupCallRecord (TLPhoneToggleGroupCallRecord) returns (Updates) {}
+  rpc phone_editGroupCallParticipant (TLPhoneEditGroupCallParticipant) returns (Updates) {}
+  rpc phone_editGroupCallTitle (TLPhoneEditGroupCallTitle) returns (Updates) {}
+  rpc phone_getGroupCallJoinAs (TLPhoneGetGroupCallJoinAs) returns (PhoneJoinAsPeers) {}
+  rpc phone_exportGroupCallInvite (TLPhoneExportGroupCallInvite) returns (PhoneExportedGroupCallInvite) {}
+  rpc phone_toggleGroupCallStartSubscription (TLPhoneToggleGroupCallStartSubscription) returns (Updates) {}
+  rpc phone_startScheduledGroupCall (TLPhoneStartScheduledGroupCall) returns (Updates) {}
+  rpc phone_saveDefaultGroupCallJoinAs (TLPhoneSaveDefaultGroupCallJoinAs) returns (Bool) {}
+  rpc phone_joinGroupCallPresentation (TLPhoneJoinGroupCallPresentation) returns (Updates) {}
+  rpc phone_leaveGroupCallPresentation (TLPhoneLeaveGroupCallPresentation) returns (Updates) {}
+  rpc phone_getGroupCallStreamChannels (TLPhoneGetGroupCallStreamChannels) returns (PhoneGroupCallStreamChannels) {}
+  rpc phone_getGroupCallStreamRtmpUrl (TLPhoneGetGroupCallStreamRtmpUrl) returns (PhoneGroupCallStreamRtmpUrl) {}
+}
+
+service RPCImportedChats {
+  rpc messages_checkHistoryImport (TLMessagesCheckHistoryImport) returns (MessagesHistoryImportParsed) {}
+  rpc messages_initHistoryImport (TLMessagesInitHistoryImport) returns (MessagesHistoryImport) {}
+  rpc messages_uploadImportedMedia (TLMessagesUploadImportedMedia) returns (MessageMedia) {}
+  rpc messages_startHistoryImport (TLMessagesStartHistoryImport) returns (Bool) {}
+  rpc messages_checkHistoryImportPeer (TLMessagesCheckHistoryImportPeer) returns (MessagesCheckedHistoryImportPeer) {}
+}
+
+service RPCInlineBot {
+  rpc messages_getInlineBotResults (TLMessagesGetInlineBotResults) returns (MessagesBotResults) {}
+  rpc messages_setInlineBotResults (TLMessagesSetInlineBotResults) returns (Bool) {}
+  rpc messages_sendInlineBotResult (TLMessagesSendInlineBotResult) returns (Updates) {}
+  rpc messages_editInlineBotMessage (TLMessagesEditInlineBotMessage) returns (Bool) {}
+  rpc messages_getBotCallbackAnswer (TLMessagesGetBotCallbackAnswer) returns (MessagesBotCallbackAnswer) {}
+  rpc messages_setBotCallbackAnswer (TLMessagesSetBotCallbackAnswer) returns (Bool) {}
+  rpc messages_sendBotRequestedPeer (TLMessagesSendBotRequestedPeer) returns (Updates) {}
+}
+
+service RPCInternalBot {
+  rpc help_setBotUpdatesStatus (TLHelpSetBotUpdatesStatus) returns (Bool) {}
+  rpc bots_sendCustomRequest (TLBotsSendCustomRequest) returns (DataJSON) {}
+  rpc bots_answerWebhookJSONQuery (TLBotsAnswerWebhookJSONQuery) returns (Bool) {}
+}
+
+service RPCLangpack {
+  rpc langpack_getLangPack (TLLangpackGetLangPack) returns (LangPackDifference) {}
+  rpc langpack_getStrings (TLLangpackGetStrings) returns (VectorLangPackString) {}
+  rpc langpack_getDifference (TLLangpackGetDifference) returns (LangPackDifference) {}
+  rpc langpack_getLanguages (TLLangpackGetLanguages) returns (VectorLangPackLanguage) {}
+  rpc langpack_getLanguage (TLLangpackGetLanguage) returns (LangPackLanguage) {}
+}
+
+service RPCMessageThreads {
+  rpc contacts_blockFromReplies (TLContactsBlockFromReplies) returns (Updates) {}
+  rpc messages_getReplies (TLMessagesGetReplies) returns (MessagesMessages) {}
+  rpc messages_getDiscussionMessage (TLMessagesGetDiscussionMessage) returns (MessagesDiscussionMessage) {}
+  rpc messages_readDiscussion (TLMessagesReadDiscussion) returns (Bool) {}
+}
+
+service RPCMessages {
+  rpc messages_getMessages (TLMessagesGetMessages) returns (MessagesMessages) {}
+  rpc messages_getHistory (TLMessagesGetHistory) returns (MessagesMessages) {}
+  rpc messages_search (TLMessagesSearch) returns (MessagesMessages) {}
+  rpc messages_readHistory (TLMessagesReadHistory) returns (MessagesAffectedMessages) {}
+  rpc messages_deleteHistory (TLMessagesDeleteHistory) returns (MessagesAffectedHistory) {}
+  rpc messages_deleteMessages (TLMessagesDeleteMessages) returns (MessagesAffectedMessages) {}
+  rpc messages_receivedMessages (TLMessagesReceivedMessages) returns (VectorReceivedNotifyMessage) {}
+  rpc messages_sendMessage (TLMessagesSendMessage) returns (Updates) {}
+  rpc messages_sendMedia (TLMessagesSendMedia) returns (Updates) {}
+  rpc messages_forwardMessages (TLMessagesForwardMessages) returns (Updates) {}
+  rpc messages_readMessageContents (TLMessagesReadMessageContents) returns (MessagesAffectedMessages) {}
+  rpc messages_getMessagesViews (TLMessagesGetMessagesViews) returns (MessagesMessageViews) {}
+  rpc messages_searchGlobal (TLMessagesSearchGlobal) returns (MessagesMessages) {}
+  rpc messages_getMessageEditData (TLMessagesGetMessageEditData) returns (MessagesMessageEditData) {}
+  rpc messages_editMessage (TLMessagesEditMessage) returns (Updates) {}
+  rpc messages_getUnreadMentions (TLMessagesGetUnreadMentions) returns (MessagesMessages) {}
+  rpc messages_readMentions (TLMessagesReadMentions) returns (MessagesAffectedHistory) {}
+  rpc messages_getRecentLocations (TLMessagesGetRecentLocations) returns (MessagesMessages) {}
+  rpc messages_sendMultiMedia (TLMessagesSendMultiMedia) returns (Updates) {}
+  rpc messages_updatePinnedMessage (TLMessagesUpdatePinnedMessage) returns (Updates) {}
+  rpc messages_getSearchCounters (TLMessagesGetSearchCounters) returns (VectorMessagesSearchCounter) {}
+  rpc messages_unpinAllMessages (TLMessagesUnpinAllMessages) returns (MessagesAffectedHistory) {}
+  rpc messages_getSearchResultsCalendar (TLMessagesGetSearchResultsCalendar) returns (MessagesSearchResultsCalendar) {}
+  rpc messages_getSearchResultsPositions (TLMessagesGetSearchResultsPositions) returns (MessagesSearchResultsPositions) {}
+  rpc messages_toggleNoForwards (TLMessagesToggleNoForwards) returns (Updates) {}
+  rpc messages_saveDefaultSendAs (TLMessagesSaveDefaultSendAs) returns (Bool) {}
+  rpc messages_searchSentMedia (TLMessagesSearchSentMedia) returns (MessagesMessages) {}
+  rpc channels_getSendAs (TLChannelsGetSendAs) returns (ChannelsSendAsPeers) {}
+}
+
+service RPCMiscellaneous {
+  rpc help_saveAppLog (TLHelpSaveAppLog) returns (Bool) {}
+  rpc help_test (TLHelpTest) returns (Bool) {}
+}
+
+service RPCNotification {
+  rpc account_registerDevice (TLAccountRegisterDevice) returns (Bool) {}
+  rpc account_unregisterDevice (TLAccountUnregisterDevice) returns (Bool) {}
+  rpc account_updateNotifySettings (TLAccountUpdateNotifySettings) returns (Bool) {}
+  rpc account_getNotifySettings (TLAccountGetNotifySettings) returns (PeerNotifySettings) {}
+  rpc account_resetNotifySettings (TLAccountResetNotifySettings) returns (Bool) {}
+  rpc account_updateDeviceLocked (TLAccountUpdateDeviceLocked) returns (Bool) {}
+  rpc account_getNotifyExceptions (TLAccountGetNotifyExceptions) returns (Updates) {}
+}
+
+service RPCNsfw {
+  rpc account_setContentSettings (TLAccountSetContentSettings) returns (Bool) {}
+  rpc account_getContentSettings (TLAccountGetContentSettings) returns (AccountContentSettings) {}
+}
+
+service RPCPassport {
+  rpc account_getAuthorizations (TLAccountGetAuthorizations) returns (AccountAuthorizations) {}
+  rpc account_getAllSecureValues (TLAccountGetAllSecureValues) returns (VectorSecureValue) {}
+  rpc account_getSecureValue (TLAccountGetSecureValue) returns (VectorSecureValue) {}
+  rpc account_saveSecureValue (TLAccountSaveSecureValue) returns (SecureValue) {}
+  rpc account_deleteSecureValue (TLAccountDeleteSecureValue) returns (Bool) {}
+  rpc account_getAuthorizationForm (TLAccountGetAuthorizationForm) returns (AccountAuthorizationForm) {}
+  rpc account_acceptAuthorization (TLAccountAcceptAuthorization) returns (Bool) {}
+  rpc account_sendVerifyPhoneCode (TLAccountSendVerifyPhoneCode) returns (AuthSentCode) {}
+  rpc account_verifyPhone (TLAccountVerifyPhone) returns (Bool) {}
+  rpc users_setSecureValueErrors (TLUsersSetSecureValueErrors) returns (Bool) {}
+  rpc help_getPassportConfig (TLHelpGetPassportConfig) returns (HelpPassportConfig) {}
+}
+
+service RPCPayments {
+  rpc account_getTmpPassword (TLAccountGetTmpPassword) returns (AccountTmpPassword) {}
+  rpc messages_setBotShippingResults (TLMessagesSetBotShippingResults) returns (Bool) {}
+  rpc messages_setBotPrecheckoutResults (TLMessagesSetBotPrecheckoutResults) returns (Bool) {}
+  rpc payments_getPaymentForm (TLPaymentsGetPaymentForm) returns (PaymentsPaymentForm) {}
+  rpc payments_getPaymentReceipt (TLPaymentsGetPaymentReceipt) returns (PaymentsPaymentReceipt) {}
+  rpc payments_validateRequestedInfo (TLPaymentsValidateRequestedInfo) returns (PaymentsValidatedRequestedInfo) {}
+  rpc payments_sendPaymentForm (TLPaymentsSendPaymentForm) returns (PaymentsPaymentResult) {}
+  rpc payments_getSavedInfo (TLPaymentsGetSavedInfo) returns (PaymentsSavedInfo) {}
+  rpc payments_clearSavedInfo (TLPaymentsClearSavedInfo) returns (Bool) {}
+  rpc payments_exportInvoice (TLPaymentsExportInvoice) returns (PaymentsExportedInvoice) {}
+  rpc payments_requestRecurringPayment (TLPaymentsRequestRecurringPayment) returns (Updates) {}
+  rpc payments_restorePlayMarketReceipt (TLPaymentsRestorePlayMarketReceipt) returns (Updates) {}
+}
+
+service RPCPhotos {
+  rpc photos_updateProfilePhoto (TLPhotosUpdateProfilePhoto) returns (PhotosPhoto) {}
+  rpc photos_uploadProfilePhoto (TLPhotosUploadProfilePhoto) returns (PhotosPhoto) {}
+  rpc photos_deletePhotos (TLPhotosDeletePhotos) returns (VectorLong) {}
+  rpc photos_getUserPhotos (TLPhotosGetUserPhotos) returns (PhotosPhotos) {}
+  rpc photos_uploadContactProfilePhoto (TLPhotosUploadContactProfilePhoto) returns (PhotosPhoto) {}
+}
+
+service RPCPolls {
+  rpc messages_sendVote (TLMessagesSendVote) returns (Updates) {}
+  rpc messages_getPollResults (TLMessagesGetPollResults) returns (Updates) {}
+  rpc messages_getPollVotes (TLMessagesGetPollVotes) returns (MessagesVotesList) {}
+}
+
+service RPCPredefined {
+  rpc predefined_createPredefinedUser (TLPredefinedCreatePredefinedUser) returns (PredefinedUser) {}
+  rpc predefined_updatePredefinedUsername (TLPredefinedUpdatePredefinedUsername) returns (PredefinedUser) {}
+  rpc predefined_updatePredefinedProfile (TLPredefinedUpdatePredefinedProfile) returns (PredefinedUser) {}
+  rpc predefined_updatePredefinedVerified (TLPredefinedUpdatePredefinedVerified) returns (PredefinedUser) {}
+  rpc predefined_updatePredefinedCode (TLPredefinedUpdatePredefinedCode) returns (PredefinedUser) {}
+  rpc predefined_getPredefinedUser (TLPredefinedGetPredefinedUser) returns (PredefinedUser) {}
+  rpc predefined_getPredefinedUsers (TLPredefinedGetPredefinedUsers) returns (VectorPredefinedUser) {}
+}
+
+service RPCPremium {
+  rpc help_getPremiumPromo (TLHelpGetPremiumPromo) returns (HelpPremiumPromo) {}
+  rpc payments_assignAppStoreTransaction (TLPaymentsAssignAppStoreTransaction) returns (Updates) {}
+  rpc payments_assignPlayMarketTransaction (TLPaymentsAssignPlayMarketTransaction) returns (Updates) {}
+  rpc payments_canPurchasePremium (TLPaymentsCanPurchasePremium) returns (Bool) {}
+}
+
+service RPCProfileLinks {
+  rpc contacts_exportContactToken (TLContactsExportContactToken) returns (ExportedContactToken) {}
+  rpc contacts_importContactToken (TLContactsImportContactToken) returns (User) {}
+}
+
+service RPCPromoData {
+  rpc help_getPromoData (TLHelpGetPromoData) returns (HelpPromoData) {}
+  rpc help_hidePromoData (TLHelpHidePromoData) returns (Bool) {}
+}
+
+service RPCQrCode {
+  rpc auth_exportLoginToken (TLAuthExportLoginToken) returns (AuthLoginToken) {}
+  rpc auth_importLoginToken (TLAuthImportLoginToken) returns (AuthLoginToken) {}
+  rpc auth_acceptLoginToken (TLAuthAcceptLoginToken) returns (Authorization) {}
+}
+
+service RPCReactions {
+  rpc messages_sendReaction (TLMessagesSendReaction) returns (Updates) {}
+  rpc messages_getMessagesReactions (TLMessagesGetMessagesReactions) returns (Updates) {}
+  rpc messages_getMessageReactionsList (TLMessagesGetMessageReactionsList) returns (MessagesMessageReactionsList) {}
+  rpc messages_setChatAvailableReactions (TLMessagesSetChatAvailableReactions) returns (Updates) {}
+  rpc messages_getAvailableReactions (TLMessagesGetAvailableReactions) returns (MessagesAvailableReactions) {}
+  rpc messages_setDefaultReaction (TLMessagesSetDefaultReaction) returns (Bool) {}
+  rpc messages_getUnreadReactions (TLMessagesGetUnreadReactions) returns (MessagesMessages) {}
+  rpc messages_readReactions (TLMessagesReadReactions) returns (MessagesAffectedHistory) {}
+  rpc messages_reportReaction (TLMessagesReportReaction) returns (Bool) {}
+  rpc messages_getTopReactions (TLMessagesGetTopReactions) returns (MessagesReactions) {}
+  rpc messages_getRecentReactions (TLMessagesGetRecentReactions) returns (MessagesReactions) {}
+  rpc messages_clearRecentReactions (TLMessagesClearRecentReactions) returns (Bool) {}
+}
+
+service RPCReports {
+  rpc account_reportPeer (TLAccountReportPeer) returns (Bool) {}
+  rpc account_reportProfilePhoto (TLAccountReportProfilePhoto) returns (Bool) {}
+  rpc messages_reportSpam (TLMessagesReportSpam) returns (Bool) {}
+  rpc messages_report (TLMessagesReport) returns (Bool) {}
+  rpc messages_reportEncryptedSpam (TLMessagesReportEncryptedSpam) returns (Bool) {}
+  rpc channels_reportSpam (TLChannelsReportSpam) returns (Bool) {}
+}
+
+service RPCRingtone {
+  rpc account_getSavedRingtones (TLAccountGetSavedRingtones) returns (AccountSavedRingtones) {}
+  rpc account_saveRingtone (TLAccountSaveRingtone) returns (AccountSavedRingtone) {}
+  rpc account_uploadRingtone (TLAccountUploadRingtone) returns (Document) {}
+}
+
+service RPCScheduledMessages {
+  rpc messages_getScheduledHistory (TLMessagesGetScheduledHistory) returns (MessagesMessages) {}
+  rpc messages_getScheduledMessages (TLMessagesGetScheduledMessages) returns (MessagesMessages) {}
+  rpc messages_sendScheduledMessages (TLMessagesSendScheduledMessages) returns (Updates) {}
+  rpc messages_deleteScheduledMessages (TLMessagesDeleteScheduledMessages) returns (Updates) {}
+}
+
+service RPCSeamless {
+  rpc account_getWebAuthorizations (TLAccountGetWebAuthorizations) returns (AccountWebAuthorizations) {}
+  rpc account_resetWebAuthorization (TLAccountResetWebAuthorization) returns (Bool) {}
+  rpc account_resetWebAuthorizations (TLAccountResetWebAuthorizations) returns (Bool) {}
+  rpc messages_requestUrlAuth (TLMessagesRequestUrlAuth) returns (UrlAuthResult) {}
+  rpc messages_acceptUrlAuth (TLMessagesAcceptUrlAuth) returns (UrlAuthResult) {}
+}
+
+service RPCSecretChats {
+  rpc messages_getDhConfig (TLMessagesGetDhConfig) returns (MessagesDhConfig) {}
+  rpc messages_requestEncryption (TLMessagesRequestEncryption) returns (EncryptedChat) {}
+  rpc messages_acceptEncryption (TLMessagesAcceptEncryption) returns (EncryptedChat) {}
+  rpc messages_discardEncryption (TLMessagesDiscardEncryption) returns (Bool) {}
+  rpc messages_setEncryptedTyping (TLMessagesSetEncryptedTyping) returns (Bool) {}
+  rpc messages_readEncryptedHistory (TLMessagesReadEncryptedHistory) returns (Bool) {}
+  rpc messages_sendEncrypted (TLMessagesSendEncrypted) returns (MessagesSentEncryptedMessage) {}
+  rpc messages_sendEncryptedFile (TLMessagesSendEncryptedFile) returns (MessagesSentEncryptedMessage) {}
+  rpc messages_sendEncryptedService (TLMessagesSendEncryptedService) returns (MessagesSentEncryptedMessage) {}
+  rpc messages_receivedQueue (TLMessagesReceivedQueue) returns (VectorLong) {}
+}
+
+service RPCSponsoredMessages {
+  rpc channels_viewSponsoredMessage (TLChannelsViewSponsoredMessage) returns (Bool) {}
+  rpc channels_getSponsoredMessages (TLChannelsGetSponsoredMessages) returns (MessagesSponsoredMessages) {}
+  rpc channels_clickSponsoredMessage (TLChannelsClickSponsoredMessage) returns (Bool) {}
+}
+
+service RPCStatistics {
+  rpc stats_getBroadcastStats (TLStatsGetBroadcastStats) returns (StatsBroadcastStats) {}
+  rpc stats_loadAsyncGraph (TLStatsLoadAsyncGraph) returns (StatsGraph) {}
+  rpc stats_getMegagroupStats (TLStatsGetMegagroupStats) returns (StatsMegagroupStats) {}
+  rpc stats_getMessagePublicForwards (TLStatsGetMessagePublicForwards) returns (MessagesMessages) {}
+  rpc stats_getMessageStats (TLStatsGetMessageStats) returns (StatsMessageStats) {}
+}
+
+service RPCStickers {
+  rpc messages_getStickers (TLMessagesGetStickers) returns (MessagesStickers) {}
+  rpc messages_getAllStickers (TLMessagesGetAllStickers) returns (MessagesAllStickers) {}
+  rpc messages_getStickerSet (TLMessagesGetStickerSet) returns (MessagesStickerSet) {}
+  rpc messages_installStickerSet (TLMessagesInstallStickerSet) returns (MessagesStickerSetInstallResult) {}
+  rpc messages_uninstallStickerSet (TLMessagesUninstallStickerSet) returns (Bool) {}
+  rpc messages_reorderStickerSets (TLMessagesReorderStickerSets) returns (Bool) {}
+  rpc messages_getFeaturedStickers (TLMessagesGetFeaturedStickers) returns (MessagesFeaturedStickers) {}
+  rpc messages_readFeaturedStickers (TLMessagesReadFeaturedStickers) returns (Bool) {}
+  rpc messages_getRecentStickers (TLMessagesGetRecentStickers) returns (MessagesRecentStickers) {}
+  rpc messages_saveRecentSticker (TLMessagesSaveRecentSticker) returns (Bool) {}
+  rpc messages_clearRecentStickers (TLMessagesClearRecentStickers) returns (Bool) {}
+  rpc messages_getArchivedStickers (TLMessagesGetArchivedStickers) returns (MessagesArchivedStickers) {}
+  rpc messages_getMaskStickers (TLMessagesGetMaskStickers) returns (MessagesAllStickers) {}
+  rpc messages_getAttachedStickers (TLMessagesGetAttachedStickers) returns (VectorStickerSetCovered) {}
+  rpc messages_getFavedStickers (TLMessagesGetFavedStickers) returns (MessagesFavedStickers) {}
+  rpc messages_faveSticker (TLMessagesFaveSticker) returns (Bool) {}
+  rpc messages_searchStickerSets (TLMessagesSearchStickerSets) returns (MessagesFoundStickerSets) {}
+  rpc messages_toggleStickerSets (TLMessagesToggleStickerSets) returns (Bool) {}
+  rpc messages_getOldFeaturedStickers (TLMessagesGetOldFeaturedStickers) returns (MessagesFeaturedStickers) {}
+  rpc stickers_createStickerSet (TLStickersCreateStickerSet) returns (MessagesStickerSet) {}
+  rpc stickers_removeStickerFromSet (TLStickersRemoveStickerFromSet) returns (MessagesStickerSet) {}
+  rpc stickers_changeStickerPosition (TLStickersChangeStickerPosition) returns (MessagesStickerSet) {}
+  rpc stickers_addStickerToSet (TLStickersAddStickerToSet) returns (MessagesStickerSet) {}
+  rpc stickers_setStickerSetThumb (TLStickersSetStickerSetThumb) returns (MessagesStickerSet) {}
+  rpc stickers_checkShortName (TLStickersCheckShortName) returns (Bool) {}
+  rpc stickers_suggestShortName (TLStickersSuggestShortName) returns (StickersSuggestedShortName) {}
+  rpc stickers_changeSticker (TLStickersChangeSticker) returns (MessagesStickerSet) {}
+  rpc stickers_renameStickerSet (TLStickersRenameStickerSet) returns (MessagesStickerSet) {}
+  rpc stickers_deleteStickerSet (TLStickersDeleteStickerSet) returns (Bool) {}
+}
+
+service RPCStories {
+  rpc stories_canSendStory (TLStoriesCanSendStory) returns (Bool) {}
+  rpc stories_sendStory (TLStoriesSendStory) returns (Updates) {}
+  rpc stories_editStory (TLStoriesEditStory) returns (Updates) {}
+  rpc stories_deleteStories (TLStoriesDeleteStories) returns (VectorInt) {}
+  rpc stories_togglePinned (TLStoriesTogglePinned) returns (VectorInt) {}
+  rpc stories_getAllStories (TLStoriesGetAllStories) returns (StoriesAllStories) {}
+  rpc stories_getPinnedStories (TLStoriesGetPinnedStories) returns (StoriesStories) {}
+  rpc stories_getStoriesArchive (TLStoriesGetStoriesArchive) returns (StoriesStories) {}
+  rpc stories_getStoriesByID (TLStoriesGetStoriesByID) returns (StoriesStories) {}
+  rpc stories_toggleAllStoriesHidden (TLStoriesToggleAllStoriesHidden) returns (Bool) {}
+  rpc stories_readStories (TLStoriesReadStories) returns (VectorInt) {}
+  rpc stories_incrementStoryViews (TLStoriesIncrementStoryViews) returns (Bool) {}
+  rpc stories_getStoryViewsList (TLStoriesGetStoryViewsList) returns (StoriesStoryViewsList) {}
+  rpc stories_getStoriesViews (TLStoriesGetStoriesViews) returns (StoriesStoryViews) {}
+  rpc stories_exportStoryLink (TLStoriesExportStoryLink) returns (ExportedStoryLink) {}
+  rpc stories_report (TLStoriesReport) returns (Bool) {}
+  rpc stories_activateStealthMode (TLStoriesActivateStealthMode) returns (Updates) {}
+  rpc stories_sendReaction (TLStoriesSendReaction) returns (Updates) {}
+  rpc stories_getPeerStories (TLStoriesGetPeerStories) returns (StoriesPeerStories) {}
+  rpc stories_getAllReadPeerStories (TLStoriesGetAllReadPeerStories) returns (Updates) {}
+  rpc stories_getPeerMaxIDs (TLStoriesGetPeerMaxIDs) returns (VectorInt) {}
+  rpc stories_getChatsToSend (TLStoriesGetChatsToSend) returns (MessagesChats) {}
+  rpc stories_togglePeerStoriesHidden (TLStoriesTogglePeerStoriesHidden) returns (Bool) {}
+  rpc stories_getBoostsStatus (TLStoriesGetBoostsStatus) returns (StoriesBoostsStatus) {}
+  rpc stories_getBoostersList (TLStoriesGetBoostersList) returns (StoriesBoostersList) {}
+  rpc stories_canApplyBoost (TLStoriesCanApplyBoost) returns (StoriesCanApplyBoostResult) {}
+  rpc stories_applyBoost (TLStoriesApplyBoost) returns (Bool) {}
+  rpc users_getStoriesMaxIDs (TLUsersGetStoriesMaxIDs) returns (VectorInt) {}
+  rpc contacts_toggleStoriesHidden (TLContactsToggleStoriesHidden) returns (Bool) {}
+  rpc stories_getUserStories (TLStoriesGetUserStories) returns (StoriesUserStories) {}
+  rpc stories_getAllReadUserStories (TLStoriesGetAllReadUserStories) returns (Updates) {}
+}
+
+service RPCThemes {
+  rpc account_uploadTheme (TLAccountUploadTheme) returns (Document) {}
+  rpc account_createTheme (TLAccountCreateTheme) returns (Theme) {}
+  rpc account_updateTheme (TLAccountUpdateTheme) returns (Theme) {}
+  rpc account_saveTheme (TLAccountSaveTheme) returns (Bool) {}
+  rpc account_installTheme (TLAccountInstallTheme) returns (Bool) {}
+  rpc account_getTheme (TLAccountGetTheme) returns (Theme) {}
+  rpc account_getThemes (TLAccountGetThemes) returns (AccountThemes) {}
+  rpc account_getChatThemes (TLAccountGetChatThemes) returns (AccountThemes) {}
+  rpc messages_setChatTheme (TLMessagesSetChatTheme) returns (Updates) {}
+}
+
+service RPCTos {
+  rpc help_getTermsOfServiceUpdate (TLHelpGetTermsOfServiceUpdate) returns (HelpTermsOfServiceUpdate) {}
+  rpc help_acceptTermsOfService (TLHelpAcceptTermsOfService) returns (Bool) {}
+}
+
+service RPCTranscription {
+  rpc messages_transcribeAudio (TLMessagesTranscribeAudio) returns (MessagesTranscribedAudio) {}
+  rpc messages_rateTranscribedAudio (TLMessagesRateTranscribedAudio) returns (Bool) {}
+}
+
+service RPCTranslation {
+  rpc messages_translateText (TLMessagesTranslateText) returns (MessagesTranslatedText) {}
+  rpc messages_togglePeerTranslations (TLMessagesTogglePeerTranslations) returns (Bool) {}
+}
+
+service RPCTsf {
+  rpc help_getUserInfo (TLHelpGetUserInfo) returns (HelpUserInfo) {}
+  rpc help_editUserInfo (TLHelpEditUserInfo) returns (HelpUserInfo) {}
+}
+
+service RPCTwoFa {
+  rpc account_getPassword (TLAccountGetPassword) returns (AccountPassword) {}
+  rpc account_getPasswordSettings (TLAccountGetPasswordSettings) returns (AccountPasswordSettings) {}
+  rpc account_updatePasswordSettings (TLAccountUpdatePasswordSettings) returns (Bool) {}
+  rpc account_confirmPasswordEmail (TLAccountConfirmPasswordEmail) returns (Bool) {}
+  rpc account_resendPasswordEmail (TLAccountResendPasswordEmail) returns (Bool) {}
+  rpc account_cancelPasswordEmail (TLAccountCancelPasswordEmail) returns (Bool) {}
+  rpc account_declinePasswordReset (TLAccountDeclinePasswordReset) returns (Bool) {}
+}
+
+service RPCUpdates {
+  rpc updates_getState (TLUpdatesGetState) returns (UpdatesState) {}
+  rpc updates_getDifference (TLUpdatesGetDifference) returns (UpdatesDifference) {}
+  rpc updates_getChannelDifference (TLUpdatesGetChannelDifference) returns (UpdatesChannelDifference) {}
+}
+
+service RPCUsernames {
+  rpc account_checkUsername (TLAccountCheckUsername) returns (Bool) {}
+  rpc account_updateUsername (TLAccountUpdateUsername) returns (User) {}
+  rpc contacts_resolveUsername (TLContactsResolveUsername) returns (ContactsResolvedPeer) {}
+  rpc channels_checkUsername (TLChannelsCheckUsername) returns (Bool) {}
+  rpc channels_updateUsername (TLChannelsUpdateUsername) returns (Bool) {}
+}
+
+service RPCUsers {
+  rpc users_getUsers (TLUsersGetUsers) returns (VectorUser) {}
+  rpc users_getFullUser (TLUsersGetFullUser) returns (UsersUserFull) {}
+  rpc contacts_resolvePhone (TLContactsResolvePhone) returns (ContactsResolvedPeer) {}
+  rpc users_getMe (TLUsersGetMe) returns (User) {}
+}
+
+service RPCVoipCalls {
+  rpc messages_deletePhoneCallHistory (TLMessagesDeletePhoneCallHistory) returns (MessagesAffectedFoundMessages) {}
+  rpc phone_getCallConfig (TLPhoneGetCallConfig) returns (DataJSON) {}
+  rpc phone_requestCall (TLPhoneRequestCall) returns (PhonePhoneCall) {}
+  rpc phone_acceptCall (TLPhoneAcceptCall) returns (PhonePhoneCall) {}
+  rpc phone_confirmCall (TLPhoneConfirmCall) returns (PhonePhoneCall) {}
+  rpc phone_receivedCall (TLPhoneReceivedCall) returns (Bool) {}
+  rpc phone_discardCall (TLPhoneDiscardCall) returns (Updates) {}
+  rpc phone_setCallRating (TLPhoneSetCallRating) returns (Updates) {}
+  rpc phone_saveCallDebug (TLPhoneSaveCallDebug) returns (Bool) {}
+  rpc phone_sendSignalingData (TLPhoneSendSignalingData) returns (Bool) {}
+  rpc phone_saveCallLog (TLPhoneSaveCallLog) returns (Bool) {}
+}
+
+service RPCWallpapers {
+  rpc account_getWallPapers (TLAccountGetWallPapers) returns (AccountWallPapers) {}
+  rpc account_getWallPaper (TLAccountGetWallPaper) returns (WallPaper) {}
+  rpc account_uploadWallPaper (TLAccountUploadWallPaper) returns (WallPaper) {}
+  rpc account_saveWallPaper (TLAccountSaveWallPaper) returns (Bool) {}
+  rpc account_installWallPaper (TLAccountInstallWallPaper) returns (Bool) {}
+  rpc account_resetWallPapers (TLAccountResetWallPapers) returns (Bool) {}
+  rpc account_getMultiWallPapers (TLAccountGetMultiWallPapers) returns (VectorWallPaper) {}
+  rpc messages_setChatWallPaper (TLMessagesSetChatWallPaper) returns (Updates) {}
+}
+
+service RPCWebPage {
+  rpc messages_getWebPagePreview (TLMessagesGetWebPagePreview) returns (MessageMedia) {}
+  rpc messages_getWebPage8D9692A3 (TLMessagesGetWebPage8D9692A3) returns (MessagesWebPage) {}
+  rpc messages_getWebPage32CA8F91 (TLMessagesGetWebPage32CA8F91) returns (WebPage) {}
+}
+
+service RPCWebview {
+  rpc messages_requestWebView (TLMessagesRequestWebView) returns (WebViewResult) {}
+  rpc messages_prolongWebView (TLMessagesProlongWebView) returns (Bool) {}
+  rpc messages_requestSimpleWebView (TLMessagesRequestSimpleWebView) returns (SimpleWebViewResult) {}
+  rpc messages_sendWebViewResultMessage (TLMessagesSendWebViewResultMessage) returns (WebViewMessageSent) {}
+  rpc messages_sendWebViewData (TLMessagesSendWebViewData) returns (Updates) {}
+  rpc messages_getBotApp (TLMessagesGetBotApp) returns (MessagesBotApp) {}
+  rpc messages_requestAppWebView (TLMessagesRequestAppWebView) returns (AppWebViewResult) {}
+  rpc bots_invokeWebViewCustomMethod (TLBotsInvokeWebViewCustomMethod) returns (DataJSON) {}
+}
+
+service RPCBiz {
+  rpc biz_invokeBizDataRaw (TLBizInvokeBizDataRaw) returns (BizDataRaw) {}
+}
+
+message TLInvokeAfterMsg {
+  TLConstructor constructor = 1;
+  int64 msg_id = 3;
+  bytes query = 4;
+}
+
+message TLInvokeAfterMsgs {
+  TLConstructor constructor = 1;
+  int64 msg_ids = 3;
+  bytes query = 4;
+}
+
+message TLInitConnection {
+  TLConstructor constructor = 1;
+  int32 api_id = 3;
+  string device_model = 4;
+  string system_version = 5;
+  string app_version = 6;
+  string system_lang_code = 7;
+  string lang_pack = 8;
+  string lang_code = 9;
+  repeated InputClientProxy proxy = 10;
+  repeated JSONValue params = 11;
+  bytes query = 12;
+}
+
+message TLInvokeWithLayer {
+  TLConstructor constructor = 1;
+  int32 layer = 3;
+  bytes query = 4;
+}
+
+message TLInvokeWithoutUpdates {
+  TLConstructor constructor = 1;
+  bytes query = 3;
+}
+
+message TLInvokeWithMessagesRange {
+  TLConstructor constructor = 1;
+  repeated MessageRange range = 3;
+  bytes query = 4;
+}
+
+message TLInvokeWithTakeout {
+  TLConstructor constructor = 1;
+  int64 takeout_id = 3;
+  bytes query = 4;
+}
+
+message TLAuthSendCode {
+  TLConstructor constructor = 1;
+  string phone_number = 3;
+  int32 api_id = 4;
+  string api_hash = 5;
+  repeated CodeSettings settings = 6;
+}
+
+message TLAuthSignUp {
+  TLConstructor constructor = 1;
+  string phone_number = 3;
+  string phone_code_hash = 4;
+  string first_name = 5;
+  string last_name = 6;
+}
+
+message TLAuthSignIn {
+  TLConstructor constructor = 1;
+  string phone_number = 3;
+  string phone_code_hash = 4;
+  repeated google.protobuf.StringValue phone_code_FLAGSTRING = 5;
+  repeated EmailVerification email_verification = 6;
+  string phone_code_STRING = 7;
+}
+
+message TLAuthLogOut {
+  TLConstructor constructor = 1;
+}
+
+message TLAuthResetAuthorizations {
+  TLConstructor constructor = 1;
+}
+
+message TLAuthExportAuthorization {
+  TLConstructor constructor = 1;
+  int32 dc_id = 3;
+}
+
+message TLAuthImportAuthorization {
+  TLConstructor constructor = 1;
+  int64 id = 3;
+  bytes bytes = 4;
+}
+
+message TLAuthBindTempAuthKey {
+  TLConstructor constructor = 1;
+  int64 perm_auth_key_id = 3;
+  int64 nonce = 4;
+  int32 expires_at = 5;
+  bytes encrypted_message = 6;
+}
+
+message TLAuthImportBotAuthorization {
+  TLConstructor constructor = 1;
+  int32 flags = 3;
+  int32 api_id = 4;
+  string api_hash = 5;
+  string bot_auth_token = 6;
+}
+
+message TLAuthCheckPassword {
+  TLConstructor constructor = 1;
+  repeated InputCheckPasswordSRP password = 3;
+}
+
+message TLAuthRequestPasswordRecovery {
+  TLConstructor constructor = 1;
+}
+
+message TLAuthRecoverPassword {
+  TLConstructor constructor = 1;
+  string code = 3;
+  repeated AccountPasswordInputSettings new_settings = 4;
+}
+
+message TLAuthResendCode {
+  TLConstructor constructor = 1;
+  string phone_number = 3;
+  string phone_code_hash = 4;
+}
+
+message TLAuthCancelCode {
+  TLConstructor constructor = 1;
+  string phone_number = 3;
+  string phone_code_hash = 4;
+}
+
+message TLAuthDropTempAuthKeys {
+  TLConstructor constructor = 1;
+  int64 except_auth_keys = 3;
+}
+
+message TLAuthExportLoginToken {
+  TLConstructor constructor = 1;
+  int32 api_id = 3;
+  string api_hash = 4;
+  int64 except_ids = 5;
+}
+
+message TLAuthImportLoginToken {
+  TLConstructor constructor = 1;
+  bytes token = 3;
+}
+
+message TLAuthAcceptLoginToken {
+  TLConstructor constructor = 1;
+  bytes token = 3;
+}
+
+message TLAuthCheckRecoveryPassword {
+  TLConstructor constructor = 1;
+  string code = 3;
+}
+
+message TLAuthImportWebTokenAuthorization {
+  TLConstructor constructor = 1;
+  int32 api_id = 3;
+  string api_hash = 4;
+  string web_auth_token = 5;
+}
+
+message TLAuthRequestFirebaseSms {
+  TLConstructor constructor = 1;
+  string phone_number = 3;
+  string phone_code_hash = 4;
+  repeated google.protobuf.StringValue safety_net_token = 5;
+  repeated google.protobuf.StringValue ios_push_secret = 6;
+}
+
+message TLAuthResetLoginEmail {
+  TLConstructor constructor = 1;
+  string phone_number = 3;
+  string phone_code_hash = 4;
+}
+
+message TLAccountRegisterDevice {
+  TLConstructor constructor = 1;
+  bool no_muted = 3;
+  int32 token_type = 4;
+  string token = 5;
+  repeated Bool app_sandbox = 6;
+  bytes secret = 7;
+  int64 other_uids = 8;
+}
+
+message TLAccountUnregisterDevice {
+  TLConstructor constructor = 1;
+  int32 token_type = 3;
+  string token = 4;
+  int64 other_uids = 5;
+}
+
+message TLAccountUpdateNotifySettings {
+  TLConstructor constructor = 1;
+  repeated InputNotifyPeer peer = 3;
+  repeated InputPeerNotifySettings settings = 4;
+}
+
+message TLAccountGetNotifySettings {
+  TLConstructor constructor = 1;
+  repeated InputNotifyPeer peer = 3;
+}
+
+message TLAccountResetNotifySettings {
+  TLConstructor constructor = 1;
+}
+
+message TLAccountUpdateProfile {
+  TLConstructor constructor = 1;
+  repeated google.protobuf.StringValue first_name = 3;
+  repeated google.protobuf.StringValue last_name = 4;
+  repeated google.protobuf.StringValue about = 5;
+}
+
+message TLAccountUpdateStatus {
+  TLConstructor constructor = 1;
+  repeated Bool offline = 3;
+}
+
+message TLAccountGetWallPapers {
+  TLConstructor constructor = 1;
+  int64 hash = 3;
+}
+
+message TLAccountReportPeer {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated ReportReason reason = 4;
+  string message = 5;
+}
+
+message TLAccountCheckUsername {
+  TLConstructor constructor = 1;
+  string username = 3;
+}
+
+message TLAccountUpdateUsername {
+  TLConstructor constructor = 1;
+  string username = 3;
+}
+
+message TLAccountGetPrivacy {
+  TLConstructor constructor = 1;
+  repeated InputPrivacyKey key = 3;
+}
+
+message TLAccountSetPrivacy {
+  TLConstructor constructor = 1;
+  repeated InputPrivacyKey key = 3;
+  repeated InputPrivacyRule rules = 4;
+}
+
+message TLAccountDeleteAccount {
+  TLConstructor constructor = 1;
+  string reason = 3;
+  repeated InputCheckPasswordSRP password = 4;
+}
+
+message TLAccountGetAccountTTL {
+  TLConstructor constructor = 1;
+}
+
+message TLAccountSetAccountTTL {
+  TLConstructor constructor = 1;
+  repeated AccountDaysTTL ttl = 3;
+}
+
+message TLAccountSendChangePhoneCode {
+  TLConstructor constructor = 1;
+  string phone_number = 3;
+  repeated CodeSettings settings = 4;
+}
+
+message TLAccountChangePhone {
+  TLConstructor constructor = 1;
+  string phone_number = 3;
+  string phone_code_hash = 4;
+  string phone_code = 5;
+}
+
+message TLAccountUpdateDeviceLocked {
+  TLConstructor constructor = 1;
+  int32 period = 3;
+}
+
+message TLAccountGetAuthorizations {
+  TLConstructor constructor = 1;
+}
+
+message TLAccountResetAuthorization {
+  TLConstructor constructor = 1;
+  int64 hash = 3;
+}
+
+message TLAccountGetPassword {
+  TLConstructor constructor = 1;
+}
+
+message TLAccountGetPasswordSettings {
+  TLConstructor constructor = 1;
+  repeated InputCheckPasswordSRP password = 3;
+}
+
+message TLAccountUpdatePasswordSettings {
+  TLConstructor constructor = 1;
+  repeated InputCheckPasswordSRP password = 3;
+  repeated AccountPasswordInputSettings new_settings = 4;
+}
+
+message TLAccountSendConfirmPhoneCode {
+  TLConstructor constructor = 1;
+  string hash = 3;
+  repeated CodeSettings settings = 4;
+}
+
+message TLAccountConfirmPhone {
+  TLConstructor constructor = 1;
+  string phone_code_hash = 3;
+  string phone_code = 4;
+}
+
+message TLAccountGetTmpPassword {
+  TLConstructor constructor = 1;
+  repeated InputCheckPasswordSRP password = 3;
+  int32 period = 4;
+}
+
+message TLAccountGetWebAuthorizations {
+  TLConstructor constructor = 1;
+}
+
+message TLAccountResetWebAuthorization {
+  TLConstructor constructor = 1;
+  int64 hash = 3;
+}
+
+message TLAccountResetWebAuthorizations {
+  TLConstructor constructor = 1;
+}
+
+message TLAccountGetAllSecureValues {
+  TLConstructor constructor = 1;
+}
+
+message TLAccountGetSecureValue {
+  TLConstructor constructor = 1;
+  repeated SecureValueType types = 3;
+}
+
+message TLAccountSaveSecureValue {
+  TLConstructor constructor = 1;
+  repeated InputSecureValue value = 3;
+  int64 secure_secret_id = 4;
+}
+
+message TLAccountDeleteSecureValue {
+  TLConstructor constructor = 1;
+  repeated SecureValueType types = 3;
+}
+
+message TLAccountGetAuthorizationForm {
+  TLConstructor constructor = 1;
+  int64 bot_id = 3;
+  string scope = 4;
+  string public_key = 5;
+}
+
+message TLAccountAcceptAuthorization {
+  TLConstructor constructor = 1;
+  int64 bot_id = 3;
+  string scope = 4;
+  string public_key = 5;
+  repeated SecureValueHash value_hashes = 6;
+  repeated SecureCredentialsEncrypted credentials = 7;
+}
+
+message TLAccountSendVerifyPhoneCode {
+  TLConstructor constructor = 1;
+  string phone_number = 3;
+  repeated CodeSettings settings = 4;
+}
+
+message TLAccountVerifyPhone {
+  TLConstructor constructor = 1;
+  string phone_number = 3;
+  string phone_code_hash = 4;
+  string phone_code = 5;
+}
+
+message TLAccountSendVerifyEmailCode {
+  TLConstructor constructor = 1;
+  repeated EmailVerifyPurpose purpose = 3;
+  string email = 4;
+}
+
+message TLAccountVerifyEmail32DA4CF {
+  TLConstructor constructor = 1;
+  repeated EmailVerifyPurpose purpose = 3;
+  repeated EmailVerification verification = 4;
+}
+
+message TLAccountInitTakeoutSession {
+  TLConstructor constructor = 1;
+  bool contacts = 3;
+  bool message_users = 4;
+  bool message_chats = 5;
+  bool message_megagroups = 6;
+  bool message_channels = 7;
+  bool files = 8;
+  repeated google.protobuf.Int64Value file_max_size_FLAGINT64 = 9;
+  repeated google.protobuf.Int32Value file_max_size_FLAGINT32 = 10;
+}
+
+message TLAccountFinishTakeoutSession {
+  TLConstructor constructor = 1;
+  bool success = 3;
+}
+
+message TLAccountConfirmPasswordEmail {
+  TLConstructor constructor = 1;
+  string code = 3;
+}
+
+message TLAccountResendPasswordEmail {
+  TLConstructor constructor = 1;
+}
+
+message TLAccountCancelPasswordEmail {
+  TLConstructor constructor = 1;
+}
+
+message TLAccountGetContactSignUpNotification {
+  TLConstructor constructor = 1;
+}
+
+message TLAccountSetContactSignUpNotification {
+  TLConstructor constructor = 1;
+  repeated Bool silent = 3;
+}
+
+message TLAccountGetNotifyExceptions {
+  TLConstructor constructor = 1;
+  bool compare_sound = 3;
+  bool compare_stories = 4;
+  repeated InputNotifyPeer peer = 5;
+}
+
+message TLAccountGetWallPaper {
+  TLConstructor constructor = 1;
+  repeated InputWallPaper wallpaper = 3;
+}
+
+message TLAccountUploadWallPaper {
+  TLConstructor constructor = 1;
+  bool for_chat = 3;
+  repeated InputFile file = 4;
+  string mime_type = 5;
+  repeated WallPaperSettings settings = 6;
+}
+
+message TLAccountSaveWallPaper {
+  TLConstructor constructor = 1;
+  repeated InputWallPaper wallpaper = 3;
+  repeated Bool unsave = 4;
+  repeated WallPaperSettings settings = 5;
+}
+
+message TLAccountInstallWallPaper {
+  TLConstructor constructor = 1;
+  repeated InputWallPaper wallpaper = 3;
+  repeated WallPaperSettings settings = 4;
+}
+
+message TLAccountResetWallPapers {
+  TLConstructor constructor = 1;
+}
+
+message TLAccountGetAutoDownloadSettings {
+  TLConstructor constructor = 1;
+}
+
+message TLAccountSaveAutoDownloadSettings {
+  TLConstructor constructor = 1;
+  bool low = 3;
+  bool high = 4;
+  repeated AutoDownloadSettings settings = 5;
+}
+
+message TLAccountUploadTheme {
+  TLConstructor constructor = 1;
+  repeated InputFile file = 3;
+  repeated InputFile thumb = 4;
+  string file_name = 5;
+  string mime_type = 6;
+}
+
+message TLAccountCreateTheme {
+  TLConstructor constructor = 1;
+  string slug = 3;
+  string title = 4;
+  repeated InputDocument document = 5;
+  repeated InputThemeSettings settings = 6;
+}
+
+message TLAccountUpdateTheme {
+  TLConstructor constructor = 1;
+  string format = 3;
+  repeated InputTheme theme = 4;
+  repeated google.protobuf.StringValue slug = 5;
+  repeated google.protobuf.StringValue title = 6;
+  repeated InputDocument document = 7;
+  repeated InputThemeSettings settings = 8;
+}
+
+message TLAccountSaveTheme {
+  TLConstructor constructor = 1;
+  repeated InputTheme theme = 3;
+  repeated Bool unsave = 4;
+}
+
+message TLAccountInstallTheme {
+  TLConstructor constructor = 1;
+  bool dark = 3;
+  repeated InputTheme theme = 4;
+  repeated google.protobuf.StringValue format = 5;
+  repeated BaseTheme base_theme = 6;
+}
+
+message TLAccountGetTheme {
+  TLConstructor constructor = 1;
+  string format = 3;
+  repeated InputTheme theme = 4;
+  int64 document_id = 5;
+}
+
+message TLAccountGetThemes {
+  TLConstructor constructor = 1;
+  string format = 3;
+  int64 hash = 4;
+}
+
+message TLAccountSetContentSettings {
+  TLConstructor constructor = 1;
+  bool sensitive_enabled = 3;
+}
+
+message TLAccountGetContentSettings {
+  TLConstructor constructor = 1;
+}
+
+message TLAccountGetMultiWallPapers {
+  TLConstructor constructor = 1;
+  repeated InputWallPaper wallpapers = 3;
+}
+
+message TLAccountGetGlobalPrivacySettings {
+  TLConstructor constructor = 1;
+}
+
+message TLAccountSetGlobalPrivacySettings {
+  TLConstructor constructor = 1;
+  repeated GlobalPrivacySettings settings = 3;
+}
+
+message TLAccountReportProfilePhoto {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated InputPhoto photo_id = 4;
+  repeated ReportReason reason = 5;
+  string message = 6;
+}
+
+message TLAccountResetPassword {
+  TLConstructor constructor = 1;
+}
+
+message TLAccountDeclinePasswordReset {
+  TLConstructor constructor = 1;
+}
+
+message TLAccountGetChatThemes {
+  TLConstructor constructor = 1;
+  int64 hash = 3;
+}
+
+message TLAccountSetAuthorizationTTL {
+  TLConstructor constructor = 1;
+  int32 authorization_ttl_days = 3;
+}
+
+message TLAccountChangeAuthorizationSettings {
+  TLConstructor constructor = 1;
+  bool confirmed = 3;
+  int64 hash = 4;
+  repeated Bool encrypted_requests_disabled = 5;
+  repeated Bool call_requests_disabled = 6;
+}
+
+message TLAccountGetSavedRingtones {
+  TLConstructor constructor = 1;
+  int64 hash = 3;
+}
+
+message TLAccountSaveRingtone {
+  TLConstructor constructor = 1;
+  repeated InputDocument id = 3;
+  repeated Bool unsave = 4;
+}
+
+message TLAccountUploadRingtone {
+  TLConstructor constructor = 1;
+  repeated InputFile file = 3;
+  string file_name = 4;
+  string mime_type = 5;
+}
+
+message TLAccountUpdateEmojiStatus {
+  TLConstructor constructor = 1;
+  repeated EmojiStatus emoji_status = 3;
+}
+
+message TLAccountGetDefaultEmojiStatuses {
+  TLConstructor constructor = 1;
+  int64 hash = 3;
+}
+
+message TLAccountGetRecentEmojiStatuses {
+  TLConstructor constructor = 1;
+  int64 hash = 3;
+}
+
+message TLAccountClearRecentEmojiStatuses {
+  TLConstructor constructor = 1;
+}
+
+message TLAccountReorderUsernames {
+  TLConstructor constructor = 1;
+  string order = 3;
+}
+
+message TLAccountToggleUsername {
+  TLConstructor constructor = 1;
+  string username = 3;
+  repeated Bool active = 4;
+}
+
+message TLAccountGetDefaultProfilePhotoEmojis {
+  TLConstructor constructor = 1;
+  int64 hash = 3;
+}
+
+message TLAccountGetDefaultGroupPhotoEmojis {
+  TLConstructor constructor = 1;
+  int64 hash = 3;
+}
+
+message TLAccountGetAutoSaveSettings {
+  TLConstructor constructor = 1;
+}
+
+message TLAccountSaveAutoSaveSettings {
+  TLConstructor constructor = 1;
+  bool users = 3;
+  bool chats = 4;
+  bool broadcasts = 5;
+  repeated InputPeer peer = 6;
+  repeated AutoSaveSettings settings = 7;
+}
+
+message TLAccountDeleteAutoSaveExceptions {
+  TLConstructor constructor = 1;
+}
+
+message TLAccountInvalidateSignInCodes {
+  TLConstructor constructor = 1;
+  string codes = 3;
+}
+
+message TLUsersGetUsers {
+  TLConstructor constructor = 1;
+  repeated InputUser id = 3;
+}
+
+message TLUsersGetFullUser {
+  TLConstructor constructor = 1;
+  repeated InputUser id = 3;
+}
+
+message TLUsersSetSecureValueErrors {
+  TLConstructor constructor = 1;
+  repeated InputUser id = 3;
+  repeated SecureValueError errors = 4;
+}
+
+message TLContactsGetContactIDs {
+  TLConstructor constructor = 1;
+  int64 hash = 3;
+}
+
+message TLContactsGetStatuses {
+  TLConstructor constructor = 1;
+}
+
+message TLContactsGetContacts {
+  TLConstructor constructor = 1;
+  int64 hash = 3;
+}
+
+message TLContactsImportContacts {
+  TLConstructor constructor = 1;
+  repeated InputContact contacts = 3;
+}
+
+message TLContactsDeleteContacts {
+  TLConstructor constructor = 1;
+  repeated InputUser id = 3;
+}
+
+message TLContactsDeleteByPhones {
+  TLConstructor constructor = 1;
+  string phones = 3;
+}
+
+message TLContactsBlock {
+  TLConstructor constructor = 1;
+  bool my_stories_from = 3;
+  repeated InputPeer id = 4;
+}
+
+message TLContactsUnblock {
+  TLConstructor constructor = 1;
+  bool my_stories_from = 3;
+  repeated InputPeer id = 4;
+}
+
+message TLContactsGetBlocked {
+  TLConstructor constructor = 1;
+  bool my_stories_from = 3;
+  int32 offset = 4;
+  int32 limit = 5;
+}
+
+message TLContactsSearch {
+  TLConstructor constructor = 1;
+  string q = 3;
+  int32 limit = 4;
+}
+
+message TLContactsResolveUsername {
+  TLConstructor constructor = 1;
+  string username = 3;
+}
+
+message TLContactsGetTopPeers {
+  TLConstructor constructor = 1;
+  bool correspondents = 3;
+  bool bots_pm = 4;
+  bool bots_inline = 5;
+  bool phone_calls = 6;
+  bool forward_users = 7;
+  bool forward_chats = 8;
+  bool groups = 9;
+  bool channels = 10;
+  int32 offset = 11;
+  int32 limit = 12;
+  int64 hash = 13;
+}
+
+message TLContactsResetTopPeerRating {
+  TLConstructor constructor = 1;
+  repeated TopPeerCategory category = 3;
+  repeated InputPeer peer = 4;
+}
+
+message TLContactsResetSaved {
+  TLConstructor constructor = 1;
+}
+
+message TLContactsGetSaved {
+  TLConstructor constructor = 1;
+}
+
+message TLContactsToggleTopPeers {
+  TLConstructor constructor = 1;
+  repeated Bool enabled = 3;
+}
+
+message TLContactsAddContact {
+  TLConstructor constructor = 1;
+  bool add_phone_privacy_exception = 3;
+  repeated InputUser id = 4;
+  string first_name = 5;
+  string last_name = 6;
+  string phone = 7;
+}
+
+message TLContactsAcceptContact {
+  TLConstructor constructor = 1;
+  repeated InputUser id = 3;
+}
+
+message TLContactsGetLocated {
+  TLConstructor constructor = 1;
+  bool background = 3;
+  repeated InputGeoPoint geo_point = 4;
+  repeated google.protobuf.Int32Value self_expires = 5;
+}
+
+message TLContactsBlockFromReplies {
+  TLConstructor constructor = 1;
+  bool delete_message = 3;
+  bool delete_history = 4;
+  bool report_spam = 5;
+  int32 msg_id = 6;
+}
+
+message TLContactsResolvePhone {
+  TLConstructor constructor = 1;
+  string phone = 3;
+}
+
+message TLContactsExportContactToken {
+  TLConstructor constructor = 1;
+}
+
+message TLContactsImportContactToken {
+  TLConstructor constructor = 1;
+  string token = 3;
+}
+
+message TLContactsEditCloseFriends {
+  TLConstructor constructor = 1;
+  int64 id = 3;
+}
+
+message TLContactsSetBlocked {
+  TLConstructor constructor = 1;
+  bool my_stories_from = 3;
+  repeated InputPeer id = 4;
+  int32 limit = 5;
+}
+
+message TLMessagesGetMessages {
+  TLConstructor constructor = 1;
+  repeated InputMessage id_VECTORINPUTMESSAGE = 3;
+  int32 id_VECTORINT32 = 4;
+}
+
+message TLMessagesGetDialogs {
+  TLConstructor constructor = 1;
+  bool exclude_pinned = 3;
+  repeated google.protobuf.Int32Value folder_id = 4;
+  int32 offset_date = 5;
+  int32 offset_id = 6;
+  repeated InputPeer offset_peer = 7;
+  int32 limit = 8;
+  int64 hash = 9;
+}
+
+message TLMessagesGetHistory {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 offset_id = 4;
+  int32 offset_date = 5;
+  int32 add_offset = 6;
+  int32 limit = 7;
+  int32 max_id = 8;
+  int32 min_id = 9;
+  int64 hash = 10;
+}
+
+message TLMessagesSearch {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  string q = 4;
+  repeated InputPeer from_id = 5;
+  repeated google.protobuf.Int32Value top_msg_id = 6;
+  repeated MessagesFilter filter = 7;
+  int32 min_date = 8;
+  int32 max_date = 9;
+  int32 offset_id = 10;
+  int32 add_offset = 11;
+  int32 limit = 12;
+  int32 max_id = 13;
+  int32 min_id = 14;
+  int64 hash = 15;
+}
+
+message TLMessagesReadHistory {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 max_id = 4;
+}
+
+message TLMessagesDeleteHistory {
+  TLConstructor constructor = 1;
+  bool just_clear = 3;
+  bool revoke = 4;
+  repeated InputPeer peer = 5;
+  int32 max_id = 6;
+  repeated google.protobuf.Int32Value min_date = 7;
+  repeated google.protobuf.Int32Value max_date = 8;
+}
+
+message TLMessagesDeleteMessages {
+  TLConstructor constructor = 1;
+  bool revoke = 3;
+  int32 id = 4;
+}
+
+message TLMessagesReceivedMessages {
+  TLConstructor constructor = 1;
+  int32 max_id = 3;
+}
+
+message TLMessagesSetTyping {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated google.protobuf.Int32Value top_msg_id = 4;
+  repeated SendMessageAction action = 5;
+}
+
+message TLMessagesSendMessage {
+  TLConstructor constructor = 1;
+  bool no_webpage = 3;
+  bool silent = 4;
+  bool background = 5;
+  bool clear_draft = 6;
+  bool noforwards = 7;
+  bool update_stickersets_order = 8;
+  repeated InputPeer peer = 9;
+  repeated InputReplyTo reply_to = 10;
+  string message = 11;
+  int64 random_id = 12;
+  repeated ReplyMarkup reply_markup = 13;
+  repeated MessageEntity entities = 14;
+  repeated google.protobuf.Int32Value schedule_date = 15;
+  repeated InputPeer send_as = 16;
+  repeated google.protobuf.Int32Value reply_to_msg_id = 17;
+  repeated google.protobuf.Int32Value top_msg_id = 18;
+}
+
+message TLMessagesSendMedia {
+  TLConstructor constructor = 1;
+  bool silent = 3;
+  bool background = 4;
+  bool clear_draft = 5;
+  bool noforwards = 6;
+  bool update_stickersets_order = 7;
+  repeated InputPeer peer = 8;
+  repeated InputReplyTo reply_to = 9;
+  repeated InputMedia media = 10;
+  string message = 11;
+  int64 random_id = 12;
+  repeated ReplyMarkup reply_markup = 13;
+  repeated MessageEntity entities = 14;
+  repeated google.protobuf.Int32Value schedule_date = 15;
+  repeated InputPeer send_as = 16;
+  repeated google.protobuf.Int32Value reply_to_msg_id = 17;
+  repeated google.protobuf.Int32Value top_msg_id = 18;
+}
+
+message TLMessagesForwardMessages {
+  TLConstructor constructor = 1;
+  bool silent = 3;
+  bool background = 4;
+  bool with_my_score = 5;
+  bool drop_author = 6;
+  bool drop_media_captions = 7;
+  bool noforwards = 8;
+  repeated InputPeer from_peer = 9;
+  int32 id = 10;
+  int64 random_id = 11;
+  repeated InputPeer to_peer = 12;
+  repeated google.protobuf.Int32Value top_msg_id = 13;
+  repeated google.protobuf.Int32Value schedule_date = 14;
+  repeated InputPeer send_as = 15;
+}
+
+message TLMessagesReportSpam {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+}
+
+message TLMessagesGetPeerSettings {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+}
+
+message TLMessagesReport {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 id = 4;
+  repeated ReportReason reason = 5;
+  string message = 6;
+}
+
+message TLMessagesGetChats {
+  TLConstructor constructor = 1;
+  int64 id = 3;
+}
+
+message TLMessagesGetFullChat {
+  TLConstructor constructor = 1;
+  int64 chat_id = 3;
+}
+
+message TLMessagesEditChatTitle {
+  TLConstructor constructor = 1;
+  int64 chat_id = 3;
+  string title = 4;
+}
+
+message TLMessagesEditChatPhoto {
+  TLConstructor constructor = 1;
+  int64 chat_id = 3;
+  repeated InputChatPhoto photo = 4;
+}
+
+message TLMessagesAddChatUser {
+  TLConstructor constructor = 1;
+  int64 chat_id = 3;
+  repeated InputUser user_id = 4;
+  int32 fwd_limit = 5;
+}
+
+message TLMessagesDeleteChatUser {
+  TLConstructor constructor = 1;
+  bool revoke_history = 3;
+  int64 chat_id = 4;
+  repeated InputUser user_id = 5;
+}
+
+message TLMessagesCreateChat {
+  TLConstructor constructor = 1;
+  repeated InputUser users = 3;
+  string title = 4;
+  repeated google.protobuf.Int32Value ttl_period = 5;
+}
+
+message TLMessagesGetDhConfig {
+  TLConstructor constructor = 1;
+  int32 version = 3;
+  int32 random_length = 4;
+}
+
+message TLMessagesRequestEncryption {
+  TLConstructor constructor = 1;
+  repeated InputUser user_id = 3;
+  int32 random_id = 4;
+  bytes g_a = 5;
+}
+
+message TLMessagesAcceptEncryption {
+  TLConstructor constructor = 1;
+  repeated InputEncryptedChat peer = 3;
+  bytes g_b = 4;
+  int64 key_fingerprint = 5;
+}
+
+message TLMessagesDiscardEncryption {
+  TLConstructor constructor = 1;
+  bool delete_history = 3;
+  int32 chat_id = 4;
+}
+
+message TLMessagesSetEncryptedTyping {
+  TLConstructor constructor = 1;
+  repeated InputEncryptedChat peer = 3;
+  repeated Bool typing = 4;
+}
+
+message TLMessagesReadEncryptedHistory {
+  TLConstructor constructor = 1;
+  repeated InputEncryptedChat peer = 3;
+  int32 max_date = 4;
+}
+
+message TLMessagesSendEncrypted {
+  TLConstructor constructor = 1;
+  bool silent = 3;
+  repeated InputEncryptedChat peer = 4;
+  int64 random_id = 5;
+  bytes data = 6;
+}
+
+message TLMessagesSendEncryptedFile {
+  TLConstructor constructor = 1;
+  bool silent = 3;
+  repeated InputEncryptedChat peer = 4;
+  int64 random_id = 5;
+  bytes data = 6;
+  repeated InputEncryptedFile file = 7;
+}
+
+message TLMessagesSendEncryptedService {
+  TLConstructor constructor = 1;
+  repeated InputEncryptedChat peer = 3;
+  int64 random_id = 4;
+  bytes data = 5;
+}
+
+message TLMessagesReceivedQueue {
+  TLConstructor constructor = 1;
+  int32 max_qts = 3;
+}
+
+message TLMessagesReportEncryptedSpam {
+  TLConstructor constructor = 1;
+  repeated InputEncryptedChat peer = 3;
+}
+
+message TLMessagesReadMessageContents {
+  TLConstructor constructor = 1;
+  int32 id = 3;
+}
+
+message TLMessagesGetStickers {
+  TLConstructor constructor = 1;
+  string emoticon = 3;
+  int64 hash = 4;
+}
+
+message TLMessagesGetAllStickers {
+  TLConstructor constructor = 1;
+  int64 hash = 3;
+}
+
+message TLMessagesGetWebPagePreview {
+  TLConstructor constructor = 1;
+  string message = 3;
+  repeated MessageEntity entities = 4;
+}
+
+message TLMessagesExportChatInvite {
+  TLConstructor constructor = 1;
+  bool legacy_revoke_permanent = 3;
+  bool request_needed = 4;
+  repeated InputPeer peer = 5;
+  repeated google.protobuf.Int32Value expire_date = 6;
+  repeated google.protobuf.Int32Value usage_limit = 7;
+  repeated google.protobuf.StringValue title = 8;
+}
+
+message TLMessagesCheckChatInvite {
+  TLConstructor constructor = 1;
+  string hash = 3;
+}
+
+message TLMessagesImportChatInvite {
+  TLConstructor constructor = 1;
+  string hash = 3;
+}
+
+message TLMessagesGetStickerSet {
+  TLConstructor constructor = 1;
+  repeated InputStickerSet stickerset = 3;
+  int32 hash = 4;
+}
+
+message TLMessagesInstallStickerSet {
+  TLConstructor constructor = 1;
+  repeated InputStickerSet stickerset = 3;
+  repeated Bool archived = 4;
+}
+
+message TLMessagesUninstallStickerSet {
+  TLConstructor constructor = 1;
+  repeated InputStickerSet stickerset = 3;
+}
+
+message TLMessagesStartBot {
+  TLConstructor constructor = 1;
+  repeated InputUser bot = 3;
+  repeated InputPeer peer = 4;
+  int64 random_id = 5;
+  string start_param = 6;
+}
+
+message TLMessagesGetMessagesViews {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 id = 4;
+  repeated Bool increment = 5;
+}
+
+message TLMessagesEditChatAdmin {
+  TLConstructor constructor = 1;
+  int64 chat_id = 3;
+  repeated InputUser user_id = 4;
+  repeated Bool is_admin = 5;
+}
+
+message TLMessagesMigrateChat {
+  TLConstructor constructor = 1;
+  int64 chat_id = 3;
+}
+
+message TLMessagesSearchGlobal {
+  TLConstructor constructor = 1;
+  repeated google.protobuf.Int32Value folder_id = 3;
+  string q = 4;
+  repeated MessagesFilter filter = 5;
+  int32 min_date = 6;
+  int32 max_date = 7;
+  int32 offset_rate = 8;
+  repeated InputPeer offset_peer = 9;
+  int32 offset_id = 10;
+  int32 limit = 11;
+}
+
+message TLMessagesReorderStickerSets {
+  TLConstructor constructor = 1;
+  bool masks = 3;
+  bool emojis = 4;
+  int64 order = 5;
+}
+
+message TLMessagesGetDocumentByHash {
+  TLConstructor constructor = 1;
+  bytes sha256 = 3;
+  int64 size2_INT64 = 4;
+  string mime_type = 5;
+  int32 size2_INT32 = 6;
+}
+
+message TLMessagesGetSavedGifs {
+  TLConstructor constructor = 1;
+  int64 hash = 3;
+}
+
+message TLMessagesSaveGif {
+  TLConstructor constructor = 1;
+  repeated InputDocument id = 3;
+  repeated Bool unsave = 4;
+}
+
+message TLMessagesGetInlineBotResults {
+  TLConstructor constructor = 1;
+  repeated InputUser bot = 3;
+  repeated InputPeer peer = 4;
+  repeated InputGeoPoint geo_point = 5;
+  string query = 6;
+  string offset = 7;
+}
+
+message TLMessagesSetInlineBotResults {
+  TLConstructor constructor = 1;
+  bool gallery = 3;
+  bool private = 4;
+  int64 query_id = 5;
+  repeated InputBotInlineResult results = 6;
+  int32 cache_time = 7;
+  repeated google.protobuf.StringValue next_offset = 8;
+  repeated InlineBotSwitchPM switch_pm = 9;
+  repeated InlineBotWebView switch_webview = 10;
+}
+
+message TLMessagesSendInlineBotResult {
+  TLConstructor constructor = 1;
+  bool silent = 3;
+  bool background = 4;
+  bool clear_draft = 5;
+  bool hide_via = 6;
+  repeated InputPeer peer = 7;
+  repeated InputReplyTo reply_to = 8;
+  int64 random_id = 9;
+  int64 query_id = 10;
+  string id = 11;
+  repeated google.protobuf.Int32Value schedule_date = 12;
+  repeated InputPeer send_as = 13;
+  repeated google.protobuf.Int32Value reply_to_msg_id = 14;
+  repeated google.protobuf.Int32Value top_msg_id = 15;
+}
+
+message TLMessagesGetMessageEditData {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 id = 4;
+}
+
+message TLMessagesEditMessage {
+  TLConstructor constructor = 1;
+  bool no_webpage = 3;
+  repeated InputPeer peer = 4;
+  int32 id = 5;
+  repeated google.protobuf.StringValue message = 6;
+  repeated InputMedia media = 7;
+  repeated ReplyMarkup reply_markup = 8;
+  repeated MessageEntity entities = 9;
+  repeated google.protobuf.Int32Value schedule_date = 10;
+}
+
+message TLMessagesEditInlineBotMessage {
+  TLConstructor constructor = 1;
+  bool no_webpage = 3;
+  repeated InputBotInlineMessageID id = 4;
+  repeated google.protobuf.StringValue message = 5;
+  repeated InputMedia media = 6;
+  repeated ReplyMarkup reply_markup = 7;
+  repeated MessageEntity entities = 8;
+}
+
+message TLMessagesGetBotCallbackAnswer {
+  TLConstructor constructor = 1;
+  bool game = 3;
+  repeated InputPeer peer = 4;
+  int32 msg_id = 5;
+  bytes data = 6;
+  repeated InputCheckPasswordSRP password = 7;
+}
+
+message TLMessagesSetBotCallbackAnswer {
+  TLConstructor constructor = 1;
+  bool alert = 3;
+  int64 query_id = 4;
+  repeated google.protobuf.StringValue message = 5;
+  repeated google.protobuf.StringValue url = 6;
+  int32 cache_time = 7;
+}
+
+message TLMessagesGetPeerDialogs {
+  TLConstructor constructor = 1;
+  repeated InputDialogPeer peers = 3;
+}
+
+message TLMessagesSaveDraft {
+  TLConstructor constructor = 1;
+  bool no_webpage = 3;
+  repeated google.protobuf.Int32Value reply_to_msg_id = 4;
+  repeated google.protobuf.Int32Value top_msg_id = 5;
+  repeated InputPeer peer = 6;
+  string message = 7;
+  repeated MessageEntity entities = 8;
+}
+
+message TLMessagesGetAllDrafts {
+  TLConstructor constructor = 1;
+}
+
+message TLMessagesGetFeaturedStickers {
+  TLConstructor constructor = 1;
+  int64 hash = 3;
+}
+
+message TLMessagesReadFeaturedStickers {
+  TLConstructor constructor = 1;
+  int64 id = 3;
+}
+
+message TLMessagesGetRecentStickers {
+  TLConstructor constructor = 1;
+  bool attached = 3;
+  int64 hash = 4;
+}
+
+message TLMessagesSaveRecentSticker {
+  TLConstructor constructor = 1;
+  bool attached = 3;
+  repeated InputDocument id = 4;
+  repeated Bool unsave = 5;
+}
+
+message TLMessagesClearRecentStickers {
+  TLConstructor constructor = 1;
+  bool attached = 3;
+}
+
+message TLMessagesGetArchivedStickers {
+  TLConstructor constructor = 1;
+  bool masks = 3;
+  bool emojis = 4;
+  int64 offset_id = 5;
+  int32 limit = 6;
+}
+
+message TLMessagesGetMaskStickers {
+  TLConstructor constructor = 1;
+  int64 hash = 3;
+}
+
+message TLMessagesGetAttachedStickers {
+  TLConstructor constructor = 1;
+  repeated InputStickeredMedia media = 3;
+}
+
+message TLMessagesSetGameScore {
+  TLConstructor constructor = 1;
+  bool edit_message = 3;
+  bool force = 4;
+  repeated InputPeer peer = 5;
+  int32 id = 6;
+  repeated InputUser user_id = 7;
+  int32 score = 8;
+}
+
+message TLMessagesSetInlineGameScore {
+  TLConstructor constructor = 1;
+  bool edit_message = 3;
+  bool force = 4;
+  repeated InputBotInlineMessageID id = 5;
+  repeated InputUser user_id = 6;
+  int32 score = 7;
+}
+
+message TLMessagesGetGameHighScores {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 id = 4;
+  repeated InputUser user_id = 5;
+}
+
+message TLMessagesGetInlineGameHighScores {
+  TLConstructor constructor = 1;
+  repeated InputBotInlineMessageID id = 3;
+  repeated InputUser user_id = 4;
+}
+
+message TLMessagesGetCommonChats {
+  TLConstructor constructor = 1;
+  repeated InputUser user_id = 3;
+  int64 max_id = 4;
+  int32 limit = 5;
+}
+
+message TLMessagesGetWebPage8D9692A3 {
+  TLConstructor constructor = 1;
+  string url = 3;
+  int32 hash = 4;
+}
+
+message TLMessagesToggleDialogPin {
+  TLConstructor constructor = 1;
+  bool pinned = 3;
+  repeated InputDialogPeer peer = 4;
+}
+
+message TLMessagesReorderPinnedDialogs {
+  TLConstructor constructor = 1;
+  bool force = 3;
+  int32 folder_id = 4;
+  repeated InputDialogPeer order = 5;
+}
+
+message TLMessagesGetPinnedDialogs {
+  TLConstructor constructor = 1;
+  int32 folder_id = 3;
+}
+
+message TLMessagesSetBotShippingResults {
+  TLConstructor constructor = 1;
+  int64 query_id = 3;
+  repeated google.protobuf.StringValue error = 4;
+  repeated ShippingOption shipping_options = 5;
+}
+
+message TLMessagesSetBotPrecheckoutResults {
+  TLConstructor constructor = 1;
+  bool success = 3;
+  int64 query_id = 4;
+  repeated google.protobuf.StringValue error = 5;
+}
+
+message TLMessagesUploadMedia {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated InputMedia media = 4;
+}
+
+message TLMessagesSendScreenshotNotification {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated InputReplyTo reply_to = 4;
+  int64 random_id = 5;
+  int32 reply_to_msg_id = 6;
+}
+
+message TLMessagesGetFavedStickers {
+  TLConstructor constructor = 1;
+  int64 hash = 3;
+}
+
+message TLMessagesFaveSticker {
+  TLConstructor constructor = 1;
+  repeated InputDocument id = 3;
+  repeated Bool unfave = 4;
+}
+
+message TLMessagesGetUnreadMentions {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated google.protobuf.Int32Value top_msg_id = 4;
+  int32 offset_id = 5;
+  int32 add_offset = 6;
+  int32 limit = 7;
+  int32 max_id = 8;
+  int32 min_id = 9;
+}
+
+message TLMessagesReadMentions {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated google.protobuf.Int32Value top_msg_id = 4;
+}
+
+message TLMessagesGetRecentLocations {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 limit = 4;
+  int64 hash = 5;
+}
+
+message TLMessagesSendMultiMedia {
+  TLConstructor constructor = 1;
+  bool silent = 3;
+  bool background = 4;
+  bool clear_draft = 5;
+  bool noforwards = 6;
+  bool update_stickersets_order = 7;
+  repeated InputPeer peer = 8;
+  repeated InputReplyTo reply_to = 9;
+  repeated InputSingleMedia multi_media = 10;
+  repeated google.protobuf.Int32Value schedule_date = 11;
+  repeated InputPeer send_as = 12;
+  repeated google.protobuf.Int32Value reply_to_msg_id = 13;
+  repeated google.protobuf.Int32Value top_msg_id = 14;
+}
+
+message TLMessagesUploadEncryptedFile {
+  TLConstructor constructor = 1;
+  repeated InputEncryptedChat peer = 3;
+  repeated InputEncryptedFile file = 4;
+}
+
+message TLMessagesSearchStickerSets {
+  TLConstructor constructor = 1;
+  bool exclude_featured = 3;
+  string q = 4;
+  int64 hash = 5;
+}
+
+message TLMessagesGetSplitRanges {
+  TLConstructor constructor = 1;
+}
+
+message TLMessagesMarkDialogUnread {
+  TLConstructor constructor = 1;
+  bool unread = 3;
+  repeated InputDialogPeer peer = 4;
+}
+
+message TLMessagesGetDialogUnreadMarks {
+  TLConstructor constructor = 1;
+}
+
+message TLMessagesClearAllDrafts {
+  TLConstructor constructor = 1;
+}
+
+message TLMessagesUpdatePinnedMessage {
+  TLConstructor constructor = 1;
+  bool silent = 3;
+  bool unpin = 4;
+  bool pm_oneside = 5;
+  repeated InputPeer peer = 6;
+  int32 id = 7;
+}
+
+message TLMessagesSendVote {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 msg_id = 4;
+  bytes options = 5;
+}
+
+message TLMessagesGetPollResults {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 msg_id = 4;
+}
+
+message TLMessagesGetOnlines {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+}
+
+message TLMessagesEditChatAbout {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  string about = 4;
+}
+
+message TLMessagesEditChatDefaultBannedRights {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated ChatBannedRights banned_rights = 4;
+}
+
+message TLMessagesGetEmojiKeywords {
+  TLConstructor constructor = 1;
+  string lang_code = 3;
+}
+
+message TLMessagesGetEmojiKeywordsDifference {
+  TLConstructor constructor = 1;
+  string lang_code = 3;
+  int32 from_version = 4;
+}
+
+message TLMessagesGetEmojiKeywordsLanguages {
+  TLConstructor constructor = 1;
+  string lang_codes = 3;
+}
+
+message TLMessagesGetEmojiURL {
+  TLConstructor constructor = 1;
+  string lang_code = 3;
+}
+
+message TLMessagesGetSearchCounters {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated google.protobuf.Int32Value top_msg_id = 4;
+  repeated MessagesFilter filters = 5;
+}
+
+message TLMessagesRequestUrlAuth {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated google.protobuf.Int32Value msg_id = 4;
+  repeated google.protobuf.Int32Value button_id = 5;
+  repeated google.protobuf.StringValue url = 6;
+}
+
+message TLMessagesAcceptUrlAuth {
+  TLConstructor constructor = 1;
+  bool write_allowed = 3;
+  repeated InputPeer peer = 4;
+  repeated google.protobuf.Int32Value msg_id = 5;
+  repeated google.protobuf.Int32Value button_id = 6;
+  repeated google.protobuf.StringValue url = 7;
+}
+
+message TLMessagesHidePeerSettingsBar {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+}
+
+message TLMessagesGetScheduledHistory {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int64 hash = 4;
+}
+
+message TLMessagesGetScheduledMessages {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 id = 4;
+}
+
+message TLMessagesSendScheduledMessages {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 id = 4;
+}
+
+message TLMessagesDeleteScheduledMessages {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 id = 4;
+}
+
+message TLMessagesGetPollVotes {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 id = 4;
+  bytes option = 5;
+  repeated google.protobuf.StringValue offset = 6;
+  int32 limit = 7;
+}
+
+message TLMessagesToggleStickerSets {
+  TLConstructor constructor = 1;
+  bool uninstall = 3;
+  bool archive = 4;
+  bool unarchive = 5;
+  repeated InputStickerSet stickersets = 6;
+}
+
+message TLMessagesGetDialogFilters {
+  TLConstructor constructor = 1;
+}
+
+message TLMessagesGetSuggestedDialogFilters {
+  TLConstructor constructor = 1;
+}
+
+message TLMessagesUpdateDialogFilter {
+  TLConstructor constructor = 1;
+  int32 id = 3;
+  repeated DialogFilter filter = 4;
+}
+
+message TLMessagesUpdateDialogFiltersOrder {
+  TLConstructor constructor = 1;
+  int32 order = 3;
+}
+
+message TLMessagesGetOldFeaturedStickers {
+  TLConstructor constructor = 1;
+  int32 offset = 3;
+  int32 limit = 4;
+  int64 hash = 5;
+}
+
+message TLMessagesGetReplies {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 msg_id = 4;
+  int32 offset_id = 5;
+  int32 offset_date = 6;
+  int32 add_offset = 7;
+  int32 limit = 8;
+  int32 max_id = 9;
+  int32 min_id = 10;
+  int64 hash = 11;
+}
+
+message TLMessagesGetDiscussionMessage {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 msg_id = 4;
+}
+
+message TLMessagesReadDiscussion {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 msg_id = 4;
+  int32 read_max_id = 5;
+}
+
+message TLMessagesUnpinAllMessages {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated google.protobuf.Int32Value top_msg_id = 4;
+}
+
+message TLMessagesDeleteChat {
+  TLConstructor constructor = 1;
+  int64 chat_id = 3;
+}
+
+message TLMessagesDeletePhoneCallHistory {
+  TLConstructor constructor = 1;
+  bool revoke = 3;
+}
+
+message TLMessagesCheckHistoryImport {
+  TLConstructor constructor = 1;
+  string import_head = 3;
+}
+
+message TLMessagesInitHistoryImport {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated InputFile file = 4;
+  int32 media_count = 5;
+}
+
+message TLMessagesUploadImportedMedia {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int64 import_id = 4;
+  string file_name = 5;
+  repeated InputMedia media = 6;
+}
+
+message TLMessagesStartHistoryImport {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int64 import_id = 4;
+}
+
+message TLMessagesGetExportedChatInvites {
+  TLConstructor constructor = 1;
+  bool revoked = 3;
+  repeated InputPeer peer = 4;
+  repeated InputUser admin_id = 5;
+  repeated google.protobuf.Int32Value offset_date = 6;
+  repeated google.protobuf.StringValue offset_link = 7;
+  int32 limit = 8;
+}
+
+message TLMessagesGetExportedChatInvite {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  string link = 4;
+}
+
+message TLMessagesEditExportedChatInvite {
+  TLConstructor constructor = 1;
+  bool revoked = 3;
+  repeated InputPeer peer = 4;
+  string link = 5;
+  repeated google.protobuf.Int32Value expire_date = 6;
+  repeated google.protobuf.Int32Value usage_limit = 7;
+  repeated Bool request_needed = 8;
+  repeated google.protobuf.StringValue title = 9;
+}
+
+message TLMessagesDeleteRevokedExportedChatInvites {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated InputUser admin_id = 4;
+}
+
+message TLMessagesDeleteExportedChatInvite {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  string link = 4;
+}
+
+message TLMessagesGetAdminsWithInvites {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+}
+
+message TLMessagesGetChatInviteImporters {
+  TLConstructor constructor = 1;
+  bool requested = 3;
+  repeated InputPeer peer = 4;
+  repeated google.protobuf.StringValue link = 5;
+  repeated google.protobuf.StringValue q = 6;
+  int32 offset_date = 7;
+  repeated InputUser offset_user = 8;
+  int32 limit = 9;
+}
+
+message TLMessagesSetHistoryTTL {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 period = 4;
+}
+
+message TLMessagesCheckHistoryImportPeer {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+}
+
+message TLMessagesSetChatTheme {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  string emoticon = 4;
+}
+
+message TLMessagesGetMessageReadParticipants31C1C44F {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 msg_id = 4;
+}
+
+message TLMessagesGetSearchResultsCalendar {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated MessagesFilter filter = 4;
+  int32 offset_id = 5;
+  int32 offset_date = 6;
+}
+
+message TLMessagesGetSearchResultsPositions {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated MessagesFilter filter = 4;
+  int32 offset_id = 5;
+  int32 limit = 6;
+}
+
+message TLMessagesHideChatJoinRequest {
+  TLConstructor constructor = 1;
+  bool approved = 3;
+  repeated InputPeer peer = 4;
+  repeated InputUser user_id = 5;
+}
+
+message TLMessagesHideAllChatJoinRequests {
+  TLConstructor constructor = 1;
+  bool approved = 3;
+  repeated InputPeer peer = 4;
+  repeated google.protobuf.StringValue link = 5;
+}
+
+message TLMessagesToggleNoForwards {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated Bool enabled = 4;
+}
+
+message TLMessagesSaveDefaultSendAs {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated InputPeer send_as = 4;
+}
+
+message TLMessagesSendReaction {
+  TLConstructor constructor = 1;
+  bool big = 3;
+  bool add_to_recent = 4;
+  repeated InputPeer peer = 5;
+  int32 msg_id = 6;
+  repeated Reaction reaction_FLAGVECTORREACTION = 7;
+  repeated google.protobuf.StringValue reaction_FLAGSTRING = 8;
+}
+
+message TLMessagesGetMessagesReactions {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 id = 4;
+}
+
+message TLMessagesGetMessageReactionsList {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 id = 4;
+  repeated Reaction reaction_FLAGREACTION = 5;
+  repeated google.protobuf.StringValue offset = 6;
+  int32 limit = 7;
+  repeated google.protobuf.StringValue reaction_FLAGSTRING = 8;
+}
+
+message TLMessagesSetChatAvailableReactions {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated ChatReactions available_reactions_CHATREACTIONS = 4;
+  string available_reactions_VECTORSTRING = 5;
+}
+
+message TLMessagesGetAvailableReactions {
+  TLConstructor constructor = 1;
+  int32 hash = 3;
+}
+
+message TLMessagesSetDefaultReaction {
+  TLConstructor constructor = 1;
+  repeated Reaction reaction_REACTION = 3;
+  string reaction_STRING = 4;
+}
+
+message TLMessagesTranslateText {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 id = 4;
+  repeated TextWithEntities text_FLAGVECTORTEXTWITHENTITIES = 5;
+  string to_lang = 6;
+  repeated google.protobuf.Int32Value msg_id = 7;
+  repeated google.protobuf.StringValue text_FLAGSTRING = 8;
+  repeated google.protobuf.StringValue from_lang = 9;
+}
+
+message TLMessagesGetUnreadReactions {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated google.protobuf.Int32Value top_msg_id = 4;
+  int32 offset_id = 5;
+  int32 add_offset = 6;
+  int32 limit = 7;
+  int32 max_id = 8;
+  int32 min_id = 9;
+}
+
+message TLMessagesReadReactions {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated google.protobuf.Int32Value top_msg_id = 4;
+}
+
+message TLMessagesSearchSentMedia {
+  TLConstructor constructor = 1;
+  string q = 3;
+  repeated MessagesFilter filter = 4;
+  int32 limit = 5;
+}
+
+message TLMessagesGetAttachMenuBots {
+  TLConstructor constructor = 1;
+  int64 hash = 3;
+}
+
+message TLMessagesGetAttachMenuBot {
+  TLConstructor constructor = 1;
+  repeated InputUser bot = 3;
+}
+
+message TLMessagesToggleBotInAttachMenu {
+  TLConstructor constructor = 1;
+  bool write_allowed = 3;
+  repeated InputUser bot = 4;
+  repeated Bool enabled = 5;
+}
+
+message TLMessagesRequestWebView {
+  TLConstructor constructor = 1;
+  bool from_bot_menu = 3;
+  bool silent = 4;
+  repeated InputPeer peer = 5;
+  repeated InputUser bot = 6;
+  repeated google.protobuf.StringValue url = 7;
+  repeated google.protobuf.StringValue start_param = 8;
+  repeated DataJSON theme_params = 9;
+  string platform = 10;
+  repeated InputReplyTo reply_to = 11;
+  repeated InputPeer send_as = 12;
+  repeated google.protobuf.Int32Value reply_to_msg_id = 13;
+  repeated google.protobuf.Int32Value top_msg_id = 14;
+}
+
+message TLMessagesProlongWebView {
+  TLConstructor constructor = 1;
+  bool silent = 3;
+  repeated InputPeer peer = 4;
+  repeated InputUser bot = 5;
+  int64 query_id = 6;
+  repeated InputReplyTo reply_to = 7;
+  repeated InputPeer send_as = 8;
+  repeated google.protobuf.Int32Value reply_to_msg_id = 9;
+  repeated google.protobuf.Int32Value top_msg_id = 10;
+}
+
+message TLMessagesRequestSimpleWebView {
+  TLConstructor constructor = 1;
+  bool from_switch_webview = 3;
+  bool from_side_menu = 4;
+  repeated InputUser bot = 5;
+  repeated google.protobuf.StringValue url_FLAGSTRING = 6;
+  repeated google.protobuf.StringValue start_param = 7;
+  repeated DataJSON theme_params = 8;
+  string platform = 9;
+  string url_STRING = 10;
+}
+
+message TLMessagesSendWebViewResultMessage {
+  TLConstructor constructor = 1;
+  string bot_query_id = 3;
+  repeated InputBotInlineResult result = 4;
+}
+
+message TLMessagesSendWebViewData {
+  TLConstructor constructor = 1;
+  repeated InputUser bot = 3;
+  int64 random_id = 4;
+  string button_text = 5;
+  string data = 6;
+}
+
+message TLMessagesTranscribeAudio {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 msg_id = 4;
+}
+
+message TLMessagesRateTranscribedAudio {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 msg_id = 4;
+  int64 transcription_id = 5;
+  repeated Bool good = 6;
+}
+
+message TLMessagesGetCustomEmojiDocuments {
+  TLConstructor constructor = 1;
+  int64 document_id = 3;
+}
+
+message TLMessagesGetEmojiStickers {
+  TLConstructor constructor = 1;
+  int64 hash = 3;
+}
+
+message TLMessagesGetFeaturedEmojiStickers {
+  TLConstructor constructor = 1;
+  int64 hash = 3;
+}
+
+message TLMessagesReportReaction {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 id = 4;
+  repeated InputPeer reaction_peer = 5;
+}
+
+message TLMessagesGetTopReactions {
+  TLConstructor constructor = 1;
+  int32 limit = 3;
+  int64 hash = 4;
+}
+
+message TLMessagesGetRecentReactions {
+  TLConstructor constructor = 1;
+  int32 limit = 3;
+  int64 hash = 4;
+}
+
+message TLMessagesClearRecentReactions {
+  TLConstructor constructor = 1;
+}
+
+message TLMessagesGetExtendedMedia {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 id = 4;
+}
+
+message TLMessagesSetDefaultHistoryTTL {
+  TLConstructor constructor = 1;
+  int32 period = 3;
+}
+
+message TLMessagesGetDefaultHistoryTTL {
+  TLConstructor constructor = 1;
+}
+
+message TLMessagesSendBotRequestedPeer {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 msg_id = 4;
+  int32 button_id = 5;
+  repeated InputPeer requested_peer = 6;
+}
+
+message TLMessagesGetEmojiGroups {
+  TLConstructor constructor = 1;
+  int32 hash = 3;
+}
+
+message TLMessagesGetEmojiStatusGroups {
+  TLConstructor constructor = 1;
+  int32 hash = 3;
+}
+
+message TLMessagesGetEmojiProfilePhotoGroups {
+  TLConstructor constructor = 1;
+  int32 hash = 3;
+}
+
+message TLMessagesSearchCustomEmoji {
+  TLConstructor constructor = 1;
+  string emoticon = 3;
+  int64 hash = 4;
+}
+
+message TLMessagesTogglePeerTranslations {
+  TLConstructor constructor = 1;
+  bool disabled = 3;
+  repeated InputPeer peer = 4;
+}
+
+message TLMessagesGetBotApp {
+  TLConstructor constructor = 1;
+  repeated InputBotApp app = 3;
+  int64 hash = 4;
+}
+
+message TLMessagesRequestAppWebView {
+  TLConstructor constructor = 1;
+  bool write_allowed = 3;
+  repeated InputPeer peer = 4;
+  repeated InputBotApp app = 5;
+  repeated google.protobuf.StringValue start_param = 6;
+  repeated DataJSON theme_params = 7;
+  string platform = 8;
+}
+
+message TLMessagesSetChatWallPaper {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated InputWallPaper wallpaper = 4;
+  repeated WallPaperSettings settings = 5;
+  repeated google.protobuf.Int32Value id = 6;
+}
+
+message TLUpdatesGetState {
+  TLConstructor constructor = 1;
+}
+
+message TLUpdatesGetDifference {
+  TLConstructor constructor = 1;
+  int32 pts = 3;
+  repeated google.protobuf.Int32Value pts_limit = 4;
+  repeated google.protobuf.Int32Value pts_total_limit = 5;
+  int32 date = 6;
+  int32 qts = 7;
+  repeated google.protobuf.Int32Value qts_limit = 8;
+}
+
+message TLUpdatesGetChannelDifference {
+  TLConstructor constructor = 1;
+  bool force = 3;
+  repeated InputChannel channel = 4;
+  repeated ChannelMessagesFilter filter = 5;
+  int32 pts = 6;
+  int32 limit = 7;
+}
+
+message TLPhotosUpdateProfilePhoto {
+  TLConstructor constructor = 1;
+  bool fallback = 3;
+  repeated InputUser bot = 4;
+  repeated InputPhoto id = 5;
+}
+
+message TLPhotosUploadProfilePhoto {
+  TLConstructor constructor = 1;
+  bool fallback = 3;
+  repeated InputUser bot = 4;
+  repeated InputFile file = 5;
+  repeated InputFile video = 6;
+  repeated google.protobuf.DoubleValue video_start_ts = 7;
+  repeated VideoSize video_emoji_markup = 8;
+}
+
+message TLPhotosDeletePhotos {
+  TLConstructor constructor = 1;
+  repeated InputPhoto id = 3;
+}
+
+message TLPhotosGetUserPhotos {
+  TLConstructor constructor = 1;
+  repeated InputUser user_id = 3;
+  int32 offset = 4;
+  int64 max_id = 5;
+  int32 limit = 6;
+}
+
+message TLPhotosUploadContactProfilePhoto {
+  TLConstructor constructor = 1;
+  bool suggest = 3;
+  bool save = 4;
+  repeated InputUser user_id = 5;
+  repeated InputFile file = 6;
+  repeated InputFile video = 7;
+  repeated google.protobuf.DoubleValue video_start_ts = 8;
+  repeated VideoSize video_emoji_markup = 9;
+}
+
+message TLUploadSaveFilePart {
+  TLConstructor constructor = 1;
+  int64 file_id = 3;
+  int32 file_part = 4;
+  bytes bytes = 5;
+}
+
+message TLUploadGetFile {
+  TLConstructor constructor = 1;
+  bool precise = 3;
+  bool cdn_supported = 4;
+  repeated InputFileLocation location = 5;
+  int64 offset_INT64 = 6;
+  int32 limit = 7;
+  int32 offset_INT32 = 8;
+}
+
+message TLUploadSaveBigFilePart {
+  TLConstructor constructor = 1;
+  int64 file_id = 3;
+  int32 file_part = 4;
+  int32 file_total_parts = 5;
+  bytes bytes = 6;
+}
+
+message TLUploadGetWebFile {
+  TLConstructor constructor = 1;
+  repeated InputWebFileLocation location = 3;
+  int32 offset = 4;
+  int32 limit = 5;
+}
+
+message TLUploadGetCdnFile {
+  TLConstructor constructor = 1;
+  bytes file_token = 3;
+  int64 offset_INT64 = 4;
+  int32 limit = 5;
+  int32 offset_INT32 = 6;
+}
+
+message TLUploadReuploadCdnFile {
+  TLConstructor constructor = 1;
+  bytes file_token = 3;
+  bytes request_token = 4;
+}
+
+message TLUploadGetCdnFileHashes {
+  TLConstructor constructor = 1;
+  bytes file_token = 3;
+  int64 offset_INT64 = 4;
+  int32 offset_INT32 = 5;
+}
+
+message TLUploadGetFileHashes {
+  TLConstructor constructor = 1;
+  repeated InputFileLocation location = 3;
+  int64 offset_INT64 = 4;
+  int32 offset_INT32 = 5;
+}
+
+message TLHelpGetConfig {
+  TLConstructor constructor = 1;
+}
+
+message TLHelpGetNearestDc {
+  TLConstructor constructor = 1;
+}
+
+message TLHelpGetAppUpdate {
+  TLConstructor constructor = 1;
+  string source = 3;
+}
+
+message TLHelpGetInviteText {
+  TLConstructor constructor = 1;
+}
+
+message TLHelpGetSupport {
+  TLConstructor constructor = 1;
+}
+
+message TLHelpGetAppChangelog {
+  TLConstructor constructor = 1;
+  string prev_app_version = 3;
+}
+
+message TLHelpSetBotUpdatesStatus {
+  TLConstructor constructor = 1;
+  int32 pending_updates_count = 3;
+  string message = 4;
+}
+
+message TLHelpGetCdnConfig {
+  TLConstructor constructor = 1;
+}
+
+message TLHelpGetRecentMeUrls {
+  TLConstructor constructor = 1;
+  string referer = 3;
+}
+
+message TLHelpGetTermsOfServiceUpdate {
+  TLConstructor constructor = 1;
+}
+
+message TLHelpAcceptTermsOfService {
+  TLConstructor constructor = 1;
+  repeated DataJSON id = 3;
+}
+
+message TLHelpGetDeepLinkInfo {
+  TLConstructor constructor = 1;
+  string path = 3;
+}
+
+message TLHelpGetAppConfig61E3F854 {
+  TLConstructor constructor = 1;
+  int32 hash = 3;
+}
+
+message TLHelpSaveAppLog {
+  TLConstructor constructor = 1;
+  repeated InputAppEvent events = 3;
+}
+
+message TLHelpGetPassportConfig {
+  TLConstructor constructor = 1;
+  int32 hash = 3;
+}
+
+message TLHelpGetSupportName {
+  TLConstructor constructor = 1;
+}
+
+message TLHelpGetUserInfo {
+  TLConstructor constructor = 1;
+  repeated InputUser user_id = 3;
+}
+
+message TLHelpEditUserInfo {
+  TLConstructor constructor = 1;
+  repeated InputUser user_id = 3;
+  string message = 4;
+  repeated MessageEntity entities = 5;
+}
+
+message TLHelpGetPromoData {
+  TLConstructor constructor = 1;
+}
+
+message TLHelpHidePromoData {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+}
+
+message TLHelpDismissSuggestion {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  string suggestion = 4;
+}
+
+message TLHelpGetCountriesList {
+  TLConstructor constructor = 1;
+  string lang_code = 3;
+  int32 hash = 4;
+}
+
+message TLHelpGetPremiumPromo {
+  TLConstructor constructor = 1;
+}
+
+message TLChannelsReadHistory {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  int32 max_id = 4;
+}
+
+message TLChannelsDeleteMessages {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  int32 id = 4;
+}
+
+message TLChannelsReportSpam {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  repeated InputPeer participant = 4;
+  int32 id = 5;
+}
+
+message TLChannelsGetMessages {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  repeated InputMessage id_VECTORINPUTMESSAGE = 4;
+  int32 id_VECTORINT32 = 5;
+}
+
+message TLChannelsGetParticipants {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  repeated ChannelParticipantsFilter filter = 4;
+  int32 offset = 5;
+  int32 limit = 6;
+  int64 hash = 7;
+}
+
+message TLChannelsGetParticipant {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  repeated InputPeer participant = 4;
+}
+
+message TLChannelsGetChannels {
+  TLConstructor constructor = 1;
+  repeated InputChannel id = 3;
+}
+
+message TLChannelsGetFullChannel {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+}
+
+message TLChannelsCreateChannel {
+  TLConstructor constructor = 1;
+  bool broadcast = 3;
+  bool megagroup = 4;
+  bool for_import = 5;
+  bool forum = 6;
+  string title = 7;
+  string about = 8;
+  repeated InputGeoPoint geo_point = 9;
+  repeated google.protobuf.StringValue address = 10;
+  repeated google.protobuf.Int32Value ttl_period = 11;
+}
+
+message TLChannelsEditAdmin {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  repeated InputUser user_id = 4;
+  repeated ChatAdminRights admin_rights = 5;
+  string rank = 6;
+}
+
+message TLChannelsEditTitle {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  string title = 4;
+}
+
+message TLChannelsEditPhoto {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  repeated InputChatPhoto photo = 4;
+}
+
+message TLChannelsCheckUsername {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  string username = 4;
+}
+
+message TLChannelsUpdateUsername {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  string username = 4;
+}
+
+message TLChannelsJoinChannel {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+}
+
+message TLChannelsLeaveChannel {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+}
+
+message TLChannelsInviteToChannel {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  repeated InputUser users = 4;
+}
+
+message TLChannelsDeleteChannel {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+}
+
+message TLChannelsExportMessageLink {
+  TLConstructor constructor = 1;
+  bool grouped = 3;
+  bool thread = 4;
+  repeated InputChannel channel = 5;
+  int32 id = 6;
+}
+
+message TLChannelsToggleSignatures {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  repeated Bool enabled = 4;
+}
+
+message TLChannelsGetAdminedPublicChannels {
+  TLConstructor constructor = 1;
+  bool by_location = 3;
+  bool check_limit = 4;
+}
+
+message TLChannelsEditBanned {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  repeated InputPeer participant = 4;
+  repeated ChatBannedRights banned_rights = 5;
+}
+
+message TLChannelsGetAdminLog {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  string q = 4;
+  repeated ChannelAdminLogEventsFilter events_filter = 5;
+  repeated InputUser admins = 6;
+  int64 max_id = 7;
+  int64 min_id = 8;
+  int32 limit = 9;
+}
+
+message TLChannelsSetStickers {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  repeated InputStickerSet stickerset = 4;
+}
+
+message TLChannelsReadMessageContents {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  int32 id = 4;
+}
+
+message TLChannelsDeleteHistory9BAA9647 {
+  TLConstructor constructor = 1;
+  bool for_everyone = 3;
+  repeated InputChannel channel = 4;
+  int32 max_id = 5;
+}
+
+message TLChannelsTogglePreHistoryHidden {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  repeated Bool enabled = 4;
+}
+
+message TLChannelsGetLeftChannels {
+  TLConstructor constructor = 1;
+  int32 offset = 3;
+}
+
+message TLChannelsGetGroupsForDiscussion {
+  TLConstructor constructor = 1;
+}
+
+message TLChannelsSetDiscussionGroup {
+  TLConstructor constructor = 1;
+  repeated InputChannel broadcast = 3;
+  repeated InputChannel group = 4;
+}
+
+message TLChannelsEditCreator {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  repeated InputUser user_id = 4;
+  repeated InputCheckPasswordSRP password = 5;
+}
+
+message TLChannelsEditLocation {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  repeated InputGeoPoint geo_point = 4;
+  string address = 5;
+}
+
+message TLChannelsToggleSlowMode {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  int32 seconds = 4;
+}
+
+message TLChannelsGetInactiveChannels {
+  TLConstructor constructor = 1;
+}
+
+message TLChannelsConvertToGigagroup {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+}
+
+message TLChannelsViewSponsoredMessage {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  bytes random_id = 4;
+}
+
+message TLChannelsGetSponsoredMessages {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+}
+
+message TLChannelsGetSendAs {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+}
+
+message TLChannelsDeleteParticipantHistory {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  repeated InputPeer participant = 4;
+}
+
+message TLChannelsToggleJoinToSend {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  repeated Bool enabled = 4;
+}
+
+message TLChannelsToggleJoinRequest {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  repeated Bool enabled = 4;
+}
+
+message TLChannelsReorderUsernames {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  string order = 4;
+}
+
+message TLChannelsToggleUsername {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  string username = 4;
+  repeated Bool active = 5;
+}
+
+message TLChannelsDeactivateAllUsernames {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+}
+
+message TLChannelsToggleForum {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  repeated Bool enabled = 4;
+}
+
+message TLChannelsCreateForumTopic {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  string title = 4;
+  repeated google.protobuf.Int32Value icon_color = 5;
+  repeated google.protobuf.Int64Value icon_emoji_id = 6;
+  int64 random_id = 7;
+  repeated InputPeer send_as = 8;
+}
+
+message TLChannelsGetForumTopics {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  repeated google.protobuf.StringValue q = 4;
+  int32 offset_date = 5;
+  int32 offset_id = 6;
+  int32 offset_topic = 7;
+  int32 limit = 8;
+}
+
+message TLChannelsGetForumTopicsByID {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  int32 topics = 4;
+}
+
+message TLChannelsEditForumTopic {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  int32 topic_id = 4;
+  repeated google.protobuf.StringValue title = 5;
+  repeated google.protobuf.Int64Value icon_emoji_id = 6;
+  repeated Bool closed = 7;
+  repeated Bool hidden = 8;
+}
+
+message TLChannelsUpdatePinnedForumTopic {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  int32 topic_id = 4;
+  repeated Bool pinned = 5;
+}
+
+message TLChannelsDeleteTopicHistory {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  int32 top_msg_id = 4;
+}
+
+message TLChannelsReorderPinnedForumTopics {
+  TLConstructor constructor = 1;
+  bool force = 3;
+  repeated InputChannel channel = 4;
+  int32 order = 5;
+}
+
+message TLChannelsToggleAntiSpam {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  repeated Bool enabled = 4;
+}
+
+message TLChannelsReportAntiSpamFalsePositive {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  int32 msg_id = 4;
+}
+
+message TLChannelsToggleParticipantsHidden {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  repeated Bool enabled = 4;
+}
+
+message TLChannelsClickSponsoredMessage {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  bytes random_id = 4;
+}
+
+message TLBotsSendCustomRequest {
+  TLConstructor constructor = 1;
+  string custom_method = 3;
+  repeated DataJSON params = 4;
+}
+
+message TLBotsAnswerWebhookJSONQuery {
+  TLConstructor constructor = 1;
+  int64 query_id = 3;
+  repeated DataJSON data = 4;
+}
+
+message TLBotsSetBotCommands {
+  TLConstructor constructor = 1;
+  repeated BotCommandScope scope = 3;
+  string lang_code = 4;
+  repeated BotCommand commands = 5;
+}
+
+message TLBotsResetBotCommands {
+  TLConstructor constructor = 1;
+  repeated BotCommandScope scope = 3;
+  string lang_code = 4;
+}
+
+message TLBotsGetBotCommands {
+  TLConstructor constructor = 1;
+  repeated BotCommandScope scope = 3;
+  string lang_code = 4;
+}
+
+message TLBotsSetBotMenuButton {
+  TLConstructor constructor = 1;
+  repeated InputUser user_id = 3;
+  repeated BotMenuButton button = 4;
+}
+
+message TLBotsGetBotMenuButton {
+  TLConstructor constructor = 1;
+  repeated InputUser user_id = 3;
+}
+
+message TLBotsSetBotBroadcastDefaultAdminRights {
+  TLConstructor constructor = 1;
+  repeated ChatAdminRights admin_rights = 3;
+}
+
+message TLBotsSetBotGroupDefaultAdminRights {
+  TLConstructor constructor = 1;
+  repeated ChatAdminRights admin_rights = 3;
+}
+
+message TLBotsSetBotInfo {
+  TLConstructor constructor = 1;
+  repeated InputUser bot = 3;
+  string lang_code = 4;
+  repeated google.protobuf.StringValue name = 5;
+  repeated google.protobuf.StringValue about = 6;
+  repeated google.protobuf.StringValue description = 7;
+}
+
+message TLBotsGetBotInfoDCD914FD {
+  TLConstructor constructor = 1;
+  repeated InputUser bot = 3;
+  string lang_code = 4;
+}
+
+message TLBotsReorderUsernames {
+  TLConstructor constructor = 1;
+  repeated InputUser bot = 3;
+  string order = 4;
+}
+
+message TLBotsToggleUsername {
+  TLConstructor constructor = 1;
+  repeated InputUser bot = 3;
+  string username = 4;
+  repeated Bool active = 5;
+}
+
+message TLBotsCanSendMessage {
+  TLConstructor constructor = 1;
+  repeated InputUser bot = 3;
+}
+
+message TLBotsAllowSendMessage {
+  TLConstructor constructor = 1;
+  repeated InputUser bot = 3;
+}
+
+message TLBotsInvokeWebViewCustomMethod {
+  TLConstructor constructor = 1;
+  repeated InputUser bot = 3;
+  string custom_method = 4;
+  repeated DataJSON params = 5;
+}
+
+message TLPaymentsGetPaymentForm {
+  TLConstructor constructor = 1;
+  repeated InputInvoice invoice = 3;
+  repeated DataJSON theme_params = 4;
+  repeated InputPeer peer = 5;
+  int32 msg_id = 6;
+}
+
+message TLPaymentsGetPaymentReceipt {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 msg_id = 4;
+}
+
+message TLPaymentsValidateRequestedInfo {
+  TLConstructor constructor = 1;
+  bool save = 3;
+  repeated InputInvoice invoice = 4;
+  repeated PaymentRequestedInfo info = 5;
+  repeated InputPeer peer = 6;
+  int32 msg_id = 7;
+}
+
+message TLPaymentsSendPaymentForm {
+  TLConstructor constructor = 1;
+  int64 form_id = 3;
+  repeated InputInvoice invoice = 4;
+  repeated google.protobuf.StringValue requested_info_id = 5;
+  repeated google.protobuf.StringValue shipping_option_id = 6;
+  repeated InputPaymentCredentials credentials = 7;
+  repeated google.protobuf.Int64Value tip_amount = 8;
+  repeated InputPeer peer = 9;
+  int32 msg_id = 10;
+}
+
+message TLPaymentsGetSavedInfo {
+  TLConstructor constructor = 1;
+}
+
+message TLPaymentsClearSavedInfo {
+  TLConstructor constructor = 1;
+  bool credentials = 3;
+  bool info = 4;
+}
+
+message TLPaymentsGetBankCardData {
+  TLConstructor constructor = 1;
+  string number = 3;
+}
+
+message TLPaymentsExportInvoice {
+  TLConstructor constructor = 1;
+  repeated InputMedia invoice_media = 3;
+  repeated InputUser user_id = 4;
+}
+
+message TLPaymentsAssignAppStoreTransaction {
+  TLConstructor constructor = 1;
+  bytes receipt = 3;
+  repeated InputStorePaymentPurpose purpose = 4;
+  bool restore = 5;
+  string transaction_id = 6;
+}
+
+message TLPaymentsAssignPlayMarketTransaction {
+  TLConstructor constructor = 1;
+  repeated DataJSON receipt = 3;
+  repeated InputStorePaymentPurpose purpose = 4;
+  string purchase_token = 5;
+}
+
+message TLPaymentsCanPurchasePremium {
+  TLConstructor constructor = 1;
+  repeated InputStorePaymentPurpose purpose = 3;
+}
+
+message TLStickersCreateStickerSet {
+  TLConstructor constructor = 1;
+  bool masks = 3;
+  bool animated = 4;
+  bool videos = 5;
+  bool emojis = 6;
+  bool text_color = 7;
+  repeated InputUser user_id = 8;
+  string title = 9;
+  string short_name = 10;
+  repeated InputDocument thumb = 11;
+  repeated InputStickerSetItem stickers = 12;
+  repeated google.protobuf.StringValue software = 13;
+}
+
+message TLStickersRemoveStickerFromSet {
+  TLConstructor constructor = 1;
+  repeated InputDocument sticker = 3;
+}
+
+message TLStickersChangeStickerPosition {
+  TLConstructor constructor = 1;
+  repeated InputDocument sticker = 3;
+  int32 position = 4;
+}
+
+message TLStickersAddStickerToSet {
+  TLConstructor constructor = 1;
+  repeated InputStickerSet stickerset = 3;
+  repeated InputStickerSetItem sticker = 4;
+}
+
+message TLStickersSetStickerSetThumb {
+  TLConstructor constructor = 1;
+  repeated InputStickerSet stickerset = 3;
+  repeated InputDocument thumb = 4;
+  repeated google.protobuf.Int64Value thumb_document_id = 5;
+}
+
+message TLStickersCheckShortName {
+  TLConstructor constructor = 1;
+  string short_name = 3;
+}
+
+message TLStickersSuggestShortName {
+  TLConstructor constructor = 1;
+  string title = 3;
+}
+
+message TLStickersChangeSticker {
+  TLConstructor constructor = 1;
+  repeated InputDocument sticker = 3;
+  repeated google.protobuf.StringValue emoji = 4;
+  repeated MaskCoords mask_coords = 5;
+  repeated google.protobuf.StringValue keywords = 6;
+}
+
+message TLStickersRenameStickerSet {
+  TLConstructor constructor = 1;
+  repeated InputStickerSet stickerset = 3;
+  string title = 4;
+}
+
+message TLStickersDeleteStickerSet {
+  TLConstructor constructor = 1;
+  repeated InputStickerSet stickerset = 3;
+}
+
+message TLPhoneGetCallConfig {
+  TLConstructor constructor = 1;
+}
+
+message TLPhoneRequestCall {
+  TLConstructor constructor = 1;
+  bool video = 3;
+  repeated InputUser user_id = 4;
+  int32 random_id = 5;
+  bytes g_a_hash = 6;
+  repeated PhoneCallProtocol protocol = 7;
+}
+
+message TLPhoneAcceptCall {
+  TLConstructor constructor = 1;
+  repeated InputPhoneCall peer = 3;
+  bytes g_b = 4;
+  repeated PhoneCallProtocol protocol = 5;
+}
+
+message TLPhoneConfirmCall {
+  TLConstructor constructor = 1;
+  repeated InputPhoneCall peer = 3;
+  bytes g_a = 4;
+  int64 key_fingerprint = 5;
+  repeated PhoneCallProtocol protocol = 6;
+}
+
+message TLPhoneReceivedCall {
+  TLConstructor constructor = 1;
+  repeated InputPhoneCall peer = 3;
+}
+
+message TLPhoneDiscardCall {
+  TLConstructor constructor = 1;
+  bool video = 3;
+  repeated InputPhoneCall peer = 4;
+  int32 duration = 5;
+  repeated PhoneCallDiscardReason reason = 6;
+  int64 connection_id = 7;
+}
+
+message TLPhoneSetCallRating {
+  TLConstructor constructor = 1;
+  bool user_initiative = 3;
+  repeated InputPhoneCall peer = 4;
+  int32 rating = 5;
+  string comment = 6;
+}
+
+message TLPhoneSaveCallDebug {
+  TLConstructor constructor = 1;
+  repeated InputPhoneCall peer = 3;
+  repeated DataJSON debug = 4;
+}
+
+message TLPhoneSendSignalingData {
+  TLConstructor constructor = 1;
+  repeated InputPhoneCall peer = 3;
+  bytes data = 4;
+}
+
+message TLPhoneCreateGroupCall {
+  TLConstructor constructor = 1;
+  bool rtmp_stream = 3;
+  repeated InputPeer peer = 4;
+  int32 random_id = 5;
+  repeated google.protobuf.StringValue title = 6;
+  repeated google.protobuf.Int32Value schedule_date = 7;
+}
+
+message TLPhoneJoinGroupCall {
+  TLConstructor constructor = 1;
+  bool muted = 3;
+  bool video_stopped = 4;
+  repeated InputGroupCall call = 5;
+  repeated InputPeer join_as = 6;
+  repeated google.protobuf.StringValue invite_hash = 7;
+  repeated DataJSON params = 8;
+}
+
+message TLPhoneLeaveGroupCall {
+  TLConstructor constructor = 1;
+  repeated InputGroupCall call = 3;
+  int32 source = 4;
+}
+
+message TLPhoneInviteToGroupCall {
+  TLConstructor constructor = 1;
+  repeated InputGroupCall call = 3;
+  repeated InputUser users = 4;
+}
+
+message TLPhoneDiscardGroupCall {
+  TLConstructor constructor = 1;
+  repeated InputGroupCall call = 3;
+}
+
+message TLPhoneToggleGroupCallSettings {
+  TLConstructor constructor = 1;
+  bool reset_invite_hash = 3;
+  repeated InputGroupCall call = 4;
+  repeated Bool join_muted = 5;
+}
+
+message TLPhoneGetGroupCall {
+  TLConstructor constructor = 1;
+  repeated InputGroupCall call = 3;
+  int32 limit = 4;
+}
+
+message TLPhoneGetGroupParticipants {
+  TLConstructor constructor = 1;
+  repeated InputGroupCall call = 3;
+  repeated InputPeer ids = 4;
+  int32 sources = 5;
+  string offset = 6;
+  int32 limit = 7;
+}
+
+message TLPhoneCheckGroupCall {
+  TLConstructor constructor = 1;
+  repeated InputGroupCall call = 3;
+  int32 sources = 4;
+}
+
+message TLPhoneToggleGroupCallRecord {
+  TLConstructor constructor = 1;
+  bool start = 3;
+  bool video = 4;
+  repeated InputGroupCall call = 5;
+  repeated google.protobuf.StringValue title = 6;
+  repeated Bool video_portrait = 7;
+}
+
+message TLPhoneEditGroupCallParticipant {
+  TLConstructor constructor = 1;
+  repeated InputGroupCall call = 3;
+  repeated InputPeer participant = 4;
+  repeated Bool muted = 5;
+  repeated google.protobuf.Int32Value volume = 6;
+  repeated Bool raise_hand = 7;
+  repeated Bool video_stopped = 8;
+  repeated Bool video_paused = 9;
+  repeated Bool presentation_paused = 10;
+}
+
+message TLPhoneEditGroupCallTitle {
+  TLConstructor constructor = 1;
+  repeated InputGroupCall call = 3;
+  string title = 4;
+}
+
+message TLPhoneGetGroupCallJoinAs {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+}
+
+message TLPhoneExportGroupCallInvite {
+  TLConstructor constructor = 1;
+  bool can_self_unmute = 3;
+  repeated InputGroupCall call = 4;
+}
+
+message TLPhoneToggleGroupCallStartSubscription {
+  TLConstructor constructor = 1;
+  repeated InputGroupCall call = 3;
+  repeated Bool subscribed = 4;
+}
+
+message TLPhoneStartScheduledGroupCall {
+  TLConstructor constructor = 1;
+  repeated InputGroupCall call = 3;
+}
+
+message TLPhoneSaveDefaultGroupCallJoinAs {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated InputPeer join_as = 4;
+}
+
+message TLPhoneJoinGroupCallPresentation {
+  TLConstructor constructor = 1;
+  repeated InputGroupCall call = 3;
+  repeated DataJSON params = 4;
+}
+
+message TLPhoneLeaveGroupCallPresentation {
+  TLConstructor constructor = 1;
+  repeated InputGroupCall call = 3;
+}
+
+message TLPhoneGetGroupCallStreamChannels {
+  TLConstructor constructor = 1;
+  repeated InputGroupCall call = 3;
+}
+
+message TLPhoneGetGroupCallStreamRtmpUrl {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated Bool revoke = 4;
+}
+
+message TLPhoneSaveCallLog {
+  TLConstructor constructor = 1;
+  repeated InputPhoneCall peer = 3;
+  repeated InputFile file = 4;
+}
+
+message TLLangpackGetLangPack {
+  TLConstructor constructor = 1;
+  string lang_pack = 3;
+  string lang_code = 4;
+}
+
+message TLLangpackGetStrings {
+  TLConstructor constructor = 1;
+  string lang_pack = 3;
+  string lang_code = 4;
+  string keys = 5;
+}
+
+message TLLangpackGetDifference {
+  TLConstructor constructor = 1;
+  string lang_pack = 3;
+  string lang_code = 4;
+  int32 from_version = 5;
+}
+
+message TLLangpackGetLanguages {
+  TLConstructor constructor = 1;
+  string lang_pack = 3;
+}
+
+message TLLangpackGetLanguage {
+  TLConstructor constructor = 1;
+  string lang_pack = 3;
+  string lang_code = 4;
+}
+
+message TLFoldersEditPeerFolders {
+  TLConstructor constructor = 1;
+  repeated InputFolderPeer folder_peers = 3;
+}
+
+message TLStatsGetBroadcastStats {
+  TLConstructor constructor = 1;
+  bool dark = 3;
+  repeated InputChannel channel = 4;
+}
+
+message TLStatsLoadAsyncGraph {
+  TLConstructor constructor = 1;
+  string token = 3;
+  repeated google.protobuf.Int64Value x = 4;
+}
+
+message TLStatsGetMegagroupStats {
+  TLConstructor constructor = 1;
+  bool dark = 3;
+  repeated InputChannel channel = 4;
+}
+
+message TLStatsGetMessagePublicForwards {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  int32 msg_id = 4;
+  int32 offset_rate = 5;
+  repeated InputPeer offset_peer = 6;
+  int32 offset_id = 7;
+  int32 limit = 8;
+}
+
+message TLStatsGetMessageStats {
+  TLConstructor constructor = 1;
+  bool dark = 3;
+  repeated InputChannel channel = 4;
+  int32 msg_id = 5;
+}
+
+message TLChatlistsExportChatlistInvite {
+  TLConstructor constructor = 1;
+  repeated InputChatlist chatlist = 3;
+  string title = 4;
+  repeated InputPeer peers = 5;
+}
+
+message TLChatlistsDeleteExportedInvite {
+  TLConstructor constructor = 1;
+  repeated InputChatlist chatlist = 3;
+  string slug = 4;
+}
+
+message TLChatlistsEditExportedInvite {
+  TLConstructor constructor = 1;
+  repeated InputChatlist chatlist = 3;
+  string slug = 4;
+  repeated google.protobuf.StringValue title = 5;
+  repeated InputPeer peers = 6;
+}
+
+message TLChatlistsGetExportedInvites {
+  TLConstructor constructor = 1;
+  repeated InputChatlist chatlist = 3;
+}
+
+message TLChatlistsCheckChatlistInvite {
+  TLConstructor constructor = 1;
+  string slug = 3;
+}
+
+message TLChatlistsJoinChatlistInvite {
+  TLConstructor constructor = 1;
+  string slug = 3;
+  repeated InputPeer peers = 4;
+}
+
+message TLChatlistsGetChatlistUpdates {
+  TLConstructor constructor = 1;
+  repeated InputChatlist chatlist = 3;
+}
+
+message TLChatlistsJoinChatlistUpdates {
+  TLConstructor constructor = 1;
+  repeated InputChatlist chatlist = 3;
+  repeated InputPeer peers = 4;
+}
+
+message TLChatlistsHideChatlistUpdates {
+  TLConstructor constructor = 1;
+  repeated InputChatlist chatlist = 3;
+}
+
+message TLChatlistsGetLeaveChatlistSuggestions {
+  TLConstructor constructor = 1;
+  repeated InputChatlist chatlist = 3;
+}
+
+message TLChatlistsLeaveChatlist {
+  TLConstructor constructor = 1;
+  repeated InputChatlist chatlist = 3;
+  repeated InputPeer peers = 4;
+}
+
+message TLStoriesCanSendStory {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+}
+
+message TLStoriesSendStory {
+  TLConstructor constructor = 1;
+  bool pinned = 3;
+  bool noforwards = 4;
+  repeated InputPeer peer = 5;
+  repeated InputMedia media = 6;
+  repeated MediaArea media_areas = 7;
+  repeated google.protobuf.StringValue caption = 8;
+  repeated MessageEntity entities = 9;
+  repeated InputPrivacyRule privacy_rules = 10;
+  int64 random_id = 11;
+  repeated google.protobuf.Int32Value period = 12;
+}
+
+message TLStoriesEditStory {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 id = 4;
+  repeated InputMedia media = 5;
+  repeated MediaArea media_areas = 6;
+  repeated google.protobuf.StringValue caption = 7;
+  repeated MessageEntity entities = 8;
+  repeated InputPrivacyRule privacy_rules = 9;
+}
+
+message TLStoriesDeleteStories {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 id = 4;
+}
+
+message TLStoriesTogglePinned {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 id = 4;
+  repeated Bool pinned = 5;
+}
+
+message TLStoriesGetAllStories {
+  TLConstructor constructor = 1;
+  bool next = 3;
+  bool hidden = 4;
+  repeated google.protobuf.StringValue state = 5;
+}
+
+message TLStoriesGetPinnedStories {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 offset_id = 4;
+  int32 limit = 5;
+  repeated InputUser user_id = 6;
+}
+
+message TLStoriesGetStoriesArchive {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 offset_id = 4;
+  int32 limit = 5;
+}
+
+message TLStoriesGetStoriesByID {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 id = 4;
+  repeated InputUser user_id = 5;
+}
+
+message TLStoriesToggleAllStoriesHidden {
+  TLConstructor constructor = 1;
+  repeated Bool hidden = 3;
+}
+
+message TLStoriesReadStories {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 max_id = 4;
+  repeated InputUser user_id = 5;
+}
+
+message TLStoriesIncrementStoryViews {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 id = 4;
+  repeated InputUser user_id = 5;
+}
+
+message TLStoriesGetStoryViewsList {
+  TLConstructor constructor = 1;
+  bool just_contacts = 3;
+  bool reactions_first = 4;
+  repeated InputPeer peer = 5;
+  repeated google.protobuf.StringValue q = 6;
+  int32 id = 7;
+  string offset = 8;
+  int32 limit = 9;
+  int32 offset_date = 10;
+  int64 offset_id = 11;
+}
+
+message TLStoriesGetStoriesViews {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 id = 4;
+}
+
+message TLStoriesExportStoryLink {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 id = 4;
+  repeated InputUser user_id = 5;
+}
+
+message TLStoriesReport {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 id = 4;
+  repeated ReportReason reason = 5;
+  string message = 6;
+  repeated InputUser user_id = 7;
+}
+
+message TLStoriesActivateStealthMode {
+  TLConstructor constructor = 1;
+  bool past = 3;
+  bool future = 4;
+}
+
+message TLStoriesSendReaction {
+  TLConstructor constructor = 1;
+  bool add_to_recent = 3;
+  repeated InputPeer peer = 4;
+  int32 story_id = 5;
+  repeated Reaction reaction = 6;
+  repeated InputUser user_id = 7;
+}
+
+message TLStoriesGetPeerStories {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+}
+
+message TLStoriesGetAllReadPeerStories {
+  TLConstructor constructor = 1;
+}
+
+message TLStoriesGetPeerMaxIDs {
+  TLConstructor constructor = 1;
+  repeated InputPeer id = 3;
+}
+
+message TLStoriesGetChatsToSend {
+  TLConstructor constructor = 1;
+}
+
+message TLStoriesTogglePeerStoriesHidden {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  repeated Bool hidden = 4;
+}
+
+message TLStoriesGetBoostsStatus {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+}
+
+message TLStoriesGetBoostersList {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  string offset = 4;
+  int32 limit = 5;
+}
+
+message TLStoriesCanApplyBoost {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+}
+
+message TLStoriesApplyBoost {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+}
+
+message TLMessagesGetWebPage32CA8F91 {
+  TLConstructor constructor = 1;
+  string url = 3;
+  int32 hash = 4;
+}
+
+message TLUsersGetStoriesMaxIDs {
+  TLConstructor constructor = 1;
+  repeated InputUser id = 3;
+}
+
+message TLContactsToggleStoriesHidden {
+  TLConstructor constructor = 1;
+  repeated InputUser id = 3;
+  repeated Bool hidden = 4;
+}
+
+message TLStoriesGetUserStories {
+  TLConstructor constructor = 1;
+  repeated InputUser user_id = 3;
+}
+
+message TLStoriesGetAllReadUserStories {
+  TLConstructor constructor = 1;
+}
+
+message TLMessagesGetAllChats {
+  TLConstructor constructor = 1;
+  int64 except_ids = 3;
+}
+
+message TLBotsGetBotInfo75EC12E6 {
+  TLConstructor constructor = 1;
+  string lang_code = 3;
+}
+
+message TLFoldersDeleteFolder {
+  TLConstructor constructor = 1;
+  int32 folder_id = 3;
+}
+
+message TLMessagesGetMessageReadParticipants2C6F97B7 {
+  TLConstructor constructor = 1;
+  repeated InputPeer peer = 3;
+  int32 msg_id = 4;
+}
+
+message TLHelpGetAppConfig98914110 {
+  TLConstructor constructor = 1;
+}
+
+message TLAccountVerifyEmailECBA39DB {
+  TLConstructor constructor = 1;
+  string email = 3;
+  string code = 4;
+}
+
+message TLPaymentsRequestRecurringPayment {
+  TLConstructor constructor = 1;
+  repeated InputUser user_id = 3;
+  string recurring_init_charge = 4;
+  repeated InputMedia invoice_media = 5;
+}
+
+message TLPaymentsRestorePlayMarketReceipt {
+  TLConstructor constructor = 1;
+  bytes receipt = 3;
+}
+
+message TLChannelsDeleteHistoryAF369D42 {
+  TLConstructor constructor = 1;
+  repeated InputChannel channel = 3;
+  int32 max_id = 4;
+}
+
+message TLHelpTest {
+  TLConstructor constructor = 1;
+}
+
+message TLPredefinedCreatePredefinedUser {
+  TLConstructor constructor = 1;
+  string phone = 3;
+  repeated google.protobuf.StringValue first_name = 4;
+  repeated google.protobuf.StringValue last_name = 5;
+  repeated google.protobuf.StringValue username = 6;
+  string code = 7;
+  bool verified = 8;
+}
+
+message TLPredefinedUpdatePredefinedUsername {
+  TLConstructor constructor = 1;
+  string phone = 3;
+  string username = 4;
+}
+
+message TLPredefinedUpdatePredefinedProfile {
+  TLConstructor constructor = 1;
+  string phone = 3;
+  repeated google.protobuf.StringValue first_name = 4;
+  repeated google.protobuf.StringValue last_name = 5;
+  repeated google.protobuf.StringValue about = 6;
+}
+
+message TLPredefinedUpdatePredefinedVerified {
+  TLConstructor constructor = 1;
+  string phone = 3;
+  bool verified = 4;
+}
+
+message TLPredefinedUpdatePredefinedCode {
+  TLConstructor constructor = 1;
+  string phone = 3;
+  string code = 4;
+}
+
+message TLPredefinedGetPredefinedUser {
+  TLConstructor constructor = 1;
+  string phone = 3;
+}
+
+message TLPredefinedGetPredefinedUsers {
+  TLConstructor constructor = 1;
+}
+
+message TLUsersGetMe {
+  TLConstructor constructor = 1;
+  int64 id = 3;
+  string token = 4;
+}
+
+message TLAccountUpdateVerified {
+  TLConstructor constructor = 1;
+  int64 id = 3;
+  bool verified = 4;
+}
+
+message TLAuthToggleBan {
+  TLConstructor constructor = 1;
+  string phone = 3;
+  bool predefined = 4;
+  repeated google.protobuf.Int32Value expires = 5;
+  repeated google.protobuf.StringValue reason = 6;
+}
+
+message TLBizInvokeBizDataRaw {
+  TLConstructor constructor = 1;
+  repeated BizDataRaw biz_data = 3;
+}
+
+message VectorSecureValue {
+  repeated SecureValue datas = 1;
+}
+
+message VectorWallPaper {
+  repeated WallPaper datas = 1;
+}
+
+message VectorUser {
+  repeated User datas = 1;
+}
+
+message VectorInt {
+  int32 datas = 1;
+}
+
+message VectorContactStatus {
+  repeated ContactStatus datas = 1;
+}
+
+message VectorSavedContact {
+  repeated SavedContact datas = 1;
+}
+
+message VectorReceivedNotifyMessage {
+  repeated ReceivedNotifyMessage datas = 1;
+}
+
+message VectorLong {
+  int64 datas = 1;
+}
+
+message VectorStickerSetCovered {
+  repeated StickerSetCovered datas = 1;
+}
+
+message VectorMessageRange {
+  repeated MessageRange datas = 1;
+}
+
+message VectorDialogPeer {
+  repeated DialogPeer datas = 1;
+}
+
+message VectorEmojiLanguage {
+  repeated EmojiLanguage datas = 1;
+}
+
+message VectorMessagesSearchCounter {
+  repeated MessagesSearchCounter datas = 1;
+}
+
+message VectorDialogFilter {
+  repeated DialogFilter datas = 1;
+}
+
+message VectorDialogFilterSuggested {
+  repeated DialogFilterSuggested datas = 1;
+}
+
+message VectorReadParticipantDate {
+  repeated ReadParticipantDate datas = 1;
+}
+
+message VectorDocument {
+  repeated Document datas = 1;
+}
+
+message VectorFileHash {
+  repeated FileHash datas = 1;
+}
+
+message VectorBotCommand {
+  repeated BotCommand datas = 1;
+}
+
+message VectorLangPackString {
+  repeated LangPackString datas = 1;
+}
+
+message VectorLangPackLanguage {
+  repeated LangPackLanguage datas = 1;
+}
+
+message VectorPeer {
+  repeated Peer datas = 1;
+}
+
+message VectorString {
+  string datas = 1;
+}
+
+message VectorPredefinedUser {
+  repeated PredefinedUser datas = 1;
+}

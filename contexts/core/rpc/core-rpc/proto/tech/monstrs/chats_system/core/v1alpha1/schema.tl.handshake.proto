@@ -1,0 +1,145 @@
+syntax = "proto3";
+
+package tech.monstrs.chats_system.core.v1alpha1;
+
+import "tech/monstrs/chats_system/core/v1alpha1/schema.tl.crc32.proto";
+
+message BindAuthKeyInner {
+  string predicate_name = 1;
+  TLConstructor constructor = 2;
+  int64 nonce = 3;
+  int64 temp_auth_key_id = 4;
+  int64 perm_auth_key_id = 5;
+  int64 temp_session_id = 6;
+  int32 expires_at = 7;
+}
+
+message TLBindAuthKeyInner {
+  repeated BindAuthKeyInner data2 = 1;
+}
+
+message ClientDHInnerData {
+  string predicate_name = 1;
+  TLConstructor constructor = 2;
+  bytes nonce = 3;
+  bytes server_nonce = 4;
+  int64 retry_id = 5;
+  string g_b = 6;
+}
+
+message TLClientDHInnerData {
+  repeated ClientDHInnerData data2 = 1;
+}
+
+message DestroyAuthKeyRes {
+  string predicate_name = 1;
+  TLConstructor constructor = 2;
+}
+
+message TLDestroyAuthKeyOk {
+  repeated DestroyAuthKeyRes data2 = 1;
+}
+
+message TLDestroyAuthKeyNone {
+  repeated DestroyAuthKeyRes data2 = 1;
+}
+
+message TLDestroyAuthKeyFail {
+  repeated DestroyAuthKeyRes data2 = 1;
+}
+
+message PQInnerData {
+  string predicate_name = 1;
+  TLConstructor constructor = 2;
+  string pq = 3;
+  string p = 4;
+  string q = 5;
+  bytes nonce = 6;
+  bytes server_nonce = 7;
+  bytes new_nonce = 8;
+  int32 dc = 9;
+  int32 expires_in = 10;
+}
+
+message TLPQInnerData {
+  repeated PQInnerData data2 = 1;
+}
+
+message TLPQInnerDataDc {
+  repeated PQInnerData data2 = 1;
+}
+
+message TLPQInnerDataTemp {
+  repeated PQInnerData data2 = 1;
+}
+
+message TLPQInnerDataTempDc {
+  repeated PQInnerData data2 = 1;
+}
+
+message ResPQ {
+  string predicate_name = 1;
+  TLConstructor constructor = 2;
+  bytes nonce = 3;
+  bytes server_nonce = 4;
+  string pq = 5;
+  int64 server_public_key_fingerprints = 6;
+}
+
+message TLResPQ {
+  repeated ResPQ data2 = 1;
+}
+
+message ServerDHParams {
+  string predicate_name = 1;
+  TLConstructor constructor = 2;
+  bytes nonce = 3;
+  bytes server_nonce = 4;
+  bytes new_nonce_hash = 5;
+  string encrypted_answer = 6;
+}
+
+message TLServerDHParamsFail {
+  repeated ServerDHParams data2 = 1;
+}
+
+message TLServerDHParamsOk {
+  repeated ServerDHParams data2 = 1;
+}
+
+message ServerDHInnerData {
+  string predicate_name = 1;
+  TLConstructor constructor = 2;
+  bytes nonce = 3;
+  bytes server_nonce = 4;
+  int32 g = 5;
+  string dh_prime = 6;
+  string g_a = 7;
+  int32 server_time = 8;
+}
+
+message TLServerDHInnerData {
+  repeated ServerDHInnerData data2 = 1;
+}
+
+message SetClientDHParamsAnswer {
+  string predicate_name = 1;
+  TLConstructor constructor = 2;
+  bytes nonce = 3;
+  bytes server_nonce = 4;
+  bytes new_nonce_hash1 = 5;
+  bytes new_nonce_hash2 = 6;
+  bytes new_nonce_hash3 = 7;
+}
+
+message TLDhGenOk {
+  repeated SetClientDHParamsAnswer data2 = 1;
+}
+
+message TLDhGenRetry {
+  repeated SetClientDHParamsAnswer data2 = 1;
+}
+
+message TLDhGenFail {
+  repeated SetClientDHParamsAnswer data2 = 1;
+}
