@@ -3,22 +3,41 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { HttpSessionData, TLSessionCloseSession, TLSessionCreateSession, TLSessionPushRpcResultData, TLSessionPushSessionUpdatesData, TLSessionPushUpdatesData, TLSessionQueryAuthKey, TLSessionSendDataToSession, TLSessionSendHttpDataToSession, TLSessionSetAuthKey } from "./session.service_pb.js";
-import { AuthKeyInfo } from "../../core/v1alpha1/schema.tl.sync_pb.js";
-import { MethodKind } from "@bufbuild/protobuf";
-import { Bool } from "../../core/v1alpha1/schema.tl.core_types_pb.js";
+import { MethodKind }                                                                                                                                                                                                                                                    from '@bufbuild/protobuf'
+
+import { Bool }                                                                                                                                                                                                                                                          from '../../core/v1alpha1/schema.tl.core_types_pb.js'
+import { AuthKeyInfo }                                                                                                                                                                                                                                                   from '../../core/v1alpha1/schema.tl.sync_pb.js'
+import { HttpSessionData }                                                                                                                                                                                                                                               from './session.service_pb.js'
+
+import { TLSessionCloseSession }                                                                                                                                                                                                                        from './session.service_pb.js'
+
+import { TLSessionCreateSession }                                                                                                                                                                                                from './session.service_pb.js'
+
+import { TLSessionPushRpcResultData }                                                                                                                                                                    from './session.service_pb.js'
+
+import { TLSessionPushSessionUpdatesData }                                                                                                                                   from './session.service_pb.js'
+
+import { TLSessionPushUpdatesData }                                                                                                         from './session.service_pb.js'
+
+import { TLSessionQueryAuthKey }                                                                                  from './session.service_pb.js'
+
+import { TLSessionSendDataToSession }                                                      from './session.service_pb.js'
+
+import { TLSessionSendHttpDataToSession }                      from './session.service_pb.js'
+
+import { TLSessionSetAuthKey } from './session.service_pb.js'
 
 /**
  * @generated from service tech.monstrs.chats_system.session.v1alpha1.SessionService
  */
 export const SessionService = {
-  typeName: "tech.monstrs.chats_system.session.v1alpha1.SessionService",
+  typeName: 'tech.monstrs.chats_system.session.v1alpha1.SessionService',
   methods: {
     /**
      * @generated from rpc tech.monstrs.chats_system.session.v1alpha1.SessionService.queryAuthKey
      */
     queryAuthKey: {
-      name: "queryAuthKey",
+      name: 'queryAuthKey',
       I: TLSessionQueryAuthKey,
       O: AuthKeyInfo,
       kind: MethodKind.Unary,
@@ -27,7 +46,7 @@ export const SessionService = {
      * @generated from rpc tech.monstrs.chats_system.session.v1alpha1.SessionService.setAuthKey
      */
     setAuthKey: {
-      name: "setAuthKey",
+      name: 'setAuthKey',
       I: TLSessionSetAuthKey,
       O: Bool,
       kind: MethodKind.Unary,
@@ -36,7 +55,7 @@ export const SessionService = {
      * @generated from rpc tech.monstrs.chats_system.session.v1alpha1.SessionService.createSession
      */
     createSession: {
-      name: "createSession",
+      name: 'createSession',
       I: TLSessionCreateSession,
       O: Bool,
       kind: MethodKind.Unary,
@@ -45,7 +64,7 @@ export const SessionService = {
      * @generated from rpc tech.monstrs.chats_system.session.v1alpha1.SessionService.sendDataToSession
      */
     sendDataToSession: {
-      name: "sendDataToSession",
+      name: 'sendDataToSession',
       I: TLSessionSendDataToSession,
       O: Bool,
       kind: MethodKind.Unary,
@@ -54,7 +73,7 @@ export const SessionService = {
      * @generated from rpc tech.monstrs.chats_system.session.v1alpha1.SessionService.sendHttpDataToSession
      */
     sendHttpDataToSession: {
-      name: "sendHttpDataToSession",
+      name: 'sendHttpDataToSession',
       I: TLSessionSendHttpDataToSession,
       O: HttpSessionData,
       kind: MethodKind.Unary,
@@ -63,7 +82,7 @@ export const SessionService = {
      * @generated from rpc tech.monstrs.chats_system.session.v1alpha1.SessionService.closeSession
      */
     closeSession: {
-      name: "closeSession",
+      name: 'closeSession',
       I: TLSessionCloseSession,
       O: Bool,
       kind: MethodKind.Unary,
@@ -72,7 +91,7 @@ export const SessionService = {
      * @generated from rpc tech.monstrs.chats_system.session.v1alpha1.SessionService.pushUpdatesData
      */
     pushUpdatesData: {
-      name: "pushUpdatesData",
+      name: 'pushUpdatesData',
       I: TLSessionPushUpdatesData,
       O: Bool,
       kind: MethodKind.Unary,
@@ -81,7 +100,7 @@ export const SessionService = {
      * @generated from rpc tech.monstrs.chats_system.session.v1alpha1.SessionService.pushSessionUpdatesData
      */
     pushSessionUpdatesData: {
-      name: "pushSessionUpdatesData",
+      name: 'pushSessionUpdatesData',
       I: TLSessionPushSessionUpdatesData,
       O: Bool,
       kind: MethodKind.Unary,
@@ -90,11 +109,10 @@ export const SessionService = {
      * @generated from rpc tech.monstrs.chats_system.session.v1alpha1.SessionService.pushRpcResultData
      */
     pushRpcResultData: {
-      name: "pushRpcResultData",
+      name: 'pushRpcResultData',
       I: TLSessionPushRpcResultData,
       O: Bool,
       kind: MethodKind.Unary,
     },
-  }
-} as const;
-
+  },
+} as const

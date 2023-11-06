@@ -6,6 +6,7 @@ import { MicroservisesRegistryModule } from '@monstrs/nestjs-microservices-regis
 import { Module }                      from '@nestjs/common'
 
 import * as controllers                from '../controllers/index.js'
+import { AuthCache }                   from '../cache/index.js'
 
 @Module({})
 export class SessionInfrastructureModule {
@@ -22,6 +23,7 @@ export class SessionInfrastructureModule {
           }),
         }),
       ],
+      providers: [AuthCache],
     }
   }
 }

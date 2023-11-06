@@ -3,8 +3,9 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { AuthKeyInfo, Updates } from "../../core/v1alpha1/schema.tl.sync_pb.js";
-import type { FutureSalt } from "../../core/v1alpha1/schema.tl.transport_pb.js";
+import type { AuthKeyInfo }          from '../../core/v1alpha1/schema.tl.sync_pb.js'
+import type { Updates } from '../../core/v1alpha1/schema.tl.sync_pb.js'
+import type { FutureSalt }           from '../../core/v1alpha1/schema.tl.transport_pb.js'
 
 /**
  * @generated from enum tech.monstrs.chats_system.session.v1alpha1.TLConstructor
@@ -83,38 +84,37 @@ export abstract class SessionClientEvent {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string server_id = 3;
    */
-  abstract readonly serverId?: string;
+  abstract readonly serverId?: string
 
   /**
    * @generated from field: optional int32 conn_type = 4;
    */
-  abstract readonly connType?: number;
+  abstract readonly connType?: number
 
   /**
    * @generated from field: optional int64 auth_key_id = 5;
    */
-  abstract readonly authKeyId?: bigint;
+  abstract readonly authKeyId?: bigint
 
   /**
    * @generated from field: optional int64 session_id = 6;
    */
-  abstract readonly sessionId?: bigint;
+  abstract readonly sessionId?: bigint
 
   /**
    * @generated from field: optional string client_ip = 7;
    */
-  abstract readonly clientIp?: string;
-
+  abstract readonly clientIp?: string
 }
 
 /**
@@ -124,8 +124,7 @@ export abstract class TLSessionClientEvent {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.SessionClientEvent data2 = 1;
    */
-  abstract readonly data2?: SessionClientEvent;
-
+  abstract readonly data2?: SessionClientEvent
 }
 
 /**
@@ -135,53 +134,52 @@ export abstract class SessionClientData {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string server_id = 3;
    */
-  abstract readonly serverId?: string;
+  abstract readonly serverId?: string
 
   /**
    * @generated from field: optional int32 conn_type = 4;
    */
-  abstract readonly connType?: number;
+  abstract readonly connType?: number
 
   /**
    * @generated from field: optional int64 auth_key_id = 5;
    */
-  abstract readonly authKeyId?: bigint;
+  abstract readonly authKeyId?: bigint
 
   /**
    * @generated from field: optional int64 session_id = 6;
    */
-  abstract readonly sessionId?: bigint;
+  abstract readonly sessionId?: bigint
 
   /**
    * @generated from field: optional string client_ip = 7;
    */
-  abstract readonly clientIp?: string;
+  abstract readonly clientIp?: string
 
   /**
    * @generated from field: optional int32 quick_ack = 8;
    */
-  abstract readonly quickAck?: number;
+  abstract readonly quickAck?: number
 
   /**
    * @generated from field: optional int64 salt = 9;
    */
-  abstract readonly salt?: bigint;
+  abstract readonly salt?: bigint
 
   /**
    * @generated from field: optional bytes payload = 10;
    */
-  abstract readonly payload?: Uint8Array;
-
+  abstract readonly payload?: Uint8Array
 }
 
 /**
@@ -191,8 +189,7 @@ export abstract class TLSessionClientData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.SessionClientData data2 = 1;
    */
-  abstract readonly data2?: SessionClientData;
-
+  abstract readonly data2?: SessionClientData
 }
 
 /**
@@ -202,18 +199,17 @@ export abstract class HttpSessionData {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes payload = 3;
    */
-  abstract readonly payload?: Uint8Array;
-
+  abstract readonly payload?: Uint8Array
 }
 
 /**
@@ -223,8 +219,7 @@ export abstract class TLHttpSessionData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.HttpSessionData data2 = 1;
    */
-  abstract readonly data2?: HttpSessionData;
-
+  abstract readonly data2?: HttpSessionData
 }
 
 /**
@@ -234,13 +229,12 @@ export abstract class TLSessionQueryAuthKey {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 auth_key_id = 3;
    */
-  abstract readonly authKeyId?: bigint;
-
+  abstract readonly authKeyId?: bigint
 }
 
 /**
@@ -250,23 +244,22 @@ export abstract class TLSessionSetAuthKey {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthKeyInfo auth_key = 3;
    */
-  abstract readonly authKey?: AuthKeyInfo;
+  abstract readonly authKey?: AuthKeyInfo
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.FutureSalt future_salt = 4;
    */
-  abstract readonly futureSalt?: FutureSalt;
+  abstract readonly futureSalt?: FutureSalt
 
   /**
    * @generated from field: optional int32 expires_in = 5;
    */
-  abstract readonly expiresIn?: number;
-
+  abstract readonly expiresIn?: number
 }
 
 /**
@@ -276,13 +269,12 @@ export abstract class TLSessionCreateSession {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.SessionClientEvent client = 3;
    */
-  abstract readonly client?: SessionClientEvent;
-
+  abstract readonly client?: SessionClientEvent
 }
 
 /**
@@ -292,13 +284,12 @@ export abstract class TLSessionSendDataToSession {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.SessionClientData data = 3;
    */
-  abstract readonly data?: SessionClientData;
-
+  abstract readonly data?: SessionClientData
 }
 
 /**
@@ -308,13 +299,12 @@ export abstract class TLSessionSendHttpDataToSession {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.SessionClientData client = 3;
    */
-  abstract readonly client?: SessionClientData;
-
+  abstract readonly client?: SessionClientData
 }
 
 /**
@@ -324,13 +314,12 @@ export abstract class TLSessionCloseSession {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.SessionClientEvent client = 3;
    */
-  abstract readonly client?: SessionClientEvent;
-
+  abstract readonly client?: SessionClientEvent
 }
 
 /**
@@ -340,23 +329,22 @@ export abstract class TLSessionPushUpdatesData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 auth_key_id = 3;
    */
-  abstract readonly authKeyId?: bigint;
+  abstract readonly authKeyId?: bigint
 
   /**
    * @generated from field: optional bool notification = 4;
    */
-  abstract readonly notification?: boolean;
+  abstract readonly notification?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Updates updates = 5;
    */
-  abstract readonly updates?: Updates;
-
+  abstract readonly updates?: Updates
 }
 
 /**
@@ -366,23 +354,22 @@ export abstract class TLSessionPushSessionUpdatesData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 auth_key_id = 3;
    */
-  abstract readonly authKeyId?: bigint;
+  abstract readonly authKeyId?: bigint
 
   /**
    * @generated from field: optional int64 session_id = 4;
    */
-  abstract readonly sessionId?: bigint;
+  abstract readonly sessionId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Updates updates = 5;
    */
-  abstract readonly updates?: Updates;
-
+  abstract readonly updates?: Updates
 }
 
 /**
@@ -392,27 +379,25 @@ export abstract class TLSessionPushRpcResultData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 auth_key_id = 3;
    */
-  abstract readonly authKeyId?: bigint;
+  abstract readonly authKeyId?: bigint
 
   /**
    * @generated from field: optional int64 session_id = 4;
    */
-  abstract readonly sessionId?: bigint;
+  abstract readonly sessionId?: bigint
 
   /**
    * @generated from field: optional int64 client_req_msg_id = 5;
    */
-  abstract readonly clientReqMsgId?: bigint;
+  abstract readonly clientReqMsgId?: bigint
 
   /**
    * @generated from field: optional bytes rpc_result_data = 6;
    */
-  abstract readonly rpcResultData?: Uint8Array;
-
+  abstract readonly rpcResultData?: Uint8Array
 }
-

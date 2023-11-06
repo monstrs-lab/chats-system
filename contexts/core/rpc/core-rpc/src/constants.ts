@@ -1,8 +1,5 @@
 /*
 const (
-	Predicate_boolFalse                                          = "boolFalse"
-	Predicate_boolTrue                                           = "boolTrue"
-	Predicate_true                                               = "true"
 	Predicate_error                                              = "error"
 	Predicate_null                                               = "null"
 	Predicate_inputPeerEmpty                                     = "inputPeerEmpty"
@@ -1826,4 +1823,7 @@ const (
 )
 */
 
+export const PREDICATE_BOOL_FALSE = 'boolFalse'
+export const PREDICATE_BOOL_TRUE = 'boolTrue'
+export const PREDICATE_TRUE = 'true'
 export const PREDICATE_AUTH_KEY_INFO = 'authKeyInfo'

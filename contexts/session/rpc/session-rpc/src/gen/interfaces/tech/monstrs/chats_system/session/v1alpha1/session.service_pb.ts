@@ -3,8 +3,9 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { AuthKeyInfo, Updates } from "../../core/v1alpha1/schema.tl.sync_pb.js";
-import type { FutureSalt } from "../../core/v1alpha1/schema.tl.transport_pb.js";
+import type { AuthKeyInfo }          from '../../core/v1alpha1/schema.tl.sync_pb.js'
+import type { Updates } from '../../core/v1alpha1/schema.tl.sync_pb.js'
+import type { FutureSalt }           from '../../core/v1alpha1/schema.tl.transport_pb.js'
 
 /**
  * @generated from enum tech.monstrs.chats_system.session.v1alpha1.TLConstructor
@@ -83,38 +84,37 @@ export interface SessionClientEvent {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string server_id = 3;
    */
-  serverId?: string;
+  serverId?: string
 
   /**
    * @generated from field: optional int32 conn_type = 4;
    */
-  connType?: number;
+  connType?: number
 
   /**
    * @generated from field: optional int64 auth_key_id = 5;
    */
-  authKeyId?: bigint;
+  authKeyId?: bigint
 
   /**
    * @generated from field: optional int64 session_id = 6;
    */
-  sessionId?: bigint;
+  sessionId?: bigint
 
   /**
    * @generated from field: optional string client_ip = 7;
    */
-  clientIp?: string;
-
+  clientIp?: string
 }
 
 /**
@@ -124,8 +124,7 @@ export interface TLSessionClientEvent {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.SessionClientEvent data2 = 1;
    */
-  data2?: SessionClientEvent;
-
+  data2?: SessionClientEvent
 }
 
 /**
@@ -135,53 +134,52 @@ export interface SessionClientData {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string server_id = 3;
    */
-  serverId?: string;
+  serverId?: string
 
   /**
    * @generated from field: optional int32 conn_type = 4;
    */
-  connType?: number;
+  connType?: number
 
   /**
    * @generated from field: optional int64 auth_key_id = 5;
    */
-  authKeyId?: bigint;
+  authKeyId?: bigint
 
   /**
    * @generated from field: optional int64 session_id = 6;
    */
-  sessionId?: bigint;
+  sessionId?: bigint
 
   /**
    * @generated from field: optional string client_ip = 7;
    */
-  clientIp?: string;
+  clientIp?: string
 
   /**
    * @generated from field: optional int32 quick_ack = 8;
    */
-  quickAck?: number;
+  quickAck?: number
 
   /**
    * @generated from field: optional int64 salt = 9;
    */
-  salt?: bigint;
+  salt?: bigint
 
   /**
    * @generated from field: optional bytes payload = 10;
    */
-  payload?: Uint8Array;
-
+  payload?: Uint8Array
 }
 
 /**
@@ -191,8 +189,7 @@ export interface TLSessionClientData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.SessionClientData data2 = 1;
    */
-  data2?: SessionClientData;
-
+  data2?: SessionClientData
 }
 
 /**
@@ -202,18 +199,17 @@ export interface HttpSessionData {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes payload = 3;
    */
-  payload?: Uint8Array;
-
+  payload?: Uint8Array
 }
 
 /**
@@ -223,8 +219,7 @@ export interface TLHttpSessionData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.HttpSessionData data2 = 1;
    */
-  data2?: HttpSessionData;
-
+  data2?: HttpSessionData
 }
 
 /**
@@ -234,13 +229,12 @@ export interface TLSessionQueryAuthKey {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId?: bigint;
-
+  authKeyId?: bigint
 }
 
 /**
@@ -250,23 +244,22 @@ export interface TLSessionSetAuthKey {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthKeyInfo auth_key = 3;
    */
-  authKey?: AuthKeyInfo;
+  authKey?: AuthKeyInfo
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.FutureSalt future_salt = 4;
    */
-  futureSalt?: FutureSalt;
+  futureSalt?: FutureSalt
 
   /**
    * @generated from field: optional int32 expires_in = 5;
    */
-  expiresIn?: number;
-
+  expiresIn?: number
 }
 
 /**
@@ -276,13 +269,12 @@ export interface TLSessionCreateSession {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.SessionClientEvent client = 3;
    */
-  client?: SessionClientEvent;
-
+  client?: SessionClientEvent
 }
 
 /**
@@ -292,13 +284,12 @@ export interface TLSessionSendDataToSession {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.SessionClientData data = 3;
    */
-  data?: SessionClientData;
-
+  data?: SessionClientData
 }
 
 /**
@@ -308,13 +299,12 @@ export interface TLSessionSendHttpDataToSession {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.SessionClientData client = 3;
    */
-  client?: SessionClientData;
-
+  client?: SessionClientData
 }
 
 /**
@@ -324,13 +314,12 @@ export interface TLSessionCloseSession {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.SessionClientEvent client = 3;
    */
-  client?: SessionClientEvent;
-
+  client?: SessionClientEvent
 }
 
 /**
@@ -340,23 +329,22 @@ export interface TLSessionPushUpdatesData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId?: bigint;
+  authKeyId?: bigint
 
   /**
    * @generated from field: optional bool notification = 4;
    */
-  notification?: boolean;
+  notification?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Updates updates = 5;
    */
-  updates?: Updates;
-
+  updates?: Updates
 }
 
 /**
@@ -366,23 +354,22 @@ export interface TLSessionPushSessionUpdatesData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId?: bigint;
+  authKeyId?: bigint
 
   /**
    * @generated from field: optional int64 session_id = 4;
    */
-  sessionId?: bigint;
+  sessionId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Updates updates = 5;
    */
-  updates?: Updates;
-
+  updates?: Updates
 }
 
 /**
@@ -392,27 +379,25 @@ export interface TLSessionPushRpcResultData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId?: bigint;
+  authKeyId?: bigint
 
   /**
    * @generated from field: optional int64 session_id = 4;
    */
-  sessionId?: bigint;
+  sessionId?: bigint
 
   /**
    * @generated from field: optional int64 client_req_msg_id = 5;
    */
-  clientReqMsgId?: bigint;
+  clientReqMsgId?: bigint
 
   /**
    * @generated from field: optional bytes rpc_result_data = 6;
    */
-  rpcResultData?: Uint8Array;
-
+  rpcResultData?: Uint8Array
 }
-

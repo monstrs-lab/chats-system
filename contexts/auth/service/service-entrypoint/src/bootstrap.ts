@@ -16,7 +16,7 @@ const bootstrap = async (): Promise<void> => {
     .connect(app, { inheritAppConfig: true })
 
   await app.startAllMicroservices()
-  await app.listen(3000)
+  await app.listen(3001)
 
   if (import.meta.webpackHot) {
     import.meta.webpackHot.accept()

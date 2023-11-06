@@ -3,9 +3,219 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { TLConstructor } from "./schema.tl.crc32_pb.js";
-import type { AccountDaysTTL, AccountPasswordInputSettings, AutoDownloadSettings, AutoSaveSettings, BaseTheme, BizDataRaw, BotCommand, BotCommandScope, BotMenuButton, ChannelAdminLogEventsFilter, ChannelMessagesFilter, ChannelParticipantsFilter, ChatAdminRights, ChatBannedRights, ChatReactions, CodeSettings, ContactStatus, DataJSON, DialogFilter, DialogFilterSuggested, DialogPeer, Document, EmailVerification, EmailVerifyPurpose, EmojiLanguage, EmojiStatus, FileHash, GlobalPrivacySettings, InlineBotSwitchPM, InlineBotWebView, InputAppEvent, InputBotApp, InputBotInlineMessageID, InputBotInlineResult, InputChannel, InputChatlist, InputChatPhoto, InputCheckPasswordSRP, InputClientProxy, InputContact, InputDialogPeer, InputDocument, InputEncryptedChat, InputEncryptedFile, InputFile, InputFileLocation, InputFolderPeer, InputGeoPoint, InputGroupCall, InputInvoice, InputMedia, InputMessage, InputNotifyPeer, InputPaymentCredentials, InputPeer, InputPeerNotifySettings, InputPhoneCall, InputPhoto, InputPrivacyKey, InputPrivacyRule, InputReplyTo, InputSecureValue, InputSingleMedia, InputStickeredMedia, InputStickerSet, InputStickerSetItem, InputStorePaymentPurpose, InputTheme, InputThemeSettings, InputUser, InputWallPaper, InputWebFileLocation, JSONValue, LangPackLanguage, LangPackString, MaskCoords, MediaArea, MessageEntity, MessageRange, MessagesFilter, MessagesSearchCounter, PaymentRequestedInfo, Peer, PhoneCallDiscardReason, PhoneCallProtocol, PredefinedUser, Reaction, ReadParticipantDate, ReceivedNotifyMessage, ReplyMarkup, ReportReason, SavedContact, SecureCredentialsEncrypted, SecureValue, SecureValueError, SecureValueHash, SecureValueType, SendMessageAction, ShippingOption, StickerSetCovered, TextWithEntities, TopPeerCategory, User, VideoSize, WallPaper, WallPaperSettings } from "./schema.tl.sync_pb.js";
-import type { Bool } from "./schema.tl.core_types_pb.js";
+import type { Bool }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     from './schema.tl.core_types_pb.js'
+import type { TLConstructor }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            from './schema.tl.crc32_pb.js'
+import type { AccountDaysTTL }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           from './schema.tl.sync_pb.js'
+
+import type { AccountPasswordInputSettings }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             from './schema.tl.sync_pb.js'
+
+import type { AutoDownloadSettings }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       from './schema.tl.sync_pb.js'
+
+import type { AutoSaveSettings }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     from './schema.tl.sync_pb.js'
+
+import type { BaseTheme }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          from './schema.tl.sync_pb.js'
+
+import type { BizDataRaw }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              from './schema.tl.sync_pb.js'
+
+import type { BotCommand }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  from './schema.tl.sync_pb.js'
+
+import type { BotCommandScope }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 from './schema.tl.sync_pb.js'
+
+import type { BotMenuButton }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  from './schema.tl.sync_pb.js'
+
+import type { ChannelAdminLogEventsFilter }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     from './schema.tl.sync_pb.js'
+
+import type { ChannelMessagesFilter }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              from './schema.tl.sync_pb.js'
+
+import type { ChannelParticipantsFilter }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   from './schema.tl.sync_pb.js'
+
+import type { ChatAdminRights }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  from './schema.tl.sync_pb.js'
+
+import type { ChatBannedRights }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                from './schema.tl.sync_pb.js'
+
+import type { ChatReactions }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 from './schema.tl.sync_pb.js'
+
+import type { CodeSettings }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   from './schema.tl.sync_pb.js'
+
+import type { ContactStatus }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    from './schema.tl.sync_pb.js'
+
+import type { DataJSON }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          from './schema.tl.sync_pb.js'
+
+import type { DialogFilter }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            from './schema.tl.sync_pb.js'
+
+import type { DialogFilterSuggested }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     from './schema.tl.sync_pb.js'
+
+import type { DialogPeer }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         from './schema.tl.sync_pb.js'
+
+import type { Document }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               from './schema.tl.sync_pb.js'
+
+import type { EmailVerification }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            from './schema.tl.sync_pb.js'
+
+import type { EmailVerifyPurpose }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        from './schema.tl.sync_pb.js'
+
+import type { EmojiLanguage }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         from './schema.tl.sync_pb.js'
+
+import type { EmojiStatus }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            from './schema.tl.sync_pb.js'
+
+import type { FileHash }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  from './schema.tl.sync_pb.js'
+
+import type { GlobalPrivacySettings }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           from './schema.tl.sync_pb.js'
+
+import type { InlineBotSwitchPM }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        from './schema.tl.sync_pb.js'
+
+import type { InlineBotWebView }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      from './schema.tl.sync_pb.js'
+
+import type { InputAppEvent }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       from './schema.tl.sync_pb.js'
+
+import type { InputBotApp }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          from './schema.tl.sync_pb.js'
+
+import type { InputBotInlineMessageID }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 from './schema.tl.sync_pb.js'
+
+import type { InputBotInlineResult }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           from './schema.tl.sync_pb.js'
+
+import type { InputChannel }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             from './schema.tl.sync_pb.js'
+
+import type { InputChatlist }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              from './schema.tl.sync_pb.js'
+
+import type { InputChatPhoto }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              from './schema.tl.sync_pb.js'
+
+import type { InputCheckPasswordSRP }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       from './schema.tl.sync_pb.js'
+
+import type { InputClientProxy }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     from './schema.tl.sync_pb.js'
+
+import type { InputContact }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       from './schema.tl.sync_pb.js'
+
+import type { InputDialogPeer }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      from './schema.tl.sync_pb.js'
+
+import type { InputDocument }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       from './schema.tl.sync_pb.js'
+
+import type { InputEncryptedChat }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   from './schema.tl.sync_pb.js'
+
+import type { InputEncryptedFile }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               from './schema.tl.sync_pb.js'
+
+import type { InputFile }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    from './schema.tl.sync_pb.js'
+
+import type { InputFileLocation }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 from './schema.tl.sync_pb.js'
+
+import type { InputFolderPeer }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                from './schema.tl.sync_pb.js'
+
+import type { InputGeoPoint }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 from './schema.tl.sync_pb.js'
+
+import type { InputGroupCall }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 from './schema.tl.sync_pb.js'
+
+import type { InputInvoice }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   from './schema.tl.sync_pb.js'
+
+import type { InputMedia }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       from './schema.tl.sync_pb.js'
+
+import type { InputMessage }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         from './schema.tl.sync_pb.js'
+
+import type { InputNotifyPeer }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        from './schema.tl.sync_pb.js'
+
+import type { InputPaymentCredentials }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               from './schema.tl.sync_pb.js'
+
+import type { InputPeer }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    from './schema.tl.sync_pb.js'
+
+import type { InputPeerNotifySettings }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           from './schema.tl.sync_pb.js'
+
+import type { InputPhoneCall }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           from './schema.tl.sync_pb.js'
+
+import type { InputPhoto }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               from './schema.tl.sync_pb.js'
+
+import type { InputPrivacyKey }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              from './schema.tl.sync_pb.js'
+
+import type { InputPrivacyRule }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            from './schema.tl.sync_pb.js'
+
+import type { InputReplyTo }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              from './schema.tl.sync_pb.js'
+
+import type { InputSecureValue }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            from './schema.tl.sync_pb.js'
+
+import type { InputSingleMedia }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          from './schema.tl.sync_pb.js'
+
+import type { InputStickeredMedia }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     from './schema.tl.sync_pb.js'
+
+import type { InputStickerSet }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    from './schema.tl.sync_pb.js'
+
+import type { InputStickerSetItem }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               from './schema.tl.sync_pb.js'
+
+import type { InputStorePaymentPurpose }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     from './schema.tl.sync_pb.js'
+
+import type { InputTheme }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         from './schema.tl.sync_pb.js'
+
+import type { InputThemeSettings }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     from './schema.tl.sync_pb.js'
+
+import type { InputUser }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          from './schema.tl.sync_pb.js'
+
+import type { InputWallPaper }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          from './schema.tl.sync_pb.js'
+
+import type { InputWebFileLocation }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    from './schema.tl.sync_pb.js'
+
+import type { JSONValue }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         from './schema.tl.sync_pb.js'
+
+import type { LangPackLanguage }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       from './schema.tl.sync_pb.js'
+
+import type { LangPackString }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       from './schema.tl.sync_pb.js'
+
+import type { MaskCoords }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           from './schema.tl.sync_pb.js'
+
+import type { MediaArea }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                from './schema.tl.sync_pb.js'
+
+import type { MessageEntity }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 from './schema.tl.sync_pb.js'
+
+import type { MessageRange }                                                                                                                                                                                                                                                                                                                                                                                                                                                                   from './schema.tl.sync_pb.js'
+
+import type { MessagesFilter }                                                                                                                                                                                                                                                                                                                                                                                                                                                   from './schema.tl.sync_pb.js'
+
+import type { MessagesSearchCounter }                                                                                                                                                                                                                                                                                                                                                                                                                            from './schema.tl.sync_pb.js'
+
+import type { PaymentRequestedInfo }                                                                                                                                                                                                                                                                                                                                                                                                      from './schema.tl.sync_pb.js'
+
+import type { Peer }                                                                                                                                                                                                                                                                                                                                                                                                from './schema.tl.sync_pb.js'
+
+import type { PhoneCallDiscardReason }                                                                                                                                                                                                                                                                                                                                                                        from './schema.tl.sync_pb.js'
+
+import type { PhoneCallProtocol }                                                                                                                                                                                                                                                                                                                                                     from './schema.tl.sync_pb.js'
+
+import type { PredefinedUser }                                                                                                                                                                                                                                                                                                                                     from './schema.tl.sync_pb.js'
+
+import type { Reaction }                                                                                                                                                                                                                                                                                                                           from './schema.tl.sync_pb.js'
+
+import type { ReadParticipantDate }                                                                                                                                                                                                                                                                                                      from './schema.tl.sync_pb.js'
+
+import type { ReceivedNotifyMessage }                                                                                                                                                                                                                                                                               from './schema.tl.sync_pb.js'
+
+import type { ReplyMarkup }                                                                                                                                                                                                                                                                  from './schema.tl.sync_pb.js'
+
+import type { ReportReason }                                                                                                                                                                                                                                                    from './schema.tl.sync_pb.js'
+
+import type { SavedContact }                                                                                                                                                                                                                                      from './schema.tl.sync_pb.js'
+
+import type { SecureCredentialsEncrypted }                                                                                                                                                                                                          from './schema.tl.sync_pb.js'
+
+import type { SecureValue }                                                                                                                                                                                             from './schema.tl.sync_pb.js'
+
+import type { SecureValueError }                                                                                                                                                                           from './schema.tl.sync_pb.js'
+
+import type { SecureValueHash }                                                                                                                                                          from './schema.tl.sync_pb.js'
+
+import type { SecureValueType }                                                                                                                                         from './schema.tl.sync_pb.js'
+
+import type { SendMessageAction }                                                                                                                      from './schema.tl.sync_pb.js'
+
+import type { ShippingOption }                                                                                                      from './schema.tl.sync_pb.js'
+
+import type { StickerSetCovered }                                                                                   from './schema.tl.sync_pb.js'
+
+import type { TextWithEntities }                                                                 from './schema.tl.sync_pb.js'
+
+import type { TopPeerCategory }                                                from './schema.tl.sync_pb.js'
+
+import type { User }                                          from './schema.tl.sync_pb.js'
+
+import type { VideoSize }                               from './schema.tl.sync_pb.js'
+
+import type { WallPaper }                    from './schema.tl.sync_pb.js'
+
+import type { WallPaperSettings } from './schema.tl.sync_pb.js'
 
 /**
  * @generated from message tech.monstrs.chats_system.core.v1alpha1.TLInvokeAfterMsg
@@ -14,18 +224,17 @@ export interface TLInvokeAfterMsg {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 msg_id = 3;
    */
-  msgId?: bigint;
+  msgId?: bigint
 
   /**
    * @generated from field: optional bytes query = 4;
    */
-  query?: Uint8Array;
-
+  query?: Uint8Array
 }
 
 /**
@@ -35,18 +244,17 @@ export interface TLInvokeAfterMsgs {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated int64 msg_ids = 3;
    */
-  msgIds: bigint[];
+  msgIds: bigint[]
 
   /**
    * @generated from field: optional bytes query = 4;
    */
-  query?: Uint8Array;
-
+  query?: Uint8Array
 }
 
 /**
@@ -56,58 +264,57 @@ export interface TLInitConnection {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 api_id = 3;
    */
-  apiId?: number;
+  apiId?: number
 
   /**
    * @generated from field: optional string device_model = 4;
    */
-  deviceModel?: string;
+  deviceModel?: string
 
   /**
    * @generated from field: optional string system_version = 5;
    */
-  systemVersion?: string;
+  systemVersion?: string
 
   /**
    * @generated from field: optional string app_version = 6;
    */
-  appVersion?: string;
+  appVersion?: string
 
   /**
    * @generated from field: optional string system_lang_code = 7;
    */
-  systemLangCode?: string;
+  systemLangCode?: string
 
   /**
    * @generated from field: optional string lang_pack = 8;
    */
-  langPack?: string;
+  langPack?: string
 
   /**
    * @generated from field: optional string lang_code = 9;
    */
-  langCode?: string;
+  langCode?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputClientProxy proxy = 10;
    */
-  proxy?: InputClientProxy;
+  proxy?: InputClientProxy
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.JSONValue params = 11;
    */
-  params?: JSONValue;
+  params?: JSONValue
 
   /**
    * @generated from field: optional bytes query = 12;
    */
-  query?: Uint8Array;
-
+  query?: Uint8Array
 }
 
 /**
@@ -117,18 +324,17 @@ export interface TLInvokeWithLayer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 layer = 3;
    */
-  layer?: number;
+  layer?: number
 
   /**
    * @generated from field: optional bytes query = 4;
    */
-  query?: Uint8Array;
-
+  query?: Uint8Array
 }
 
 /**
@@ -138,13 +344,12 @@ export interface TLInvokeWithoutUpdates {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes query = 3;
    */
-  query?: Uint8Array;
-
+  query?: Uint8Array
 }
 
 /**
@@ -154,18 +359,17 @@ export interface TLInvokeWithMessagesRange {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageRange range = 3;
    */
-  range?: MessageRange;
+  range?: MessageRange
 
   /**
    * @generated from field: optional bytes query = 4;
    */
-  query?: Uint8Array;
-
+  query?: Uint8Array
 }
 
 /**
@@ -175,18 +379,17 @@ export interface TLInvokeWithTakeout {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 takeout_id = 3;
    */
-  takeoutId?: bigint;
+  takeoutId?: bigint
 
   /**
    * @generated from field: optional bytes query = 4;
    */
-  query?: Uint8Array;
-
+  query?: Uint8Array
 }
 
 /**
@@ -196,28 +399,27 @@ export interface TLAuthSendCode {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone_number = 3;
    */
-  phoneNumber?: string;
+  phoneNumber?: string
 
   /**
    * @generated from field: optional int32 api_id = 4;
    */
-  apiId?: number;
+  apiId?: number
 
   /**
    * @generated from field: optional string api_hash = 5;
    */
-  apiHash?: string;
+  apiHash?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.CodeSettings settings = 6;
    */
-  settings?: CodeSettings;
-
+  settings?: CodeSettings
 }
 
 /**
@@ -227,28 +429,27 @@ export interface TLAuthSignUp {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone_number = 3;
    */
-  phoneNumber?: string;
+  phoneNumber?: string
 
   /**
    * @generated from field: optional string phone_code_hash = 4;
    */
-  phoneCodeHash?: string;
+  phoneCodeHash?: string
 
   /**
    * @generated from field: optional string first_name = 5;
    */
-  firstName?: string;
+  firstName?: string
 
   /**
    * @generated from field: optional string last_name = 6;
    */
-  lastName?: string;
-
+  lastName?: string
 }
 
 /**
@@ -258,33 +459,32 @@ export interface TLAuthSignIn {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone_number = 3;
    */
-  phoneNumber?: string;
+  phoneNumber?: string
 
   /**
    * @generated from field: optional string phone_code_hash = 4;
    */
-  phoneCodeHash?: string;
+  phoneCodeHash?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue phone_code_FLAGSTRING = 5;
    */
-  phoneCodeFLAGSTRING?: string;
+  phoneCodeFLAGSTRING?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmailVerification email_verification = 6;
    */
-  emailVerification?: EmailVerification;
+  emailVerification?: EmailVerification
 
   /**
    * @generated from field: optional string phone_code_STRING = 7;
    */
-  phoneCodeSTRING?: string;
-
+  phoneCodeSTRING?: string
 }
 
 /**
@@ -294,8 +494,7 @@ export interface TLAuthLogOut {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -305,8 +504,7 @@ export interface TLAuthResetAuthorizations {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -316,13 +514,12 @@ export interface TLAuthExportAuthorization {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 dc_id = 3;
    */
-  dcId?: number;
-
+  dcId?: number
 }
 
 /**
@@ -332,18 +529,17 @@ export interface TLAuthImportAuthorization {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional bytes bytes = 4;
    */
-  bytes?: Uint8Array;
-
+  bytes?: Uint8Array
 }
 
 /**
@@ -353,28 +549,27 @@ export interface TLAuthBindTempAuthKey {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 perm_auth_key_id = 3;
    */
-  permAuthKeyId?: bigint;
+  permAuthKeyId?: bigint
 
   /**
    * @generated from field: optional int64 nonce = 4;
    */
-  nonce?: bigint;
+  nonce?: bigint
 
   /**
    * @generated from field: optional int32 expires_at = 5;
    */
-  expiresAt?: number;
+  expiresAt?: number
 
   /**
    * @generated from field: optional bytes encrypted_message = 6;
    */
-  encryptedMessage?: Uint8Array;
-
+  encryptedMessage?: Uint8Array
 }
 
 /**
@@ -384,28 +579,27 @@ export interface TLAuthImportBotAuthorization {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 flags = 3;
    */
-  flags?: number;
+  flags?: number
 
   /**
    * @generated from field: optional int32 api_id = 4;
    */
-  apiId?: number;
+  apiId?: number
 
   /**
    * @generated from field: optional string api_hash = 5;
    */
-  apiHash?: string;
+  apiHash?: string
 
   /**
    * @generated from field: optional string bot_auth_token = 6;
    */
-  botAuthToken?: string;
-
+  botAuthToken?: string
 }
 
 /**
@@ -415,13 +609,12 @@ export interface TLAuthCheckPassword {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputCheckPasswordSRP password = 3;
    */
-  password?: InputCheckPasswordSRP;
-
+  password?: InputCheckPasswordSRP
 }
 
 /**
@@ -431,8 +624,7 @@ export interface TLAuthRequestPasswordRecovery {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -442,18 +634,17 @@ export interface TLAuthRecoverPassword {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string code = 3;
    */
-  code?: string;
+  code?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountPasswordInputSettings new_settings = 4;
    */
-  newSettings?: AccountPasswordInputSettings;
-
+  newSettings?: AccountPasswordInputSettings
 }
 
 /**
@@ -463,18 +654,17 @@ export interface TLAuthResendCode {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone_number = 3;
    */
-  phoneNumber?: string;
+  phoneNumber?: string
 
   /**
    * @generated from field: optional string phone_code_hash = 4;
    */
-  phoneCodeHash?: string;
-
+  phoneCodeHash?: string
 }
 
 /**
@@ -484,18 +674,17 @@ export interface TLAuthCancelCode {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone_number = 3;
    */
-  phoneNumber?: string;
+  phoneNumber?: string
 
   /**
    * @generated from field: optional string phone_code_hash = 4;
    */
-  phoneCodeHash?: string;
-
+  phoneCodeHash?: string
 }
 
 /**
@@ -505,13 +694,12 @@ export interface TLAuthDropTempAuthKeys {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated int64 except_auth_keys = 3;
    */
-  exceptAuthKeys: bigint[];
-
+  exceptAuthKeys: bigint[]
 }
 
 /**
@@ -521,23 +709,22 @@ export interface TLAuthExportLoginToken {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 api_id = 3;
    */
-  apiId?: number;
+  apiId?: number
 
   /**
    * @generated from field: optional string api_hash = 4;
    */
-  apiHash?: string;
+  apiHash?: string
 
   /**
    * @generated from field: repeated int64 except_ids = 5;
    */
-  exceptIds: bigint[];
-
+  exceptIds: bigint[]
 }
 
 /**
@@ -547,13 +734,12 @@ export interface TLAuthImportLoginToken {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes token = 3;
    */
-  token?: Uint8Array;
-
+  token?: Uint8Array
 }
 
 /**
@@ -563,13 +749,12 @@ export interface TLAuthAcceptLoginToken {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes token = 3;
    */
-  token?: Uint8Array;
-
+  token?: Uint8Array
 }
 
 /**
@@ -579,13 +764,12 @@ export interface TLAuthCheckRecoveryPassword {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string code = 3;
    */
-  code?: string;
-
+  code?: string
 }
 
 /**
@@ -595,23 +779,22 @@ export interface TLAuthImportWebTokenAuthorization {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 api_id = 3;
    */
-  apiId?: number;
+  apiId?: number
 
   /**
    * @generated from field: optional string api_hash = 4;
    */
-  apiHash?: string;
+  apiHash?: string
 
   /**
    * @generated from field: optional string web_auth_token = 5;
    */
-  webAuthToken?: string;
-
+  webAuthToken?: string
 }
 
 /**
@@ -621,28 +804,27 @@ export interface TLAuthRequestFirebaseSms {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone_number = 3;
    */
-  phoneNumber?: string;
+  phoneNumber?: string
 
   /**
    * @generated from field: optional string phone_code_hash = 4;
    */
-  phoneCodeHash?: string;
+  phoneCodeHash?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue safety_net_token = 5;
    */
-  safetyNetToken?: string;
+  safetyNetToken?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue ios_push_secret = 6;
    */
-  iosPushSecret?: string;
-
+  iosPushSecret?: string
 }
 
 /**
@@ -652,18 +834,17 @@ export interface TLAuthResetLoginEmail {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone_number = 3;
    */
-  phoneNumber?: string;
+  phoneNumber?: string
 
   /**
    * @generated from field: optional string phone_code_hash = 4;
    */
-  phoneCodeHash?: string;
-
+  phoneCodeHash?: string
 }
 
 /**
@@ -673,38 +854,37 @@ export interface TLAccountRegisterDevice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool no_muted = 3;
    */
-  noMuted?: boolean;
+  noMuted?: boolean
 
   /**
    * @generated from field: optional int32 token_type = 4;
    */
-  tokenType?: number;
+  tokenType?: number
 
   /**
    * @generated from field: optional string token = 5;
    */
-  token?: string;
+  token?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool app_sandbox = 6;
    */
-  appSandbox?: Bool;
+  appSandbox?: Bool
 
   /**
    * @generated from field: optional bytes secret = 7;
    */
-  secret?: Uint8Array;
+  secret?: Uint8Array
 
   /**
    * @generated from field: repeated int64 other_uids = 8;
    */
-  otherUids: bigint[];
-
+  otherUids: bigint[]
 }
 
 /**
@@ -714,23 +894,22 @@ export interface TLAccountUnregisterDevice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 token_type = 3;
    */
-  tokenType?: number;
+  tokenType?: number
 
   /**
    * @generated from field: optional string token = 4;
    */
-  token?: string;
+  token?: string
 
   /**
    * @generated from field: repeated int64 other_uids = 5;
    */
-  otherUids: bigint[];
-
+  otherUids: bigint[]
 }
 
 /**
@@ -740,18 +919,17 @@ export interface TLAccountUpdateNotifySettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputNotifyPeer peer = 3;
    */
-  peer?: InputNotifyPeer;
+  peer?: InputNotifyPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeerNotifySettings settings = 4;
    */
-  settings?: InputPeerNotifySettings;
-
+  settings?: InputPeerNotifySettings
 }
 
 /**
@@ -761,13 +939,12 @@ export interface TLAccountGetNotifySettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputNotifyPeer peer = 3;
    */
-  peer?: InputNotifyPeer;
-
+  peer?: InputNotifyPeer
 }
 
 /**
@@ -777,8 +954,7 @@ export interface TLAccountResetNotifySettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -788,23 +964,22 @@ export interface TLAccountUpdateProfile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional google.protobuf.StringValue first_name = 3;
    */
-  firstName?: string;
+  firstName?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue last_name = 4;
    */
-  lastName?: string;
+  lastName?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue about = 5;
    */
-  about?: string;
-
+  about?: string
 }
 
 /**
@@ -814,13 +989,12 @@ export interface TLAccountUpdateStatus {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool offline = 3;
    */
-  offline?: Bool;
-
+  offline?: Bool
 }
 
 /**
@@ -830,13 +1004,12 @@ export interface TLAccountGetWallPapers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -846,23 +1019,22 @@ export interface TLAccountReportPeer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReportReason reason = 4;
    */
-  reason?: ReportReason;
+  reason?: ReportReason
 
   /**
    * @generated from field: optional string message = 5;
    */
-  message?: string;
-
+  message?: string
 }
 
 /**
@@ -872,13 +1044,12 @@ export interface TLAccountCheckUsername {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string username = 3;
    */
-  username?: string;
-
+  username?: string
 }
 
 /**
@@ -888,13 +1059,12 @@ export interface TLAccountUpdateUsername {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string username = 3;
    */
-  username?: string;
-
+  username?: string
 }
 
 /**
@@ -904,13 +1074,12 @@ export interface TLAccountGetPrivacy {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPrivacyKey key = 3;
    */
-  key?: InputPrivacyKey;
-
+  key?: InputPrivacyKey
 }
 
 /**
@@ -920,18 +1089,17 @@ export interface TLAccountSetPrivacy {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPrivacyKey key = 3;
    */
-  key?: InputPrivacyKey;
+  key?: InputPrivacyKey
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputPrivacyRule rules = 4;
    */
-  rules: InputPrivacyRule[];
-
+  rules: InputPrivacyRule[]
 }
 
 /**
@@ -941,18 +1109,17 @@ export interface TLAccountDeleteAccount {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string reason = 3;
    */
-  reason?: string;
+  reason?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputCheckPasswordSRP password = 4;
    */
-  password?: InputCheckPasswordSRP;
-
+  password?: InputCheckPasswordSRP
 }
 
 /**
@@ -962,8 +1129,7 @@ export interface TLAccountGetAccountTTL {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -973,13 +1139,12 @@ export interface TLAccountSetAccountTTL {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountDaysTTL ttl = 3;
    */
-  ttl?: AccountDaysTTL;
-
+  ttl?: AccountDaysTTL
 }
 
 /**
@@ -989,18 +1154,17 @@ export interface TLAccountSendChangePhoneCode {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone_number = 3;
    */
-  phoneNumber?: string;
+  phoneNumber?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.CodeSettings settings = 4;
    */
-  settings?: CodeSettings;
-
+  settings?: CodeSettings
 }
 
 /**
@@ -1010,23 +1174,22 @@ export interface TLAccountChangePhone {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone_number = 3;
    */
-  phoneNumber?: string;
+  phoneNumber?: string
 
   /**
    * @generated from field: optional string phone_code_hash = 4;
    */
-  phoneCodeHash?: string;
+  phoneCodeHash?: string
 
   /**
    * @generated from field: optional string phone_code = 5;
    */
-  phoneCode?: string;
-
+  phoneCode?: string
 }
 
 /**
@@ -1036,13 +1199,12 @@ export interface TLAccountUpdateDeviceLocked {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 period = 3;
    */
-  period?: number;
-
+  period?: number
 }
 
 /**
@@ -1052,8 +1214,7 @@ export interface TLAccountGetAuthorizations {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -1063,13 +1224,12 @@ export interface TLAccountResetAuthorization {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -1079,8 +1239,7 @@ export interface TLAccountGetPassword {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -1090,13 +1249,12 @@ export interface TLAccountGetPasswordSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputCheckPasswordSRP password = 3;
    */
-  password?: InputCheckPasswordSRP;
-
+  password?: InputCheckPasswordSRP
 }
 
 /**
@@ -1106,18 +1264,17 @@ export interface TLAccountUpdatePasswordSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputCheckPasswordSRP password = 3;
    */
-  password?: InputCheckPasswordSRP;
+  password?: InputCheckPasswordSRP
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountPasswordInputSettings new_settings = 4;
    */
-  newSettings?: AccountPasswordInputSettings;
-
+  newSettings?: AccountPasswordInputSettings
 }
 
 /**
@@ -1127,18 +1284,17 @@ export interface TLAccountSendConfirmPhoneCode {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string hash = 3;
    */
-  hash?: string;
+  hash?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.CodeSettings settings = 4;
    */
-  settings?: CodeSettings;
-
+  settings?: CodeSettings
 }
 
 /**
@@ -1148,18 +1304,17 @@ export interface TLAccountConfirmPhone {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone_code_hash = 3;
    */
-  phoneCodeHash?: string;
+  phoneCodeHash?: string
 
   /**
    * @generated from field: optional string phone_code = 4;
    */
-  phoneCode?: string;
-
+  phoneCode?: string
 }
 
 /**
@@ -1169,18 +1324,17 @@ export interface TLAccountGetTmpPassword {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputCheckPasswordSRP password = 3;
    */
-  password?: InputCheckPasswordSRP;
+  password?: InputCheckPasswordSRP
 
   /**
    * @generated from field: optional int32 period = 4;
    */
-  period?: number;
-
+  period?: number
 }
 
 /**
@@ -1190,8 +1344,7 @@ export interface TLAccountGetWebAuthorizations {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -1201,13 +1354,12 @@ export interface TLAccountResetWebAuthorization {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -1217,8 +1369,7 @@ export interface TLAccountResetWebAuthorizations {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -1228,8 +1379,7 @@ export interface TLAccountGetAllSecureValues {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -1239,13 +1389,12 @@ export interface TLAccountGetSecureValue {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SecureValueType types = 3;
    */
-  types: SecureValueType[];
-
+  types: SecureValueType[]
 }
 
 /**
@@ -1255,18 +1404,17 @@ export interface TLAccountSaveSecureValue {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputSecureValue value = 3;
    */
-  value?: InputSecureValue;
+  value?: InputSecureValue
 
   /**
    * @generated from field: optional int64 secure_secret_id = 4;
    */
-  secureSecretId?: bigint;
-
+  secureSecretId?: bigint
 }
 
 /**
@@ -1276,13 +1424,12 @@ export interface TLAccountDeleteSecureValue {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SecureValueType types = 3;
    */
-  types: SecureValueType[];
-
+  types: SecureValueType[]
 }
 
 /**
@@ -1292,23 +1439,22 @@ export interface TLAccountGetAuthorizationForm {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 bot_id = 3;
    */
-  botId?: bigint;
+  botId?: bigint
 
   /**
    * @generated from field: optional string scope = 4;
    */
-  scope?: string;
+  scope?: string
 
   /**
    * @generated from field: optional string public_key = 5;
    */
-  publicKey?: string;
-
+  publicKey?: string
 }
 
 /**
@@ -1318,33 +1464,32 @@ export interface TLAccountAcceptAuthorization {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 bot_id = 3;
    */
-  botId?: bigint;
+  botId?: bigint
 
   /**
    * @generated from field: optional string scope = 4;
    */
-  scope?: string;
+  scope?: string
 
   /**
    * @generated from field: optional string public_key = 5;
    */
-  publicKey?: string;
+  publicKey?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SecureValueHash value_hashes = 6;
    */
-  valueHashes: SecureValueHash[];
+  valueHashes: SecureValueHash[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureCredentialsEncrypted credentials = 7;
    */
-  credentials?: SecureCredentialsEncrypted;
-
+  credentials?: SecureCredentialsEncrypted
 }
 
 /**
@@ -1354,18 +1499,17 @@ export interface TLAccountSendVerifyPhoneCode {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone_number = 3;
    */
-  phoneNumber?: string;
+  phoneNumber?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.CodeSettings settings = 4;
    */
-  settings?: CodeSettings;
-
+  settings?: CodeSettings
 }
 
 /**
@@ -1375,23 +1519,22 @@ export interface TLAccountVerifyPhone {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone_number = 3;
    */
-  phoneNumber?: string;
+  phoneNumber?: string
 
   /**
    * @generated from field: optional string phone_code_hash = 4;
    */
-  phoneCodeHash?: string;
+  phoneCodeHash?: string
 
   /**
    * @generated from field: optional string phone_code = 5;
    */
-  phoneCode?: string;
-
+  phoneCode?: string
 }
 
 /**
@@ -1401,18 +1544,17 @@ export interface TLAccountSendVerifyEmailCode {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmailVerifyPurpose purpose = 3;
    */
-  purpose?: EmailVerifyPurpose;
+  purpose?: EmailVerifyPurpose
 
   /**
    * @generated from field: optional string email = 4;
    */
-  email?: string;
-
+  email?: string
 }
 
 /**
@@ -1422,18 +1564,17 @@ export interface TLAccountVerifyEmail32DA4CF {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmailVerifyPurpose purpose = 3;
    */
-  purpose?: EmailVerifyPurpose;
+  purpose?: EmailVerifyPurpose
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmailVerification verification = 4;
    */
-  verification?: EmailVerification;
-
+  verification?: EmailVerification
 }
 
 /**
@@ -1443,48 +1584,47 @@ export interface TLAccountInitTakeoutSession {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool contacts = 3;
    */
-  contacts?: boolean;
+  contacts?: boolean
 
   /**
    * @generated from field: optional bool message_users = 4;
    */
-  messageUsers?: boolean;
+  messageUsers?: boolean
 
   /**
    * @generated from field: optional bool message_chats = 5;
    */
-  messageChats?: boolean;
+  messageChats?: boolean
 
   /**
    * @generated from field: optional bool message_megagroups = 6;
    */
-  messageMegagroups?: boolean;
+  messageMegagroups?: boolean
 
   /**
    * @generated from field: optional bool message_channels = 7;
    */
-  messageChannels?: boolean;
+  messageChannels?: boolean
 
   /**
    * @generated from field: optional bool files = 8;
    */
-  files?: boolean;
+  files?: boolean
 
   /**
    * @generated from field: optional google.protobuf.Int64Value file_max_size_FLAGINT64 = 9;
    */
-  fileMaxSizeFLAGINT64?: bigint;
+  fileMaxSizeFLAGINT64?: bigint
 
   /**
    * @generated from field: optional google.protobuf.Int32Value file_max_size_FLAGINT32 = 10;
    */
-  fileMaxSizeFLAGINT32?: number;
-
+  fileMaxSizeFLAGINT32?: number
 }
 
 /**
@@ -1494,13 +1634,12 @@ export interface TLAccountFinishTakeoutSession {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool success = 3;
    */
-  success?: boolean;
-
+  success?: boolean
 }
 
 /**
@@ -1510,13 +1649,12 @@ export interface TLAccountConfirmPasswordEmail {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string code = 3;
    */
-  code?: string;
-
+  code?: string
 }
 
 /**
@@ -1526,8 +1664,7 @@ export interface TLAccountResendPasswordEmail {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -1537,8 +1674,7 @@ export interface TLAccountCancelPasswordEmail {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -1548,8 +1684,7 @@ export interface TLAccountGetContactSignUpNotification {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -1559,13 +1694,12 @@ export interface TLAccountSetContactSignUpNotification {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool silent = 3;
    */
-  silent?: Bool;
-
+  silent?: Bool
 }
 
 /**
@@ -1575,23 +1709,22 @@ export interface TLAccountGetNotifyExceptions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool compare_sound = 3;
    */
-  compareSound?: boolean;
+  compareSound?: boolean
 
   /**
    * @generated from field: optional bool compare_stories = 4;
    */
-  compareStories?: boolean;
+  compareStories?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputNotifyPeer peer = 5;
    */
-  peer?: InputNotifyPeer;
-
+  peer?: InputNotifyPeer
 }
 
 /**
@@ -1601,13 +1734,12 @@ export interface TLAccountGetWallPaper {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputWallPaper wallpaper = 3;
    */
-  wallpaper?: InputWallPaper;
-
+  wallpaper?: InputWallPaper
 }
 
 /**
@@ -1617,28 +1749,27 @@ export interface TLAccountUploadWallPaper {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool for_chat = 3;
    */
-  forChat?: boolean;
+  forChat?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFile file = 4;
    */
-  file?: InputFile;
+  file?: InputFile
 
   /**
    * @generated from field: optional string mime_type = 5;
    */
-  mimeType?: string;
+  mimeType?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WallPaperSettings settings = 6;
    */
-  settings?: WallPaperSettings;
-
+  settings?: WallPaperSettings
 }
 
 /**
@@ -1648,23 +1779,22 @@ export interface TLAccountSaveWallPaper {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputWallPaper wallpaper = 3;
    */
-  wallpaper?: InputWallPaper;
+  wallpaper?: InputWallPaper
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool unsave = 4;
    */
-  unsave?: Bool;
+  unsave?: Bool
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WallPaperSettings settings = 5;
    */
-  settings?: WallPaperSettings;
-
+  settings?: WallPaperSettings
 }
 
 /**
@@ -1674,18 +1804,17 @@ export interface TLAccountInstallWallPaper {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputWallPaper wallpaper = 3;
    */
-  wallpaper?: InputWallPaper;
+  wallpaper?: InputWallPaper
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WallPaperSettings settings = 4;
    */
-  settings?: WallPaperSettings;
-
+  settings?: WallPaperSettings
 }
 
 /**
@@ -1695,8 +1824,7 @@ export interface TLAccountResetWallPapers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -1706,8 +1834,7 @@ export interface TLAccountGetAutoDownloadSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -1717,23 +1844,22 @@ export interface TLAccountSaveAutoDownloadSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool low = 3;
    */
-  low?: boolean;
+  low?: boolean
 
   /**
    * @generated from field: optional bool high = 4;
    */
-  high?: boolean;
+  high?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AutoDownloadSettings settings = 5;
    */
-  settings?: AutoDownloadSettings;
-
+  settings?: AutoDownloadSettings
 }
 
 /**
@@ -1743,28 +1869,27 @@ export interface TLAccountUploadTheme {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFile file = 3;
    */
-  file?: InputFile;
+  file?: InputFile
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFile thumb = 4;
    */
-  thumb?: InputFile;
+  thumb?: InputFile
 
   /**
    * @generated from field: optional string file_name = 5;
    */
-  fileName?: string;
+  fileName?: string
 
   /**
    * @generated from field: optional string mime_type = 6;
    */
-  mimeType?: string;
-
+  mimeType?: string
 }
 
 /**
@@ -1774,28 +1899,27 @@ export interface TLAccountCreateTheme {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string slug = 3;
    */
-  slug?: string;
+  slug?: string
 
   /**
    * @generated from field: optional string title = 4;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDocument document = 5;
    */
-  document?: InputDocument;
+  document?: InputDocument
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputThemeSettings settings = 6;
    */
-  settings: InputThemeSettings[];
-
+  settings: InputThemeSettings[]
 }
 
 /**
@@ -1805,38 +1929,37 @@ export interface TLAccountUpdateTheme {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string format = 3;
    */
-  format?: string;
+  format?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputTheme theme = 4;
    */
-  theme?: InputTheme;
+  theme?: InputTheme
 
   /**
    * @generated from field: optional google.protobuf.StringValue slug = 5;
    */
-  slug?: string;
+  slug?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue title = 6;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDocument document = 7;
    */
-  document?: InputDocument;
+  document?: InputDocument
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputThemeSettings settings = 8;
    */
-  settings: InputThemeSettings[];
-
+  settings: InputThemeSettings[]
 }
 
 /**
@@ -1846,18 +1969,17 @@ export interface TLAccountSaveTheme {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputTheme theme = 3;
    */
-  theme?: InputTheme;
+  theme?: InputTheme
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool unsave = 4;
    */
-  unsave?: Bool;
-
+  unsave?: Bool
 }
 
 /**
@@ -1867,28 +1989,27 @@ export interface TLAccountInstallTheme {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool dark = 3;
    */
-  dark?: boolean;
+  dark?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputTheme theme = 4;
    */
-  theme?: InputTheme;
+  theme?: InputTheme
 
   /**
    * @generated from field: optional google.protobuf.StringValue format = 5;
    */
-  format?: string;
+  format?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BaseTheme base_theme = 6;
    */
-  baseTheme?: BaseTheme;
-
+  baseTheme?: BaseTheme
 }
 
 /**
@@ -1898,23 +2019,22 @@ export interface TLAccountGetTheme {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string format = 3;
    */
-  format?: string;
+  format?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputTheme theme = 4;
    */
-  theme?: InputTheme;
+  theme?: InputTheme
 
   /**
    * @generated from field: optional int64 document_id = 5;
    */
-  documentId?: bigint;
-
+  documentId?: bigint
 }
 
 /**
@@ -1924,18 +2044,17 @@ export interface TLAccountGetThemes {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string format = 3;
    */
-  format?: string;
+  format?: string
 
   /**
    * @generated from field: optional int64 hash = 4;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -1945,13 +2064,12 @@ export interface TLAccountSetContentSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool sensitive_enabled = 3;
    */
-  sensitiveEnabled?: boolean;
-
+  sensitiveEnabled?: boolean
 }
 
 /**
@@ -1961,8 +2079,7 @@ export interface TLAccountGetContentSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -1972,13 +2089,12 @@ export interface TLAccountGetMultiWallPapers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputWallPaper wallpapers = 3;
    */
-  wallpapers: InputWallPaper[];
-
+  wallpapers: InputWallPaper[]
 }
 
 /**
@@ -1988,8 +2104,7 @@ export interface TLAccountGetGlobalPrivacySettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -1999,13 +2114,12 @@ export interface TLAccountSetGlobalPrivacySettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.GlobalPrivacySettings settings = 3;
    */
-  settings?: GlobalPrivacySettings;
-
+  settings?: GlobalPrivacySettings
 }
 
 /**
@@ -2015,28 +2129,27 @@ export interface TLAccountReportProfilePhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPhoto photo_id = 4;
    */
-  photoId?: InputPhoto;
+  photoId?: InputPhoto
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReportReason reason = 5;
    */
-  reason?: ReportReason;
+  reason?: ReportReason
 
   /**
    * @generated from field: optional string message = 6;
    */
-  message?: string;
-
+  message?: string
 }
 
 /**
@@ -2046,8 +2159,7 @@ export interface TLAccountResetPassword {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -2057,8 +2169,7 @@ export interface TLAccountDeclinePasswordReset {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -2068,13 +2179,12 @@ export interface TLAccountGetChatThemes {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -2084,13 +2194,12 @@ export interface TLAccountSetAuthorizationTTL {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 authorization_ttl_days = 3;
    */
-  authorizationTtlDays?: number;
-
+  authorizationTtlDays?: number
 }
 
 /**
@@ -2100,28 +2209,27 @@ export interface TLAccountChangeAuthorizationSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool confirmed = 3;
    */
-  confirmed?: boolean;
+  confirmed?: boolean
 
   /**
    * @generated from field: optional int64 hash = 4;
    */
-  hash?: bigint;
+  hash?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool encrypted_requests_disabled = 5;
    */
-  encryptedRequestsDisabled?: Bool;
+  encryptedRequestsDisabled?: Bool
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool call_requests_disabled = 6;
    */
-  callRequestsDisabled?: Bool;
-
+  callRequestsDisabled?: Bool
 }
 
 /**
@@ -2131,13 +2239,12 @@ export interface TLAccountGetSavedRingtones {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -2147,18 +2254,17 @@ export interface TLAccountSaveRingtone {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDocument id = 3;
    */
-  id?: InputDocument;
+  id?: InputDocument
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool unsave = 4;
    */
-  unsave?: Bool;
-
+  unsave?: Bool
 }
 
 /**
@@ -2168,23 +2274,22 @@ export interface TLAccountUploadRingtone {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFile file = 3;
    */
-  file?: InputFile;
+  file?: InputFile
 
   /**
    * @generated from field: optional string file_name = 4;
    */
-  fileName?: string;
+  fileName?: string
 
   /**
    * @generated from field: optional string mime_type = 5;
    */
-  mimeType?: string;
-
+  mimeType?: string
 }
 
 /**
@@ -2194,13 +2299,12 @@ export interface TLAccountUpdateEmojiStatus {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmojiStatus emoji_status = 3;
    */
-  emojiStatus?: EmojiStatus;
-
+  emojiStatus?: EmojiStatus
 }
 
 /**
@@ -2210,13 +2314,12 @@ export interface TLAccountGetDefaultEmojiStatuses {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -2226,13 +2329,12 @@ export interface TLAccountGetRecentEmojiStatuses {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -2242,8 +2344,7 @@ export interface TLAccountClearRecentEmojiStatuses {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -2253,13 +2354,12 @@ export interface TLAccountReorderUsernames {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated string order = 3;
    */
-  order: string[];
-
+  order: string[]
 }
 
 /**
@@ -2269,18 +2369,17 @@ export interface TLAccountToggleUsername {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string username = 3;
    */
-  username?: string;
+  username?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool active = 4;
    */
-  active?: Bool;
-
+  active?: Bool
 }
 
 /**
@@ -2290,13 +2389,12 @@ export interface TLAccountGetDefaultProfilePhotoEmojis {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -2306,13 +2404,12 @@ export interface TLAccountGetDefaultGroupPhotoEmojis {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -2322,8 +2419,7 @@ export interface TLAccountGetAutoSaveSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -2333,33 +2429,32 @@ export interface TLAccountSaveAutoSaveSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool users = 3;
    */
-  users?: boolean;
+  users?: boolean
 
   /**
    * @generated from field: optional bool chats = 4;
    */
-  chats?: boolean;
+  chats?: boolean
 
   /**
    * @generated from field: optional bool broadcasts = 5;
    */
-  broadcasts?: boolean;
+  broadcasts?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 6;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AutoSaveSettings settings = 7;
    */
-  settings?: AutoSaveSettings;
-
+  settings?: AutoSaveSettings
 }
 
 /**
@@ -2369,8 +2464,7 @@ export interface TLAccountDeleteAutoSaveExceptions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -2380,13 +2474,12 @@ export interface TLAccountInvalidateSignInCodes {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated string codes = 3;
    */
-  codes: string[];
-
+  codes: string[]
 }
 
 /**
@@ -2396,13 +2489,12 @@ export interface TLUsersGetUsers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputUser id = 3;
    */
-  id: InputUser[];
-
+  id: InputUser[]
 }
 
 /**
@@ -2412,13 +2504,12 @@ export interface TLUsersGetFullUser {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser id = 3;
    */
-  id?: InputUser;
-
+  id?: InputUser
 }
 
 /**
@@ -2428,18 +2519,17 @@ export interface TLUsersSetSecureValueErrors {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser id = 3;
    */
-  id?: InputUser;
+  id?: InputUser
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SecureValueError errors = 4;
    */
-  errors: SecureValueError[];
-
+  errors: SecureValueError[]
 }
 
 /**
@@ -2449,13 +2539,12 @@ export interface TLContactsGetContactIDs {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -2465,8 +2554,7 @@ export interface TLContactsGetStatuses {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -2476,13 +2564,12 @@ export interface TLContactsGetContacts {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -2492,13 +2579,12 @@ export interface TLContactsImportContacts {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputContact contacts = 3;
    */
-  contacts: InputContact[];
-
+  contacts: InputContact[]
 }
 
 /**
@@ -2508,13 +2594,12 @@ export interface TLContactsDeleteContacts {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputUser id = 3;
    */
-  id: InputUser[];
-
+  id: InputUser[]
 }
 
 /**
@@ -2524,13 +2609,12 @@ export interface TLContactsDeleteByPhones {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated string phones = 3;
    */
-  phones: string[];
-
+  phones: string[]
 }
 
 /**
@@ -2540,18 +2624,17 @@ export interface TLContactsBlock {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool my_stories_from = 3;
    */
-  myStoriesFrom?: boolean;
+  myStoriesFrom?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer id = 4;
    */
-  id?: InputPeer;
-
+  id?: InputPeer
 }
 
 /**
@@ -2561,18 +2644,17 @@ export interface TLContactsUnblock {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool my_stories_from = 3;
    */
-  myStoriesFrom?: boolean;
+  myStoriesFrom?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer id = 4;
    */
-  id?: InputPeer;
-
+  id?: InputPeer
 }
 
 /**
@@ -2582,23 +2664,22 @@ export interface TLContactsGetBlocked {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool my_stories_from = 3;
    */
-  myStoriesFrom?: boolean;
+  myStoriesFrom?: boolean
 
   /**
    * @generated from field: optional int32 offset = 4;
    */
-  offset?: number;
+  offset?: number
 
   /**
    * @generated from field: optional int32 limit = 5;
    */
-  limit?: number;
-
+  limit?: number
 }
 
 /**
@@ -2608,18 +2689,17 @@ export interface TLContactsSearch {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string q = 3;
    */
-  q?: string;
+  q?: string
 
   /**
    * @generated from field: optional int32 limit = 4;
    */
-  limit?: number;
-
+  limit?: number
 }
 
 /**
@@ -2629,13 +2709,12 @@ export interface TLContactsResolveUsername {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string username = 3;
    */
-  username?: string;
-
+  username?: string
 }
 
 /**
@@ -2645,63 +2724,62 @@ export interface TLContactsGetTopPeers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool correspondents = 3;
    */
-  correspondents?: boolean;
+  correspondents?: boolean
 
   /**
    * @generated from field: optional bool bots_pm = 4;
    */
-  botsPm?: boolean;
+  botsPm?: boolean
 
   /**
    * @generated from field: optional bool bots_inline = 5;
    */
-  botsInline?: boolean;
+  botsInline?: boolean
 
   /**
    * @generated from field: optional bool phone_calls = 6;
    */
-  phoneCalls?: boolean;
+  phoneCalls?: boolean
 
   /**
    * @generated from field: optional bool forward_users = 7;
    */
-  forwardUsers?: boolean;
+  forwardUsers?: boolean
 
   /**
    * @generated from field: optional bool forward_chats = 8;
    */
-  forwardChats?: boolean;
+  forwardChats?: boolean
 
   /**
    * @generated from field: optional bool groups = 9;
    */
-  groups?: boolean;
+  groups?: boolean
 
   /**
    * @generated from field: optional bool channels = 10;
    */
-  channels?: boolean;
+  channels?: boolean
 
   /**
    * @generated from field: optional int32 offset = 11;
    */
-  offset?: number;
+  offset?: number
 
   /**
    * @generated from field: optional int32 limit = 12;
    */
-  limit?: number;
+  limit?: number
 
   /**
    * @generated from field: optional int64 hash = 13;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -2711,18 +2789,17 @@ export interface TLContactsResetTopPeerRating {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TopPeerCategory category = 3;
    */
-  category?: TopPeerCategory;
+  category?: TopPeerCategory
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 4;
    */
-  peer?: InputPeer;
-
+  peer?: InputPeer
 }
 
 /**
@@ -2732,8 +2809,7 @@ export interface TLContactsResetSaved {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -2743,8 +2819,7 @@ export interface TLContactsGetSaved {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -2754,13 +2829,12 @@ export interface TLContactsToggleTopPeers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool enabled = 3;
    */
-  enabled?: Bool;
-
+  enabled?: Bool
 }
 
 /**
@@ -2770,33 +2844,32 @@ export interface TLContactsAddContact {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool add_phone_privacy_exception = 3;
    */
-  addPhonePrivacyException?: boolean;
+  addPhonePrivacyException?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser id = 4;
    */
-  id?: InputUser;
+  id?: InputUser
 
   /**
    * @generated from field: optional string first_name = 5;
    */
-  firstName?: string;
+  firstName?: string
 
   /**
    * @generated from field: optional string last_name = 6;
    */
-  lastName?: string;
+  lastName?: string
 
   /**
    * @generated from field: optional string phone = 7;
    */
-  phone?: string;
-
+  phone?: string
 }
 
 /**
@@ -2806,13 +2879,12 @@ export interface TLContactsAcceptContact {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser id = 3;
    */
-  id?: InputUser;
-
+  id?: InputUser
 }
 
 /**
@@ -2822,23 +2894,22 @@ export interface TLContactsGetLocated {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool background = 3;
    */
-  background?: boolean;
+  background?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGeoPoint geo_point = 4;
    */
-  geoPoint?: InputGeoPoint;
+  geoPoint?: InputGeoPoint
 
   /**
    * @generated from field: optional google.protobuf.Int32Value self_expires = 5;
    */
-  selfExpires?: number;
-
+  selfExpires?: number
 }
 
 /**
@@ -2848,28 +2919,27 @@ export interface TLContactsBlockFromReplies {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool delete_message = 3;
    */
-  deleteMessage?: boolean;
+  deleteMessage?: boolean
 
   /**
    * @generated from field: optional bool delete_history = 4;
    */
-  deleteHistory?: boolean;
+  deleteHistory?: boolean
 
   /**
    * @generated from field: optional bool report_spam = 5;
    */
-  reportSpam?: boolean;
+  reportSpam?: boolean
 
   /**
    * @generated from field: optional int32 msg_id = 6;
    */
-  msgId?: number;
-
+  msgId?: number
 }
 
 /**
@@ -2879,13 +2949,12 @@ export interface TLContactsResolvePhone {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone = 3;
    */
-  phone?: string;
-
+  phone?: string
 }
 
 /**
@@ -2895,8 +2964,7 @@ export interface TLContactsExportContactToken {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -2906,13 +2974,12 @@ export interface TLContactsImportContactToken {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string token = 3;
    */
-  token?: string;
-
+  token?: string
 }
 
 /**
@@ -2922,13 +2989,12 @@ export interface TLContactsEditCloseFriends {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated int64 id = 3;
    */
-  id: bigint[];
-
+  id: bigint[]
 }
 
 /**
@@ -2938,23 +3004,22 @@ export interface TLContactsSetBlocked {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool my_stories_from = 3;
    */
-  myStoriesFrom?: boolean;
+  myStoriesFrom?: boolean
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputPeer id = 4;
    */
-  id: InputPeer[];
+  id: InputPeer[]
 
   /**
    * @generated from field: optional int32 limit = 5;
    */
-  limit?: number;
-
+  limit?: number
 }
 
 /**
@@ -2964,18 +3029,17 @@ export interface TLMessagesGetMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputMessage id_VECTORINPUTMESSAGE = 3;
    */
-  idVECTORINPUTMESSAGE: InputMessage[];
+  idVECTORINPUTMESSAGE: InputMessage[]
 
   /**
    * @generated from field: repeated int32 id_VECTORINT32 = 4;
    */
-  idVECTORINT32: number[];
-
+  idVECTORINT32: number[]
 }
 
 /**
@@ -2985,43 +3049,42 @@ export interface TLMessagesGetDialogs {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool exclude_pinned = 3;
    */
-  excludePinned?: boolean;
+  excludePinned?: boolean
 
   /**
    * @generated from field: optional google.protobuf.Int32Value folder_id = 4;
    */
-  folderId?: number;
+  folderId?: number
 
   /**
    * @generated from field: optional int32 offset_date = 5;
    */
-  offsetDate?: number;
+  offsetDate?: number
 
   /**
    * @generated from field: optional int32 offset_id = 6;
    */
-  offsetId?: number;
+  offsetId?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer offset_peer = 7;
    */
-  offsetPeer?: InputPeer;
+  offsetPeer?: InputPeer
 
   /**
    * @generated from field: optional int32 limit = 8;
    */
-  limit?: number;
+  limit?: number
 
   /**
    * @generated from field: optional int64 hash = 9;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -3031,48 +3094,47 @@ export interface TLMessagesGetHistory {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 offset_id = 4;
    */
-  offsetId?: number;
+  offsetId?: number
 
   /**
    * @generated from field: optional int32 offset_date = 5;
    */
-  offsetDate?: number;
+  offsetDate?: number
 
   /**
    * @generated from field: optional int32 add_offset = 6;
    */
-  addOffset?: number;
+  addOffset?: number
 
   /**
    * @generated from field: optional int32 limit = 7;
    */
-  limit?: number;
+  limit?: number
 
   /**
    * @generated from field: optional int32 max_id = 8;
    */
-  maxId?: number;
+  maxId?: number
 
   /**
    * @generated from field: optional int32 min_id = 9;
    */
-  minId?: number;
+  minId?: number
 
   /**
    * @generated from field: optional int64 hash = 10;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -3082,73 +3144,72 @@ export interface TLMessagesSearch {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional string q = 4;
    */
-  q?: string;
+  q?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer from_id = 5;
    */
-  fromId?: InputPeer;
+  fromId?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.Int32Value top_msg_id = 6;
    */
-  topMsgId?: number;
+  topMsgId?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter filter = 7;
    */
-  filter?: MessagesFilter;
+  filter?: MessagesFilter
 
   /**
    * @generated from field: optional int32 min_date = 8;
    */
-  minDate?: number;
+  minDate?: number
 
   /**
    * @generated from field: optional int32 max_date = 9;
    */
-  maxDate?: number;
+  maxDate?: number
 
   /**
    * @generated from field: optional int32 offset_id = 10;
    */
-  offsetId?: number;
+  offsetId?: number
 
   /**
    * @generated from field: optional int32 add_offset = 11;
    */
-  addOffset?: number;
+  addOffset?: number
 
   /**
    * @generated from field: optional int32 limit = 12;
    */
-  limit?: number;
+  limit?: number
 
   /**
    * @generated from field: optional int32 max_id = 13;
    */
-  maxId?: number;
+  maxId?: number
 
   /**
    * @generated from field: optional int32 min_id = 14;
    */
-  minId?: number;
+  minId?: number
 
   /**
    * @generated from field: optional int64 hash = 15;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -3158,18 +3219,17 @@ export interface TLMessagesReadHistory {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 max_id = 4;
    */
-  maxId?: number;
-
+  maxId?: number
 }
 
 /**
@@ -3179,38 +3239,37 @@ export interface TLMessagesDeleteHistory {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool just_clear = 3;
    */
-  justClear?: boolean;
+  justClear?: boolean
 
   /**
    * @generated from field: optional bool revoke = 4;
    */
-  revoke?: boolean;
+  revoke?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 5;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 max_id = 6;
    */
-  maxId?: number;
+  maxId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value min_date = 7;
    */
-  minDate?: number;
+  minDate?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value max_date = 8;
    */
-  maxDate?: number;
-
+  maxDate?: number
 }
 
 /**
@@ -3220,18 +3279,17 @@ export interface TLMessagesDeleteMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool revoke = 3;
    */
-  revoke?: boolean;
+  revoke?: boolean
 
   /**
    * @generated from field: repeated int32 id = 4;
    */
-  id: number[];
-
+  id: number[]
 }
 
 /**
@@ -3241,13 +3299,12 @@ export interface TLMessagesReceivedMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 max_id = 3;
    */
-  maxId?: number;
-
+  maxId?: number
 }
 
 /**
@@ -3257,23 +3314,22 @@ export interface TLMessagesSetTyping {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.Int32Value top_msg_id = 4;
    */
-  topMsgId?: number;
+  topMsgId?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SendMessageAction action = 5;
    */
-  action?: SendMessageAction;
-
+  action?: SendMessageAction
 }
 
 /**
@@ -3283,88 +3339,87 @@ export interface TLMessagesSendMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool no_webpage = 3;
    */
-  noWebpage?: boolean;
+  noWebpage?: boolean
 
   /**
    * @generated from field: optional bool silent = 4;
    */
-  silent?: boolean;
+  silent?: boolean
 
   /**
    * @generated from field: optional bool background = 5;
    */
-  background?: boolean;
+  background?: boolean
 
   /**
    * @generated from field: optional bool clear_draft = 6;
    */
-  clearDraft?: boolean;
+  clearDraft?: boolean
 
   /**
    * @generated from field: optional bool noforwards = 7;
    */
-  noforwards?: boolean;
+  noforwards?: boolean
 
   /**
    * @generated from field: optional bool update_stickersets_order = 8;
    */
-  updateStickersetsOrder?: boolean;
+  updateStickersetsOrder?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 9;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputReplyTo reply_to = 10;
    */
-  replyTo?: InputReplyTo;
+  replyTo?: InputReplyTo
 
   /**
    * @generated from field: optional string message = 11;
    */
-  message?: string;
+  message?: string
 
   /**
    * @generated from field: optional int64 random_id = 12;
    */
-  randomId?: bigint;
+  randomId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReplyMarkup reply_markup = 13;
    */
-  replyMarkup?: ReplyMarkup;
+  replyMarkup?: ReplyMarkup
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 14;
    */
-  entities: MessageEntity[];
+  entities: MessageEntity[]
 
   /**
    * @generated from field: optional google.protobuf.Int32Value schedule_date = 15;
    */
-  scheduleDate?: number;
+  scheduleDate?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer send_as = 16;
    */
-  sendAs?: InputPeer;
+  sendAs?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.Int32Value reply_to_msg_id = 17;
    */
-  replyToMsgId?: number;
+  replyToMsgId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value top_msg_id = 18;
    */
-  topMsgId?: number;
-
+  topMsgId?: number
 }
 
 /**
@@ -3374,88 +3429,87 @@ export interface TLMessagesSendMedia {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool silent = 3;
    */
-  silent?: boolean;
+  silent?: boolean
 
   /**
    * @generated from field: optional bool background = 4;
    */
-  background?: boolean;
+  background?: boolean
 
   /**
    * @generated from field: optional bool clear_draft = 5;
    */
-  clearDraft?: boolean;
+  clearDraft?: boolean
 
   /**
    * @generated from field: optional bool noforwards = 6;
    */
-  noforwards?: boolean;
+  noforwards?: boolean
 
   /**
    * @generated from field: optional bool update_stickersets_order = 7;
    */
-  updateStickersetsOrder?: boolean;
+  updateStickersetsOrder?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 8;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputReplyTo reply_to = 9;
    */
-  replyTo?: InputReplyTo;
+  replyTo?: InputReplyTo
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia media = 10;
    */
-  media?: InputMedia;
+  media?: InputMedia
 
   /**
    * @generated from field: optional string message = 11;
    */
-  message?: string;
+  message?: string
 
   /**
    * @generated from field: optional int64 random_id = 12;
    */
-  randomId?: bigint;
+  randomId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReplyMarkup reply_markup = 13;
    */
-  replyMarkup?: ReplyMarkup;
+  replyMarkup?: ReplyMarkup
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 14;
    */
-  entities: MessageEntity[];
+  entities: MessageEntity[]
 
   /**
    * @generated from field: optional google.protobuf.Int32Value schedule_date = 15;
    */
-  scheduleDate?: number;
+  scheduleDate?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer send_as = 16;
    */
-  sendAs?: InputPeer;
+  sendAs?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.Int32Value reply_to_msg_id = 17;
    */
-  replyToMsgId?: number;
+  replyToMsgId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value top_msg_id = 18;
    */
-  topMsgId?: number;
-
+  topMsgId?: number
 }
 
 /**
@@ -3465,73 +3519,72 @@ export interface TLMessagesForwardMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool silent = 3;
    */
-  silent?: boolean;
+  silent?: boolean
 
   /**
    * @generated from field: optional bool background = 4;
    */
-  background?: boolean;
+  background?: boolean
 
   /**
    * @generated from field: optional bool with_my_score = 5;
    */
-  withMyScore?: boolean;
+  withMyScore?: boolean
 
   /**
    * @generated from field: optional bool drop_author = 6;
    */
-  dropAuthor?: boolean;
+  dropAuthor?: boolean
 
   /**
    * @generated from field: optional bool drop_media_captions = 7;
    */
-  dropMediaCaptions?: boolean;
+  dropMediaCaptions?: boolean
 
   /**
    * @generated from field: optional bool noforwards = 8;
    */
-  noforwards?: boolean;
+  noforwards?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer from_peer = 9;
    */
-  fromPeer?: InputPeer;
+  fromPeer?: InputPeer
 
   /**
    * @generated from field: repeated int32 id = 10;
    */
-  id: number[];
+  id: number[]
 
   /**
    * @generated from field: repeated int64 random_id = 11;
    */
-  randomId: bigint[];
+  randomId: bigint[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer to_peer = 12;
    */
-  toPeer?: InputPeer;
+  toPeer?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.Int32Value top_msg_id = 13;
    */
-  topMsgId?: number;
+  topMsgId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value schedule_date = 14;
    */
-  scheduleDate?: number;
+  scheduleDate?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer send_as = 15;
    */
-  sendAs?: InputPeer;
-
+  sendAs?: InputPeer
 }
 
 /**
@@ -3541,13 +3594,12 @@ export interface TLMessagesReportSpam {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
-
+  peer?: InputPeer
 }
 
 /**
@@ -3557,13 +3609,12 @@ export interface TLMessagesGetPeerSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
-
+  peer?: InputPeer
 }
 
 /**
@@ -3573,28 +3624,27 @@ export interface TLMessagesReport {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: repeated int32 id = 4;
    */
-  id: number[];
+  id: number[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReportReason reason = 5;
    */
-  reason?: ReportReason;
+  reason?: ReportReason
 
   /**
    * @generated from field: optional string message = 6;
    */
-  message?: string;
-
+  message?: string
 }
 
 /**
@@ -3604,13 +3654,12 @@ export interface TLMessagesGetChats {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated int64 id = 3;
    */
-  id: bigint[];
-
+  id: bigint[]
 }
 
 /**
@@ -3620,13 +3669,12 @@ export interface TLMessagesGetFullChat {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 chat_id = 3;
    */
-  chatId?: bigint;
-
+  chatId?: bigint
 }
 
 /**
@@ -3636,18 +3684,17 @@ export interface TLMessagesEditChatTitle {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 chat_id = 3;
    */
-  chatId?: bigint;
+  chatId?: bigint
 
   /**
    * @generated from field: optional string title = 4;
    */
-  title?: string;
-
+  title?: string
 }
 
 /**
@@ -3657,18 +3704,17 @@ export interface TLMessagesEditChatPhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 chat_id = 3;
    */
-  chatId?: bigint;
+  chatId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChatPhoto photo = 4;
    */
-  photo?: InputChatPhoto;
-
+  photo?: InputChatPhoto
 }
 
 /**
@@ -3678,23 +3724,22 @@ export interface TLMessagesAddChatUser {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 chat_id = 3;
    */
-  chatId?: bigint;
+  chatId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 4;
    */
-  userId?: InputUser;
+  userId?: InputUser
 
   /**
    * @generated from field: optional int32 fwd_limit = 5;
    */
-  fwdLimit?: number;
-
+  fwdLimit?: number
 }
 
 /**
@@ -3704,23 +3749,22 @@ export interface TLMessagesDeleteChatUser {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool revoke_history = 3;
    */
-  revokeHistory?: boolean;
+  revokeHistory?: boolean
 
   /**
    * @generated from field: optional int64 chat_id = 4;
    */
-  chatId?: bigint;
+  chatId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 5;
    */
-  userId?: InputUser;
-
+  userId?: InputUser
 }
 
 /**
@@ -3730,23 +3774,22 @@ export interface TLMessagesCreateChat {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputUser users = 3;
    */
-  users: InputUser[];
+  users: InputUser[]
 
   /**
    * @generated from field: optional string title = 4;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional google.protobuf.Int32Value ttl_period = 5;
    */
-  ttlPeriod?: number;
-
+  ttlPeriod?: number
 }
 
 /**
@@ -3756,18 +3799,17 @@ export interface TLMessagesGetDhConfig {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 version = 3;
    */
-  version?: number;
+  version?: number
 
   /**
    * @generated from field: optional int32 random_length = 4;
    */
-  randomLength?: number;
-
+  randomLength?: number
 }
 
 /**
@@ -3777,23 +3819,22 @@ export interface TLMessagesRequestEncryption {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 3;
    */
-  userId?: InputUser;
+  userId?: InputUser
 
   /**
    * @generated from field: optional int32 random_id = 4;
    */
-  randomId?: number;
+  randomId?: number
 
   /**
    * @generated from field: optional bytes g_a = 5;
    */
-  gA?: Uint8Array;
-
+  gA?: Uint8Array
 }
 
 /**
@@ -3803,23 +3844,22 @@ export interface TLMessagesAcceptEncryption {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputEncryptedChat peer = 3;
    */
-  peer?: InputEncryptedChat;
+  peer?: InputEncryptedChat
 
   /**
    * @generated from field: optional bytes g_b = 4;
    */
-  gB?: Uint8Array;
+  gB?: Uint8Array
 
   /**
    * @generated from field: optional int64 key_fingerprint = 5;
    */
-  keyFingerprint?: bigint;
-
+  keyFingerprint?: bigint
 }
 
 /**
@@ -3829,18 +3869,17 @@ export interface TLMessagesDiscardEncryption {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool delete_history = 3;
    */
-  deleteHistory?: boolean;
+  deleteHistory?: boolean
 
   /**
    * @generated from field: optional int32 chat_id = 4;
    */
-  chatId?: number;
-
+  chatId?: number
 }
 
 /**
@@ -3850,18 +3889,17 @@ export interface TLMessagesSetEncryptedTyping {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputEncryptedChat peer = 3;
    */
-  peer?: InputEncryptedChat;
+  peer?: InputEncryptedChat
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool typing = 4;
    */
-  typing?: Bool;
-
+  typing?: Bool
 }
 
 /**
@@ -3871,18 +3909,17 @@ export interface TLMessagesReadEncryptedHistory {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputEncryptedChat peer = 3;
    */
-  peer?: InputEncryptedChat;
+  peer?: InputEncryptedChat
 
   /**
    * @generated from field: optional int32 max_date = 4;
    */
-  maxDate?: number;
-
+  maxDate?: number
 }
 
 /**
@@ -3892,28 +3929,27 @@ export interface TLMessagesSendEncrypted {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool silent = 3;
    */
-  silent?: boolean;
+  silent?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputEncryptedChat peer = 4;
    */
-  peer?: InputEncryptedChat;
+  peer?: InputEncryptedChat
 
   /**
    * @generated from field: optional int64 random_id = 5;
    */
-  randomId?: bigint;
+  randomId?: bigint
 
   /**
    * @generated from field: optional bytes data = 6;
    */
-  data?: Uint8Array;
-
+  data?: Uint8Array
 }
 
 /**
@@ -3923,33 +3959,32 @@ export interface TLMessagesSendEncryptedFile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool silent = 3;
    */
-  silent?: boolean;
+  silent?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputEncryptedChat peer = 4;
    */
-  peer?: InputEncryptedChat;
+  peer?: InputEncryptedChat
 
   /**
    * @generated from field: optional int64 random_id = 5;
    */
-  randomId?: bigint;
+  randomId?: bigint
 
   /**
    * @generated from field: optional bytes data = 6;
    */
-  data?: Uint8Array;
+  data?: Uint8Array
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputEncryptedFile file = 7;
    */
-  file?: InputEncryptedFile;
-
+  file?: InputEncryptedFile
 }
 
 /**
@@ -3959,23 +3994,22 @@ export interface TLMessagesSendEncryptedService {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputEncryptedChat peer = 3;
    */
-  peer?: InputEncryptedChat;
+  peer?: InputEncryptedChat
 
   /**
    * @generated from field: optional int64 random_id = 4;
    */
-  randomId?: bigint;
+  randomId?: bigint
 
   /**
    * @generated from field: optional bytes data = 5;
    */
-  data?: Uint8Array;
-
+  data?: Uint8Array
 }
 
 /**
@@ -3985,13 +4019,12 @@ export interface TLMessagesReceivedQueue {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 max_qts = 3;
    */
-  maxQts?: number;
-
+  maxQts?: number
 }
 
 /**
@@ -4001,13 +4034,12 @@ export interface TLMessagesReportEncryptedSpam {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputEncryptedChat peer = 3;
    */
-  peer?: InputEncryptedChat;
-
+  peer?: InputEncryptedChat
 }
 
 /**
@@ -4017,13 +4049,12 @@ export interface TLMessagesReadMessageContents {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated int32 id = 3;
    */
-  id: number[];
-
+  id: number[]
 }
 
 /**
@@ -4033,18 +4064,17 @@ export interface TLMessagesGetStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string emoticon = 3;
    */
-  emoticon?: string;
+  emoticon?: string
 
   /**
    * @generated from field: optional int64 hash = 4;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -4054,13 +4084,12 @@ export interface TLMessagesGetAllStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -4070,18 +4099,17 @@ export interface TLMessagesGetWebPagePreview {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string message = 3;
    */
-  message?: string;
+  message?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 4;
    */
-  entities: MessageEntity[];
-
+  entities: MessageEntity[]
 }
 
 /**
@@ -4091,38 +4119,37 @@ export interface TLMessagesExportChatInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool legacy_revoke_permanent = 3;
    */
-  legacyRevokePermanent?: boolean;
+  legacyRevokePermanent?: boolean
 
   /**
    * @generated from field: optional bool request_needed = 4;
    */
-  requestNeeded?: boolean;
+  requestNeeded?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 5;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.Int32Value expire_date = 6;
    */
-  expireDate?: number;
+  expireDate?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value usage_limit = 7;
    */
-  usageLimit?: number;
+  usageLimit?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue title = 8;
    */
-  title?: string;
-
+  title?: string
 }
 
 /**
@@ -4132,13 +4159,12 @@ export interface TLMessagesCheckChatInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string hash = 3;
    */
-  hash?: string;
-
+  hash?: string
 }
 
 /**
@@ -4148,13 +4174,12 @@ export interface TLMessagesImportChatInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string hash = 3;
    */
-  hash?: string;
-
+  hash?: string
 }
 
 /**
@@ -4164,18 +4189,17 @@ export interface TLMessagesGetStickerSet {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet stickerset = 3;
    */
-  stickerset?: InputStickerSet;
+  stickerset?: InputStickerSet
 
   /**
    * @generated from field: optional int32 hash = 4;
    */
-  hash?: number;
-
+  hash?: number
 }
 
 /**
@@ -4185,18 +4209,17 @@ export interface TLMessagesInstallStickerSet {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet stickerset = 3;
    */
-  stickerset?: InputStickerSet;
+  stickerset?: InputStickerSet
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool archived = 4;
    */
-  archived?: Bool;
-
+  archived?: Bool
 }
 
 /**
@@ -4206,13 +4229,12 @@ export interface TLMessagesUninstallStickerSet {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet stickerset = 3;
    */
-  stickerset?: InputStickerSet;
-
+  stickerset?: InputStickerSet
 }
 
 /**
@@ -4222,28 +4244,27 @@ export interface TLMessagesStartBot {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser bot = 3;
    */
-  bot?: InputUser;
+  bot?: InputUser
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 4;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int64 random_id = 5;
    */
-  randomId?: bigint;
+  randomId?: bigint
 
   /**
    * @generated from field: optional string start_param = 6;
    */
-  startParam?: string;
-
+  startParam?: string
 }
 
 /**
@@ -4253,23 +4274,22 @@ export interface TLMessagesGetMessagesViews {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: repeated int32 id = 4;
    */
-  id: number[];
+  id: number[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool increment = 5;
    */
-  increment?: Bool;
-
+  increment?: Bool
 }
 
 /**
@@ -4279,23 +4299,22 @@ export interface TLMessagesEditChatAdmin {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 chat_id = 3;
    */
-  chatId?: bigint;
+  chatId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 4;
    */
-  userId?: InputUser;
+  userId?: InputUser
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool is_admin = 5;
    */
-  isAdmin?: Bool;
-
+  isAdmin?: Bool
 }
 
 /**
@@ -4305,13 +4324,12 @@ export interface TLMessagesMigrateChat {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 chat_id = 3;
    */
-  chatId?: bigint;
-
+  chatId?: bigint
 }
 
 /**
@@ -4321,53 +4339,52 @@ export interface TLMessagesSearchGlobal {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional google.protobuf.Int32Value folder_id = 3;
    */
-  folderId?: number;
+  folderId?: number
 
   /**
    * @generated from field: optional string q = 4;
    */
-  q?: string;
+  q?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter filter = 5;
    */
-  filter?: MessagesFilter;
+  filter?: MessagesFilter
 
   /**
    * @generated from field: optional int32 min_date = 6;
    */
-  minDate?: number;
+  minDate?: number
 
   /**
    * @generated from field: optional int32 max_date = 7;
    */
-  maxDate?: number;
+  maxDate?: number
 
   /**
    * @generated from field: optional int32 offset_rate = 8;
    */
-  offsetRate?: number;
+  offsetRate?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer offset_peer = 9;
    */
-  offsetPeer?: InputPeer;
+  offsetPeer?: InputPeer
 
   /**
    * @generated from field: optional int32 offset_id = 10;
    */
-  offsetId?: number;
+  offsetId?: number
 
   /**
    * @generated from field: optional int32 limit = 11;
    */
-  limit?: number;
-
+  limit?: number
 }
 
 /**
@@ -4377,23 +4394,22 @@ export interface TLMessagesReorderStickerSets {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool masks = 3;
    */
-  masks?: boolean;
+  masks?: boolean
 
   /**
    * @generated from field: optional bool emojis = 4;
    */
-  emojis?: boolean;
+  emojis?: boolean
 
   /**
    * @generated from field: repeated int64 order = 5;
    */
-  order: bigint[];
-
+  order: bigint[]
 }
 
 /**
@@ -4403,28 +4419,27 @@ export interface TLMessagesGetDocumentByHash {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes sha256 = 3;
    */
-  sha256?: Uint8Array;
+  sha256?: Uint8Array
 
   /**
    * @generated from field: optional int64 size2_INT64 = 4;
    */
-  size2INT64?: bigint;
+  size2INT64?: bigint
 
   /**
    * @generated from field: optional string mime_type = 5;
    */
-  mimeType?: string;
+  mimeType?: string
 
   /**
    * @generated from field: optional int32 size2_INT32 = 6;
    */
-  size2INT32?: number;
-
+  size2INT32?: number
 }
 
 /**
@@ -4434,13 +4449,12 @@ export interface TLMessagesGetSavedGifs {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -4450,18 +4464,17 @@ export interface TLMessagesSaveGif {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDocument id = 3;
    */
-  id?: InputDocument;
+  id?: InputDocument
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool unsave = 4;
    */
-  unsave?: Bool;
-
+  unsave?: Bool
 }
 
 /**
@@ -4471,33 +4484,32 @@ export interface TLMessagesGetInlineBotResults {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser bot = 3;
    */
-  bot?: InputUser;
+  bot?: InputUser
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 4;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGeoPoint geo_point = 5;
    */
-  geoPoint?: InputGeoPoint;
+  geoPoint?: InputGeoPoint
 
   /**
    * @generated from field: optional string query = 6;
    */
-  query?: string;
+  query?: string
 
   /**
    * @generated from field: optional string offset = 7;
    */
-  offset?: string;
-
+  offset?: string
 }
 
 /**
@@ -4507,48 +4519,47 @@ export interface TLMessagesSetInlineBotResults {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool gallery = 3;
    */
-  gallery?: boolean;
+  gallery?: boolean
 
   /**
    * @generated from field: optional bool private = 4;
    */
-  private?: boolean;
+  private?: boolean
 
   /**
    * @generated from field: optional int64 query_id = 5;
    */
-  queryId?: bigint;
+  queryId?: bigint
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputBotInlineResult results = 6;
    */
-  results: InputBotInlineResult[];
+  results: InputBotInlineResult[]
 
   /**
    * @generated from field: optional int32 cache_time = 7;
    */
-  cacheTime?: number;
+  cacheTime?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue next_offset = 8;
    */
-  nextOffset?: string;
+  nextOffset?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InlineBotSwitchPM switch_pm = 9;
    */
-  switchPm?: InlineBotSwitchPM;
+  switchPm?: InlineBotSwitchPM
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InlineBotWebView switch_webview = 10;
    */
-  switchWebview?: InlineBotWebView;
-
+  switchWebview?: InlineBotWebView
 }
 
 /**
@@ -4558,73 +4569,72 @@ export interface TLMessagesSendInlineBotResult {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool silent = 3;
    */
-  silent?: boolean;
+  silent?: boolean
 
   /**
    * @generated from field: optional bool background = 4;
    */
-  background?: boolean;
+  background?: boolean
 
   /**
    * @generated from field: optional bool clear_draft = 5;
    */
-  clearDraft?: boolean;
+  clearDraft?: boolean
 
   /**
    * @generated from field: optional bool hide_via = 6;
    */
-  hideVia?: boolean;
+  hideVia?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 7;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputReplyTo reply_to = 8;
    */
-  replyTo?: InputReplyTo;
+  replyTo?: InputReplyTo
 
   /**
    * @generated from field: optional int64 random_id = 9;
    */
-  randomId?: bigint;
+  randomId?: bigint
 
   /**
    * @generated from field: optional int64 query_id = 10;
    */
-  queryId?: bigint;
+  queryId?: bigint
 
   /**
    * @generated from field: optional string id = 11;
    */
-  id?: string;
+  id?: string
 
   /**
    * @generated from field: optional google.protobuf.Int32Value schedule_date = 12;
    */
-  scheduleDate?: number;
+  scheduleDate?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer send_as = 13;
    */
-  sendAs?: InputPeer;
+  sendAs?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.Int32Value reply_to_msg_id = 14;
    */
-  replyToMsgId?: number;
+  replyToMsgId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value top_msg_id = 15;
    */
-  topMsgId?: number;
-
+  topMsgId?: number
 }
 
 /**
@@ -4634,18 +4644,17 @@ export interface TLMessagesGetMessageEditData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 id = 4;
    */
-  id?: number;
-
+  id?: number
 }
 
 /**
@@ -4655,48 +4664,47 @@ export interface TLMessagesEditMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool no_webpage = 3;
    */
-  noWebpage?: boolean;
+  noWebpage?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 4;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 id = 5;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue message = 6;
    */
-  message?: string;
+  message?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia media = 7;
    */
-  media?: InputMedia;
+  media?: InputMedia
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReplyMarkup reply_markup = 8;
    */
-  replyMarkup?: ReplyMarkup;
+  replyMarkup?: ReplyMarkup
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 9;
    */
-  entities: MessageEntity[];
+  entities: MessageEntity[]
 
   /**
    * @generated from field: optional google.protobuf.Int32Value schedule_date = 10;
    */
-  scheduleDate?: number;
-
+  scheduleDate?: number
 }
 
 /**
@@ -4706,38 +4714,37 @@ export interface TLMessagesEditInlineBotMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool no_webpage = 3;
    */
-  noWebpage?: boolean;
+  noWebpage?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotInlineMessageID id = 4;
    */
-  id?: InputBotInlineMessageID;
+  id?: InputBotInlineMessageID
 
   /**
    * @generated from field: optional google.protobuf.StringValue message = 5;
    */
-  message?: string;
+  message?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia media = 6;
    */
-  media?: InputMedia;
+  media?: InputMedia
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReplyMarkup reply_markup = 7;
    */
-  replyMarkup?: ReplyMarkup;
+  replyMarkup?: ReplyMarkup
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 8;
    */
-  entities: MessageEntity[];
-
+  entities: MessageEntity[]
 }
 
 /**
@@ -4747,33 +4754,32 @@ export interface TLMessagesGetBotCallbackAnswer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool game = 3;
    */
-  game?: boolean;
+  game?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 4;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 msg_id = 5;
    */
-  msgId?: number;
+  msgId?: number
 
   /**
    * @generated from field: optional bytes data = 6;
    */
-  data?: Uint8Array;
+  data?: Uint8Array
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputCheckPasswordSRP password = 7;
    */
-  password?: InputCheckPasswordSRP;
-
+  password?: InputCheckPasswordSRP
 }
 
 /**
@@ -4783,33 +4789,32 @@ export interface TLMessagesSetBotCallbackAnswer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool alert = 3;
    */
-  alert?: boolean;
+  alert?: boolean
 
   /**
    * @generated from field: optional int64 query_id = 4;
    */
-  queryId?: bigint;
+  queryId?: bigint
 
   /**
    * @generated from field: optional google.protobuf.StringValue message = 5;
    */
-  message?: string;
+  message?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue url = 6;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional int32 cache_time = 7;
    */
-  cacheTime?: number;
-
+  cacheTime?: number
 }
 
 /**
@@ -4819,13 +4824,12 @@ export interface TLMessagesGetPeerDialogs {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputDialogPeer peers = 3;
    */
-  peers: InputDialogPeer[];
-
+  peers: InputDialogPeer[]
 }
 
 /**
@@ -4835,38 +4839,37 @@ export interface TLMessagesSaveDraft {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool no_webpage = 3;
    */
-  noWebpage?: boolean;
+  noWebpage?: boolean
 
   /**
    * @generated from field: optional google.protobuf.Int32Value reply_to_msg_id = 4;
    */
-  replyToMsgId?: number;
+  replyToMsgId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value top_msg_id = 5;
    */
-  topMsgId?: number;
+  topMsgId?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 6;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional string message = 7;
    */
-  message?: string;
+  message?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 8;
    */
-  entities: MessageEntity[];
-
+  entities: MessageEntity[]
 }
 
 /**
@@ -4876,8 +4879,7 @@ export interface TLMessagesGetAllDrafts {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -4887,13 +4889,12 @@ export interface TLMessagesGetFeaturedStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -4903,13 +4904,12 @@ export interface TLMessagesReadFeaturedStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated int64 id = 3;
    */
-  id: bigint[];
-
+  id: bigint[]
 }
 
 /**
@@ -4919,18 +4919,17 @@ export interface TLMessagesGetRecentStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool attached = 3;
    */
-  attached?: boolean;
+  attached?: boolean
 
   /**
    * @generated from field: optional int64 hash = 4;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -4940,23 +4939,22 @@ export interface TLMessagesSaveRecentSticker {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool attached = 3;
    */
-  attached?: boolean;
+  attached?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDocument id = 4;
    */
-  id?: InputDocument;
+  id?: InputDocument
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool unsave = 5;
    */
-  unsave?: Bool;
-
+  unsave?: Bool
 }
 
 /**
@@ -4966,13 +4964,12 @@ export interface TLMessagesClearRecentStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool attached = 3;
    */
-  attached?: boolean;
-
+  attached?: boolean
 }
 
 /**
@@ -4982,28 +4979,27 @@ export interface TLMessagesGetArchivedStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool masks = 3;
    */
-  masks?: boolean;
+  masks?: boolean
 
   /**
    * @generated from field: optional bool emojis = 4;
    */
-  emojis?: boolean;
+  emojis?: boolean
 
   /**
    * @generated from field: optional int64 offset_id = 5;
    */
-  offsetId?: bigint;
+  offsetId?: bigint
 
   /**
    * @generated from field: optional int32 limit = 6;
    */
-  limit?: number;
-
+  limit?: number
 }
 
 /**
@@ -5013,13 +5009,12 @@ export interface TLMessagesGetMaskStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -5029,13 +5024,12 @@ export interface TLMessagesGetAttachedStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickeredMedia media = 3;
    */
-  media?: InputStickeredMedia;
-
+  media?: InputStickeredMedia
 }
 
 /**
@@ -5045,38 +5039,37 @@ export interface TLMessagesSetGameScore {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool edit_message = 3;
    */
-  editMessage?: boolean;
+  editMessage?: boolean
 
   /**
    * @generated from field: optional bool force = 4;
    */
-  force?: boolean;
+  force?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 5;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 id = 6;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 7;
    */
-  userId?: InputUser;
+  userId?: InputUser
 
   /**
    * @generated from field: optional int32 score = 8;
    */
-  score?: number;
-
+  score?: number
 }
 
 /**
@@ -5086,33 +5079,32 @@ export interface TLMessagesSetInlineGameScore {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool edit_message = 3;
    */
-  editMessage?: boolean;
+  editMessage?: boolean
 
   /**
    * @generated from field: optional bool force = 4;
    */
-  force?: boolean;
+  force?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotInlineMessageID id = 5;
    */
-  id?: InputBotInlineMessageID;
+  id?: InputBotInlineMessageID
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 6;
    */
-  userId?: InputUser;
+  userId?: InputUser
 
   /**
    * @generated from field: optional int32 score = 7;
    */
-  score?: number;
-
+  score?: number
 }
 
 /**
@@ -5122,23 +5114,22 @@ export interface TLMessagesGetGameHighScores {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 id = 4;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 5;
    */
-  userId?: InputUser;
-
+  userId?: InputUser
 }
 
 /**
@@ -5148,18 +5139,17 @@ export interface TLMessagesGetInlineGameHighScores {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotInlineMessageID id = 3;
    */
-  id?: InputBotInlineMessageID;
+  id?: InputBotInlineMessageID
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 4;
    */
-  userId?: InputUser;
-
+  userId?: InputUser
 }
 
 /**
@@ -5169,23 +5159,22 @@ export interface TLMessagesGetCommonChats {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 3;
    */
-  userId?: InputUser;
+  userId?: InputUser
 
   /**
    * @generated from field: optional int64 max_id = 4;
    */
-  maxId?: bigint;
+  maxId?: bigint
 
   /**
    * @generated from field: optional int32 limit = 5;
    */
-  limit?: number;
-
+  limit?: number
 }
 
 /**
@@ -5195,18 +5184,17 @@ export interface TLMessagesGetWebPage8D9692A3 {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string url = 3;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional int32 hash = 4;
    */
-  hash?: number;
-
+  hash?: number
 }
 
 /**
@@ -5216,18 +5204,17 @@ export interface TLMessagesToggleDialogPin {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool pinned = 3;
    */
-  pinned?: boolean;
+  pinned?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDialogPeer peer = 4;
    */
-  peer?: InputDialogPeer;
-
+  peer?: InputDialogPeer
 }
 
 /**
@@ -5237,23 +5224,22 @@ export interface TLMessagesReorderPinnedDialogs {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool force = 3;
    */
-  force?: boolean;
+  force?: boolean
 
   /**
    * @generated from field: optional int32 folder_id = 4;
    */
-  folderId?: number;
+  folderId?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputDialogPeer order = 5;
    */
-  order: InputDialogPeer[];
-
+  order: InputDialogPeer[]
 }
 
 /**
@@ -5263,13 +5249,12 @@ export interface TLMessagesGetPinnedDialogs {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 folder_id = 3;
    */
-  folderId?: number;
-
+  folderId?: number
 }
 
 /**
@@ -5279,23 +5264,22 @@ export interface TLMessagesSetBotShippingResults {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 query_id = 3;
    */
-  queryId?: bigint;
+  queryId?: bigint
 
   /**
    * @generated from field: optional google.protobuf.StringValue error = 4;
    */
-  error?: string;
+  error?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ShippingOption shipping_options = 5;
    */
-  shippingOptions: ShippingOption[];
-
+  shippingOptions: ShippingOption[]
 }
 
 /**
@@ -5305,23 +5289,22 @@ export interface TLMessagesSetBotPrecheckoutResults {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool success = 3;
    */
-  success?: boolean;
+  success?: boolean
 
   /**
    * @generated from field: optional int64 query_id = 4;
    */
-  queryId?: bigint;
+  queryId?: bigint
 
   /**
    * @generated from field: optional google.protobuf.StringValue error = 5;
    */
-  error?: string;
-
+  error?: string
 }
 
 /**
@@ -5331,18 +5314,17 @@ export interface TLMessagesUploadMedia {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia media = 4;
    */
-  media?: InputMedia;
-
+  media?: InputMedia
 }
 
 /**
@@ -5352,28 +5334,27 @@ export interface TLMessagesSendScreenshotNotification {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputReplyTo reply_to = 4;
    */
-  replyTo?: InputReplyTo;
+  replyTo?: InputReplyTo
 
   /**
    * @generated from field: optional int64 random_id = 5;
    */
-  randomId?: bigint;
+  randomId?: bigint
 
   /**
    * @generated from field: optional int32 reply_to_msg_id = 6;
    */
-  replyToMsgId?: number;
-
+  replyToMsgId?: number
 }
 
 /**
@@ -5383,13 +5364,12 @@ export interface TLMessagesGetFavedStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -5399,18 +5379,17 @@ export interface TLMessagesFaveSticker {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDocument id = 3;
    */
-  id?: InputDocument;
+  id?: InputDocument
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool unfave = 4;
    */
-  unfave?: Bool;
-
+  unfave?: Bool
 }
 
 /**
@@ -5420,43 +5399,42 @@ export interface TLMessagesGetUnreadMentions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.Int32Value top_msg_id = 4;
    */
-  topMsgId?: number;
+  topMsgId?: number
 
   /**
    * @generated from field: optional int32 offset_id = 5;
    */
-  offsetId?: number;
+  offsetId?: number
 
   /**
    * @generated from field: optional int32 add_offset = 6;
    */
-  addOffset?: number;
+  addOffset?: number
 
   /**
    * @generated from field: optional int32 limit = 7;
    */
-  limit?: number;
+  limit?: number
 
   /**
    * @generated from field: optional int32 max_id = 8;
    */
-  maxId?: number;
+  maxId?: number
 
   /**
    * @generated from field: optional int32 min_id = 9;
    */
-  minId?: number;
-
+  minId?: number
 }
 
 /**
@@ -5466,18 +5444,17 @@ export interface TLMessagesReadMentions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.Int32Value top_msg_id = 4;
    */
-  topMsgId?: number;
-
+  topMsgId?: number
 }
 
 /**
@@ -5487,23 +5464,22 @@ export interface TLMessagesGetRecentLocations {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 limit = 4;
    */
-  limit?: number;
+  limit?: number
 
   /**
    * @generated from field: optional int64 hash = 5;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -5513,68 +5489,67 @@ export interface TLMessagesSendMultiMedia {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool silent = 3;
    */
-  silent?: boolean;
+  silent?: boolean
 
   /**
    * @generated from field: optional bool background = 4;
    */
-  background?: boolean;
+  background?: boolean
 
   /**
    * @generated from field: optional bool clear_draft = 5;
    */
-  clearDraft?: boolean;
+  clearDraft?: boolean
 
   /**
    * @generated from field: optional bool noforwards = 6;
    */
-  noforwards?: boolean;
+  noforwards?: boolean
 
   /**
    * @generated from field: optional bool update_stickersets_order = 7;
    */
-  updateStickersetsOrder?: boolean;
+  updateStickersetsOrder?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 8;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputReplyTo reply_to = 9;
    */
-  replyTo?: InputReplyTo;
+  replyTo?: InputReplyTo
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputSingleMedia multi_media = 10;
    */
-  multiMedia: InputSingleMedia[];
+  multiMedia: InputSingleMedia[]
 
   /**
    * @generated from field: optional google.protobuf.Int32Value schedule_date = 11;
    */
-  scheduleDate?: number;
+  scheduleDate?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer send_as = 12;
    */
-  sendAs?: InputPeer;
+  sendAs?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.Int32Value reply_to_msg_id = 13;
    */
-  replyToMsgId?: number;
+  replyToMsgId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value top_msg_id = 14;
    */
-  topMsgId?: number;
-
+  topMsgId?: number
 }
 
 /**
@@ -5584,18 +5559,17 @@ export interface TLMessagesUploadEncryptedFile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputEncryptedChat peer = 3;
    */
-  peer?: InputEncryptedChat;
+  peer?: InputEncryptedChat
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputEncryptedFile file = 4;
    */
-  file?: InputEncryptedFile;
-
+  file?: InputEncryptedFile
 }
 
 /**
@@ -5605,23 +5579,22 @@ export interface TLMessagesSearchStickerSets {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool exclude_featured = 3;
    */
-  excludeFeatured?: boolean;
+  excludeFeatured?: boolean
 
   /**
    * @generated from field: optional string q = 4;
    */
-  q?: string;
+  q?: string
 
   /**
    * @generated from field: optional int64 hash = 5;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -5631,8 +5604,7 @@ export interface TLMessagesGetSplitRanges {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -5642,18 +5614,17 @@ export interface TLMessagesMarkDialogUnread {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool unread = 3;
    */
-  unread?: boolean;
+  unread?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDialogPeer peer = 4;
    */
-  peer?: InputDialogPeer;
-
+  peer?: InputDialogPeer
 }
 
 /**
@@ -5663,8 +5634,7 @@ export interface TLMessagesGetDialogUnreadMarks {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -5674,8 +5644,7 @@ export interface TLMessagesClearAllDrafts {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -5685,33 +5654,32 @@ export interface TLMessagesUpdatePinnedMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool silent = 3;
    */
-  silent?: boolean;
+  silent?: boolean
 
   /**
    * @generated from field: optional bool unpin = 4;
    */
-  unpin?: boolean;
+  unpin?: boolean
 
   /**
    * @generated from field: optional bool pm_oneside = 5;
    */
-  pmOneside?: boolean;
+  pmOneside?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 6;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 id = 7;
    */
-  id?: number;
-
+  id?: number
 }
 
 /**
@@ -5721,23 +5689,22 @@ export interface TLMessagesSendVote {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 msg_id = 4;
    */
-  msgId?: number;
+  msgId?: number
 
   /**
    * @generated from field: repeated bytes options = 5;
    */
-  options: Uint8Array[];
-
+  options: Uint8Array[]
 }
 
 /**
@@ -5747,18 +5714,17 @@ export interface TLMessagesGetPollResults {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 msg_id = 4;
    */
-  msgId?: number;
-
+  msgId?: number
 }
 
 /**
@@ -5768,13 +5734,12 @@ export interface TLMessagesGetOnlines {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
-
+  peer?: InputPeer
 }
 
 /**
@@ -5784,18 +5749,17 @@ export interface TLMessagesEditChatAbout {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional string about = 4;
    */
-  about?: string;
-
+  about?: string
 }
 
 /**
@@ -5805,18 +5769,17 @@ export interface TLMessagesEditChatDefaultBannedRights {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatBannedRights banned_rights = 4;
    */
-  bannedRights?: ChatBannedRights;
-
+  bannedRights?: ChatBannedRights
 }
 
 /**
@@ -5826,13 +5789,12 @@ export interface TLMessagesGetEmojiKeywords {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string lang_code = 3;
    */
-  langCode?: string;
-
+  langCode?: string
 }
 
 /**
@@ -5842,18 +5804,17 @@ export interface TLMessagesGetEmojiKeywordsDifference {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string lang_code = 3;
    */
-  langCode?: string;
+  langCode?: string
 
   /**
    * @generated from field: optional int32 from_version = 4;
    */
-  fromVersion?: number;
-
+  fromVersion?: number
 }
 
 /**
@@ -5863,13 +5824,12 @@ export interface TLMessagesGetEmojiKeywordsLanguages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated string lang_codes = 3;
    */
-  langCodes: string[];
-
+  langCodes: string[]
 }
 
 /**
@@ -5879,13 +5839,12 @@ export interface TLMessagesGetEmojiURL {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string lang_code = 3;
    */
-  langCode?: string;
-
+  langCode?: string
 }
 
 /**
@@ -5895,23 +5854,22 @@ export interface TLMessagesGetSearchCounters {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.Int32Value top_msg_id = 4;
    */
-  topMsgId?: number;
+  topMsgId?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessagesFilter filters = 5;
    */
-  filters: MessagesFilter[];
-
+  filters: MessagesFilter[]
 }
 
 /**
@@ -5921,28 +5879,27 @@ export interface TLMessagesRequestUrlAuth {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.Int32Value msg_id = 4;
    */
-  msgId?: number;
+  msgId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value button_id = 5;
    */
-  buttonId?: number;
+  buttonId?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue url = 6;
    */
-  url?: string;
-
+  url?: string
 }
 
 /**
@@ -5952,33 +5909,32 @@ export interface TLMessagesAcceptUrlAuth {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool write_allowed = 3;
    */
-  writeAllowed?: boolean;
+  writeAllowed?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 4;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.Int32Value msg_id = 5;
    */
-  msgId?: number;
+  msgId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value button_id = 6;
    */
-  buttonId?: number;
+  buttonId?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue url = 7;
    */
-  url?: string;
-
+  url?: string
 }
 
 /**
@@ -5988,13 +5944,12 @@ export interface TLMessagesHidePeerSettingsBar {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
-
+  peer?: InputPeer
 }
 
 /**
@@ -6004,18 +5959,17 @@ export interface TLMessagesGetScheduledHistory {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int64 hash = 4;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -6025,18 +5979,17 @@ export interface TLMessagesGetScheduledMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: repeated int32 id = 4;
    */
-  id: number[];
-
+  id: number[]
 }
 
 /**
@@ -6046,18 +5999,17 @@ export interface TLMessagesSendScheduledMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: repeated int32 id = 4;
    */
-  id: number[];
-
+  id: number[]
 }
 
 /**
@@ -6067,18 +6019,17 @@ export interface TLMessagesDeleteScheduledMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: repeated int32 id = 4;
    */
-  id: number[];
-
+  id: number[]
 }
 
 /**
@@ -6088,33 +6039,32 @@ export interface TLMessagesGetPollVotes {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 id = 4;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional bytes option = 5;
    */
-  option?: Uint8Array;
+  option?: Uint8Array
 
   /**
    * @generated from field: optional google.protobuf.StringValue offset = 6;
    */
-  offset?: string;
+  offset?: string
 
   /**
    * @generated from field: optional int32 limit = 7;
    */
-  limit?: number;
-
+  limit?: number
 }
 
 /**
@@ -6124,28 +6074,27 @@ export interface TLMessagesToggleStickerSets {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool uninstall = 3;
    */
-  uninstall?: boolean;
+  uninstall?: boolean
 
   /**
    * @generated from field: optional bool archive = 4;
    */
-  archive?: boolean;
+  archive?: boolean
 
   /**
    * @generated from field: optional bool unarchive = 5;
    */
-  unarchive?: boolean;
+  unarchive?: boolean
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputStickerSet stickersets = 6;
    */
-  stickersets: InputStickerSet[];
-
+  stickersets: InputStickerSet[]
 }
 
 /**
@@ -6155,8 +6104,7 @@ export interface TLMessagesGetDialogFilters {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -6166,8 +6114,7 @@ export interface TLMessagesGetSuggestedDialogFilters {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -6177,18 +6124,17 @@ export interface TLMessagesUpdateDialogFilter {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 id = 3;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DialogFilter filter = 4;
    */
-  filter?: DialogFilter;
-
+  filter?: DialogFilter
 }
 
 /**
@@ -6198,13 +6144,12 @@ export interface TLMessagesUpdateDialogFiltersOrder {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated int32 order = 3;
    */
-  order: number[];
-
+  order: number[]
 }
 
 /**
@@ -6214,23 +6159,22 @@ export interface TLMessagesGetOldFeaturedStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 offset = 3;
    */
-  offset?: number;
+  offset?: number
 
   /**
    * @generated from field: optional int32 limit = 4;
    */
-  limit?: number;
+  limit?: number
 
   /**
    * @generated from field: optional int64 hash = 5;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -6240,53 +6184,52 @@ export interface TLMessagesGetReplies {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 msg_id = 4;
    */
-  msgId?: number;
+  msgId?: number
 
   /**
    * @generated from field: optional int32 offset_id = 5;
    */
-  offsetId?: number;
+  offsetId?: number
 
   /**
    * @generated from field: optional int32 offset_date = 6;
    */
-  offsetDate?: number;
+  offsetDate?: number
 
   /**
    * @generated from field: optional int32 add_offset = 7;
    */
-  addOffset?: number;
+  addOffset?: number
 
   /**
    * @generated from field: optional int32 limit = 8;
    */
-  limit?: number;
+  limit?: number
 
   /**
    * @generated from field: optional int32 max_id = 9;
    */
-  maxId?: number;
+  maxId?: number
 
   /**
    * @generated from field: optional int32 min_id = 10;
    */
-  minId?: number;
+  minId?: number
 
   /**
    * @generated from field: optional int64 hash = 11;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -6296,18 +6239,17 @@ export interface TLMessagesGetDiscussionMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 msg_id = 4;
    */
-  msgId?: number;
-
+  msgId?: number
 }
 
 /**
@@ -6317,23 +6259,22 @@ export interface TLMessagesReadDiscussion {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 msg_id = 4;
    */
-  msgId?: number;
+  msgId?: number
 
   /**
    * @generated from field: optional int32 read_max_id = 5;
    */
-  readMaxId?: number;
-
+  readMaxId?: number
 }
 
 /**
@@ -6343,18 +6284,17 @@ export interface TLMessagesUnpinAllMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.Int32Value top_msg_id = 4;
    */
-  topMsgId?: number;
-
+  topMsgId?: number
 }
 
 /**
@@ -6364,13 +6304,12 @@ export interface TLMessagesDeleteChat {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 chat_id = 3;
    */
-  chatId?: bigint;
-
+  chatId?: bigint
 }
 
 /**
@@ -6380,13 +6319,12 @@ export interface TLMessagesDeletePhoneCallHistory {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool revoke = 3;
    */
-  revoke?: boolean;
-
+  revoke?: boolean
 }
 
 /**
@@ -6396,13 +6334,12 @@ export interface TLMessagesCheckHistoryImport {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string import_head = 3;
    */
-  importHead?: string;
-
+  importHead?: string
 }
 
 /**
@@ -6412,23 +6349,22 @@ export interface TLMessagesInitHistoryImport {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFile file = 4;
    */
-  file?: InputFile;
+  file?: InputFile
 
   /**
    * @generated from field: optional int32 media_count = 5;
    */
-  mediaCount?: number;
-
+  mediaCount?: number
 }
 
 /**
@@ -6438,28 +6374,27 @@ export interface TLMessagesUploadImportedMedia {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int64 import_id = 4;
    */
-  importId?: bigint;
+  importId?: bigint
 
   /**
    * @generated from field: optional string file_name = 5;
    */
-  fileName?: string;
+  fileName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia media = 6;
    */
-  media?: InputMedia;
-
+  media?: InputMedia
 }
 
 /**
@@ -6469,18 +6404,17 @@ export interface TLMessagesStartHistoryImport {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int64 import_id = 4;
    */
-  importId?: bigint;
-
+  importId?: bigint
 }
 
 /**
@@ -6490,38 +6424,37 @@ export interface TLMessagesGetExportedChatInvites {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool revoked = 3;
    */
-  revoked?: boolean;
+  revoked?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 4;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser admin_id = 5;
    */
-  adminId?: InputUser;
+  adminId?: InputUser
 
   /**
    * @generated from field: optional google.protobuf.Int32Value offset_date = 6;
    */
-  offsetDate?: number;
+  offsetDate?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue offset_link = 7;
    */
-  offsetLink?: string;
+  offsetLink?: string
 
   /**
    * @generated from field: optional int32 limit = 8;
    */
-  limit?: number;
-
+  limit?: number
 }
 
 /**
@@ -6531,18 +6464,17 @@ export interface TLMessagesGetExportedChatInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional string link = 4;
    */
-  link?: string;
-
+  link?: string
 }
 
 /**
@@ -6552,43 +6484,42 @@ export interface TLMessagesEditExportedChatInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool revoked = 3;
    */
-  revoked?: boolean;
+  revoked?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 4;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional string link = 5;
    */
-  link?: string;
+  link?: string
 
   /**
    * @generated from field: optional google.protobuf.Int32Value expire_date = 6;
    */
-  expireDate?: number;
+  expireDate?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value usage_limit = 7;
    */
-  usageLimit?: number;
+  usageLimit?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool request_needed = 8;
    */
-  requestNeeded?: Bool;
+  requestNeeded?: Bool
 
   /**
    * @generated from field: optional google.protobuf.StringValue title = 9;
    */
-  title?: string;
-
+  title?: string
 }
 
 /**
@@ -6598,18 +6529,17 @@ export interface TLMessagesDeleteRevokedExportedChatInvites {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser admin_id = 4;
    */
-  adminId?: InputUser;
-
+  adminId?: InputUser
 }
 
 /**
@@ -6619,18 +6549,17 @@ export interface TLMessagesDeleteExportedChatInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional string link = 4;
    */
-  link?: string;
-
+  link?: string
 }
 
 /**
@@ -6640,13 +6569,12 @@ export interface TLMessagesGetAdminsWithInvites {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
-
+  peer?: InputPeer
 }
 
 /**
@@ -6656,43 +6584,42 @@ export interface TLMessagesGetChatInviteImporters {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool requested = 3;
    */
-  requested?: boolean;
+  requested?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 4;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.StringValue link = 5;
    */
-  link?: string;
+  link?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue q = 6;
    */
-  q?: string;
+  q?: string
 
   /**
    * @generated from field: optional int32 offset_date = 7;
    */
-  offsetDate?: number;
+  offsetDate?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser offset_user = 8;
    */
-  offsetUser?: InputUser;
+  offsetUser?: InputUser
 
   /**
    * @generated from field: optional int32 limit = 9;
    */
-  limit?: number;
-
+  limit?: number
 }
 
 /**
@@ -6702,18 +6629,17 @@ export interface TLMessagesSetHistoryTTL {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 period = 4;
    */
-  period?: number;
-
+  period?: number
 }
 
 /**
@@ -6723,13 +6649,12 @@ export interface TLMessagesCheckHistoryImportPeer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
-
+  peer?: InputPeer
 }
 
 /**
@@ -6739,18 +6664,17 @@ export interface TLMessagesSetChatTheme {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional string emoticon = 4;
    */
-  emoticon?: string;
-
+  emoticon?: string
 }
 
 /**
@@ -6760,18 +6684,17 @@ export interface TLMessagesGetMessageReadParticipants31C1C44F {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 msg_id = 4;
    */
-  msgId?: number;
-
+  msgId?: number
 }
 
 /**
@@ -6781,28 +6704,27 @@ export interface TLMessagesGetSearchResultsCalendar {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter filter = 4;
    */
-  filter?: MessagesFilter;
+  filter?: MessagesFilter
 
   /**
    * @generated from field: optional int32 offset_id = 5;
    */
-  offsetId?: number;
+  offsetId?: number
 
   /**
    * @generated from field: optional int32 offset_date = 6;
    */
-  offsetDate?: number;
-
+  offsetDate?: number
 }
 
 /**
@@ -6812,28 +6734,27 @@ export interface TLMessagesGetSearchResultsPositions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter filter = 4;
    */
-  filter?: MessagesFilter;
+  filter?: MessagesFilter
 
   /**
    * @generated from field: optional int32 offset_id = 5;
    */
-  offsetId?: number;
+  offsetId?: number
 
   /**
    * @generated from field: optional int32 limit = 6;
    */
-  limit?: number;
-
+  limit?: number
 }
 
 /**
@@ -6843,23 +6764,22 @@ export interface TLMessagesHideChatJoinRequest {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool approved = 3;
    */
-  approved?: boolean;
+  approved?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 4;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 5;
    */
-  userId?: InputUser;
-
+  userId?: InputUser
 }
 
 /**
@@ -6869,23 +6789,22 @@ export interface TLMessagesHideAllChatJoinRequests {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool approved = 3;
    */
-  approved?: boolean;
+  approved?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 4;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.StringValue link = 5;
    */
-  link?: string;
-
+  link?: string
 }
 
 /**
@@ -6895,18 +6814,17 @@ export interface TLMessagesToggleNoForwards {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool enabled = 4;
    */
-  enabled?: Bool;
-
+  enabled?: Bool
 }
 
 /**
@@ -6916,18 +6834,17 @@ export interface TLMessagesSaveDefaultSendAs {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer send_as = 4;
    */
-  sendAs?: InputPeer;
-
+  sendAs?: InputPeer
 }
 
 /**
@@ -6937,38 +6854,37 @@ export interface TLMessagesSendReaction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool big = 3;
    */
-  big?: boolean;
+  big?: boolean
 
   /**
    * @generated from field: optional bool add_to_recent = 4;
    */
-  addToRecent?: boolean;
+  addToRecent?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 5;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 msg_id = 6;
    */
-  msgId?: number;
+  msgId?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Reaction reaction_FLAGVECTORREACTION = 7;
    */
-  reactionFLAGVECTORREACTION: Reaction[];
+  reactionFLAGVECTORREACTION: Reaction[]
 
   /**
    * @generated from field: optional google.protobuf.StringValue reaction_FLAGSTRING = 8;
    */
-  reactionFLAGSTRING?: string;
-
+  reactionFLAGSTRING?: string
 }
 
 /**
@@ -6978,18 +6894,17 @@ export interface TLMessagesGetMessagesReactions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: repeated int32 id = 4;
    */
-  id: number[];
-
+  id: number[]
 }
 
 /**
@@ -6999,38 +6914,37 @@ export interface TLMessagesGetMessageReactionsList {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 id = 4;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Reaction reaction_FLAGREACTION = 5;
    */
-  reactionFLAGREACTION?: Reaction;
+  reactionFLAGREACTION?: Reaction
 
   /**
    * @generated from field: optional google.protobuf.StringValue offset = 6;
    */
-  offset?: string;
+  offset?: string
 
   /**
    * @generated from field: optional int32 limit = 7;
    */
-  limit?: number;
+  limit?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue reaction_FLAGSTRING = 8;
    */
-  reactionFLAGSTRING?: string;
-
+  reactionFLAGSTRING?: string
 }
 
 /**
@@ -7040,23 +6954,22 @@ export interface TLMessagesSetChatAvailableReactions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatReactions available_reactions_CHATREACTIONS = 4;
    */
-  availableReactionsCHATREACTIONS?: ChatReactions;
+  availableReactionsCHATREACTIONS?: ChatReactions
 
   /**
    * @generated from field: repeated string available_reactions_VECTORSTRING = 5;
    */
-  availableReactionsVECTORSTRING: string[];
-
+  availableReactionsVECTORSTRING: string[]
 }
 
 /**
@@ -7066,13 +6979,12 @@ export interface TLMessagesGetAvailableReactions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 hash = 3;
    */
-  hash?: number;
-
+  hash?: number
 }
 
 /**
@@ -7082,18 +6994,17 @@ export interface TLMessagesSetDefaultReaction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Reaction reaction_REACTION = 3;
    */
-  reactionREACTION?: Reaction;
+  reactionREACTION?: Reaction
 
   /**
    * @generated from field: optional string reaction_STRING = 4;
    */
-  reactionSTRING?: string;
-
+  reactionSTRING?: string
 }
 
 /**
@@ -7103,43 +7014,42 @@ export interface TLMessagesTranslateText {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: repeated int32 id = 4;
    */
-  id: number[];
+  id: number[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.TextWithEntities text_FLAGVECTORTEXTWITHENTITIES = 5;
    */
-  textFLAGVECTORTEXTWITHENTITIES: TextWithEntities[];
+  textFLAGVECTORTEXTWITHENTITIES: TextWithEntities[]
 
   /**
    * @generated from field: optional string to_lang = 6;
    */
-  toLang?: string;
+  toLang?: string
 
   /**
    * @generated from field: optional google.protobuf.Int32Value msg_id = 7;
    */
-  msgId?: number;
+  msgId?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue text_FLAGSTRING = 8;
    */
-  textFLAGSTRING?: string;
+  textFLAGSTRING?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue from_lang = 9;
    */
-  fromLang?: string;
-
+  fromLang?: string
 }
 
 /**
@@ -7149,43 +7059,42 @@ export interface TLMessagesGetUnreadReactions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.Int32Value top_msg_id = 4;
    */
-  topMsgId?: number;
+  topMsgId?: number
 
   /**
    * @generated from field: optional int32 offset_id = 5;
    */
-  offsetId?: number;
+  offsetId?: number
 
   /**
    * @generated from field: optional int32 add_offset = 6;
    */
-  addOffset?: number;
+  addOffset?: number
 
   /**
    * @generated from field: optional int32 limit = 7;
    */
-  limit?: number;
+  limit?: number
 
   /**
    * @generated from field: optional int32 max_id = 8;
    */
-  maxId?: number;
+  maxId?: number
 
   /**
    * @generated from field: optional int32 min_id = 9;
    */
-  minId?: number;
-
+  minId?: number
 }
 
 /**
@@ -7195,18 +7104,17 @@ export interface TLMessagesReadReactions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.Int32Value top_msg_id = 4;
    */
-  topMsgId?: number;
-
+  topMsgId?: number
 }
 
 /**
@@ -7216,23 +7124,22 @@ export interface TLMessagesSearchSentMedia {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string q = 3;
    */
-  q?: string;
+  q?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter filter = 4;
    */
-  filter?: MessagesFilter;
+  filter?: MessagesFilter
 
   /**
    * @generated from field: optional int32 limit = 5;
    */
-  limit?: number;
-
+  limit?: number
 }
 
 /**
@@ -7242,13 +7149,12 @@ export interface TLMessagesGetAttachMenuBots {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -7258,13 +7164,12 @@ export interface TLMessagesGetAttachMenuBot {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser bot = 3;
    */
-  bot?: InputUser;
-
+  bot?: InputUser
 }
 
 /**
@@ -7274,23 +7179,22 @@ export interface TLMessagesToggleBotInAttachMenu {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool write_allowed = 3;
    */
-  writeAllowed?: boolean;
+  writeAllowed?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser bot = 4;
    */
-  bot?: InputUser;
+  bot?: InputUser
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool enabled = 5;
    */
-  enabled?: Bool;
-
+  enabled?: Bool
 }
 
 /**
@@ -7300,68 +7204,67 @@ export interface TLMessagesRequestWebView {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool from_bot_menu = 3;
    */
-  fromBotMenu?: boolean;
+  fromBotMenu?: boolean
 
   /**
    * @generated from field: optional bool silent = 4;
    */
-  silent?: boolean;
+  silent?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 5;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser bot = 6;
    */
-  bot?: InputUser;
+  bot?: InputUser
 
   /**
    * @generated from field: optional google.protobuf.StringValue url = 7;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue start_param = 8;
    */
-  startParam?: string;
+  startParam?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON theme_params = 9;
    */
-  themeParams?: DataJSON;
+  themeParams?: DataJSON
 
   /**
    * @generated from field: optional string platform = 10;
    */
-  platform?: string;
+  platform?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputReplyTo reply_to = 11;
    */
-  replyTo?: InputReplyTo;
+  replyTo?: InputReplyTo
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer send_as = 12;
    */
-  sendAs?: InputPeer;
+  sendAs?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.Int32Value reply_to_msg_id = 13;
    */
-  replyToMsgId?: number;
+  replyToMsgId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value top_msg_id = 14;
    */
-  topMsgId?: number;
-
+  topMsgId?: number
 }
 
 /**
@@ -7371,48 +7274,47 @@ export interface TLMessagesProlongWebView {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool silent = 3;
    */
-  silent?: boolean;
+  silent?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 4;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser bot = 5;
    */
-  bot?: InputUser;
+  bot?: InputUser
 
   /**
    * @generated from field: optional int64 query_id = 6;
    */
-  queryId?: bigint;
+  queryId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputReplyTo reply_to = 7;
    */
-  replyTo?: InputReplyTo;
+  replyTo?: InputReplyTo
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer send_as = 8;
    */
-  sendAs?: InputPeer;
+  sendAs?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.Int32Value reply_to_msg_id = 9;
    */
-  replyToMsgId?: number;
+  replyToMsgId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value top_msg_id = 10;
    */
-  topMsgId?: number;
-
+  topMsgId?: number
 }
 
 /**
@@ -7422,48 +7324,47 @@ export interface TLMessagesRequestSimpleWebView {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool from_switch_webview = 3;
    */
-  fromSwitchWebview?: boolean;
+  fromSwitchWebview?: boolean
 
   /**
    * @generated from field: optional bool from_side_menu = 4;
    */
-  fromSideMenu?: boolean;
+  fromSideMenu?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser bot = 5;
    */
-  bot?: InputUser;
+  bot?: InputUser
 
   /**
    * @generated from field: optional google.protobuf.StringValue url_FLAGSTRING = 6;
    */
-  urlFLAGSTRING?: string;
+  urlFLAGSTRING?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue start_param = 7;
    */
-  startParam?: string;
+  startParam?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON theme_params = 8;
    */
-  themeParams?: DataJSON;
+  themeParams?: DataJSON
 
   /**
    * @generated from field: optional string platform = 9;
    */
-  platform?: string;
+  platform?: string
 
   /**
    * @generated from field: optional string url_STRING = 10;
    */
-  urlSTRING?: string;
-
+  urlSTRING?: string
 }
 
 /**
@@ -7473,18 +7374,17 @@ export interface TLMessagesSendWebViewResultMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string bot_query_id = 3;
    */
-  botQueryId?: string;
+  botQueryId?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotInlineResult result = 4;
    */
-  result?: InputBotInlineResult;
-
+  result?: InputBotInlineResult
 }
 
 /**
@@ -7494,28 +7394,27 @@ export interface TLMessagesSendWebViewData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser bot = 3;
    */
-  bot?: InputUser;
+  bot?: InputUser
 
   /**
    * @generated from field: optional int64 random_id = 4;
    */
-  randomId?: bigint;
+  randomId?: bigint
 
   /**
    * @generated from field: optional string button_text = 5;
    */
-  buttonText?: string;
+  buttonText?: string
 
   /**
    * @generated from field: optional string data = 6;
    */
-  data?: string;
-
+  data?: string
 }
 
 /**
@@ -7525,18 +7424,17 @@ export interface TLMessagesTranscribeAudio {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 msg_id = 4;
    */
-  msgId?: number;
-
+  msgId?: number
 }
 
 /**
@@ -7546,28 +7444,27 @@ export interface TLMessagesRateTranscribedAudio {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 msg_id = 4;
    */
-  msgId?: number;
+  msgId?: number
 
   /**
    * @generated from field: optional int64 transcription_id = 5;
    */
-  transcriptionId?: bigint;
+  transcriptionId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool good = 6;
    */
-  good?: Bool;
-
+  good?: Bool
 }
 
 /**
@@ -7577,13 +7474,12 @@ export interface TLMessagesGetCustomEmojiDocuments {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated int64 document_id = 3;
    */
-  documentId: bigint[];
-
+  documentId: bigint[]
 }
 
 /**
@@ -7593,13 +7489,12 @@ export interface TLMessagesGetEmojiStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -7609,13 +7504,12 @@ export interface TLMessagesGetFeaturedEmojiStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -7625,23 +7519,22 @@ export interface TLMessagesReportReaction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 id = 4;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer reaction_peer = 5;
    */
-  reactionPeer?: InputPeer;
-
+  reactionPeer?: InputPeer
 }
 
 /**
@@ -7651,18 +7544,17 @@ export interface TLMessagesGetTopReactions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 limit = 3;
    */
-  limit?: number;
+  limit?: number
 
   /**
    * @generated from field: optional int64 hash = 4;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -7672,18 +7564,17 @@ export interface TLMessagesGetRecentReactions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 limit = 3;
    */
-  limit?: number;
+  limit?: number
 
   /**
    * @generated from field: optional int64 hash = 4;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -7693,8 +7584,7 @@ export interface TLMessagesClearRecentReactions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -7704,18 +7594,17 @@ export interface TLMessagesGetExtendedMedia {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: repeated int32 id = 4;
    */
-  id: number[];
-
+  id: number[]
 }
 
 /**
@@ -7725,13 +7614,12 @@ export interface TLMessagesSetDefaultHistoryTTL {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 period = 3;
    */
-  period?: number;
-
+  period?: number
 }
 
 /**
@@ -7741,8 +7629,7 @@ export interface TLMessagesGetDefaultHistoryTTL {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -7752,28 +7639,27 @@ export interface TLMessagesSendBotRequestedPeer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 msg_id = 4;
    */
-  msgId?: number;
+  msgId?: number
 
   /**
    * @generated from field: optional int32 button_id = 5;
    */
-  buttonId?: number;
+  buttonId?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer requested_peer = 6;
    */
-  requestedPeer?: InputPeer;
-
+  requestedPeer?: InputPeer
 }
 
 /**
@@ -7783,13 +7669,12 @@ export interface TLMessagesGetEmojiGroups {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 hash = 3;
    */
-  hash?: number;
-
+  hash?: number
 }
 
 /**
@@ -7799,13 +7684,12 @@ export interface TLMessagesGetEmojiStatusGroups {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 hash = 3;
    */
-  hash?: number;
-
+  hash?: number
 }
 
 /**
@@ -7815,13 +7699,12 @@ export interface TLMessagesGetEmojiProfilePhotoGroups {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 hash = 3;
    */
-  hash?: number;
-
+  hash?: number
 }
 
 /**
@@ -7831,18 +7714,17 @@ export interface TLMessagesSearchCustomEmoji {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string emoticon = 3;
    */
-  emoticon?: string;
+  emoticon?: string
 
   /**
    * @generated from field: optional int64 hash = 4;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -7852,18 +7734,17 @@ export interface TLMessagesTogglePeerTranslations {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool disabled = 3;
    */
-  disabled?: boolean;
+  disabled?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 4;
    */
-  peer?: InputPeer;
-
+  peer?: InputPeer
 }
 
 /**
@@ -7873,18 +7754,17 @@ export interface TLMessagesGetBotApp {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotApp app = 3;
    */
-  app?: InputBotApp;
+  app?: InputBotApp
 
   /**
    * @generated from field: optional int64 hash = 4;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -7894,38 +7774,37 @@ export interface TLMessagesRequestAppWebView {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool write_allowed = 3;
    */
-  writeAllowed?: boolean;
+  writeAllowed?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 4;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotApp app = 5;
    */
-  app?: InputBotApp;
+  app?: InputBotApp
 
   /**
    * @generated from field: optional google.protobuf.StringValue start_param = 6;
    */
-  startParam?: string;
+  startParam?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON theme_params = 7;
    */
-  themeParams?: DataJSON;
+  themeParams?: DataJSON
 
   /**
    * @generated from field: optional string platform = 8;
    */
-  platform?: string;
-
+  platform?: string
 }
 
 /**
@@ -7935,28 +7814,27 @@ export interface TLMessagesSetChatWallPaper {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputWallPaper wallpaper = 4;
    */
-  wallpaper?: InputWallPaper;
+  wallpaper?: InputWallPaper
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WallPaperSettings settings = 5;
    */
-  settings?: WallPaperSettings;
+  settings?: WallPaperSettings
 
   /**
    * @generated from field: optional google.protobuf.Int32Value id = 6;
    */
-  id?: number;
-
+  id?: number
 }
 
 /**
@@ -7966,8 +7844,7 @@ export interface TLUpdatesGetState {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -7977,38 +7854,37 @@ export interface TLUpdatesGetDifference {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 pts = 3;
    */
-  pts?: number;
+  pts?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value pts_limit = 4;
    */
-  ptsLimit?: number;
+  ptsLimit?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value pts_total_limit = 5;
    */
-  ptsTotalLimit?: number;
+  ptsTotalLimit?: number
 
   /**
    * @generated from field: optional int32 date = 6;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional int32 qts = 7;
    */
-  qts?: number;
+  qts?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value qts_limit = 8;
    */
-  qtsLimit?: number;
-
+  qtsLimit?: number
 }
 
 /**
@@ -8018,33 +7894,32 @@ export interface TLUpdatesGetChannelDifference {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool force = 3;
    */
-  force?: boolean;
+  force?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 4;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelMessagesFilter filter = 5;
    */
-  filter?: ChannelMessagesFilter;
+  filter?: ChannelMessagesFilter
 
   /**
    * @generated from field: optional int32 pts = 6;
    */
-  pts?: number;
+  pts?: number
 
   /**
    * @generated from field: optional int32 limit = 7;
    */
-  limit?: number;
-
+  limit?: number
 }
 
 /**
@@ -8054,23 +7929,22 @@ export interface TLPhotosUpdateProfilePhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool fallback = 3;
    */
-  fallback?: boolean;
+  fallback?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser bot = 4;
    */
-  bot?: InputUser;
+  bot?: InputUser
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPhoto id = 5;
    */
-  id?: InputPhoto;
-
+  id?: InputPhoto
 }
 
 /**
@@ -8080,38 +7954,37 @@ export interface TLPhotosUploadProfilePhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool fallback = 3;
    */
-  fallback?: boolean;
+  fallback?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser bot = 4;
    */
-  bot?: InputUser;
+  bot?: InputUser
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFile file = 5;
    */
-  file?: InputFile;
+  file?: InputFile
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFile video = 6;
    */
-  video?: InputFile;
+  video?: InputFile
 
   /**
    * @generated from field: optional google.protobuf.DoubleValue video_start_ts = 7;
    */
-  videoStartTs?: number;
+  videoStartTs?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.VideoSize video_emoji_markup = 8;
    */
-  videoEmojiMarkup?: VideoSize;
-
+  videoEmojiMarkup?: VideoSize
 }
 
 /**
@@ -8121,13 +7994,12 @@ export interface TLPhotosDeletePhotos {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputPhoto id = 3;
    */
-  id: InputPhoto[];
-
+  id: InputPhoto[]
 }
 
 /**
@@ -8137,28 +8009,27 @@ export interface TLPhotosGetUserPhotos {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 3;
    */
-  userId?: InputUser;
+  userId?: InputUser
 
   /**
    * @generated from field: optional int32 offset = 4;
    */
-  offset?: number;
+  offset?: number
 
   /**
    * @generated from field: optional int64 max_id = 5;
    */
-  maxId?: bigint;
+  maxId?: bigint
 
   /**
    * @generated from field: optional int32 limit = 6;
    */
-  limit?: number;
-
+  limit?: number
 }
 
 /**
@@ -8168,43 +8039,42 @@ export interface TLPhotosUploadContactProfilePhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool suggest = 3;
    */
-  suggest?: boolean;
+  suggest?: boolean
 
   /**
    * @generated from field: optional bool save = 4;
    */
-  save?: boolean;
+  save?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 5;
    */
-  userId?: InputUser;
+  userId?: InputUser
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFile file = 6;
    */
-  file?: InputFile;
+  file?: InputFile
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFile video = 7;
    */
-  video?: InputFile;
+  video?: InputFile
 
   /**
    * @generated from field: optional google.protobuf.DoubleValue video_start_ts = 8;
    */
-  videoStartTs?: number;
+  videoStartTs?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.VideoSize video_emoji_markup = 9;
    */
-  videoEmojiMarkup?: VideoSize;
-
+  videoEmojiMarkup?: VideoSize
 }
 
 /**
@@ -8214,23 +8084,22 @@ export interface TLUploadSaveFilePart {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 file_id = 3;
    */
-  fileId?: bigint;
+  fileId?: bigint
 
   /**
    * @generated from field: optional int32 file_part = 4;
    */
-  filePart?: number;
+  filePart?: number
 
   /**
    * @generated from field: optional bytes bytes = 5;
    */
-  bytes?: Uint8Array;
-
+  bytes?: Uint8Array
 }
 
 /**
@@ -8240,38 +8109,37 @@ export interface TLUploadGetFile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool precise = 3;
    */
-  precise?: boolean;
+  precise?: boolean
 
   /**
    * @generated from field: optional bool cdn_supported = 4;
    */
-  cdnSupported?: boolean;
+  cdnSupported?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFileLocation location = 5;
    */
-  location?: InputFileLocation;
+  location?: InputFileLocation
 
   /**
    * @generated from field: optional int64 offset_INT64 = 6;
    */
-  offsetINT64?: bigint;
+  offsetINT64?: bigint
 
   /**
    * @generated from field: optional int32 limit = 7;
    */
-  limit?: number;
+  limit?: number
 
   /**
    * @generated from field: optional int32 offset_INT32 = 8;
    */
-  offsetINT32?: number;
-
+  offsetINT32?: number
 }
 
 /**
@@ -8281,28 +8149,27 @@ export interface TLUploadSaveBigFilePart {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 file_id = 3;
    */
-  fileId?: bigint;
+  fileId?: bigint
 
   /**
    * @generated from field: optional int32 file_part = 4;
    */
-  filePart?: number;
+  filePart?: number
 
   /**
    * @generated from field: optional int32 file_total_parts = 5;
    */
-  fileTotalParts?: number;
+  fileTotalParts?: number
 
   /**
    * @generated from field: optional bytes bytes = 6;
    */
-  bytes?: Uint8Array;
-
+  bytes?: Uint8Array
 }
 
 /**
@@ -8312,23 +8179,22 @@ export interface TLUploadGetWebFile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputWebFileLocation location = 3;
    */
-  location?: InputWebFileLocation;
+  location?: InputWebFileLocation
 
   /**
    * @generated from field: optional int32 offset = 4;
    */
-  offset?: number;
+  offset?: number
 
   /**
    * @generated from field: optional int32 limit = 5;
    */
-  limit?: number;
-
+  limit?: number
 }
 
 /**
@@ -8338,28 +8204,27 @@ export interface TLUploadGetCdnFile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes file_token = 3;
    */
-  fileToken?: Uint8Array;
+  fileToken?: Uint8Array
 
   /**
    * @generated from field: optional int64 offset_INT64 = 4;
    */
-  offsetINT64?: bigint;
+  offsetINT64?: bigint
 
   /**
    * @generated from field: optional int32 limit = 5;
    */
-  limit?: number;
+  limit?: number
 
   /**
    * @generated from field: optional int32 offset_INT32 = 6;
    */
-  offsetINT32?: number;
-
+  offsetINT32?: number
 }
 
 /**
@@ -8369,18 +8234,17 @@ export interface TLUploadReuploadCdnFile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes file_token = 3;
    */
-  fileToken?: Uint8Array;
+  fileToken?: Uint8Array
 
   /**
    * @generated from field: optional bytes request_token = 4;
    */
-  requestToken?: Uint8Array;
-
+  requestToken?: Uint8Array
 }
 
 /**
@@ -8390,23 +8254,22 @@ export interface TLUploadGetCdnFileHashes {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes file_token = 3;
    */
-  fileToken?: Uint8Array;
+  fileToken?: Uint8Array
 
   /**
    * @generated from field: optional int64 offset_INT64 = 4;
    */
-  offsetINT64?: bigint;
+  offsetINT64?: bigint
 
   /**
    * @generated from field: optional int32 offset_INT32 = 5;
    */
-  offsetINT32?: number;
-
+  offsetINT32?: number
 }
 
 /**
@@ -8416,23 +8279,22 @@ export interface TLUploadGetFileHashes {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFileLocation location = 3;
    */
-  location?: InputFileLocation;
+  location?: InputFileLocation
 
   /**
    * @generated from field: optional int64 offset_INT64 = 4;
    */
-  offsetINT64?: bigint;
+  offsetINT64?: bigint
 
   /**
    * @generated from field: optional int32 offset_INT32 = 5;
    */
-  offsetINT32?: number;
-
+  offsetINT32?: number
 }
 
 /**
@@ -8442,8 +8304,7 @@ export interface TLHelpGetConfig {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -8453,8 +8314,7 @@ export interface TLHelpGetNearestDc {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -8464,13 +8324,12 @@ export interface TLHelpGetAppUpdate {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string source = 3;
    */
-  source?: string;
-
+  source?: string
 }
 
 /**
@@ -8480,8 +8339,7 @@ export interface TLHelpGetInviteText {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -8491,8 +8349,7 @@ export interface TLHelpGetSupport {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -8502,13 +8359,12 @@ export interface TLHelpGetAppChangelog {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string prev_app_version = 3;
    */
-  prevAppVersion?: string;
-
+  prevAppVersion?: string
 }
 
 /**
@@ -8518,18 +8374,17 @@ export interface TLHelpSetBotUpdatesStatus {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 pending_updates_count = 3;
    */
-  pendingUpdatesCount?: number;
+  pendingUpdatesCount?: number
 
   /**
    * @generated from field: optional string message = 4;
    */
-  message?: string;
-
+  message?: string
 }
 
 /**
@@ -8539,8 +8394,7 @@ export interface TLHelpGetCdnConfig {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -8550,13 +8404,12 @@ export interface TLHelpGetRecentMeUrls {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string referer = 3;
    */
-  referer?: string;
-
+  referer?: string
 }
 
 /**
@@ -8566,8 +8419,7 @@ export interface TLHelpGetTermsOfServiceUpdate {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -8577,13 +8429,12 @@ export interface TLHelpAcceptTermsOfService {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON id = 3;
    */
-  id?: DataJSON;
-
+  id?: DataJSON
 }
 
 /**
@@ -8593,13 +8444,12 @@ export interface TLHelpGetDeepLinkInfo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string path = 3;
    */
-  path?: string;
-
+  path?: string
 }
 
 /**
@@ -8609,13 +8459,12 @@ export interface TLHelpGetAppConfig61E3F854 {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 hash = 3;
    */
-  hash?: number;
-
+  hash?: number
 }
 
 /**
@@ -8625,13 +8474,12 @@ export interface TLHelpSaveAppLog {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputAppEvent events = 3;
    */
-  events: InputAppEvent[];
-
+  events: InputAppEvent[]
 }
 
 /**
@@ -8641,13 +8489,12 @@ export interface TLHelpGetPassportConfig {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 hash = 3;
    */
-  hash?: number;
-
+  hash?: number
 }
 
 /**
@@ -8657,8 +8504,7 @@ export interface TLHelpGetSupportName {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -8668,13 +8514,12 @@ export interface TLHelpGetUserInfo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 3;
    */
-  userId?: InputUser;
-
+  userId?: InputUser
 }
 
 /**
@@ -8684,23 +8529,22 @@ export interface TLHelpEditUserInfo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 3;
    */
-  userId?: InputUser;
+  userId?: InputUser
 
   /**
    * @generated from field: optional string message = 4;
    */
-  message?: string;
+  message?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 5;
    */
-  entities: MessageEntity[];
-
+  entities: MessageEntity[]
 }
 
 /**
@@ -8710,8 +8554,7 @@ export interface TLHelpGetPromoData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -8721,13 +8564,12 @@ export interface TLHelpHidePromoData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
-
+  peer?: InputPeer
 }
 
 /**
@@ -8737,18 +8579,17 @@ export interface TLHelpDismissSuggestion {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional string suggestion = 4;
    */
-  suggestion?: string;
-
+  suggestion?: string
 }
 
 /**
@@ -8758,18 +8599,17 @@ export interface TLHelpGetCountriesList {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string lang_code = 3;
    */
-  langCode?: string;
+  langCode?: string
 
   /**
    * @generated from field: optional int32 hash = 4;
    */
-  hash?: number;
-
+  hash?: number
 }
 
 /**
@@ -8779,8 +8619,7 @@ export interface TLHelpGetPremiumPromo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -8790,18 +8629,17 @@ export interface TLChannelsReadHistory {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional int32 max_id = 4;
    */
-  maxId?: number;
-
+  maxId?: number
 }
 
 /**
@@ -8811,18 +8649,17 @@ export interface TLChannelsDeleteMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: repeated int32 id = 4;
    */
-  id: number[];
-
+  id: number[]
 }
 
 /**
@@ -8832,23 +8669,22 @@ export interface TLChannelsReportSpam {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer participant = 4;
    */
-  participant?: InputPeer;
+  participant?: InputPeer
 
   /**
    * @generated from field: repeated int32 id = 5;
    */
-  id: number[];
-
+  id: number[]
 }
 
 /**
@@ -8858,23 +8694,22 @@ export interface TLChannelsGetMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputMessage id_VECTORINPUTMESSAGE = 4;
    */
-  idVECTORINPUTMESSAGE: InputMessage[];
+  idVECTORINPUTMESSAGE: InputMessage[]
 
   /**
    * @generated from field: repeated int32 id_VECTORINT32 = 5;
    */
-  idVECTORINT32: number[];
-
+  idVECTORINT32: number[]
 }
 
 /**
@@ -8884,33 +8719,32 @@ export interface TLChannelsGetParticipants {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelParticipantsFilter filter = 4;
    */
-  filter?: ChannelParticipantsFilter;
+  filter?: ChannelParticipantsFilter
 
   /**
    * @generated from field: optional int32 offset = 5;
    */
-  offset?: number;
+  offset?: number
 
   /**
    * @generated from field: optional int32 limit = 6;
    */
-  limit?: number;
+  limit?: number
 
   /**
    * @generated from field: optional int64 hash = 7;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -8920,18 +8754,17 @@ export interface TLChannelsGetParticipant {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer participant = 4;
    */
-  participant?: InputPeer;
-
+  participant?: InputPeer
 }
 
 /**
@@ -8941,13 +8774,12 @@ export interface TLChannelsGetChannels {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputChannel id = 3;
    */
-  id: InputChannel[];
-
+  id: InputChannel[]
 }
 
 /**
@@ -8957,13 +8789,12 @@ export interface TLChannelsGetFullChannel {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
-
+  channel?: InputChannel
 }
 
 /**
@@ -8973,53 +8804,52 @@ export interface TLChannelsCreateChannel {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool broadcast = 3;
    */
-  broadcast?: boolean;
+  broadcast?: boolean
 
   /**
    * @generated from field: optional bool megagroup = 4;
    */
-  megagroup?: boolean;
+  megagroup?: boolean
 
   /**
    * @generated from field: optional bool for_import = 5;
    */
-  forImport?: boolean;
+  forImport?: boolean
 
   /**
    * @generated from field: optional bool forum = 6;
    */
-  forum?: boolean;
+  forum?: boolean
 
   /**
    * @generated from field: optional string title = 7;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional string about = 8;
    */
-  about?: string;
+  about?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGeoPoint geo_point = 9;
    */
-  geoPoint?: InputGeoPoint;
+  geoPoint?: InputGeoPoint
 
   /**
    * @generated from field: optional google.protobuf.StringValue address = 10;
    */
-  address?: string;
+  address?: string
 
   /**
    * @generated from field: optional google.protobuf.Int32Value ttl_period = 11;
    */
-  ttlPeriod?: number;
-
+  ttlPeriod?: number
 }
 
 /**
@@ -9029,28 +8859,27 @@ export interface TLChannelsEditAdmin {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 4;
    */
-  userId?: InputUser;
+  userId?: InputUser
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatAdminRights admin_rights = 5;
    */
-  adminRights?: ChatAdminRights;
+  adminRights?: ChatAdminRights
 
   /**
    * @generated from field: optional string rank = 6;
    */
-  rank?: string;
-
+  rank?: string
 }
 
 /**
@@ -9060,18 +8889,17 @@ export interface TLChannelsEditTitle {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional string title = 4;
    */
-  title?: string;
-
+  title?: string
 }
 
 /**
@@ -9081,18 +8909,17 @@ export interface TLChannelsEditPhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChatPhoto photo = 4;
    */
-  photo?: InputChatPhoto;
-
+  photo?: InputChatPhoto
 }
 
 /**
@@ -9102,18 +8929,17 @@ export interface TLChannelsCheckUsername {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional string username = 4;
    */
-  username?: string;
-
+  username?: string
 }
 
 /**
@@ -9123,18 +8949,17 @@ export interface TLChannelsUpdateUsername {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional string username = 4;
    */
-  username?: string;
-
+  username?: string
 }
 
 /**
@@ -9144,13 +8969,12 @@ export interface TLChannelsJoinChannel {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
-
+  channel?: InputChannel
 }
 
 /**
@@ -9160,13 +8984,12 @@ export interface TLChannelsLeaveChannel {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
-
+  channel?: InputChannel
 }
 
 /**
@@ -9176,18 +8999,17 @@ export interface TLChannelsInviteToChannel {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputUser users = 4;
    */
-  users: InputUser[];
-
+  users: InputUser[]
 }
 
 /**
@@ -9197,13 +9019,12 @@ export interface TLChannelsDeleteChannel {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
-
+  channel?: InputChannel
 }
 
 /**
@@ -9213,28 +9034,27 @@ export interface TLChannelsExportMessageLink {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool grouped = 3;
    */
-  grouped?: boolean;
+  grouped?: boolean
 
   /**
    * @generated from field: optional bool thread = 4;
    */
-  thread?: boolean;
+  thread?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 5;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional int32 id = 6;
    */
-  id?: number;
-
+  id?: number
 }
 
 /**
@@ -9244,18 +9064,17 @@ export interface TLChannelsToggleSignatures {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool enabled = 4;
    */
-  enabled?: Bool;
-
+  enabled?: Bool
 }
 
 /**
@@ -9265,18 +9084,17 @@ export interface TLChannelsGetAdminedPublicChannels {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool by_location = 3;
    */
-  byLocation?: boolean;
+  byLocation?: boolean
 
   /**
    * @generated from field: optional bool check_limit = 4;
    */
-  checkLimit?: boolean;
-
+  checkLimit?: boolean
 }
 
 /**
@@ -9286,23 +9104,22 @@ export interface TLChannelsEditBanned {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer participant = 4;
    */
-  participant?: InputPeer;
+  participant?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatBannedRights banned_rights = 5;
    */
-  bannedRights?: ChatBannedRights;
-
+  bannedRights?: ChatBannedRights
 }
 
 /**
@@ -9312,43 +9129,42 @@ export interface TLChannelsGetAdminLog {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional string q = 4;
    */
-  q?: string;
+  q?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventsFilter events_filter = 5;
    */
-  eventsFilter?: ChannelAdminLogEventsFilter;
+  eventsFilter?: ChannelAdminLogEventsFilter
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputUser admins = 6;
    */
-  admins: InputUser[];
+  admins: InputUser[]
 
   /**
    * @generated from field: optional int64 max_id = 7;
    */
-  maxId?: bigint;
+  maxId?: bigint
 
   /**
    * @generated from field: optional int64 min_id = 8;
    */
-  minId?: bigint;
+  minId?: bigint
 
   /**
    * @generated from field: optional int32 limit = 9;
    */
-  limit?: number;
-
+  limit?: number
 }
 
 /**
@@ -9358,18 +9174,17 @@ export interface TLChannelsSetStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet stickerset = 4;
    */
-  stickerset?: InputStickerSet;
-
+  stickerset?: InputStickerSet
 }
 
 /**
@@ -9379,18 +9194,17 @@ export interface TLChannelsReadMessageContents {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: repeated int32 id = 4;
    */
-  id: number[];
-
+  id: number[]
 }
 
 /**
@@ -9400,23 +9214,22 @@ export interface TLChannelsDeleteHistory9BAA9647 {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool for_everyone = 3;
    */
-  forEveryone?: boolean;
+  forEveryone?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 4;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional int32 max_id = 5;
    */
-  maxId?: number;
-
+  maxId?: number
 }
 
 /**
@@ -9426,18 +9239,17 @@ export interface TLChannelsTogglePreHistoryHidden {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool enabled = 4;
    */
-  enabled?: Bool;
-
+  enabled?: Bool
 }
 
 /**
@@ -9447,13 +9259,12 @@ export interface TLChannelsGetLeftChannels {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 offset = 3;
    */
-  offset?: number;
-
+  offset?: number
 }
 
 /**
@@ -9463,8 +9274,7 @@ export interface TLChannelsGetGroupsForDiscussion {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -9474,18 +9284,17 @@ export interface TLChannelsSetDiscussionGroup {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel broadcast = 3;
    */
-  broadcast?: InputChannel;
+  broadcast?: InputChannel
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel group = 4;
    */
-  group?: InputChannel;
-
+  group?: InputChannel
 }
 
 /**
@@ -9495,23 +9304,22 @@ export interface TLChannelsEditCreator {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 4;
    */
-  userId?: InputUser;
+  userId?: InputUser
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputCheckPasswordSRP password = 5;
    */
-  password?: InputCheckPasswordSRP;
-
+  password?: InputCheckPasswordSRP
 }
 
 /**
@@ -9521,23 +9329,22 @@ export interface TLChannelsEditLocation {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGeoPoint geo_point = 4;
    */
-  geoPoint?: InputGeoPoint;
+  geoPoint?: InputGeoPoint
 
   /**
    * @generated from field: optional string address = 5;
    */
-  address?: string;
-
+  address?: string
 }
 
 /**
@@ -9547,18 +9354,17 @@ export interface TLChannelsToggleSlowMode {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional int32 seconds = 4;
    */
-  seconds?: number;
-
+  seconds?: number
 }
 
 /**
@@ -9568,8 +9374,7 @@ export interface TLChannelsGetInactiveChannels {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -9579,13 +9384,12 @@ export interface TLChannelsConvertToGigagroup {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
-
+  channel?: InputChannel
 }
 
 /**
@@ -9595,18 +9399,17 @@ export interface TLChannelsViewSponsoredMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional bytes random_id = 4;
    */
-  randomId?: Uint8Array;
-
+  randomId?: Uint8Array
 }
 
 /**
@@ -9616,13 +9419,12 @@ export interface TLChannelsGetSponsoredMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
-
+  channel?: InputChannel
 }
 
 /**
@@ -9632,13 +9434,12 @@ export interface TLChannelsGetSendAs {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
-
+  peer?: InputPeer
 }
 
 /**
@@ -9648,18 +9449,17 @@ export interface TLChannelsDeleteParticipantHistory {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer participant = 4;
    */
-  participant?: InputPeer;
-
+  participant?: InputPeer
 }
 
 /**
@@ -9669,18 +9469,17 @@ export interface TLChannelsToggleJoinToSend {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool enabled = 4;
    */
-  enabled?: Bool;
-
+  enabled?: Bool
 }
 
 /**
@@ -9690,18 +9489,17 @@ export interface TLChannelsToggleJoinRequest {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool enabled = 4;
    */
-  enabled?: Bool;
-
+  enabled?: Bool
 }
 
 /**
@@ -9711,18 +9509,17 @@ export interface TLChannelsReorderUsernames {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: repeated string order = 4;
    */
-  order: string[];
-
+  order: string[]
 }
 
 /**
@@ -9732,23 +9529,22 @@ export interface TLChannelsToggleUsername {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional string username = 4;
    */
-  username?: string;
+  username?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool active = 5;
    */
-  active?: Bool;
-
+  active?: Bool
 }
 
 /**
@@ -9758,13 +9554,12 @@ export interface TLChannelsDeactivateAllUsernames {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
-
+  channel?: InputChannel
 }
 
 /**
@@ -9774,18 +9569,17 @@ export interface TLChannelsToggleForum {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool enabled = 4;
    */
-  enabled?: Bool;
-
+  enabled?: Bool
 }
 
 /**
@@ -9795,38 +9589,37 @@ export interface TLChannelsCreateForumTopic {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional string title = 4;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional google.protobuf.Int32Value icon_color = 5;
    */
-  iconColor?: number;
+  iconColor?: number
 
   /**
    * @generated from field: optional google.protobuf.Int64Value icon_emoji_id = 6;
    */
-  iconEmojiId?: bigint;
+  iconEmojiId?: bigint
 
   /**
    * @generated from field: optional int64 random_id = 7;
    */
-  randomId?: bigint;
+  randomId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer send_as = 8;
    */
-  sendAs?: InputPeer;
-
+  sendAs?: InputPeer
 }
 
 /**
@@ -9836,38 +9629,37 @@ export interface TLChannelsGetForumTopics {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional google.protobuf.StringValue q = 4;
    */
-  q?: string;
+  q?: string
 
   /**
    * @generated from field: optional int32 offset_date = 5;
    */
-  offsetDate?: number;
+  offsetDate?: number
 
   /**
    * @generated from field: optional int32 offset_id = 6;
    */
-  offsetId?: number;
+  offsetId?: number
 
   /**
    * @generated from field: optional int32 offset_topic = 7;
    */
-  offsetTopic?: number;
+  offsetTopic?: number
 
   /**
    * @generated from field: optional int32 limit = 8;
    */
-  limit?: number;
-
+  limit?: number
 }
 
 /**
@@ -9877,18 +9669,17 @@ export interface TLChannelsGetForumTopicsByID {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: repeated int32 topics = 4;
    */
-  topics: number[];
-
+  topics: number[]
 }
 
 /**
@@ -9898,38 +9689,37 @@ export interface TLChannelsEditForumTopic {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional int32 topic_id = 4;
    */
-  topicId?: number;
+  topicId?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue title = 5;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional google.protobuf.Int64Value icon_emoji_id = 6;
    */
-  iconEmojiId?: bigint;
+  iconEmojiId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool closed = 7;
    */
-  closed?: Bool;
+  closed?: Bool
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool hidden = 8;
    */
-  hidden?: Bool;
-
+  hidden?: Bool
 }
 
 /**
@@ -9939,23 +9729,22 @@ export interface TLChannelsUpdatePinnedForumTopic {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional int32 topic_id = 4;
    */
-  topicId?: number;
+  topicId?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool pinned = 5;
    */
-  pinned?: Bool;
-
+  pinned?: Bool
 }
 
 /**
@@ -9965,18 +9754,17 @@ export interface TLChannelsDeleteTopicHistory {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional int32 top_msg_id = 4;
    */
-  topMsgId?: number;
-
+  topMsgId?: number
 }
 
 /**
@@ -9986,23 +9774,22 @@ export interface TLChannelsReorderPinnedForumTopics {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool force = 3;
    */
-  force?: boolean;
+  force?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 4;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: repeated int32 order = 5;
    */
-  order: number[];
-
+  order: number[]
 }
 
 /**
@@ -10012,18 +9799,17 @@ export interface TLChannelsToggleAntiSpam {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool enabled = 4;
    */
-  enabled?: Bool;
-
+  enabled?: Bool
 }
 
 /**
@@ -10033,18 +9819,17 @@ export interface TLChannelsReportAntiSpamFalsePositive {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional int32 msg_id = 4;
    */
-  msgId?: number;
-
+  msgId?: number
 }
 
 /**
@@ -10054,18 +9839,17 @@ export interface TLChannelsToggleParticipantsHidden {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool enabled = 4;
    */
-  enabled?: Bool;
-
+  enabled?: Bool
 }
 
 /**
@@ -10075,18 +9859,17 @@ export interface TLChannelsClickSponsoredMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional bytes random_id = 4;
    */
-  randomId?: Uint8Array;
-
+  randomId?: Uint8Array
 }
 
 /**
@@ -10096,18 +9879,17 @@ export interface TLBotsSendCustomRequest {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string custom_method = 3;
    */
-  customMethod?: string;
+  customMethod?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON params = 4;
    */
-  params?: DataJSON;
-
+  params?: DataJSON
 }
 
 /**
@@ -10117,18 +9899,17 @@ export interface TLBotsAnswerWebhookJSONQuery {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 query_id = 3;
    */
-  queryId?: bigint;
+  queryId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON data = 4;
    */
-  data?: DataJSON;
-
+  data?: DataJSON
 }
 
 /**
@@ -10138,23 +9919,22 @@ export interface TLBotsSetBotCommands {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotCommandScope scope = 3;
    */
-  scope?: BotCommandScope;
+  scope?: BotCommandScope
 
   /**
    * @generated from field: optional string lang_code = 4;
    */
-  langCode?: string;
+  langCode?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.BotCommand commands = 5;
    */
-  commands: BotCommand[];
-
+  commands: BotCommand[]
 }
 
 /**
@@ -10164,18 +9944,17 @@ export interface TLBotsResetBotCommands {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotCommandScope scope = 3;
    */
-  scope?: BotCommandScope;
+  scope?: BotCommandScope
 
   /**
    * @generated from field: optional string lang_code = 4;
    */
-  langCode?: string;
-
+  langCode?: string
 }
 
 /**
@@ -10185,18 +9964,17 @@ export interface TLBotsGetBotCommands {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotCommandScope scope = 3;
    */
-  scope?: BotCommandScope;
+  scope?: BotCommandScope
 
   /**
    * @generated from field: optional string lang_code = 4;
    */
-  langCode?: string;
-
+  langCode?: string
 }
 
 /**
@@ -10206,18 +9984,17 @@ export interface TLBotsSetBotMenuButton {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 3;
    */
-  userId?: InputUser;
+  userId?: InputUser
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotMenuButton button = 4;
    */
-  button?: BotMenuButton;
-
+  button?: BotMenuButton
 }
 
 /**
@@ -10227,13 +10004,12 @@ export interface TLBotsGetBotMenuButton {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 3;
    */
-  userId?: InputUser;
-
+  userId?: InputUser
 }
 
 /**
@@ -10243,13 +10019,12 @@ export interface TLBotsSetBotBroadcastDefaultAdminRights {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatAdminRights admin_rights = 3;
    */
-  adminRights?: ChatAdminRights;
-
+  adminRights?: ChatAdminRights
 }
 
 /**
@@ -10259,13 +10034,12 @@ export interface TLBotsSetBotGroupDefaultAdminRights {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatAdminRights admin_rights = 3;
    */
-  adminRights?: ChatAdminRights;
-
+  adminRights?: ChatAdminRights
 }
 
 /**
@@ -10275,33 +10049,32 @@ export interface TLBotsSetBotInfo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser bot = 3;
    */
-  bot?: InputUser;
+  bot?: InputUser
 
   /**
    * @generated from field: optional string lang_code = 4;
    */
-  langCode?: string;
+  langCode?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue name = 5;
    */
-  name?: string;
+  name?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue about = 6;
    */
-  about?: string;
+  about?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue description = 7;
    */
-  description?: string;
-
+  description?: string
 }
 
 /**
@@ -10311,18 +10084,17 @@ export interface TLBotsGetBotInfoDCD914FD {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser bot = 3;
    */
-  bot?: InputUser;
+  bot?: InputUser
 
   /**
    * @generated from field: optional string lang_code = 4;
    */
-  langCode?: string;
-
+  langCode?: string
 }
 
 /**
@@ -10332,18 +10104,17 @@ export interface TLBotsReorderUsernames {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser bot = 3;
    */
-  bot?: InputUser;
+  bot?: InputUser
 
   /**
    * @generated from field: repeated string order = 4;
    */
-  order: string[];
-
+  order: string[]
 }
 
 /**
@@ -10353,23 +10124,22 @@ export interface TLBotsToggleUsername {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser bot = 3;
    */
-  bot?: InputUser;
+  bot?: InputUser
 
   /**
    * @generated from field: optional string username = 4;
    */
-  username?: string;
+  username?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool active = 5;
    */
-  active?: Bool;
-
+  active?: Bool
 }
 
 /**
@@ -10379,13 +10149,12 @@ export interface TLBotsCanSendMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser bot = 3;
    */
-  bot?: InputUser;
-
+  bot?: InputUser
 }
 
 /**
@@ -10395,13 +10164,12 @@ export interface TLBotsAllowSendMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser bot = 3;
    */
-  bot?: InputUser;
-
+  bot?: InputUser
 }
 
 /**
@@ -10411,23 +10179,22 @@ export interface TLBotsInvokeWebViewCustomMethod {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser bot = 3;
    */
-  bot?: InputUser;
+  bot?: InputUser
 
   /**
    * @generated from field: optional string custom_method = 4;
    */
-  customMethod?: string;
+  customMethod?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON params = 5;
    */
-  params?: DataJSON;
-
+  params?: DataJSON
 }
 
 /**
@@ -10437,28 +10204,27 @@ export interface TLPaymentsGetPaymentForm {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputInvoice invoice = 3;
    */
-  invoice?: InputInvoice;
+  invoice?: InputInvoice
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON theme_params = 4;
    */
-  themeParams?: DataJSON;
+  themeParams?: DataJSON
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 5;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 msg_id = 6;
    */
-  msgId?: number;
-
+  msgId?: number
 }
 
 /**
@@ -10468,18 +10234,17 @@ export interface TLPaymentsGetPaymentReceipt {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 msg_id = 4;
    */
-  msgId?: number;
-
+  msgId?: number
 }
 
 /**
@@ -10489,33 +10254,32 @@ export interface TLPaymentsValidateRequestedInfo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool save = 3;
    */
-  save?: boolean;
+  save?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputInvoice invoice = 4;
    */
-  invoice?: InputInvoice;
+  invoice?: InputInvoice
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PaymentRequestedInfo info = 5;
    */
-  info?: PaymentRequestedInfo;
+  info?: PaymentRequestedInfo
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 6;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 msg_id = 7;
    */
-  msgId?: number;
-
+  msgId?: number
 }
 
 /**
@@ -10525,48 +10289,47 @@ export interface TLPaymentsSendPaymentForm {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 form_id = 3;
    */
-  formId?: bigint;
+  formId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputInvoice invoice = 4;
    */
-  invoice?: InputInvoice;
+  invoice?: InputInvoice
 
   /**
    * @generated from field: optional google.protobuf.StringValue requested_info_id = 5;
    */
-  requestedInfoId?: string;
+  requestedInfoId?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue shipping_option_id = 6;
    */
-  shippingOptionId?: string;
+  shippingOptionId?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPaymentCredentials credentials = 7;
    */
-  credentials?: InputPaymentCredentials;
+  credentials?: InputPaymentCredentials
 
   /**
    * @generated from field: optional google.protobuf.Int64Value tip_amount = 8;
    */
-  tipAmount?: bigint;
+  tipAmount?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 9;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 msg_id = 10;
    */
-  msgId?: number;
-
+  msgId?: number
 }
 
 /**
@@ -10576,8 +10339,7 @@ export interface TLPaymentsGetSavedInfo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -10587,18 +10349,17 @@ export interface TLPaymentsClearSavedInfo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool credentials = 3;
    */
-  credentials?: boolean;
+  credentials?: boolean
 
   /**
    * @generated from field: optional bool info = 4;
    */
-  info?: boolean;
-
+  info?: boolean
 }
 
 /**
@@ -10608,13 +10369,12 @@ export interface TLPaymentsGetBankCardData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string number = 3;
    */
-  number?: string;
-
+  number?: string
 }
 
 /**
@@ -10624,18 +10384,17 @@ export interface TLPaymentsExportInvoice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia invoice_media = 3;
    */
-  invoiceMedia?: InputMedia;
+  invoiceMedia?: InputMedia
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 4;
    */
-  userId?: InputUser;
-
+  userId?: InputUser
 }
 
 /**
@@ -10645,28 +10404,27 @@ export interface TLPaymentsAssignAppStoreTransaction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes receipt = 3;
    */
-  receipt?: Uint8Array;
+  receipt?: Uint8Array
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStorePaymentPurpose purpose = 4;
    */
-  purpose?: InputStorePaymentPurpose;
+  purpose?: InputStorePaymentPurpose
 
   /**
    * @generated from field: optional bool restore = 5;
    */
-  restore?: boolean;
+  restore?: boolean
 
   /**
    * @generated from field: optional string transaction_id = 6;
    */
-  transactionId?: string;
-
+  transactionId?: string
 }
 
 /**
@@ -10676,23 +10434,22 @@ export interface TLPaymentsAssignPlayMarketTransaction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON receipt = 3;
    */
-  receipt?: DataJSON;
+  receipt?: DataJSON
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStorePaymentPurpose purpose = 4;
    */
-  purpose?: InputStorePaymentPurpose;
+  purpose?: InputStorePaymentPurpose
 
   /**
    * @generated from field: optional string purchase_token = 5;
    */
-  purchaseToken?: string;
-
+  purchaseToken?: string
 }
 
 /**
@@ -10702,13 +10459,12 @@ export interface TLPaymentsCanPurchasePremium {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStorePaymentPurpose purpose = 3;
    */
-  purpose?: InputStorePaymentPurpose;
-
+  purpose?: InputStorePaymentPurpose
 }
 
 /**
@@ -10718,63 +10474,62 @@ export interface TLStickersCreateStickerSet {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool masks = 3;
    */
-  masks?: boolean;
+  masks?: boolean
 
   /**
    * @generated from field: optional bool animated = 4;
    */
-  animated?: boolean;
+  animated?: boolean
 
   /**
    * @generated from field: optional bool videos = 5;
    */
-  videos?: boolean;
+  videos?: boolean
 
   /**
    * @generated from field: optional bool emojis = 6;
    */
-  emojis?: boolean;
+  emojis?: boolean
 
   /**
    * @generated from field: optional bool text_color = 7;
    */
-  textColor?: boolean;
+  textColor?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 8;
    */
-  userId?: InputUser;
+  userId?: InputUser
 
   /**
    * @generated from field: optional string title = 9;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional string short_name = 10;
    */
-  shortName?: string;
+  shortName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDocument thumb = 11;
    */
-  thumb?: InputDocument;
+  thumb?: InputDocument
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputStickerSetItem stickers = 12;
    */
-  stickers: InputStickerSetItem[];
+  stickers: InputStickerSetItem[]
 
   /**
    * @generated from field: optional google.protobuf.StringValue software = 13;
    */
-  software?: string;
-
+  software?: string
 }
 
 /**
@@ -10784,13 +10539,12 @@ export interface TLStickersRemoveStickerFromSet {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDocument sticker = 3;
    */
-  sticker?: InputDocument;
-
+  sticker?: InputDocument
 }
 
 /**
@@ -10800,18 +10554,17 @@ export interface TLStickersChangeStickerPosition {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDocument sticker = 3;
    */
-  sticker?: InputDocument;
+  sticker?: InputDocument
 
   /**
    * @generated from field: optional int32 position = 4;
    */
-  position?: number;
-
+  position?: number
 }
 
 /**
@@ -10821,18 +10574,17 @@ export interface TLStickersAddStickerToSet {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet stickerset = 3;
    */
-  stickerset?: InputStickerSet;
+  stickerset?: InputStickerSet
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSetItem sticker = 4;
    */
-  sticker?: InputStickerSetItem;
-
+  sticker?: InputStickerSetItem
 }
 
 /**
@@ -10842,23 +10594,22 @@ export interface TLStickersSetStickerSetThumb {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet stickerset = 3;
    */
-  stickerset?: InputStickerSet;
+  stickerset?: InputStickerSet
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDocument thumb = 4;
    */
-  thumb?: InputDocument;
+  thumb?: InputDocument
 
   /**
    * @generated from field: optional google.protobuf.Int64Value thumb_document_id = 5;
    */
-  thumbDocumentId?: bigint;
-
+  thumbDocumentId?: bigint
 }
 
 /**
@@ -10868,13 +10619,12 @@ export interface TLStickersCheckShortName {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string short_name = 3;
    */
-  shortName?: string;
-
+  shortName?: string
 }
 
 /**
@@ -10884,13 +10634,12 @@ export interface TLStickersSuggestShortName {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string title = 3;
    */
-  title?: string;
-
+  title?: string
 }
 
 /**
@@ -10900,28 +10649,27 @@ export interface TLStickersChangeSticker {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDocument sticker = 3;
    */
-  sticker?: InputDocument;
+  sticker?: InputDocument
 
   /**
    * @generated from field: optional google.protobuf.StringValue emoji = 4;
    */
-  emoji?: string;
+  emoji?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MaskCoords mask_coords = 5;
    */
-  maskCoords?: MaskCoords;
+  maskCoords?: MaskCoords
 
   /**
    * @generated from field: optional google.protobuf.StringValue keywords = 6;
    */
-  keywords?: string;
-
+  keywords?: string
 }
 
 /**
@@ -10931,18 +10679,17 @@ export interface TLStickersRenameStickerSet {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet stickerset = 3;
    */
-  stickerset?: InputStickerSet;
+  stickerset?: InputStickerSet
 
   /**
    * @generated from field: optional string title = 4;
    */
-  title?: string;
-
+  title?: string
 }
 
 /**
@@ -10952,13 +10699,12 @@ export interface TLStickersDeleteStickerSet {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet stickerset = 3;
    */
-  stickerset?: InputStickerSet;
-
+  stickerset?: InputStickerSet
 }
 
 /**
@@ -10968,8 +10714,7 @@ export interface TLPhoneGetCallConfig {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -10979,33 +10724,32 @@ export interface TLPhoneRequestCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool video = 3;
    */
-  video?: boolean;
+  video?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 4;
    */
-  userId?: InputUser;
+  userId?: InputUser
 
   /**
    * @generated from field: optional int32 random_id = 5;
    */
-  randomId?: number;
+  randomId?: number
 
   /**
    * @generated from field: optional bytes g_a_hash = 6;
    */
-  gAHash?: Uint8Array;
+  gAHash?: Uint8Array
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneCallProtocol protocol = 7;
    */
-  protocol?: PhoneCallProtocol;
-
+  protocol?: PhoneCallProtocol
 }
 
 /**
@@ -11015,23 +10759,22 @@ export interface TLPhoneAcceptCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPhoneCall peer = 3;
    */
-  peer?: InputPhoneCall;
+  peer?: InputPhoneCall
 
   /**
    * @generated from field: optional bytes g_b = 4;
    */
-  gB?: Uint8Array;
+  gB?: Uint8Array
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneCallProtocol protocol = 5;
    */
-  protocol?: PhoneCallProtocol;
-
+  protocol?: PhoneCallProtocol
 }
 
 /**
@@ -11041,28 +10784,27 @@ export interface TLPhoneConfirmCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPhoneCall peer = 3;
    */
-  peer?: InputPhoneCall;
+  peer?: InputPhoneCall
 
   /**
    * @generated from field: optional bytes g_a = 4;
    */
-  gA?: Uint8Array;
+  gA?: Uint8Array
 
   /**
    * @generated from field: optional int64 key_fingerprint = 5;
    */
-  keyFingerprint?: bigint;
+  keyFingerprint?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneCallProtocol protocol = 6;
    */
-  protocol?: PhoneCallProtocol;
-
+  protocol?: PhoneCallProtocol
 }
 
 /**
@@ -11072,13 +10814,12 @@ export interface TLPhoneReceivedCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPhoneCall peer = 3;
    */
-  peer?: InputPhoneCall;
-
+  peer?: InputPhoneCall
 }
 
 /**
@@ -11088,33 +10829,32 @@ export interface TLPhoneDiscardCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool video = 3;
    */
-  video?: boolean;
+  video?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPhoneCall peer = 4;
    */
-  peer?: InputPhoneCall;
+  peer?: InputPhoneCall
 
   /**
    * @generated from field: optional int32 duration = 5;
    */
-  duration?: number;
+  duration?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneCallDiscardReason reason = 6;
    */
-  reason?: PhoneCallDiscardReason;
+  reason?: PhoneCallDiscardReason
 
   /**
    * @generated from field: optional int64 connection_id = 7;
    */
-  connectionId?: bigint;
-
+  connectionId?: bigint
 }
 
 /**
@@ -11124,28 +10864,27 @@ export interface TLPhoneSetCallRating {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool user_initiative = 3;
    */
-  userInitiative?: boolean;
+  userInitiative?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPhoneCall peer = 4;
    */
-  peer?: InputPhoneCall;
+  peer?: InputPhoneCall
 
   /**
    * @generated from field: optional int32 rating = 5;
    */
-  rating?: number;
+  rating?: number
 
   /**
    * @generated from field: optional string comment = 6;
    */
-  comment?: string;
-
+  comment?: string
 }
 
 /**
@@ -11155,18 +10894,17 @@ export interface TLPhoneSaveCallDebug {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPhoneCall peer = 3;
    */
-  peer?: InputPhoneCall;
+  peer?: InputPhoneCall
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON debug = 4;
    */
-  debug?: DataJSON;
-
+  debug?: DataJSON
 }
 
 /**
@@ -11176,18 +10914,17 @@ export interface TLPhoneSendSignalingData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPhoneCall peer = 3;
    */
-  peer?: InputPhoneCall;
+  peer?: InputPhoneCall
 
   /**
    * @generated from field: optional bytes data = 4;
    */
-  data?: Uint8Array;
-
+  data?: Uint8Array
 }
 
 /**
@@ -11197,33 +10934,32 @@ export interface TLPhoneCreateGroupCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool rtmp_stream = 3;
    */
-  rtmpStream?: boolean;
+  rtmpStream?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 4;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 random_id = 5;
    */
-  randomId?: number;
+  randomId?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue title = 6;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional google.protobuf.Int32Value schedule_date = 7;
    */
-  scheduleDate?: number;
-
+  scheduleDate?: number
 }
 
 /**
@@ -11233,38 +10969,37 @@ export interface TLPhoneJoinGroupCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool muted = 3;
    */
-  muted?: boolean;
+  muted?: boolean
 
   /**
    * @generated from field: optional bool video_stopped = 4;
    */
-  videoStopped?: boolean;
+  videoStopped?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 5;
    */
-  call?: InputGroupCall;
+  call?: InputGroupCall
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer join_as = 6;
    */
-  joinAs?: InputPeer;
+  joinAs?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.StringValue invite_hash = 7;
    */
-  inviteHash?: string;
+  inviteHash?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON params = 8;
    */
-  params?: DataJSON;
-
+  params?: DataJSON
 }
 
 /**
@@ -11274,18 +11009,17 @@ export interface TLPhoneLeaveGroupCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 3;
    */
-  call?: InputGroupCall;
+  call?: InputGroupCall
 
   /**
    * @generated from field: optional int32 source = 4;
    */
-  source?: number;
-
+  source?: number
 }
 
 /**
@@ -11295,18 +11029,17 @@ export interface TLPhoneInviteToGroupCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 3;
    */
-  call?: InputGroupCall;
+  call?: InputGroupCall
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputUser users = 4;
    */
-  users: InputUser[];
-
+  users: InputUser[]
 }
 
 /**
@@ -11316,13 +11049,12 @@ export interface TLPhoneDiscardGroupCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 3;
    */
-  call?: InputGroupCall;
-
+  call?: InputGroupCall
 }
 
 /**
@@ -11332,23 +11064,22 @@ export interface TLPhoneToggleGroupCallSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool reset_invite_hash = 3;
    */
-  resetInviteHash?: boolean;
+  resetInviteHash?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 4;
    */
-  call?: InputGroupCall;
+  call?: InputGroupCall
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool join_muted = 5;
    */
-  joinMuted?: Bool;
-
+  joinMuted?: Bool
 }
 
 /**
@@ -11358,18 +11089,17 @@ export interface TLPhoneGetGroupCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 3;
    */
-  call?: InputGroupCall;
+  call?: InputGroupCall
 
   /**
    * @generated from field: optional int32 limit = 4;
    */
-  limit?: number;
-
+  limit?: number
 }
 
 /**
@@ -11379,33 +11109,32 @@ export interface TLPhoneGetGroupParticipants {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 3;
    */
-  call?: InputGroupCall;
+  call?: InputGroupCall
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputPeer ids = 4;
    */
-  ids: InputPeer[];
+  ids: InputPeer[]
 
   /**
    * @generated from field: repeated int32 sources = 5;
    */
-  sources: number[];
+  sources: number[]
 
   /**
    * @generated from field: optional string offset = 6;
    */
-  offset?: string;
+  offset?: string
 
   /**
    * @generated from field: optional int32 limit = 7;
    */
-  limit?: number;
-
+  limit?: number
 }
 
 /**
@@ -11415,18 +11144,17 @@ export interface TLPhoneCheckGroupCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 3;
    */
-  call?: InputGroupCall;
+  call?: InputGroupCall
 
   /**
    * @generated from field: repeated int32 sources = 4;
    */
-  sources: number[];
-
+  sources: number[]
 }
 
 /**
@@ -11436,33 +11164,32 @@ export interface TLPhoneToggleGroupCallRecord {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool start = 3;
    */
-  start?: boolean;
+  start?: boolean
 
   /**
    * @generated from field: optional bool video = 4;
    */
-  video?: boolean;
+  video?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 5;
    */
-  call?: InputGroupCall;
+  call?: InputGroupCall
 
   /**
    * @generated from field: optional google.protobuf.StringValue title = 6;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool video_portrait = 7;
    */
-  videoPortrait?: Bool;
-
+  videoPortrait?: Bool
 }
 
 /**
@@ -11472,48 +11199,47 @@ export interface TLPhoneEditGroupCallParticipant {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 3;
    */
-  call?: InputGroupCall;
+  call?: InputGroupCall
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer participant = 4;
    */
-  participant?: InputPeer;
+  participant?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool muted = 5;
    */
-  muted?: Bool;
+  muted?: Bool
 
   /**
    * @generated from field: optional google.protobuf.Int32Value volume = 6;
    */
-  volume?: number;
+  volume?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool raise_hand = 7;
    */
-  raiseHand?: Bool;
+  raiseHand?: Bool
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool video_stopped = 8;
    */
-  videoStopped?: Bool;
+  videoStopped?: Bool
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool video_paused = 9;
    */
-  videoPaused?: Bool;
+  videoPaused?: Bool
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool presentation_paused = 10;
    */
-  presentationPaused?: Bool;
-
+  presentationPaused?: Bool
 }
 
 /**
@@ -11523,18 +11249,17 @@ export interface TLPhoneEditGroupCallTitle {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 3;
    */
-  call?: InputGroupCall;
+  call?: InputGroupCall
 
   /**
    * @generated from field: optional string title = 4;
    */
-  title?: string;
-
+  title?: string
 }
 
 /**
@@ -11544,13 +11269,12 @@ export interface TLPhoneGetGroupCallJoinAs {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
-
+  peer?: InputPeer
 }
 
 /**
@@ -11560,18 +11284,17 @@ export interface TLPhoneExportGroupCallInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool can_self_unmute = 3;
    */
-  canSelfUnmute?: boolean;
+  canSelfUnmute?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 4;
    */
-  call?: InputGroupCall;
-
+  call?: InputGroupCall
 }
 
 /**
@@ -11581,18 +11304,17 @@ export interface TLPhoneToggleGroupCallStartSubscription {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 3;
    */
-  call?: InputGroupCall;
+  call?: InputGroupCall
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool subscribed = 4;
    */
-  subscribed?: Bool;
-
+  subscribed?: Bool
 }
 
 /**
@@ -11602,13 +11324,12 @@ export interface TLPhoneStartScheduledGroupCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 3;
    */
-  call?: InputGroupCall;
-
+  call?: InputGroupCall
 }
 
 /**
@@ -11618,18 +11339,17 @@ export interface TLPhoneSaveDefaultGroupCallJoinAs {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer join_as = 4;
    */
-  joinAs?: InputPeer;
-
+  joinAs?: InputPeer
 }
 
 /**
@@ -11639,18 +11359,17 @@ export interface TLPhoneJoinGroupCallPresentation {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 3;
    */
-  call?: InputGroupCall;
+  call?: InputGroupCall
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON params = 4;
    */
-  params?: DataJSON;
-
+  params?: DataJSON
 }
 
 /**
@@ -11660,13 +11379,12 @@ export interface TLPhoneLeaveGroupCallPresentation {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 3;
    */
-  call?: InputGroupCall;
-
+  call?: InputGroupCall
 }
 
 /**
@@ -11676,13 +11394,12 @@ export interface TLPhoneGetGroupCallStreamChannels {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 3;
    */
-  call?: InputGroupCall;
-
+  call?: InputGroupCall
 }
 
 /**
@@ -11692,18 +11409,17 @@ export interface TLPhoneGetGroupCallStreamRtmpUrl {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool revoke = 4;
    */
-  revoke?: Bool;
-
+  revoke?: Bool
 }
 
 /**
@@ -11713,18 +11429,17 @@ export interface TLPhoneSaveCallLog {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPhoneCall peer = 3;
    */
-  peer?: InputPhoneCall;
+  peer?: InputPhoneCall
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFile file = 4;
    */
-  file?: InputFile;
-
+  file?: InputFile
 }
 
 /**
@@ -11734,18 +11449,17 @@ export interface TLLangpackGetLangPack {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string lang_pack = 3;
    */
-  langPack?: string;
+  langPack?: string
 
   /**
    * @generated from field: optional string lang_code = 4;
    */
-  langCode?: string;
-
+  langCode?: string
 }
 
 /**
@@ -11755,23 +11469,22 @@ export interface TLLangpackGetStrings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string lang_pack = 3;
    */
-  langPack?: string;
+  langPack?: string
 
   /**
    * @generated from field: optional string lang_code = 4;
    */
-  langCode?: string;
+  langCode?: string
 
   /**
    * @generated from field: repeated string keys = 5;
    */
-  keys: string[];
-
+  keys: string[]
 }
 
 /**
@@ -11781,23 +11494,22 @@ export interface TLLangpackGetDifference {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string lang_pack = 3;
    */
-  langPack?: string;
+  langPack?: string
 
   /**
    * @generated from field: optional string lang_code = 4;
    */
-  langCode?: string;
+  langCode?: string
 
   /**
    * @generated from field: optional int32 from_version = 5;
    */
-  fromVersion?: number;
-
+  fromVersion?: number
 }
 
 /**
@@ -11807,13 +11519,12 @@ export interface TLLangpackGetLanguages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string lang_pack = 3;
    */
-  langPack?: string;
-
+  langPack?: string
 }
 
 /**
@@ -11823,18 +11534,17 @@ export interface TLLangpackGetLanguage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string lang_pack = 3;
    */
-  langPack?: string;
+  langPack?: string
 
   /**
    * @generated from field: optional string lang_code = 4;
    */
-  langCode?: string;
-
+  langCode?: string
 }
 
 /**
@@ -11844,13 +11554,12 @@ export interface TLFoldersEditPeerFolders {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputFolderPeer folder_peers = 3;
    */
-  folderPeers: InputFolderPeer[];
-
+  folderPeers: InputFolderPeer[]
 }
 
 /**
@@ -11860,18 +11569,17 @@ export interface TLStatsGetBroadcastStats {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool dark = 3;
    */
-  dark?: boolean;
+  dark?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 4;
    */
-  channel?: InputChannel;
-
+  channel?: InputChannel
 }
 
 /**
@@ -11881,18 +11589,17 @@ export interface TLStatsLoadAsyncGraph {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string token = 3;
    */
-  token?: string;
+  token?: string
 
   /**
    * @generated from field: optional google.protobuf.Int64Value x = 4;
    */
-  x?: bigint;
-
+  x?: bigint
 }
 
 /**
@@ -11902,18 +11609,17 @@ export interface TLStatsGetMegagroupStats {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool dark = 3;
    */
-  dark?: boolean;
+  dark?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 4;
    */
-  channel?: InputChannel;
-
+  channel?: InputChannel
 }
 
 /**
@@ -11923,38 +11629,37 @@ export interface TLStatsGetMessagePublicForwards {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional int32 msg_id = 4;
    */
-  msgId?: number;
+  msgId?: number
 
   /**
    * @generated from field: optional int32 offset_rate = 5;
    */
-  offsetRate?: number;
+  offsetRate?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer offset_peer = 6;
    */
-  offsetPeer?: InputPeer;
+  offsetPeer?: InputPeer
 
   /**
    * @generated from field: optional int32 offset_id = 7;
    */
-  offsetId?: number;
+  offsetId?: number
 
   /**
    * @generated from field: optional int32 limit = 8;
    */
-  limit?: number;
-
+  limit?: number
 }
 
 /**
@@ -11964,23 +11669,22 @@ export interface TLStatsGetMessageStats {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool dark = 3;
    */
-  dark?: boolean;
+  dark?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 4;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional int32 msg_id = 5;
    */
-  msgId?: number;
-
+  msgId?: number
 }
 
 /**
@@ -11990,23 +11694,22 @@ export interface TLChatlistsExportChatlistInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChatlist chatlist = 3;
    */
-  chatlist?: InputChatlist;
+  chatlist?: InputChatlist
 
   /**
    * @generated from field: optional string title = 4;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputPeer peers = 5;
    */
-  peers: InputPeer[];
-
+  peers: InputPeer[]
 }
 
 /**
@@ -12016,18 +11719,17 @@ export interface TLChatlistsDeleteExportedInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChatlist chatlist = 3;
    */
-  chatlist?: InputChatlist;
+  chatlist?: InputChatlist
 
   /**
    * @generated from field: optional string slug = 4;
    */
-  slug?: string;
-
+  slug?: string
 }
 
 /**
@@ -12037,28 +11739,27 @@ export interface TLChatlistsEditExportedInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChatlist chatlist = 3;
    */
-  chatlist?: InputChatlist;
+  chatlist?: InputChatlist
 
   /**
    * @generated from field: optional string slug = 4;
    */
-  slug?: string;
+  slug?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue title = 5;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputPeer peers = 6;
    */
-  peers: InputPeer[];
-
+  peers: InputPeer[]
 }
 
 /**
@@ -12068,13 +11769,12 @@ export interface TLChatlistsGetExportedInvites {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChatlist chatlist = 3;
    */
-  chatlist?: InputChatlist;
-
+  chatlist?: InputChatlist
 }
 
 /**
@@ -12084,13 +11784,12 @@ export interface TLChatlistsCheckChatlistInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string slug = 3;
    */
-  slug?: string;
-
+  slug?: string
 }
 
 /**
@@ -12100,18 +11799,17 @@ export interface TLChatlistsJoinChatlistInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string slug = 3;
    */
-  slug?: string;
+  slug?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputPeer peers = 4;
    */
-  peers: InputPeer[];
-
+  peers: InputPeer[]
 }
 
 /**
@@ -12121,13 +11819,12 @@ export interface TLChatlistsGetChatlistUpdates {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChatlist chatlist = 3;
    */
-  chatlist?: InputChatlist;
-
+  chatlist?: InputChatlist
 }
 
 /**
@@ -12137,18 +11834,17 @@ export interface TLChatlistsJoinChatlistUpdates {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChatlist chatlist = 3;
    */
-  chatlist?: InputChatlist;
+  chatlist?: InputChatlist
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputPeer peers = 4;
    */
-  peers: InputPeer[];
-
+  peers: InputPeer[]
 }
 
 /**
@@ -12158,13 +11854,12 @@ export interface TLChatlistsHideChatlistUpdates {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChatlist chatlist = 3;
    */
-  chatlist?: InputChatlist;
-
+  chatlist?: InputChatlist
 }
 
 /**
@@ -12174,13 +11869,12 @@ export interface TLChatlistsGetLeaveChatlistSuggestions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChatlist chatlist = 3;
    */
-  chatlist?: InputChatlist;
-
+  chatlist?: InputChatlist
 }
 
 /**
@@ -12190,18 +11884,17 @@ export interface TLChatlistsLeaveChatlist {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChatlist chatlist = 3;
    */
-  chatlist?: InputChatlist;
+  chatlist?: InputChatlist
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputPeer peers = 4;
    */
-  peers: InputPeer[];
-
+  peers: InputPeer[]
 }
 
 /**
@@ -12211,13 +11904,12 @@ export interface TLStoriesCanSendStory {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
-
+  peer?: InputPeer
 }
 
 /**
@@ -12227,58 +11919,57 @@ export interface TLStoriesSendStory {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool pinned = 3;
    */
-  pinned?: boolean;
+  pinned?: boolean
 
   /**
    * @generated from field: optional bool noforwards = 4;
    */
-  noforwards?: boolean;
+  noforwards?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 5;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia media = 6;
    */
-  media?: InputMedia;
+  media?: InputMedia
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MediaArea media_areas = 7;
    */
-  mediaAreas: MediaArea[];
+  mediaAreas: MediaArea[]
 
   /**
    * @generated from field: optional google.protobuf.StringValue caption = 8;
    */
-  caption?: string;
+  caption?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 9;
    */
-  entities: MessageEntity[];
+  entities: MessageEntity[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputPrivacyRule privacy_rules = 10;
    */
-  privacyRules: InputPrivacyRule[];
+  privacyRules: InputPrivacyRule[]
 
   /**
    * @generated from field: optional int64 random_id = 11;
    */
-  randomId?: bigint;
+  randomId?: bigint
 
   /**
    * @generated from field: optional google.protobuf.Int32Value period = 12;
    */
-  period?: number;
-
+  period?: number
 }
 
 /**
@@ -12288,43 +11979,42 @@ export interface TLStoriesEditStory {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 id = 4;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia media = 5;
    */
-  media?: InputMedia;
+  media?: InputMedia
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MediaArea media_areas = 6;
    */
-  mediaAreas: MediaArea[];
+  mediaAreas: MediaArea[]
 
   /**
    * @generated from field: optional google.protobuf.StringValue caption = 7;
    */
-  caption?: string;
+  caption?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 8;
    */
-  entities: MessageEntity[];
+  entities: MessageEntity[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputPrivacyRule privacy_rules = 9;
    */
-  privacyRules: InputPrivacyRule[];
-
+  privacyRules: InputPrivacyRule[]
 }
 
 /**
@@ -12334,18 +12024,17 @@ export interface TLStoriesDeleteStories {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: repeated int32 id = 4;
    */
-  id: number[];
-
+  id: number[]
 }
 
 /**
@@ -12355,23 +12044,22 @@ export interface TLStoriesTogglePinned {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: repeated int32 id = 4;
    */
-  id: number[];
+  id: number[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool pinned = 5;
    */
-  pinned?: Bool;
-
+  pinned?: Bool
 }
 
 /**
@@ -12381,23 +12069,22 @@ export interface TLStoriesGetAllStories {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool next = 3;
    */
-  next?: boolean;
+  next?: boolean
 
   /**
    * @generated from field: optional bool hidden = 4;
    */
-  hidden?: boolean;
+  hidden?: boolean
 
   /**
    * @generated from field: optional google.protobuf.StringValue state = 5;
    */
-  state?: string;
-
+  state?: string
 }
 
 /**
@@ -12407,28 +12094,27 @@ export interface TLStoriesGetPinnedStories {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 offset_id = 4;
    */
-  offsetId?: number;
+  offsetId?: number
 
   /**
    * @generated from field: optional int32 limit = 5;
    */
-  limit?: number;
+  limit?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 6;
    */
-  userId?: InputUser;
-
+  userId?: InputUser
 }
 
 /**
@@ -12438,23 +12124,22 @@ export interface TLStoriesGetStoriesArchive {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 offset_id = 4;
    */
-  offsetId?: number;
+  offsetId?: number
 
   /**
    * @generated from field: optional int32 limit = 5;
    */
-  limit?: number;
-
+  limit?: number
 }
 
 /**
@@ -12464,23 +12149,22 @@ export interface TLStoriesGetStoriesByID {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: repeated int32 id = 4;
    */
-  id: number[];
+  id: number[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 5;
    */
-  userId?: InputUser;
-
+  userId?: InputUser
 }
 
 /**
@@ -12490,13 +12174,12 @@ export interface TLStoriesToggleAllStoriesHidden {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool hidden = 3;
    */
-  hidden?: Bool;
-
+  hidden?: Bool
 }
 
 /**
@@ -12506,23 +12189,22 @@ export interface TLStoriesReadStories {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 max_id = 4;
    */
-  maxId?: number;
+  maxId?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 5;
    */
-  userId?: InputUser;
-
+  userId?: InputUser
 }
 
 /**
@@ -12532,23 +12214,22 @@ export interface TLStoriesIncrementStoryViews {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: repeated int32 id = 4;
    */
-  id: number[];
+  id: number[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 5;
    */
-  userId?: InputUser;
-
+  userId?: InputUser
 }
 
 /**
@@ -12558,53 +12239,52 @@ export interface TLStoriesGetStoryViewsList {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool just_contacts = 3;
    */
-  justContacts?: boolean;
+  justContacts?: boolean
 
   /**
    * @generated from field: optional bool reactions_first = 4;
    */
-  reactionsFirst?: boolean;
+  reactionsFirst?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 5;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional google.protobuf.StringValue q = 6;
    */
-  q?: string;
+  q?: string
 
   /**
    * @generated from field: optional int32 id = 7;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional string offset = 8;
    */
-  offset?: string;
+  offset?: string
 
   /**
    * @generated from field: optional int32 limit = 9;
    */
-  limit?: number;
+  limit?: number
 
   /**
    * @generated from field: optional int32 offset_date = 10;
    */
-  offsetDate?: number;
+  offsetDate?: number
 
   /**
    * @generated from field: optional int64 offset_id = 11;
    */
-  offsetId?: bigint;
-
+  offsetId?: bigint
 }
 
 /**
@@ -12614,18 +12294,17 @@ export interface TLStoriesGetStoriesViews {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: repeated int32 id = 4;
    */
-  id: number[];
-
+  id: number[]
 }
 
 /**
@@ -12635,23 +12314,22 @@ export interface TLStoriesExportStoryLink {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 id = 4;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 5;
    */
-  userId?: InputUser;
-
+  userId?: InputUser
 }
 
 /**
@@ -12661,33 +12339,32 @@ export interface TLStoriesReport {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: repeated int32 id = 4;
    */
-  id: number[];
+  id: number[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReportReason reason = 5;
    */
-  reason?: ReportReason;
+  reason?: ReportReason
 
   /**
    * @generated from field: optional string message = 6;
    */
-  message?: string;
+  message?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 7;
    */
-  userId?: InputUser;
-
+  userId?: InputUser
 }
 
 /**
@@ -12697,18 +12374,17 @@ export interface TLStoriesActivateStealthMode {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool past = 3;
    */
-  past?: boolean;
+  past?: boolean
 
   /**
    * @generated from field: optional bool future = 4;
    */
-  future?: boolean;
-
+  future?: boolean
 }
 
 /**
@@ -12718,33 +12394,32 @@ export interface TLStoriesSendReaction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool add_to_recent = 3;
    */
-  addToRecent?: boolean;
+  addToRecent?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 4;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 story_id = 5;
    */
-  storyId?: number;
+  storyId?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Reaction reaction = 6;
    */
-  reaction?: Reaction;
+  reaction?: Reaction
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 7;
    */
-  userId?: InputUser;
-
+  userId?: InputUser
 }
 
 /**
@@ -12754,13 +12429,12 @@ export interface TLStoriesGetPeerStories {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
-
+  peer?: InputPeer
 }
 
 /**
@@ -12770,8 +12444,7 @@ export interface TLStoriesGetAllReadPeerStories {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -12781,13 +12454,12 @@ export interface TLStoriesGetPeerMaxIDs {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputPeer id = 3;
    */
-  id: InputPeer[];
-
+  id: InputPeer[]
 }
 
 /**
@@ -12797,8 +12469,7 @@ export interface TLStoriesGetChatsToSend {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -12808,18 +12479,17 @@ export interface TLStoriesTogglePeerStoriesHidden {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool hidden = 4;
    */
-  hidden?: Bool;
-
+  hidden?: Bool
 }
 
 /**
@@ -12829,13 +12499,12 @@ export interface TLStoriesGetBoostsStatus {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
-
+  peer?: InputPeer
 }
 
 /**
@@ -12845,23 +12514,22 @@ export interface TLStoriesGetBoostersList {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional string offset = 4;
    */
-  offset?: string;
+  offset?: string
 
   /**
    * @generated from field: optional int32 limit = 5;
    */
-  limit?: number;
-
+  limit?: number
 }
 
 /**
@@ -12871,13 +12539,12 @@ export interface TLStoriesCanApplyBoost {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
-
+  peer?: InputPeer
 }
 
 /**
@@ -12887,13 +12554,12 @@ export interface TLStoriesApplyBoost {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
-
+  peer?: InputPeer
 }
 
 /**
@@ -12903,18 +12569,17 @@ export interface TLMessagesGetWebPage32CA8F91 {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string url = 3;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional int32 hash = 4;
    */
-  hash?: number;
-
+  hash?: number
 }
 
 /**
@@ -12924,13 +12589,12 @@ export interface TLUsersGetStoriesMaxIDs {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputUser id = 3;
    */
-  id: InputUser[];
-
+  id: InputUser[]
 }
 
 /**
@@ -12940,18 +12604,17 @@ export interface TLContactsToggleStoriesHidden {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser id = 3;
    */
-  id?: InputUser;
+  id?: InputUser
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool hidden = 4;
    */
-  hidden?: Bool;
-
+  hidden?: Bool
 }
 
 /**
@@ -12961,13 +12624,12 @@ export interface TLStoriesGetUserStories {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 3;
    */
-  userId?: InputUser;
-
+  userId?: InputUser
 }
 
 /**
@@ -12977,8 +12639,7 @@ export interface TLStoriesGetAllReadUserStories {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -12988,13 +12649,12 @@ export interface TLMessagesGetAllChats {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated int64 except_ids = 3;
    */
-  exceptIds: bigint[];
-
+  exceptIds: bigint[]
 }
 
 /**
@@ -13004,13 +12664,12 @@ export interface TLBotsGetBotInfo75EC12E6 {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string lang_code = 3;
    */
-  langCode?: string;
-
+  langCode?: string
 }
 
 /**
@@ -13020,13 +12679,12 @@ export interface TLFoldersDeleteFolder {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 folder_id = 3;
    */
-  folderId?: number;
-
+  folderId?: number
 }
 
 /**
@@ -13036,18 +12694,17 @@ export interface TLMessagesGetMessageReadParticipants2C6F97B7 {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 msg_id = 4;
    */
-  msgId?: number;
-
+  msgId?: number
 }
 
 /**
@@ -13057,8 +12714,7 @@ export interface TLHelpGetAppConfig98914110 {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -13068,18 +12724,17 @@ export interface TLAccountVerifyEmailECBA39DB {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string email = 3;
    */
-  email?: string;
+  email?: string
 
   /**
    * @generated from field: optional string code = 4;
    */
-  code?: string;
-
+  code?: string
 }
 
 /**
@@ -13089,23 +12744,22 @@ export interface TLPaymentsRequestRecurringPayment {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 3;
    */
-  userId?: InputUser;
+  userId?: InputUser
 
   /**
    * @generated from field: optional string recurring_init_charge = 4;
    */
-  recurringInitCharge?: string;
+  recurringInitCharge?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia invoice_media = 5;
    */
-  invoiceMedia?: InputMedia;
-
+  invoiceMedia?: InputMedia
 }
 
 /**
@@ -13115,13 +12769,12 @@ export interface TLPaymentsRestorePlayMarketReceipt {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes receipt = 3;
    */
-  receipt?: Uint8Array;
-
+  receipt?: Uint8Array
 }
 
 /**
@@ -13131,18 +12784,17 @@ export interface TLChannelsDeleteHistoryAF369D42 {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel channel = 3;
    */
-  channel?: InputChannel;
+  channel?: InputChannel
 
   /**
    * @generated from field: optional int32 max_id = 4;
    */
-  maxId?: number;
-
+  maxId?: number
 }
 
 /**
@@ -13152,8 +12804,7 @@ export interface TLHelpTest {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -13163,38 +12814,37 @@ export interface TLPredefinedCreatePredefinedUser {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone = 3;
    */
-  phone?: string;
+  phone?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue first_name = 4;
    */
-  firstName?: string;
+  firstName?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue last_name = 5;
    */
-  lastName?: string;
+  lastName?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue username = 6;
    */
-  username?: string;
+  username?: string
 
   /**
    * @generated from field: optional string code = 7;
    */
-  code?: string;
+  code?: string
 
   /**
    * @generated from field: optional bool verified = 8;
    */
-  verified?: boolean;
-
+  verified?: boolean
 }
 
 /**
@@ -13204,18 +12854,17 @@ export interface TLPredefinedUpdatePredefinedUsername {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone = 3;
    */
-  phone?: string;
+  phone?: string
 
   /**
    * @generated from field: optional string username = 4;
    */
-  username?: string;
-
+  username?: string
 }
 
 /**
@@ -13225,28 +12874,27 @@ export interface TLPredefinedUpdatePredefinedProfile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone = 3;
    */
-  phone?: string;
+  phone?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue first_name = 4;
    */
-  firstName?: string;
+  firstName?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue last_name = 5;
    */
-  lastName?: string;
+  lastName?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue about = 6;
    */
-  about?: string;
-
+  about?: string
 }
 
 /**
@@ -13256,18 +12904,17 @@ export interface TLPredefinedUpdatePredefinedVerified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone = 3;
    */
-  phone?: string;
+  phone?: string
 
   /**
    * @generated from field: optional bool verified = 4;
    */
-  verified?: boolean;
-
+  verified?: boolean
 }
 
 /**
@@ -13277,18 +12924,17 @@ export interface TLPredefinedUpdatePredefinedCode {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone = 3;
    */
-  phone?: string;
+  phone?: string
 
   /**
    * @generated from field: optional string code = 4;
    */
-  code?: string;
-
+  code?: string
 }
 
 /**
@@ -13298,13 +12944,12 @@ export interface TLPredefinedGetPredefinedUser {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone = 3;
    */
-  phone?: string;
-
+  phone?: string
 }
 
 /**
@@ -13314,8 +12959,7 @@ export interface TLPredefinedGetPredefinedUsers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -13325,18 +12969,17 @@ export interface TLUsersGetMe {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional string token = 4;
    */
-  token?: string;
-
+  token?: string
 }
 
 /**
@@ -13346,18 +12989,17 @@ export interface TLAccountUpdateVerified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional bool verified = 4;
    */
-  verified?: boolean;
-
+  verified?: boolean
 }
 
 /**
@@ -13367,28 +13009,27 @@ export interface TLAuthToggleBan {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone = 3;
    */
-  phone?: string;
+  phone?: string
 
   /**
    * @generated from field: optional bool predefined = 4;
    */
-  predefined?: boolean;
+  predefined?: boolean
 
   /**
    * @generated from field: optional google.protobuf.Int32Value expires = 5;
    */
-  expires?: number;
+  expires?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue reason = 6;
    */
-  reason?: string;
-
+  reason?: string
 }
 
 /**
@@ -13398,13 +13039,12 @@ export interface TLBizInvokeBizDataRaw {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BizDataRaw biz_data = 3;
    */
-  bizData?: BizDataRaw;
-
+  bizData?: BizDataRaw
 }
 
 /**
@@ -13414,8 +13054,7 @@ export interface VectorSecureValue {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SecureValue datas = 1;
    */
-  datas: SecureValue[];
-
+  datas: SecureValue[]
 }
 
 /**
@@ -13425,8 +13064,7 @@ export interface VectorWallPaper {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.WallPaper datas = 1;
    */
-  datas: WallPaper[];
-
+  datas: WallPaper[]
 }
 
 /**
@@ -13436,8 +13074,7 @@ export interface VectorUser {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User datas = 1;
    */
-  datas: User[];
-
+  datas: User[]
 }
 
 /**
@@ -13447,8 +13084,7 @@ export interface VectorInt {
   /**
    * @generated from field: repeated int32 datas = 1;
    */
-  datas: number[];
-
+  datas: number[]
 }
 
 /**
@@ -13458,8 +13094,7 @@ export interface VectorContactStatus {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ContactStatus datas = 1;
    */
-  datas: ContactStatus[];
-
+  datas: ContactStatus[]
 }
 
 /**
@@ -13469,8 +13104,7 @@ export interface VectorSavedContact {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SavedContact datas = 1;
    */
-  datas: SavedContact[];
-
+  datas: SavedContact[]
 }
 
 /**
@@ -13480,8 +13114,7 @@ export interface VectorReceivedNotifyMessage {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ReceivedNotifyMessage datas = 1;
    */
-  datas: ReceivedNotifyMessage[];
-
+  datas: ReceivedNotifyMessage[]
 }
 
 /**
@@ -13491,8 +13124,7 @@ export interface VectorLong {
   /**
    * @generated from field: repeated int64 datas = 1;
    */
-  datas: bigint[];
-
+  datas: bigint[]
 }
 
 /**
@@ -13502,8 +13134,7 @@ export interface VectorStickerSetCovered {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.StickerSetCovered datas = 1;
    */
-  datas: StickerSetCovered[];
-
+  datas: StickerSetCovered[]
 }
 
 /**
@@ -13513,8 +13144,7 @@ export interface VectorMessageRange {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageRange datas = 1;
    */
-  datas: MessageRange[];
-
+  datas: MessageRange[]
 }
 
 /**
@@ -13524,8 +13154,7 @@ export interface VectorDialogPeer {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.DialogPeer datas = 1;
    */
-  datas: DialogPeer[];
-
+  datas: DialogPeer[]
 }
 
 /**
@@ -13535,8 +13164,7 @@ export interface VectorEmojiLanguage {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.EmojiLanguage datas = 1;
    */
-  datas: EmojiLanguage[];
-
+  datas: EmojiLanguage[]
 }
 
 /**
@@ -13546,8 +13174,7 @@ export interface VectorMessagesSearchCounter {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessagesSearchCounter datas = 1;
    */
-  datas: MessagesSearchCounter[];
-
+  datas: MessagesSearchCounter[]
 }
 
 /**
@@ -13557,8 +13184,7 @@ export interface VectorDialogFilter {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.DialogFilter datas = 1;
    */
-  datas: DialogFilter[];
-
+  datas: DialogFilter[]
 }
 
 /**
@@ -13568,8 +13194,7 @@ export interface VectorDialogFilterSuggested {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.DialogFilterSuggested datas = 1;
    */
-  datas: DialogFilterSuggested[];
-
+  datas: DialogFilterSuggested[]
 }
 
 /**
@@ -13579,8 +13204,7 @@ export interface VectorReadParticipantDate {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ReadParticipantDate datas = 1;
    */
-  datas: ReadParticipantDate[];
-
+  datas: ReadParticipantDate[]
 }
 
 /**
@@ -13590,8 +13214,7 @@ export interface VectorDocument {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Document datas = 1;
    */
-  datas: Document[];
-
+  datas: Document[]
 }
 
 /**
@@ -13601,8 +13224,7 @@ export interface VectorFileHash {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.FileHash datas = 1;
    */
-  datas: FileHash[];
-
+  datas: FileHash[]
 }
 
 /**
@@ -13612,8 +13234,7 @@ export interface VectorBotCommand {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.BotCommand datas = 1;
    */
-  datas: BotCommand[];
-
+  datas: BotCommand[]
 }
 
 /**
@@ -13623,8 +13244,7 @@ export interface VectorLangPackString {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.LangPackString datas = 1;
    */
-  datas: LangPackString[];
-
+  datas: LangPackString[]
 }
 
 /**
@@ -13634,8 +13254,7 @@ export interface VectorLangPackLanguage {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.LangPackLanguage datas = 1;
    */
-  datas: LangPackLanguage[];
-
+  datas: LangPackLanguage[]
 }
 
 /**
@@ -13645,8 +13264,7 @@ export interface VectorPeer {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Peer datas = 1;
    */
-  datas: Peer[];
-
+  datas: Peer[]
 }
 
 /**
@@ -13656,8 +13274,7 @@ export interface VectorString {
   /**
    * @generated from field: repeated string datas = 1;
    */
-  datas: string[];
-
+  datas: string[]
 }
 
 /**
@@ -13667,7 +13284,5 @@ export interface VectorPredefinedUser {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PredefinedUser datas = 1;
    */
-  datas: PredefinedUser[];
-
+  datas: PredefinedUser[]
 }
-

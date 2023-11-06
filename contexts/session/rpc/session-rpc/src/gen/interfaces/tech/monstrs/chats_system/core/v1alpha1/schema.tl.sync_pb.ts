@@ -3,8 +3,8 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { TLConstructor } from "./schema.tl.crc32_pb.js";
-import type { Bool } from "./schema.tl.core_types_pb.js";
+import type { Bool }          from './schema.tl.core_types_pb.js'
+import type { TLConstructor } from './schema.tl.crc32_pb.js'
 
 /**
  * @generated from message tech.monstrs.chats_system.core.v1alpha1.AccountDaysTTL
@@ -13,18 +13,17 @@ export interface AccountDaysTTL {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 days = 3;
    */
-  days?: number;
-
+  days?: number
 }
 
 /**
@@ -34,8 +33,7 @@ export interface TLAccountDaysTTL {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountDaysTTL data2 = 1;
    */
-  data2?: AccountDaysTTL;
-
+  data2?: AccountDaysTTL
 }
 
 /**
@@ -45,18 +43,17 @@ export interface AppWebViewResult {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string url = 3;
    */
-  url?: string;
-
+  url?: string
 }
 
 /**
@@ -66,8 +63,7 @@ export interface TLAppWebViewResultUrl {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AppWebViewResult data2 = 1;
    */
-  data2?: AppWebViewResult;
-
+  data2?: AppWebViewResult
 }
 
 /**
@@ -77,63 +73,62 @@ export interface AttachMenuBot {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool inactive = 3;
    */
-  inactive?: boolean;
+  inactive?: boolean
 
   /**
    * @generated from field: optional bool has_settings = 4;
    */
-  hasSettings?: boolean;
+  hasSettings?: boolean
 
   /**
    * @generated from field: optional bool request_write_access = 5;
    */
-  requestWriteAccess?: boolean;
+  requestWriteAccess?: boolean
 
   /**
    * @generated from field: optional bool show_in_attach_menu = 6;
    */
-  showInAttachMenu?: boolean;
+  showInAttachMenu?: boolean
 
   /**
    * @generated from field: optional bool show_in_side_menu = 7;
    */
-  showInSideMenu?: boolean;
+  showInSideMenu?: boolean
 
   /**
    * @generated from field: optional bool side_menu_disclaimer_needed = 8;
    */
-  sideMenuDisclaimerNeeded?: boolean;
+  sideMenuDisclaimerNeeded?: boolean
 
   /**
    * @generated from field: optional int64 bot_id = 9;
    */
-  botId?: bigint;
+  botId?: bigint
 
   /**
    * @generated from field: optional string short_name = 10;
    */
-  shortName?: string;
+  shortName?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.AttachMenuPeerType peer_types = 11;
    */
-  peerTypes: AttachMenuPeerType[];
+  peerTypes: AttachMenuPeerType[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.AttachMenuBotIcon icons = 12;
    */
-  icons: AttachMenuBotIcon[];
-
+  icons: AttachMenuBotIcon[]
 }
 
 /**
@@ -143,8 +138,7 @@ export interface TLAttachMenuBot {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AttachMenuBot data2 = 1;
    */
-  data2?: AttachMenuBot;
-
+  data2?: AttachMenuBot
 }
 
 /**
@@ -154,28 +148,27 @@ export interface AttachMenuBotIcon {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string name = 3;
    */
-  name?: string;
+  name?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document icon = 4;
    */
-  icon?: Document;
+  icon?: Document
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.AttachMenuBotIconColor colors = 5;
    */
-  colors: AttachMenuBotIconColor[];
-
+  colors: AttachMenuBotIconColor[]
 }
 
 /**
@@ -185,8 +178,7 @@ export interface TLAttachMenuBotIcon {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AttachMenuBotIcon data2 = 1;
    */
-  data2?: AttachMenuBotIcon;
-
+  data2?: AttachMenuBotIcon
 }
 
 /**
@@ -196,23 +188,22 @@ export interface AttachMenuBotIconColor {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string name = 3;
    */
-  name?: string;
+  name?: string
 
   /**
    * @generated from field: optional int32 color = 4;
    */
-  color?: number;
-
+  color?: number
 }
 
 /**
@@ -222,8 +213,7 @@ export interface TLAttachMenuBotIconColor {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AttachMenuBotIconColor data2 = 1;
    */
-  data2?: AttachMenuBotIconColor;
-
+  data2?: AttachMenuBotIconColor
 }
 
 /**
@@ -233,28 +223,27 @@ export interface AttachMenuBots {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
+  hash?: bigint
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.AttachMenuBot bots = 4;
    */
-  bots: AttachMenuBot[];
+  bots: AttachMenuBot[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -264,8 +253,7 @@ export interface TLAttachMenuBotsNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AttachMenuBots data2 = 1;
    */
-  data2?: AttachMenuBots;
-
+  data2?: AttachMenuBots
 }
 
 /**
@@ -275,8 +263,7 @@ export interface TLAttachMenuBots {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AttachMenuBots data2 = 1;
    */
-  data2?: AttachMenuBots;
-
+  data2?: AttachMenuBots
 }
 
 /**
@@ -286,23 +273,22 @@ export interface AttachMenuBotsBot {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AttachMenuBot bot = 3;
    */
-  bot?: AttachMenuBot;
+  bot?: AttachMenuBot
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 4;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -312,8 +298,7 @@ export interface TLAttachMenuBotsBot {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AttachMenuBotsBot data2 = 1;
    */
-  data2?: AttachMenuBotsBot;
-
+  data2?: AttachMenuBotsBot
 }
 
 /**
@@ -323,13 +308,12 @@ export interface AttachMenuPeerType {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -339,8 +323,7 @@ export interface TLAttachMenuPeerTypeSameBotPM {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AttachMenuPeerType data2 = 1;
    */
-  data2?: AttachMenuPeerType;
-
+  data2?: AttachMenuPeerType
 }
 
 /**
@@ -350,8 +333,7 @@ export interface TLAttachMenuPeerTypeBotPM {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AttachMenuPeerType data2 = 1;
    */
-  data2?: AttachMenuPeerType;
-
+  data2?: AttachMenuPeerType
 }
 
 /**
@@ -361,8 +343,7 @@ export interface TLAttachMenuPeerTypePM {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AttachMenuPeerType data2 = 1;
    */
-  data2?: AttachMenuPeerType;
-
+  data2?: AttachMenuPeerType
 }
 
 /**
@@ -372,8 +353,7 @@ export interface TLAttachMenuPeerTypeChat {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AttachMenuPeerType data2 = 1;
    */
-  data2?: AttachMenuPeerType;
-
+  data2?: AttachMenuPeerType
 }
 
 /**
@@ -383,8 +363,7 @@ export interface TLAttachMenuPeerTypeBroadcast {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AttachMenuPeerType data2 = 1;
    */
-  data2?: AttachMenuPeerType;
-
+  data2?: AttachMenuPeerType
 }
 
 /**
@@ -394,43 +373,42 @@ export interface AuthKeyInfo {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId?: bigint;
+  authKeyId?: bigint
 
   /**
    * @generated from field: optional bytes auth_key = 4;
    */
-  authKey?: Uint8Array;
+  authKey?: Uint8Array
 
   /**
    * @generated from field: optional int32 auth_key_type = 5;
    */
-  authKeyType?: number;
+  authKeyType?: number
 
   /**
    * @generated from field: optional int64 perm_auth_key_id = 6;
    */
-  permAuthKeyId?: bigint;
+  permAuthKeyId?: bigint
 
   /**
    * @generated from field: optional int64 temp_auth_key_id = 7;
    */
-  tempAuthKeyId?: bigint;
+  tempAuthKeyId?: bigint
 
   /**
    * @generated from field: optional int64 media_temp_auth_key_id = 8;
    */
-  mediaTempAuthKeyId?: bigint;
-
+  mediaTempAuthKeyId?: bigint
 }
 
 /**
@@ -440,8 +418,7 @@ export interface TLAuthKeyInfo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthKeyInfo data2 = 1;
    */
-  data2?: AuthKeyInfo;
-
+  data2?: AuthKeyInfo
 }
 
 /**
@@ -451,103 +428,102 @@ export interface Authorization {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool current = 3;
    */
-  current?: boolean;
+  current?: boolean
 
   /**
    * @generated from field: optional bool official_app = 4;
    */
-  officialApp?: boolean;
+  officialApp?: boolean
 
   /**
    * @generated from field: optional bool password_pending = 5;
    */
-  passwordPending?: boolean;
+  passwordPending?: boolean
 
   /**
    * @generated from field: optional bool encrypted_requests_disabled = 6;
    */
-  encryptedRequestsDisabled?: boolean;
+  encryptedRequestsDisabled?: boolean
 
   /**
    * @generated from field: optional bool call_requests_disabled = 7;
    */
-  callRequestsDisabled?: boolean;
+  callRequestsDisabled?: boolean
 
   /**
    * @generated from field: optional bool unconfirmed = 8;
    */
-  unconfirmed?: boolean;
+  unconfirmed?: boolean
 
   /**
    * @generated from field: optional int64 hash = 9;
    */
-  hash?: bigint;
+  hash?: bigint
 
   /**
    * @generated from field: optional string device_model = 10;
    */
-  deviceModel?: string;
+  deviceModel?: string
 
   /**
    * @generated from field: optional string platform = 11;
    */
-  platform?: string;
+  platform?: string
 
   /**
    * @generated from field: optional string system_version = 12;
    */
-  systemVersion?: string;
+  systemVersion?: string
 
   /**
    * @generated from field: optional int32 api_id = 13;
    */
-  apiId?: number;
+  apiId?: number
 
   /**
    * @generated from field: optional string app_name = 14;
    */
-  appName?: string;
+  appName?: string
 
   /**
    * @generated from field: optional string app_version = 15;
    */
-  appVersion?: string;
+  appVersion?: string
 
   /**
    * @generated from field: optional int32 date_created = 16;
    */
-  dateCreated?: number;
+  dateCreated?: number
 
   /**
    * @generated from field: optional int32 date_active = 17;
    */
-  dateActive?: number;
+  dateActive?: number
 
   /**
    * @generated from field: optional string ip = 18;
    */
-  ip?: string;
+  ip?: string
 
   /**
    * @generated from field: optional string country = 19;
    */
-  country?: string;
+  country?: string
 
   /**
    * @generated from field: optional string region = 20;
    */
-  region?: string;
-
+  region?: string
 }
 
 /**
@@ -557,8 +533,7 @@ export interface TLAuthorization {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Authorization data2 = 1;
    */
-  data2?: Authorization;
-
+  data2?: Authorization
 }
 
 /**
@@ -568,78 +543,77 @@ export interface AutoDownloadSettings {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool disabled = 3;
    */
-  disabled?: boolean;
+  disabled?: boolean
 
   /**
    * @generated from field: optional bool video_preload_large = 4;
    */
-  videoPreloadLarge?: boolean;
+  videoPreloadLarge?: boolean
 
   /**
    * @generated from field: optional bool audio_preload_next = 5;
    */
-  audioPreloadNext?: boolean;
+  audioPreloadNext?: boolean
 
   /**
    * @generated from field: optional bool phonecalls_less_data = 6;
    */
-  phonecallsLessData?: boolean;
+  phonecallsLessData?: boolean
 
   /**
    * @generated from field: optional bool stories_preload = 7;
    */
-  storiesPreload?: boolean;
+  storiesPreload?: boolean
 
   /**
    * @generated from field: optional int32 photo_size_max = 8;
    */
-  photoSizeMax?: number;
+  photoSizeMax?: number
 
   /**
    * @generated from field: optional int64 video_size_max_INT64 = 9;
    */
-  videoSizeMaxINT64?: bigint;
+  videoSizeMaxINT64?: bigint
 
   /**
    * @generated from field: optional int64 file_size_max_INT64 = 10;
    */
-  fileSizeMaxINT64?: bigint;
+  fileSizeMaxINT64?: bigint
 
   /**
    * @generated from field: optional int32 video_upload_maxbitrate = 11;
    */
-  videoUploadMaxbitrate?: number;
+  videoUploadMaxbitrate?: number
 
   /**
    * @generated from field: optional int32 small_queue_active_operations_max = 12;
    */
-  smallQueueActiveOperationsMax?: number;
+  smallQueueActiveOperationsMax?: number
 
   /**
    * @generated from field: optional int32 large_queue_active_operations_max = 13;
    */
-  largeQueueActiveOperationsMax?: number;
+  largeQueueActiveOperationsMax?: number
 
   /**
    * @generated from field: optional int32 video_size_max_INT32 = 14;
    */
-  videoSizeMaxINT32?: number;
+  videoSizeMaxINT32?: number
 
   /**
    * @generated from field: optional int32 file_size_max_INT32 = 15;
    */
-  fileSizeMaxINT32?: number;
-
+  fileSizeMaxINT32?: number
 }
 
 /**
@@ -649,8 +623,7 @@ export interface TLAutoDownloadSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AutoDownloadSettings data2 = 1;
    */
-  data2?: AutoDownloadSettings;
-
+  data2?: AutoDownloadSettings
 }
 
 /**
@@ -660,23 +633,22 @@ export interface AutoSaveException {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer = 3;
    */
-  peer?: Peer;
+  peer?: Peer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AutoSaveSettings settings = 4;
    */
-  settings?: AutoSaveSettings;
-
+  settings?: AutoSaveSettings
 }
 
 /**
@@ -686,8 +658,7 @@ export interface TLAutoSaveException {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AutoSaveException data2 = 1;
    */
-  data2?: AutoSaveException;
-
+  data2?: AutoSaveException
 }
 
 /**
@@ -697,28 +668,27 @@ export interface AutoSaveSettings {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool photos = 3;
    */
-  photos?: boolean;
+  photos?: boolean
 
   /**
    * @generated from field: optional bool videos = 4;
    */
-  videos?: boolean;
+  videos?: boolean
 
   /**
    * @generated from field: optional google.protobuf.Int64Value video_max_size = 5;
    */
-  videoMaxSize?: bigint;
-
+  videoMaxSize?: bigint
 }
 
 /**
@@ -728,8 +698,7 @@ export interface TLAutoSaveSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AutoSaveSettings data2 = 1;
    */
-  data2?: AutoSaveSettings;
-
+  data2?: AutoSaveSettings
 }
 
 /**
@@ -739,68 +708,67 @@ export interface AvailableReaction {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool inactive = 3;
    */
-  inactive?: boolean;
+  inactive?: boolean
 
   /**
    * @generated from field: optional bool premium = 4;
    */
-  premium?: boolean;
+  premium?: boolean
 
   /**
    * @generated from field: optional string reaction = 5;
    */
-  reaction?: string;
+  reaction?: string
 
   /**
    * @generated from field: optional string title = 6;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document static_icon = 7;
    */
-  staticIcon?: Document;
+  staticIcon?: Document
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document appear_animation = 8;
    */
-  appearAnimation?: Document;
+  appearAnimation?: Document
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document select_animation = 9;
    */
-  selectAnimation?: Document;
+  selectAnimation?: Document
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document activate_animation = 10;
    */
-  activateAnimation?: Document;
+  activateAnimation?: Document
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document effect_animation = 11;
    */
-  effectAnimation?: Document;
+  effectAnimation?: Document
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document around_animation = 12;
    */
-  aroundAnimation?: Document;
+  aroundAnimation?: Document
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document center_icon = 13;
    */
-  centerIcon?: Document;
-
+  centerIcon?: Document
 }
 
 /**
@@ -810,8 +778,7 @@ export interface TLAvailableReaction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AvailableReaction data2 = 1;
    */
-  data2?: AvailableReaction;
-
+  data2?: AvailableReaction
 }
 
 /**
@@ -821,23 +788,22 @@ export interface BankCardOpenUrl {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string url = 3;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional string name = 4;
    */
-  name?: string;
-
+  name?: string
 }
 
 /**
@@ -847,8 +813,7 @@ export interface TLBankCardOpenUrl {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BankCardOpenUrl data2 = 1;
    */
-  data2?: BankCardOpenUrl;
-
+  data2?: BankCardOpenUrl
 }
 
 /**
@@ -858,13 +823,12 @@ export interface BaseTheme {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -874,8 +838,7 @@ export interface TLBaseThemeClassic {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BaseTheme data2 = 1;
    */
-  data2?: BaseTheme;
-
+  data2?: BaseTheme
 }
 
 /**
@@ -885,8 +848,7 @@ export interface TLBaseThemeDay {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BaseTheme data2 = 1;
    */
-  data2?: BaseTheme;
-
+  data2?: BaseTheme
 }
 
 /**
@@ -896,8 +858,7 @@ export interface TLBaseThemeNight {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BaseTheme data2 = 1;
    */
-  data2?: BaseTheme;
-
+  data2?: BaseTheme
 }
 
 /**
@@ -907,8 +868,7 @@ export interface TLBaseThemeTinted {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BaseTheme data2 = 1;
    */
-  data2?: BaseTheme;
-
+  data2?: BaseTheme
 }
 
 /**
@@ -918,8 +878,7 @@ export interface TLBaseThemeArctic {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BaseTheme data2 = 1;
    */
-  data2?: BaseTheme;
-
+  data2?: BaseTheme
 }
 
 /**
@@ -929,18 +888,17 @@ export interface BizDataRaw {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes data = 3;
    */
-  data?: Uint8Array;
-
+  data?: Uint8Array
 }
 
 /**
@@ -950,8 +908,7 @@ export interface TLBizDataRaw {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BizDataRaw data2 = 1;
    */
-  data2?: BizDataRaw;
-
+  data2?: BizDataRaw
 }
 
 /**
@@ -961,23 +918,22 @@ export interface Booster {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 user_id = 3;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional int32 expires = 4;
    */
-  expires?: number;
-
+  expires?: number
 }
 
 /**
@@ -987,8 +943,7 @@ export interface TLBooster {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Booster data2 = 1;
    */
-  data2?: Booster;
-
+  data2?: Booster
 }
 
 /**
@@ -998,53 +953,52 @@ export interface BotApp {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional string short_name = 5;
    */
-  shortName?: string;
+  shortName?: string
 
   /**
    * @generated from field: optional string title = 6;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional string description = 7;
    */
-  description?: string;
+  description?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Photo photo = 8;
    */
-  photo?: Photo;
+  photo?: Photo
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document document = 9;
    */
-  document?: Document;
+  document?: Document
 
   /**
    * @generated from field: optional int64 hash = 10;
    */
-  hash?: bigint;
-
+  hash?: bigint
 }
 
 /**
@@ -1054,8 +1008,7 @@ export interface TLBotAppNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotApp data2 = 1;
    */
-  data2?: BotApp;
-
+  data2?: BotApp
 }
 
 /**
@@ -1065,8 +1018,7 @@ export interface TLBotApp {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotApp data2 = 1;
    */
-  data2?: BotApp;
-
+  data2?: BotApp
 }
 
 /**
@@ -1076,23 +1028,22 @@ export interface BotCommand {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string command = 3;
    */
-  command?: string;
+  command?: string
 
   /**
    * @generated from field: optional string description = 4;
    */
-  description?: string;
-
+  description?: string
 }
 
 /**
@@ -1102,8 +1053,7 @@ export interface TLBotCommand {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotCommand data2 = 1;
    */
-  data2?: BotCommand;
-
+  data2?: BotCommand
 }
 
 /**
@@ -1113,23 +1063,22 @@ export interface BotCommandScope {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 4;
    */
-  userId?: InputUser;
-
+  userId?: InputUser
 }
 
 /**
@@ -1139,8 +1088,7 @@ export interface TLBotCommandScopeDefault {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotCommandScope data2 = 1;
    */
-  data2?: BotCommandScope;
-
+  data2?: BotCommandScope
 }
 
 /**
@@ -1150,8 +1098,7 @@ export interface TLBotCommandScopeUsers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotCommandScope data2 = 1;
    */
-  data2?: BotCommandScope;
-
+  data2?: BotCommandScope
 }
 
 /**
@@ -1161,8 +1108,7 @@ export interface TLBotCommandScopeChats {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotCommandScope data2 = 1;
    */
-  data2?: BotCommandScope;
-
+  data2?: BotCommandScope
 }
 
 /**
@@ -1172,8 +1118,7 @@ export interface TLBotCommandScopeChatAdmins {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotCommandScope data2 = 1;
    */
-  data2?: BotCommandScope;
-
+  data2?: BotCommandScope
 }
 
 /**
@@ -1183,8 +1128,7 @@ export interface TLBotCommandScopePeer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotCommandScope data2 = 1;
    */
-  data2?: BotCommandScope;
-
+  data2?: BotCommandScope
 }
 
 /**
@@ -1194,8 +1138,7 @@ export interface TLBotCommandScopePeerAdmins {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotCommandScope data2 = 1;
    */
-  data2?: BotCommandScope;
-
+  data2?: BotCommandScope
 }
 
 /**
@@ -1205,8 +1148,7 @@ export interface TLBotCommandScopePeerUser {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotCommandScope data2 = 1;
    */
-  data2?: BotCommandScope;
-
+  data2?: BotCommandScope
 }
 
 /**
@@ -1216,63 +1158,62 @@ export interface BotData {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int32 bot_type = 4;
    */
-  botType?: number;
+  botType?: number
 
   /**
    * @generated from field: optional int64 creator = 5;
    */
-  creator?: bigint;
+  creator?: bigint
 
   /**
    * @generated from field: optional string token = 6;
    */
-  token?: string;
+  token?: string
 
   /**
    * @generated from field: optional string description = 7;
    */
-  description?: string;
+  description?: string
 
   /**
    * @generated from field: optional bool bot_chat_history = 8;
    */
-  botChatHistory?: boolean;
+  botChatHistory?: boolean
 
   /**
    * @generated from field: optional bool bot_nochats = 9;
    */
-  botNochats?: boolean;
+  botNochats?: boolean
 
   /**
    * @generated from field: optional bool bot_inline_geo = 10;
    */
-  botInlineGeo?: boolean;
+  botInlineGeo?: boolean
 
   /**
    * @generated from field: optional int32 bot_info_version = 11;
    */
-  botInfoVersion?: number;
+  botInfoVersion?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue bot_inline_placeholder = 12;
    */
-  botInlinePlaceholder?: string;
-
+  botInlinePlaceholder?: string
 }
 
 /**
@@ -1282,8 +1223,7 @@ export interface TLBotData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotData data2 = 1;
    */
-  data2?: BotData;
-
+  data2?: BotData
 }
 
 /**
@@ -1293,53 +1233,52 @@ export interface BotInfo {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional google.protobuf.Int64Value user_id_FLAGINT64 = 3;
    */
-  userIdFLAGINT64?: bigint;
+  userIdFLAGINT64?: bigint
 
   /**
    * @generated from field: optional google.protobuf.StringValue description_FLAGSTRING = 4;
    */
-  descriptionFLAGSTRING?: string;
+  descriptionFLAGSTRING?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Photo description_photo = 5;
    */
-  descriptionPhoto?: Photo;
+  descriptionPhoto?: Photo
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document description_document = 6;
    */
-  descriptionDocument?: Document;
+  descriptionDocument?: Document
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.BotCommand commands = 7;
    */
-  commands: BotCommand[];
+  commands: BotCommand[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotMenuButton menu_button = 8;
    */
-  menuButton?: BotMenuButton;
+  menuButton?: BotMenuButton
 
   /**
    * @generated from field: optional int64 user_id_INT64 = 9;
    */
-  userIdINT64?: bigint;
+  userIdINT64?: bigint
 
   /**
    * @generated from field: optional string description_STRING = 10;
    */
-  descriptionSTRING?: string;
-
+  descriptionSTRING?: string
 }
 
 /**
@@ -1349,8 +1288,7 @@ export interface TLBotInfo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotInfo data2 = 1;
    */
-  data2?: BotInfo;
-
+  data2?: BotInfo
 }
 
 /**
@@ -1360,128 +1298,127 @@ export interface BotInlineMessage {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string message = 3;
    */
-  message?: string;
+  message?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 4;
    */
-  entities: MessageEntity[];
+  entities: MessageEntity[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReplyMarkup reply_markup = 5;
    */
-  replyMarkup?: ReplyMarkup;
+  replyMarkup?: ReplyMarkup
 
   /**
    * @generated from field: optional bool no_webpage = 6;
    */
-  noWebpage?: boolean;
+  noWebpage?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.GeoPoint geo = 7;
    */
-  geo?: GeoPoint;
+  geo?: GeoPoint
 
   /**
    * @generated from field: optional google.protobuf.Int32Value heading = 8;
    */
-  heading?: number;
+  heading?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value period = 9;
    */
-  period?: number;
+  period?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value proximity_notification_radius = 10;
    */
-  proximityNotificationRadius?: number;
+  proximityNotificationRadius?: number
 
   /**
    * @generated from field: optional string title = 11;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional string address = 12;
    */
-  address?: string;
+  address?: string
 
   /**
    * @generated from field: optional string provider = 13;
    */
-  provider?: string;
+  provider?: string
 
   /**
    * @generated from field: optional string venue_id = 14;
    */
-  venueId?: string;
+  venueId?: string
 
   /**
    * @generated from field: optional string venue_type = 15;
    */
-  venueType?: string;
+  venueType?: string
 
   /**
    * @generated from field: optional string phone_number = 16;
    */
-  phoneNumber?: string;
+  phoneNumber?: string
 
   /**
    * @generated from field: optional string first_name = 17;
    */
-  firstName?: string;
+  firstName?: string
 
   /**
    * @generated from field: optional string last_name = 18;
    */
-  lastName?: string;
+  lastName?: string
 
   /**
    * @generated from field: optional string vcard = 19;
    */
-  vcard?: string;
+  vcard?: string
 
   /**
    * @generated from field: optional bool shipping_address_requested = 20;
    */
-  shippingAddressRequested?: boolean;
+  shippingAddressRequested?: boolean
 
   /**
    * @generated from field: optional bool test = 21;
    */
-  test?: boolean;
+  test?: boolean
 
   /**
    * @generated from field: optional string description = 22;
    */
-  description?: string;
+  description?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WebDocument photo = 23;
    */
-  photo?: WebDocument;
+  photo?: WebDocument
 
   /**
    * @generated from field: optional string currency = 24;
    */
-  currency?: string;
+  currency?: string
 
   /**
    * @generated from field: optional int64 total_amount = 25;
    */
-  totalAmount?: bigint;
-
+  totalAmount?: bigint
 }
 
 /**
@@ -1491,8 +1428,7 @@ export interface TLBotInlineMessageMediaAuto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotInlineMessage data2 = 1;
    */
-  data2?: BotInlineMessage;
-
+  data2?: BotInlineMessage
 }
 
 /**
@@ -1502,8 +1438,7 @@ export interface TLBotInlineMessageText {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotInlineMessage data2 = 1;
    */
-  data2?: BotInlineMessage;
-
+  data2?: BotInlineMessage
 }
 
 /**
@@ -1513,8 +1448,7 @@ export interface TLBotInlineMessageMediaGeo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotInlineMessage data2 = 1;
    */
-  data2?: BotInlineMessage;
-
+  data2?: BotInlineMessage
 }
 
 /**
@@ -1524,8 +1458,7 @@ export interface TLBotInlineMessageMediaVenue {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotInlineMessage data2 = 1;
    */
-  data2?: BotInlineMessage;
-
+  data2?: BotInlineMessage
 }
 
 /**
@@ -1535,8 +1468,7 @@ export interface TLBotInlineMessageMediaContact {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotInlineMessage data2 = 1;
    */
-  data2?: BotInlineMessage;
-
+  data2?: BotInlineMessage
 }
 
 /**
@@ -1546,8 +1478,7 @@ export interface TLBotInlineMessageMediaInvoice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotInlineMessage data2 = 1;
    */
-  data2?: BotInlineMessage;
-
+  data2?: BotInlineMessage
 }
 
 /**
@@ -1557,63 +1488,62 @@ export interface BotInlineResult {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string id = 3;
    */
-  id?: string;
+  id?: string
 
   /**
    * @generated from field: optional string type = 4;
    */
-  type?: string;
+  type?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue title = 5;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue description = 6;
    */
-  description?: string;
+  description?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue url = 7;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WebDocument thumb = 8;
    */
-  thumb?: WebDocument;
+  thumb?: WebDocument
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WebDocument content = 9;
    */
-  content?: WebDocument;
+  content?: WebDocument
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotInlineMessage send_message = 10;
    */
-  sendMessage?: BotInlineMessage;
+  sendMessage?: BotInlineMessage
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Photo photo = 11;
    */
-  photo?: Photo;
+  photo?: Photo
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document document = 12;
    */
-  document?: Document;
-
+  document?: Document
 }
 
 /**
@@ -1623,8 +1553,7 @@ export interface TLBotInlineResult {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotInlineResult data2 = 1;
    */
-  data2?: BotInlineResult;
-
+  data2?: BotInlineResult
 }
 
 /**
@@ -1634,8 +1563,7 @@ export interface TLBotInlineMediaResult {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotInlineResult data2 = 1;
    */
-  data2?: BotInlineResult;
-
+  data2?: BotInlineResult
 }
 
 /**
@@ -1645,23 +1573,22 @@ export interface BotMenuButton {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string text = 3;
    */
-  text?: string;
+  text?: string
 
   /**
    * @generated from field: optional string url = 4;
    */
-  url?: string;
-
+  url?: string
 }
 
 /**
@@ -1671,8 +1598,7 @@ export interface TLBotMenuButtonDefault {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotMenuButton data2 = 1;
    */
-  data2?: BotMenuButton;
-
+  data2?: BotMenuButton
 }
 
 /**
@@ -1682,8 +1608,7 @@ export interface TLBotMenuButtonCommands {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotMenuButton data2 = 1;
    */
-  data2?: BotMenuButton;
-
+  data2?: BotMenuButton
 }
 
 /**
@@ -1693,8 +1618,7 @@ export interface TLBotMenuButton {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotMenuButton data2 = 1;
    */
-  data2?: BotMenuButton;
-
+  data2?: BotMenuButton
 }
 
 /**
@@ -1704,18 +1628,17 @@ export interface CdnConfig {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.CdnPublicKey public_keys = 3;
    */
-  publicKeys: CdnPublicKey[];
-
+  publicKeys: CdnPublicKey[]
 }
 
 /**
@@ -1725,8 +1648,7 @@ export interface TLCdnConfig {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.CdnConfig data2 = 1;
    */
-  data2?: CdnConfig;
-
+  data2?: CdnConfig
 }
 
 /**
@@ -1736,23 +1658,22 @@ export interface CdnPublicKey {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 dc_id = 3;
    */
-  dcId?: number;
+  dcId?: number
 
   /**
    * @generated from field: optional string public_key = 4;
    */
-  publicKey?: string;
-
+  publicKey?: string
 }
 
 /**
@@ -1762,8 +1683,7 @@ export interface TLCdnPublicKey {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.CdnPublicKey data2 = 1;
    */
-  data2?: CdnPublicKey;
-
+  data2?: CdnPublicKey
 }
 
 /**
@@ -1773,33 +1693,32 @@ export interface ChannelAdminLogEvent {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int32 date = 4;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional int64 user_id = 5;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction action = 6;
    */
-  action?: ChannelAdminLogEventAction;
-
+  action?: ChannelAdminLogEventAction
 }
 
 /**
@@ -1809,8 +1728,7 @@ export interface TLChannelAdminLogEvent {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEvent data2 = 1;
    */
-  data2?: ChannelAdminLogEvent;
-
+  data2?: ChannelAdminLogEvent
 }
 
 /**
@@ -1820,193 +1738,192 @@ export interface ChannelAdminLogEventAction {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string prev_value_STRING = 3;
    */
-  prevValueSTRING?: string;
+  prevValueSTRING?: string
 
   /**
    * @generated from field: optional string new_value_STRING = 4;
    */
-  newValueSTRING?: string;
+  newValueSTRING?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Photo prev_photo = 5;
    */
-  prevPhoto?: Photo;
+  prevPhoto?: Photo
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Photo new_photo = 6;
    */
-  newPhoto?: Photo;
+  newPhoto?: Photo
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool new_value_BOOL = 7;
    */
-  newValueBOOL?: Bool;
+  newValueBOOL?: Bool
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Message message = 8;
    */
-  message?: Message;
+  message?: Message
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Message prev_message = 9;
    */
-  prevMessage?: Message;
+  prevMessage?: Message
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Message new_message = 10;
    */
-  newMessage?: Message;
+  newMessage?: Message
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelParticipant participant_CHANNELPARTICIPANT = 11;
    */
-  participantCHANNELPARTICIPANT?: ChannelParticipant;
+  participantCHANNELPARTICIPANT?: ChannelParticipant
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelParticipant prev_participant = 12;
    */
-  prevParticipant?: ChannelParticipant;
+  prevParticipant?: ChannelParticipant
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelParticipant new_participant = 13;
    */
-  newParticipant?: ChannelParticipant;
+  newParticipant?: ChannelParticipant
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet prev_stickerset = 14;
    */
-  prevStickerset?: InputStickerSet;
+  prevStickerset?: InputStickerSet
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet new_stickerset = 15;
    */
-  newStickerset?: InputStickerSet;
+  newStickerset?: InputStickerSet
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatBannedRights prev_banned_rights = 16;
    */
-  prevBannedRights?: ChatBannedRights;
+  prevBannedRights?: ChatBannedRights
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatBannedRights new_banned_rights = 17;
    */
-  newBannedRights?: ChatBannedRights;
+  newBannedRights?: ChatBannedRights
 
   /**
    * @generated from field: optional int64 prev_value_INT64 = 18;
    */
-  prevValueINT64?: bigint;
+  prevValueINT64?: bigint
 
   /**
    * @generated from field: optional int64 new_value_INT64 = 19;
    */
-  newValueINT64?: bigint;
+  newValueINT64?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelLocation prev_value_CHANNELLOCATION = 20;
    */
-  prevValueCHANNELLOCATION?: ChannelLocation;
+  prevValueCHANNELLOCATION?: ChannelLocation
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelLocation new_value_CHANNELLOCATION = 21;
    */
-  newValueCHANNELLOCATION?: ChannelLocation;
+  newValueCHANNELLOCATION?: ChannelLocation
 
   /**
    * @generated from field: optional int32 prev_value_INT32 = 22;
    */
-  prevValueINT32?: number;
+  prevValueINT32?: number
 
   /**
    * @generated from field: optional int32 new_value_INT32 = 23;
    */
-  newValueINT32?: number;
+  newValueINT32?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 24;
    */
-  call?: InputGroupCall;
+  call?: InputGroupCall
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.GroupCallParticipant participant_GROUPCALLPARTICIPANT = 25;
    */
-  participantGROUPCALLPARTICIPANT?: GroupCallParticipant;
+  participantGROUPCALLPARTICIPANT?: GroupCallParticipant
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool join_muted = 26;
    */
-  joinMuted?: Bool;
+  joinMuted?: Bool
 
   /**
    * @generated from field: optional bool via_chatlist = 27;
    */
-  viaChatlist?: boolean;
+  viaChatlist?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ExportedChatInvite invite = 28;
    */
-  invite?: ExportedChatInvite;
+  invite?: ExportedChatInvite
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ExportedChatInvite prev_invite = 29;
    */
-  prevInvite?: ExportedChatInvite;
+  prevInvite?: ExportedChatInvite
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ExportedChatInvite new_invite = 30;
    */
-  newInvite?: ExportedChatInvite;
+  newInvite?: ExportedChatInvite
 
   /**
    * @generated from field: optional int64 approved_by = 31;
    */
-  approvedBy?: bigint;
+  approvedBy?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatReactions prev_value_CHATREACTIONS = 32;
    */
-  prevValueCHATREACTIONS?: ChatReactions;
+  prevValueCHATREACTIONS?: ChatReactions
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatReactions new_value_CHATREACTIONS = 33;
    */
-  newValueCHATREACTIONS?: ChatReactions;
+  newValueCHATREACTIONS?: ChatReactions
 
   /**
    * @generated from field: repeated string prev_value_VECTORSTRING = 34;
    */
-  prevValueVECTORSTRING: string[];
+  prevValueVECTORSTRING: string[]
 
   /**
    * @generated from field: repeated string new_value_VECTORSTRING = 35;
    */
-  newValueVECTORSTRING: string[];
+  newValueVECTORSTRING: string[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ForumTopic topic = 36;
    */
-  topic?: ForumTopic;
+  topic?: ForumTopic
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ForumTopic prev_topic = 37;
    */
-  prevTopic?: ForumTopic;
+  prevTopic?: ForumTopic
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ForumTopic new_topic = 38;
    */
-  newTopic?: ForumTopic;
-
+  newTopic?: ForumTopic
 }
 
 /**
@@ -2016,8 +1933,7 @@ export interface TLChannelAdminLogEventActionChangeTitle {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2027,8 +1943,7 @@ export interface TLChannelAdminLogEventActionChangeAbout {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2038,8 +1953,7 @@ export interface TLChannelAdminLogEventActionChangeUsername {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2049,8 +1963,7 @@ export interface TLChannelAdminLogEventActionChangePhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2060,8 +1973,7 @@ export interface TLChannelAdminLogEventActionToggleInvites {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2071,8 +1983,7 @@ export interface TLChannelAdminLogEventActionToggleSignatures {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2082,8 +1993,7 @@ export interface TLChannelAdminLogEventActionUpdatePinned {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2093,8 +2003,7 @@ export interface TLChannelAdminLogEventActionEditMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2104,8 +2013,7 @@ export interface TLChannelAdminLogEventActionDeleteMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2115,8 +2023,7 @@ export interface TLChannelAdminLogEventActionParticipantJoin {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2126,8 +2033,7 @@ export interface TLChannelAdminLogEventActionParticipantLeave {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2137,8 +2043,7 @@ export interface TLChannelAdminLogEventActionParticipantInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2148,8 +2053,7 @@ export interface TLChannelAdminLogEventActionParticipantToggleBan {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2159,8 +2063,7 @@ export interface TLChannelAdminLogEventActionParticipantToggleAdmin {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2170,8 +2073,7 @@ export interface TLChannelAdminLogEventActionChangeStickerSet {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2181,8 +2083,7 @@ export interface TLChannelAdminLogEventActionTogglePreHistoryHidden {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2192,8 +2093,7 @@ export interface TLChannelAdminLogEventActionDefaultBannedRights {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2203,8 +2103,7 @@ export interface TLChannelAdminLogEventActionStopPoll {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2214,8 +2113,7 @@ export interface TLChannelAdminLogEventActionChangeLinkedChat {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2225,8 +2123,7 @@ export interface TLChannelAdminLogEventActionChangeLocation {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2236,8 +2133,7 @@ export interface TLChannelAdminLogEventActionToggleSlowMode {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2247,8 +2143,7 @@ export interface TLChannelAdminLogEventActionStartGroupCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2258,8 +2153,7 @@ export interface TLChannelAdminLogEventActionDiscardGroupCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2269,8 +2163,7 @@ export interface TLChannelAdminLogEventActionParticipantMute {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2280,8 +2173,7 @@ export interface TLChannelAdminLogEventActionParticipantUnmute {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2291,8 +2183,7 @@ export interface TLChannelAdminLogEventActionToggleGroupCallSetting {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2302,8 +2193,7 @@ export interface TLChannelAdminLogEventActionParticipantJoinByInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2313,8 +2203,7 @@ export interface TLChannelAdminLogEventActionExportedInviteDelete {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2324,8 +2213,7 @@ export interface TLChannelAdminLogEventActionExportedInviteRevoke {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2335,8 +2223,7 @@ export interface TLChannelAdminLogEventActionExportedInviteEdit {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2346,8 +2233,7 @@ export interface TLChannelAdminLogEventActionParticipantVolume {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2357,8 +2243,7 @@ export interface TLChannelAdminLogEventActionChangeHistoryTTL {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2368,8 +2253,7 @@ export interface TLChannelAdminLogEventActionParticipantJoinByRequest {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2379,8 +2263,7 @@ export interface TLChannelAdminLogEventActionToggleNoForwards {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2390,8 +2273,7 @@ export interface TLChannelAdminLogEventActionSendMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2401,8 +2283,7 @@ export interface TLChannelAdminLogEventActionChangeAvailableReactions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2412,8 +2293,7 @@ export interface TLChannelAdminLogEventActionChangeUsernames {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2423,8 +2303,7 @@ export interface TLChannelAdminLogEventActionToggleForum {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2434,8 +2313,7 @@ export interface TLChannelAdminLogEventActionCreateTopic {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2445,8 +2323,7 @@ export interface TLChannelAdminLogEventActionEditTopic {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2456,8 +2333,7 @@ export interface TLChannelAdminLogEventActionDeleteTopic {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2467,8 +2343,7 @@ export interface TLChannelAdminLogEventActionPinTopic {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2478,8 +2353,7 @@ export interface TLChannelAdminLogEventActionToggleAntiSpam {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventAction data2 = 1;
    */
-  data2?: ChannelAdminLogEventAction;
-
+  data2?: ChannelAdminLogEventAction
 }
 
 /**
@@ -2489,103 +2363,102 @@ export interface ChannelAdminLogEventsFilter {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool join = 3;
    */
-  join?: boolean;
+  join?: boolean
 
   /**
    * @generated from field: optional bool leave = 4;
    */
-  leave?: boolean;
+  leave?: boolean
 
   /**
    * @generated from field: optional bool invite = 5;
    */
-  invite?: boolean;
+  invite?: boolean
 
   /**
    * @generated from field: optional bool ban = 6;
    */
-  ban?: boolean;
+  ban?: boolean
 
   /**
    * @generated from field: optional bool unban = 7;
    */
-  unban?: boolean;
+  unban?: boolean
 
   /**
    * @generated from field: optional bool kick = 8;
    */
-  kick?: boolean;
+  kick?: boolean
 
   /**
    * @generated from field: optional bool unkick = 9;
    */
-  unkick?: boolean;
+  unkick?: boolean
 
   /**
    * @generated from field: optional bool promote = 10;
    */
-  promote?: boolean;
+  promote?: boolean
 
   /**
    * @generated from field: optional bool demote = 11;
    */
-  demote?: boolean;
+  demote?: boolean
 
   /**
    * @generated from field: optional bool info = 12;
    */
-  info?: boolean;
+  info?: boolean
 
   /**
    * @generated from field: optional bool settings = 13;
    */
-  settings?: boolean;
+  settings?: boolean
 
   /**
    * @generated from field: optional bool pinned = 14;
    */
-  pinned?: boolean;
+  pinned?: boolean
 
   /**
    * @generated from field: optional bool edit = 15;
    */
-  edit?: boolean;
+  edit?: boolean
 
   /**
    * @generated from field: optional bool delete = 16;
    */
-  delete?: boolean;
+  delete?: boolean
 
   /**
    * @generated from field: optional bool group_call = 17;
    */
-  groupCall?: boolean;
+  groupCall?: boolean
 
   /**
    * @generated from field: optional bool invites = 18;
    */
-  invites?: boolean;
+  invites?: boolean
 
   /**
    * @generated from field: optional bool send = 19;
    */
-  send?: boolean;
+  send?: boolean
 
   /**
    * @generated from field: optional bool forums = 20;
    */
-  forums?: boolean;
-
+  forums?: boolean
 }
 
 /**
@@ -2595,8 +2468,7 @@ export interface TLChannelAdminLogEventsFilter {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEventsFilter data2 = 1;
    */
-  data2?: ChannelAdminLogEventsFilter;
-
+  data2?: ChannelAdminLogEventsFilter
 }
 
 /**
@@ -2606,23 +2478,22 @@ export interface ChannelLocation {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.GeoPoint geo_point = 3;
    */
-  geoPoint?: GeoPoint;
+  geoPoint?: GeoPoint
 
   /**
    * @generated from field: optional string address = 4;
    */
-  address?: string;
-
+  address?: string
 }
 
 /**
@@ -2632,8 +2503,7 @@ export interface TLChannelLocationEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelLocation data2 = 1;
    */
-  data2?: ChannelLocation;
-
+  data2?: ChannelLocation
 }
 
 /**
@@ -2643,8 +2513,7 @@ export interface TLChannelLocation {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelLocation data2 = 1;
    */
-  data2?: ChannelLocation;
-
+  data2?: ChannelLocation
 }
 
 /**
@@ -2654,23 +2523,22 @@ export interface ChannelMessagesFilter {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool exclude_new_messages = 3;
    */
-  excludeNewMessages?: boolean;
+  excludeNewMessages?: boolean
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageRange ranges = 4;
    */
-  ranges: MessageRange[];
-
+  ranges: MessageRange[]
 }
 
 /**
@@ -2680,8 +2548,7 @@ export interface TLChannelMessagesFilterEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelMessagesFilter data2 = 1;
    */
-  data2?: ChannelMessagesFilter;
-
+  data2?: ChannelMessagesFilter
 }
 
 /**
@@ -2691,8 +2558,7 @@ export interface TLChannelMessagesFilter {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelMessagesFilter data2 = 1;
    */
-  data2?: ChannelMessagesFilter;
-
+  data2?: ChannelMessagesFilter
 }
 
 /**
@@ -2702,83 +2568,82 @@ export interface ChannelParticipant {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 user_id = 3;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional int32 date = 4;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional bool via_request = 5;
    */
-  viaRequest?: boolean;
+  viaRequest?: boolean
 
   /**
    * @generated from field: optional int64 inviter_id_INT64 = 6;
    */
-  inviterIdINT64?: bigint;
+  inviterIdINT64?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatAdminRights admin_rights = 7;
    */
-  adminRights?: ChatAdminRights;
+  adminRights?: ChatAdminRights
 
   /**
    * @generated from field: optional google.protobuf.StringValue rank = 8;
    */
-  rank?: string;
+  rank?: string
 
   /**
    * @generated from field: optional bool can_edit = 9;
    */
-  canEdit?: boolean;
+  canEdit?: boolean
 
   /**
    * @generated from field: optional bool self = 10;
    */
-  self?: boolean;
+  self?: boolean
 
   /**
    * @generated from field: optional google.protobuf.Int64Value inviter_id_FLAGINT64 = 11;
    */
-  inviterIdFLAGINT64?: bigint;
+  inviterIdFLAGINT64?: bigint
 
   /**
    * @generated from field: optional int64 promoted_by = 12;
    */
-  promotedBy?: bigint;
+  promotedBy?: bigint
 
   /**
    * @generated from field: optional bool left = 13;
    */
-  left?: boolean;
+  left?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer = 14;
    */
-  peer?: Peer;
+  peer?: Peer
 
   /**
    * @generated from field: optional int64 kicked_by = 15;
    */
-  kickedBy?: bigint;
+  kickedBy?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatBannedRights banned_rights = 16;
    */
-  bannedRights?: ChatBannedRights;
-
+  bannedRights?: ChatBannedRights
 }
 
 /**
@@ -2788,8 +2653,7 @@ export interface TLChannelParticipant {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelParticipant data2 = 1;
    */
-  data2?: ChannelParticipant;
-
+  data2?: ChannelParticipant
 }
 
 /**
@@ -2799,8 +2663,7 @@ export interface TLChannelParticipantSelf {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelParticipant data2 = 1;
    */
-  data2?: ChannelParticipant;
-
+  data2?: ChannelParticipant
 }
 
 /**
@@ -2810,8 +2673,7 @@ export interface TLChannelParticipantCreator {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelParticipant data2 = 1;
    */
-  data2?: ChannelParticipant;
-
+  data2?: ChannelParticipant
 }
 
 /**
@@ -2821,8 +2683,7 @@ export interface TLChannelParticipantAdmin {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelParticipant data2 = 1;
    */
-  data2?: ChannelParticipant;
-
+  data2?: ChannelParticipant
 }
 
 /**
@@ -2832,8 +2693,7 @@ export interface TLChannelParticipantBanned {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelParticipant data2 = 1;
    */
-  data2?: ChannelParticipant;
-
+  data2?: ChannelParticipant
 }
 
 /**
@@ -2843,8 +2703,7 @@ export interface TLChannelParticipantLeft {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelParticipant data2 = 1;
    */
-  data2?: ChannelParticipant;
-
+  data2?: ChannelParticipant
 }
 
 /**
@@ -2854,28 +2713,27 @@ export interface ChannelParticipantsFilter {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string q_STRING = 3;
    */
-  qSTRING?: string;
+  qSTRING?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue q_FLAGSTRING = 4;
    */
-  qFLAGSTRING?: string;
+  qFLAGSTRING?: string
 
   /**
    * @generated from field: optional google.protobuf.Int32Value top_msg_id = 5;
    */
-  topMsgId?: number;
-
+  topMsgId?: number
 }
 
 /**
@@ -2885,8 +2743,7 @@ export interface TLChannelParticipantsRecent {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelParticipantsFilter data2 = 1;
    */
-  data2?: ChannelParticipantsFilter;
-
+  data2?: ChannelParticipantsFilter
 }
 
 /**
@@ -2896,8 +2753,7 @@ export interface TLChannelParticipantsAdmins {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelParticipantsFilter data2 = 1;
    */
-  data2?: ChannelParticipantsFilter;
-
+  data2?: ChannelParticipantsFilter
 }
 
 /**
@@ -2907,8 +2763,7 @@ export interface TLChannelParticipantsKicked {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelParticipantsFilter data2 = 1;
    */
-  data2?: ChannelParticipantsFilter;
-
+  data2?: ChannelParticipantsFilter
 }
 
 /**
@@ -2918,8 +2773,7 @@ export interface TLChannelParticipantsBots {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelParticipantsFilter data2 = 1;
    */
-  data2?: ChannelParticipantsFilter;
-
+  data2?: ChannelParticipantsFilter
 }
 
 /**
@@ -2929,8 +2783,7 @@ export interface TLChannelParticipantsBanned {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelParticipantsFilter data2 = 1;
    */
-  data2?: ChannelParticipantsFilter;
-
+  data2?: ChannelParticipantsFilter
 }
 
 /**
@@ -2940,8 +2793,7 @@ export interface TLChannelParticipantsSearch {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelParticipantsFilter data2 = 1;
    */
-  data2?: ChannelParticipantsFilter;
-
+  data2?: ChannelParticipantsFilter
 }
 
 /**
@@ -2951,8 +2803,7 @@ export interface TLChannelParticipantsContacts {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelParticipantsFilter data2 = 1;
    */
-  data2?: ChannelParticipantsFilter;
-
+  data2?: ChannelParticipantsFilter
 }
 
 /**
@@ -2962,8 +2813,7 @@ export interface TLChannelParticipantsMentions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelParticipantsFilter data2 = 1;
    */
-  data2?: ChannelParticipantsFilter;
-
+  data2?: ChannelParticipantsFilter
 }
 
 /**
@@ -2973,223 +2823,222 @@ export interface Chat {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional bool creator = 4;
    */
-  creator?: boolean;
+  creator?: boolean
 
   /**
    * @generated from field: optional bool left = 5;
    */
-  left?: boolean;
+  left?: boolean
 
   /**
    * @generated from field: optional bool deactivated = 6;
    */
-  deactivated?: boolean;
+  deactivated?: boolean
 
   /**
    * @generated from field: optional bool call_active = 7;
    */
-  callActive?: boolean;
+  callActive?: boolean
 
   /**
    * @generated from field: optional bool call_not_empty = 8;
    */
-  callNotEmpty?: boolean;
+  callNotEmpty?: boolean
 
   /**
    * @generated from field: optional bool noforwards = 9;
    */
-  noforwards?: boolean;
+  noforwards?: boolean
 
   /**
    * @generated from field: optional string title = 10;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatPhoto photo = 11;
    */
-  photo?: ChatPhoto;
+  photo?: ChatPhoto
 
   /**
    * @generated from field: optional int32 participants_count_INT32 = 12;
    */
-  participantsCountINT32?: number;
+  participantsCountINT32?: number
 
   /**
    * @generated from field: optional int32 date = 13;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional int32 version = 14;
    */
-  version?: number;
+  version?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel migrated_to = 15;
    */
-  migratedTo?: InputChannel;
+  migratedTo?: InputChannel
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatAdminRights admin_rights = 16;
    */
-  adminRights?: ChatAdminRights;
+  adminRights?: ChatAdminRights
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatBannedRights default_banned_rights = 17;
    */
-  defaultBannedRights?: ChatBannedRights;
+  defaultBannedRights?: ChatBannedRights
 
   /**
    * @generated from field: optional bool broadcast = 18;
    */
-  broadcast?: boolean;
+  broadcast?: boolean
 
   /**
    * @generated from field: optional bool verified = 19;
    */
-  verified?: boolean;
+  verified?: boolean
 
   /**
    * @generated from field: optional bool megagroup = 20;
    */
-  megagroup?: boolean;
+  megagroup?: boolean
 
   /**
    * @generated from field: optional bool restricted = 21;
    */
-  restricted?: boolean;
+  restricted?: boolean
 
   /**
    * @generated from field: optional bool signatures = 22;
    */
-  signatures?: boolean;
+  signatures?: boolean
 
   /**
    * @generated from field: optional bool min = 23;
    */
-  min?: boolean;
+  min?: boolean
 
   /**
    * @generated from field: optional bool scam = 24;
    */
-  scam?: boolean;
+  scam?: boolean
 
   /**
    * @generated from field: optional bool has_link = 25;
    */
-  hasLink?: boolean;
+  hasLink?: boolean
 
   /**
    * @generated from field: optional bool has_geo = 26;
    */
-  hasGeo?: boolean;
+  hasGeo?: boolean
 
   /**
    * @generated from field: optional bool slowmode_enabled = 27;
    */
-  slowmodeEnabled?: boolean;
+  slowmodeEnabled?: boolean
 
   /**
    * @generated from field: optional bool fake = 28;
    */
-  fake?: boolean;
+  fake?: boolean
 
   /**
    * @generated from field: optional bool gigagroup = 29;
    */
-  gigagroup?: boolean;
+  gigagroup?: boolean
 
   /**
    * @generated from field: optional bool join_to_send = 30;
    */
-  joinToSend?: boolean;
+  joinToSend?: boolean
 
   /**
    * @generated from field: optional bool join_request = 31;
    */
-  joinRequest?: boolean;
+  joinRequest?: boolean
 
   /**
    * @generated from field: optional bool forum = 32;
    */
-  forum?: boolean;
+  forum?: boolean
 
   /**
    * @generated from field: optional bool stories_hidden = 33;
    */
-  storiesHidden?: boolean;
+  storiesHidden?: boolean
 
   /**
    * @generated from field: optional bool stories_hidden_min = 34;
    */
-  storiesHiddenMin?: boolean;
+  storiesHiddenMin?: boolean
 
   /**
    * @generated from field: optional bool stories_unavailable = 35;
    */
-  storiesUnavailable?: boolean;
+  storiesUnavailable?: boolean
 
   /**
    * @generated from field: optional google.protobuf.Int64Value access_hash_FLAGINT64 = 36;
    */
-  accessHashFLAGINT64?: bigint;
+  accessHashFLAGINT64?: bigint
 
   /**
    * @generated from field: optional google.protobuf.StringValue username = 37;
    */
-  username?: string;
+  username?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.RestrictionReason restriction_reason = 38;
    */
-  restrictionReason: RestrictionReason[];
+  restrictionReason: RestrictionReason[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatBannedRights banned_rights = 39;
    */
-  bannedRights?: ChatBannedRights;
+  bannedRights?: ChatBannedRights
 
   /**
    * @generated from field: optional google.protobuf.Int32Value participants_count_FLAGINT32 = 40;
    */
-  participantsCountFLAGINT32?: number;
+  participantsCountFLAGINT32?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Username usernames = 41;
    */
-  usernames: Username[];
+  usernames: Username[]
 
   /**
    * @generated from field: optional google.protobuf.Int32Value stories_max_id = 42;
    */
-  storiesMaxId?: number;
+  storiesMaxId?: number
 
   /**
    * @generated from field: optional int64 access_hash_INT64 = 43;
    */
-  accessHashINT64?: bigint;
+  accessHashINT64?: bigint
 
   /**
    * @generated from field: optional google.protobuf.Int32Value until_date = 44;
    */
-  untilDate?: number;
-
+  untilDate?: number
 }
 
 /**
@@ -3199,8 +3048,7 @@ export interface TLChatEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Chat data2 = 1;
    */
-  data2?: Chat;
-
+  data2?: Chat
 }
 
 /**
@@ -3210,8 +3058,7 @@ export interface TLChat {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Chat data2 = 1;
    */
-  data2?: Chat;
-
+  data2?: Chat
 }
 
 /**
@@ -3221,8 +3068,7 @@ export interface TLChatForbidden {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Chat data2 = 1;
    */
-  data2?: Chat;
-
+  data2?: Chat
 }
 
 /**
@@ -3232,8 +3078,7 @@ export interface TLChannel {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Chat data2 = 1;
    */
-  data2?: Chat;
-
+  data2?: Chat
 }
 
 /**
@@ -3243,8 +3088,7 @@ export interface TLChannelForbidden {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Chat data2 = 1;
    */
-  data2?: Chat;
-
+  data2?: Chat
 }
 
 /**
@@ -3254,88 +3098,87 @@ export interface ChatAdminRights {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool change_info = 3;
    */
-  changeInfo?: boolean;
+  changeInfo?: boolean
 
   /**
    * @generated from field: optional bool post_messages = 4;
    */
-  postMessages?: boolean;
+  postMessages?: boolean
 
   /**
    * @generated from field: optional bool edit_messages = 5;
    */
-  editMessages?: boolean;
+  editMessages?: boolean
 
   /**
    * @generated from field: optional bool delete_messages = 6;
    */
-  deleteMessages?: boolean;
+  deleteMessages?: boolean
 
   /**
    * @generated from field: optional bool ban_users = 7;
    */
-  banUsers?: boolean;
+  banUsers?: boolean
 
   /**
    * @generated from field: optional bool invite_users = 8;
    */
-  inviteUsers?: boolean;
+  inviteUsers?: boolean
 
   /**
    * @generated from field: optional bool pin_messages = 9;
    */
-  pinMessages?: boolean;
+  pinMessages?: boolean
 
   /**
    * @generated from field: optional bool add_admins = 10;
    */
-  addAdmins?: boolean;
+  addAdmins?: boolean
 
   /**
    * @generated from field: optional bool anonymous = 11;
    */
-  anonymous?: boolean;
+  anonymous?: boolean
 
   /**
    * @generated from field: optional bool manage_call = 12;
    */
-  manageCall?: boolean;
+  manageCall?: boolean
 
   /**
    * @generated from field: optional bool other = 13;
    */
-  other?: boolean;
+  other?: boolean
 
   /**
    * @generated from field: optional bool manage_topics = 14;
    */
-  manageTopics?: boolean;
+  manageTopics?: boolean
 
   /**
    * @generated from field: optional bool post_stories = 15;
    */
-  postStories?: boolean;
+  postStories?: boolean
 
   /**
    * @generated from field: optional bool edit_stories = 16;
    */
-  editStories?: boolean;
+  editStories?: boolean
 
   /**
    * @generated from field: optional bool delete_stories = 17;
    */
-  deleteStories?: boolean;
-
+  deleteStories?: boolean
 }
 
 /**
@@ -3345,8 +3188,7 @@ export interface TLChatAdminRights {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatAdminRights data2 = 1;
    */
-  data2?: ChatAdminRights;
-
+  data2?: ChatAdminRights
 }
 
 /**
@@ -3356,28 +3198,27 @@ export interface ChatAdminWithInvites {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 admin_id = 3;
    */
-  adminId?: bigint;
+  adminId?: bigint
 
   /**
    * @generated from field: optional int32 invites_count = 4;
    */
-  invitesCount?: number;
+  invitesCount?: number
 
   /**
    * @generated from field: optional int32 revoked_invites_count = 5;
    */
-  revokedInvitesCount?: number;
-
+  revokedInvitesCount?: number
 }
 
 /**
@@ -3387,8 +3228,7 @@ export interface TLChatAdminWithInvites {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatAdminWithInvites data2 = 1;
    */
-  data2?: ChatAdminWithInvites;
-
+  data2?: ChatAdminWithInvites
 }
 
 /**
@@ -3398,118 +3238,117 @@ export interface ChatBannedRights {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool view_messages = 3;
    */
-  viewMessages?: boolean;
+  viewMessages?: boolean
 
   /**
    * @generated from field: optional bool send_messages = 4;
    */
-  sendMessages?: boolean;
+  sendMessages?: boolean
 
   /**
    * @generated from field: optional bool send_media = 5;
    */
-  sendMedia?: boolean;
+  sendMedia?: boolean
 
   /**
    * @generated from field: optional bool send_stickers = 6;
    */
-  sendStickers?: boolean;
+  sendStickers?: boolean
 
   /**
    * @generated from field: optional bool send_gifs = 7;
    */
-  sendGifs?: boolean;
+  sendGifs?: boolean
 
   /**
    * @generated from field: optional bool send_games = 8;
    */
-  sendGames?: boolean;
+  sendGames?: boolean
 
   /**
    * @generated from field: optional bool send_inline = 9;
    */
-  sendInline?: boolean;
+  sendInline?: boolean
 
   /**
    * @generated from field: optional bool embed_links = 10;
    */
-  embedLinks?: boolean;
+  embedLinks?: boolean
 
   /**
    * @generated from field: optional bool send_polls = 11;
    */
-  sendPolls?: boolean;
+  sendPolls?: boolean
 
   /**
    * @generated from field: optional bool change_info = 12;
    */
-  changeInfo?: boolean;
+  changeInfo?: boolean
 
   /**
    * @generated from field: optional bool invite_users = 13;
    */
-  inviteUsers?: boolean;
+  inviteUsers?: boolean
 
   /**
    * @generated from field: optional bool pin_messages = 14;
    */
-  pinMessages?: boolean;
+  pinMessages?: boolean
 
   /**
    * @generated from field: optional bool manage_topics = 15;
    */
-  manageTopics?: boolean;
+  manageTopics?: boolean
 
   /**
    * @generated from field: optional bool send_photos = 16;
    */
-  sendPhotos?: boolean;
+  sendPhotos?: boolean
 
   /**
    * @generated from field: optional bool send_videos = 17;
    */
-  sendVideos?: boolean;
+  sendVideos?: boolean
 
   /**
    * @generated from field: optional bool send_roundvideos = 18;
    */
-  sendRoundvideos?: boolean;
+  sendRoundvideos?: boolean
 
   /**
    * @generated from field: optional bool send_audios = 19;
    */
-  sendAudios?: boolean;
+  sendAudios?: boolean
 
   /**
    * @generated from field: optional bool send_voices = 20;
    */
-  sendVoices?: boolean;
+  sendVoices?: boolean
 
   /**
    * @generated from field: optional bool send_docs = 21;
    */
-  sendDocs?: boolean;
+  sendDocs?: boolean
 
   /**
    * @generated from field: optional bool send_plain = 22;
    */
-  sendPlain?: boolean;
+  sendPlain?: boolean
 
   /**
    * @generated from field: optional int32 until_date = 23;
    */
-  untilDate?: number;
-
+  untilDate?: number
 }
 
 /**
@@ -3519,8 +3358,7 @@ export interface TLChatBannedRights {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatBannedRights data2 = 1;
    */
-  data2?: ChatBannedRights;
-
+  data2?: ChatBannedRights
 }
 
 /**
@@ -3530,268 +3368,267 @@ export interface ChatFull {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool can_set_username = 3;
    */
-  canSetUsername?: boolean;
+  canSetUsername?: boolean
 
   /**
    * @generated from field: optional bool has_scheduled = 4;
    */
-  hasScheduled?: boolean;
+  hasScheduled?: boolean
 
   /**
    * @generated from field: optional bool translations_disabled = 5;
    */
-  translationsDisabled?: boolean;
+  translationsDisabled?: boolean
 
   /**
    * @generated from field: optional int64 id = 6;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional string about = 7;
    */
-  about?: string;
+  about?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatParticipants participants = 8;
    */
-  participants?: ChatParticipants;
+  participants?: ChatParticipants
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Photo chat_photo = 9;
    */
-  chatPhoto?: Photo;
+  chatPhoto?: Photo
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PeerNotifySettings notify_settings = 10;
    */
-  notifySettings?: PeerNotifySettings;
+  notifySettings?: PeerNotifySettings
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ExportedChatInvite exported_invite = 11;
    */
-  exportedInvite?: ExportedChatInvite;
+  exportedInvite?: ExportedChatInvite
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.BotInfo bot_info = 12;
    */
-  botInfo: BotInfo[];
+  botInfo: BotInfo[]
 
   /**
    * @generated from field: optional google.protobuf.Int32Value pinned_msg_id = 13;
    */
-  pinnedMsgId?: number;
+  pinnedMsgId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value folder_id = 14;
    */
-  folderId?: number;
+  folderId?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 15;
    */
-  call?: InputGroupCall;
+  call?: InputGroupCall
 
   /**
    * @generated from field: optional google.protobuf.Int32Value ttl_period = 16;
    */
-  ttlPeriod?: number;
+  ttlPeriod?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer groupcall_default_join_as = 17;
    */
-  groupcallDefaultJoinAs?: Peer;
+  groupcallDefaultJoinAs?: Peer
 
   /**
    * @generated from field: optional google.protobuf.StringValue theme_emoticon = 18;
    */
-  themeEmoticon?: string;
+  themeEmoticon?: string
 
   /**
    * @generated from field: optional google.protobuf.Int32Value requests_pending = 19;
    */
-  requestsPending?: number;
+  requestsPending?: number
 
   /**
    * @generated from field: repeated int64 recent_requesters = 20;
    */
-  recentRequesters: bigint[];
+  recentRequesters: bigint[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatReactions available_reactions_FLAGCHATREACTIONS = 21;
    */
-  availableReactionsFLAGCHATREACTIONS?: ChatReactions;
+  availableReactionsFLAGCHATREACTIONS?: ChatReactions
 
   /**
    * @generated from field: optional bool can_view_participants = 22;
    */
-  canViewParticipants?: boolean;
+  canViewParticipants?: boolean
 
   /**
    * @generated from field: optional bool can_set_stickers = 23;
    */
-  canSetStickers?: boolean;
+  canSetStickers?: boolean
 
   /**
    * @generated from field: optional bool hidden_prehistory = 24;
    */
-  hiddenPrehistory?: boolean;
+  hiddenPrehistory?: boolean
 
   /**
    * @generated from field: optional bool can_set_location = 25;
    */
-  canSetLocation?: boolean;
+  canSetLocation?: boolean
 
   /**
    * @generated from field: optional bool can_view_stats = 26;
    */
-  canViewStats?: boolean;
+  canViewStats?: boolean
 
   /**
    * @generated from field: optional bool blocked = 27;
    */
-  blocked?: boolean;
+  blocked?: boolean
 
   /**
    * @generated from field: optional bool can_delete_channel = 28;
    */
-  canDeleteChannel?: boolean;
+  canDeleteChannel?: boolean
 
   /**
    * @generated from field: optional bool antispam = 29;
    */
-  antispam?: boolean;
+  antispam?: boolean
 
   /**
    * @generated from field: optional bool participants_hidden = 30;
    */
-  participantsHidden?: boolean;
+  participantsHidden?: boolean
 
   /**
    * @generated from field: optional bool stories_pinned_available = 31;
    */
-  storiesPinnedAvailable?: boolean;
+  storiesPinnedAvailable?: boolean
 
   /**
    * @generated from field: optional google.protobuf.Int32Value participants_count = 32;
    */
-  participantsCount?: number;
+  participantsCount?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value admins_count = 33;
    */
-  adminsCount?: number;
+  adminsCount?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value kicked_count = 34;
    */
-  kickedCount?: number;
+  kickedCount?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value banned_count = 35;
    */
-  bannedCount?: number;
+  bannedCount?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value online_count = 36;
    */
-  onlineCount?: number;
+  onlineCount?: number
 
   /**
    * @generated from field: optional int32 read_inbox_max_id = 37;
    */
-  readInboxMaxId?: number;
+  readInboxMaxId?: number
 
   /**
    * @generated from field: optional int32 read_outbox_max_id = 38;
    */
-  readOutboxMaxId?: number;
+  readOutboxMaxId?: number
 
   /**
    * @generated from field: optional int32 unread_count = 39;
    */
-  unreadCount?: number;
+  unreadCount?: number
 
   /**
    * @generated from field: optional google.protobuf.Int64Value migrated_from_chat_id = 40;
    */
-  migratedFromChatId?: bigint;
+  migratedFromChatId?: bigint
 
   /**
    * @generated from field: optional google.protobuf.Int32Value migrated_from_max_id = 41;
    */
-  migratedFromMaxId?: number;
+  migratedFromMaxId?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StickerSet stickerset = 42;
    */
-  stickerset?: StickerSet;
+  stickerset?: StickerSet
 
   /**
    * @generated from field: optional google.protobuf.Int32Value available_min_id = 43;
    */
-  availableMinId?: number;
+  availableMinId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int64Value linked_chat_id = 44;
    */
-  linkedChatId?: bigint;
+  linkedChatId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelLocation location = 45;
    */
-  location?: ChannelLocation;
+  location?: ChannelLocation
 
   /**
    * @generated from field: optional google.protobuf.Int32Value slowmode_seconds = 46;
    */
-  slowmodeSeconds?: number;
+  slowmodeSeconds?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value slowmode_next_send_date = 47;
    */
-  slowmodeNextSendDate?: number;
+  slowmodeNextSendDate?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value stats_dc = 48;
    */
-  statsDc?: number;
+  statsDc?: number
 
   /**
    * @generated from field: optional int32 pts = 49;
    */
-  pts?: number;
+  pts?: number
 
   /**
    * @generated from field: repeated string pending_suggestions = 50;
    */
-  pendingSuggestions: string[];
+  pendingSuggestions: string[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer default_send_as = 51;
    */
-  defaultSendAs?: Peer;
+  defaultSendAs?: Peer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PeerStories stories = 52;
    */
-  stories?: PeerStories;
+  stories?: PeerStories
 
   /**
    * @generated from field: repeated string available_reactions_FLAGVECTORSTRING = 53;
    */
-  availableReactionsFLAGVECTORSTRING: string[];
-
+  availableReactionsFLAGVECTORSTRING: string[]
 }
 
 /**
@@ -3801,8 +3638,7 @@ export interface TLChatFull {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatFull data2 = 1;
    */
-  data2?: ChatFull;
-
+  data2?: ChatFull
 }
 
 /**
@@ -3812,8 +3648,7 @@ export interface TLChannelFull {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatFull data2 = 1;
    */
-  data2?: ChatFull;
-
+  data2?: ChatFull
 }
 
 /**
@@ -3823,88 +3658,87 @@ export interface ChatInvite {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Chat chat = 3;
    */
-  chat?: Chat;
+  chat?: Chat
 
   /**
    * @generated from field: optional bool channel = 4;
    */
-  channel?: boolean;
+  channel?: boolean
 
   /**
    * @generated from field: optional bool broadcast = 5;
    */
-  broadcast?: boolean;
+  broadcast?: boolean
 
   /**
    * @generated from field: optional bool public = 6;
    */
-  public?: boolean;
+  public?: boolean
 
   /**
    * @generated from field: optional bool megagroup = 7;
    */
-  megagroup?: boolean;
+  megagroup?: boolean
 
   /**
    * @generated from field: optional bool request_needed = 8;
    */
-  requestNeeded?: boolean;
+  requestNeeded?: boolean
 
   /**
    * @generated from field: optional bool verified = 9;
    */
-  verified?: boolean;
+  verified?: boolean
 
   /**
    * @generated from field: optional bool scam = 10;
    */
-  scam?: boolean;
+  scam?: boolean
 
   /**
    * @generated from field: optional bool fake = 11;
    */
-  fake?: boolean;
+  fake?: boolean
 
   /**
    * @generated from field: optional string title = 12;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue about = 13;
    */
-  about?: string;
+  about?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Photo photo = 14;
    */
-  photo?: Photo;
+  photo?: Photo
 
   /**
    * @generated from field: optional int32 participants_count = 15;
    */
-  participantsCount?: number;
+  participantsCount?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User participants = 16;
    */
-  participants: User[];
+  participants: User[]
 
   /**
    * @generated from field: optional int32 expires = 17;
    */
-  expires?: number;
-
+  expires?: number
 }
 
 /**
@@ -3914,8 +3748,7 @@ export interface TLChatInviteAlready {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatInvite data2 = 1;
    */
-  data2?: ChatInvite;
-
+  data2?: ChatInvite
 }
 
 /**
@@ -3925,8 +3758,7 @@ export interface TLChatInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatInvite data2 = 1;
    */
-  data2?: ChatInvite;
-
+  data2?: ChatInvite
 }
 
 /**
@@ -3936,8 +3768,7 @@ export interface TLChatInvitePeek {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatInvite data2 = 1;
    */
-  data2?: ChatInvite;
-
+  data2?: ChatInvite
 }
 
 /**
@@ -3947,43 +3778,42 @@ export interface ChatInviteImporter {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool requested = 3;
    */
-  requested?: boolean;
+  requested?: boolean
 
   /**
    * @generated from field: optional bool via_chatlist = 4;
    */
-  viaChatlist?: boolean;
+  viaChatlist?: boolean
 
   /**
    * @generated from field: optional int64 user_id = 5;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional int32 date = 6;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue about = 7;
    */
-  about?: string;
+  about?: string
 
   /**
    * @generated from field: optional google.protobuf.Int64Value approved_by = 8;
    */
-  approvedBy?: bigint;
-
+  approvedBy?: bigint
 }
 
 /**
@@ -3993,8 +3823,7 @@ export interface TLChatInviteImporter {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatInviteImporter data2 = 1;
    */
-  data2?: ChatInviteImporter;
-
+  data2?: ChatInviteImporter
 }
 
 /**
@@ -4004,18 +3833,17 @@ export interface ChatOnlines {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 onlines = 3;
    */
-  onlines?: number;
-
+  onlines?: number
 }
 
 /**
@@ -4025,8 +3853,7 @@ export interface TLChatOnlines {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatOnlines data2 = 1;
    */
-  data2?: ChatOnlines;
-
+  data2?: ChatOnlines
 }
 
 /**
@@ -4036,28 +3863,27 @@ export interface ChatParticipant {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 user_id = 3;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional int64 inviter_id = 4;
    */
-  inviterId?: bigint;
+  inviterId?: bigint
 
   /**
    * @generated from field: optional int32 date = 5;
    */
-  date?: number;
-
+  date?: number
 }
 
 /**
@@ -4067,8 +3893,7 @@ export interface TLChatParticipant {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatParticipant data2 = 1;
    */
-  data2?: ChatParticipant;
-
+  data2?: ChatParticipant
 }
 
 /**
@@ -4078,8 +3903,7 @@ export interface TLChatParticipantCreator {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatParticipant data2 = 1;
    */
-  data2?: ChatParticipant;
-
+  data2?: ChatParticipant
 }
 
 /**
@@ -4089,8 +3913,7 @@ export interface TLChatParticipantAdmin {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatParticipant data2 = 1;
    */
-  data2?: ChatParticipant;
-
+  data2?: ChatParticipant
 }
 
 /**
@@ -4100,33 +3923,32 @@ export interface ChatParticipants {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 chat_id = 3;
    */
-  chatId?: bigint;
+  chatId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatParticipant self_participant = 4;
    */
-  selfParticipant?: ChatParticipant;
+  selfParticipant?: ChatParticipant
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ChatParticipant participants = 5;
    */
-  participants: ChatParticipant[];
+  participants: ChatParticipant[]
 
   /**
    * @generated from field: optional int32 version = 6;
    */
-  version?: number;
-
+  version?: number
 }
 
 /**
@@ -4136,8 +3958,7 @@ export interface TLChatParticipantsForbidden {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatParticipants data2 = 1;
    */
-  data2?: ChatParticipants;
-
+  data2?: ChatParticipants
 }
 
 /**
@@ -4147,8 +3968,7 @@ export interface TLChatParticipants {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatParticipants data2 = 1;
    */
-  data2?: ChatParticipants;
-
+  data2?: ChatParticipants
 }
 
 /**
@@ -4158,33 +3978,32 @@ export interface ChatPhoto {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool has_video = 3;
    */
-  hasVideo?: boolean;
+  hasVideo?: boolean
 
   /**
    * @generated from field: optional int64 photo_id = 4;
    */
-  photoId?: bigint;
+  photoId?: bigint
 
   /**
    * @generated from field: optional bytes stripped_thumb = 5;
    */
-  strippedThumb?: Uint8Array;
+  strippedThumb?: Uint8Array
 
   /**
    * @generated from field: optional int32 dc_id = 6;
    */
-  dcId?: number;
-
+  dcId?: number
 }
 
 /**
@@ -4194,8 +4013,7 @@ export interface TLChatPhotoEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatPhoto data2 = 1;
    */
-  data2?: ChatPhoto;
-
+  data2?: ChatPhoto
 }
 
 /**
@@ -4205,8 +4023,7 @@ export interface TLChatPhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatPhoto data2 = 1;
    */
-  data2?: ChatPhoto;
-
+  data2?: ChatPhoto
 }
 
 /**
@@ -4216,23 +4033,22 @@ export interface ChatReactions {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool allow_custom = 3;
    */
-  allowCustom?: boolean;
+  allowCustom?: boolean
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Reaction reactions = 4;
    */
-  reactions: Reaction[];
-
+  reactions: Reaction[]
 }
 
 /**
@@ -4242,8 +4058,7 @@ export interface TLChatReactionsNone {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatReactions data2 = 1;
    */
-  data2?: ChatReactions;
-
+  data2?: ChatReactions
 }
 
 /**
@@ -4253,8 +4068,7 @@ export interface TLChatReactionsAll {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatReactions data2 = 1;
    */
-  data2?: ChatReactions;
-
+  data2?: ChatReactions
 }
 
 /**
@@ -4264,8 +4078,7 @@ export interface TLChatReactionsSome {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatReactions data2 = 1;
    */
-  data2?: ChatReactions;
-
+  data2?: ChatReactions
 }
 
 /**
@@ -4275,53 +4088,52 @@ export interface CodeSettings {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool allow_flashcall = 3;
    */
-  allowFlashcall?: boolean;
+  allowFlashcall?: boolean
 
   /**
    * @generated from field: optional bool current_number = 4;
    */
-  currentNumber?: boolean;
+  currentNumber?: boolean
 
   /**
    * @generated from field: optional bool allow_app_hash = 5;
    */
-  allowAppHash?: boolean;
+  allowAppHash?: boolean
 
   /**
    * @generated from field: optional bool allow_missed_call = 6;
    */
-  allowMissedCall?: boolean;
+  allowMissedCall?: boolean
 
   /**
    * @generated from field: optional bool allow_firebase = 7;
    */
-  allowFirebase?: boolean;
+  allowFirebase?: boolean
 
   /**
    * @generated from field: repeated bytes logout_tokens = 8;
    */
-  logoutTokens: Uint8Array[];
+  logoutTokens: Uint8Array[]
 
   /**
    * @generated from field: optional google.protobuf.StringValue token = 9;
    */
-  token?: string;
+  token?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool app_sandbox = 10;
    */
-  appSandbox?: Bool;
-
+  appSandbox?: Bool
 }
 
 /**
@@ -4331,8 +4143,7 @@ export interface TLCodeSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.CodeSettings data2 = 1;
    */
-  data2?: CodeSettings;
-
+  data2?: CodeSettings
 }
 
 /**
@@ -4342,283 +4153,282 @@ export interface Config {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool default_p2p_contacts = 3;
    */
-  defaultP2pContacts?: boolean;
+  defaultP2pContacts?: boolean
 
   /**
    * @generated from field: optional bool preload_featured_stickers = 4;
    */
-  preloadFeaturedStickers?: boolean;
+  preloadFeaturedStickers?: boolean
 
   /**
    * @generated from field: optional bool revoke_pm_inbox = 5;
    */
-  revokePmInbox?: boolean;
+  revokePmInbox?: boolean
 
   /**
    * @generated from field: optional bool blocked_mode = 6;
    */
-  blockedMode?: boolean;
+  blockedMode?: boolean
 
   /**
    * @generated from field: optional bool force_try_ipv6 = 7;
    */
-  forceTryIpv6?: boolean;
+  forceTryIpv6?: boolean
 
   /**
    * @generated from field: optional int32 date = 8;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional int32 expires = 9;
    */
-  expires?: number;
+  expires?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool test_mode = 10;
    */
-  testMode?: Bool;
+  testMode?: Bool
 
   /**
    * @generated from field: optional int32 this_dc = 11;
    */
-  thisDc?: number;
+  thisDc?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.DcOption dc_options = 12;
    */
-  dcOptions: DcOption[];
+  dcOptions: DcOption[]
 
   /**
    * @generated from field: optional string dc_txt_domain_name = 13;
    */
-  dcTxtDomainName?: string;
+  dcTxtDomainName?: string
 
   /**
    * @generated from field: optional int32 chat_size_max = 14;
    */
-  chatSizeMax?: number;
+  chatSizeMax?: number
 
   /**
    * @generated from field: optional int32 megagroup_size_max = 15;
    */
-  megagroupSizeMax?: number;
+  megagroupSizeMax?: number
 
   /**
    * @generated from field: optional int32 forwarded_count_max = 16;
    */
-  forwardedCountMax?: number;
+  forwardedCountMax?: number
 
   /**
    * @generated from field: optional int32 online_update_period_ms = 17;
    */
-  onlineUpdatePeriodMs?: number;
+  onlineUpdatePeriodMs?: number
 
   /**
    * @generated from field: optional int32 offline_blur_timeout_ms = 18;
    */
-  offlineBlurTimeoutMs?: number;
+  offlineBlurTimeoutMs?: number
 
   /**
    * @generated from field: optional int32 offline_idle_timeout_ms = 19;
    */
-  offlineIdleTimeoutMs?: number;
+  offlineIdleTimeoutMs?: number
 
   /**
    * @generated from field: optional int32 online_cloud_timeout_ms = 20;
    */
-  onlineCloudTimeoutMs?: number;
+  onlineCloudTimeoutMs?: number
 
   /**
    * @generated from field: optional int32 notify_cloud_delay_ms = 21;
    */
-  notifyCloudDelayMs?: number;
+  notifyCloudDelayMs?: number
 
   /**
    * @generated from field: optional int32 notify_default_delay_ms = 22;
    */
-  notifyDefaultDelayMs?: number;
+  notifyDefaultDelayMs?: number
 
   /**
    * @generated from field: optional int32 push_chat_period_ms = 23;
    */
-  pushChatPeriodMs?: number;
+  pushChatPeriodMs?: number
 
   /**
    * @generated from field: optional int32 push_chat_limit = 24;
    */
-  pushChatLimit?: number;
+  pushChatLimit?: number
 
   /**
    * @generated from field: optional int32 edit_time_limit = 25;
    */
-  editTimeLimit?: number;
+  editTimeLimit?: number
 
   /**
    * @generated from field: optional int32 revoke_time_limit = 26;
    */
-  revokeTimeLimit?: number;
+  revokeTimeLimit?: number
 
   /**
    * @generated from field: optional int32 revoke_pm_time_limit = 27;
    */
-  revokePmTimeLimit?: number;
+  revokePmTimeLimit?: number
 
   /**
    * @generated from field: optional int32 rating_e_decay = 28;
    */
-  ratingEDecay?: number;
+  ratingEDecay?: number
 
   /**
    * @generated from field: optional int32 stickers_recent_limit = 29;
    */
-  stickersRecentLimit?: number;
+  stickersRecentLimit?: number
 
   /**
    * @generated from field: optional int32 channels_read_media_period = 30;
    */
-  channelsReadMediaPeriod?: number;
+  channelsReadMediaPeriod?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value tmp_sessions = 31;
    */
-  tmpSessions?: number;
+  tmpSessions?: number
 
   /**
    * @generated from field: optional int32 call_receive_timeout_ms = 32;
    */
-  callReceiveTimeoutMs?: number;
+  callReceiveTimeoutMs?: number
 
   /**
    * @generated from field: optional int32 call_ring_timeout_ms = 33;
    */
-  callRingTimeoutMs?: number;
+  callRingTimeoutMs?: number
 
   /**
    * @generated from field: optional int32 call_connect_timeout_ms = 34;
    */
-  callConnectTimeoutMs?: number;
+  callConnectTimeoutMs?: number
 
   /**
    * @generated from field: optional int32 call_packet_timeout_ms = 35;
    */
-  callPacketTimeoutMs?: number;
+  callPacketTimeoutMs?: number
 
   /**
    * @generated from field: optional string me_url_prefix = 36;
    */
-  meUrlPrefix?: string;
+  meUrlPrefix?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue autoupdate_url_prefix = 37;
    */
-  autoupdateUrlPrefix?: string;
+  autoupdateUrlPrefix?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue gif_search_username = 38;
    */
-  gifSearchUsername?: string;
+  gifSearchUsername?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue venue_search_username = 39;
    */
-  venueSearchUsername?: string;
+  venueSearchUsername?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue img_search_username = 40;
    */
-  imgSearchUsername?: string;
+  imgSearchUsername?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue static_maps_provider = 41;
    */
-  staticMapsProvider?: string;
+  staticMapsProvider?: string
 
   /**
    * @generated from field: optional int32 caption_length_max = 42;
    */
-  captionLengthMax?: number;
+  captionLengthMax?: number
 
   /**
    * @generated from field: optional int32 message_length_max = 43;
    */
-  messageLengthMax?: number;
+  messageLengthMax?: number
 
   /**
    * @generated from field: optional int32 webfile_dc_id = 44;
    */
-  webfileDcId?: number;
+  webfileDcId?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue suggested_lang_code = 45;
    */
-  suggestedLangCode?: string;
+  suggestedLangCode?: string
 
   /**
    * @generated from field: optional google.protobuf.Int32Value lang_pack_version = 46;
    */
-  langPackVersion?: number;
+  langPackVersion?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value base_lang_pack_version = 47;
    */
-  baseLangPackVersion?: number;
+  baseLangPackVersion?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Reaction reactions_default = 48;
    */
-  reactionsDefault?: Reaction;
+  reactionsDefault?: Reaction
 
   /**
    * @generated from field: optional google.protobuf.StringValue autologin_token = 49;
    */
-  autologinToken?: string;
+  autologinToken?: string
 
   /**
    * @generated from field: optional bool phonecalls_enabled = 50;
    */
-  phonecallsEnabled?: boolean;
+  phonecallsEnabled?: boolean
 
   /**
    * @generated from field: optional bool ignore_phone_entities = 51;
    */
-  ignorePhoneEntities?: boolean;
+  ignorePhoneEntities?: boolean
 
   /**
    * @generated from field: optional bool pfs_enabled = 52;
    */
-  pfsEnabled?: boolean;
+  pfsEnabled?: boolean
 
   /**
    * @generated from field: optional int32 saved_gifs_limit = 53;
    */
-  savedGifsLimit?: number;
+  savedGifsLimit?: number
 
   /**
    * @generated from field: optional int32 stickers_faved_limit = 54;
    */
-  stickersFavedLimit?: number;
+  stickersFavedLimit?: number
 
   /**
    * @generated from field: optional int32 pinned_dialogs_count_max = 55;
    */
-  pinnedDialogsCountMax?: number;
+  pinnedDialogsCountMax?: number
 
   /**
    * @generated from field: optional int32 pinned_infolder_count_max = 56;
    */
-  pinnedInfolderCountMax?: number;
-
+  pinnedInfolderCountMax?: number
 }
 
 /**
@@ -4628,8 +4438,7 @@ export interface TLConfig {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Config data2 = 1;
    */
-  data2?: Config;
-
+  data2?: Config
 }
 
 /**
@@ -4639,23 +4448,22 @@ export interface Contact {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 user_id = 3;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool mutual = 4;
    */
-  mutual?: Bool;
-
+  mutual?: Bool
 }
 
 /**
@@ -4665,8 +4473,7 @@ export interface TLContact {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Contact data2 = 1;
    */
-  data2?: Contact;
-
+  data2?: Contact
 }
 
 /**
@@ -4676,43 +4483,42 @@ export interface ContactData {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 user_id = 3;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional int64 contact_user_id = 4;
    */
-  contactUserId?: bigint;
+  contactUserId?: bigint
 
   /**
    * @generated from field: optional google.protobuf.StringValue first_name = 5;
    */
-  firstName?: string;
+  firstName?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue last_name = 6;
    */
-  lastName?: string;
+  lastName?: string
 
   /**
    * @generated from field: optional bool mutual_contact = 7;
    */
-  mutualContact?: boolean;
+  mutualContact?: boolean
 
   /**
    * @generated from field: optional google.protobuf.StringValue phone = 8;
    */
-  phone?: string;
-
+  phone?: string
 }
 
 /**
@@ -4722,8 +4528,7 @@ export interface TLContactData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ContactData data2 = 1;
    */
-  data2?: ContactData;
-
+  data2?: ContactData
 }
 
 /**
@@ -4733,23 +4538,22 @@ export interface ContactStatus {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 user_id = 3;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UserStatus status = 4;
    */
-  status?: UserStatus;
-
+  status?: UserStatus
 }
 
 /**
@@ -4759,8 +4563,7 @@ export interface TLContactStatus {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ContactStatus data2 = 1;
    */
-  data2?: ContactStatus;
-
+  data2?: ContactStatus
 }
 
 /**
@@ -4770,18 +4573,17 @@ export interface DataJSON {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string data = 3;
    */
-  data?: string;
-
+  data?: string
 }
 
 /**
@@ -4791,8 +4593,7 @@ export interface TLDataJSON {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON data2 = 1;
    */
-  data2?: DataJSON;
-
+  data2?: DataJSON
 }
 
 /**
@@ -4802,63 +4603,62 @@ export interface DcOption {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool ipv6 = 3;
    */
-  ipv6?: boolean;
+  ipv6?: boolean
 
   /**
    * @generated from field: optional bool media_only = 4;
    */
-  mediaOnly?: boolean;
+  mediaOnly?: boolean
 
   /**
    * @generated from field: optional bool tcpo_only = 5;
    */
-  tcpoOnly?: boolean;
+  tcpoOnly?: boolean
 
   /**
    * @generated from field: optional bool cdn = 6;
    */
-  cdn?: boolean;
+  cdn?: boolean
 
   /**
    * @generated from field: optional bool static = 7;
    */
-  static?: boolean;
+  static?: boolean
 
   /**
    * @generated from field: optional bool this_port_only = 8;
    */
-  thisPortOnly?: boolean;
+  thisPortOnly?: boolean
 
   /**
    * @generated from field: optional int32 id = 9;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional string ip_address = 10;
    */
-  ipAddress?: string;
+  ipAddress?: string
 
   /**
    * @generated from field: optional int32 port = 11;
    */
-  port?: number;
+  port?: number
 
   /**
    * @generated from field: optional bytes secret = 12;
    */
-  secret?: Uint8Array;
-
+  secret?: Uint8Array
 }
 
 /**
@@ -4868,8 +4668,7 @@ export interface TLDcOption {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DcOption data2 = 1;
    */
-  data2?: DcOption;
-
+  data2?: DcOption
 }
 
 /**
@@ -4879,18 +4678,17 @@ export interface DefaultHistoryTTL {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 period = 3;
    */
-  period?: number;
-
+  period?: number
 }
 
 /**
@@ -4900,8 +4698,7 @@ export interface TLDefaultHistoryTTL {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DefaultHistoryTTL data2 = 1;
    */
-  data2?: DefaultHistoryTTL;
-
+  data2?: DefaultHistoryTTL
 }
 
 /**
@@ -4911,108 +4708,107 @@ export interface Dialog {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool pinned = 3;
    */
-  pinned?: boolean;
+  pinned?: boolean
 
   /**
    * @generated from field: optional bool unread_mark = 4;
    */
-  unreadMark?: boolean;
+  unreadMark?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer = 5;
    */
-  peer?: Peer;
+  peer?: Peer
 
   /**
    * @generated from field: optional int32 top_message = 6;
    */
-  topMessage?: number;
+  topMessage?: number
 
   /**
    * @generated from field: optional int32 read_inbox_max_id = 7;
    */
-  readInboxMaxId?: number;
+  readInboxMaxId?: number
 
   /**
    * @generated from field: optional int32 read_outbox_max_id = 8;
    */
-  readOutboxMaxId?: number;
+  readOutboxMaxId?: number
 
   /**
    * @generated from field: optional int32 unread_count = 9;
    */
-  unreadCount?: number;
+  unreadCount?: number
 
   /**
    * @generated from field: optional int32 unread_mentions_count = 10;
    */
-  unreadMentionsCount?: number;
+  unreadMentionsCount?: number
 
   /**
    * @generated from field: optional int32 unread_reactions_count = 11;
    */
-  unreadReactionsCount?: number;
+  unreadReactionsCount?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PeerNotifySettings notify_settings = 12;
    */
-  notifySettings?: PeerNotifySettings;
+  notifySettings?: PeerNotifySettings
 
   /**
    * @generated from field: optional google.protobuf.Int32Value pts = 13;
    */
-  pts?: number;
+  pts?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DraftMessage draft = 14;
    */
-  draft?: DraftMessage;
+  draft?: DraftMessage
 
   /**
    * @generated from field: optional google.protobuf.Int32Value folder_id = 15;
    */
-  folderId?: number;
+  folderId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value ttl_period = 16;
    */
-  ttlPeriod?: number;
+  ttlPeriod?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Folder folder = 17;
    */
-  folder?: Folder;
+  folder?: Folder
 
   /**
    * @generated from field: optional int32 unread_muted_peers_count = 18;
    */
-  unreadMutedPeersCount?: number;
+  unreadMutedPeersCount?: number
 
   /**
    * @generated from field: optional int32 unread_unmuted_peers_count = 19;
    */
-  unreadUnmutedPeersCount?: number;
+  unreadUnmutedPeersCount?: number
 
   /**
    * @generated from field: optional int32 unread_muted_messages_count = 20;
    */
-  unreadMutedMessagesCount?: number;
+  unreadMutedMessagesCount?: number
 
   /**
    * @generated from field: optional int32 unread_unmuted_messages_count = 21;
    */
-  unreadUnmutedMessagesCount?: number;
-
+  unreadUnmutedMessagesCount?: number
 }
 
 /**
@@ -5022,8 +4818,7 @@ export interface TLDialog {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Dialog data2 = 1;
    */
-  data2?: Dialog;
-
+  data2?: Dialog
 }
 
 /**
@@ -5033,8 +4828,7 @@ export interface TLDialogFolder {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Dialog data2 = 1;
    */
-  data2?: Dialog;
-
+  data2?: Dialog
 }
 
 /**
@@ -5044,88 +4838,87 @@ export interface DialogFilter {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool contacts = 3;
    */
-  contacts?: boolean;
+  contacts?: boolean
 
   /**
    * @generated from field: optional bool non_contacts = 4;
    */
-  nonContacts?: boolean;
+  nonContacts?: boolean
 
   /**
    * @generated from field: optional bool groups = 5;
    */
-  groups?: boolean;
+  groups?: boolean
 
   /**
    * @generated from field: optional bool broadcasts = 6;
    */
-  broadcasts?: boolean;
+  broadcasts?: boolean
 
   /**
    * @generated from field: optional bool bots = 7;
    */
-  bots?: boolean;
+  bots?: boolean
 
   /**
    * @generated from field: optional bool exclude_muted = 8;
    */
-  excludeMuted?: boolean;
+  excludeMuted?: boolean
 
   /**
    * @generated from field: optional bool exclude_read = 9;
    */
-  excludeRead?: boolean;
+  excludeRead?: boolean
 
   /**
    * @generated from field: optional bool exclude_archived = 10;
    */
-  excludeArchived?: boolean;
+  excludeArchived?: boolean
 
   /**
    * @generated from field: optional int32 id = 11;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional string title = 12;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue emoticon = 13;
    */
-  emoticon?: string;
+  emoticon?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputPeer pinned_peers = 14;
    */
-  pinnedPeers: InputPeer[];
+  pinnedPeers: InputPeer[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputPeer include_peers = 15;
    */
-  includePeers: InputPeer[];
+  includePeers: InputPeer[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputPeer exclude_peers = 16;
    */
-  excludePeers: InputPeer[];
+  excludePeers: InputPeer[]
 
   /**
    * @generated from field: optional bool has_my_invites = 17;
    */
-  hasMyInvites?: boolean;
-
+  hasMyInvites?: boolean
 }
 
 /**
@@ -5135,8 +4928,7 @@ export interface TLDialogFilter {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DialogFilter data2 = 1;
    */
-  data2?: DialogFilter;
-
+  data2?: DialogFilter
 }
 
 /**
@@ -5146,8 +4938,7 @@ export interface TLDialogFilterDefault {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DialogFilter data2 = 1;
    */
-  data2?: DialogFilter;
-
+  data2?: DialogFilter
 }
 
 /**
@@ -5157,8 +4948,7 @@ export interface TLDialogFilterChatlist {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DialogFilter data2 = 1;
    */
-  data2?: DialogFilter;
-
+  data2?: DialogFilter
 }
 
 /**
@@ -5168,23 +4958,22 @@ export interface DialogFilterSuggested {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DialogFilter filter = 3;
    */
-  filter?: DialogFilter;
+  filter?: DialogFilter
 
   /**
    * @generated from field: optional string description = 4;
    */
-  description?: string;
-
+  description?: string
 }
 
 /**
@@ -5194,8 +4983,7 @@ export interface TLDialogFilterSuggested {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DialogFilterSuggested data2 = 1;
    */
-  data2?: DialogFilterSuggested;
-
+  data2?: DialogFilterSuggested
 }
 
 /**
@@ -5205,23 +4993,22 @@ export interface DialogPeer {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer = 3;
    */
-  peer?: Peer;
+  peer?: Peer
 
   /**
    * @generated from field: optional int32 folder_id = 4;
    */
-  folderId?: number;
-
+  folderId?: number
 }
 
 /**
@@ -5231,8 +5018,7 @@ export interface TLDialogPeer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DialogPeer data2 = 1;
    */
-  data2?: DialogPeer;
-
+  data2?: DialogPeer
 }
 
 /**
@@ -5242,8 +5028,7 @@ export interface TLDialogPeerFolder {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DialogPeer data2 = 1;
    */
-  data2?: DialogPeer;
-
+  data2?: DialogPeer
 }
 
 /**
@@ -5253,73 +5038,72 @@ export interface Document {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional bytes file_reference = 5;
    */
-  fileReference?: Uint8Array;
+  fileReference?: Uint8Array
 
   /**
    * @generated from field: optional int32 date = 6;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional string mime_type = 7;
    */
-  mimeType?: string;
+  mimeType?: string
 
   /**
    * @generated from field: optional int64 size2_INT64 = 8;
    */
-  size2INT64?: bigint;
+  size2INT64?: bigint
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PhotoSize thumbs = 9;
    */
-  thumbs: PhotoSize[];
+  thumbs: PhotoSize[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.VideoSize video_thumbs = 10;
    */
-  videoThumbs: VideoSize[];
+  videoThumbs: VideoSize[]
 
   /**
    * @generated from field: optional int32 dc_id = 11;
    */
-  dcId?: number;
+  dcId?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.DocumentAttribute attributes = 12;
    */
-  attributes: DocumentAttribute[];
+  attributes: DocumentAttribute[]
 
   /**
    * @generated from field: optional int32 size2_INT32 = 13;
    */
-  size2INT32?: number;
+  size2INT32?: number
 
   /**
    * @generated from field: optional int64 size2 = 100;
    */
-  size2?: bigint;
-
+  size2?: bigint
 }
 
 /**
@@ -5329,8 +5113,7 @@ export interface TLDocumentEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document data2 = 1;
    */
-  data2?: Document;
-
+  data2?: Document
 }
 
 /**
@@ -5340,8 +5123,7 @@ export interface TLDocument {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document data2 = 1;
    */
-  data2?: Document;
-
+  data2?: Document
 }
 
 /**
@@ -5351,113 +5133,112 @@ export interface DocumentAttribute {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 w = 3;
    */
-  w?: number;
+  w?: number
 
   /**
    * @generated from field: optional int32 h = 4;
    */
-  h?: number;
+  h?: number
 
   /**
    * @generated from field: optional bool mask = 5;
    */
-  mask?: boolean;
+  mask?: boolean
 
   /**
    * @generated from field: optional string alt = 6;
    */
-  alt?: string;
+  alt?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet stickerset = 7;
    */
-  stickerset?: InputStickerSet;
+  stickerset?: InputStickerSet
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MaskCoords mask_coords = 8;
    */
-  maskCoords?: MaskCoords;
+  maskCoords?: MaskCoords
 
   /**
    * @generated from field: optional bool round_message = 9;
    */
-  roundMessage?: boolean;
+  roundMessage?: boolean
 
   /**
    * @generated from field: optional bool supports_streaming = 10;
    */
-  supportsStreaming?: boolean;
+  supportsStreaming?: boolean
 
   /**
    * @generated from field: optional bool nosound = 11;
    */
-  nosound?: boolean;
+  nosound?: boolean
 
   /**
    * @generated from field: optional float duration_FLOAT64 = 12;
    */
-  durationFLOAT64?: number;
+  durationFLOAT64?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value preload_prefix_size = 13;
    */
-  preloadPrefixSize?: number;
+  preloadPrefixSize?: number
 
   /**
    * @generated from field: optional bool voice = 14;
    */
-  voice?: boolean;
+  voice?: boolean
 
   /**
    * @generated from field: optional int32 duration_INT32 = 15;
    */
-  durationINT32?: number;
+  durationINT32?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue title = 16;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue performer = 17;
    */
-  performer?: string;
+  performer?: string
 
   /**
    * @generated from field: optional bytes waveform = 18;
    */
-  waveform?: Uint8Array;
+  waveform?: Uint8Array
 
   /**
    * @generated from field: optional string file_name = 19;
    */
-  fileName?: string;
+  fileName?: string
 
   /**
    * @generated from field: optional bool free = 20;
    */
-  free?: boolean;
+  free?: boolean
 
   /**
    * @generated from field: optional bool text_color = 21;
    */
-  textColor?: boolean;
+  textColor?: boolean
 
   /**
    * @generated from field: optional float duration = 100;
    */
-  duration?: number;
-
+  duration?: number
 }
 
 /**
@@ -5467,8 +5248,7 @@ export interface TLDocumentAttributeImageSize {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DocumentAttribute data2 = 1;
    */
-  data2?: DocumentAttribute;
-
+  data2?: DocumentAttribute
 }
 
 /**
@@ -5478,8 +5258,7 @@ export interface TLDocumentAttributeAnimated {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DocumentAttribute data2 = 1;
    */
-  data2?: DocumentAttribute;
-
+  data2?: DocumentAttribute
 }
 
 /**
@@ -5489,8 +5268,7 @@ export interface TLDocumentAttributeSticker {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DocumentAttribute data2 = 1;
    */
-  data2?: DocumentAttribute;
-
+  data2?: DocumentAttribute
 }
 
 /**
@@ -5500,8 +5278,7 @@ export interface TLDocumentAttributeVideo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DocumentAttribute data2 = 1;
    */
-  data2?: DocumentAttribute;
-
+  data2?: DocumentAttribute
 }
 
 /**
@@ -5511,8 +5288,7 @@ export interface TLDocumentAttributeAudio {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DocumentAttribute data2 = 1;
    */
-  data2?: DocumentAttribute;
-
+  data2?: DocumentAttribute
 }
 
 /**
@@ -5522,8 +5298,7 @@ export interface TLDocumentAttributeFilename {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DocumentAttribute data2 = 1;
    */
-  data2?: DocumentAttribute;
-
+  data2?: DocumentAttribute
 }
 
 /**
@@ -5533,8 +5308,7 @@ export interface TLDocumentAttributeHasStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DocumentAttribute data2 = 1;
    */
-  data2?: DocumentAttribute;
-
+  data2?: DocumentAttribute
 }
 
 /**
@@ -5544,8 +5318,7 @@ export interface TLDocumentAttributeCustomEmoji {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DocumentAttribute data2 = 1;
    */
-  data2?: DocumentAttribute;
-
+  data2?: DocumentAttribute
 }
 
 /**
@@ -5555,43 +5328,42 @@ export interface DraftMessage {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional google.protobuf.Int32Value date_FLAGINT32 = 3;
    */
-  dateFLAGINT32?: number;
+  dateFLAGINT32?: number
 
   /**
    * @generated from field: optional bool no_webpage = 4;
    */
-  noWebpage?: boolean;
+  noWebpage?: boolean
 
   /**
    * @generated from field: optional google.protobuf.Int32Value reply_to_msg_id = 5;
    */
-  replyToMsgId?: number;
+  replyToMsgId?: number
 
   /**
    * @generated from field: optional string message = 6;
    */
-  message?: string;
+  message?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 7;
    */
-  entities: MessageEntity[];
+  entities: MessageEntity[]
 
   /**
    * @generated from field: optional int32 date_INT32 = 8;
    */
-  dateINT32?: number;
-
+  dateINT32?: number
 }
 
 /**
@@ -5601,8 +5373,7 @@ export interface TLDraftMessageEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DraftMessage data2 = 1;
    */
-  data2?: DraftMessage;
-
+  data2?: DraftMessage
 }
 
 /**
@@ -5612,8 +5383,7 @@ export interface TLDraftMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DraftMessage data2 = 1;
    */
-  data2?: DraftMessage;
-
+  data2?: DraftMessage
 }
 
 /**
@@ -5623,23 +5393,22 @@ export interface EmailVerification {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string code = 3;
    */
-  code?: string;
+  code?: string
 
   /**
    * @generated from field: optional string token = 4;
    */
-  token?: string;
-
+  token?: string
 }
 
 /**
@@ -5649,8 +5418,7 @@ export interface TLEmailVerificationCode {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmailVerification data2 = 1;
    */
-  data2?: EmailVerification;
-
+  data2?: EmailVerification
 }
 
 /**
@@ -5660,8 +5428,7 @@ export interface TLEmailVerificationGoogle {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmailVerification data2 = 1;
    */
-  data2?: EmailVerification;
-
+  data2?: EmailVerification
 }
 
 /**
@@ -5671,8 +5438,7 @@ export interface TLEmailVerificationApple {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmailVerification data2 = 1;
    */
-  data2?: EmailVerification;
-
+  data2?: EmailVerification
 }
 
 /**
@@ -5682,23 +5448,22 @@ export interface EmailVerifyPurpose {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone_number = 3;
    */
-  phoneNumber?: string;
+  phoneNumber?: string
 
   /**
    * @generated from field: optional string phone_code_hash = 4;
    */
-  phoneCodeHash?: string;
-
+  phoneCodeHash?: string
 }
 
 /**
@@ -5708,8 +5473,7 @@ export interface TLEmailVerifyPurposeLoginSetup {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmailVerifyPurpose data2 = 1;
    */
-  data2?: EmailVerifyPurpose;
-
+  data2?: EmailVerifyPurpose
 }
 
 /**
@@ -5719,8 +5483,7 @@ export interface TLEmailVerifyPurposeLoginChange {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmailVerifyPurpose data2 = 1;
    */
-  data2?: EmailVerifyPurpose;
-
+  data2?: EmailVerifyPurpose
 }
 
 /**
@@ -5730,8 +5493,7 @@ export interface TLEmailVerifyPurposePassport {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmailVerifyPurpose data2 = 1;
    */
-  data2?: EmailVerifyPurpose;
-
+  data2?: EmailVerifyPurpose
 }
 
 /**
@@ -5741,28 +5503,27 @@ export interface EmojiGroup {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string title = 3;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional int64 icon_emoji_id = 4;
    */
-  iconEmojiId?: bigint;
+  iconEmojiId?: bigint
 
   /**
    * @generated from field: repeated string emoticons = 5;
    */
-  emoticons: string[];
-
+  emoticons: string[]
 }
 
 /**
@@ -5772,8 +5533,7 @@ export interface TLEmojiGroup {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmojiGroup data2 = 1;
    */
-  data2?: EmojiGroup;
-
+  data2?: EmojiGroup
 }
 
 /**
@@ -5783,23 +5543,22 @@ export interface EmojiKeyword {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string keyword = 3;
    */
-  keyword?: string;
+  keyword?: string
 
   /**
    * @generated from field: repeated string emoticons = 4;
    */
-  emoticons: string[];
-
+  emoticons: string[]
 }
 
 /**
@@ -5809,8 +5568,7 @@ export interface TLEmojiKeyword {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmojiKeyword data2 = 1;
    */
-  data2?: EmojiKeyword;
-
+  data2?: EmojiKeyword
 }
 
 /**
@@ -5820,8 +5578,7 @@ export interface TLEmojiKeywordDeleted {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmojiKeyword data2 = 1;
    */
-  data2?: EmojiKeyword;
-
+  data2?: EmojiKeyword
 }
 
 /**
@@ -5831,33 +5588,32 @@ export interface EmojiKeywordsDifference {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string lang_code = 3;
    */
-  langCode?: string;
+  langCode?: string
 
   /**
    * @generated from field: optional int32 from_version = 4;
    */
-  fromVersion?: number;
+  fromVersion?: number
 
   /**
    * @generated from field: optional int32 version = 5;
    */
-  version?: number;
+  version?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.EmojiKeyword keywords = 6;
    */
-  keywords: EmojiKeyword[];
-
+  keywords: EmojiKeyword[]
 }
 
 /**
@@ -5867,8 +5623,7 @@ export interface TLEmojiKeywordsDifference {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmojiKeywordsDifference data2 = 1;
    */
-  data2?: EmojiKeywordsDifference;
-
+  data2?: EmojiKeywordsDifference
 }
 
 /**
@@ -5878,18 +5633,17 @@ export interface EmojiLanguage {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string lang_code = 3;
    */
-  langCode?: string;
-
+  langCode?: string
 }
 
 /**
@@ -5899,8 +5653,7 @@ export interface TLEmojiLanguage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmojiLanguage data2 = 1;
    */
-  data2?: EmojiLanguage;
-
+  data2?: EmojiLanguage
 }
 
 /**
@@ -5910,23 +5663,22 @@ export interface EmojiList {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
+  hash?: bigint
 
   /**
    * @generated from field: repeated int64 document_id = 4;
    */
-  documentId: bigint[];
-
+  documentId: bigint[]
 }
 
 /**
@@ -5936,8 +5688,7 @@ export interface TLEmojiListNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmojiList data2 = 1;
    */
-  data2?: EmojiList;
-
+  data2?: EmojiList
 }
 
 /**
@@ -5947,8 +5698,7 @@ export interface TLEmojiList {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmojiList data2 = 1;
    */
-  data2?: EmojiList;
-
+  data2?: EmojiList
 }
 
 /**
@@ -5958,23 +5708,22 @@ export interface EmojiStatus {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 document_id = 3;
    */
-  documentId?: bigint;
+  documentId?: bigint
 
   /**
    * @generated from field: optional int32 until = 4;
    */
-  until?: number;
-
+  until?: number
 }
 
 /**
@@ -5984,8 +5733,7 @@ export interface TLEmojiStatusEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmojiStatus data2 = 1;
    */
-  data2?: EmojiStatus;
-
+  data2?: EmojiStatus
 }
 
 /**
@@ -5995,8 +5743,7 @@ export interface TLEmojiStatus {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmojiStatus data2 = 1;
    */
-  data2?: EmojiStatus;
-
+  data2?: EmojiStatus
 }
 
 /**
@@ -6006,8 +5753,7 @@ export interface TLEmojiStatusUntil {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmojiStatus data2 = 1;
    */
-  data2?: EmojiStatus;
-
+  data2?: EmojiStatus
 }
 
 /**
@@ -6017,18 +5763,17 @@ export interface EmojiURL {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string url = 3;
    */
-  url?: string;
-
+  url?: string
 }
 
 /**
@@ -6038,8 +5783,7 @@ export interface TLEmojiURL {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmojiURL data2 = 1;
    */
-  data2?: EmojiURL;
-
+  data2?: EmojiURL
 }
 
 /**
@@ -6049,63 +5793,62 @@ export interface EncryptedChat {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 id = 3;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional int32 date = 5;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional int64 admin_id = 6;
    */
-  adminId?: bigint;
+  adminId?: bigint
 
   /**
    * @generated from field: optional int64 participant_id = 7;
    */
-  participantId?: bigint;
+  participantId?: bigint
 
   /**
    * @generated from field: optional google.protobuf.Int32Value folder_id = 8;
    */
-  folderId?: number;
+  folderId?: number
 
   /**
    * @generated from field: optional bytes g_a = 9;
    */
-  gA?: Uint8Array;
+  gA?: Uint8Array
 
   /**
    * @generated from field: optional bytes g_a_or_b = 10;
    */
-  gAOrB?: Uint8Array;
+  gAOrB?: Uint8Array
 
   /**
    * @generated from field: optional int64 key_fingerprint = 11;
    */
-  keyFingerprint?: bigint;
+  keyFingerprint?: bigint
 
   /**
    * @generated from field: optional bool history_deleted = 12;
    */
-  historyDeleted?: boolean;
-
+  historyDeleted?: boolean
 }
 
 /**
@@ -6115,8 +5858,7 @@ export interface TLEncryptedChatEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EncryptedChat data2 = 1;
    */
-  data2?: EncryptedChat;
-
+  data2?: EncryptedChat
 }
 
 /**
@@ -6126,8 +5868,7 @@ export interface TLEncryptedChatWaiting {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EncryptedChat data2 = 1;
    */
-  data2?: EncryptedChat;
-
+  data2?: EncryptedChat
 }
 
 /**
@@ -6137,8 +5878,7 @@ export interface TLEncryptedChatRequested {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EncryptedChat data2 = 1;
    */
-  data2?: EncryptedChat;
-
+  data2?: EncryptedChat
 }
 
 /**
@@ -6148,8 +5888,7 @@ export interface TLEncryptedChat {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EncryptedChat data2 = 1;
    */
-  data2?: EncryptedChat;
-
+  data2?: EncryptedChat
 }
 
 /**
@@ -6159,8 +5898,7 @@ export interface TLEncryptedChatDiscarded {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EncryptedChat data2 = 1;
    */
-  data2?: EncryptedChat;
-
+  data2?: EncryptedChat
 }
 
 /**
@@ -6170,43 +5908,42 @@ export interface EncryptedFile {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional int64 size2_INT64 = 5;
    */
-  size2INT64?: bigint;
+  size2INT64?: bigint
 
   /**
    * @generated from field: optional int32 dc_id = 6;
    */
-  dcId?: number;
+  dcId?: number
 
   /**
    * @generated from field: optional int32 key_fingerprint = 7;
    */
-  keyFingerprint?: number;
+  keyFingerprint?: number
 
   /**
    * @generated from field: optional int32 size2_INT32 = 8;
    */
-  size2INT32?: number;
-
+  size2INT32?: number
 }
 
 /**
@@ -6216,8 +5953,7 @@ export interface TLEncryptedFileEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EncryptedFile data2 = 1;
    */
-  data2?: EncryptedFile;
-
+  data2?: EncryptedFile
 }
 
 /**
@@ -6227,8 +5963,7 @@ export interface TLEncryptedFile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EncryptedFile data2 = 1;
    */
-  data2?: EncryptedFile;
-
+  data2?: EncryptedFile
 }
 
 /**
@@ -6238,38 +5973,37 @@ export interface EncryptedMessage {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 random_id = 3;
    */
-  randomId?: bigint;
+  randomId?: bigint
 
   /**
    * @generated from field: optional int32 chat_id = 4;
    */
-  chatId?: number;
+  chatId?: number
 
   /**
    * @generated from field: optional int32 date = 5;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional bytes bytes = 6;
    */
-  bytes?: Uint8Array;
+  bytes?: Uint8Array
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EncryptedFile file = 7;
    */
-  file?: EncryptedFile;
-
+  file?: EncryptedFile
 }
 
 /**
@@ -6279,8 +6013,7 @@ export interface TLEncryptedMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EncryptedMessage data2 = 1;
    */
-  data2?: EncryptedMessage;
-
+  data2?: EncryptedMessage
 }
 
 /**
@@ -6290,8 +6023,7 @@ export interface TLEncryptedMessageService {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EncryptedMessage data2 = 1;
    */
-  data2?: EncryptedMessage;
-
+  data2?: EncryptedMessage
 }
 
 /**
@@ -6301,73 +6033,72 @@ export interface ExportedChatInvite {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool revoked = 3;
    */
-  revoked?: boolean;
+  revoked?: boolean
 
   /**
    * @generated from field: optional bool permanent = 4;
    */
-  permanent?: boolean;
+  permanent?: boolean
 
   /**
    * @generated from field: optional bool request_needed = 5;
    */
-  requestNeeded?: boolean;
+  requestNeeded?: boolean
 
   /**
    * @generated from field: optional string link = 6;
    */
-  link?: string;
+  link?: string
 
   /**
    * @generated from field: optional int64 admin_id = 7;
    */
-  adminId?: bigint;
+  adminId?: bigint
 
   /**
    * @generated from field: optional int32 date = 8;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value start_date = 9;
    */
-  startDate?: number;
+  startDate?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value expire_date = 10;
    */
-  expireDate?: number;
+  expireDate?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value usage_limit = 11;
    */
-  usageLimit?: number;
+  usageLimit?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value usage = 12;
    */
-  usage?: number;
+  usage?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value requested = 13;
    */
-  requested?: number;
+  requested?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue title = 14;
    */
-  title?: string;
-
+  title?: string
 }
 
 /**
@@ -6377,8 +6108,7 @@ export interface TLChatInviteExported {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ExportedChatInvite data2 = 1;
    */
-  data2?: ExportedChatInvite;
-
+  data2?: ExportedChatInvite
 }
 
 /**
@@ -6388,8 +6118,7 @@ export interface TLChatInvitePublicJoinRequests {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ExportedChatInvite data2 = 1;
    */
-  data2?: ExportedChatInvite;
-
+  data2?: ExportedChatInvite
 }
 
 /**
@@ -6399,28 +6128,27 @@ export interface ExportedChatlistInvite {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string title = 3;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional string url = 4;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Peer peers = 5;
    */
-  peers: Peer[];
-
+  peers: Peer[]
 }
 
 /**
@@ -6430,8 +6158,7 @@ export interface TLExportedChatlistInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ExportedChatlistInvite data2 = 1;
    */
-  data2?: ExportedChatlistInvite;
-
+  data2?: ExportedChatlistInvite
 }
 
 /**
@@ -6441,23 +6168,22 @@ export interface ExportedContactToken {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string url = 3;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional int32 expires = 4;
    */
-  expires?: number;
-
+  expires?: number
 }
 
 /**
@@ -6467,8 +6193,7 @@ export interface TLExportedContactToken {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ExportedContactToken data2 = 1;
    */
-  data2?: ExportedContactToken;
-
+  data2?: ExportedContactToken
 }
 
 /**
@@ -6478,23 +6203,22 @@ export interface ExportedMessageLink {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string link = 3;
    */
-  link?: string;
+  link?: string
 
   /**
    * @generated from field: optional string html = 4;
    */
-  html?: string;
-
+  html?: string
 }
 
 /**
@@ -6504,8 +6228,7 @@ export interface TLExportedMessageLink {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ExportedMessageLink data2 = 1;
    */
-  data2?: ExportedMessageLink;
-
+  data2?: ExportedMessageLink
 }
 
 /**
@@ -6515,18 +6238,17 @@ export interface ExportedStoryLink {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string link = 3;
    */
-  link?: string;
-
+  link?: string
 }
 
 /**
@@ -6536,8 +6258,7 @@ export interface TLExportedStoryLink {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ExportedStoryLink data2 = 1;
    */
-  data2?: ExportedStoryLink;
-
+  data2?: ExportedStoryLink
 }
 
 /**
@@ -6547,33 +6268,32 @@ export interface FileHash {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 offset_INT64 = 3;
    */
-  offsetINT64?: bigint;
+  offsetINT64?: bigint
 
   /**
    * @generated from field: optional int32 limit = 4;
    */
-  limit?: number;
+  limit?: number
 
   /**
    * @generated from field: optional bytes hash = 5;
    */
-  hash?: Uint8Array;
+  hash?: Uint8Array
 
   /**
    * @generated from field: optional int32 offset_INT32 = 6;
    */
-  offsetINT32?: number;
-
+  offsetINT32?: number
 }
 
 /**
@@ -6583,8 +6303,7 @@ export interface TLFileHash {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.FileHash data2 = 1;
    */
-  data2?: FileHash;
-
+  data2?: FileHash
 }
 
 /**
@@ -6594,43 +6313,42 @@ export interface Folder {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool autofill_new_broadcasts = 3;
    */
-  autofillNewBroadcasts?: boolean;
+  autofillNewBroadcasts?: boolean
 
   /**
    * @generated from field: optional bool autofill_public_groups = 4;
    */
-  autofillPublicGroups?: boolean;
+  autofillPublicGroups?: boolean
 
   /**
    * @generated from field: optional bool autofill_new_correspondents = 5;
    */
-  autofillNewCorrespondents?: boolean;
+  autofillNewCorrespondents?: boolean
 
   /**
    * @generated from field: optional int32 id = 6;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional string title = 7;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatPhoto photo = 8;
    */
-  photo?: ChatPhoto;
-
+  photo?: ChatPhoto
 }
 
 /**
@@ -6640,8 +6358,7 @@ export interface TLFolder {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Folder data2 = 1;
    */
-  data2?: Folder;
-
+  data2?: Folder
 }
 
 /**
@@ -6651,23 +6368,22 @@ export interface FolderPeer {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer = 3;
    */
-  peer?: Peer;
+  peer?: Peer
 
   /**
    * @generated from field: optional int32 folder_id = 4;
    */
-  folderId?: number;
-
+  folderId?: number
 }
 
 /**
@@ -6677,8 +6393,7 @@ export interface TLFolderPeer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.FolderPeer data2 = 1;
    */
-  data2?: FolderPeer;
-
+  data2?: FolderPeer
 }
 
 /**
@@ -6688,108 +6403,107 @@ export interface ForumTopic {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 id = 3;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional bool my = 4;
    */
-  my?: boolean;
+  my?: boolean
 
   /**
    * @generated from field: optional bool closed = 5;
    */
-  closed?: boolean;
+  closed?: boolean
 
   /**
    * @generated from field: optional bool pinned = 6;
    */
-  pinned?: boolean;
+  pinned?: boolean
 
   /**
    * @generated from field: optional bool short = 7;
    */
-  short?: boolean;
+  short?: boolean
 
   /**
    * @generated from field: optional bool hidden = 8;
    */
-  hidden?: boolean;
+  hidden?: boolean
 
   /**
    * @generated from field: optional int32 date = 9;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional string title = 10;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional int32 icon_color = 11;
    */
-  iconColor?: number;
+  iconColor?: number
 
   /**
    * @generated from field: optional google.protobuf.Int64Value icon_emoji_id = 12;
    */
-  iconEmojiId?: bigint;
+  iconEmojiId?: bigint
 
   /**
    * @generated from field: optional int32 top_message = 13;
    */
-  topMessage?: number;
+  topMessage?: number
 
   /**
    * @generated from field: optional int32 read_inbox_max_id = 14;
    */
-  readInboxMaxId?: number;
+  readInboxMaxId?: number
 
   /**
    * @generated from field: optional int32 read_outbox_max_id = 15;
    */
-  readOutboxMaxId?: number;
+  readOutboxMaxId?: number
 
   /**
    * @generated from field: optional int32 unread_count = 16;
    */
-  unreadCount?: number;
+  unreadCount?: number
 
   /**
    * @generated from field: optional int32 unread_mentions_count = 17;
    */
-  unreadMentionsCount?: number;
+  unreadMentionsCount?: number
 
   /**
    * @generated from field: optional int32 unread_reactions_count = 18;
    */
-  unreadReactionsCount?: number;
+  unreadReactionsCount?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer from_id = 19;
    */
-  fromId?: Peer;
+  fromId?: Peer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PeerNotifySettings notify_settings = 20;
    */
-  notifySettings?: PeerNotifySettings;
+  notifySettings?: PeerNotifySettings
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DraftMessage draft = 21;
    */
-  draft?: DraftMessage;
-
+  draft?: DraftMessage
 }
 
 /**
@@ -6799,8 +6513,7 @@ export interface TLForumTopicDeleted {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ForumTopic data2 = 1;
    */
-  data2?: ForumTopic;
-
+  data2?: ForumTopic
 }
 
 /**
@@ -6810,8 +6523,7 @@ export interface TLForumTopic {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ForumTopic data2 = 1;
    */
-  data2?: ForumTopic;
-
+  data2?: ForumTopic
 }
 
 /**
@@ -6821,48 +6533,47 @@ export interface Game {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional string short_name = 5;
    */
-  shortName?: string;
+  shortName?: string
 
   /**
    * @generated from field: optional string title = 6;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional string description = 7;
    */
-  description?: string;
+  description?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Photo photo = 8;
    */
-  photo?: Photo;
+  photo?: Photo
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document document = 9;
    */
-  document?: Document;
-
+  document?: Document
 }
 
 /**
@@ -6872,8 +6583,7 @@ export interface TLGame {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Game data2 = 1;
    */
-  data2?: Game;
-
+  data2?: Game
 }
 
 /**
@@ -6883,33 +6593,32 @@ export interface GeoPoint {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional float long = 3;
    */
-  long?: number;
+  long?: number
 
   /**
    * @generated from field: optional float lat = 4;
    */
-  lat?: number;
+  lat?: number
 
   /**
    * @generated from field: optional int64 access_hash = 5;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional google.protobuf.Int32Value accuracy_radius = 6;
    */
-  accuracyRadius?: number;
-
+  accuracyRadius?: number
 }
 
 /**
@@ -6919,8 +6628,7 @@ export interface TLGeoPointEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.GeoPoint data2 = 1;
    */
-  data2?: GeoPoint;
-
+  data2?: GeoPoint
 }
 
 /**
@@ -6930,8 +6638,7 @@ export interface TLGeoPoint {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.GeoPoint data2 = 1;
    */
-  data2?: GeoPoint;
-
+  data2?: GeoPoint
 }
 
 /**
@@ -6941,33 +6648,32 @@ export interface GlobalPrivacySettings {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool archive_and_mute_new_noncontact_peers_FLAGBOOLEAN = 3;
    */
-  archiveAndMuteNewNoncontactPeersFLAGBOOLEAN?: boolean;
+  archiveAndMuteNewNoncontactPeersFLAGBOOLEAN?: boolean
 
   /**
    * @generated from field: optional bool keep_archived_unmuted = 4;
    */
-  keepArchivedUnmuted?: boolean;
+  keepArchivedUnmuted?: boolean
 
   /**
    * @generated from field: optional bool keep_archived_folders = 5;
    */
-  keepArchivedFolders?: boolean;
+  keepArchivedFolders?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool archive_and_mute_new_noncontact_peers_FLAGBOOL = 6;
    */
-  archiveAndMuteNewNoncontactPeersFLAGBOOL?: Bool;
-
+  archiveAndMuteNewNoncontactPeersFLAGBOOL?: Bool
 }
 
 /**
@@ -6977,8 +6683,7 @@ export interface TLGlobalPrivacySettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.GlobalPrivacySettings data2 = 1;
    */
-  data2?: GlobalPrivacySettings;
-
+  data2?: GlobalPrivacySettings
 }
 
 /**
@@ -6988,108 +6693,107 @@ export interface GroupCall {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional int32 duration = 5;
    */
-  duration?: number;
+  duration?: number
 
   /**
    * @generated from field: optional bool join_muted = 6;
    */
-  joinMuted?: boolean;
+  joinMuted?: boolean
 
   /**
    * @generated from field: optional bool can_change_join_muted = 7;
    */
-  canChangeJoinMuted?: boolean;
+  canChangeJoinMuted?: boolean
 
   /**
    * @generated from field: optional bool join_date_asc = 8;
    */
-  joinDateAsc?: boolean;
+  joinDateAsc?: boolean
 
   /**
    * @generated from field: optional bool schedule_start_subscribed = 9;
    */
-  scheduleStartSubscribed?: boolean;
+  scheduleStartSubscribed?: boolean
 
   /**
    * @generated from field: optional bool can_start_video = 10;
    */
-  canStartVideo?: boolean;
+  canStartVideo?: boolean
 
   /**
    * @generated from field: optional bool record_video_active = 11;
    */
-  recordVideoActive?: boolean;
+  recordVideoActive?: boolean
 
   /**
    * @generated from field: optional bool rtmp_stream = 12;
    */
-  rtmpStream?: boolean;
+  rtmpStream?: boolean
 
   /**
    * @generated from field: optional bool listeners_hidden = 13;
    */
-  listenersHidden?: boolean;
+  listenersHidden?: boolean
 
   /**
    * @generated from field: optional int32 participants_count = 14;
    */
-  participantsCount?: number;
+  participantsCount?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue title = 15;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional google.protobuf.Int32Value stream_dc_id = 16;
    */
-  streamDcId?: number;
+  streamDcId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value record_start_date = 17;
    */
-  recordStartDate?: number;
+  recordStartDate?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value schedule_date = 18;
    */
-  scheduleDate?: number;
+  scheduleDate?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value unmuted_video_count = 19;
    */
-  unmutedVideoCount?: number;
+  unmutedVideoCount?: number
 
   /**
    * @generated from field: optional int32 unmuted_video_limit = 20;
    */
-  unmutedVideoLimit?: number;
+  unmutedVideoLimit?: number
 
   /**
    * @generated from field: optional int32 version = 21;
    */
-  version?: number;
-
+  version?: number
 }
 
 /**
@@ -7099,8 +6803,7 @@ export interface TLGroupCallDiscarded {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.GroupCall data2 = 1;
    */
-  data2?: GroupCall;
-
+  data2?: GroupCall
 }
 
 /**
@@ -7110,8 +6813,7 @@ export interface TLGroupCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.GroupCall data2 = 1;
    */
-  data2?: GroupCall;
-
+  data2?: GroupCall
 }
 
 /**
@@ -7121,108 +6823,107 @@ export interface GroupCallParticipant {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool muted = 3;
    */
-  muted?: boolean;
+  muted?: boolean
 
   /**
    * @generated from field: optional bool left = 4;
    */
-  left?: boolean;
+  left?: boolean
 
   /**
    * @generated from field: optional bool can_self_unmute = 5;
    */
-  canSelfUnmute?: boolean;
+  canSelfUnmute?: boolean
 
   /**
    * @generated from field: optional bool just_joined = 6;
    */
-  justJoined?: boolean;
+  justJoined?: boolean
 
   /**
    * @generated from field: optional bool versioned = 7;
    */
-  versioned?: boolean;
+  versioned?: boolean
 
   /**
    * @generated from field: optional bool min = 8;
    */
-  min?: boolean;
+  min?: boolean
 
   /**
    * @generated from field: optional bool muted_by_you = 9;
    */
-  mutedByYou?: boolean;
+  mutedByYou?: boolean
 
   /**
    * @generated from field: optional bool volume_by_admin = 10;
    */
-  volumeByAdmin?: boolean;
+  volumeByAdmin?: boolean
 
   /**
    * @generated from field: optional bool self = 11;
    */
-  self?: boolean;
+  self?: boolean
 
   /**
    * @generated from field: optional bool video_joined = 12;
    */
-  videoJoined?: boolean;
+  videoJoined?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer = 13;
    */
-  peer?: Peer;
+  peer?: Peer
 
   /**
    * @generated from field: optional int32 date = 14;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value active_date = 15;
    */
-  activeDate?: number;
+  activeDate?: number
 
   /**
    * @generated from field: optional int32 source = 16;
    */
-  source?: number;
+  source?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value volume = 17;
    */
-  volume?: number;
+  volume?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue about = 18;
    */
-  about?: string;
+  about?: string
 
   /**
    * @generated from field: optional google.protobuf.Int64Value raise_hand_rating = 19;
    */
-  raiseHandRating?: bigint;
+  raiseHandRating?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.GroupCallParticipantVideo video = 20;
    */
-  video?: GroupCallParticipantVideo;
+  video?: GroupCallParticipantVideo
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.GroupCallParticipantVideo presentation = 21;
    */
-  presentation?: GroupCallParticipantVideo;
-
+  presentation?: GroupCallParticipantVideo
 }
 
 /**
@@ -7232,8 +6933,7 @@ export interface TLGroupCallParticipant {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.GroupCallParticipant data2 = 1;
    */
-  data2?: GroupCallParticipant;
-
+  data2?: GroupCallParticipant
 }
 
 /**
@@ -7243,33 +6943,32 @@ export interface GroupCallParticipantVideo {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool paused = 3;
    */
-  paused?: boolean;
+  paused?: boolean
 
   /**
    * @generated from field: optional string endpoint = 4;
    */
-  endpoint?: string;
+  endpoint?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.GroupCallParticipantVideoSourceGroup source_groups = 5;
    */
-  sourceGroups: GroupCallParticipantVideoSourceGroup[];
+  sourceGroups: GroupCallParticipantVideoSourceGroup[]
 
   /**
    * @generated from field: optional google.protobuf.Int32Value audio_source = 6;
    */
-  audioSource?: number;
-
+  audioSource?: number
 }
 
 /**
@@ -7279,8 +6978,7 @@ export interface TLGroupCallParticipantVideo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.GroupCallParticipantVideo data2 = 1;
    */
-  data2?: GroupCallParticipantVideo;
-
+  data2?: GroupCallParticipantVideo
 }
 
 /**
@@ -7290,23 +6988,22 @@ export interface GroupCallParticipantVideoSourceGroup {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string semantics = 3;
    */
-  semantics?: string;
+  semantics?: string
 
   /**
    * @generated from field: repeated int32 sources = 4;
    */
-  sources: number[];
-
+  sources: number[]
 }
 
 /**
@@ -7316,8 +7013,7 @@ export interface TLGroupCallParticipantVideoSourceGroup {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.GroupCallParticipantVideoSourceGroup data2 = 1;
    */
-  data2?: GroupCallParticipantVideoSourceGroup;
-
+  data2?: GroupCallParticipantVideoSourceGroup
 }
 
 /**
@@ -7327,28 +7023,27 @@ export interface GroupCallStreamChannel {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 channel = 3;
    */
-  channel?: number;
+  channel?: number
 
   /**
    * @generated from field: optional int32 scale = 4;
    */
-  scale?: number;
+  scale?: number
 
   /**
    * @generated from field: optional int64 last_timestamp_ms = 5;
    */
-  lastTimestampMs?: bigint;
-
+  lastTimestampMs?: bigint
 }
 
 /**
@@ -7358,8 +7053,7 @@ export interface TLGroupCallStreamChannel {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.GroupCallStreamChannel data2 = 1;
    */
-  data2?: GroupCallStreamChannel;
-
+  data2?: GroupCallStreamChannel
 }
 
 /**
@@ -7369,28 +7063,27 @@ export interface HighScore {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 pos = 3;
    */
-  pos?: number;
+  pos?: number
 
   /**
    * @generated from field: optional int64 user_id = 4;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional int32 score = 5;
    */
-  score?: number;
-
+  score?: number
 }
 
 /**
@@ -7400,8 +7093,7 @@ export interface TLHighScore {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HighScore data2 = 1;
    */
-  data2?: HighScore;
-
+  data2?: HighScore
 }
 
 /**
@@ -7411,118 +7103,117 @@ export interface ImmutableChat {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int64 creator = 4;
    */
-  creator?: bigint;
+  creator?: bigint
 
   /**
    * @generated from field: optional string title = 5;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Photo photo = 6;
    */
-  photo?: Photo;
+  photo?: Photo
 
   /**
    * @generated from field: optional bool deactivated = 7;
    */
-  deactivated?: boolean;
+  deactivated?: boolean
 
   /**
    * @generated from field: optional bool call_active = 8;
    */
-  callActive?: boolean;
+  callActive?: boolean
 
   /**
    * @generated from field: optional bool call_not_empty = 9;
    */
-  callNotEmpty?: boolean;
+  callNotEmpty?: boolean
 
   /**
    * @generated from field: optional bool noforwards = 10;
    */
-  noforwards?: boolean;
+  noforwards?: boolean
 
   /**
    * @generated from field: optional int32 participants_count = 11;
    */
-  participantsCount?: number;
+  participantsCount?: number
 
   /**
    * @generated from field: optional int64 date = 12;
    */
-  date?: bigint;
+  date?: bigint
 
   /**
    * @generated from field: optional int32 version = 13;
    */
-  version?: number;
+  version?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel migrated_to = 14;
    */
-  migratedTo?: InputChannel;
+  migratedTo?: InputChannel
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatBannedRights default_banned_rights = 15;
    */
-  defaultBannedRights?: ChatBannedRights;
+  defaultBannedRights?: ChatBannedRights
 
   /**
    * @generated from field: optional bool can_set_username = 16;
    */
-  canSetUsername?: boolean;
+  canSetUsername?: boolean
 
   /**
    * @generated from field: optional string about = 17;
    */
-  about?: string;
+  about?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ExportedChatInvite exported_invite = 18;
    */
-  exportedInvite?: ExportedChatInvite;
+  exportedInvite?: ExportedChatInvite
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.BotInfo bot_info = 19;
    */
-  botInfo: BotInfo[];
+  botInfo: BotInfo[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 20;
    */
-  call?: InputGroupCall;
+  call?: InputGroupCall
 
   /**
    * @generated from field: optional int32 available_reactions_type = 21;
    */
-  availableReactionsType?: number;
+  availableReactionsType?: number
 
   /**
    * @generated from field: repeated string available_reactions = 22;
    */
-  availableReactions: string[];
+  availableReactions: string[]
 
   /**
    * @generated from field: optional int32 ttl_period = 23;
    */
-  ttlPeriod?: number;
-
+  ttlPeriod?: number
 }
 
 /**
@@ -7532,8 +7223,7 @@ export interface TLImmutableChat {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ImmutableChat data2 = 1;
    */
-  data2?: ImmutableChat;
-
+  data2?: ImmutableChat
 }
 
 /**
@@ -7543,83 +7233,82 @@ export interface ImmutableChatParticipant {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int64 chat_id = 4;
    */
-  chatId?: bigint;
+  chatId?: bigint
 
   /**
    * @generated from field: optional int64 user_id = 5;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional int32 state = 6;
    */
-  state?: number;
+  state?: number
 
   /**
    * @generated from field: optional int32 participant_type = 7;
    */
-  participantType?: number;
+  participantType?: number
 
   /**
    * @generated from field: optional string link = 8;
    */
-  link?: string;
+  link?: string
 
   /**
    * @generated from field: optional int32 useage = 9;
    */
-  useage?: number;
+  useage?: number
 
   /**
    * @generated from field: optional int64 inviter_user_id = 10;
    */
-  inviterUserId?: bigint;
+  inviterUserId?: bigint
 
   /**
    * @generated from field: optional int64 invited_at = 11;
    */
-  invitedAt?: bigint;
+  invitedAt?: bigint
 
   /**
    * @generated from field: optional int64 kicked_at = 12;
    */
-  kickedAt?: bigint;
+  kickedAt?: bigint
 
   /**
    * @generated from field: optional int64 left_at = 13;
    */
-  leftAt?: bigint;
+  leftAt?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatAdminRights admin_rights = 14;
    */
-  adminRights?: ChatAdminRights;
+  adminRights?: ChatAdminRights
 
   /**
    * @generated from field: optional int64 date = 15;
    */
-  date?: bigint;
+  date?: bigint
 
   /**
    * @generated from field: optional bool is_bot = 16;
    */
-  isBot?: boolean;
-
+  isBot?: boolean
 }
 
 /**
@@ -7629,8 +7318,7 @@ export interface TLImmutableChatParticipant {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ImmutableChatParticipant data2 = 1;
    */
-  data2?: ImmutableChatParticipant;
-
+  data2?: ImmutableChatParticipant
 }
 
 /**
@@ -7640,38 +7328,37 @@ export interface ImmutableUser {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UserData user = 3;
    */
-  user?: UserData;
+  user?: UserData
 
   /**
    * @generated from field: optional int64 last_seen_at = 4;
    */
-  lastSeenAt?: bigint;
+  lastSeenAt?: bigint
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ContactData contacts = 5;
    */
-  contacts: ContactData[];
+  contacts: ContactData[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ContactData reverse_contacts = 6;
    */
-  reverseContacts: ContactData[];
+  reverseContacts: ContactData[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PrivacyKeyRules keys_privacy_rules = 7;
    */
-  keysPrivacyRules: PrivacyKeyRules[];
-
+  keysPrivacyRules: PrivacyKeyRules[]
 }
 
 /**
@@ -7681,8 +7368,7 @@ export interface TLImmutableUser {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ImmutableUser data2 = 1;
    */
-  data2?: ImmutableUser;
-
+  data2?: ImmutableUser
 }
 
 /**
@@ -7692,23 +7378,22 @@ export interface ImportedContact {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 user_id = 3;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional int64 client_id = 4;
    */
-  clientId?: bigint;
-
+  clientId?: bigint
 }
 
 /**
@@ -7718,8 +7403,7 @@ export interface TLImportedContact {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ImportedContact data2 = 1;
    */
-  data2?: ImportedContact;
-
+  data2?: ImportedContact
 }
 
 /**
@@ -7729,23 +7413,22 @@ export interface InlineBotSwitchPM {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string text = 3;
    */
-  text?: string;
+  text?: string
 
   /**
    * @generated from field: optional string start_param = 4;
    */
-  startParam?: string;
-
+  startParam?: string
 }
 
 /**
@@ -7755,8 +7438,7 @@ export interface TLInlineBotSwitchPM {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InlineBotSwitchPM data2 = 1;
    */
-  data2?: InlineBotSwitchPM;
-
+  data2?: InlineBotSwitchPM
 }
 
 /**
@@ -7766,23 +7448,22 @@ export interface InlineBotWebView {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string text = 3;
    */
-  text?: string;
+  text?: string
 
   /**
    * @generated from field: optional string url = 4;
    */
-  url?: string;
-
+  url?: string
 }
 
 /**
@@ -7792,8 +7473,7 @@ export interface TLInlineBotWebView {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InlineBotWebView data2 = 1;
    */
-  data2?: InlineBotWebView;
-
+  data2?: InlineBotWebView
 }
 
 /**
@@ -7803,13 +7483,12 @@ export interface InlineQueryPeerType {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -7819,8 +7498,7 @@ export interface TLInlineQueryPeerTypeSameBotPM {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InlineQueryPeerType data2 = 1;
    */
-  data2?: InlineQueryPeerType;
-
+  data2?: InlineQueryPeerType
 }
 
 /**
@@ -7830,8 +7508,7 @@ export interface TLInlineQueryPeerTypePM {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InlineQueryPeerType data2 = 1;
    */
-  data2?: InlineQueryPeerType;
-
+  data2?: InlineQueryPeerType
 }
 
 /**
@@ -7841,8 +7518,7 @@ export interface TLInlineQueryPeerTypeChat {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InlineQueryPeerType data2 = 1;
    */
-  data2?: InlineQueryPeerType;
-
+  data2?: InlineQueryPeerType
 }
 
 /**
@@ -7852,8 +7528,7 @@ export interface TLInlineQueryPeerTypeMegagroup {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InlineQueryPeerType data2 = 1;
    */
-  data2?: InlineQueryPeerType;
-
+  data2?: InlineQueryPeerType
 }
 
 /**
@@ -7863,8 +7538,7 @@ export interface TLInlineQueryPeerTypeBroadcast {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InlineQueryPeerType data2 = 1;
    */
-  data2?: InlineQueryPeerType;
-
+  data2?: InlineQueryPeerType
 }
 
 /**
@@ -7874,8 +7548,7 @@ export interface TLInlineQueryPeerTypeBotPM {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InlineQueryPeerType data2 = 1;
    */
-  data2?: InlineQueryPeerType;
-
+  data2?: InlineQueryPeerType
 }
 
 /**
@@ -7885,33 +7558,32 @@ export interface InputAppEvent {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional float time = 3;
    */
-  time?: number;
+  time?: number
 
   /**
    * @generated from field: optional string type = 4;
    */
-  type?: string;
+  type?: string
 
   /**
    * @generated from field: optional int64 peer = 5;
    */
-  peer?: bigint;
+  peer?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.JSONValue data = 6;
    */
-  data?: JSONValue;
-
+  data?: JSONValue
 }
 
 /**
@@ -7921,8 +7593,7 @@ export interface TLInputAppEvent {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputAppEvent data2 = 1;
    */
-  data2?: InputAppEvent;
-
+  data2?: InputAppEvent
 }
 
 /**
@@ -7932,33 +7603,32 @@ export interface InputBotApp {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser bot_id = 5;
    */
-  botId?: InputUser;
+  botId?: InputUser
 
   /**
    * @generated from field: optional string short_name = 6;
    */
-  shortName?: string;
-
+  shortName?: string
 }
 
 /**
@@ -7968,8 +7638,7 @@ export interface TLInputBotAppID {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotApp data2 = 1;
    */
-  data2?: InputBotApp;
-
+  data2?: InputBotApp
 }
 
 /**
@@ -7979,8 +7648,7 @@ export interface TLInputBotAppShortName {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotApp data2 = 1;
    */
-  data2?: InputBotApp;
-
+  data2?: InputBotApp
 }
 
 /**
@@ -7990,123 +7658,122 @@ export interface InputBotInlineMessage {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string message = 3;
    */
-  message?: string;
+  message?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 4;
    */
-  entities: MessageEntity[];
+  entities: MessageEntity[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReplyMarkup reply_markup = 5;
    */
-  replyMarkup?: ReplyMarkup;
+  replyMarkup?: ReplyMarkup
 
   /**
    * @generated from field: optional bool no_webpage = 6;
    */
-  noWebpage?: boolean;
+  noWebpage?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGeoPoint geo_point = 7;
    */
-  geoPoint?: InputGeoPoint;
+  geoPoint?: InputGeoPoint
 
   /**
    * @generated from field: optional google.protobuf.Int32Value heading = 8;
    */
-  heading?: number;
+  heading?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value period = 9;
    */
-  period?: number;
+  period?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value proximity_notification_radius = 10;
    */
-  proximityNotificationRadius?: number;
+  proximityNotificationRadius?: number
 
   /**
    * @generated from field: optional string title = 11;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional string address = 12;
    */
-  address?: string;
+  address?: string
 
   /**
    * @generated from field: optional string provider = 13;
    */
-  provider?: string;
+  provider?: string
 
   /**
    * @generated from field: optional string venue_id = 14;
    */
-  venueId?: string;
+  venueId?: string
 
   /**
    * @generated from field: optional string venue_type = 15;
    */
-  venueType?: string;
+  venueType?: string
 
   /**
    * @generated from field: optional string phone_number = 16;
    */
-  phoneNumber?: string;
+  phoneNumber?: string
 
   /**
    * @generated from field: optional string first_name = 17;
    */
-  firstName?: string;
+  firstName?: string
 
   /**
    * @generated from field: optional string last_name = 18;
    */
-  lastName?: string;
+  lastName?: string
 
   /**
    * @generated from field: optional string vcard = 19;
    */
-  vcard?: string;
+  vcard?: string
 
   /**
    * @generated from field: optional string description = 20;
    */
-  description?: string;
+  description?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputWebDocument photo = 21;
    */
-  photo?: InputWebDocument;
+  photo?: InputWebDocument
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Invoice invoice = 22;
    */
-  invoice?: Invoice;
+  invoice?: Invoice
 
   /**
    * @generated from field: optional bytes payload = 23;
    */
-  payload?: Uint8Array;
+  payload?: Uint8Array
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON provider_data = 24;
    */
-  providerData?: DataJSON;
-
+  providerData?: DataJSON
 }
 
 /**
@@ -8116,8 +7783,7 @@ export interface TLInputBotInlineMessageMediaAuto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotInlineMessage data2 = 1;
    */
-  data2?: InputBotInlineMessage;
-
+  data2?: InputBotInlineMessage
 }
 
 /**
@@ -8127,8 +7793,7 @@ export interface TLInputBotInlineMessageText {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotInlineMessage data2 = 1;
    */
-  data2?: InputBotInlineMessage;
-
+  data2?: InputBotInlineMessage
 }
 
 /**
@@ -8138,8 +7803,7 @@ export interface TLInputBotInlineMessageMediaGeo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotInlineMessage data2 = 1;
    */
-  data2?: InputBotInlineMessage;
-
+  data2?: InputBotInlineMessage
 }
 
 /**
@@ -8149,8 +7813,7 @@ export interface TLInputBotInlineMessageMediaVenue {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotInlineMessage data2 = 1;
    */
-  data2?: InputBotInlineMessage;
-
+  data2?: InputBotInlineMessage
 }
 
 /**
@@ -8160,8 +7823,7 @@ export interface TLInputBotInlineMessageMediaContact {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotInlineMessage data2 = 1;
    */
-  data2?: InputBotInlineMessage;
-
+  data2?: InputBotInlineMessage
 }
 
 /**
@@ -8171,8 +7833,7 @@ export interface TLInputBotInlineMessageGame {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotInlineMessage data2 = 1;
    */
-  data2?: InputBotInlineMessage;
-
+  data2?: InputBotInlineMessage
 }
 
 /**
@@ -8182,8 +7843,7 @@ export interface TLInputBotInlineMessageMediaInvoice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotInlineMessage data2 = 1;
    */
-  data2?: InputBotInlineMessage;
-
+  data2?: InputBotInlineMessage
 }
 
 /**
@@ -8193,38 +7853,37 @@ export interface InputBotInlineMessageID {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 dc_id = 3;
    */
-  dcId?: number;
+  dcId?: number
 
   /**
    * @generated from field: optional int64 id_INT64 = 4;
    */
-  idINT64?: bigint;
+  idINT64?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 5;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional int64 owner_id = 6;
    */
-  ownerId?: bigint;
+  ownerId?: bigint
 
   /**
    * @generated from field: optional int32 id_INT32 = 7;
    */
-  idINT32?: number;
-
+  idINT32?: number
 }
 
 /**
@@ -8234,8 +7893,7 @@ export interface TLInputBotInlineMessageID {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotInlineMessageID data2 = 1;
    */
-  data2?: InputBotInlineMessageID;
-
+  data2?: InputBotInlineMessageID
 }
 
 /**
@@ -8245,8 +7903,7 @@ export interface TLInputBotInlineMessageID64 {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotInlineMessageID data2 = 1;
    */
-  data2?: InputBotInlineMessageID;
-
+  data2?: InputBotInlineMessageID
 }
 
 /**
@@ -8256,68 +7913,67 @@ export interface InputBotInlineResult {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string id = 3;
    */
-  id?: string;
+  id?: string
 
   /**
    * @generated from field: optional string type = 4;
    */
-  type?: string;
+  type?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue title = 5;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue description = 6;
    */
-  description?: string;
+  description?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue url = 7;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputWebDocument thumb = 8;
    */
-  thumb?: InputWebDocument;
+  thumb?: InputWebDocument
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputWebDocument content = 9;
    */
-  content?: InputWebDocument;
+  content?: InputWebDocument
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotInlineMessage send_message = 10;
    */
-  sendMessage?: InputBotInlineMessage;
+  sendMessage?: InputBotInlineMessage
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPhoto photo = 11;
    */
-  photo?: InputPhoto;
+  photo?: InputPhoto
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDocument document = 12;
    */
-  document?: InputDocument;
+  document?: InputDocument
 
   /**
    * @generated from field: optional string short_name = 13;
    */
-  shortName?: string;
-
+  shortName?: string
 }
 
 /**
@@ -8327,8 +7983,7 @@ export interface TLInputBotInlineResult {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotInlineResult data2 = 1;
    */
-  data2?: InputBotInlineResult;
-
+  data2?: InputBotInlineResult
 }
 
 /**
@@ -8338,8 +7993,7 @@ export interface TLInputBotInlineResultPhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotInlineResult data2 = 1;
    */
-  data2?: InputBotInlineResult;
-
+  data2?: InputBotInlineResult
 }
 
 /**
@@ -8349,8 +8003,7 @@ export interface TLInputBotInlineResultDocument {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotInlineResult data2 = 1;
    */
-  data2?: InputBotInlineResult;
-
+  data2?: InputBotInlineResult
 }
 
 /**
@@ -8360,8 +8013,7 @@ export interface TLInputBotInlineResultGame {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotInlineResult data2 = 1;
    */
-  data2?: InputBotInlineResult;
-
+  data2?: InputBotInlineResult
 }
 
 /**
@@ -8371,33 +8023,32 @@ export interface InputChannel {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 channel_id = 3;
    */
-  channelId?: bigint;
+  channelId?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 5;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 msg_id = 6;
    */
-  msgId?: number;
-
+  msgId?: number
 }
 
 /**
@@ -8407,8 +8058,7 @@ export interface TLInputChannelEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel data2 = 1;
    */
-  data2?: InputChannel;
-
+  data2?: InputChannel
 }
 
 /**
@@ -8418,8 +8068,7 @@ export interface TLInputChannel {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel data2 = 1;
    */
-  data2?: InputChannel;
-
+  data2?: InputChannel
 }
 
 /**
@@ -8429,8 +8078,7 @@ export interface TLInputChannelFromMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChannel data2 = 1;
    */
-  data2?: InputChannel;
-
+  data2?: InputChannel
 }
 
 /**
@@ -8440,38 +8088,37 @@ export interface InputChatPhoto {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFile file = 3;
    */
-  file?: InputFile;
+  file?: InputFile
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFile video = 4;
    */
-  video?: InputFile;
+  video?: InputFile
 
   /**
    * @generated from field: optional google.protobuf.DoubleValue video_start_ts = 5;
    */
-  videoStartTs?: number;
+  videoStartTs?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.VideoSize video_emoji_markup = 6;
    */
-  videoEmojiMarkup?: VideoSize;
+  videoEmojiMarkup?: VideoSize
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPhoto id = 7;
    */
-  id?: InputPhoto;
-
+  id?: InputPhoto
 }
 
 /**
@@ -8481,8 +8128,7 @@ export interface TLInputChatPhotoEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChatPhoto data2 = 1;
    */
-  data2?: InputChatPhoto;
-
+  data2?: InputChatPhoto
 }
 
 /**
@@ -8492,8 +8138,7 @@ export interface TLInputChatUploadedPhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChatPhoto data2 = 1;
    */
-  data2?: InputChatPhoto;
-
+  data2?: InputChatPhoto
 }
 
 /**
@@ -8503,8 +8148,7 @@ export interface TLInputChatPhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChatPhoto data2 = 1;
    */
-  data2?: InputChatPhoto;
-
+  data2?: InputChatPhoto
 }
 
 /**
@@ -8514,18 +8158,17 @@ export interface InputChatlist {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 filter_id = 3;
    */
-  filterId?: number;
-
+  filterId?: number
 }
 
 /**
@@ -8535,8 +8178,7 @@ export interface TLInputChatlistDialogFilter {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputChatlist data2 = 1;
    */
-  data2?: InputChatlist;
-
+  data2?: InputChatlist
 }
 
 /**
@@ -8546,28 +8188,27 @@ export interface InputCheckPasswordSRP {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 srp_id = 3;
    */
-  srpId?: bigint;
+  srpId?: bigint
 
   /**
    * @generated from field: optional bytes A = 4;
    */
-  A?: Uint8Array;
+  A?: Uint8Array
 
   /**
    * @generated from field: optional bytes M1 = 5;
    */
-  M1?: Uint8Array;
-
+  M1?: Uint8Array
 }
 
 /**
@@ -8577,8 +8218,7 @@ export interface TLInputCheckPasswordEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputCheckPasswordSRP data2 = 1;
    */
-  data2?: InputCheckPasswordSRP;
-
+  data2?: InputCheckPasswordSRP
 }
 
 /**
@@ -8588,8 +8228,7 @@ export interface TLInputCheckPasswordSRP {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputCheckPasswordSRP data2 = 1;
    */
-  data2?: InputCheckPasswordSRP;
-
+  data2?: InputCheckPasswordSRP
 }
 
 /**
@@ -8599,23 +8238,22 @@ export interface InputClientProxy {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string address = 3;
    */
-  address?: string;
+  address?: string
 
   /**
    * @generated from field: optional int32 port = 4;
    */
-  port?: number;
-
+  port?: number
 }
 
 /**
@@ -8625,8 +8263,7 @@ export interface TLInputClientProxy {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputClientProxy data2 = 1;
    */
-  data2?: InputClientProxy;
-
+  data2?: InputClientProxy
 }
 
 /**
@@ -8636,33 +8273,32 @@ export interface InputContact {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 client_id = 3;
    */
-  clientId?: bigint;
+  clientId?: bigint
 
   /**
    * @generated from field: optional string phone = 4;
    */
-  phone?: string;
+  phone?: string
 
   /**
    * @generated from field: optional string first_name = 5;
    */
-  firstName?: string;
+  firstName?: string
 
   /**
    * @generated from field: optional string last_name = 6;
    */
-  lastName?: string;
-
+  lastName?: string
 }
 
 /**
@@ -8672,8 +8308,7 @@ export interface TLInputPhoneContact {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputContact data2 = 1;
    */
-  data2?: InputContact;
-
+  data2?: InputContact
 }
 
 /**
@@ -8683,23 +8318,22 @@ export interface InputDialogPeer {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 folder_id = 4;
    */
-  folderId?: number;
-
+  folderId?: number
 }
 
 /**
@@ -8709,8 +8343,7 @@ export interface TLInputDialogPeer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDialogPeer data2 = 1;
    */
-  data2?: InputDialogPeer;
-
+  data2?: InputDialogPeer
 }
 
 /**
@@ -8720,8 +8353,7 @@ export interface TLInputDialogPeerFolder {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDialogPeer data2 = 1;
    */
-  data2?: InputDialogPeer;
-
+  data2?: InputDialogPeer
 }
 
 /**
@@ -8731,28 +8363,27 @@ export interface InputDocument {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional bytes file_reference = 5;
    */
-  fileReference?: Uint8Array;
-
+  fileReference?: Uint8Array
 }
 
 /**
@@ -8762,8 +8393,7 @@ export interface TLInputDocumentEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDocument data2 = 1;
    */
-  data2?: InputDocument;
-
+  data2?: InputDocument
 }
 
 /**
@@ -8773,8 +8403,7 @@ export interface TLInputDocument {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDocument data2 = 1;
    */
-  data2?: InputDocument;
-
+  data2?: InputDocument
 }
 
 /**
@@ -8784,23 +8413,22 @@ export interface InputEncryptedChat {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 chat_id = 3;
    */
-  chatId?: number;
+  chatId?: number
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
-
+  accessHash?: bigint
 }
 
 /**
@@ -8810,8 +8438,7 @@ export interface TLInputEncryptedChat {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputEncryptedChat data2 = 1;
    */
-  data2?: InputEncryptedChat;
-
+  data2?: InputEncryptedChat
 }
 
 /**
@@ -8821,38 +8448,37 @@ export interface InputEncryptedFile {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int32 parts = 4;
    */
-  parts?: number;
+  parts?: number
 
   /**
    * @generated from field: optional string md5_checksum = 5;
    */
-  md5Checksum?: string;
+  md5Checksum?: string
 
   /**
    * @generated from field: optional int32 key_fingerprint = 6;
    */
-  keyFingerprint?: number;
+  keyFingerprint?: number
 
   /**
    * @generated from field: optional int64 access_hash = 7;
    */
-  accessHash?: bigint;
-
+  accessHash?: bigint
 }
 
 /**
@@ -8862,8 +8488,7 @@ export interface TLInputEncryptedFileEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputEncryptedFile data2 = 1;
    */
-  data2?: InputEncryptedFile;
-
+  data2?: InputEncryptedFile
 }
 
 /**
@@ -8873,8 +8498,7 @@ export interface TLInputEncryptedFileUploaded {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputEncryptedFile data2 = 1;
    */
-  data2?: InputEncryptedFile;
-
+  data2?: InputEncryptedFile
 }
 
 /**
@@ -8884,8 +8508,7 @@ export interface TLInputEncryptedFile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputEncryptedFile data2 = 1;
    */
-  data2?: InputEncryptedFile;
-
+  data2?: InputEncryptedFile
 }
 
 /**
@@ -8895,8 +8518,7 @@ export interface TLInputEncryptedFileBigUploaded {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputEncryptedFile data2 = 1;
    */
-  data2?: InputEncryptedFile;
-
+  data2?: InputEncryptedFile
 }
 
 /**
@@ -8906,33 +8528,32 @@ export interface InputFile {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int32 parts = 4;
    */
-  parts?: number;
+  parts?: number
 
   /**
    * @generated from field: optional string name = 5;
    */
-  name?: string;
+  name?: string
 
   /**
    * @generated from field: optional string md5_checksum = 6;
    */
-  md5Checksum?: string;
-
+  md5Checksum?: string
 }
 
 /**
@@ -8942,8 +8563,7 @@ export interface TLInputFile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFile data2 = 1;
    */
-  data2?: InputFile;
-
+  data2?: InputFile
 }
 
 /**
@@ -8953,8 +8573,7 @@ export interface TLInputFileBig {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFile data2 = 1;
    */
-  data2?: InputFile;
-
+  data2?: InputFile
 }
 
 /**
@@ -8964,98 +8583,97 @@ export interface InputFileLocation {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 volume_id = 3;
    */
-  volumeId?: bigint;
+  volumeId?: bigint
 
   /**
    * @generated from field: optional int32 local_id = 4;
    */
-  localId?: number;
+  localId?: number
 
   /**
    * @generated from field: optional int64 secret = 5;
    */
-  secret?: bigint;
+  secret?: bigint
 
   /**
    * @generated from field: optional bytes file_reference = 6;
    */
-  fileReference?: Uint8Array;
+  fileReference?: Uint8Array
 
   /**
    * @generated from field: optional int64 id = 7;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 8;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional string thumb_size = 9;
    */
-  thumbSize?: string;
+  thumbSize?: string
 
   /**
    * @generated from field: optional bool big = 10;
    */
-  big?: boolean;
+  big?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 11;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int64 photo_id = 12;
    */
-  photoId?: bigint;
+  photoId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet stickerset = 13;
    */
-  stickerset?: InputStickerSet;
+  stickerset?: InputStickerSet
 
   /**
    * @generated from field: optional int32 thumb_version = 14;
    */
-  thumbVersion?: number;
+  thumbVersion?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 15;
    */
-  call?: InputGroupCall;
+  call?: InputGroupCall
 
   /**
    * @generated from field: optional int64 time_ms = 16;
    */
-  timeMs?: bigint;
+  timeMs?: bigint
 
   /**
    * @generated from field: optional int32 scale = 17;
    */
-  scale?: number;
+  scale?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value video_channel = 18;
    */
-  videoChannel?: number;
+  videoChannel?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value video_quality = 19;
    */
-  videoQuality?: number;
-
+  videoQuality?: number
 }
 
 /**
@@ -9065,8 +8683,7 @@ export interface TLInputFileLocation {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFileLocation data2 = 1;
    */
-  data2?: InputFileLocation;
-
+  data2?: InputFileLocation
 }
 
 /**
@@ -9076,8 +8693,7 @@ export interface TLInputEncryptedFileLocation {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFileLocation data2 = 1;
    */
-  data2?: InputFileLocation;
-
+  data2?: InputFileLocation
 }
 
 /**
@@ -9087,8 +8703,7 @@ export interface TLInputDocumentFileLocation {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFileLocation data2 = 1;
    */
-  data2?: InputFileLocation;
-
+  data2?: InputFileLocation
 }
 
 /**
@@ -9098,8 +8713,7 @@ export interface TLInputSecureFileLocation {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFileLocation data2 = 1;
    */
-  data2?: InputFileLocation;
-
+  data2?: InputFileLocation
 }
 
 /**
@@ -9109,8 +8723,7 @@ export interface TLInputTakeoutFileLocation {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFileLocation data2 = 1;
    */
-  data2?: InputFileLocation;
-
+  data2?: InputFileLocation
 }
 
 /**
@@ -9120,8 +8733,7 @@ export interface TLInputPhotoFileLocation {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFileLocation data2 = 1;
    */
-  data2?: InputFileLocation;
-
+  data2?: InputFileLocation
 }
 
 /**
@@ -9131,8 +8743,7 @@ export interface TLInputPhotoLegacyFileLocation {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFileLocation data2 = 1;
    */
-  data2?: InputFileLocation;
-
+  data2?: InputFileLocation
 }
 
 /**
@@ -9142,8 +8753,7 @@ export interface TLInputPeerPhotoFileLocation {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFileLocation data2 = 1;
    */
-  data2?: InputFileLocation;
-
+  data2?: InputFileLocation
 }
 
 /**
@@ -9153,8 +8763,7 @@ export interface TLInputStickerSetThumb {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFileLocation data2 = 1;
    */
-  data2?: InputFileLocation;
-
+  data2?: InputFileLocation
 }
 
 /**
@@ -9164,8 +8773,7 @@ export interface TLInputGroupCallStream {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFileLocation data2 = 1;
    */
-  data2?: InputFileLocation;
-
+  data2?: InputFileLocation
 }
 
 /**
@@ -9175,23 +8783,22 @@ export interface InputFolderPeer {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 folder_id = 4;
    */
-  folderId?: number;
-
+  folderId?: number
 }
 
 /**
@@ -9201,8 +8808,7 @@ export interface TLInputFolderPeer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFolderPeer data2 = 1;
    */
-  data2?: InputFolderPeer;
-
+  data2?: InputFolderPeer
 }
 
 /**
@@ -9212,33 +8818,32 @@ export interface InputGame {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser bot_id = 5;
    */
-  botId?: InputUser;
+  botId?: InputUser
 
   /**
    * @generated from field: optional string short_name = 6;
    */
-  shortName?: string;
-
+  shortName?: string
 }
 
 /**
@@ -9248,8 +8853,7 @@ export interface TLInputGameID {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGame data2 = 1;
    */
-  data2?: InputGame;
-
+  data2?: InputGame
 }
 
 /**
@@ -9259,8 +8863,7 @@ export interface TLInputGameShortName {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGame data2 = 1;
    */
-  data2?: InputGame;
-
+  data2?: InputGame
 }
 
 /**
@@ -9270,28 +8873,27 @@ export interface InputGeoPoint {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional float lat = 3;
    */
-  lat?: number;
+  lat?: number
 
   /**
    * @generated from field: optional float long = 4;
    */
-  long?: number;
+  long?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value accuracy_radius = 5;
    */
-  accuracyRadius?: number;
-
+  accuracyRadius?: number
 }
 
 /**
@@ -9301,8 +8903,7 @@ export interface TLInputGeoPointEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGeoPoint data2 = 1;
    */
-  data2?: InputGeoPoint;
-
+  data2?: InputGeoPoint
 }
 
 /**
@@ -9312,8 +8913,7 @@ export interface TLInputGeoPoint {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGeoPoint data2 = 1;
    */
-  data2?: InputGeoPoint;
-
+  data2?: InputGeoPoint
 }
 
 /**
@@ -9323,23 +8923,22 @@ export interface InputGroupCall {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
-
+  accessHash?: bigint
 }
 
 /**
@@ -9349,8 +8948,7 @@ export interface TLInputGroupCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall data2 = 1;
    */
-  data2?: InputGroupCall;
-
+  data2?: InputGroupCall
 }
 
 /**
@@ -9360,28 +8958,27 @@ export interface InputInvoice {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 msg_id = 4;
    */
-  msgId?: number;
+  msgId?: number
 
   /**
    * @generated from field: optional string slug = 5;
    */
-  slug?: string;
-
+  slug?: string
 }
 
 /**
@@ -9391,8 +8988,7 @@ export interface TLInputInvoiceMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputInvoice data2 = 1;
    */
-  data2?: InputInvoice;
-
+  data2?: InputInvoice
 }
 
 /**
@@ -9402,8 +8998,7 @@ export interface TLInputInvoiceSlug {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputInvoice data2 = 1;
    */
-  data2?: InputInvoice;
-
+  data2?: InputInvoice
 }
 
 /**
@@ -9413,233 +9008,232 @@ export interface InputMedia {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool spoiler = 3;
    */
-  spoiler?: boolean;
+  spoiler?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFile file = 4;
    */
-  file?: InputFile;
+  file?: InputFile
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputDocument stickers = 5;
    */
-  stickers: InputDocument[];
+  stickers: InputDocument[]
 
   /**
    * @generated from field: optional google.protobuf.Int32Value ttl_seconds = 6;
    */
-  ttlSeconds?: number;
+  ttlSeconds?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPhoto id_INPUTPHOTO = 7;
    */
-  idINPUTPHOTO?: InputPhoto;
+  idINPUTPHOTO?: InputPhoto
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGeoPoint geo_point = 8;
    */
-  geoPoint?: InputGeoPoint;
+  geoPoint?: InputGeoPoint
 
   /**
    * @generated from field: optional string phone_number = 9;
    */
-  phoneNumber?: string;
+  phoneNumber?: string
 
   /**
    * @generated from field: optional string first_name = 10;
    */
-  firstName?: string;
+  firstName?: string
 
   /**
    * @generated from field: optional string last_name = 11;
    */
-  lastName?: string;
+  lastName?: string
 
   /**
    * @generated from field: optional string vcard = 12;
    */
-  vcard?: string;
+  vcard?: string
 
   /**
    * @generated from field: optional bool nosound_video = 13;
    */
-  nosoundVideo?: boolean;
+  nosoundVideo?: boolean
 
   /**
    * @generated from field: optional bool force_file = 14;
    */
-  forceFile?: boolean;
+  forceFile?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputFile thumb = 15;
    */
-  thumb?: InputFile;
+  thumb?: InputFile
 
   /**
    * @generated from field: optional string mime_type = 16;
    */
-  mimeType?: string;
+  mimeType?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.DocumentAttribute attributes = 17;
    */
-  attributes: DocumentAttribute[];
+  attributes: DocumentAttribute[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDocument id_INPUTDOCUMENT = 18;
    */
-  idINPUTDOCUMENT?: InputDocument;
+  idINPUTDOCUMENT?: InputDocument
 
   /**
    * @generated from field: optional google.protobuf.StringValue query = 19;
    */
-  query?: string;
+  query?: string
 
   /**
    * @generated from field: optional string title = 20;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional string address = 21;
    */
-  address?: string;
+  address?: string
 
   /**
    * @generated from field: optional string provider = 22;
    */
-  provider?: string;
+  provider?: string
 
   /**
    * @generated from field: optional string venue_id = 23;
    */
-  venueId?: string;
+  venueId?: string
 
   /**
    * @generated from field: optional string venue_type = 24;
    */
-  venueType?: string;
+  venueType?: string
 
   /**
    * @generated from field: optional string url = 25;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGame id_INPUTGAME = 26;
    */
-  idINPUTGAME?: InputGame;
+  idINPUTGAME?: InputGame
 
   /**
    * @generated from field: optional string description = 27;
    */
-  description?: string;
+  description?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputWebDocument photo = 28;
    */
-  photo?: InputWebDocument;
+  photo?: InputWebDocument
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Invoice invoice = 29;
    */
-  invoice?: Invoice;
+  invoice?: Invoice
 
   /**
    * @generated from field: optional bytes payload = 30;
    */
-  payload?: Uint8Array;
+  payload?: Uint8Array
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON provider_data = 31;
    */
-  providerData?: DataJSON;
+  providerData?: DataJSON
 
   /**
    * @generated from field: optional google.protobuf.StringValue start_param = 32;
    */
-  startParam?: string;
+  startParam?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia extended_media = 33;
    */
-  extendedMedia?: InputMedia;
+  extendedMedia?: InputMedia
 
   /**
    * @generated from field: optional bool stopped = 34;
    */
-  stopped?: boolean;
+  stopped?: boolean
 
   /**
    * @generated from field: optional google.protobuf.Int32Value heading = 35;
    */
-  heading?: number;
+  heading?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value period = 36;
    */
-  period?: number;
+  period?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value proximity_notification_radius = 37;
    */
-  proximityNotificationRadius?: number;
+  proximityNotificationRadius?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Poll poll = 38;
    */
-  poll?: Poll;
+  poll?: Poll
 
   /**
    * @generated from field: repeated bytes correct_answers = 39;
    */
-  correctAnswers: Uint8Array[];
+  correctAnswers: Uint8Array[]
 
   /**
    * @generated from field: optional google.protobuf.StringValue solution = 40;
    */
-  solution?: string;
+  solution?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity solution_entities = 41;
    */
-  solutionEntities: MessageEntity[];
+  solutionEntities: MessageEntity[]
 
   /**
    * @generated from field: optional string emoticon = 42;
    */
-  emoticon?: string;
+  emoticon?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 43;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 id_INT32 = 44;
    */
-  idINT32?: number;
+  idINT32?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 45;
    */
-  userId?: InputUser;
+  userId?: InputUser
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BizDataRaw biz_data = 46;
    */
-  bizData?: BizDataRaw;
-
+  bizData?: BizDataRaw
 }
 
 /**
@@ -9649,8 +9243,7 @@ export interface TLInputMediaEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia data2 = 1;
    */
-  data2?: InputMedia;
-
+  data2?: InputMedia
 }
 
 /**
@@ -9660,8 +9253,7 @@ export interface TLInputMediaUploadedPhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia data2 = 1;
    */
-  data2?: InputMedia;
-
+  data2?: InputMedia
 }
 
 /**
@@ -9671,8 +9263,7 @@ export interface TLInputMediaPhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia data2 = 1;
    */
-  data2?: InputMedia;
-
+  data2?: InputMedia
 }
 
 /**
@@ -9682,8 +9273,7 @@ export interface TLInputMediaGeoPoint {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia data2 = 1;
    */
-  data2?: InputMedia;
-
+  data2?: InputMedia
 }
 
 /**
@@ -9693,8 +9283,7 @@ export interface TLInputMediaContact {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia data2 = 1;
    */
-  data2?: InputMedia;
-
+  data2?: InputMedia
 }
 
 /**
@@ -9704,8 +9293,7 @@ export interface TLInputMediaUploadedDocument {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia data2 = 1;
    */
-  data2?: InputMedia;
-
+  data2?: InputMedia
 }
 
 /**
@@ -9715,8 +9303,7 @@ export interface TLInputMediaDocument {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia data2 = 1;
    */
-  data2?: InputMedia;
-
+  data2?: InputMedia
 }
 
 /**
@@ -9726,8 +9313,7 @@ export interface TLInputMediaVenue {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia data2 = 1;
    */
-  data2?: InputMedia;
-
+  data2?: InputMedia
 }
 
 /**
@@ -9737,8 +9323,7 @@ export interface TLInputMediaPhotoExternal {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia data2 = 1;
    */
-  data2?: InputMedia;
-
+  data2?: InputMedia
 }
 
 /**
@@ -9748,8 +9333,7 @@ export interface TLInputMediaDocumentExternal {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia data2 = 1;
    */
-  data2?: InputMedia;
-
+  data2?: InputMedia
 }
 
 /**
@@ -9759,8 +9343,7 @@ export interface TLInputMediaGame {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia data2 = 1;
    */
-  data2?: InputMedia;
-
+  data2?: InputMedia
 }
 
 /**
@@ -9770,8 +9353,7 @@ export interface TLInputMediaInvoice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia data2 = 1;
    */
-  data2?: InputMedia;
-
+  data2?: InputMedia
 }
 
 /**
@@ -9781,8 +9363,7 @@ export interface TLInputMediaGeoLive {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia data2 = 1;
    */
-  data2?: InputMedia;
-
+  data2?: InputMedia
 }
 
 /**
@@ -9792,8 +9373,7 @@ export interface TLInputMediaPoll {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia data2 = 1;
    */
-  data2?: InputMedia;
-
+  data2?: InputMedia
 }
 
 /**
@@ -9803,8 +9383,7 @@ export interface TLInputMediaDice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia data2 = 1;
    */
-  data2?: InputMedia;
-
+  data2?: InputMedia
 }
 
 /**
@@ -9814,8 +9393,7 @@ export interface TLInputMediaStory {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia data2 = 1;
    */
-  data2?: InputMedia;
-
+  data2?: InputMedia
 }
 
 /**
@@ -9825,8 +9403,7 @@ export interface TLInputMediaBizDataRaw {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia data2 = 1;
    */
-  data2?: InputMedia;
-
+  data2?: InputMedia
 }
 
 /**
@@ -9836,23 +9413,22 @@ export interface InputMessage {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 id = 3;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional int64 query_id = 4;
    */
-  queryId?: bigint;
-
+  queryId?: bigint
 }
 
 /**
@@ -9862,8 +9438,7 @@ export interface TLInputMessageID {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMessage data2 = 1;
    */
-  data2?: InputMessage;
-
+  data2?: InputMessage
 }
 
 /**
@@ -9873,8 +9448,7 @@ export interface TLInputMessageReplyTo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMessage data2 = 1;
    */
-  data2?: InputMessage;
-
+  data2?: InputMessage
 }
 
 /**
@@ -9884,8 +9458,7 @@ export interface TLInputMessagePinned {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMessage data2 = 1;
    */
-  data2?: InputMessage;
-
+  data2?: InputMessage
 }
 
 /**
@@ -9895,8 +9468,7 @@ export interface TLInputMessageCallbackQuery {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMessage data2 = 1;
    */
-  data2?: InputMessage;
-
+  data2?: InputMessage
 }
 
 /**
@@ -9906,23 +9478,22 @@ export interface InputNotifyPeer {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 3;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 top_msg_id = 4;
    */
-  topMsgId?: number;
-
+  topMsgId?: number
 }
 
 /**
@@ -9932,8 +9503,7 @@ export interface TLInputNotifyPeer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputNotifyPeer data2 = 1;
    */
-  data2?: InputNotifyPeer;
-
+  data2?: InputNotifyPeer
 }
 
 /**
@@ -9943,8 +9513,7 @@ export interface TLInputNotifyUsers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputNotifyPeer data2 = 1;
    */
-  data2?: InputNotifyPeer;
-
+  data2?: InputNotifyPeer
 }
 
 /**
@@ -9954,8 +9523,7 @@ export interface TLInputNotifyChats {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputNotifyPeer data2 = 1;
    */
-  data2?: InputNotifyPeer;
-
+  data2?: InputNotifyPeer
 }
 
 /**
@@ -9965,8 +9533,7 @@ export interface TLInputNotifyBroadcasts {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputNotifyPeer data2 = 1;
    */
-  data2?: InputNotifyPeer;
-
+  data2?: InputNotifyPeer
 }
 
 /**
@@ -9976,8 +9543,7 @@ export interface TLInputNotifyForumTopic {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputNotifyPeer data2 = 1;
    */
-  data2?: InputNotifyPeer;
-
+  data2?: InputNotifyPeer
 }
 
 /**
@@ -9987,43 +9553,42 @@ export interface InputPaymentCredentials {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string id = 3;
    */
-  id?: string;
+  id?: string
 
   /**
    * @generated from field: optional bytes tmp_password = 4;
    */
-  tmpPassword?: Uint8Array;
+  tmpPassword?: Uint8Array
 
   /**
    * @generated from field: optional bool save = 5;
    */
-  save?: boolean;
+  save?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON data = 6;
    */
-  data?: DataJSON;
+  data?: DataJSON
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON payment_data = 7;
    */
-  paymentData?: DataJSON;
+  paymentData?: DataJSON
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON payment_token = 8;
    */
-  paymentToken?: DataJSON;
-
+  paymentToken?: DataJSON
 }
 
 /**
@@ -10033,8 +9598,7 @@ export interface TLInputPaymentCredentialsSaved {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPaymentCredentials data2 = 1;
    */
-  data2?: InputPaymentCredentials;
-
+  data2?: InputPaymentCredentials
 }
 
 /**
@@ -10044,8 +9608,7 @@ export interface TLInputPaymentCredentials {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPaymentCredentials data2 = 1;
    */
-  data2?: InputPaymentCredentials;
-
+  data2?: InputPaymentCredentials
 }
 
 /**
@@ -10055,8 +9618,7 @@ export interface TLInputPaymentCredentialsApplePay {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPaymentCredentials data2 = 1;
    */
-  data2?: InputPaymentCredentials;
-
+  data2?: InputPaymentCredentials
 }
 
 /**
@@ -10066,8 +9628,7 @@ export interface TLInputPaymentCredentialsGooglePay {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPaymentCredentials data2 = 1;
    */
-  data2?: InputPaymentCredentials;
-
+  data2?: InputPaymentCredentials
 }
 
 /**
@@ -10077,48 +9638,47 @@ export interface InputPeer {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 chat_id = 3;
    */
-  chatId?: bigint;
+  chatId?: bigint
 
   /**
    * @generated from field: optional int64 user_id = 4;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 5;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional int64 channel_id = 6;
    */
-  channelId?: bigint;
+  channelId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 7;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 msg_id = 8;
    */
-  msgId?: number;
+  msgId?: number
 
   /**
    * @generated from field: optional string username = 9;
    */
-  username?: string;
-
+  username?: string
 }
 
 /**
@@ -10128,8 +9688,7 @@ export interface TLInputPeerEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer data2 = 1;
    */
-  data2?: InputPeer;
-
+  data2?: InputPeer
 }
 
 /**
@@ -10139,8 +9698,7 @@ export interface TLInputPeerSelf {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer data2 = 1;
    */
-  data2?: InputPeer;
-
+  data2?: InputPeer
 }
 
 /**
@@ -10150,8 +9708,7 @@ export interface TLInputPeerChat {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer data2 = 1;
    */
-  data2?: InputPeer;
-
+  data2?: InputPeer
 }
 
 /**
@@ -10161,8 +9718,7 @@ export interface TLInputPeerUser {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer data2 = 1;
    */
-  data2?: InputPeer;
-
+  data2?: InputPeer
 }
 
 /**
@@ -10172,8 +9728,7 @@ export interface TLInputPeerChannel {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer data2 = 1;
    */
-  data2?: InputPeer;
-
+  data2?: InputPeer
 }
 
 /**
@@ -10183,8 +9738,7 @@ export interface TLInputPeerUserFromMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer data2 = 1;
    */
-  data2?: InputPeer;
-
+  data2?: InputPeer
 }
 
 /**
@@ -10194,8 +9748,7 @@ export interface TLInputPeerChannelFromMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer data2 = 1;
    */
-  data2?: InputPeer;
-
+  data2?: InputPeer
 }
 
 /**
@@ -10205,8 +9758,7 @@ export interface TLInputPeerUsername {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer data2 = 1;
    */
-  data2?: InputPeer;
-
+  data2?: InputPeer
 }
 
 /**
@@ -10216,53 +9768,52 @@ export interface InputPeerNotifySettings {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool show_previews = 3;
    */
-  showPreviews?: Bool;
+  showPreviews?: Bool
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool silent = 4;
    */
-  silent?: Bool;
+  silent?: Bool
 
   /**
    * @generated from field: optional google.protobuf.Int32Value mute_until = 5;
    */
-  muteUntil?: number;
+  muteUntil?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.NotificationSound sound_FLAGNOTIFICATIONSOUND = 6;
    */
-  soundFLAGNOTIFICATIONSOUND?: NotificationSound;
+  soundFLAGNOTIFICATIONSOUND?: NotificationSound
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool stories_muted = 7;
    */
-  storiesMuted?: Bool;
+  storiesMuted?: Bool
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool stories_hide_sender = 8;
    */
-  storiesHideSender?: Bool;
+  storiesHideSender?: Bool
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.NotificationSound stories_sound = 9;
    */
-  storiesSound?: NotificationSound;
+  storiesSound?: NotificationSound
 
   /**
    * @generated from field: optional google.protobuf.StringValue sound_FLAGSTRING = 10;
    */
-  soundFLAGSTRING?: string;
-
+  soundFLAGSTRING?: string
 }
 
 /**
@@ -10272,8 +9823,7 @@ export interface TLInputPeerNotifySettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeerNotifySettings data2 = 1;
    */
-  data2?: InputPeerNotifySettings;
-
+  data2?: InputPeerNotifySettings
 }
 
 /**
@@ -10283,23 +9833,22 @@ export interface InputPhoneCall {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
-
+  accessHash?: bigint
 }
 
 /**
@@ -10309,8 +9858,7 @@ export interface TLInputPhoneCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPhoneCall data2 = 1;
    */
-  data2?: InputPhoneCall;
-
+  data2?: InputPhoneCall
 }
 
 /**
@@ -10320,28 +9868,27 @@ export interface InputPhoto {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional bytes file_reference = 5;
    */
-  fileReference?: Uint8Array;
-
+  fileReference?: Uint8Array
 }
 
 /**
@@ -10351,8 +9898,7 @@ export interface TLInputPhotoEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPhoto data2 = 1;
    */
-  data2?: InputPhoto;
-
+  data2?: InputPhoto
 }
 
 /**
@@ -10362,8 +9908,7 @@ export interface TLInputPhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPhoto data2 = 1;
    */
-  data2?: InputPhoto;
-
+  data2?: InputPhoto
 }
 
 /**
@@ -10373,13 +9918,12 @@ export interface InputPrivacyKey {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -10389,8 +9933,7 @@ export interface TLInputPrivacyKeyStatusTimestamp {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPrivacyKey data2 = 1;
    */
-  data2?: InputPrivacyKey;
-
+  data2?: InputPrivacyKey
 }
 
 /**
@@ -10400,8 +9943,7 @@ export interface TLInputPrivacyKeyChatInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPrivacyKey data2 = 1;
    */
-  data2?: InputPrivacyKey;
-
+  data2?: InputPrivacyKey
 }
 
 /**
@@ -10411,8 +9953,7 @@ export interface TLInputPrivacyKeyPhoneCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPrivacyKey data2 = 1;
    */
-  data2?: InputPrivacyKey;
-
+  data2?: InputPrivacyKey
 }
 
 /**
@@ -10422,8 +9963,7 @@ export interface TLInputPrivacyKeyPhoneP2P {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPrivacyKey data2 = 1;
    */
-  data2?: InputPrivacyKey;
-
+  data2?: InputPrivacyKey
 }
 
 /**
@@ -10433,8 +9973,7 @@ export interface TLInputPrivacyKeyForwards {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPrivacyKey data2 = 1;
    */
-  data2?: InputPrivacyKey;
-
+  data2?: InputPrivacyKey
 }
 
 /**
@@ -10444,8 +9983,7 @@ export interface TLInputPrivacyKeyProfilePhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPrivacyKey data2 = 1;
    */
-  data2?: InputPrivacyKey;
-
+  data2?: InputPrivacyKey
 }
 
 /**
@@ -10455,8 +9993,7 @@ export interface TLInputPrivacyKeyPhoneNumber {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPrivacyKey data2 = 1;
    */
-  data2?: InputPrivacyKey;
-
+  data2?: InputPrivacyKey
 }
 
 /**
@@ -10466,8 +10003,7 @@ export interface TLInputPrivacyKeyAddedByPhone {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPrivacyKey data2 = 1;
    */
-  data2?: InputPrivacyKey;
-
+  data2?: InputPrivacyKey
 }
 
 /**
@@ -10477,8 +10013,7 @@ export interface TLInputPrivacyKeyVoiceMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPrivacyKey data2 = 1;
    */
-  data2?: InputPrivacyKey;
-
+  data2?: InputPrivacyKey
 }
 
 /**
@@ -10488,8 +10023,7 @@ export interface TLInputPrivacyKeyAbout {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPrivacyKey data2 = 1;
    */
-  data2?: InputPrivacyKey;
-
+  data2?: InputPrivacyKey
 }
 
 /**
@@ -10499,23 +10033,22 @@ export interface InputPrivacyRule {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputUser users = 3;
    */
-  users: InputUser[];
+  users: InputUser[]
 
   /**
    * @generated from field: repeated int64 chats = 4;
    */
-  chats: bigint[];
-
+  chats: bigint[]
 }
 
 /**
@@ -10525,8 +10058,7 @@ export interface TLInputPrivacyValueAllowContacts {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPrivacyRule data2 = 1;
    */
-  data2?: InputPrivacyRule;
-
+  data2?: InputPrivacyRule
 }
 
 /**
@@ -10536,8 +10068,7 @@ export interface TLInputPrivacyValueAllowAll {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPrivacyRule data2 = 1;
    */
-  data2?: InputPrivacyRule;
-
+  data2?: InputPrivacyRule
 }
 
 /**
@@ -10547,8 +10078,7 @@ export interface TLInputPrivacyValueAllowUsers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPrivacyRule data2 = 1;
    */
-  data2?: InputPrivacyRule;
-
+  data2?: InputPrivacyRule
 }
 
 /**
@@ -10558,8 +10088,7 @@ export interface TLInputPrivacyValueDisallowContacts {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPrivacyRule data2 = 1;
    */
-  data2?: InputPrivacyRule;
-
+  data2?: InputPrivacyRule
 }
 
 /**
@@ -10569,8 +10098,7 @@ export interface TLInputPrivacyValueDisallowAll {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPrivacyRule data2 = 1;
    */
-  data2?: InputPrivacyRule;
-
+  data2?: InputPrivacyRule
 }
 
 /**
@@ -10580,8 +10108,7 @@ export interface TLInputPrivacyValueDisallowUsers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPrivacyRule data2 = 1;
    */
-  data2?: InputPrivacyRule;
-
+  data2?: InputPrivacyRule
 }
 
 /**
@@ -10591,8 +10118,7 @@ export interface TLInputPrivacyValueAllowChatParticipants {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPrivacyRule data2 = 1;
    */
-  data2?: InputPrivacyRule;
-
+  data2?: InputPrivacyRule
 }
 
 /**
@@ -10602,8 +10128,7 @@ export interface TLInputPrivacyValueDisallowChatParticipants {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPrivacyRule data2 = 1;
    */
-  data2?: InputPrivacyRule;
-
+  data2?: InputPrivacyRule
 }
 
 /**
@@ -10613,8 +10138,7 @@ export interface TLInputPrivacyValueAllowCloseFriends {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPrivacyRule data2 = 1;
    */
-  data2?: InputPrivacyRule;
-
+  data2?: InputPrivacyRule
 }
 
 /**
@@ -10624,33 +10148,32 @@ export interface InputReplyTo {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 reply_to_msg_id = 3;
    */
-  replyToMsgId?: number;
+  replyToMsgId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value top_msg_id = 4;
    */
-  topMsgId?: number;
+  topMsgId?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 5;
    */
-  userId?: InputUser;
+  userId?: InputUser
 
   /**
    * @generated from field: optional int32 story_id = 6;
    */
-  storyId?: number;
-
+  storyId?: number
 }
 
 /**
@@ -10660,8 +10183,7 @@ export interface TLInputReplyToMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputReplyTo data2 = 1;
    */
-  data2?: InputReplyTo;
-
+  data2?: InputReplyTo
 }
 
 /**
@@ -10671,8 +10193,7 @@ export interface TLInputReplyToStory {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputReplyTo data2 = 1;
    */
-  data2?: InputReplyTo;
-
+  data2?: InputReplyTo
 }
 
 /**
@@ -10682,43 +10203,42 @@ export interface InputSecureFile {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int32 parts = 4;
    */
-  parts?: number;
+  parts?: number
 
   /**
    * @generated from field: optional string md5_checksum = 5;
    */
-  md5Checksum?: string;
+  md5Checksum?: string
 
   /**
    * @generated from field: optional bytes file_hash = 6;
    */
-  fileHash?: Uint8Array;
+  fileHash?: Uint8Array
 
   /**
    * @generated from field: optional bytes secret = 7;
    */
-  secret?: Uint8Array;
+  secret?: Uint8Array
 
   /**
    * @generated from field: optional int64 access_hash = 8;
    */
-  accessHash?: bigint;
-
+  accessHash?: bigint
 }
 
 /**
@@ -10728,8 +10248,7 @@ export interface TLInputSecureFileUploaded {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputSecureFile data2 = 1;
    */
-  data2?: InputSecureFile;
-
+  data2?: InputSecureFile
 }
 
 /**
@@ -10739,8 +10258,7 @@ export interface TLInputSecureFile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputSecureFile data2 = 1;
    */
-  data2?: InputSecureFile;
-
+  data2?: InputSecureFile
 }
 
 /**
@@ -10750,53 +10268,52 @@ export interface InputSecureValue {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueType type = 3;
    */
-  type?: SecureValueType;
+  type?: SecureValueType
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureData data = 4;
    */
-  data?: SecureData;
+  data?: SecureData
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputSecureFile front_side = 5;
    */
-  frontSide?: InputSecureFile;
+  frontSide?: InputSecureFile
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputSecureFile reverse_side = 6;
    */
-  reverseSide?: InputSecureFile;
+  reverseSide?: InputSecureFile
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputSecureFile selfie = 7;
    */
-  selfie?: InputSecureFile;
+  selfie?: InputSecureFile
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputSecureFile translation = 8;
    */
-  translation: InputSecureFile[];
+  translation: InputSecureFile[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InputSecureFile files = 9;
    */
-  files: InputSecureFile[];
+  files: InputSecureFile[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecurePlainData plain_data = 10;
    */
-  plainData?: SecurePlainData;
-
+  plainData?: SecurePlainData
 }
 
 /**
@@ -10806,8 +10323,7 @@ export interface TLInputSecureValue {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputSecureValue data2 = 1;
    */
-  data2?: InputSecureValue;
-
+  data2?: InputSecureValue
 }
 
 /**
@@ -10817,33 +10333,32 @@ export interface InputSingleMedia {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputMedia media = 3;
    */
-  media?: InputMedia;
+  media?: InputMedia
 
   /**
    * @generated from field: optional int64 random_id = 4;
    */
-  randomId?: bigint;
+  randomId?: bigint
 
   /**
    * @generated from field: optional string message = 5;
    */
-  message?: string;
+  message?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 6;
    */
-  entities: MessageEntity[];
-
+  entities: MessageEntity[]
 }
 
 /**
@@ -10853,8 +10368,7 @@ export interface TLInputSingleMedia {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputSingleMedia data2 = 1;
    */
-  data2?: InputSingleMedia;
-
+  data2?: InputSingleMedia
 }
 
 /**
@@ -10864,33 +10378,32 @@ export interface InputStickerSet {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional string short_name = 5;
    */
-  shortName?: string;
+  shortName?: string
 
   /**
    * @generated from field: optional string emoticon = 6;
    */
-  emoticon?: string;
-
+  emoticon?: string
 }
 
 /**
@@ -10900,8 +10413,7 @@ export interface TLInputStickerSetEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet data2 = 1;
    */
-  data2?: InputStickerSet;
-
+  data2?: InputStickerSet
 }
 
 /**
@@ -10911,8 +10423,7 @@ export interface TLInputStickerSetID {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet data2 = 1;
    */
-  data2?: InputStickerSet;
-
+  data2?: InputStickerSet
 }
 
 /**
@@ -10922,8 +10433,7 @@ export interface TLInputStickerSetShortName {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet data2 = 1;
    */
-  data2?: InputStickerSet;
-
+  data2?: InputStickerSet
 }
 
 /**
@@ -10933,8 +10443,7 @@ export interface TLInputStickerSetAnimatedEmoji {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet data2 = 1;
    */
-  data2?: InputStickerSet;
-
+  data2?: InputStickerSet
 }
 
 /**
@@ -10944,8 +10453,7 @@ export interface TLInputStickerSetDice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet data2 = 1;
    */
-  data2?: InputStickerSet;
-
+  data2?: InputStickerSet
 }
 
 /**
@@ -10955,8 +10463,7 @@ export interface TLInputStickerSetAnimatedEmojiAnimations {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet data2 = 1;
    */
-  data2?: InputStickerSet;
-
+  data2?: InputStickerSet
 }
 
 /**
@@ -10966,8 +10473,7 @@ export interface TLInputStickerSetPremiumGifts {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet data2 = 1;
    */
-  data2?: InputStickerSet;
-
+  data2?: InputStickerSet
 }
 
 /**
@@ -10977,8 +10483,7 @@ export interface TLInputStickerSetEmojiGenericAnimations {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet data2 = 1;
    */
-  data2?: InputStickerSet;
-
+  data2?: InputStickerSet
 }
 
 /**
@@ -10988,8 +10493,7 @@ export interface TLInputStickerSetEmojiDefaultStatuses {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet data2 = 1;
    */
-  data2?: InputStickerSet;
-
+  data2?: InputStickerSet
 }
 
 /**
@@ -10999,8 +10503,7 @@ export interface TLInputStickerSetEmojiDefaultTopicIcons {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet data2 = 1;
    */
-  data2?: InputStickerSet;
-
+  data2?: InputStickerSet
 }
 
 /**
@@ -11010,33 +10513,32 @@ export interface InputStickerSetItem {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDocument document = 3;
    */
-  document?: InputDocument;
+  document?: InputDocument
 
   /**
    * @generated from field: optional string emoji = 4;
    */
-  emoji?: string;
+  emoji?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MaskCoords mask_coords = 5;
    */
-  maskCoords?: MaskCoords;
+  maskCoords?: MaskCoords
 
   /**
    * @generated from field: optional google.protobuf.StringValue keywords = 6;
    */
-  keywords?: string;
-
+  keywords?: string
 }
 
 /**
@@ -11046,8 +10548,7 @@ export interface TLInputStickerSetItem {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSetItem data2 = 1;
    */
-  data2?: InputStickerSetItem;
-
+  data2?: InputStickerSetItem
 }
 
 /**
@@ -11057,23 +10558,22 @@ export interface InputStickeredMedia {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPhoto id_INPUTPHOTO = 3;
    */
-  idINPUTPHOTO?: InputPhoto;
+  idINPUTPHOTO?: InputPhoto
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDocument id_INPUTDOCUMENT = 4;
    */
-  idINPUTDOCUMENT?: InputDocument;
-
+  idINPUTDOCUMENT?: InputDocument
 }
 
 /**
@@ -11083,8 +10583,7 @@ export interface TLInputStickeredMediaPhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickeredMedia data2 = 1;
    */
-  data2?: InputStickeredMedia;
-
+  data2?: InputStickeredMedia
 }
 
 /**
@@ -11094,8 +10593,7 @@ export interface TLInputStickeredMediaDocument {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickeredMedia data2 = 1;
    */
-  data2?: InputStickeredMedia;
-
+  data2?: InputStickeredMedia
 }
 
 /**
@@ -11105,38 +10603,37 @@ export interface InputStorePaymentPurpose {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool restore = 3;
    */
-  restore?: boolean;
+  restore?: boolean
 
   /**
    * @generated from field: optional bool upgrade = 4;
    */
-  upgrade?: boolean;
+  upgrade?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id = 5;
    */
-  userId?: InputUser;
+  userId?: InputUser
 
   /**
    * @generated from field: optional string currency = 6;
    */
-  currency?: string;
+  currency?: string
 
   /**
    * @generated from field: optional int64 amount = 7;
    */
-  amount?: bigint;
-
+  amount?: bigint
 }
 
 /**
@@ -11146,8 +10643,7 @@ export interface TLInputStorePaymentPremiumSubscription {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStorePaymentPurpose data2 = 1;
    */
-  data2?: InputStorePaymentPurpose;
-
+  data2?: InputStorePaymentPurpose
 }
 
 /**
@@ -11157,8 +10653,7 @@ export interface TLInputStorePaymentGiftPremium {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStorePaymentPurpose data2 = 1;
    */
-  data2?: InputStorePaymentPurpose;
-
+  data2?: InputStorePaymentPurpose
 }
 
 /**
@@ -11168,28 +10663,27 @@ export interface InputTheme {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional string slug = 5;
    */
-  slug?: string;
-
+  slug?: string
 }
 
 /**
@@ -11199,8 +10693,7 @@ export interface TLInputTheme {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputTheme data2 = 1;
    */
-  data2?: InputTheme;
-
+  data2?: InputTheme
 }
 
 /**
@@ -11210,8 +10703,7 @@ export interface TLInputThemeSlug {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputTheme data2 = 1;
    */
-  data2?: InputTheme;
-
+  data2?: InputTheme
 }
 
 /**
@@ -11221,48 +10713,47 @@ export interface InputThemeSettings {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool message_colors_animated = 3;
    */
-  messageColorsAnimated?: boolean;
+  messageColorsAnimated?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BaseTheme base_theme = 4;
    */
-  baseTheme?: BaseTheme;
+  baseTheme?: BaseTheme
 
   /**
    * @generated from field: optional int32 accent_color = 5;
    */
-  accentColor?: number;
+  accentColor?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value outbox_accent_color = 6;
    */
-  outboxAccentColor?: number;
+  outboxAccentColor?: number
 
   /**
    * @generated from field: repeated int32 message_colors = 7;
    */
-  messageColors: number[];
+  messageColors: number[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputWallPaper wallpaper = 8;
    */
-  wallpaper?: InputWallPaper;
+  wallpaper?: InputWallPaper
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WallPaperSettings wallpaper_settings = 9;
    */
-  wallpaperSettings?: WallPaperSettings;
-
+  wallpaperSettings?: WallPaperSettings
 }
 
 /**
@@ -11272,8 +10763,7 @@ export interface TLInputThemeSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputThemeSettings data2 = 1;
    */
-  data2?: InputThemeSettings;
-
+  data2?: InputThemeSettings
 }
 
 /**
@@ -11283,33 +10773,32 @@ export interface InputUser {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 user_id = 3;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputPeer peer = 5;
    */
-  peer?: InputPeer;
+  peer?: InputPeer
 
   /**
    * @generated from field: optional int32 msg_id = 6;
    */
-  msgId?: number;
-
+  msgId?: number
 }
 
 /**
@@ -11319,8 +10808,7 @@ export interface TLInputUserEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser data2 = 1;
    */
-  data2?: InputUser;
-
+  data2?: InputUser
 }
 
 /**
@@ -11330,8 +10818,7 @@ export interface TLInputUserSelf {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser data2 = 1;
    */
-  data2?: InputUser;
-
+  data2?: InputUser
 }
 
 /**
@@ -11341,8 +10828,7 @@ export interface TLInputUser {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser data2 = 1;
    */
-  data2?: InputUser;
-
+  data2?: InputUser
 }
 
 /**
@@ -11352,8 +10838,7 @@ export interface TLInputUserFromMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser data2 = 1;
    */
-  data2?: InputUser;
-
+  data2?: InputUser
 }
 
 /**
@@ -11363,28 +10848,27 @@ export interface InputWallPaper {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional string slug = 5;
    */
-  slug?: string;
-
+  slug?: string
 }
 
 /**
@@ -11394,8 +10878,7 @@ export interface TLInputWallPaper {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputWallPaper data2 = 1;
    */
-  data2?: InputWallPaper;
-
+  data2?: InputWallPaper
 }
 
 /**
@@ -11405,8 +10888,7 @@ export interface TLInputWallPaperSlug {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputWallPaper data2 = 1;
    */
-  data2?: InputWallPaper;
-
+  data2?: InputWallPaper
 }
 
 /**
@@ -11416,8 +10898,7 @@ export interface TLInputWallPaperNoFile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputWallPaper data2 = 1;
    */
-  data2?: InputWallPaper;
-
+  data2?: InputWallPaper
 }
 
 /**
@@ -11427,33 +10908,32 @@ export interface InputWebDocument {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string url = 3;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional int32 size2 = 4;
    */
-  size2?: number;
+  size2?: number
 
   /**
    * @generated from field: optional string mime_type = 5;
    */
-  mimeType?: string;
+  mimeType?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.DocumentAttribute attributes = 6;
    */
-  attributes: DocumentAttribute[];
-
+  attributes: DocumentAttribute[]
 }
 
 /**
@@ -11463,8 +10943,7 @@ export interface TLInputWebDocument {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputWebDocument data2 = 1;
    */
-  data2?: InputWebDocument;
-
+  data2?: InputWebDocument
 }
 
 /**
@@ -11474,68 +10953,67 @@ export interface InputWebFileLocation {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string url = 3;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGeoPoint geo_point = 5;
    */
-  geoPoint?: InputGeoPoint;
+  geoPoint?: InputGeoPoint
 
   /**
    * @generated from field: optional int32 w = 6;
    */
-  w?: number;
+  w?: number
 
   /**
    * @generated from field: optional int32 h = 7;
    */
-  h?: number;
+  h?: number
 
   /**
    * @generated from field: optional int32 zoom = 8;
    */
-  zoom?: number;
+  zoom?: number
 
   /**
    * @generated from field: optional int32 scale = 9;
    */
-  scale?: number;
+  scale?: number
 
   /**
    * @generated from field: optional bool small = 10;
    */
-  small?: boolean;
+  small?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputDocument document = 11;
    */
-  document?: InputDocument;
+  document?: InputDocument
 
   /**
    * @generated from field: optional google.protobuf.StringValue title = 12;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue performer = 13;
    */
-  performer?: string;
-
+  performer?: string
 }
 
 /**
@@ -11545,8 +11023,7 @@ export interface TLInputWebFileLocation {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputWebFileLocation data2 = 1;
    */
-  data2?: InputWebFileLocation;
-
+  data2?: InputWebFileLocation
 }
 
 /**
@@ -11556,8 +11033,7 @@ export interface TLInputWebFileGeoPointLocation {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputWebFileLocation data2 = 1;
    */
-  data2?: InputWebFileLocation;
-
+  data2?: InputWebFileLocation
 }
 
 /**
@@ -11567,8 +11043,7 @@ export interface TLInputWebFileAudioAlbumThumbLocation {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputWebFileLocation data2 = 1;
    */
-  data2?: InputWebFileLocation;
-
+  data2?: InputWebFileLocation
 }
 
 /**
@@ -11578,88 +11053,87 @@ export interface Invoice {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool test = 3;
    */
-  test?: boolean;
+  test?: boolean
 
   /**
    * @generated from field: optional bool name_requested = 4;
    */
-  nameRequested?: boolean;
+  nameRequested?: boolean
 
   /**
    * @generated from field: optional bool phone_requested = 5;
    */
-  phoneRequested?: boolean;
+  phoneRequested?: boolean
 
   /**
    * @generated from field: optional bool email_requested = 6;
    */
-  emailRequested?: boolean;
+  emailRequested?: boolean
 
   /**
    * @generated from field: optional bool shipping_address_requested = 7;
    */
-  shippingAddressRequested?: boolean;
+  shippingAddressRequested?: boolean
 
   /**
    * @generated from field: optional bool flexible = 8;
    */
-  flexible?: boolean;
+  flexible?: boolean
 
   /**
    * @generated from field: optional bool phone_to_provider = 9;
    */
-  phoneToProvider?: boolean;
+  phoneToProvider?: boolean
 
   /**
    * @generated from field: optional bool email_to_provider = 10;
    */
-  emailToProvider?: boolean;
+  emailToProvider?: boolean
 
   /**
    * @generated from field: optional bool recurring = 11;
    */
-  recurring?: boolean;
+  recurring?: boolean
 
   /**
    * @generated from field: optional string currency = 12;
    */
-  currency?: string;
+  currency?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.LabeledPrice prices = 13;
    */
-  prices: LabeledPrice[];
+  prices: LabeledPrice[]
 
   /**
    * @generated from field: optional google.protobuf.Int64Value max_tip_amount = 14;
    */
-  maxTipAmount?: bigint;
+  maxTipAmount?: bigint
 
   /**
    * @generated from field: repeated int64 suggested_tip_amounts = 15;
    */
-  suggestedTipAmounts: bigint[];
+  suggestedTipAmounts: bigint[]
 
   /**
    * @generated from field: optional google.protobuf.StringValue terms_url = 16;
    */
-  termsUrl?: string;
+  termsUrl?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue recurring_terms_url = 17;
    */
-  recurringTermsUrl?: string;
-
+  recurringTermsUrl?: string
 }
 
 /**
@@ -11669,8 +11143,7 @@ export interface TLInvoice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Invoice data2 = 1;
    */
-  data2?: Invoice;
-
+  data2?: Invoice
 }
 
 /**
@@ -11680,23 +11153,22 @@ export interface JSONObjectValue {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string key = 3;
    */
-  key?: string;
+  key?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.JSONValue value = 4;
    */
-  value?: JSONValue;
-
+  value?: JSONValue
 }
 
 /**
@@ -11706,8 +11178,7 @@ export interface TLJsonObjectValue {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.JSONObjectValue data2 = 1;
    */
-  data2?: JSONObjectValue;
-
+  data2?: JSONObjectValue
 }
 
 /**
@@ -11717,38 +11188,37 @@ export interface JSONValue {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool value_BOOL = 3;
    */
-  valueBOOL?: Bool;
+  valueBOOL?: Bool
 
   /**
    * @generated from field: optional float value_FLOAT64 = 4;
    */
-  valueFLOAT64?: number;
+  valueFLOAT64?: number
 
   /**
    * @generated from field: optional string value_STRING = 5;
    */
-  valueSTRING?: string;
+  valueSTRING?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.JSONValue value_VECTORJSONVALUE = 6;
    */
-  valueVECTORJSONVALUE: JSONValue[];
+  valueVECTORJSONVALUE: JSONValue[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.JSONObjectValue value_VECTORJSONOBJECTVALUE = 7;
    */
-  valueVECTORJSONOBJECTVALUE: JSONObjectValue[];
-
+  valueVECTORJSONOBJECTVALUE: JSONObjectValue[]
 }
 
 /**
@@ -11758,8 +11228,7 @@ export interface TLJsonNull {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.JSONValue data2 = 1;
    */
-  data2?: JSONValue;
-
+  data2?: JSONValue
 }
 
 /**
@@ -11769,8 +11238,7 @@ export interface TLJsonBool {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.JSONValue data2 = 1;
    */
-  data2?: JSONValue;
-
+  data2?: JSONValue
 }
 
 /**
@@ -11780,8 +11248,7 @@ export interface TLJsonNumber {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.JSONValue data2 = 1;
    */
-  data2?: JSONValue;
-
+  data2?: JSONValue
 }
 
 /**
@@ -11791,8 +11258,7 @@ export interface TLJsonString {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.JSONValue data2 = 1;
    */
-  data2?: JSONValue;
-
+  data2?: JSONValue
 }
 
 /**
@@ -11802,8 +11268,7 @@ export interface TLJsonArray {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.JSONValue data2 = 1;
    */
-  data2?: JSONValue;
-
+  data2?: JSONValue
 }
 
 /**
@@ -11813,8 +11278,7 @@ export interface TLJsonObject {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.JSONValue data2 = 1;
    */
-  data2?: JSONValue;
-
+  data2?: JSONValue
 }
 
 /**
@@ -11824,88 +11288,87 @@ export interface KeyboardButton {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string text = 3;
    */
-  text?: string;
+  text?: string
 
   /**
    * @generated from field: optional string url = 4;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional bool requires_password = 5;
    */
-  requiresPassword?: boolean;
+  requiresPassword?: boolean
 
   /**
    * @generated from field: optional bytes data = 6;
    */
-  data?: Uint8Array;
+  data?: Uint8Array
 
   /**
    * @generated from field: optional bool same_peer = 7;
    */
-  samePeer?: boolean;
+  samePeer?: boolean
 
   /**
    * @generated from field: optional string query = 8;
    */
-  query?: string;
+  query?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.InlineQueryPeerType peer_types = 9;
    */
-  peerTypes: InlineQueryPeerType[];
+  peerTypes: InlineQueryPeerType[]
 
   /**
    * @generated from field: optional google.protobuf.StringValue fwd_text = 10;
    */
-  fwdText?: string;
+  fwdText?: string
 
   /**
    * @generated from field: optional int32 button_id = 11;
    */
-  buttonId?: number;
+  buttonId?: number
 
   /**
    * @generated from field: optional bool request_write_access = 12;
    */
-  requestWriteAccess?: boolean;
+  requestWriteAccess?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser bot = 13;
    */
-  bot?: InputUser;
+  bot?: InputUser
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool quiz = 14;
    */
-  quiz?: Bool;
+  quiz?: Bool
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id_INPUTUSER = 15;
    */
-  userIdINPUTUSER?: InputUser;
+  userIdINPUTUSER?: InputUser
 
   /**
    * @generated from field: optional int64 user_id_INT64 = 16;
    */
-  userIdINT64?: bigint;
+  userIdINT64?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RequestPeerType peer_type = 17;
    */
-  peerType?: RequestPeerType;
-
+  peerType?: RequestPeerType
 }
 
 /**
@@ -11915,8 +11378,7 @@ export interface TLKeyboardButton {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.KeyboardButton data2 = 1;
    */
-  data2?: KeyboardButton;
-
+  data2?: KeyboardButton
 }
 
 /**
@@ -11926,8 +11388,7 @@ export interface TLKeyboardButtonUrl {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.KeyboardButton data2 = 1;
    */
-  data2?: KeyboardButton;
-
+  data2?: KeyboardButton
 }
 
 /**
@@ -11937,8 +11398,7 @@ export interface TLKeyboardButtonCallback {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.KeyboardButton data2 = 1;
    */
-  data2?: KeyboardButton;
-
+  data2?: KeyboardButton
 }
 
 /**
@@ -11948,8 +11408,7 @@ export interface TLKeyboardButtonRequestPhone {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.KeyboardButton data2 = 1;
    */
-  data2?: KeyboardButton;
-
+  data2?: KeyboardButton
 }
 
 /**
@@ -11959,8 +11418,7 @@ export interface TLKeyboardButtonRequestGeoLocation {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.KeyboardButton data2 = 1;
    */
-  data2?: KeyboardButton;
-
+  data2?: KeyboardButton
 }
 
 /**
@@ -11970,8 +11428,7 @@ export interface TLKeyboardButtonSwitchInline {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.KeyboardButton data2 = 1;
    */
-  data2?: KeyboardButton;
-
+  data2?: KeyboardButton
 }
 
 /**
@@ -11981,8 +11438,7 @@ export interface TLKeyboardButtonGame {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.KeyboardButton data2 = 1;
    */
-  data2?: KeyboardButton;
-
+  data2?: KeyboardButton
 }
 
 /**
@@ -11992,8 +11448,7 @@ export interface TLKeyboardButtonBuy {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.KeyboardButton data2 = 1;
    */
-  data2?: KeyboardButton;
-
+  data2?: KeyboardButton
 }
 
 /**
@@ -12003,8 +11458,7 @@ export interface TLKeyboardButtonUrlAuth {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.KeyboardButton data2 = 1;
    */
-  data2?: KeyboardButton;
-
+  data2?: KeyboardButton
 }
 
 /**
@@ -12014,8 +11468,7 @@ export interface TLInputKeyboardButtonUrlAuth {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.KeyboardButton data2 = 1;
    */
-  data2?: KeyboardButton;
-
+  data2?: KeyboardButton
 }
 
 /**
@@ -12025,8 +11478,7 @@ export interface TLKeyboardButtonRequestPoll {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.KeyboardButton data2 = 1;
    */
-  data2?: KeyboardButton;
-
+  data2?: KeyboardButton
 }
 
 /**
@@ -12036,8 +11488,7 @@ export interface TLInputKeyboardButtonUserProfile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.KeyboardButton data2 = 1;
    */
-  data2?: KeyboardButton;
-
+  data2?: KeyboardButton
 }
 
 /**
@@ -12047,8 +11498,7 @@ export interface TLKeyboardButtonUserProfile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.KeyboardButton data2 = 1;
    */
-  data2?: KeyboardButton;
-
+  data2?: KeyboardButton
 }
 
 /**
@@ -12058,8 +11508,7 @@ export interface TLKeyboardButtonWebView {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.KeyboardButton data2 = 1;
    */
-  data2?: KeyboardButton;
-
+  data2?: KeyboardButton
 }
 
 /**
@@ -12069,8 +11518,7 @@ export interface TLKeyboardButtonSimpleWebView {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.KeyboardButton data2 = 1;
    */
-  data2?: KeyboardButton;
-
+  data2?: KeyboardButton
 }
 
 /**
@@ -12080,8 +11528,7 @@ export interface TLKeyboardButtonRequestPeer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.KeyboardButton data2 = 1;
    */
-  data2?: KeyboardButton;
-
+  data2?: KeyboardButton
 }
 
 /**
@@ -12091,18 +11538,17 @@ export interface KeyboardButtonRow {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.KeyboardButton buttons = 3;
    */
-  buttons: KeyboardButton[];
-
+  buttons: KeyboardButton[]
 }
 
 /**
@@ -12112,8 +11558,7 @@ export interface TLKeyboardButtonRow {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.KeyboardButtonRow data2 = 1;
    */
-  data2?: KeyboardButtonRow;
-
+  data2?: KeyboardButtonRow
 }
 
 /**
@@ -12123,23 +11568,22 @@ export interface LabeledPrice {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string label = 3;
    */
-  label?: string;
+  label?: string
 
   /**
    * @generated from field: optional int64 amount = 4;
    */
-  amount?: bigint;
-
+  amount?: bigint
 }
 
 /**
@@ -12149,8 +11593,7 @@ export interface TLLabeledPrice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.LabeledPrice data2 = 1;
    */
-  data2?: LabeledPrice;
-
+  data2?: LabeledPrice
 }
 
 /**
@@ -12160,33 +11603,32 @@ export interface LangPackDifference {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string lang_code = 3;
    */
-  langCode?: string;
+  langCode?: string
 
   /**
    * @generated from field: optional int32 from_version = 4;
    */
-  fromVersion?: number;
+  fromVersion?: number
 
   /**
    * @generated from field: optional int32 version = 5;
    */
-  version?: number;
+  version?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.LangPackString strings = 6;
    */
-  strings: LangPackString[];
-
+  strings: LangPackString[]
 }
 
 /**
@@ -12196,8 +11638,7 @@ export interface TLLangPackDifference {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.LangPackDifference data2 = 1;
    */
-  data2?: LangPackDifference;
-
+  data2?: LangPackDifference
 }
 
 /**
@@ -12207,68 +11648,67 @@ export interface LangPackLanguage {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool official = 3;
    */
-  official?: boolean;
+  official?: boolean
 
   /**
    * @generated from field: optional bool rtl = 4;
    */
-  rtl?: boolean;
+  rtl?: boolean
 
   /**
    * @generated from field: optional bool beta = 5;
    */
-  beta?: boolean;
+  beta?: boolean
 
   /**
    * @generated from field: optional string name = 6;
    */
-  name?: string;
+  name?: string
 
   /**
    * @generated from field: optional string native_name = 7;
    */
-  nativeName?: string;
+  nativeName?: string
 
   /**
    * @generated from field: optional string lang_code = 8;
    */
-  langCode?: string;
+  langCode?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue base_lang_code = 9;
    */
-  baseLangCode?: string;
+  baseLangCode?: string
 
   /**
    * @generated from field: optional string plural_code = 10;
    */
-  pluralCode?: string;
+  pluralCode?: string
 
   /**
    * @generated from field: optional int32 strings_count = 11;
    */
-  stringsCount?: number;
+  stringsCount?: number
 
   /**
    * @generated from field: optional int32 translated_count = 12;
    */
-  translatedCount?: number;
+  translatedCount?: number
 
   /**
    * @generated from field: optional string translations_url = 13;
    */
-  translationsUrl?: string;
-
+  translationsUrl?: string
 }
 
 /**
@@ -12278,8 +11718,7 @@ export interface TLLangPackLanguage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.LangPackLanguage data2 = 1;
    */
-  data2?: LangPackLanguage;
-
+  data2?: LangPackLanguage
 }
 
 /**
@@ -12289,53 +11728,52 @@ export interface LangPackString {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string key = 3;
    */
-  key?: string;
+  key?: string
 
   /**
    * @generated from field: optional string value = 4;
    */
-  value?: string;
+  value?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue zero_value = 5;
    */
-  zeroValue?: string;
+  zeroValue?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue one_value = 6;
    */
-  oneValue?: string;
+  oneValue?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue two_value = 7;
    */
-  twoValue?: string;
+  twoValue?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue few_value = 8;
    */
-  fewValue?: string;
+  fewValue?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue many_value = 9;
    */
-  manyValue?: string;
+  manyValue?: string
 
   /**
    * @generated from field: optional string other_value = 10;
    */
-  otherValue?: string;
-
+  otherValue?: string
 }
 
 /**
@@ -12345,8 +11783,7 @@ export interface TLLangPackString {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.LangPackString data2 = 1;
    */
-  data2?: LangPackString;
-
+  data2?: LangPackString
 }
 
 /**
@@ -12356,8 +11793,7 @@ export interface TLLangPackStringPluralized {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.LangPackString data2 = 1;
    */
-  data2?: LangPackString;
-
+  data2?: LangPackString
 }
 
 /**
@@ -12367,8 +11803,7 @@ export interface TLLangPackStringDeleted {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.LangPackString data2 = 1;
    */
-  data2?: LangPackString;
-
+  data2?: LangPackString
 }
 
 /**
@@ -12378,33 +11813,32 @@ export interface MaskCoords {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 n = 3;
    */
-  n?: number;
+  n?: number
 
   /**
    * @generated from field: optional float x = 4;
    */
-  x?: number;
+  x?: number
 
   /**
    * @generated from field: optional float y = 5;
    */
-  y?: number;
+  y?: number
 
   /**
    * @generated from field: optional float zoom = 6;
    */
-  zoom?: number;
-
+  zoom?: number
 }
 
 /**
@@ -12414,8 +11848,7 @@ export interface TLMaskCoords {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MaskCoords data2 = 1;
    */
-  data2?: MaskCoords;
-
+  data2?: MaskCoords
 }
 
 /**
@@ -12425,73 +11858,72 @@ export interface MediaArea {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MediaAreaCoordinates coordinates = 3;
    */
-  coordinates?: MediaAreaCoordinates;
+  coordinates?: MediaAreaCoordinates
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.GeoPoint geo = 4;
    */
-  geo?: GeoPoint;
+  geo?: GeoPoint
 
   /**
    * @generated from field: optional string title = 5;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional string address = 6;
    */
-  address?: string;
+  address?: string
 
   /**
    * @generated from field: optional string provider = 7;
    */
-  provider?: string;
+  provider?: string
 
   /**
    * @generated from field: optional string venue_id = 8;
    */
-  venueId?: string;
+  venueId?: string
 
   /**
    * @generated from field: optional string venue_type = 9;
    */
-  venueType?: string;
+  venueType?: string
 
   /**
    * @generated from field: optional int64 query_id = 10;
    */
-  queryId?: bigint;
+  queryId?: bigint
 
   /**
    * @generated from field: optional string result_id = 11;
    */
-  resultId?: string;
+  resultId?: string
 
   /**
    * @generated from field: optional bool dark = 12;
    */
-  dark?: boolean;
+  dark?: boolean
 
   /**
    * @generated from field: optional bool flipped = 13;
    */
-  flipped?: boolean;
+  flipped?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Reaction reaction = 14;
    */
-  reaction?: Reaction;
-
+  reaction?: Reaction
 }
 
 /**
@@ -12501,8 +11933,7 @@ export interface TLMediaAreaVenue {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MediaArea data2 = 1;
    */
-  data2?: MediaArea;
-
+  data2?: MediaArea
 }
 
 /**
@@ -12512,8 +11943,7 @@ export interface TLInputMediaAreaVenue {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MediaArea data2 = 1;
    */
-  data2?: MediaArea;
-
+  data2?: MediaArea
 }
 
 /**
@@ -12523,8 +11953,7 @@ export interface TLMediaAreaGeoPoint {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MediaArea data2 = 1;
    */
-  data2?: MediaArea;
-
+  data2?: MediaArea
 }
 
 /**
@@ -12534,8 +11963,7 @@ export interface TLMediaAreaSuggestedReaction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MediaArea data2 = 1;
    */
-  data2?: MediaArea;
-
+  data2?: MediaArea
 }
 
 /**
@@ -12545,38 +11973,37 @@ export interface MediaAreaCoordinates {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional float x = 3;
    */
-  x?: number;
+  x?: number
 
   /**
    * @generated from field: optional float y = 4;
    */
-  y?: number;
+  y?: number
 
   /**
    * @generated from field: optional float w = 5;
    */
-  w?: number;
+  w?: number
 
   /**
    * @generated from field: optional float h = 6;
    */
-  h?: number;
+  h?: number
 
   /**
    * @generated from field: optional float rotation = 7;
    */
-  rotation?: number;
-
+  rotation?: number
 }
 
 /**
@@ -12586,8 +12013,7 @@ export interface TLMediaAreaCoordinates {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MediaAreaCoordinates data2 = 1;
    */
-  data2?: MediaAreaCoordinates;
-
+  data2?: MediaAreaCoordinates
 }
 
 /**
@@ -12597,168 +12023,167 @@ export interface Message {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 id = 3;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer_id = 4;
    */
-  peerId?: Peer;
+  peerId?: Peer
 
   /**
    * @generated from field: optional bool out = 5;
    */
-  out?: boolean;
+  out?: boolean
 
   /**
    * @generated from field: optional bool mentioned = 6;
    */
-  mentioned?: boolean;
+  mentioned?: boolean
 
   /**
    * @generated from field: optional bool media_unread = 7;
    */
-  mediaUnread?: boolean;
+  mediaUnread?: boolean
 
   /**
    * @generated from field: optional bool silent = 8;
    */
-  silent?: boolean;
+  silent?: boolean
 
   /**
    * @generated from field: optional bool post = 9;
    */
-  post?: boolean;
+  post?: boolean
 
   /**
    * @generated from field: optional bool from_scheduled = 10;
    */
-  fromScheduled?: boolean;
+  fromScheduled?: boolean
 
   /**
    * @generated from field: optional bool legacy = 11;
    */
-  legacy?: boolean;
+  legacy?: boolean
 
   /**
    * @generated from field: optional bool edit_hide = 12;
    */
-  editHide?: boolean;
+  editHide?: boolean
 
   /**
    * @generated from field: optional bool pinned = 13;
    */
-  pinned?: boolean;
+  pinned?: boolean
 
   /**
    * @generated from field: optional bool noforwards = 14;
    */
-  noforwards?: boolean;
+  noforwards?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer from_id = 15;
    */
-  fromId?: Peer;
+  fromId?: Peer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageFwdHeader fwd_from = 16;
    */
-  fwdFrom?: MessageFwdHeader;
+  fwdFrom?: MessageFwdHeader
 
   /**
    * @generated from field: optional google.protobuf.Int64Value via_bot_id = 17;
    */
-  viaBotId?: bigint;
+  viaBotId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageReplyHeader reply_to = 18;
    */
-  replyTo?: MessageReplyHeader;
+  replyTo?: MessageReplyHeader
 
   /**
    * @generated from field: optional int32 date = 19;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional string message = 20;
    */
-  message?: string;
+  message?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageMedia media = 21;
    */
-  media?: MessageMedia;
+  media?: MessageMedia
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReplyMarkup reply_markup = 22;
    */
-  replyMarkup?: ReplyMarkup;
+  replyMarkup?: ReplyMarkup
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 23;
    */
-  entities: MessageEntity[];
+  entities: MessageEntity[]
 
   /**
    * @generated from field: optional google.protobuf.Int32Value views = 24;
    */
-  views?: number;
+  views?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value forwards = 25;
    */
-  forwards?: number;
+  forwards?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageReplies replies = 26;
    */
-  replies?: MessageReplies;
+  replies?: MessageReplies
 
   /**
    * @generated from field: optional google.protobuf.Int32Value edit_date = 27;
    */
-  editDate?: number;
+  editDate?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue post_author = 28;
    */
-  postAuthor?: string;
+  postAuthor?: string
 
   /**
    * @generated from field: optional google.protobuf.Int64Value grouped_id = 29;
    */
-  groupedId?: bigint;
+  groupedId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageReactions reactions = 30;
    */
-  reactions?: MessageReactions;
+  reactions?: MessageReactions
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.RestrictionReason restriction_reason = 31;
    */
-  restrictionReason: RestrictionReason[];
+  restrictionReason: RestrictionReason[]
 
   /**
    * @generated from field: optional google.protobuf.Int32Value ttl_period = 32;
    */
-  ttlPeriod?: number;
+  ttlPeriod?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction action = 33;
    */
-  action?: MessageAction;
-
+  action?: MessageAction
 }
 
 /**
@@ -12768,8 +12193,7 @@ export interface TLMessageEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Message data2 = 1;
    */
-  data2?: Message;
-
+  data2?: Message
 }
 
 /**
@@ -12779,8 +12203,7 @@ export interface TLMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Message data2 = 1;
    */
-  data2?: Message;
-
+  data2?: Message
 }
 
 /**
@@ -12790,8 +12213,7 @@ export interface TLMessageService {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Message data2 = 1;
    */
-  data2?: Message;
-
+  data2?: Message
 }
 
 /**
@@ -12801,288 +12223,287 @@ export interface MessageAction {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string title_STRING = 3;
    */
-  titleSTRING?: string;
+  titleSTRING?: string
 
   /**
    * @generated from field: repeated int64 users = 4;
    */
-  users: bigint[];
+  users: bigint[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Photo photo = 5;
    */
-  photo?: Photo;
+  photo?: Photo
 
   /**
    * @generated from field: optional int64 user_id = 6;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional int64 inviter_id = 7;
    */
-  inviterId?: bigint;
+  inviterId?: bigint
 
   /**
    * @generated from field: optional int64 channel_id = 8;
    */
-  channelId?: bigint;
+  channelId?: bigint
 
   /**
    * @generated from field: optional int64 chat_id = 9;
    */
-  chatId?: bigint;
+  chatId?: bigint
 
   /**
    * @generated from field: optional int64 game_id = 10;
    */
-  gameId?: bigint;
+  gameId?: bigint
 
   /**
    * @generated from field: optional int32 score = 11;
    */
-  score?: number;
+  score?: number
 
   /**
    * @generated from field: optional bool recurring_init = 12;
    */
-  recurringInit?: boolean;
+  recurringInit?: boolean
 
   /**
    * @generated from field: optional bool recurring_used = 13;
    */
-  recurringUsed?: boolean;
+  recurringUsed?: boolean
 
   /**
    * @generated from field: optional string currency = 14;
    */
-  currency?: string;
+  currency?: string
 
   /**
    * @generated from field: optional int64 total_amount = 15;
    */
-  totalAmount?: bigint;
+  totalAmount?: bigint
 
   /**
    * @generated from field: optional bytes payload = 16;
    */
-  payload?: Uint8Array;
+  payload?: Uint8Array
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PaymentRequestedInfo info = 17;
    */
-  info?: PaymentRequestedInfo;
+  info?: PaymentRequestedInfo
 
   /**
    * @generated from field: optional google.protobuf.StringValue shipping_option_id = 18;
    */
-  shippingOptionId?: string;
+  shippingOptionId?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PaymentCharge charge = 19;
    */
-  charge?: PaymentCharge;
+  charge?: PaymentCharge
 
   /**
    * @generated from field: optional google.protobuf.StringValue invoice_slug = 20;
    */
-  invoiceSlug?: string;
+  invoiceSlug?: string
 
   /**
    * @generated from field: optional bool video = 21;
    */
-  video?: boolean;
+  video?: boolean
 
   /**
    * @generated from field: optional int64 call_id = 22;
    */
-  callId?: bigint;
+  callId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneCallDiscardReason reason = 23;
    */
-  reason?: PhoneCallDiscardReason;
+  reason?: PhoneCallDiscardReason
 
   /**
    * @generated from field: optional google.protobuf.Int32Value duration = 24;
    */
-  duration?: number;
+  duration?: number
 
   /**
    * @generated from field: optional string message = 25;
    */
-  message?: string;
+  message?: string
 
   /**
    * @generated from field: optional bool attach_menu = 26;
    */
-  attachMenu?: boolean;
+  attachMenu?: boolean
 
   /**
    * @generated from field: optional bool from_request = 27;
    */
-  fromRequest?: boolean;
+  fromRequest?: boolean
 
   /**
    * @generated from field: optional google.protobuf.StringValue domain_FLAGSTRING = 28;
    */
-  domainFLAGSTRING?: string;
+  domainFLAGSTRING?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotApp app = 29;
    */
-  app?: BotApp;
+  app?: BotApp
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SecureValue values = 30;
    */
-  values: SecureValue[];
+  values: SecureValue[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureCredentialsEncrypted credentials = 31;
    */
-  credentials?: SecureCredentialsEncrypted;
+  credentials?: SecureCredentialsEncrypted
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SecureValueType types = 32;
    */
-  types: SecureValueType[];
+  types: SecureValueType[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer from_id = 33;
    */
-  fromId?: Peer;
+  fromId?: Peer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer to_id = 34;
    */
-  toId?: Peer;
+  toId?: Peer
 
   /**
    * @generated from field: optional int32 distance = 35;
    */
-  distance?: number;
+  distance?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call = 36;
    */
-  call?: InputGroupCall;
+  call?: InputGroupCall
 
   /**
    * @generated from field: optional int32 period = 37;
    */
-  period?: number;
+  period?: number
 
   /**
    * @generated from field: optional google.protobuf.Int64Value auto_setting_from = 38;
    */
-  autoSettingFrom?: bigint;
+  autoSettingFrom?: bigint
 
   /**
    * @generated from field: optional int32 schedule_date = 39;
    */
-  scheduleDate?: number;
+  scheduleDate?: number
 
   /**
    * @generated from field: optional string emoticon = 40;
    */
-  emoticon?: string;
+  emoticon?: string
 
   /**
    * @generated from field: optional string text = 41;
    */
-  text?: string;
+  text?: string
 
   /**
    * @generated from field: optional string data = 42;
    */
-  data?: string;
+  data?: string
 
   /**
    * @generated from field: optional int64 amount = 43;
    */
-  amount?: bigint;
+  amount?: bigint
 
   /**
    * @generated from field: optional int32 months = 44;
    */
-  months?: number;
+  months?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue crypto_currency = 45;
    */
-  cryptoCurrency?: string;
+  cryptoCurrency?: string
 
   /**
    * @generated from field: optional google.protobuf.Int64Value crypto_amount = 46;
    */
-  cryptoAmount?: bigint;
+  cryptoAmount?: bigint
 
   /**
    * @generated from field: optional int32 icon_color = 47;
    */
-  iconColor?: number;
+  iconColor?: number
 
   /**
    * @generated from field: optional google.protobuf.Int64Value icon_emoji_id = 48;
    */
-  iconEmojiId?: bigint;
+  iconEmojiId?: bigint
 
   /**
    * @generated from field: optional google.protobuf.StringValue title_FLAGSTRING = 49;
    */
-  titleFLAGSTRING?: string;
+  titleFLAGSTRING?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool closed = 50;
    */
-  closed?: Bool;
+  closed?: Bool
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool hidden = 51;
    */
-  hidden?: Bool;
+  hidden?: Bool
 
   /**
    * @generated from field: optional int32 button_id = 52;
    */
-  buttonId?: number;
+  buttonId?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer = 53;
    */
-  peer?: Peer;
+  peer?: Peer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WallPaper wallpaper = 54;
    */
-  wallpaper?: WallPaper;
+  wallpaper?: WallPaper
 
   /**
    * @generated from field: optional string domain_STRING = 55;
    */
-  domainSTRING?: string;
+  domainSTRING?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BizDataRaw biz_data = 56;
    */
-  bizData?: BizDataRaw;
+  bizData?: BizDataRaw
 
   /**
    * @generated from field: optional string title = 100;
    */
-  title?: string;
-
+  title?: string
 }
 
 /**
@@ -13092,8 +12513,7 @@ export interface TLMessageActionEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13103,8 +12523,7 @@ export interface TLMessageActionChatCreate {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13114,8 +12533,7 @@ export interface TLMessageActionChatEditTitle {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13125,8 +12543,7 @@ export interface TLMessageActionChatEditPhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13136,8 +12553,7 @@ export interface TLMessageActionChatDeletePhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13147,8 +12563,7 @@ export interface TLMessageActionChatAddUser {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13158,8 +12573,7 @@ export interface TLMessageActionChatDeleteUser {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13169,8 +12583,7 @@ export interface TLMessageActionChatJoinedByLink {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13180,8 +12593,7 @@ export interface TLMessageActionChannelCreate {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13191,8 +12603,7 @@ export interface TLMessageActionChatMigrateTo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13202,8 +12613,7 @@ export interface TLMessageActionChannelMigrateFrom {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13213,8 +12623,7 @@ export interface TLMessageActionPinMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13224,8 +12633,7 @@ export interface TLMessageActionHistoryClear {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13235,8 +12643,7 @@ export interface TLMessageActionGameScore {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13246,8 +12653,7 @@ export interface TLMessageActionPaymentSentMe {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13257,8 +12663,7 @@ export interface TLMessageActionPaymentSent {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13268,8 +12673,7 @@ export interface TLMessageActionPhoneCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13279,8 +12683,7 @@ export interface TLMessageActionScreenshotTaken {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13290,8 +12693,7 @@ export interface TLMessageActionCustomAction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13301,8 +12703,7 @@ export interface TLMessageActionBotAllowed {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13312,8 +12713,7 @@ export interface TLMessageActionSecureValuesSentMe {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13323,8 +12723,7 @@ export interface TLMessageActionSecureValuesSent {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13334,8 +12733,7 @@ export interface TLMessageActionContactSignUp {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13345,8 +12743,7 @@ export interface TLMessageActionGeoProximityReached {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13356,8 +12753,7 @@ export interface TLMessageActionGroupCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13367,8 +12763,7 @@ export interface TLMessageActionInviteToGroupCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13378,8 +12773,7 @@ export interface TLMessageActionSetMessagesTTL {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13389,8 +12783,7 @@ export interface TLMessageActionGroupCallScheduled {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13400,8 +12793,7 @@ export interface TLMessageActionSetChatTheme {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13411,8 +12803,7 @@ export interface TLMessageActionChatJoinedByRequest {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13422,8 +12813,7 @@ export interface TLMessageActionWebViewDataSentMe {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13433,8 +12823,7 @@ export interface TLMessageActionWebViewDataSent {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13444,8 +12833,7 @@ export interface TLMessageActionGiftPremium {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13455,8 +12843,7 @@ export interface TLMessageActionTopicCreate {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13466,8 +12853,7 @@ export interface TLMessageActionTopicEdit {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13477,8 +12863,7 @@ export interface TLMessageActionSuggestProfilePhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13488,8 +12873,7 @@ export interface TLMessageActionRequestedPeer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13499,8 +12883,7 @@ export interface TLMessageActionSetChatWallPaper {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13510,8 +12893,7 @@ export interface TLMessageActionSetSameChatWallPaper {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13521,8 +12903,7 @@ export interface TLMessageActionAttachMenuBotAllowed {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13532,8 +12913,7 @@ export interface TLMessageActionBizDataRaw {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageAction data2 = 1;
    */
-  data2?: MessageAction;
-
+  data2?: MessageAction
 }
 
 /**
@@ -13543,143 +12923,142 @@ export interface MessageBox {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 user_id = 3;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional int32 message_id = 4;
    */
-  messageId?: number;
+  messageId?: number
 
   /**
    * @generated from field: optional int64 sender_user_id = 5;
    */
-  senderUserId?: bigint;
+  senderUserId?: bigint
 
   /**
    * @generated from field: optional int32 peer_type = 6;
    */
-  peerType?: number;
+  peerType?: number
 
   /**
    * @generated from field: optional int64 peer_id = 7;
    */
-  peerId?: bigint;
+  peerId?: bigint
 
   /**
    * @generated from field: optional int64 random_id = 8;
    */
-  randomId?: bigint;
+  randomId?: bigint
 
   /**
    * @generated from field: optional int64 dialog_id1 = 9;
    */
-  dialogId1?: bigint;
+  dialogId1?: bigint
 
   /**
    * @generated from field: optional int64 dialog_id2 = 10;
    */
-  dialogId2?: bigint;
+  dialogId2?: bigint
 
   /**
    * @generated from field: optional int64 dialog_message_id = 11;
    */
-  dialogMessageId?: bigint;
+  dialogMessageId?: bigint
 
   /**
    * @generated from field: optional int32 message_filter_type = 12;
    */
-  messageFilterType?: number;
+  messageFilterType?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Message message = 13;
    */
-  message?: Message;
+  message?: Message
 
   /**
    * @generated from field: optional bool mentioned = 14;
    */
-  mentioned?: boolean;
+  mentioned?: boolean
 
   /**
    * @generated from field: optional bool media_unread = 15;
    */
-  mediaUnread?: boolean;
+  mediaUnread?: boolean
 
   /**
    * @generated from field: optional bool pinned = 16;
    */
-  pinned?: boolean;
+  pinned?: boolean
 
   /**
    * @generated from field: optional int32 pts = 17;
    */
-  pts?: number;
+  pts?: number
 
   /**
    * @generated from field: optional int32 pts_count = 18;
    */
-  ptsCount?: number;
+  ptsCount?: number
 
   /**
    * @generated from field: optional int32 views = 19;
    */
-  views?: number;
+  views?: number
 
   /**
    * @generated from field: optional int64 reply_owner_id = 20;
    */
-  replyOwnerId?: bigint;
+  replyOwnerId?: bigint
 
   /**
    * @generated from field: optional int32 forwards = 21;
    */
-  forwards?: number;
+  forwards?: number
 
   /**
    * @generated from field: optional string reaction = 22;
    */
-  reaction?: string;
+  reaction?: string
 
   /**
    * @generated from field: optional int64 comment_group_id = 23;
    */
-  commentGroupId?: bigint;
+  commentGroupId?: bigint
 
   /**
    * @generated from field: optional int32 comment_group_msg_id = 24;
    */
-  commentGroupMsgId?: number;
+  commentGroupMsgId?: number
 
   /**
    * @generated from field: optional int32 reply_to_msg_id = 25;
    */
-  replyToMsgId?: number;
+  replyToMsgId?: number
 
   /**
    * @generated from field: optional int32 reply_to_top_id = 26;
    */
-  replyToTopId?: number;
+  replyToTopId?: number
 
   /**
    * @generated from field: optional int32 ttl_period = 27;
    */
-  ttlPeriod?: number;
+  ttlPeriod?: number
 
   /**
    * @generated from field: optional bool has_reaction = 28;
    */
-  hasReaction?: boolean;
-
+  hasReaction?: boolean
 }
 
 /**
@@ -13689,8 +13068,7 @@ export interface TLMessageBox {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageBox data2 = 1;
    */
-  data2?: MessageBox;
-
+  data2?: MessageBox
 }
 
 /**
@@ -13700,23 +13078,22 @@ export interface MessageBoxList {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageBox box_list = 3;
    */
-  boxList: MessageBox[];
+  boxList: MessageBox[]
 
   /**
    * @generated from field: optional int32 count = 4;
    */
-  count?: number;
-
+  count?: number
 }
 
 /**
@@ -13726,8 +13103,7 @@ export interface TLMessageBoxList {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageBoxList data2 = 1;
    */
-  data2?: MessageBoxList;
-
+  data2?: MessageBoxList
 }
 
 /**
@@ -13737,8 +13113,7 @@ export interface TLMessageBoxListSlice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageBoxList data2 = 1;
    */
-  data2?: MessageBoxList;
-
+  data2?: MessageBoxList
 }
 
 /**
@@ -13748,48 +13123,47 @@ export interface MessageEntity {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 offset = 3;
    */
-  offset?: number;
+  offset?: number
 
   /**
    * @generated from field: optional int32 length = 4;
    */
-  length?: number;
+  length?: number
 
   /**
    * @generated from field: optional string language = 5;
    */
-  language?: string;
+  language?: string
 
   /**
    * @generated from field: optional string url = 6;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional int64 user_id_INT64 = 7;
    */
-  userIdINT64?: bigint;
+  userIdINT64?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputUser user_id_INPUTUSER = 8;
    */
-  userIdINPUTUSER?: InputUser;
+  userIdINPUTUSER?: InputUser
 
   /**
    * @generated from field: optional int64 document_id = 9;
    */
-  documentId?: bigint;
-
+  documentId?: bigint
 }
 
 /**
@@ -13799,8 +13173,7 @@ export interface TLMessageEntityUnknown {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageEntity data2 = 1;
    */
-  data2?: MessageEntity;
-
+  data2?: MessageEntity
 }
 
 /**
@@ -13810,8 +13183,7 @@ export interface TLMessageEntityMention {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageEntity data2 = 1;
    */
-  data2?: MessageEntity;
-
+  data2?: MessageEntity
 }
 
 /**
@@ -13821,8 +13193,7 @@ export interface TLMessageEntityHashtag {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageEntity data2 = 1;
    */
-  data2?: MessageEntity;
-
+  data2?: MessageEntity
 }
 
 /**
@@ -13832,8 +13203,7 @@ export interface TLMessageEntityBotCommand {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageEntity data2 = 1;
    */
-  data2?: MessageEntity;
-
+  data2?: MessageEntity
 }
 
 /**
@@ -13843,8 +13213,7 @@ export interface TLMessageEntityUrl {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageEntity data2 = 1;
    */
-  data2?: MessageEntity;
-
+  data2?: MessageEntity
 }
 
 /**
@@ -13854,8 +13223,7 @@ export interface TLMessageEntityEmail {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageEntity data2 = 1;
    */
-  data2?: MessageEntity;
-
+  data2?: MessageEntity
 }
 
 /**
@@ -13865,8 +13233,7 @@ export interface TLMessageEntityBold {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageEntity data2 = 1;
    */
-  data2?: MessageEntity;
-
+  data2?: MessageEntity
 }
 
 /**
@@ -13876,8 +13243,7 @@ export interface TLMessageEntityItalic {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageEntity data2 = 1;
    */
-  data2?: MessageEntity;
-
+  data2?: MessageEntity
 }
 
 /**
@@ -13887,8 +13253,7 @@ export interface TLMessageEntityCode {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageEntity data2 = 1;
    */
-  data2?: MessageEntity;
-
+  data2?: MessageEntity
 }
 
 /**
@@ -13898,8 +13263,7 @@ export interface TLMessageEntityPre {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageEntity data2 = 1;
    */
-  data2?: MessageEntity;
-
+  data2?: MessageEntity
 }
 
 /**
@@ -13909,8 +13273,7 @@ export interface TLMessageEntityTextUrl {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageEntity data2 = 1;
    */
-  data2?: MessageEntity;
-
+  data2?: MessageEntity
 }
 
 /**
@@ -13920,8 +13283,7 @@ export interface TLMessageEntityMentionName {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageEntity data2 = 1;
    */
-  data2?: MessageEntity;
-
+  data2?: MessageEntity
 }
 
 /**
@@ -13931,8 +13293,7 @@ export interface TLInputMessageEntityMentionName {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageEntity data2 = 1;
    */
-  data2?: MessageEntity;
-
+  data2?: MessageEntity
 }
 
 /**
@@ -13942,8 +13303,7 @@ export interface TLMessageEntityPhone {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageEntity data2 = 1;
    */
-  data2?: MessageEntity;
-
+  data2?: MessageEntity
 }
 
 /**
@@ -13953,8 +13313,7 @@ export interface TLMessageEntityCashtag {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageEntity data2 = 1;
    */
-  data2?: MessageEntity;
-
+  data2?: MessageEntity
 }
 
 /**
@@ -13964,8 +13323,7 @@ export interface TLMessageEntityUnderline {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageEntity data2 = 1;
    */
-  data2?: MessageEntity;
-
+  data2?: MessageEntity
 }
 
 /**
@@ -13975,8 +13333,7 @@ export interface TLMessageEntityStrike {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageEntity data2 = 1;
    */
-  data2?: MessageEntity;
-
+  data2?: MessageEntity
 }
 
 /**
@@ -13986,8 +13343,7 @@ export interface TLMessageEntityBlockquote {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageEntity data2 = 1;
    */
-  data2?: MessageEntity;
-
+  data2?: MessageEntity
 }
 
 /**
@@ -13997,8 +13353,7 @@ export interface TLMessageEntityBankCard {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageEntity data2 = 1;
    */
-  data2?: MessageEntity;
-
+  data2?: MessageEntity
 }
 
 /**
@@ -14008,8 +13363,7 @@ export interface TLMessageEntitySpoiler {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageEntity data2 = 1;
    */
-  data2?: MessageEntity;
-
+  data2?: MessageEntity
 }
 
 /**
@@ -14019,8 +13373,7 @@ export interface TLMessageEntityCustomEmoji {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageEntity data2 = 1;
    */
-  data2?: MessageEntity;
-
+  data2?: MessageEntity
 }
 
 /**
@@ -14030,38 +13383,37 @@ export interface MessageExtendedMedia {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional google.protobuf.Int32Value w = 3;
    */
-  w?: number;
+  w?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value h = 4;
    */
-  h?: number;
+  h?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhotoSize thumb = 5;
    */
-  thumb?: PhotoSize;
+  thumb?: PhotoSize
 
   /**
    * @generated from field: optional google.protobuf.Int32Value video_duration = 6;
    */
-  videoDuration?: number;
+  videoDuration?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageMedia media = 7;
    */
-  media?: MessageMedia;
-
+  media?: MessageMedia
 }
 
 /**
@@ -14071,8 +13423,7 @@ export interface TLMessageExtendedMediaPreview {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageExtendedMedia data2 = 1;
    */
-  data2?: MessageExtendedMedia;
-
+  data2?: MessageExtendedMedia
 }
 
 /**
@@ -14082,8 +13433,7 @@ export interface TLMessageExtendedMedia {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageExtendedMedia data2 = 1;
    */
-  data2?: MessageExtendedMedia;
-
+  data2?: MessageExtendedMedia
 }
 
 /**
@@ -14093,58 +13443,57 @@ export interface MessageFwdHeader {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool imported = 3;
    */
-  imported?: boolean;
+  imported?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer from_id = 4;
    */
-  fromId?: Peer;
+  fromId?: Peer
 
   /**
    * @generated from field: optional google.protobuf.StringValue from_name = 5;
    */
-  fromName?: string;
+  fromName?: string
 
   /**
    * @generated from field: optional int32 date = 6;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value channel_post = 7;
    */
-  channelPost?: number;
+  channelPost?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue post_author = 8;
    */
-  postAuthor?: string;
+  postAuthor?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer saved_from_peer = 9;
    */
-  savedFromPeer?: Peer;
+  savedFromPeer?: Peer
 
   /**
    * @generated from field: optional google.protobuf.Int32Value saved_from_msg_id = 10;
    */
-  savedFromMsgId?: number;
+  savedFromMsgId?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue psa_type = 11;
    */
-  psaType?: string;
-
+  psaType?: string
 }
 
 /**
@@ -14154,8 +13503,7 @@ export interface TLMessageFwdHeader {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageFwdHeader data2 = 1;
    */
-  data2?: MessageFwdHeader;
-
+  data2?: MessageFwdHeader
 }
 
 /**
@@ -14165,28 +13513,27 @@ export interface MessageInteractionCounters {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 msg_id = 3;
    */
-  msgId?: number;
+  msgId?: number
 
   /**
    * @generated from field: optional int32 views = 4;
    */
-  views?: number;
+  views?: number
 
   /**
    * @generated from field: optional int32 forwards = 5;
    */
-  forwards?: number;
-
+  forwards?: number
 }
 
 /**
@@ -14196,8 +13543,7 @@ export interface TLMessageInteractionCounters {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageInteractionCounters data2 = 1;
    */
-  data2?: MessageInteractionCounters;
-
+  data2?: MessageInteractionCounters
 }
 
 /**
@@ -14207,213 +13553,212 @@ export interface MessageMedia {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool spoiler = 3;
    */
-  spoiler?: boolean;
+  spoiler?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Photo photo_FLAGPHOTO = 4;
    */
-  photoFLAGPHOTO?: Photo;
+  photoFLAGPHOTO?: Photo
 
   /**
    * @generated from field: optional google.protobuf.Int32Value ttl_seconds = 5;
    */
-  ttlSeconds?: number;
+  ttlSeconds?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.GeoPoint geo = 6;
    */
-  geo?: GeoPoint;
+  geo?: GeoPoint
 
   /**
    * @generated from field: optional string phone_number = 7;
    */
-  phoneNumber?: string;
+  phoneNumber?: string
 
   /**
    * @generated from field: optional string first_name = 8;
    */
-  firstName?: string;
+  firstName?: string
 
   /**
    * @generated from field: optional string last_name = 9;
    */
-  lastName?: string;
+  lastName?: string
 
   /**
    * @generated from field: optional string vcard = 10;
    */
-  vcard?: string;
+  vcard?: string
 
   /**
    * @generated from field: optional int64 user_id = 11;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional bool nopremium = 12;
    */
-  nopremium?: boolean;
+  nopremium?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document document = 13;
    */
-  document?: Document;
+  document?: Document
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document alt_document = 14;
    */
-  altDocument?: Document;
+  altDocument?: Document
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WebPage webpage = 15;
    */
-  webpage?: WebPage;
+  webpage?: WebPage
 
   /**
    * @generated from field: optional string title = 16;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional string address = 17;
    */
-  address?: string;
+  address?: string
 
   /**
    * @generated from field: optional string provider = 18;
    */
-  provider?: string;
+  provider?: string
 
   /**
    * @generated from field: optional string venue_id = 19;
    */
-  venueId?: string;
+  venueId?: string
 
   /**
    * @generated from field: optional string venue_type = 20;
    */
-  venueType?: string;
+  venueType?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Game game = 21;
    */
-  game?: Game;
+  game?: Game
 
   /**
    * @generated from field: optional bool shipping_address_requested = 22;
    */
-  shippingAddressRequested?: boolean;
+  shippingAddressRequested?: boolean
 
   /**
    * @generated from field: optional bool test = 23;
    */
-  test?: boolean;
+  test?: boolean
 
   /**
    * @generated from field: optional string description = 24;
    */
-  description?: string;
+  description?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WebDocument photo_FLAGWEBDOCUMENT = 25;
    */
-  photoFLAGWEBDOCUMENT?: WebDocument;
+  photoFLAGWEBDOCUMENT?: WebDocument
 
   /**
    * @generated from field: optional google.protobuf.Int32Value receipt_msg_id = 26;
    */
-  receiptMsgId?: number;
+  receiptMsgId?: number
 
   /**
    * @generated from field: optional string currency = 27;
    */
-  currency?: string;
+  currency?: string
 
   /**
    * @generated from field: optional int64 total_amount = 28;
    */
-  totalAmount?: bigint;
+  totalAmount?: bigint
 
   /**
    * @generated from field: optional string start_param = 29;
    */
-  startParam?: string;
+  startParam?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageExtendedMedia extended_media = 30;
    */
-  extendedMedia?: MessageExtendedMedia;
+  extendedMedia?: MessageExtendedMedia
 
   /**
    * @generated from field: optional google.protobuf.Int32Value heading = 31;
    */
-  heading?: number;
+  heading?: number
 
   /**
    * @generated from field: optional int32 period = 32;
    */
-  period?: number;
+  period?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value proximity_notification_radius = 33;
    */
-  proximityNotificationRadius?: number;
+  proximityNotificationRadius?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Poll poll = 34;
    */
-  poll?: Poll;
+  poll?: Poll
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PollResults results = 35;
    */
-  results?: PollResults;
+  results?: PollResults
 
   /**
    * @generated from field: optional int32 value = 36;
    */
-  value?: number;
+  value?: number
 
   /**
    * @generated from field: optional string emoticon = 37;
    */
-  emoticon?: string;
+  emoticon?: string
 
   /**
    * @generated from field: optional bool via_mention = 38;
    */
-  viaMention?: boolean;
+  viaMention?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer = 39;
    */
-  peer?: Peer;
+  peer?: Peer
 
   /**
    * @generated from field: optional int32 id = 40;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoryItem story = 41;
    */
-  story?: StoryItem;
+  story?: StoryItem
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BizDataRaw biz_data = 42;
    */
-  bizData?: BizDataRaw;
-
+  bizData?: BizDataRaw
 }
 
 /**
@@ -14423,8 +13768,7 @@ export interface TLMessageMediaEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageMedia data2 = 1;
    */
-  data2?: MessageMedia;
-
+  data2?: MessageMedia
 }
 
 /**
@@ -14434,8 +13778,7 @@ export interface TLMessageMediaPhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageMedia data2 = 1;
    */
-  data2?: MessageMedia;
-
+  data2?: MessageMedia
 }
 
 /**
@@ -14445,8 +13788,7 @@ export interface TLMessageMediaGeo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageMedia data2 = 1;
    */
-  data2?: MessageMedia;
-
+  data2?: MessageMedia
 }
 
 /**
@@ -14456,8 +13798,7 @@ export interface TLMessageMediaContact {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageMedia data2 = 1;
    */
-  data2?: MessageMedia;
-
+  data2?: MessageMedia
 }
 
 /**
@@ -14467,8 +13808,7 @@ export interface TLMessageMediaUnsupported {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageMedia data2 = 1;
    */
-  data2?: MessageMedia;
-
+  data2?: MessageMedia
 }
 
 /**
@@ -14478,8 +13818,7 @@ export interface TLMessageMediaDocument {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageMedia data2 = 1;
    */
-  data2?: MessageMedia;
-
+  data2?: MessageMedia
 }
 
 /**
@@ -14489,8 +13828,7 @@ export interface TLMessageMediaWebPage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageMedia data2 = 1;
    */
-  data2?: MessageMedia;
-
+  data2?: MessageMedia
 }
 
 /**
@@ -14500,8 +13838,7 @@ export interface TLMessageMediaVenue {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageMedia data2 = 1;
    */
-  data2?: MessageMedia;
-
+  data2?: MessageMedia
 }
 
 /**
@@ -14511,8 +13848,7 @@ export interface TLMessageMediaGame {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageMedia data2 = 1;
    */
-  data2?: MessageMedia;
-
+  data2?: MessageMedia
 }
 
 /**
@@ -14522,8 +13858,7 @@ export interface TLMessageMediaInvoice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageMedia data2 = 1;
    */
-  data2?: MessageMedia;
-
+  data2?: MessageMedia
 }
 
 /**
@@ -14533,8 +13868,7 @@ export interface TLMessageMediaGeoLive {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageMedia data2 = 1;
    */
-  data2?: MessageMedia;
-
+  data2?: MessageMedia
 }
 
 /**
@@ -14544,8 +13878,7 @@ export interface TLMessageMediaPoll {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageMedia data2 = 1;
    */
-  data2?: MessageMedia;
-
+  data2?: MessageMedia
 }
 
 /**
@@ -14555,8 +13888,7 @@ export interface TLMessageMediaDice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageMedia data2 = 1;
    */
-  data2?: MessageMedia;
-
+  data2?: MessageMedia
 }
 
 /**
@@ -14566,8 +13898,7 @@ export interface TLMessageMediaStory {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageMedia data2 = 1;
    */
-  data2?: MessageMedia;
-
+  data2?: MessageMedia
 }
 
 /**
@@ -14577,8 +13908,7 @@ export interface TLMessageMediaBizDataRaw {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageMedia data2 = 1;
    */
-  data2?: MessageMedia;
-
+  data2?: MessageMedia
 }
 
 /**
@@ -14588,53 +13918,52 @@ export interface MessagePeerReaction {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool big = 3;
    */
-  big?: boolean;
+  big?: boolean
 
   /**
    * @generated from field: optional bool unread = 4;
    */
-  unread?: boolean;
+  unread?: boolean
 
   /**
    * @generated from field: optional bool my = 5;
    */
-  my?: boolean;
+  my?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer_id = 6;
    */
-  peerId?: Peer;
+  peerId?: Peer
 
   /**
    * @generated from field: optional int32 date = 7;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Reaction reaction_REACTION = 8;
    */
-  reactionREACTION?: Reaction;
+  reactionREACTION?: Reaction
 
   /**
    * @generated from field: optional string reaction_STRING = 9;
    */
-  reactionSTRING?: string;
+  reactionSTRING?: string
 
   /**
    * @generated from field: optional string reaction = 100;
    */
-  reaction?: string;
-
+  reaction?: string
 }
 
 /**
@@ -14644,8 +13973,7 @@ export interface TLMessagePeerReaction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagePeerReaction data2 = 1;
    */
-  data2?: MessagePeerReaction;
-
+  data2?: MessagePeerReaction
 }
 
 /**
@@ -14655,33 +13983,32 @@ export interface MessagePeerVote {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer = 3;
    */
-  peer?: Peer;
+  peer?: Peer
 
   /**
    * @generated from field: optional bytes option = 4;
    */
-  option?: Uint8Array;
+  option?: Uint8Array
 
   /**
    * @generated from field: optional int32 date = 5;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: repeated bytes options = 6;
    */
-  options: Uint8Array[];
-
+  options: Uint8Array[]
 }
 
 /**
@@ -14691,8 +14018,7 @@ export interface TLMessagePeerVote {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagePeerVote data2 = 1;
    */
-  data2?: MessagePeerVote;
-
+  data2?: MessagePeerVote
 }
 
 /**
@@ -14702,8 +14028,7 @@ export interface TLMessagePeerVoteInputOption {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagePeerVote data2 = 1;
    */
-  data2?: MessagePeerVote;
-
+  data2?: MessagePeerVote
 }
 
 /**
@@ -14713,8 +14038,7 @@ export interface TLMessagePeerVoteMultiple {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagePeerVote data2 = 1;
    */
-  data2?: MessagePeerVote;
-
+  data2?: MessagePeerVote
 }
 
 /**
@@ -14724,23 +14048,22 @@ export interface MessageRange {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 min_id = 3;
    */
-  minId?: number;
+  minId?: number
 
   /**
    * @generated from field: optional int32 max_id = 4;
    */
-  maxId?: number;
-
+  maxId?: number
 }
 
 /**
@@ -14750,8 +14073,7 @@ export interface TLMessageRange {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageRange data2 = 1;
    */
-  data2?: MessageRange;
-
+  data2?: MessageRange
 }
 
 /**
@@ -14761,33 +14083,32 @@ export interface MessageReactions {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool min = 3;
    */
-  min?: boolean;
+  min?: boolean
 
   /**
    * @generated from field: optional bool can_see_list = 4;
    */
-  canSeeList?: boolean;
+  canSeeList?: boolean
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ReactionCount results = 5;
    */
-  results: ReactionCount[];
+  results: ReactionCount[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessagePeerReaction recent_reactions = 6;
    */
-  recentReactions: MessagePeerReaction[];
-
+  recentReactions: MessagePeerReaction[]
 }
 
 /**
@@ -14797,8 +14118,7 @@ export interface TLMessageReactions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageReactions data2 = 1;
    */
-  data2?: MessageReactions;
-
+  data2?: MessageReactions
 }
 
 /**
@@ -14808,48 +14128,47 @@ export interface MessageReplies {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool comments = 3;
    */
-  comments?: boolean;
+  comments?: boolean
 
   /**
    * @generated from field: optional int32 replies = 4;
    */
-  replies?: number;
+  replies?: number
 
   /**
    * @generated from field: optional int32 replies_pts = 5;
    */
-  repliesPts?: number;
+  repliesPts?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Peer recent_repliers = 6;
    */
-  recentRepliers: Peer[];
+  recentRepliers: Peer[]
 
   /**
    * @generated from field: optional google.protobuf.Int64Value channel_id = 7;
    */
-  channelId?: bigint;
+  channelId?: bigint
 
   /**
    * @generated from field: optional google.protobuf.Int32Value max_id = 8;
    */
-  maxId?: number;
+  maxId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value read_max_id = 9;
    */
-  readMaxId?: number;
-
+  readMaxId?: number
 }
 
 /**
@@ -14859,8 +14178,7 @@ export interface TLMessageReplies {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageReplies data2 = 1;
    */
-  data2?: MessageReplies;
-
+  data2?: MessageReplies
 }
 
 /**
@@ -14870,48 +14188,47 @@ export interface MessageReplyHeader {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool reply_to_scheduled = 3;
    */
-  replyToScheduled?: boolean;
+  replyToScheduled?: boolean
 
   /**
    * @generated from field: optional bool forum_topic = 4;
    */
-  forumTopic?: boolean;
+  forumTopic?: boolean
 
   /**
    * @generated from field: optional int32 reply_to_msg_id = 5;
    */
-  replyToMsgId?: number;
+  replyToMsgId?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer reply_to_peer_id = 6;
    */
-  replyToPeerId?: Peer;
+  replyToPeerId?: Peer
 
   /**
    * @generated from field: optional google.protobuf.Int32Value reply_to_top_id = 7;
    */
-  replyToTopId?: number;
+  replyToTopId?: number
 
   /**
    * @generated from field: optional int64 user_id = 8;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional int32 story_id = 9;
    */
-  storyId?: number;
-
+  storyId?: number
 }
 
 /**
@@ -14921,8 +14238,7 @@ export interface TLMessageReplyHeader {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageReplyHeader data2 = 1;
    */
-  data2?: MessageReplyHeader;
-
+  data2?: MessageReplyHeader
 }
 
 /**
@@ -14932,8 +14248,7 @@ export interface TLMessageReplyStoryHeader {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageReplyHeader data2 = 1;
    */
-  data2?: MessageReplyHeader;
-
+  data2?: MessageReplyHeader
 }
 
 /**
@@ -14943,33 +14258,32 @@ export interface MessageUserVote {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 user_id = 3;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional bytes option = 4;
    */
-  option?: Uint8Array;
+  option?: Uint8Array
 
   /**
    * @generated from field: optional int32 date = 5;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: repeated bytes options = 6;
    */
-  options: Uint8Array[];
-
+  options: Uint8Array[]
 }
 
 /**
@@ -14979,8 +14293,7 @@ export interface TLMessageUserVote {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageUserVote data2 = 1;
    */
-  data2?: MessageUserVote;
-
+  data2?: MessageUserVote
 }
 
 /**
@@ -14990,8 +14303,7 @@ export interface TLMessageUserVoteInputOption {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageUserVote data2 = 1;
    */
-  data2?: MessageUserVote;
-
+  data2?: MessageUserVote
 }
 
 /**
@@ -15001,8 +14313,7 @@ export interface TLMessageUserVoteMultiple {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageUserVote data2 = 1;
    */
-  data2?: MessageUserVote;
-
+  data2?: MessageUserVote
 }
 
 /**
@@ -15012,28 +14323,27 @@ export interface MessageViews {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional google.protobuf.Int32Value views = 3;
    */
-  views?: number;
+  views?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value forwards = 4;
    */
-  forwards?: number;
+  forwards?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageReplies replies = 5;
    */
-  replies?: MessageReplies;
-
+  replies?: MessageReplies
 }
 
 /**
@@ -15043,8 +14353,7 @@ export interface TLMessageViews {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageViews data2 = 1;
    */
-  data2?: MessageViews;
-
+  data2?: MessageViews
 }
 
 /**
@@ -15054,18 +14363,17 @@ export interface MessagesFilter {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool missed = 3;
    */
-  missed?: boolean;
-
+  missed?: boolean
 }
 
 /**
@@ -15075,8 +14383,7 @@ export interface TLInputMessagesFilterEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter data2 = 1;
    */
-  data2?: MessagesFilter;
-
+  data2?: MessagesFilter
 }
 
 /**
@@ -15086,8 +14393,7 @@ export interface TLInputMessagesFilterPhotos {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter data2 = 1;
    */
-  data2?: MessagesFilter;
-
+  data2?: MessagesFilter
 }
 
 /**
@@ -15097,8 +14403,7 @@ export interface TLInputMessagesFilterVideo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter data2 = 1;
    */
-  data2?: MessagesFilter;
-
+  data2?: MessagesFilter
 }
 
 /**
@@ -15108,8 +14413,7 @@ export interface TLInputMessagesFilterPhotoVideo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter data2 = 1;
    */
-  data2?: MessagesFilter;
-
+  data2?: MessagesFilter
 }
 
 /**
@@ -15119,8 +14423,7 @@ export interface TLInputMessagesFilterDocument {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter data2 = 1;
    */
-  data2?: MessagesFilter;
-
+  data2?: MessagesFilter
 }
 
 /**
@@ -15130,8 +14433,7 @@ export interface TLInputMessagesFilterUrl {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter data2 = 1;
    */
-  data2?: MessagesFilter;
-
+  data2?: MessagesFilter
 }
 
 /**
@@ -15141,8 +14443,7 @@ export interface TLInputMessagesFilterGif {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter data2 = 1;
    */
-  data2?: MessagesFilter;
-
+  data2?: MessagesFilter
 }
 
 /**
@@ -15152,8 +14453,7 @@ export interface TLInputMessagesFilterVoice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter data2 = 1;
    */
-  data2?: MessagesFilter;
-
+  data2?: MessagesFilter
 }
 
 /**
@@ -15163,8 +14463,7 @@ export interface TLInputMessagesFilterMusic {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter data2 = 1;
    */
-  data2?: MessagesFilter;
-
+  data2?: MessagesFilter
 }
 
 /**
@@ -15174,8 +14473,7 @@ export interface TLInputMessagesFilterChatPhotos {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter data2 = 1;
    */
-  data2?: MessagesFilter;
-
+  data2?: MessagesFilter
 }
 
 /**
@@ -15185,8 +14483,7 @@ export interface TLInputMessagesFilterPhoneCalls {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter data2 = 1;
    */
-  data2?: MessagesFilter;
-
+  data2?: MessagesFilter
 }
 
 /**
@@ -15196,8 +14493,7 @@ export interface TLInputMessagesFilterRoundVoice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter data2 = 1;
    */
-  data2?: MessagesFilter;
-
+  data2?: MessagesFilter
 }
 
 /**
@@ -15207,8 +14503,7 @@ export interface TLInputMessagesFilterRoundVideo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter data2 = 1;
    */
-  data2?: MessagesFilter;
-
+  data2?: MessagesFilter
 }
 
 /**
@@ -15218,8 +14513,7 @@ export interface TLInputMessagesFilterMyMentions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter data2 = 1;
    */
-  data2?: MessagesFilter;
-
+  data2?: MessagesFilter
 }
 
 /**
@@ -15229,8 +14523,7 @@ export interface TLInputMessagesFilterGeo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter data2 = 1;
    */
-  data2?: MessagesFilter;
-
+  data2?: MessagesFilter
 }
 
 /**
@@ -15240,8 +14533,7 @@ export interface TLInputMessagesFilterContacts {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter data2 = 1;
    */
-  data2?: MessagesFilter;
-
+  data2?: MessagesFilter
 }
 
 /**
@@ -15251,8 +14543,7 @@ export interface TLInputMessagesFilterPinned {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter data2 = 1;
    */
-  data2?: MessagesFilter;
-
+  data2?: MessagesFilter
 }
 
 /**
@@ -15262,23 +14553,22 @@ export interface MutableChat {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ImmutableChat chat = 3;
    */
-  chat?: ImmutableChat;
+  chat?: ImmutableChat
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ImmutableChatParticipant chat_participants = 4;
    */
-  chatParticipants: ImmutableChatParticipant[];
-
+  chatParticipants: ImmutableChatParticipant[]
 }
 
 /**
@@ -15288,8 +14578,7 @@ export interface TLMutableChat {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MutableChat data2 = 1;
    */
-  data2?: MutableChat;
-
+  data2?: MutableChat
 }
 
 /**
@@ -15299,18 +14588,17 @@ export interface MutableUsers {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ImmutableUser users = 3;
    */
-  users: ImmutableUser[];
-
+  users: ImmutableUser[]
 }
 
 /**
@@ -15320,8 +14608,7 @@ export interface TLMutableUsers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MutableUsers data2 = 1;
    */
-  data2?: MutableUsers;
-
+  data2?: MutableUsers
 }
 
 /**
@@ -15331,28 +14618,27 @@ export interface NearestDc {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string country = 3;
    */
-  country?: string;
+  country?: string
 
   /**
    * @generated from field: optional int32 this_dc = 4;
    */
-  thisDc?: number;
+  thisDc?: number
 
   /**
    * @generated from field: optional int32 nearest_dc = 5;
    */
-  nearestDc?: number;
-
+  nearestDc?: number
 }
 
 /**
@@ -15362,8 +14648,7 @@ export interface TLNearestDc {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.NearestDc data2 = 1;
    */
-  data2?: NearestDc;
-
+  data2?: NearestDc
 }
 
 /**
@@ -15373,28 +14658,27 @@ export interface NotificationSound {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string title = 3;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional string data = 4;
    */
-  data?: string;
+  data?: string
 
   /**
    * @generated from field: optional int64 id = 5;
    */
-  id?: bigint;
-
+  id?: bigint
 }
 
 /**
@@ -15404,8 +14688,7 @@ export interface TLNotificationSoundDefault {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.NotificationSound data2 = 1;
    */
-  data2?: NotificationSound;
-
+  data2?: NotificationSound
 }
 
 /**
@@ -15415,8 +14698,7 @@ export interface TLNotificationSoundNone {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.NotificationSound data2 = 1;
    */
-  data2?: NotificationSound;
-
+  data2?: NotificationSound
 }
 
 /**
@@ -15426,8 +14708,7 @@ export interface TLNotificationSoundLocal {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.NotificationSound data2 = 1;
    */
-  data2?: NotificationSound;
-
+  data2?: NotificationSound
 }
 
 /**
@@ -15437,8 +14718,7 @@ export interface TLNotificationSoundRingtone {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.NotificationSound data2 = 1;
    */
-  data2?: NotificationSound;
-
+  data2?: NotificationSound
 }
 
 /**
@@ -15448,23 +14728,22 @@ export interface NotifyPeer {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer = 3;
    */
-  peer?: Peer;
+  peer?: Peer
 
   /**
    * @generated from field: optional int32 top_msg_id = 4;
    */
-  topMsgId?: number;
-
+  topMsgId?: number
 }
 
 /**
@@ -15474,8 +14753,7 @@ export interface TLNotifyPeer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.NotifyPeer data2 = 1;
    */
-  data2?: NotifyPeer;
-
+  data2?: NotifyPeer
 }
 
 /**
@@ -15485,8 +14763,7 @@ export interface TLNotifyUsers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.NotifyPeer data2 = 1;
    */
-  data2?: NotifyPeer;
-
+  data2?: NotifyPeer
 }
 
 /**
@@ -15496,8 +14773,7 @@ export interface TLNotifyChats {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.NotifyPeer data2 = 1;
    */
-  data2?: NotifyPeer;
-
+  data2?: NotifyPeer
 }
 
 /**
@@ -15507,8 +14783,7 @@ export interface TLNotifyBroadcasts {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.NotifyPeer data2 = 1;
    */
-  data2?: NotifyPeer;
-
+  data2?: NotifyPeer
 }
 
 /**
@@ -15518,8 +14793,7 @@ export interface TLNotifyForumTopic {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.NotifyPeer data2 = 1;
    */
-  data2?: NotifyPeer;
-
+  data2?: NotifyPeer
 }
 
 /**
@@ -15529,53 +14803,52 @@ export interface Page {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool part = 3;
    */
-  part?: boolean;
+  part?: boolean
 
   /**
    * @generated from field: optional bool rtl = 4;
    */
-  rtl?: boolean;
+  rtl?: boolean
 
   /**
    * @generated from field: optional bool v2 = 5;
    */
-  v2?: boolean;
+  v2?: boolean
 
   /**
    * @generated from field: optional string url = 6;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PageBlock blocks = 7;
    */
-  blocks: PageBlock[];
+  blocks: PageBlock[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Photo photos = 8;
    */
-  photos: Photo[];
+  photos: Photo[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Document documents = 9;
    */
-  documents: Document[];
+  documents: Document[]
 
   /**
    * @generated from field: optional google.protobuf.Int32Value views = 10;
    */
-  views?: number;
-
+  views?: number
 }
 
 /**
@@ -15585,8 +14858,7 @@ export interface TLPage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Page data2 = 1;
    */
-  data2?: Page;
-
+  data2?: Page
 }
 
 /**
@@ -15596,218 +14868,217 @@ export interface PageBlock {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText text = 3;
    */
-  text?: RichText;
+  text?: RichText
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText author_RICHTEXT = 4;
    */
-  authorRICHTEXT?: RichText;
+  authorRICHTEXT?: RichText
 
   /**
    * @generated from field: optional int32 published_date = 5;
    */
-  publishedDate?: number;
+  publishedDate?: number
 
   /**
    * @generated from field: optional string language = 6;
    */
-  language?: string;
+  language?: string
 
   /**
    * @generated from field: optional string name = 7;
    */
-  name?: string;
+  name?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PageListItem items_VECTORPAGELISTITEM = 8;
    */
-  itemsVECTORPAGELISTITEM: PageListItem[];
+  itemsVECTORPAGELISTITEM: PageListItem[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText caption_RICHTEXT = 9;
    */
-  captionRICHTEXT?: RichText;
+  captionRICHTEXT?: RichText
 
   /**
    * @generated from field: optional int64 photo_id = 10;
    */
-  photoId?: bigint;
+  photoId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageCaption caption_PAGECAPTION = 11;
    */
-  captionPAGECAPTION?: PageCaption;
+  captionPAGECAPTION?: PageCaption
 
   /**
    * @generated from field: optional google.protobuf.StringValue url_FLAGSTRING = 12;
    */
-  urlFLAGSTRING?: string;
+  urlFLAGSTRING?: string
 
   /**
    * @generated from field: optional google.protobuf.Int64Value webpage_id_FLAGINT64 = 13;
    */
-  webpageIdFLAGINT64?: bigint;
+  webpageIdFLAGINT64?: bigint
 
   /**
    * @generated from field: optional bool autoplay = 14;
    */
-  autoplay?: boolean;
+  autoplay?: boolean
 
   /**
    * @generated from field: optional bool loop = 15;
    */
-  loop?: boolean;
+  loop?: boolean
 
   /**
    * @generated from field: optional int64 video_id = 16;
    */
-  videoId?: bigint;
+  videoId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock cover = 17;
    */
-  cover?: PageBlock;
+  cover?: PageBlock
 
   /**
    * @generated from field: optional bool full_width = 18;
    */
-  fullWidth?: boolean;
+  fullWidth?: boolean
 
   /**
    * @generated from field: optional bool allow_scrolling = 19;
    */
-  allowScrolling?: boolean;
+  allowScrolling?: boolean
 
   /**
    * @generated from field: optional google.protobuf.StringValue html = 20;
    */
-  html?: string;
+  html?: string
 
   /**
    * @generated from field: optional google.protobuf.Int64Value poster_photo_id = 21;
    */
-  posterPhotoId?: bigint;
+  posterPhotoId?: bigint
 
   /**
    * @generated from field: optional google.protobuf.Int32Value w_FLAGINT32 = 22;
    */
-  wFLAGINT32?: number;
+  wFLAGINT32?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value h_FLAGINT32 = 23;
    */
-  hFLAGINT32?: number;
+  hFLAGINT32?: number
 
   /**
    * @generated from field: optional string url_STRING = 24;
    */
-  urlSTRING?: string;
+  urlSTRING?: string
 
   /**
    * @generated from field: optional int64 webpage_id_INT64 = 25;
    */
-  webpageIdINT64?: bigint;
+  webpageIdINT64?: bigint
 
   /**
    * @generated from field: optional int64 author_photo_id = 26;
    */
-  authorPhotoId?: bigint;
+  authorPhotoId?: bigint
 
   /**
    * @generated from field: optional string author_STRING = 27;
    */
-  authorSTRING?: string;
+  authorSTRING?: string
 
   /**
    * @generated from field: optional int32 date = 28;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PageBlock blocks = 29;
    */
-  blocks: PageBlock[];
+  blocks: PageBlock[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PageBlock items_VECTORPAGEBLOCK = 30;
    */
-  itemsVECTORPAGEBLOCK: PageBlock[];
+  itemsVECTORPAGEBLOCK: PageBlock[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Chat channel = 31;
    */
-  channel?: Chat;
+  channel?: Chat
 
   /**
    * @generated from field: optional int64 audio_id = 32;
    */
-  audioId?: bigint;
+  audioId?: bigint
 
   /**
    * @generated from field: optional bool bordered = 33;
    */
-  bordered?: boolean;
+  bordered?: boolean
 
   /**
    * @generated from field: optional bool striped = 34;
    */
-  striped?: boolean;
+  striped?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText title = 35;
    */
-  title?: RichText;
+  title?: RichText
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PageTableRow rows = 36;
    */
-  rows: PageTableRow[];
+  rows: PageTableRow[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PageListOrderedItem items_VECTORPAGELISTORDEREDITEM = 37;
    */
-  itemsVECTORPAGELISTORDEREDITEM: PageListOrderedItem[];
+  itemsVECTORPAGELISTORDEREDITEM: PageListOrderedItem[]
 
   /**
    * @generated from field: optional bool open = 38;
    */
-  open?: boolean;
+  open?: boolean
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PageRelatedArticle articles = 39;
    */
-  articles: PageRelatedArticle[];
+  articles: PageRelatedArticle[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.GeoPoint geo = 40;
    */
-  geo?: GeoPoint;
+  geo?: GeoPoint
 
   /**
    * @generated from field: optional int32 zoom = 41;
    */
-  zoom?: number;
+  zoom?: number
 
   /**
    * @generated from field: optional int32 w_INT32 = 42;
    */
-  wINT32?: number;
+  wINT32?: number
 
   /**
    * @generated from field: optional int32 h_INT32 = 43;
    */
-  hINT32?: number;
-
+  hINT32?: number
 }
 
 /**
@@ -15817,8 +15088,7 @@ export interface TLPageBlockUnsupported {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -15828,8 +15098,7 @@ export interface TLPageBlockTitle {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -15839,8 +15108,7 @@ export interface TLPageBlockSubtitle {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -15850,8 +15118,7 @@ export interface TLPageBlockAuthorDate {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -15861,8 +15128,7 @@ export interface TLPageBlockHeader {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -15872,8 +15138,7 @@ export interface TLPageBlockSubheader {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -15883,8 +15148,7 @@ export interface TLPageBlockParagraph {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -15894,8 +15158,7 @@ export interface TLPageBlockPreformatted {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -15905,8 +15168,7 @@ export interface TLPageBlockFooter {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -15916,8 +15178,7 @@ export interface TLPageBlockDivider {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -15927,8 +15188,7 @@ export interface TLPageBlockAnchor {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -15938,8 +15198,7 @@ export interface TLPageBlockList {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -15949,8 +15208,7 @@ export interface TLPageBlockBlockquote {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -15960,8 +15218,7 @@ export interface TLPageBlockPullquote {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -15971,8 +15228,7 @@ export interface TLPageBlockPhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -15982,8 +15238,7 @@ export interface TLPageBlockVideo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -15993,8 +15248,7 @@ export interface TLPageBlockCover {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -16004,8 +15258,7 @@ export interface TLPageBlockEmbed {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -16015,8 +15268,7 @@ export interface TLPageBlockEmbedPost {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -16026,8 +15278,7 @@ export interface TLPageBlockCollage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -16037,8 +15288,7 @@ export interface TLPageBlockSlideshow {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -16048,8 +15298,7 @@ export interface TLPageBlockChannel {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -16059,8 +15308,7 @@ export interface TLPageBlockAudio {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -16070,8 +15318,7 @@ export interface TLPageBlockKicker {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -16081,8 +15328,7 @@ export interface TLPageBlockTable {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -16092,8 +15338,7 @@ export interface TLPageBlockOrderedList {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -16103,8 +15348,7 @@ export interface TLPageBlockDetails {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -16114,8 +15358,7 @@ export interface TLPageBlockRelatedArticles {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -16125,8 +15368,7 @@ export interface TLPageBlockMap {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageBlock data2 = 1;
    */
-  data2?: PageBlock;
-
+  data2?: PageBlock
 }
 
 /**
@@ -16136,23 +15378,22 @@ export interface PageCaption {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText text = 3;
    */
-  text?: RichText;
+  text?: RichText
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText credit = 4;
    */
-  credit?: RichText;
-
+  credit?: RichText
 }
 
 /**
@@ -16162,8 +15403,7 @@ export interface TLPageCaption {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageCaption data2 = 1;
    */
-  data2?: PageCaption;
-
+  data2?: PageCaption
 }
 
 /**
@@ -16173,23 +15413,22 @@ export interface PageListItem {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText text = 3;
    */
-  text?: RichText;
+  text?: RichText
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PageBlock blocks = 4;
    */
-  blocks: PageBlock[];
-
+  blocks: PageBlock[]
 }
 
 /**
@@ -16199,8 +15438,7 @@ export interface TLPageListItemText {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageListItem data2 = 1;
    */
-  data2?: PageListItem;
-
+  data2?: PageListItem
 }
 
 /**
@@ -16210,8 +15448,7 @@ export interface TLPageListItemBlocks {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageListItem data2 = 1;
    */
-  data2?: PageListItem;
-
+  data2?: PageListItem
 }
 
 /**
@@ -16221,28 +15458,27 @@ export interface PageListOrderedItem {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string num = 3;
    */
-  num?: string;
+  num?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText text = 4;
    */
-  text?: RichText;
+  text?: RichText
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PageBlock blocks = 5;
    */
-  blocks: PageBlock[];
-
+  blocks: PageBlock[]
 }
 
 /**
@@ -16252,8 +15488,7 @@ export interface TLPageListOrderedItemText {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageListOrderedItem data2 = 1;
    */
-  data2?: PageListOrderedItem;
-
+  data2?: PageListOrderedItem
 }
 
 /**
@@ -16263,8 +15498,7 @@ export interface TLPageListOrderedItemBlocks {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageListOrderedItem data2 = 1;
    */
-  data2?: PageListOrderedItem;
-
+  data2?: PageListOrderedItem
 }
 
 /**
@@ -16274,48 +15508,47 @@ export interface PageRelatedArticle {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string url = 3;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional int64 webpage_id = 4;
    */
-  webpageId?: bigint;
+  webpageId?: bigint
 
   /**
    * @generated from field: optional google.protobuf.StringValue title = 5;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue description = 6;
    */
-  description?: string;
+  description?: string
 
   /**
    * @generated from field: optional google.protobuf.Int64Value photo_id = 7;
    */
-  photoId?: bigint;
+  photoId?: bigint
 
   /**
    * @generated from field: optional google.protobuf.StringValue author = 8;
    */
-  author?: string;
+  author?: string
 
   /**
    * @generated from field: optional google.protobuf.Int32Value published_date = 9;
    */
-  publishedDate?: number;
-
+  publishedDate?: number
 }
 
 /**
@@ -16325,8 +15558,7 @@ export interface TLPageRelatedArticle {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageRelatedArticle data2 = 1;
    */
-  data2?: PageRelatedArticle;
-
+  data2?: PageRelatedArticle
 }
 
 /**
@@ -16336,53 +15568,52 @@ export interface PageTableCell {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool header = 3;
    */
-  header?: boolean;
+  header?: boolean
 
   /**
    * @generated from field: optional bool align_center = 4;
    */
-  alignCenter?: boolean;
+  alignCenter?: boolean
 
   /**
    * @generated from field: optional bool align_right = 5;
    */
-  alignRight?: boolean;
+  alignRight?: boolean
 
   /**
    * @generated from field: optional bool valign_middle = 6;
    */
-  valignMiddle?: boolean;
+  valignMiddle?: boolean
 
   /**
    * @generated from field: optional bool valign_bottom = 7;
    */
-  valignBottom?: boolean;
+  valignBottom?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText text = 8;
    */
-  text?: RichText;
+  text?: RichText
 
   /**
    * @generated from field: optional google.protobuf.Int32Value colspan = 9;
    */
-  colspan?: number;
+  colspan?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value rowspan = 10;
    */
-  rowspan?: number;
-
+  rowspan?: number
 }
 
 /**
@@ -16392,8 +15623,7 @@ export interface TLPageTableCell {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageTableCell data2 = 1;
    */
-  data2?: PageTableCell;
-
+  data2?: PageTableCell
 }
 
 /**
@@ -16403,18 +15633,17 @@ export interface PageTableRow {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PageTableCell cells = 3;
    */
-  cells: PageTableCell[];
-
+  cells: PageTableCell[]
 }
 
 /**
@@ -16424,8 +15653,7 @@ export interface TLPageTableRow {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PageTableRow data2 = 1;
    */
-  data2?: PageTableRow;
-
+  data2?: PageTableRow
 }
 
 /**
@@ -16435,33 +15663,32 @@ export interface PasswordKdfAlgo {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes salt1 = 3;
    */
-  salt1?: Uint8Array;
+  salt1?: Uint8Array
 
   /**
    * @generated from field: optional bytes salt2 = 4;
    */
-  salt2?: Uint8Array;
+  salt2?: Uint8Array
 
   /**
    * @generated from field: optional int32 g = 5;
    */
-  g?: number;
+  g?: number
 
   /**
    * @generated from field: optional bytes p = 6;
    */
-  p?: Uint8Array;
-
+  p?: Uint8Array
 }
 
 /**
@@ -16471,8 +15698,7 @@ export interface TLPasswordKdfAlgoUnknown {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PasswordKdfAlgo data2 = 1;
    */
-  data2?: PasswordKdfAlgo;
-
+  data2?: PasswordKdfAlgo
 }
 
 /**
@@ -16482,8 +15708,7 @@ export interface TLPasswordKdfAlgoModPow {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PasswordKdfAlgo data2 = 1;
    */
-  data2?: PasswordKdfAlgo;
-
+  data2?: PasswordKdfAlgo
 }
 
 /**
@@ -16493,23 +15718,22 @@ export interface PaymentCharge {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string id = 3;
    */
-  id?: string;
+  id?: string
 
   /**
    * @generated from field: optional string provider_charge_id = 4;
    */
-  providerChargeId?: string;
-
+  providerChargeId?: string
 }
 
 /**
@@ -16519,8 +15743,7 @@ export interface TLPaymentCharge {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PaymentCharge data2 = 1;
    */
-  data2?: PaymentCharge;
-
+  data2?: PaymentCharge
 }
 
 /**
@@ -16530,23 +15753,22 @@ export interface PaymentFormMethod {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string url = 3;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional string title = 4;
    */
-  title?: string;
-
+  title?: string
 }
 
 /**
@@ -16556,8 +15778,7 @@ export interface TLPaymentFormMethod {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PaymentFormMethod data2 = 1;
    */
-  data2?: PaymentFormMethod;
-
+  data2?: PaymentFormMethod
 }
 
 /**
@@ -16567,33 +15788,32 @@ export interface PaymentRequestedInfo {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional google.protobuf.StringValue name = 3;
    */
-  name?: string;
+  name?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue phone = 4;
    */
-  phone?: string;
+  phone?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue email = 5;
    */
-  email?: string;
+  email?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PostAddress shipping_address = 6;
    */
-  shippingAddress?: PostAddress;
-
+  shippingAddress?: PostAddress
 }
 
 /**
@@ -16603,8 +15823,7 @@ export interface TLPaymentRequestedInfo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PaymentRequestedInfo data2 = 1;
    */
-  data2?: PaymentRequestedInfo;
-
+  data2?: PaymentRequestedInfo
 }
 
 /**
@@ -16614,23 +15833,22 @@ export interface PaymentSavedCredentials {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string id = 3;
    */
-  id?: string;
+  id?: string
 
   /**
    * @generated from field: optional string title = 4;
    */
-  title?: string;
-
+  title?: string
 }
 
 /**
@@ -16640,8 +15858,7 @@ export interface TLPaymentSavedCredentialsCard {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PaymentSavedCredentials data2 = 1;
    */
-  data2?: PaymentSavedCredentials;
-
+  data2?: PaymentSavedCredentials
 }
 
 /**
@@ -16651,28 +15868,27 @@ export interface Peer {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 user_id = 3;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional int64 chat_id = 4;
    */
-  chatId?: bigint;
+  chatId?: bigint
 
   /**
    * @generated from field: optional int64 channel_id = 5;
    */
-  channelId?: bigint;
-
+  channelId?: bigint
 }
 
 /**
@@ -16682,8 +15898,7 @@ export interface TLPeerUser {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer data2 = 1;
    */
-  data2?: Peer;
-
+  data2?: Peer
 }
 
 /**
@@ -16693,8 +15908,7 @@ export interface TLPeerChat {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer data2 = 1;
    */
-  data2?: Peer;
-
+  data2?: Peer
 }
 
 /**
@@ -16704,8 +15918,7 @@ export interface TLPeerChannel {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer data2 = 1;
    */
-  data2?: Peer;
-
+  data2?: Peer
 }
 
 /**
@@ -16715,23 +15928,22 @@ export interface PeerBlocked {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer_id = 3;
    */
-  peerId?: Peer;
+  peerId?: Peer
 
   /**
    * @generated from field: optional int32 date = 4;
    */
-  date?: number;
-
+  date?: number
 }
 
 /**
@@ -16741,8 +15953,7 @@ export interface TLPeerBlocked {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PeerBlocked data2 = 1;
    */
-  data2?: PeerBlocked;
-
+  data2?: PeerBlocked
 }
 
 /**
@@ -16752,28 +15963,27 @@ export interface PeerLocated {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer = 3;
    */
-  peer?: Peer;
+  peer?: Peer
 
   /**
    * @generated from field: optional int32 expires = 4;
    */
-  expires?: number;
+  expires?: number
 
   /**
    * @generated from field: optional int32 distance = 5;
    */
-  distance?: number;
-
+  distance?: number
 }
 
 /**
@@ -16783,8 +15993,7 @@ export interface TLPeerLocated {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PeerLocated data2 = 1;
    */
-  data2?: PeerLocated;
-
+  data2?: PeerLocated
 }
 
 /**
@@ -16794,8 +16003,7 @@ export interface TLPeerSelfLocated {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PeerLocated data2 = 1;
    */
-  data2?: PeerLocated;
-
+  data2?: PeerLocated
 }
 
 /**
@@ -16805,73 +16013,72 @@ export interface PeerNotifySettings {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool show_previews = 3;
    */
-  showPreviews?: Bool;
+  showPreviews?: Bool
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool silent = 4;
    */
-  silent?: Bool;
+  silent?: Bool
 
   /**
    * @generated from field: optional google.protobuf.Int32Value mute_until = 5;
    */
-  muteUntil?: number;
+  muteUntil?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.NotificationSound ios_sound = 6;
    */
-  iosSound?: NotificationSound;
+  iosSound?: NotificationSound
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.NotificationSound android_sound = 7;
    */
-  androidSound?: NotificationSound;
+  androidSound?: NotificationSound
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.NotificationSound other_sound = 8;
    */
-  otherSound?: NotificationSound;
+  otherSound?: NotificationSound
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool stories_muted = 9;
    */
-  storiesMuted?: Bool;
+  storiesMuted?: Bool
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool stories_hide_sender = 10;
    */
-  storiesHideSender?: Bool;
+  storiesHideSender?: Bool
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.NotificationSound stories_ios_sound = 11;
    */
-  storiesIosSound?: NotificationSound;
+  storiesIosSound?: NotificationSound
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.NotificationSound stories_android_sound = 12;
    */
-  storiesAndroidSound?: NotificationSound;
+  storiesAndroidSound?: NotificationSound
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.NotificationSound stories_other_sound = 13;
    */
-  storiesOtherSound?: NotificationSound;
+  storiesOtherSound?: NotificationSound
 
   /**
    * @generated from field: optional google.protobuf.StringValue sound = 14;
    */
-  sound?: string;
-
+  sound?: string
 }
 
 /**
@@ -16881,8 +16088,7 @@ export interface TLPeerNotifySettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PeerNotifySettings data2 = 1;
    */
-  data2?: PeerNotifySettings;
-
+  data2?: PeerNotifySettings
 }
 
 /**
@@ -16892,73 +16098,72 @@ export interface PeerSettings {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool report_spam = 3;
    */
-  reportSpam?: boolean;
+  reportSpam?: boolean
 
   /**
    * @generated from field: optional bool add_contact = 4;
    */
-  addContact?: boolean;
+  addContact?: boolean
 
   /**
    * @generated from field: optional bool block_contact = 5;
    */
-  blockContact?: boolean;
+  blockContact?: boolean
 
   /**
    * @generated from field: optional bool share_contact = 6;
    */
-  shareContact?: boolean;
+  shareContact?: boolean
 
   /**
    * @generated from field: optional bool need_contacts_exception = 7;
    */
-  needContactsException?: boolean;
+  needContactsException?: boolean
 
   /**
    * @generated from field: optional bool report_geo = 8;
    */
-  reportGeo?: boolean;
+  reportGeo?: boolean
 
   /**
    * @generated from field: optional bool autoarchived = 9;
    */
-  autoarchived?: boolean;
+  autoarchived?: boolean
 
   /**
    * @generated from field: optional bool invite_members = 10;
    */
-  inviteMembers?: boolean;
+  inviteMembers?: boolean
 
   /**
    * @generated from field: optional bool request_chat_broadcast = 11;
    */
-  requestChatBroadcast?: boolean;
+  requestChatBroadcast?: boolean
 
   /**
    * @generated from field: optional google.protobuf.Int32Value geo_distance = 12;
    */
-  geoDistance?: number;
+  geoDistance?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue request_chat_title = 13;
    */
-  requestChatTitle?: string;
+  requestChatTitle?: string
 
   /**
    * @generated from field: optional google.protobuf.Int32Value request_chat_date = 14;
    */
-  requestChatDate?: number;
-
+  requestChatDate?: number
 }
 
 /**
@@ -16968,8 +16173,7 @@ export interface TLPeerSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PeerSettings data2 = 1;
    */
-  data2?: PeerSettings;
-
+  data2?: PeerSettings
 }
 
 /**
@@ -16979,28 +16183,27 @@ export interface PeerStories {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer = 3;
    */
-  peer?: Peer;
+  peer?: Peer
 
   /**
    * @generated from field: optional google.protobuf.Int32Value max_read_id = 4;
    */
-  maxReadId?: number;
+  maxReadId?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.StoryItem stories = 5;
    */
-  stories: StoryItem[];
-
+  stories: StoryItem[]
 }
 
 /**
@@ -17010,8 +16213,7 @@ export interface TLPeerStories {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PeerStories data2 = 1;
    */
-  data2?: PeerStories;
-
+  data2?: PeerStories
 }
 
 /**
@@ -17021,33 +16223,32 @@ export interface PeerUtil {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 self_id = 3;
    */
-  selfId?: bigint;
+  selfId?: bigint
 
   /**
    * @generated from field: optional int32 peer_type = 4;
    */
-  peerType?: number;
+  peerType?: number
 
   /**
    * @generated from field: optional int64 peer_id = 5;
    */
-  peerId?: bigint;
+  peerId?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 6;
    */
-  accessHash?: bigint;
-
+  accessHash?: bigint
 }
 
 /**
@@ -17057,8 +16258,7 @@ export interface TLPeerUtil {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PeerUtil data2 = 1;
    */
-  data2?: PeerUtil;
-
+  data2?: PeerUtil
 }
 
 /**
@@ -17068,108 +16268,107 @@ export interface PhoneCall {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional bool video = 4;
    */
-  video?: boolean;
+  video?: boolean
 
   /**
    * @generated from field: optional int64 access_hash = 5;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional int32 date = 6;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional int64 admin_id = 7;
    */
-  adminId?: bigint;
+  adminId?: bigint
 
   /**
    * @generated from field: optional int64 participant_id = 8;
    */
-  participantId?: bigint;
+  participantId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneCallProtocol protocol = 9;
    */
-  protocol?: PhoneCallProtocol;
+  protocol?: PhoneCallProtocol
 
   /**
    * @generated from field: optional google.protobuf.Int32Value receive_date = 10;
    */
-  receiveDate?: number;
+  receiveDate?: number
 
   /**
    * @generated from field: optional bytes g_a_hash = 11;
    */
-  gAHash?: Uint8Array;
+  gAHash?: Uint8Array
 
   /**
    * @generated from field: optional bytes g_b = 12;
    */
-  gB?: Uint8Array;
+  gB?: Uint8Array
 
   /**
    * @generated from field: optional bool p2p_allowed = 13;
    */
-  p2pAllowed?: boolean;
+  p2pAllowed?: boolean
 
   /**
    * @generated from field: optional bytes g_a_or_b = 14;
    */
-  gAOrB?: Uint8Array;
+  gAOrB?: Uint8Array
 
   /**
    * @generated from field: optional int64 key_fingerprint = 15;
    */
-  keyFingerprint?: bigint;
+  keyFingerprint?: bigint
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PhoneConnection connections = 16;
    */
-  connections: PhoneConnection[];
+  connections: PhoneConnection[]
 
   /**
    * @generated from field: optional int32 start_date = 17;
    */
-  startDate?: number;
+  startDate?: number
 
   /**
    * @generated from field: optional bool need_rating = 18;
    */
-  needRating?: boolean;
+  needRating?: boolean
 
   /**
    * @generated from field: optional bool need_debug = 19;
    */
-  needDebug?: boolean;
+  needDebug?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneCallDiscardReason reason = 20;
    */
-  reason?: PhoneCallDiscardReason;
+  reason?: PhoneCallDiscardReason
 
   /**
    * @generated from field: optional google.protobuf.Int32Value duration = 21;
    */
-  duration?: number;
-
+  duration?: number
 }
 
 /**
@@ -17179,8 +16378,7 @@ export interface TLPhoneCallEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneCall data2 = 1;
    */
-  data2?: PhoneCall;
-
+  data2?: PhoneCall
 }
 
 /**
@@ -17190,8 +16388,7 @@ export interface TLPhoneCallWaiting {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneCall data2 = 1;
    */
-  data2?: PhoneCall;
-
+  data2?: PhoneCall
 }
 
 /**
@@ -17201,8 +16398,7 @@ export interface TLPhoneCallRequested {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneCall data2 = 1;
    */
-  data2?: PhoneCall;
-
+  data2?: PhoneCall
 }
 
 /**
@@ -17212,8 +16408,7 @@ export interface TLPhoneCallAccepted {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneCall data2 = 1;
    */
-  data2?: PhoneCall;
-
+  data2?: PhoneCall
 }
 
 /**
@@ -17223,8 +16418,7 @@ export interface TLPhoneCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneCall data2 = 1;
    */
-  data2?: PhoneCall;
-
+  data2?: PhoneCall
 }
 
 /**
@@ -17234,8 +16428,7 @@ export interface TLPhoneCallDiscarded {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneCall data2 = 1;
    */
-  data2?: PhoneCall;
-
+  data2?: PhoneCall
 }
 
 /**
@@ -17245,13 +16438,12 @@ export interface PhoneCallDiscardReason {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -17261,8 +16453,7 @@ export interface TLPhoneCallDiscardReasonMissed {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneCallDiscardReason data2 = 1;
    */
-  data2?: PhoneCallDiscardReason;
-
+  data2?: PhoneCallDiscardReason
 }
 
 /**
@@ -17272,8 +16463,7 @@ export interface TLPhoneCallDiscardReasonDisconnect {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneCallDiscardReason data2 = 1;
    */
-  data2?: PhoneCallDiscardReason;
-
+  data2?: PhoneCallDiscardReason
 }
 
 /**
@@ -17283,8 +16473,7 @@ export interface TLPhoneCallDiscardReasonHangup {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneCallDiscardReason data2 = 1;
    */
-  data2?: PhoneCallDiscardReason;
-
+  data2?: PhoneCallDiscardReason
 }
 
 /**
@@ -17294,8 +16483,7 @@ export interface TLPhoneCallDiscardReasonBusy {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneCallDiscardReason data2 = 1;
    */
-  data2?: PhoneCallDiscardReason;
-
+  data2?: PhoneCallDiscardReason
 }
 
 /**
@@ -17305,38 +16493,37 @@ export interface PhoneCallProtocol {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool udp_p2p = 3;
    */
-  udpP2p?: boolean;
+  udpP2p?: boolean
 
   /**
    * @generated from field: optional bool udp_reflector = 4;
    */
-  udpReflector?: boolean;
+  udpReflector?: boolean
 
   /**
    * @generated from field: optional int32 min_layer = 5;
    */
-  minLayer?: number;
+  minLayer?: number
 
   /**
    * @generated from field: optional int32 max_layer = 6;
    */
-  maxLayer?: number;
+  maxLayer?: number
 
   /**
    * @generated from field: repeated string library_versions = 7;
    */
-  libraryVersions: string[];
-
+  libraryVersions: string[]
 }
 
 /**
@@ -17346,8 +16533,7 @@ export interface TLPhoneCallProtocol {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneCallProtocol data2 = 1;
    */
-  data2?: PhoneCallProtocol;
-
+  data2?: PhoneCallProtocol
 }
 
 /**
@@ -17357,63 +16543,62 @@ export interface PhoneConnection {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool tcp = 3;
    */
-  tcp?: boolean;
+  tcp?: boolean
 
   /**
    * @generated from field: optional int64 id = 4;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional string ip = 5;
    */
-  ip?: string;
+  ip?: string
 
   /**
    * @generated from field: optional string ipv6 = 6;
    */
-  ipv6?: string;
+  ipv6?: string
 
   /**
    * @generated from field: optional int32 port = 7;
    */
-  port?: number;
+  port?: number
 
   /**
    * @generated from field: optional bytes peer_tag = 8;
    */
-  peerTag?: Uint8Array;
+  peerTag?: Uint8Array
 
   /**
    * @generated from field: optional bool turn = 9;
    */
-  turn?: boolean;
+  turn?: boolean
 
   /**
    * @generated from field: optional bool stun = 10;
    */
-  stun?: boolean;
+  stun?: boolean
 
   /**
    * @generated from field: optional string username = 11;
    */
-  username?: string;
+  username?: string
 
   /**
    * @generated from field: optional string password = 12;
    */
-  password?: string;
-
+  password?: string
 }
 
 /**
@@ -17423,8 +16608,7 @@ export interface TLPhoneConnection {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneConnection data2 = 1;
    */
-  data2?: PhoneConnection;
-
+  data2?: PhoneConnection
 }
 
 /**
@@ -17434,8 +16618,7 @@ export interface TLPhoneConnectionWebrtc {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneConnection data2 = 1;
    */
-  data2?: PhoneConnection;
-
+  data2?: PhoneConnection
 }
 
 /**
@@ -17445,53 +16628,52 @@ export interface Photo {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional bool has_stickers = 4;
    */
-  hasStickers?: boolean;
+  hasStickers?: boolean
 
   /**
    * @generated from field: optional int64 access_hash = 5;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional bytes file_reference = 6;
    */
-  fileReference?: Uint8Array;
+  fileReference?: Uint8Array
 
   /**
    * @generated from field: optional int32 date = 7;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PhotoSize sizes = 8;
    */
-  sizes: PhotoSize[];
+  sizes: PhotoSize[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.VideoSize video_sizes = 9;
    */
-  videoSizes: VideoSize[];
+  videoSizes: VideoSize[]
 
   /**
    * @generated from field: optional int32 dc_id = 10;
    */
-  dcId?: number;
-
+  dcId?: number
 }
 
 /**
@@ -17501,8 +16683,7 @@ export interface TLPhotoEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Photo data2 = 1;
    */
-  data2?: Photo;
-
+  data2?: Photo
 }
 
 /**
@@ -17512,8 +16693,7 @@ export interface TLPhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Photo data2 = 1;
    */
-  data2?: Photo;
-
+  data2?: Photo
 }
 
 /**
@@ -17523,43 +16703,42 @@ export interface PhotoSize {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string type = 3;
    */
-  type?: string;
+  type?: string
 
   /**
    * @generated from field: optional int32 w = 4;
    */
-  w?: number;
+  w?: number
 
   /**
    * @generated from field: optional int32 h = 5;
    */
-  h?: number;
+  h?: number
 
   /**
    * @generated from field: optional int32 size2 = 6;
    */
-  size2?: number;
+  size2?: number
 
   /**
    * @generated from field: optional bytes bytes = 7;
    */
-  bytes?: Uint8Array;
+  bytes?: Uint8Array
 
   /**
    * @generated from field: repeated int32 sizes = 8;
    */
-  sizes: number[];
-
+  sizes: number[]
 }
 
 /**
@@ -17569,8 +16748,7 @@ export interface TLPhotoSizeEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhotoSize data2 = 1;
    */
-  data2?: PhotoSize;
-
+  data2?: PhotoSize
 }
 
 /**
@@ -17580,8 +16758,7 @@ export interface TLPhotoSize {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhotoSize data2 = 1;
    */
-  data2?: PhotoSize;
-
+  data2?: PhotoSize
 }
 
 /**
@@ -17591,8 +16768,7 @@ export interface TLPhotoCachedSize {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhotoSize data2 = 1;
    */
-  data2?: PhotoSize;
-
+  data2?: PhotoSize
 }
 
 /**
@@ -17602,8 +16778,7 @@ export interface TLPhotoStrippedSize {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhotoSize data2 = 1;
    */
-  data2?: PhotoSize;
-
+  data2?: PhotoSize
 }
 
 /**
@@ -17613,8 +16788,7 @@ export interface TLPhotoSizeProgressive {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhotoSize data2 = 1;
    */
-  data2?: PhotoSize;
-
+  data2?: PhotoSize
 }
 
 /**
@@ -17624,8 +16798,7 @@ export interface TLPhotoPathSize {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhotoSize data2 = 1;
    */
-  data2?: PhotoSize;
-
+  data2?: PhotoSize
 }
 
 /**
@@ -17635,58 +16808,57 @@ export interface Poll {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional bool closed = 4;
    */
-  closed?: boolean;
+  closed?: boolean
 
   /**
    * @generated from field: optional bool public_voters = 5;
    */
-  publicVoters?: boolean;
+  publicVoters?: boolean
 
   /**
    * @generated from field: optional bool multiple_choice = 6;
    */
-  multipleChoice?: boolean;
+  multipleChoice?: boolean
 
   /**
    * @generated from field: optional bool quiz = 7;
    */
-  quiz?: boolean;
+  quiz?: boolean
 
   /**
    * @generated from field: optional string question = 8;
    */
-  question?: string;
+  question?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PollAnswer answers = 9;
    */
-  answers: PollAnswer[];
+  answers: PollAnswer[]
 
   /**
    * @generated from field: optional google.protobuf.Int32Value close_period = 10;
    */
-  closePeriod?: number;
+  closePeriod?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value close_date = 11;
    */
-  closeDate?: number;
-
+  closeDate?: number
 }
 
 /**
@@ -17696,8 +16868,7 @@ export interface TLPoll {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Poll data2 = 1;
    */
-  data2?: Poll;
-
+  data2?: Poll
 }
 
 /**
@@ -17707,23 +16878,22 @@ export interface PollAnswer {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string text = 3;
    */
-  text?: string;
+  text?: string
 
   /**
    * @generated from field: optional bytes option = 4;
    */
-  option?: Uint8Array;
-
+  option?: Uint8Array
 }
 
 /**
@@ -17733,8 +16903,7 @@ export interface TLPollAnswer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PollAnswer data2 = 1;
    */
-  data2?: PollAnswer;
-
+  data2?: PollAnswer
 }
 
 /**
@@ -17744,33 +16913,32 @@ export interface PollAnswerVoters {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool chosen = 3;
    */
-  chosen?: boolean;
+  chosen?: boolean
 
   /**
    * @generated from field: optional bool correct = 4;
    */
-  correct?: boolean;
+  correct?: boolean
 
   /**
    * @generated from field: optional bytes option = 5;
    */
-  option?: Uint8Array;
+  option?: Uint8Array
 
   /**
    * @generated from field: optional int32 voters = 6;
    */
-  voters?: number;
-
+  voters?: number
 }
 
 /**
@@ -17780,8 +16948,7 @@ export interface TLPollAnswerVoters {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PollAnswerVoters data2 = 1;
    */
-  data2?: PollAnswerVoters;
-
+  data2?: PollAnswerVoters
 }
 
 /**
@@ -17791,48 +16958,47 @@ export interface PollResults {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool min = 3;
    */
-  min?: boolean;
+  min?: boolean
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PollAnswerVoters results = 4;
    */
-  results: PollAnswerVoters[];
+  results: PollAnswerVoters[]
 
   /**
    * @generated from field: optional google.protobuf.Int32Value total_voters = 5;
    */
-  totalVoters?: number;
+  totalVoters?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Peer recent_voters_FLAGVECTORPEER = 6;
    */
-  recentVotersFLAGVECTORPEER: Peer[];
+  recentVotersFLAGVECTORPEER: Peer[]
 
   /**
    * @generated from field: optional google.protobuf.StringValue solution = 7;
    */
-  solution?: string;
+  solution?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity solution_entities = 8;
    */
-  solutionEntities: MessageEntity[];
+  solutionEntities: MessageEntity[]
 
   /**
    * @generated from field: repeated int64 recent_voters_FLAGVECTORINT64 = 9;
    */
-  recentVotersFLAGVECTORINT64: bigint[];
-
+  recentVotersFLAGVECTORINT64: bigint[]
 }
 
 /**
@@ -17842,8 +17008,7 @@ export interface TLPollResults {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PollResults data2 = 1;
    */
-  data2?: PollResults;
-
+  data2?: PollResults
 }
 
 /**
@@ -17853,23 +17018,22 @@ export interface PopularContact {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 client_id = 3;
    */
-  clientId?: bigint;
+  clientId?: bigint
 
   /**
    * @generated from field: optional int32 importers = 4;
    */
-  importers?: number;
-
+  importers?: number
 }
 
 /**
@@ -17879,8 +17043,7 @@ export interface TLPopularContact {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PopularContact data2 = 1;
    */
-  data2?: PopularContact;
-
+  data2?: PopularContact
 }
 
 /**
@@ -17890,43 +17053,42 @@ export interface PostAddress {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string street_line1 = 3;
    */
-  streetLine1?: string;
+  streetLine1?: string
 
   /**
    * @generated from field: optional string street_line2 = 4;
    */
-  streetLine2?: string;
+  streetLine2?: string
 
   /**
    * @generated from field: optional string city = 5;
    */
-  city?: string;
+  city?: string
 
   /**
    * @generated from field: optional string state = 6;
    */
-  state?: string;
+  state?: string
 
   /**
    * @generated from field: optional string country_iso2 = 7;
    */
-  countryIso2?: string;
+  countryIso2?: string
 
   /**
    * @generated from field: optional string post_code = 8;
    */
-  postCode?: string;
-
+  postCode?: string
 }
 
 /**
@@ -17936,8 +17098,7 @@ export interface TLPostAddress {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PostAddress data2 = 1;
    */
-  data2?: PostAddress;
-
+  data2?: PostAddress
 }
 
 /**
@@ -17947,58 +17108,57 @@ export interface PredefinedUser {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone = 3;
    */
-  phone?: string;
+  phone?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue first_name = 4;
    */
-  firstName?: string;
+  firstName?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue last_name = 5;
    */
-  lastName?: string;
+  lastName?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue username = 6;
    */
-  username?: string;
+  username?: string
 
   /**
    * @generated from field: optional string code = 7;
    */
-  code?: string;
+  code?: string
 
   /**
    * @generated from field: optional bool verified = 8;
    */
-  verified?: boolean;
+  verified?: boolean
 
   /**
    * @generated from field: optional google.protobuf.Int64Value registered_user_id = 9;
    */
-  registeredUserId?: bigint;
+  registeredUserId?: bigint
 
   /**
    * @generated from field: optional google.protobuf.Int32Value last_seen_at = 10;
    */
-  lastSeenAt?: number;
+  lastSeenAt?: number
 
   /**
    * @generated from field: optional bool banned = 11;
    */
-  banned?: boolean;
-
+  banned?: boolean
 }
 
 /**
@@ -18008,8 +17168,7 @@ export interface TLPredefinedUser {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PredefinedUser data2 = 1;
    */
-  data2?: PredefinedUser;
-
+  data2?: PredefinedUser
 }
 
 /**
@@ -18019,38 +17178,37 @@ export interface PremiumGiftOption {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 months = 3;
    */
-  months?: number;
+  months?: number
 
   /**
    * @generated from field: optional string currency = 4;
    */
-  currency?: string;
+  currency?: string
 
   /**
    * @generated from field: optional int64 amount = 5;
    */
-  amount?: bigint;
+  amount?: bigint
 
   /**
    * @generated from field: optional string bot_url = 6;
    */
-  botUrl?: string;
+  botUrl?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue store_product = 7;
    */
-  storeProduct?: string;
-
+  storeProduct?: string
 }
 
 /**
@@ -18060,8 +17218,7 @@ export interface TLPremiumGiftOption {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PremiumGiftOption data2 = 1;
    */
-  data2?: PremiumGiftOption;
-
+  data2?: PremiumGiftOption
 }
 
 /**
@@ -18071,53 +17228,52 @@ export interface PremiumSubscriptionOption {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool current = 3;
    */
-  current?: boolean;
+  current?: boolean
 
   /**
    * @generated from field: optional bool can_purchase_upgrade = 4;
    */
-  canPurchaseUpgrade?: boolean;
+  canPurchaseUpgrade?: boolean
 
   /**
    * @generated from field: optional google.protobuf.StringValue transaction = 5;
    */
-  transaction?: string;
+  transaction?: string
 
   /**
    * @generated from field: optional int32 months = 6;
    */
-  months?: number;
+  months?: number
 
   /**
    * @generated from field: optional string currency = 7;
    */
-  currency?: string;
+  currency?: string
 
   /**
    * @generated from field: optional int64 amount = 8;
    */
-  amount?: bigint;
+  amount?: bigint
 
   /**
    * @generated from field: optional string bot_url = 9;
    */
-  botUrl?: string;
+  botUrl?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue store_product = 10;
    */
-  storeProduct?: string;
-
+  storeProduct?: string
 }
 
 /**
@@ -18127,8 +17283,7 @@ export interface TLPremiumSubscriptionOption {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PremiumSubscriptionOption data2 = 1;
    */
-  data2?: PremiumSubscriptionOption;
-
+  data2?: PremiumSubscriptionOption
 }
 
 /**
@@ -18138,13 +17293,12 @@ export interface PrivacyKey {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -18154,8 +17308,7 @@ export interface TLPrivacyKeyStatusTimestamp {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PrivacyKey data2 = 1;
    */
-  data2?: PrivacyKey;
-
+  data2?: PrivacyKey
 }
 
 /**
@@ -18165,8 +17318,7 @@ export interface TLPrivacyKeyChatInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PrivacyKey data2 = 1;
    */
-  data2?: PrivacyKey;
-
+  data2?: PrivacyKey
 }
 
 /**
@@ -18176,8 +17328,7 @@ export interface TLPrivacyKeyPhoneCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PrivacyKey data2 = 1;
    */
-  data2?: PrivacyKey;
-
+  data2?: PrivacyKey
 }
 
 /**
@@ -18187,8 +17338,7 @@ export interface TLPrivacyKeyPhoneP2P {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PrivacyKey data2 = 1;
    */
-  data2?: PrivacyKey;
-
+  data2?: PrivacyKey
 }
 
 /**
@@ -18198,8 +17348,7 @@ export interface TLPrivacyKeyForwards {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PrivacyKey data2 = 1;
    */
-  data2?: PrivacyKey;
-
+  data2?: PrivacyKey
 }
 
 /**
@@ -18209,8 +17358,7 @@ export interface TLPrivacyKeyProfilePhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PrivacyKey data2 = 1;
    */
-  data2?: PrivacyKey;
-
+  data2?: PrivacyKey
 }
 
 /**
@@ -18220,8 +17368,7 @@ export interface TLPrivacyKeyPhoneNumber {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PrivacyKey data2 = 1;
    */
-  data2?: PrivacyKey;
-
+  data2?: PrivacyKey
 }
 
 /**
@@ -18231,8 +17378,7 @@ export interface TLPrivacyKeyAddedByPhone {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PrivacyKey data2 = 1;
    */
-  data2?: PrivacyKey;
-
+  data2?: PrivacyKey
 }
 
 /**
@@ -18242,8 +17388,7 @@ export interface TLPrivacyKeyVoiceMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PrivacyKey data2 = 1;
    */
-  data2?: PrivacyKey;
-
+  data2?: PrivacyKey
 }
 
 /**
@@ -18253,8 +17398,7 @@ export interface TLPrivacyKeyAbout {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PrivacyKey data2 = 1;
    */
-  data2?: PrivacyKey;
-
+  data2?: PrivacyKey
 }
 
 /**
@@ -18264,23 +17408,22 @@ export interface PrivacyKeyRules {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 key = 3;
    */
-  key?: number;
+  key?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PrivacyRule rules = 4;
    */
-  rules: PrivacyRule[];
-
+  rules: PrivacyRule[]
 }
 
 /**
@@ -18290,8 +17433,7 @@ export interface TLPrivacyKeyRules {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PrivacyKeyRules data2 = 1;
    */
-  data2?: PrivacyKeyRules;
-
+  data2?: PrivacyKeyRules
 }
 
 /**
@@ -18301,23 +17443,22 @@ export interface PrivacyRule {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated int64 users = 3;
    */
-  users: bigint[];
+  users: bigint[]
 
   /**
    * @generated from field: repeated int64 chats = 4;
    */
-  chats: bigint[];
-
+  chats: bigint[]
 }
 
 /**
@@ -18327,8 +17468,7 @@ export interface TLPrivacyValueAllowContacts {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PrivacyRule data2 = 1;
    */
-  data2?: PrivacyRule;
-
+  data2?: PrivacyRule
 }
 
 /**
@@ -18338,8 +17478,7 @@ export interface TLPrivacyValueAllowAll {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PrivacyRule data2 = 1;
    */
-  data2?: PrivacyRule;
-
+  data2?: PrivacyRule
 }
 
 /**
@@ -18349,8 +17488,7 @@ export interface TLPrivacyValueAllowUsers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PrivacyRule data2 = 1;
    */
-  data2?: PrivacyRule;
-
+  data2?: PrivacyRule
 }
 
 /**
@@ -18360,8 +17498,7 @@ export interface TLPrivacyValueDisallowContacts {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PrivacyRule data2 = 1;
    */
-  data2?: PrivacyRule;
-
+  data2?: PrivacyRule
 }
 
 /**
@@ -18371,8 +17508,7 @@ export interface TLPrivacyValueDisallowAll {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PrivacyRule data2 = 1;
    */
-  data2?: PrivacyRule;
-
+  data2?: PrivacyRule
 }
 
 /**
@@ -18382,8 +17518,7 @@ export interface TLPrivacyValueDisallowUsers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PrivacyRule data2 = 1;
    */
-  data2?: PrivacyRule;
-
+  data2?: PrivacyRule
 }
 
 /**
@@ -18393,8 +17528,7 @@ export interface TLPrivacyValueAllowChatParticipants {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PrivacyRule data2 = 1;
    */
-  data2?: PrivacyRule;
-
+  data2?: PrivacyRule
 }
 
 /**
@@ -18404,8 +17538,7 @@ export interface TLPrivacyValueDisallowChatParticipants {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PrivacyRule data2 = 1;
    */
-  data2?: PrivacyRule;
-
+  data2?: PrivacyRule
 }
 
 /**
@@ -18415,8 +17548,7 @@ export interface TLPrivacyValueAllowCloseFriends {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PrivacyRule data2 = 1;
    */
-  data2?: PrivacyRule;
-
+  data2?: PrivacyRule
 }
 
 /**
@@ -18426,23 +17558,22 @@ export interface Reaction {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string emoticon = 3;
    */
-  emoticon?: string;
+  emoticon?: string
 
   /**
    * @generated from field: optional int64 document_id = 4;
    */
-  documentId?: bigint;
-
+  documentId?: bigint
 }
 
 /**
@@ -18452,8 +17583,7 @@ export interface TLReactionEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Reaction data2 = 1;
    */
-  data2?: Reaction;
-
+  data2?: Reaction
 }
 
 /**
@@ -18463,8 +17593,7 @@ export interface TLReactionEmoji {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Reaction data2 = 1;
    */
-  data2?: Reaction;
-
+  data2?: Reaction
 }
 
 /**
@@ -18474,8 +17603,7 @@ export interface TLReactionCustomEmoji {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Reaction data2 = 1;
    */
-  data2?: Reaction;
-
+  data2?: Reaction
 }
 
 /**
@@ -18485,43 +17613,42 @@ export interface ReactionCount {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional google.protobuf.Int32Value chosen_order = 3;
    */
-  chosenOrder?: number;
+  chosenOrder?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Reaction reaction_REACTION = 4;
    */
-  reactionREACTION?: Reaction;
+  reactionREACTION?: Reaction
 
   /**
    * @generated from field: optional int32 count = 5;
    */
-  count?: number;
+  count?: number
 
   /**
    * @generated from field: optional bool chosen = 6;
    */
-  chosen?: boolean;
+  chosen?: boolean
 
   /**
    * @generated from field: optional string reaction_STRING = 7;
    */
-  reactionSTRING?: string;
+  reactionSTRING?: string
 
   /**
    * @generated from field: optional string reaction = 100;
    */
-  reaction?: string;
-
+  reaction?: string
 }
 
 /**
@@ -18531,8 +17658,7 @@ export interface TLReactionCount {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReactionCount data2 = 1;
    */
-  data2?: ReactionCount;
-
+  data2?: ReactionCount
 }
 
 /**
@@ -18542,23 +17668,22 @@ export interface ReadParticipantDate {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 user_id = 3;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional int32 date = 4;
    */
-  date?: number;
-
+  date?: number
 }
 
 /**
@@ -18568,8 +17693,7 @@ export interface TLReadParticipantDate {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReadParticipantDate data2 = 1;
    */
-  data2?: ReadParticipantDate;
-
+  data2?: ReadParticipantDate
 }
 
 /**
@@ -18579,23 +17703,22 @@ export interface ReceivedNotifyMessage {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 id = 3;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional int32 flags = 4;
    */
-  flags?: number;
-
+  flags?: number
 }
 
 /**
@@ -18605,8 +17728,7 @@ export interface TLReceivedNotifyMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReceivedNotifyMessage data2 = 1;
    */
-  data2?: ReceivedNotifyMessage;
-
+  data2?: ReceivedNotifyMessage
 }
 
 /**
@@ -18616,38 +17738,37 @@ export interface RecentMeUrl {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string url = 3;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional int64 user_id = 4;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional int64 chat_id = 5;
    */
-  chatId?: bigint;
+  chatId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatInvite chat_invite = 6;
    */
-  chatInvite?: ChatInvite;
+  chatInvite?: ChatInvite
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StickerSetCovered set = 7;
    */
-  set?: StickerSetCovered;
-
+  set?: StickerSetCovered
 }
 
 /**
@@ -18657,8 +17778,7 @@ export interface TLRecentMeUrlUnknown {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RecentMeUrl data2 = 1;
    */
-  data2?: RecentMeUrl;
-
+  data2?: RecentMeUrl
 }
 
 /**
@@ -18668,8 +17788,7 @@ export interface TLRecentMeUrlUser {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RecentMeUrl data2 = 1;
    */
-  data2?: RecentMeUrl;
-
+  data2?: RecentMeUrl
 }
 
 /**
@@ -18679,8 +17798,7 @@ export interface TLRecentMeUrlChat {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RecentMeUrl data2 = 1;
    */
-  data2?: RecentMeUrl;
-
+  data2?: RecentMeUrl
 }
 
 /**
@@ -18690,8 +17808,7 @@ export interface TLRecentMeUrlChatInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RecentMeUrl data2 = 1;
    */
-  data2?: RecentMeUrl;
-
+  data2?: RecentMeUrl
 }
 
 /**
@@ -18701,8 +17818,7 @@ export interface TLRecentMeUrlStickerSet {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RecentMeUrl data2 = 1;
    */
-  data2?: RecentMeUrl;
-
+  data2?: RecentMeUrl
 }
 
 /**
@@ -18712,43 +17828,42 @@ export interface ReplyMarkup {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool selective = 3;
    */
-  selective?: boolean;
+  selective?: boolean
 
   /**
    * @generated from field: optional bool single_use = 4;
    */
-  singleUse?: boolean;
+  singleUse?: boolean
 
   /**
    * @generated from field: optional google.protobuf.StringValue placeholder = 5;
    */
-  placeholder?: string;
+  placeholder?: string
 
   /**
    * @generated from field: optional bool resize = 6;
    */
-  resize?: boolean;
+  resize?: boolean
 
   /**
    * @generated from field: optional bool persistent = 7;
    */
-  persistent?: boolean;
+  persistent?: boolean
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.KeyboardButtonRow rows = 8;
    */
-  rows: KeyboardButtonRow[];
-
+  rows: KeyboardButtonRow[]
 }
 
 /**
@@ -18758,8 +17873,7 @@ export interface TLReplyKeyboardHide {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReplyMarkup data2 = 1;
    */
-  data2?: ReplyMarkup;
-
+  data2?: ReplyMarkup
 }
 
 /**
@@ -18769,8 +17883,7 @@ export interface TLReplyKeyboardForceReply {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReplyMarkup data2 = 1;
    */
-  data2?: ReplyMarkup;
-
+  data2?: ReplyMarkup
 }
 
 /**
@@ -18780,8 +17893,7 @@ export interface TLReplyKeyboardMarkup {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReplyMarkup data2 = 1;
    */
-  data2?: ReplyMarkup;
-
+  data2?: ReplyMarkup
 }
 
 /**
@@ -18791,8 +17903,7 @@ export interface TLReplyInlineMarkup {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReplyMarkup data2 = 1;
    */
-  data2?: ReplyMarkup;
-
+  data2?: ReplyMarkup
 }
 
 /**
@@ -18802,13 +17913,12 @@ export interface ReportReason {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -18818,8 +17928,7 @@ export interface TLInputReportReasonSpam {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReportReason data2 = 1;
    */
-  data2?: ReportReason;
-
+  data2?: ReportReason
 }
 
 /**
@@ -18829,8 +17938,7 @@ export interface TLInputReportReasonViolence {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReportReason data2 = 1;
    */
-  data2?: ReportReason;
-
+  data2?: ReportReason
 }
 
 /**
@@ -18840,8 +17948,7 @@ export interface TLInputReportReasonPornography {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReportReason data2 = 1;
    */
-  data2?: ReportReason;
-
+  data2?: ReportReason
 }
 
 /**
@@ -18851,8 +17958,7 @@ export interface TLInputReportReasonChildAbuse {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReportReason data2 = 1;
    */
-  data2?: ReportReason;
-
+  data2?: ReportReason
 }
 
 /**
@@ -18862,8 +17968,7 @@ export interface TLInputReportReasonOther {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReportReason data2 = 1;
    */
-  data2?: ReportReason;
-
+  data2?: ReportReason
 }
 
 /**
@@ -18873,8 +17978,7 @@ export interface TLInputReportReasonCopyright {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReportReason data2 = 1;
    */
-  data2?: ReportReason;
-
+  data2?: ReportReason
 }
 
 /**
@@ -18884,8 +17988,7 @@ export interface TLInputReportReasonGeoIrrelevant {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReportReason data2 = 1;
    */
-  data2?: ReportReason;
-
+  data2?: ReportReason
 }
 
 /**
@@ -18895,8 +17998,7 @@ export interface TLInputReportReasonFake {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReportReason data2 = 1;
    */
-  data2?: ReportReason;
-
+  data2?: ReportReason
 }
 
 /**
@@ -18906,8 +18008,7 @@ export interface TLInputReportReasonIllegalDrugs {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReportReason data2 = 1;
    */
-  data2?: ReportReason;
-
+  data2?: ReportReason
 }
 
 /**
@@ -18917,8 +18018,7 @@ export interface TLInputReportReasonPersonalDetails {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ReportReason data2 = 1;
    */
-  data2?: ReportReason;
-
+  data2?: ReportReason
 }
 
 /**
@@ -18928,53 +18028,52 @@ export interface RequestPeerType {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool bot = 3;
    */
-  bot?: Bool;
+  bot?: Bool
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool premium = 4;
    */
-  premium?: Bool;
+  premium?: Bool
 
   /**
    * @generated from field: optional bool creator = 5;
    */
-  creator?: boolean;
+  creator?: boolean
 
   /**
    * @generated from field: optional bool bot_participant = 6;
    */
-  botParticipant?: boolean;
+  botParticipant?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool has_username = 7;
    */
-  hasUsername?: Bool;
+  hasUsername?: Bool
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool forum = 8;
    */
-  forum?: Bool;
+  forum?: Bool
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatAdminRights user_admin_rights = 9;
    */
-  userAdminRights?: ChatAdminRights;
+  userAdminRights?: ChatAdminRights
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatAdminRights bot_admin_rights = 10;
    */
-  botAdminRights?: ChatAdminRights;
-
+  botAdminRights?: ChatAdminRights
 }
 
 /**
@@ -18984,8 +18083,7 @@ export interface TLRequestPeerTypeUser {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RequestPeerType data2 = 1;
    */
-  data2?: RequestPeerType;
-
+  data2?: RequestPeerType
 }
 
 /**
@@ -18995,8 +18093,7 @@ export interface TLRequestPeerTypeChat {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RequestPeerType data2 = 1;
    */
-  data2?: RequestPeerType;
-
+  data2?: RequestPeerType
 }
 
 /**
@@ -19006,8 +18103,7 @@ export interface TLRequestPeerTypeBroadcast {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RequestPeerType data2 = 1;
    */
-  data2?: RequestPeerType;
-
+  data2?: RequestPeerType
 }
 
 /**
@@ -19017,28 +18113,27 @@ export interface RestrictionReason {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string platform = 3;
    */
-  platform?: string;
+  platform?: string
 
   /**
    * @generated from field: optional string reason = 4;
    */
-  reason?: string;
+  reason?: string
 
   /**
    * @generated from field: optional string text = 5;
    */
-  text?: string;
-
+  text?: string
 }
 
 /**
@@ -19048,8 +18143,7 @@ export interface TLRestrictionReason {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RestrictionReason data2 = 1;
    */
-  data2?: RestrictionReason;
-
+  data2?: RestrictionReason
 }
 
 /**
@@ -19059,68 +18153,67 @@ export interface RichText {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string text_STRING = 3;
    */
-  textSTRING?: string;
+  textSTRING?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText text_RICHTEXT = 4;
    */
-  textRICHTEXT?: RichText;
+  textRICHTEXT?: RichText
 
   /**
    * @generated from field: optional string url = 5;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional int64 webpage_id = 6;
    */
-  webpageId?: bigint;
+  webpageId?: bigint
 
   /**
    * @generated from field: optional string email = 7;
    */
-  email?: string;
+  email?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.RichText texts = 8;
    */
-  texts: RichText[];
+  texts: RichText[]
 
   /**
    * @generated from field: optional string phone = 9;
    */
-  phone?: string;
+  phone?: string
 
   /**
    * @generated from field: optional int64 document_id = 10;
    */
-  documentId?: bigint;
+  documentId?: bigint
 
   /**
    * @generated from field: optional int32 w = 11;
    */
-  w?: number;
+  w?: number
 
   /**
    * @generated from field: optional int32 h = 12;
    */
-  h?: number;
+  h?: number
 
   /**
    * @generated from field: optional string name = 13;
    */
-  name?: string;
-
+  name?: string
 }
 
 /**
@@ -19130,8 +18223,7 @@ export interface TLTextEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText data2 = 1;
    */
-  data2?: RichText;
-
+  data2?: RichText
 }
 
 /**
@@ -19141,8 +18233,7 @@ export interface TLTextPlain {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText data2 = 1;
    */
-  data2?: RichText;
-
+  data2?: RichText
 }
 
 /**
@@ -19152,8 +18243,7 @@ export interface TLTextBold {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText data2 = 1;
    */
-  data2?: RichText;
-
+  data2?: RichText
 }
 
 /**
@@ -19163,8 +18253,7 @@ export interface TLTextItalic {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText data2 = 1;
    */
-  data2?: RichText;
-
+  data2?: RichText
 }
 
 /**
@@ -19174,8 +18263,7 @@ export interface TLTextUnderline {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText data2 = 1;
    */
-  data2?: RichText;
-
+  data2?: RichText
 }
 
 /**
@@ -19185,8 +18273,7 @@ export interface TLTextStrike {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText data2 = 1;
    */
-  data2?: RichText;
-
+  data2?: RichText
 }
 
 /**
@@ -19196,8 +18283,7 @@ export interface TLTextFixed {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText data2 = 1;
    */
-  data2?: RichText;
-
+  data2?: RichText
 }
 
 /**
@@ -19207,8 +18293,7 @@ export interface TLTextUrl {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText data2 = 1;
    */
-  data2?: RichText;
-
+  data2?: RichText
 }
 
 /**
@@ -19218,8 +18303,7 @@ export interface TLTextEmail {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText data2 = 1;
    */
-  data2?: RichText;
-
+  data2?: RichText
 }
 
 /**
@@ -19229,8 +18313,7 @@ export interface TLTextConcat {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText data2 = 1;
    */
-  data2?: RichText;
-
+  data2?: RichText
 }
 
 /**
@@ -19240,8 +18323,7 @@ export interface TLTextSubscript {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText data2 = 1;
    */
-  data2?: RichText;
-
+  data2?: RichText
 }
 
 /**
@@ -19251,8 +18333,7 @@ export interface TLTextSuperscript {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText data2 = 1;
    */
-  data2?: RichText;
-
+  data2?: RichText
 }
 
 /**
@@ -19262,8 +18343,7 @@ export interface TLTextMarked {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText data2 = 1;
    */
-  data2?: RichText;
-
+  data2?: RichText
 }
 
 /**
@@ -19273,8 +18353,7 @@ export interface TLTextPhone {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText data2 = 1;
    */
-  data2?: RichText;
-
+  data2?: RichText
 }
 
 /**
@@ -19284,8 +18363,7 @@ export interface TLTextImage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText data2 = 1;
    */
-  data2?: RichText;
-
+  data2?: RichText
 }
 
 /**
@@ -19295,8 +18373,7 @@ export interface TLTextAnchor {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RichText data2 = 1;
    */
-  data2?: RichText;
-
+  data2?: RichText
 }
 
 /**
@@ -19306,33 +18383,32 @@ export interface SavedContact {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone = 3;
    */
-  phone?: string;
+  phone?: string
 
   /**
    * @generated from field: optional string first_name = 4;
    */
-  firstName?: string;
+  firstName?: string
 
   /**
    * @generated from field: optional string last_name = 5;
    */
-  lastName?: string;
+  lastName?: string
 
   /**
    * @generated from field: optional int32 date = 6;
    */
-  date?: number;
-
+  date?: number
 }
 
 /**
@@ -19342,8 +18418,7 @@ export interface TLSavedPhoneContact {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SavedContact data2 = 1;
    */
-  data2?: SavedContact;
-
+  data2?: SavedContact
 }
 
 /**
@@ -19353,33 +18428,32 @@ export interface SearchResultsCalendarPeriod {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 date = 3;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional int32 min_msg_id = 4;
    */
-  minMsgId?: number;
+  minMsgId?: number
 
   /**
    * @generated from field: optional int32 max_msg_id = 5;
    */
-  maxMsgId?: number;
+  maxMsgId?: number
 
   /**
    * @generated from field: optional int32 count = 6;
    */
-  count?: number;
-
+  count?: number
 }
 
 /**
@@ -19389,8 +18463,7 @@ export interface TLSearchResultsCalendarPeriod {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SearchResultsCalendarPeriod data2 = 1;
    */
-  data2?: SearchResultsCalendarPeriod;
-
+  data2?: SearchResultsCalendarPeriod
 }
 
 /**
@@ -19400,28 +18473,27 @@ export interface SearchResultsPosition {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 msg_id = 3;
    */
-  msgId?: number;
+  msgId?: number
 
   /**
    * @generated from field: optional int32 date = 4;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional int32 offset = 5;
    */
-  offset?: number;
-
+  offset?: number
 }
 
 /**
@@ -19431,8 +18503,7 @@ export interface TLSearchResultPosition {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SearchResultsPosition data2 = 1;
    */
-  data2?: SearchResultsPosition;
-
+  data2?: SearchResultsPosition
 }
 
 /**
@@ -19442,28 +18513,27 @@ export interface SecureCredentialsEncrypted {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes data = 3;
    */
-  data?: Uint8Array;
+  data?: Uint8Array
 
   /**
    * @generated from field: optional bytes hash = 4;
    */
-  hash?: Uint8Array;
+  hash?: Uint8Array
 
   /**
    * @generated from field: optional bytes secret = 5;
    */
-  secret?: Uint8Array;
-
+  secret?: Uint8Array
 }
 
 /**
@@ -19473,8 +18543,7 @@ export interface TLSecureCredentialsEncrypted {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureCredentialsEncrypted data2 = 1;
    */
-  data2?: SecureCredentialsEncrypted;
-
+  data2?: SecureCredentialsEncrypted
 }
 
 /**
@@ -19484,28 +18553,27 @@ export interface SecureData {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes data = 3;
    */
-  data?: Uint8Array;
+  data?: Uint8Array
 
   /**
    * @generated from field: optional bytes data_hash = 4;
    */
-  dataHash?: Uint8Array;
+  dataHash?: Uint8Array
 
   /**
    * @generated from field: optional bytes secret = 5;
    */
-  secret?: Uint8Array;
-
+  secret?: Uint8Array
 }
 
 /**
@@ -19515,8 +18583,7 @@ export interface TLSecureData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureData data2 = 1;
    */
-  data2?: SecureData;
-
+  data2?: SecureData
 }
 
 /**
@@ -19526,53 +18593,52 @@ export interface SecureFile {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional int64 size2_INT64 = 5;
    */
-  size2INT64?: bigint;
+  size2INT64?: bigint
 
   /**
    * @generated from field: optional int32 dc_id = 6;
    */
-  dcId?: number;
+  dcId?: number
 
   /**
    * @generated from field: optional int32 date = 7;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional bytes file_hash = 8;
    */
-  fileHash?: Uint8Array;
+  fileHash?: Uint8Array
 
   /**
    * @generated from field: optional bytes secret = 9;
    */
-  secret?: Uint8Array;
+  secret?: Uint8Array
 
   /**
    * @generated from field: optional int32 size2_INT32 = 10;
    */
-  size2INT32?: number;
-
+  size2INT32?: number
 }
 
 /**
@@ -19582,8 +18648,7 @@ export interface TLSecureFileEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureFile data2 = 1;
    */
-  data2?: SecureFile;
-
+  data2?: SecureFile
 }
 
 /**
@@ -19593,8 +18658,7 @@ export interface TLSecureFile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureFile data2 = 1;
    */
-  data2?: SecureFile;
-
+  data2?: SecureFile
 }
 
 /**
@@ -19604,18 +18668,17 @@ export interface SecurePasswordKdfAlgo {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes salt = 3;
    */
-  salt?: Uint8Array;
-
+  salt?: Uint8Array
 }
 
 /**
@@ -19625,8 +18688,7 @@ export interface TLSecurePasswordKdfAlgoUnknown {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecurePasswordKdfAlgo data2 = 1;
    */
-  data2?: SecurePasswordKdfAlgo;
-
+  data2?: SecurePasswordKdfAlgo
 }
 
 /**
@@ -19636,8 +18698,7 @@ export interface TLSecurePasswordKdfAlgoPBKDF2 {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecurePasswordKdfAlgo data2 = 1;
    */
-  data2?: SecurePasswordKdfAlgo;
-
+  data2?: SecurePasswordKdfAlgo
 }
 
 /**
@@ -19647,8 +18708,7 @@ export interface TLSecurePasswordKdfAlgoSHA512 {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecurePasswordKdfAlgo data2 = 1;
    */
-  data2?: SecurePasswordKdfAlgo;
-
+  data2?: SecurePasswordKdfAlgo
 }
 
 /**
@@ -19658,23 +18718,22 @@ export interface SecurePlainData {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone = 3;
    */
-  phone?: string;
+  phone?: string
 
   /**
    * @generated from field: optional string email = 4;
    */
-  email?: string;
-
+  email?: string
 }
 
 /**
@@ -19684,8 +18743,7 @@ export interface TLSecurePlainPhone {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecurePlainData data2 = 1;
    */
-  data2?: SecurePlainData;
-
+  data2?: SecurePlainData
 }
 
 /**
@@ -19695,8 +18753,7 @@ export interface TLSecurePlainEmail {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecurePlainData data2 = 1;
    */
-  data2?: SecurePlainData;
-
+  data2?: SecurePlainData
 }
 
 /**
@@ -19706,38 +18763,37 @@ export interface SecureRequiredType {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool native_names = 3;
    */
-  nativeNames?: boolean;
+  nativeNames?: boolean
 
   /**
    * @generated from field: optional bool selfie_required = 4;
    */
-  selfieRequired?: boolean;
+  selfieRequired?: boolean
 
   /**
    * @generated from field: optional bool translation_required = 5;
    */
-  translationRequired?: boolean;
+  translationRequired?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueType type = 6;
    */
-  type?: SecureValueType;
+  type?: SecureValueType
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SecureRequiredType types = 7;
    */
-  types: SecureRequiredType[];
-
+  types: SecureRequiredType[]
 }
 
 /**
@@ -19747,8 +18803,7 @@ export interface TLSecureRequiredType {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureRequiredType data2 = 1;
    */
-  data2?: SecureRequiredType;
-
+  data2?: SecureRequiredType
 }
 
 /**
@@ -19758,8 +18813,7 @@ export interface TLSecureRequiredTypeOneOf {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureRequiredType data2 = 1;
    */
-  data2?: SecureRequiredType;
-
+  data2?: SecureRequiredType
 }
 
 /**
@@ -19769,28 +18823,27 @@ export interface SecureSecretSettings {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecurePasswordKdfAlgo secure_algo = 3;
    */
-  secureAlgo?: SecurePasswordKdfAlgo;
+  secureAlgo?: SecurePasswordKdfAlgo
 
   /**
    * @generated from field: optional bytes secure_secret = 4;
    */
-  secureSecret?: Uint8Array;
+  secureSecret?: Uint8Array
 
   /**
    * @generated from field: optional int64 secure_secret_id = 5;
    */
-  secureSecretId?: bigint;
-
+  secureSecretId?: bigint
 }
 
 /**
@@ -19800,8 +18853,7 @@ export interface TLSecureSecretSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureSecretSettings data2 = 1;
    */
-  data2?: SecureSecretSettings;
-
+  data2?: SecureSecretSettings
 }
 
 /**
@@ -19811,58 +18863,57 @@ export interface SecureValue {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueType type = 3;
    */
-  type?: SecureValueType;
+  type?: SecureValueType
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureData data = 4;
    */
-  data?: SecureData;
+  data?: SecureData
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureFile front_side = 5;
    */
-  frontSide?: SecureFile;
+  frontSide?: SecureFile
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureFile reverse_side = 6;
    */
-  reverseSide?: SecureFile;
+  reverseSide?: SecureFile
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureFile selfie = 7;
    */
-  selfie?: SecureFile;
+  selfie?: SecureFile
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SecureFile translation = 8;
    */
-  translation: SecureFile[];
+  translation: SecureFile[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SecureFile files = 9;
    */
-  files: SecureFile[];
+  files: SecureFile[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecurePlainData plain_data = 10;
    */
-  plainData?: SecurePlainData;
+  plainData?: SecurePlainData
 
   /**
    * @generated from field: optional bytes hash = 11;
    */
-  hash?: Uint8Array;
-
+  hash?: Uint8Array
 }
 
 /**
@@ -19872,8 +18923,7 @@ export interface TLSecureValue {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValue data2 = 1;
    */
-  data2?: SecureValue;
-
+  data2?: SecureValue
 }
 
 /**
@@ -19883,48 +18933,47 @@ export interface SecureValueError {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueType type = 3;
    */
-  type?: SecureValueType;
+  type?: SecureValueType
 
   /**
    * @generated from field: optional bytes data_hash = 4;
    */
-  dataHash?: Uint8Array;
+  dataHash?: Uint8Array
 
   /**
    * @generated from field: optional string field = 5;
    */
-  field?: string;
+  field?: string
 
   /**
    * @generated from field: optional string text = 6;
    */
-  text?: string;
+  text?: string
 
   /**
    * @generated from field: optional bytes file_hash_BYTES = 7;
    */
-  fileHashBYTES?: Uint8Array;
+  fileHashBYTES?: Uint8Array
 
   /**
    * @generated from field: repeated bytes file_hash_VECTORBYTES = 8;
    */
-  fileHashVECTORBYTES: Uint8Array[];
+  fileHashVECTORBYTES: Uint8Array[]
 
   /**
    * @generated from field: optional bytes hash = 9;
    */
-  hash?: Uint8Array;
-
+  hash?: Uint8Array
 }
 
 /**
@@ -19934,8 +18983,7 @@ export interface TLSecureValueErrorData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueError data2 = 1;
    */
-  data2?: SecureValueError;
-
+  data2?: SecureValueError
 }
 
 /**
@@ -19945,8 +18993,7 @@ export interface TLSecureValueErrorFrontSide {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueError data2 = 1;
    */
-  data2?: SecureValueError;
-
+  data2?: SecureValueError
 }
 
 /**
@@ -19956,8 +19003,7 @@ export interface TLSecureValueErrorReverseSide {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueError data2 = 1;
    */
-  data2?: SecureValueError;
-
+  data2?: SecureValueError
 }
 
 /**
@@ -19967,8 +19013,7 @@ export interface TLSecureValueErrorSelfie {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueError data2 = 1;
    */
-  data2?: SecureValueError;
-
+  data2?: SecureValueError
 }
 
 /**
@@ -19978,8 +19023,7 @@ export interface TLSecureValueErrorFile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueError data2 = 1;
    */
-  data2?: SecureValueError;
-
+  data2?: SecureValueError
 }
 
 /**
@@ -19989,8 +19033,7 @@ export interface TLSecureValueErrorFiles {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueError data2 = 1;
    */
-  data2?: SecureValueError;
-
+  data2?: SecureValueError
 }
 
 /**
@@ -20000,8 +19043,7 @@ export interface TLSecureValueError {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueError data2 = 1;
    */
-  data2?: SecureValueError;
-
+  data2?: SecureValueError
 }
 
 /**
@@ -20011,8 +19053,7 @@ export interface TLSecureValueErrorTranslationFile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueError data2 = 1;
    */
-  data2?: SecureValueError;
-
+  data2?: SecureValueError
 }
 
 /**
@@ -20022,8 +19063,7 @@ export interface TLSecureValueErrorTranslationFiles {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueError data2 = 1;
    */
-  data2?: SecureValueError;
-
+  data2?: SecureValueError
 }
 
 /**
@@ -20033,23 +19073,22 @@ export interface SecureValueHash {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueType type = 3;
    */
-  type?: SecureValueType;
+  type?: SecureValueType
 
   /**
    * @generated from field: optional bytes hash = 4;
    */
-  hash?: Uint8Array;
-
+  hash?: Uint8Array
 }
 
 /**
@@ -20059,8 +19098,7 @@ export interface TLSecureValueHash {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueHash data2 = 1;
    */
-  data2?: SecureValueHash;
-
+  data2?: SecureValueHash
 }
 
 /**
@@ -20070,13 +19108,12 @@ export interface SecureValueType {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -20086,8 +19123,7 @@ export interface TLSecureValueTypePersonalDetails {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueType data2 = 1;
    */
-  data2?: SecureValueType;
-
+  data2?: SecureValueType
 }
 
 /**
@@ -20097,8 +19133,7 @@ export interface TLSecureValueTypePassport {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueType data2 = 1;
    */
-  data2?: SecureValueType;
-
+  data2?: SecureValueType
 }
 
 /**
@@ -20108,8 +19143,7 @@ export interface TLSecureValueTypeDriverLicense {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueType data2 = 1;
    */
-  data2?: SecureValueType;
-
+  data2?: SecureValueType
 }
 
 /**
@@ -20119,8 +19153,7 @@ export interface TLSecureValueTypeIdentityCard {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueType data2 = 1;
    */
-  data2?: SecureValueType;
-
+  data2?: SecureValueType
 }
 
 /**
@@ -20130,8 +19163,7 @@ export interface TLSecureValueTypeInternalPassport {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueType data2 = 1;
    */
-  data2?: SecureValueType;
-
+  data2?: SecureValueType
 }
 
 /**
@@ -20141,8 +19173,7 @@ export interface TLSecureValueTypeAddress {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueType data2 = 1;
    */
-  data2?: SecureValueType;
-
+  data2?: SecureValueType
 }
 
 /**
@@ -20152,8 +19183,7 @@ export interface TLSecureValueTypeUtilityBill {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueType data2 = 1;
    */
-  data2?: SecureValueType;
-
+  data2?: SecureValueType
 }
 
 /**
@@ -20163,8 +19193,7 @@ export interface TLSecureValueTypeBankStatement {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueType data2 = 1;
    */
-  data2?: SecureValueType;
-
+  data2?: SecureValueType
 }
 
 /**
@@ -20174,8 +19203,7 @@ export interface TLSecureValueTypeRentalAgreement {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueType data2 = 1;
    */
-  data2?: SecureValueType;
-
+  data2?: SecureValueType
 }
 
 /**
@@ -20185,8 +19213,7 @@ export interface TLSecureValueTypePassportRegistration {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueType data2 = 1;
    */
-  data2?: SecureValueType;
-
+  data2?: SecureValueType
 }
 
 /**
@@ -20196,8 +19223,7 @@ export interface TLSecureValueTypeTemporaryRegistration {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueType data2 = 1;
    */
-  data2?: SecureValueType;
-
+  data2?: SecureValueType
 }
 
 /**
@@ -20207,8 +19233,7 @@ export interface TLSecureValueTypePhone {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueType data2 = 1;
    */
-  data2?: SecureValueType;
-
+  data2?: SecureValueType
 }
 
 /**
@@ -20218,8 +19243,7 @@ export interface TLSecureValueTypeEmail {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureValueType data2 = 1;
    */
-  data2?: SecureValueType;
-
+  data2?: SecureValueType
 }
 
 /**
@@ -20229,23 +19253,22 @@ export interface SendAsPeer {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool premium_required = 3;
    */
-  premiumRequired?: boolean;
+  premiumRequired?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer = 4;
    */
-  peer?: Peer;
-
+  peer?: Peer
 }
 
 /**
@@ -20255,8 +19278,7 @@ export interface TLSendAsPeer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SendAsPeer data2 = 1;
    */
-  data2?: SendAsPeer;
-
+  data2?: SendAsPeer
 }
 
 /**
@@ -20266,33 +19288,32 @@ export interface SendMessageAction {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 progress = 3;
    */
-  progress?: number;
+  progress?: number
 
   /**
    * @generated from field: optional string emoticon = 4;
    */
-  emoticon?: string;
+  emoticon?: string
 
   /**
    * @generated from field: optional int32 msg_id = 5;
    */
-  msgId?: number;
+  msgId?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON interaction = 6;
    */
-  interaction?: DataJSON;
-
+  interaction?: DataJSON
 }
 
 /**
@@ -20302,8 +19323,7 @@ export interface TLSendMessageTypingAction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SendMessageAction data2 = 1;
    */
-  data2?: SendMessageAction;
-
+  data2?: SendMessageAction
 }
 
 /**
@@ -20313,8 +19333,7 @@ export interface TLSendMessageCancelAction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SendMessageAction data2 = 1;
    */
-  data2?: SendMessageAction;
-
+  data2?: SendMessageAction
 }
 
 /**
@@ -20324,8 +19343,7 @@ export interface TLSendMessageRecordVideoAction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SendMessageAction data2 = 1;
    */
-  data2?: SendMessageAction;
-
+  data2?: SendMessageAction
 }
 
 /**
@@ -20335,8 +19353,7 @@ export interface TLSendMessageUploadVideoAction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SendMessageAction data2 = 1;
    */
-  data2?: SendMessageAction;
-
+  data2?: SendMessageAction
 }
 
 /**
@@ -20346,8 +19363,7 @@ export interface TLSendMessageRecordAudioAction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SendMessageAction data2 = 1;
    */
-  data2?: SendMessageAction;
-
+  data2?: SendMessageAction
 }
 
 /**
@@ -20357,8 +19373,7 @@ export interface TLSendMessageUploadAudioAction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SendMessageAction data2 = 1;
    */
-  data2?: SendMessageAction;
-
+  data2?: SendMessageAction
 }
 
 /**
@@ -20368,8 +19383,7 @@ export interface TLSendMessageUploadPhotoAction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SendMessageAction data2 = 1;
    */
-  data2?: SendMessageAction;
-
+  data2?: SendMessageAction
 }
 
 /**
@@ -20379,8 +19393,7 @@ export interface TLSendMessageUploadDocumentAction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SendMessageAction data2 = 1;
    */
-  data2?: SendMessageAction;
-
+  data2?: SendMessageAction
 }
 
 /**
@@ -20390,8 +19403,7 @@ export interface TLSendMessageGeoLocationAction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SendMessageAction data2 = 1;
    */
-  data2?: SendMessageAction;
-
+  data2?: SendMessageAction
 }
 
 /**
@@ -20401,8 +19413,7 @@ export interface TLSendMessageChooseContactAction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SendMessageAction data2 = 1;
    */
-  data2?: SendMessageAction;
-
+  data2?: SendMessageAction
 }
 
 /**
@@ -20412,8 +19423,7 @@ export interface TLSendMessageGamePlayAction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SendMessageAction data2 = 1;
    */
-  data2?: SendMessageAction;
-
+  data2?: SendMessageAction
 }
 
 /**
@@ -20423,8 +19433,7 @@ export interface TLSendMessageRecordRoundAction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SendMessageAction data2 = 1;
    */
-  data2?: SendMessageAction;
-
+  data2?: SendMessageAction
 }
 
 /**
@@ -20434,8 +19443,7 @@ export interface TLSendMessageUploadRoundAction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SendMessageAction data2 = 1;
    */
-  data2?: SendMessageAction;
-
+  data2?: SendMessageAction
 }
 
 /**
@@ -20445,8 +19453,7 @@ export interface TLSpeakingInGroupCallAction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SendMessageAction data2 = 1;
    */
-  data2?: SendMessageAction;
-
+  data2?: SendMessageAction
 }
 
 /**
@@ -20456,8 +19463,7 @@ export interface TLSendMessageHistoryImportAction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SendMessageAction data2 = 1;
    */
-  data2?: SendMessageAction;
-
+  data2?: SendMessageAction
 }
 
 /**
@@ -20467,8 +19473,7 @@ export interface TLSendMessageChooseStickerAction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SendMessageAction data2 = 1;
    */
-  data2?: SendMessageAction;
-
+  data2?: SendMessageAction
 }
 
 /**
@@ -20478,8 +19483,7 @@ export interface TLSendMessageEmojiInteraction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SendMessageAction data2 = 1;
    */
-  data2?: SendMessageAction;
-
+  data2?: SendMessageAction
 }
 
 /**
@@ -20489,8 +19493,7 @@ export interface TLSendMessageEmojiInteractionSeen {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SendMessageAction data2 = 1;
    */
-  data2?: SendMessageAction;
-
+  data2?: SendMessageAction
 }
 
 /**
@@ -20500,28 +19503,27 @@ export interface ShippingOption {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string id = 3;
    */
-  id?: string;
+  id?: string
 
   /**
    * @generated from field: optional string title = 4;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.LabeledPrice prices = 5;
    */
-  prices: LabeledPrice[];
-
+  prices: LabeledPrice[]
 }
 
 /**
@@ -20531,8 +19533,7 @@ export interface TLShippingOption {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ShippingOption data2 = 1;
    */
-  data2?: ShippingOption;
-
+  data2?: ShippingOption
 }
 
 /**
@@ -20542,18 +19543,17 @@ export interface SimpleWebViewResult {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string url = 3;
    */
-  url?: string;
-
+  url?: string
 }
 
 /**
@@ -20563,8 +19563,7 @@ export interface TLSimpleWebViewResultUrl {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SimpleWebViewResult data2 = 1;
    */
-  data2?: SimpleWebViewResult;
-
+  data2?: SimpleWebViewResult
 }
 
 /**
@@ -20574,78 +19573,77 @@ export interface SponsoredMessage {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool recommended = 3;
    */
-  recommended?: boolean;
+  recommended?: boolean
 
   /**
    * @generated from field: optional bool show_peer_photo = 4;
    */
-  showPeerPhoto?: boolean;
+  showPeerPhoto?: boolean
 
   /**
    * @generated from field: optional bytes random_id = 5;
    */
-  randomId?: Uint8Array;
+  randomId?: Uint8Array
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer from_id = 6;
    */
-  fromId?: Peer;
+  fromId?: Peer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatInvite chat_invite = 7;
    */
-  chatInvite?: ChatInvite;
+  chatInvite?: ChatInvite
 
   /**
    * @generated from field: optional google.protobuf.StringValue chat_invite_hash = 8;
    */
-  chatInviteHash?: string;
+  chatInviteHash?: string
 
   /**
    * @generated from field: optional google.protobuf.Int32Value channel_post = 9;
    */
-  channelPost?: number;
+  channelPost?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue start_param = 10;
    */
-  startParam?: string;
+  startParam?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SponsoredWebPage webpage = 11;
    */
-  webpage?: SponsoredWebPage;
+  webpage?: SponsoredWebPage
 
   /**
    * @generated from field: optional string message = 12;
    */
-  message?: string;
+  message?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 13;
    */
-  entities: MessageEntity[];
+  entities: MessageEntity[]
 
   /**
    * @generated from field: optional google.protobuf.StringValue sponsor_info = 14;
    */
-  sponsorInfo?: string;
+  sponsorInfo?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue additional_info = 15;
    */
-  additionalInfo?: string;
-
+  additionalInfo?: string
 }
 
 /**
@@ -20655,8 +19653,7 @@ export interface TLSponsoredMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SponsoredMessage data2 = 1;
    */
-  data2?: SponsoredMessage;
-
+  data2?: SponsoredMessage
 }
 
 /**
@@ -20666,28 +19663,27 @@ export interface SponsoredWebPage {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string url = 3;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional string site_name = 4;
    */
-  siteName?: string;
+  siteName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Photo photo = 5;
    */
-  photo?: Photo;
-
+  photo?: Photo
 }
 
 /**
@@ -20697,8 +19693,7 @@ export interface TLSponsoredWebPage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SponsoredWebPage data2 = 1;
    */
-  data2?: SponsoredWebPage;
-
+  data2?: SponsoredWebPage
 }
 
 /**
@@ -20708,23 +19703,22 @@ export interface StatsAbsValueAndPrev {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional float current = 3;
    */
-  current?: number;
+  current?: number
 
   /**
    * @generated from field: optional float previous = 4;
    */
-  previous?: number;
-
+  previous?: number
 }
 
 /**
@@ -20734,8 +19728,7 @@ export interface TLStatsAbsValueAndPrev {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsAbsValueAndPrev data2 = 1;
    */
-  data2?: StatsAbsValueAndPrev;
-
+  data2?: StatsAbsValueAndPrev
 }
 
 /**
@@ -20745,23 +19738,22 @@ export interface StatsDateRangeDays {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 min_date = 3;
    */
-  minDate?: number;
+  minDate?: number
 
   /**
    * @generated from field: optional int32 max_date = 4;
    */
-  maxDate?: number;
-
+  maxDate?: number
 }
 
 /**
@@ -20771,8 +19763,7 @@ export interface TLStatsDateRangeDays {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsDateRangeDays data2 = 1;
    */
-  data2?: StatsDateRangeDays;
-
+  data2?: StatsDateRangeDays
 }
 
 /**
@@ -20782,33 +19773,32 @@ export interface StatsGraph {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string token = 3;
    */
-  token?: string;
+  token?: string
 
   /**
    * @generated from field: optional string error = 4;
    */
-  error?: string;
+  error?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON json = 5;
    */
-  json?: DataJSON;
+  json?: DataJSON
 
   /**
    * @generated from field: optional google.protobuf.StringValue zoom_token = 6;
    */
-  zoomToken?: string;
-
+  zoomToken?: string
 }
 
 /**
@@ -20818,8 +19808,7 @@ export interface TLStatsGraphAsync {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGraph data2 = 1;
    */
-  data2?: StatsGraph;
-
+  data2?: StatsGraph
 }
 
 /**
@@ -20829,8 +19818,7 @@ export interface TLStatsGraphError {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGraph data2 = 1;
    */
-  data2?: StatsGraph;
-
+  data2?: StatsGraph
 }
 
 /**
@@ -20840,8 +19828,7 @@ export interface TLStatsGraph {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGraph data2 = 1;
    */
-  data2?: StatsGraph;
-
+  data2?: StatsGraph
 }
 
 /**
@@ -20851,33 +19838,32 @@ export interface StatsGroupTopAdmin {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 user_id = 3;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional int32 deleted = 4;
    */
-  deleted?: number;
+  deleted?: number
 
   /**
    * @generated from field: optional int32 kicked = 5;
    */
-  kicked?: number;
+  kicked?: number
 
   /**
    * @generated from field: optional int32 banned = 6;
    */
-  banned?: number;
-
+  banned?: number
 }
 
 /**
@@ -20887,8 +19873,7 @@ export interface TLStatsGroupTopAdmin {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGroupTopAdmin data2 = 1;
    */
-  data2?: StatsGroupTopAdmin;
-
+  data2?: StatsGroupTopAdmin
 }
 
 /**
@@ -20898,23 +19883,22 @@ export interface StatsGroupTopInviter {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 user_id = 3;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional int32 invitations = 4;
    */
-  invitations?: number;
-
+  invitations?: number
 }
 
 /**
@@ -20924,8 +19908,7 @@ export interface TLStatsGroupTopInviter {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGroupTopInviter data2 = 1;
    */
-  data2?: StatsGroupTopInviter;
-
+  data2?: StatsGroupTopInviter
 }
 
 /**
@@ -20935,28 +19918,27 @@ export interface StatsGroupTopPoster {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 user_id = 3;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional int32 messages = 4;
    */
-  messages?: number;
+  messages?: number
 
   /**
    * @generated from field: optional int32 avg_chars = 5;
    */
-  avgChars?: number;
-
+  avgChars?: number
 }
 
 /**
@@ -20966,8 +19948,7 @@ export interface TLStatsGroupTopPoster {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGroupTopPoster data2 = 1;
    */
-  data2?: StatsGroupTopPoster;
-
+  data2?: StatsGroupTopPoster
 }
 
 /**
@@ -20977,23 +19958,22 @@ export interface StatsPercentValue {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional float part = 3;
    */
-  part?: number;
+  part?: number
 
   /**
    * @generated from field: optional float total = 4;
    */
-  total?: number;
-
+  total?: number
 }
 
 /**
@@ -21003,8 +19983,7 @@ export interface TLStatsPercentValue {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsPercentValue data2 = 1;
    */
-  data2?: StatsPercentValue;
-
+  data2?: StatsPercentValue
 }
 
 /**
@@ -21014,18 +19993,17 @@ export interface StatsURL {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string url = 3;
    */
-  url?: string;
-
+  url?: string
 }
 
 /**
@@ -21035,8 +20013,7 @@ export interface TLStatsURL {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsURL data2 = 1;
    */
-  data2?: StatsURL;
-
+  data2?: StatsURL
 }
 
 /**
@@ -21046,23 +20023,22 @@ export interface StickerKeyword {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 document_id = 3;
    */
-  documentId?: bigint;
+  documentId?: bigint
 
   /**
    * @generated from field: repeated string keyword = 4;
    */
-  keyword: string[];
-
+  keyword: string[]
 }
 
 /**
@@ -21072,8 +20048,7 @@ export interface TLStickerKeyword {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StickerKeyword data2 = 1;
    */
-  data2?: StickerKeyword;
-
+  data2?: StickerKeyword
 }
 
 /**
@@ -21083,23 +20058,22 @@ export interface StickerPack {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string emoticon = 3;
    */
-  emoticon?: string;
+  emoticon?: string
 
   /**
    * @generated from field: repeated int64 documents = 4;
    */
-  documents: bigint[];
-
+  documents: bigint[]
 }
 
 /**
@@ -21109,8 +20083,7 @@ export interface TLStickerPack {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StickerPack data2 = 1;
    */
-  data2?: StickerPack;
-
+  data2?: StickerPack
 }
 
 /**
@@ -21120,98 +20093,97 @@ export interface StickerSet {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool archived = 3;
    */
-  archived?: boolean;
+  archived?: boolean
 
   /**
    * @generated from field: optional bool official = 4;
    */
-  official?: boolean;
+  official?: boolean
 
   /**
    * @generated from field: optional bool masks = 5;
    */
-  masks?: boolean;
+  masks?: boolean
 
   /**
    * @generated from field: optional bool animated = 6;
    */
-  animated?: boolean;
+  animated?: boolean
 
   /**
    * @generated from field: optional bool videos = 7;
    */
-  videos?: boolean;
+  videos?: boolean
 
   /**
    * @generated from field: optional bool emojis = 8;
    */
-  emojis?: boolean;
+  emojis?: boolean
 
   /**
    * @generated from field: optional google.protobuf.Int32Value installed_date = 9;
    */
-  installedDate?: number;
+  installedDate?: number
 
   /**
    * @generated from field: optional int64 id = 10;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 11;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional string title = 12;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional string short_name = 13;
    */
-  shortName?: string;
+  shortName?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PhotoSize thumbs = 14;
    */
-  thumbs: PhotoSize[];
+  thumbs: PhotoSize[]
 
   /**
    * @generated from field: optional google.protobuf.Int32Value thumb_dc_id = 15;
    */
-  thumbDcId?: number;
+  thumbDcId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value thumb_version = 16;
    */
-  thumbVersion?: number;
+  thumbVersion?: number
 
   /**
    * @generated from field: optional google.protobuf.Int64Value thumb_document_id = 17;
    */
-  thumbDocumentId?: bigint;
+  thumbDocumentId?: bigint
 
   /**
    * @generated from field: optional int32 count = 18;
    */
-  count?: number;
+  count?: number
 
   /**
    * @generated from field: optional int32 hash = 19;
    */
-  hash?: number;
-
+  hash?: number
 }
 
 /**
@@ -21221,8 +20193,7 @@ export interface TLStickerSet {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StickerSet data2 = 1;
    */
-  data2?: StickerSet;
-
+  data2?: StickerSet
 }
 
 /**
@@ -21232,43 +20203,42 @@ export interface StickerSetCovered {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StickerSet set = 3;
    */
-  set?: StickerSet;
+  set?: StickerSet
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document cover = 4;
    */
-  cover?: Document;
+  cover?: Document
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Document covers = 5;
    */
-  covers: Document[];
+  covers: Document[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.StickerPack packs = 6;
    */
-  packs: StickerPack[];
+  packs: StickerPack[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.StickerKeyword keywords = 7;
    */
-  keywords: StickerKeyword[];
+  keywords: StickerKeyword[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Document documents = 8;
    */
-  documents: Document[];
-
+  documents: Document[]
 }
 
 /**
@@ -21278,8 +20248,7 @@ export interface TLStickerSetCovered {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StickerSetCovered data2 = 1;
    */
-  data2?: StickerSetCovered;
-
+  data2?: StickerSetCovered
 }
 
 /**
@@ -21289,8 +20258,7 @@ export interface TLStickerSetMultiCovered {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StickerSetCovered data2 = 1;
    */
-  data2?: StickerSetCovered;
-
+  data2?: StickerSetCovered
 }
 
 /**
@@ -21300,8 +20268,7 @@ export interface TLStickerSetFullCovered {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StickerSetCovered data2 = 1;
    */
-  data2?: StickerSetCovered;
-
+  data2?: StickerSetCovered
 }
 
 /**
@@ -21311,8 +20278,7 @@ export interface TLStickerSetNoCovered {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StickerSetCovered data2 = 1;
    */
-  data2?: StickerSetCovered;
-
+  data2?: StickerSetCovered
 }
 
 /**
@@ -21322,23 +20288,22 @@ export interface StoriesStealthMode {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional google.protobuf.Int32Value active_until_date = 3;
    */
-  activeUntilDate?: number;
+  activeUntilDate?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value cooldown_until_date = 4;
    */
-  cooldownUntilDate?: number;
-
+  cooldownUntilDate?: number
 }
 
 /**
@@ -21348,8 +20313,7 @@ export interface TLStoriesStealthMode {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoriesStealthMode data2 = 1;
    */
-  data2?: StoriesStealthMode;
-
+  data2?: StoriesStealthMode
 }
 
 /**
@@ -21359,108 +20323,107 @@ export interface StoryItem {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 id = 3;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional bool close_friends = 4;
    */
-  closeFriends?: boolean;
+  closeFriends?: boolean
 
   /**
    * @generated from field: optional int32 date = 5;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional int32 expire_date = 6;
    */
-  expireDate?: number;
+  expireDate?: number
 
   /**
    * @generated from field: optional bool pinned = 7;
    */
-  pinned?: boolean;
+  pinned?: boolean
 
   /**
    * @generated from field: optional bool public = 8;
    */
-  public?: boolean;
+  public?: boolean
 
   /**
    * @generated from field: optional bool min = 9;
    */
-  min?: boolean;
+  min?: boolean
 
   /**
    * @generated from field: optional bool noforwards = 10;
    */
-  noforwards?: boolean;
+  noforwards?: boolean
 
   /**
    * @generated from field: optional bool edited = 11;
    */
-  edited?: boolean;
+  edited?: boolean
 
   /**
    * @generated from field: optional bool contacts = 12;
    */
-  contacts?: boolean;
+  contacts?: boolean
 
   /**
    * @generated from field: optional bool selected_contacts = 13;
    */
-  selectedContacts?: boolean;
+  selectedContacts?: boolean
 
   /**
    * @generated from field: optional bool out = 14;
    */
-  out?: boolean;
+  out?: boolean
 
   /**
    * @generated from field: optional google.protobuf.StringValue caption = 15;
    */
-  caption?: string;
+  caption?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 16;
    */
-  entities: MessageEntity[];
+  entities: MessageEntity[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageMedia media = 17;
    */
-  media?: MessageMedia;
+  media?: MessageMedia
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MediaArea media_areas = 18;
    */
-  mediaAreas: MediaArea[];
+  mediaAreas: MediaArea[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PrivacyRule privacy = 19;
    */
-  privacy: PrivacyRule[];
+  privacy: PrivacyRule[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoryViews views = 20;
    */
-  views?: StoryViews;
+  views?: StoryViews
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Reaction sent_reaction = 21;
    */
-  sentReaction?: Reaction;
-
+  sentReaction?: Reaction
 }
 
 /**
@@ -21470,8 +20433,7 @@ export interface TLStoryItemDeleted {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoryItem data2 = 1;
    */
-  data2?: StoryItem;
-
+  data2?: StoryItem
 }
 
 /**
@@ -21481,8 +20443,7 @@ export interface TLStoryItemSkipped {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoryItem data2 = 1;
    */
-  data2?: StoryItem;
-
+  data2?: StoryItem
 }
 
 /**
@@ -21492,8 +20453,7 @@ export interface TLStoryItem {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoryItem data2 = 1;
    */
-  data2?: StoryItem;
-
+  data2?: StoryItem
 }
 
 /**
@@ -21503,38 +20463,37 @@ export interface StoryView {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool blocked = 3;
    */
-  blocked?: boolean;
+  blocked?: boolean
 
   /**
    * @generated from field: optional bool blocked_my_stories_from = 4;
    */
-  blockedMyStoriesFrom?: boolean;
+  blockedMyStoriesFrom?: boolean
 
   /**
    * @generated from field: optional int64 user_id = 5;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional int32 date = 6;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Reaction reaction = 7;
    */
-  reaction?: Reaction;
-
+  reaction?: Reaction
 }
 
 /**
@@ -21544,8 +20503,7 @@ export interface TLStoryView {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoryView data2 = 1;
    */
-  data2?: StoryView;
-
+  data2?: StoryView
 }
 
 /**
@@ -21555,48 +20513,47 @@ export interface StoryViews {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool has_viewers = 3;
    */
-  hasViewers?: boolean;
+  hasViewers?: boolean
 
   /**
    * @generated from field: optional int32 views_count = 4;
    */
-  viewsCount?: number;
+  viewsCount?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value forwards_count = 5;
    */
-  forwardsCount?: number;
+  forwardsCount?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ReactionCount reactions = 6;
    */
-  reactions: ReactionCount[];
+  reactions: ReactionCount[]
 
   /**
    * @generated from field: optional google.protobuf.Int32Value reactions_count_FLAGINT32 = 7;
    */
-  reactionsCountFLAGINT32?: number;
+  reactionsCountFLAGINT32?: number
 
   /**
    * @generated from field: repeated int64 recent_viewers = 8;
    */
-  recentViewers: bigint[];
+  recentViewers: bigint[]
 
   /**
    * @generated from field: optional int32 reactions_count_INT32 = 9;
    */
-  reactionsCountINT32?: number;
-
+  reactionsCountINT32?: number
 }
 
 /**
@@ -21606,8 +20563,7 @@ export interface TLStoryViews {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoryViews data2 = 1;
    */
-  data2?: StoryViews;
-
+  data2?: StoryViews
 }
 
 /**
@@ -21617,23 +20573,22 @@ export interface TextWithEntities {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string text = 3;
    */
-  text?: string;
+  text?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 4;
    */
-  entities: MessageEntity[];
-
+  entities: MessageEntity[]
 }
 
 /**
@@ -21643,8 +20598,7 @@ export interface TLTextWithEntities {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TextWithEntities data2 = 1;
    */
-  data2?: TextWithEntities;
-
+  data2?: TextWithEntities
 }
 
 /**
@@ -21654,68 +20608,67 @@ export interface Theme {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool creator = 3;
    */
-  creator?: boolean;
+  creator?: boolean
 
   /**
    * @generated from field: optional bool default = 4;
    */
-  default?: boolean;
+  default?: boolean
 
   /**
    * @generated from field: optional bool for_chat = 5;
    */
-  forChat?: boolean;
+  forChat?: boolean
 
   /**
    * @generated from field: optional int64 id = 6;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 7;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional string slug = 8;
    */
-  slug?: string;
+  slug?: string
 
   /**
    * @generated from field: optional string title = 9;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document document = 10;
    */
-  document?: Document;
+  document?: Document
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ThemeSettings settings = 11;
    */
-  settings: ThemeSettings[];
+  settings: ThemeSettings[]
 
   /**
    * @generated from field: optional google.protobuf.StringValue emoticon = 12;
    */
-  emoticon?: string;
+  emoticon?: string
 
   /**
    * @generated from field: optional google.protobuf.Int32Value installs_count = 13;
    */
-  installsCount?: number;
-
+  installsCount?: number
 }
 
 /**
@@ -21725,8 +20678,7 @@ export interface TLTheme {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Theme data2 = 1;
    */
-  data2?: Theme;
-
+  data2?: Theme
 }
 
 /**
@@ -21736,43 +20688,42 @@ export interface ThemeSettings {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool message_colors_animated = 3;
    */
-  messageColorsAnimated?: boolean;
+  messageColorsAnimated?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BaseTheme base_theme = 4;
    */
-  baseTheme?: BaseTheme;
+  baseTheme?: BaseTheme
 
   /**
    * @generated from field: optional int32 accent_color = 5;
    */
-  accentColor?: number;
+  accentColor?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value outbox_accent_color = 6;
    */
-  outboxAccentColor?: number;
+  outboxAccentColor?: number
 
   /**
    * @generated from field: repeated int32 message_colors = 7;
    */
-  messageColors: number[];
+  messageColors: number[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WallPaper wallpaper = 8;
    */
-  wallpaper?: WallPaper;
-
+  wallpaper?: WallPaper
 }
 
 /**
@@ -21782,8 +20733,7 @@ export interface TLThemeSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ThemeSettings data2 = 1;
    */
-  data2?: ThemeSettings;
-
+  data2?: ThemeSettings
 }
 
 /**
@@ -21793,23 +20743,22 @@ export interface TopPeer {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer = 3;
    */
-  peer?: Peer;
+  peer?: Peer
 
   /**
    * @generated from field: optional float rating = 4;
    */
-  rating?: number;
-
+  rating?: number
 }
 
 /**
@@ -21819,8 +20768,7 @@ export interface TLTopPeer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TopPeer data2 = 1;
    */
-  data2?: TopPeer;
-
+  data2?: TopPeer
 }
 
 /**
@@ -21830,13 +20778,12 @@ export interface TopPeerCategory {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -21846,8 +20793,7 @@ export interface TLTopPeerCategoryBotsPM {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TopPeerCategory data2 = 1;
    */
-  data2?: TopPeerCategory;
-
+  data2?: TopPeerCategory
 }
 
 /**
@@ -21857,8 +20803,7 @@ export interface TLTopPeerCategoryBotsInline {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TopPeerCategory data2 = 1;
    */
-  data2?: TopPeerCategory;
-
+  data2?: TopPeerCategory
 }
 
 /**
@@ -21868,8 +20813,7 @@ export interface TLTopPeerCategoryCorrespondents {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TopPeerCategory data2 = 1;
    */
-  data2?: TopPeerCategory;
-
+  data2?: TopPeerCategory
 }
 
 /**
@@ -21879,8 +20823,7 @@ export interface TLTopPeerCategoryGroups {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TopPeerCategory data2 = 1;
    */
-  data2?: TopPeerCategory;
-
+  data2?: TopPeerCategory
 }
 
 /**
@@ -21890,8 +20833,7 @@ export interface TLTopPeerCategoryChannels {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TopPeerCategory data2 = 1;
    */
-  data2?: TopPeerCategory;
-
+  data2?: TopPeerCategory
 }
 
 /**
@@ -21901,8 +20843,7 @@ export interface TLTopPeerCategoryPhoneCalls {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TopPeerCategory data2 = 1;
    */
-  data2?: TopPeerCategory;
-
+  data2?: TopPeerCategory
 }
 
 /**
@@ -21912,8 +20853,7 @@ export interface TLTopPeerCategoryForwardUsers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TopPeerCategory data2 = 1;
    */
-  data2?: TopPeerCategory;
-
+  data2?: TopPeerCategory
 }
 
 /**
@@ -21923,8 +20863,7 @@ export interface TLTopPeerCategoryForwardChats {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TopPeerCategory data2 = 1;
    */
-  data2?: TopPeerCategory;
-
+  data2?: TopPeerCategory
 }
 
 /**
@@ -21934,28 +20873,27 @@ export interface TopPeerCategoryPeers {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TopPeerCategory category = 3;
    */
-  category?: TopPeerCategory;
+  category?: TopPeerCategory
 
   /**
    * @generated from field: optional int32 count = 4;
    */
-  count?: number;
+  count?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.TopPeer peers = 5;
    */
-  peers: TopPeer[];
-
+  peers: TopPeer[]
 }
 
 /**
@@ -21965,8 +20903,7 @@ export interface TLTopPeerCategoryPeers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TopPeerCategoryPeers data2 = 1;
    */
-  data2?: TopPeerCategoryPeers;
-
+  data2?: TopPeerCategoryPeers
 }
 
 /**
@@ -21976,713 +20913,712 @@ export interface Update {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Message message_MESSAGE = 3;
    */
-  messageMESSAGE?: Message;
+  messageMESSAGE?: Message
 
   /**
    * @generated from field: optional int32 pts_INT32 = 4;
    */
-  ptsINT32?: number;
+  ptsINT32?: number
 
   /**
    * @generated from field: optional int32 pts_count = 5;
    */
-  ptsCount?: number;
+  ptsCount?: number
 
   /**
    * @generated from field: optional int32 id_INT32 = 6;
    */
-  idINT32?: number;
+  idINT32?: number
 
   /**
    * @generated from field: optional int64 random_id = 7;
    */
-  randomId?: bigint;
+  randomId?: bigint
 
   /**
    * @generated from field: repeated int32 messages = 8;
    */
-  messages: number[];
+  messages: number[]
 
   /**
    * @generated from field: optional int64 user_id = 9;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SendMessageAction action = 10;
    */
-  action?: SendMessageAction;
+  action?: SendMessageAction
 
   /**
    * @generated from field: optional int64 chat_id_INT64 = 11;
    */
-  chatIdINT64?: bigint;
+  chatIdINT64?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer from_id = 12;
    */
-  fromId?: Peer;
+  fromId?: Peer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatParticipants participants_CHATPARTICIPANTS = 13;
    */
-  participantsCHATPARTICIPANTS?: ChatParticipants;
+  participantsCHATPARTICIPANTS?: ChatParticipants
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UserStatus status = 14;
    */
-  status?: UserStatus;
+  status?: UserStatus
 
   /**
    * @generated from field: optional string first_name = 15;
    */
-  firstName?: string;
+  firstName?: string
 
   /**
    * @generated from field: optional string last_name = 16;
    */
-  lastName?: string;
+  lastName?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Username usernames = 17;
    */
-  usernames: Username[];
+  usernames: Username[]
 
   /**
    * @generated from field: optional bool unconfirmed = 18;
    */
-  unconfirmed?: boolean;
+  unconfirmed?: boolean
 
   /**
    * @generated from field: optional int64 hash = 19;
    */
-  hash?: bigint;
+  hash?: bigint
 
   /**
    * @generated from field: optional google.protobuf.Int32Value date_FLAGINT32 = 20;
    */
-  dateFLAGINT32?: number;
+  dateFLAGINT32?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue device = 21;
    */
-  device?: string;
+  device?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue location = 22;
    */
-  location?: string;
+  location?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EncryptedMessage message_ENCRYPTEDMESSAGE = 23;
    */
-  messageENCRYPTEDMESSAGE?: EncryptedMessage;
+  messageENCRYPTEDMESSAGE?: EncryptedMessage
 
   /**
    * @generated from field: optional int32 qts = 24;
    */
-  qts?: number;
+  qts?: number
 
   /**
    * @generated from field: optional int32 chat_id_INT32 = 25;
    */
-  chatIdINT32?: number;
+  chatIdINT32?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EncryptedChat chat = 26;
    */
-  chat?: EncryptedChat;
+  chat?: EncryptedChat
 
   /**
    * @generated from field: optional int32 date_INT32 = 27;
    */
-  dateINT32?: number;
+  dateINT32?: number
 
   /**
    * @generated from field: optional int32 max_date = 28;
    */
-  maxDate?: number;
+  maxDate?: number
 
   /**
    * @generated from field: optional int64 inviter_id = 29;
    */
-  inviterId?: bigint;
+  inviterId?: bigint
 
   /**
    * @generated from field: optional int32 version = 30;
    */
-  version?: number;
+  version?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.DcOption dc_options = 31;
    */
-  dcOptions: DcOption[];
+  dcOptions: DcOption[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.NotifyPeer peer_NOTIFYPEER = 32;
    */
-  peerNOTIFYPEER?: NotifyPeer;
+  peerNOTIFYPEER?: NotifyPeer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PeerNotifySettings notify_settings = 33;
    */
-  notifySettings?: PeerNotifySettings;
+  notifySettings?: PeerNotifySettings
 
   /**
    * @generated from field: optional bool popup = 34;
    */
-  popup?: boolean;
+  popup?: boolean
 
   /**
    * @generated from field: optional google.protobuf.Int32Value inbox_date = 35;
    */
-  inboxDate?: number;
+  inboxDate?: number
 
   /**
    * @generated from field: optional string type = 36;
    */
-  type?: string;
+  type?: string
 
   /**
    * @generated from field: optional string message_STRING = 37;
    */
-  messageSTRING?: string;
+  messageSTRING?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageMedia media = 38;
    */
-  media?: MessageMedia;
+  media?: MessageMedia
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 39;
    */
-  entities: MessageEntity[];
+  entities: MessageEntity[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PrivacyKey key = 40;
    */
-  key?: PrivacyKey;
+  key?: PrivacyKey
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PrivacyRule rules = 41;
    */
-  rules: PrivacyRule[];
+  rules: PrivacyRule[]
 
   /**
    * @generated from field: optional string phone = 42;
    */
-  phone?: string;
+  phone?: string
 
   /**
    * @generated from field: optional google.protobuf.Int32Value folder_id = 43;
    */
-  folderId?: number;
+  folderId?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer_PEER = 44;
    */
-  peerPEER?: Peer;
+  peerPEER?: Peer
 
   /**
    * @generated from field: optional int32 max_id = 45;
    */
-  maxId?: number;
+  maxId?: number
 
   /**
    * @generated from field: optional int32 still_unread_count = 46;
    */
-  stillUnreadCount?: number;
+  stillUnreadCount?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WebPage webpage = 47;
    */
-  webpage?: WebPage;
+  webpage?: WebPage
 
   /**
    * @generated from field: optional int64 channel_id = 48;
    */
-  channelId?: bigint;
+  channelId?: bigint
 
   /**
    * @generated from field: optional google.protobuf.Int32Value pts_FLAGINT32 = 49;
    */
-  ptsFLAGINT32?: number;
+  ptsFLAGINT32?: number
 
   /**
    * @generated from field: optional int32 views = 50;
    */
-  views?: number;
+  views?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool is_admin = 51;
    */
-  isAdmin?: Bool;
+  isAdmin?: Bool
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesStickerSet stickerset_MESSAGES_STICKERSET = 52;
    */
-  stickersetMESSAGESSTICKERSET?: MessagesStickerSet;
+  stickersetMESSAGESSTICKERSET?: MessagesStickerSet
 
   /**
    * @generated from field: optional bool masks = 53;
    */
-  masks?: boolean;
+  masks?: boolean
 
   /**
    * @generated from field: optional bool emojis = 54;
    */
-  emojis?: boolean;
+  emojis?: boolean
 
   /**
    * @generated from field: repeated int64 order_VECTORINT64 = 55;
    */
-  orderVECTORINT64: bigint[];
+  orderVECTORINT64: bigint[]
 
   /**
    * @generated from field: optional int64 query_id = 56;
    */
-  queryId?: bigint;
+  queryId?: bigint
 
   /**
    * @generated from field: optional string query = 57;
    */
-  query?: string;
+  query?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.GeoPoint geo = 58;
    */
-  geo?: GeoPoint;
+  geo?: GeoPoint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InlineQueryPeerType peer_type = 59;
    */
-  peerType?: InlineQueryPeerType;
+  peerType?: InlineQueryPeerType
 
   /**
    * @generated from field: optional string offset = 60;
    */
-  offset?: string;
+  offset?: string
 
   /**
    * @generated from field: optional string id_STRING = 61;
    */
-  idSTRING?: string;
+  idSTRING?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotInlineMessageID msg_id_FLAGINPUTBOTINLINEMESSAGEID = 62;
    */
-  msgIdFLAGINPUTBOTINLINEMESSAGEID?: InputBotInlineMessageID;
+  msgIdFLAGINPUTBOTINLINEMESSAGEID?: InputBotInlineMessageID
 
   /**
    * @generated from field: optional int32 msg_id_INT32 = 63;
    */
-  msgIdINT32?: number;
+  msgIdINT32?: number
 
   /**
    * @generated from field: optional int64 chat_instance = 64;
    */
-  chatInstance?: bigint;
+  chatInstance?: bigint
 
   /**
    * @generated from field: optional bytes data_FLAGBYTES = 65;
    */
-  dataFLAGBYTES?: Uint8Array;
+  dataFLAGBYTES?: Uint8Array
 
   /**
    * @generated from field: optional google.protobuf.StringValue game_short_name = 66;
    */
-  gameShortName?: string;
+  gameShortName?: string
 
   /**
    * @generated from field: optional google.protobuf.Int32Value top_msg_id_FLAGINT32 = 67;
    */
-  topMsgIdFLAGINT32?: number;
+  topMsgIdFLAGINT32?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DraftMessage draft = 68;
    */
-  draft?: DraftMessage;
+  draft?: DraftMessage
 
   /**
    * @generated from field: optional bool pinned = 69;
    */
-  pinned?: boolean;
+  pinned?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DialogPeer peer_DIALOGPEER = 70;
    */
-  peerDIALOGPEER?: DialogPeer;
+  peerDIALOGPEER?: DialogPeer
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.DialogPeer order_FLAGVECTORDIALOGPEER = 71;
    */
-  orderFLAGVECTORDIALOGPEER: DialogPeer[];
+  orderFLAGVECTORDIALOGPEER: DialogPeer[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON data_DATAJSON = 72;
    */
-  dataDATAJSON?: DataJSON;
+  dataDATAJSON?: DataJSON
 
   /**
    * @generated from field: optional int32 timeout = 73;
    */
-  timeout?: number;
+  timeout?: number
 
   /**
    * @generated from field: optional bytes payload = 74;
    */
-  payload?: Uint8Array;
+  payload?: Uint8Array
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PostAddress shipping_address = 75;
    */
-  shippingAddress?: PostAddress;
+  shippingAddress?: PostAddress
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PaymentRequestedInfo info = 76;
    */
-  info?: PaymentRequestedInfo;
+  info?: PaymentRequestedInfo
 
   /**
    * @generated from field: optional google.protobuf.StringValue shipping_option_id = 77;
    */
-  shippingOptionId?: string;
+  shippingOptionId?: string
 
   /**
    * @generated from field: optional string currency = 78;
    */
-  currency?: string;
+  currency?: string
 
   /**
    * @generated from field: optional int64 total_amount = 79;
    */
-  totalAmount?: bigint;
+  totalAmount?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneCall phone_call = 80;
    */
-  phoneCall?: PhoneCall;
+  phoneCall?: PhoneCall
 
   /**
    * @generated from field: optional string lang_code = 81;
    */
-  langCode?: string;
+  langCode?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.LangPackDifference difference = 82;
    */
-  difference?: LangPackDifference;
+  difference?: LangPackDifference
 
   /**
    * @generated from field: optional int32 available_min_id = 83;
    */
-  availableMinId?: number;
+  availableMinId?: number
 
   /**
    * @generated from field: optional bool unread = 84;
    */
-  unread?: boolean;
+  unread?: boolean
 
   /**
    * @generated from field: optional int64 poll_id = 85;
    */
-  pollId?: bigint;
+  pollId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Poll poll = 86;
    */
-  poll?: Poll;
+  poll?: Poll
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PollResults results = 87;
    */
-  results?: PollResults;
+  results?: PollResults
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatBannedRights default_banned_rights = 88;
    */
-  defaultBannedRights?: ChatBannedRights;
+  defaultBannedRights?: ChatBannedRights
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.FolderPeer folder_peers = 89;
    */
-  folderPeers: FolderPeer[];
+  folderPeers: FolderPeer[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PeerSettings settings = 90;
    */
-  settings?: PeerSettings;
+  settings?: PeerSettings
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PeerLocated peers = 91;
    */
-  peers: PeerLocated[];
+  peers: PeerLocated[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Theme theme = 92;
    */
-  theme?: Theme;
+  theme?: Theme
 
   /**
    * @generated from field: repeated bytes options = 93;
    */
-  options: Uint8Array[];
+  options: Uint8Array[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DialogFilter filter = 94;
    */
-  filter?: DialogFilter;
+  filter?: DialogFilter
 
   /**
    * @generated from field: repeated int32 order_VECTORINT32 = 95;
    */
-  orderVECTORINT32: number[];
+  orderVECTORINT32: number[]
 
   /**
    * @generated from field: optional int64 phone_call_id = 96;
    */
-  phoneCallId?: bigint;
+  phoneCallId?: bigint
 
   /**
    * @generated from field: optional int32 forwards = 97;
    */
-  forwards?: number;
+  forwards?: number
 
   /**
    * @generated from field: optional int32 top_msg_id_INT32 = 98;
    */
-  topMsgIdINT32?: number;
+  topMsgIdINT32?: number
 
   /**
    * @generated from field: optional int32 read_max_id = 99;
    */
-  readMaxId?: number;
+  readMaxId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int64Value broadcast_id = 100;
    */
-  broadcastId?: bigint;
+  broadcastId?: bigint
 
   /**
    * @generated from field: optional google.protobuf.Int32Value broadcast_post = 101;
    */
-  broadcastPost?: number;
+  broadcastPost?: number
 
   /**
    * @generated from field: optional bool blocked_FLAGBOOLEAN = 102;
    */
-  blockedFLAGBOOLEAN?: boolean;
+  blockedFLAGBOOLEAN?: boolean
 
   /**
    * @generated from field: optional bool blocked_my_stories_from = 103;
    */
-  blockedMyStoriesFrom?: boolean;
+  blockedMyStoriesFrom?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer_id = 104;
    */
-  peerId?: Peer;
+  peerId?: Peer
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputGroupCall call_INPUTGROUPCALL = 105;
    */
-  callINPUTGROUPCALL?: InputGroupCall;
+  callINPUTGROUPCALL?: InputGroupCall
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.GroupCallParticipant participants_VECTORGROUPCALLPARTICIPANT = 106;
    */
-  participantsVECTORGROUPCALLPARTICIPANT: GroupCallParticipant[];
+  participantsVECTORGROUPCALLPARTICIPANT: GroupCallParticipant[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.GroupCall call_GROUPCALL = 107;
    */
-  callGROUPCALL?: GroupCall;
+  callGROUPCALL?: GroupCall
 
   /**
    * @generated from field: optional google.protobuf.Int32Value ttl_period = 108;
    */
-  ttlPeriod?: number;
+  ttlPeriod?: number
 
   /**
    * @generated from field: optional int64 actor_id = 109;
    */
-  actorId?: bigint;
+  actorId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatParticipant prev_participant_FLAGCHATPARTICIPANT = 110;
    */
-  prevParticipantFLAGCHATPARTICIPANT?: ChatParticipant;
+  prevParticipantFLAGCHATPARTICIPANT?: ChatParticipant
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatParticipant new_participant_FLAGCHATPARTICIPANT = 111;
    */
-  newParticipantFLAGCHATPARTICIPANT?: ChatParticipant;
+  newParticipantFLAGCHATPARTICIPANT?: ChatParticipant
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ExportedChatInvite invite = 112;
    */
-  invite?: ExportedChatInvite;
+  invite?: ExportedChatInvite
 
   /**
    * @generated from field: optional bool via_chatlist = 113;
    */
-  viaChatlist?: boolean;
+  viaChatlist?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelParticipant prev_participant_FLAGCHANNELPARTICIPANT = 114;
    */
-  prevParticipantFLAGCHANNELPARTICIPANT?: ChannelParticipant;
+  prevParticipantFLAGCHANNELPARTICIPANT?: ChannelParticipant
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelParticipant new_participant_FLAGCHANNELPARTICIPANT = 115;
    */
-  newParticipantFLAGCHANNELPARTICIPANT?: ChannelParticipant;
+  newParticipantFLAGCHANNELPARTICIPANT?: ChannelParticipant
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool stopped = 116;
    */
-  stopped?: Bool;
+  stopped?: Bool
 
   /**
    * @generated from field: optional bool presentation = 117;
    */
-  presentation?: boolean;
+  presentation?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON params = 118;
    */
-  params?: DataJSON;
+  params?: DataJSON
 
   /**
    * @generated from field: optional int64 bot_id = 119;
    */
-  botId?: bigint;
+  botId?: bigint
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.BotCommand commands = 120;
    */
-  commands: BotCommand[];
+  commands: BotCommand[]
 
   /**
    * @generated from field: optional int32 requests_pending = 121;
    */
-  requestsPending?: number;
+  requestsPending?: number
 
   /**
    * @generated from field: repeated int64 recent_requesters = 122;
    */
-  recentRequesters: bigint[];
+  recentRequesters: bigint[]
 
   /**
    * @generated from field: optional string about = 123;
    */
-  about?: string;
+  about?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageReactions reactions = 124;
    */
-  reactions?: MessageReactions;
+  reactions?: MessageReactions
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotMenuButton button = 125;
    */
-  button?: BotMenuButton;
+  button?: BotMenuButton
 
   /**
    * @generated from field: optional bool pending = 126;
    */
-  pending?: boolean;
+  pending?: boolean
 
   /**
    * @generated from field: optional int64 transcription_id = 127;
    */
-  transcriptionId?: bigint;
+  transcriptionId?: bigint
 
   /**
    * @generated from field: optional string text = 128;
    */
-  text?: string;
+  text?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmojiStatus emoji_status = 129;
    */
-  emojiStatus?: EmojiStatus;
+  emojiStatus?: EmojiStatus
 
   /**
    * @generated from field: optional int64 stickerset_INT64 = 130;
    */
-  stickersetINT64?: bigint;
+  stickersetINT64?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageExtendedMedia extended_media = 131;
    */
-  extendedMedia?: MessageExtendedMedia;
+  extendedMedia?: MessageExtendedMedia
 
   /**
    * @generated from field: optional int32 topic_id_INT32 = 132;
    */
-  topicIdINT32?: number;
+  topicIdINT32?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoryItem story = 133;
    */
-  story?: StoryItem;
+  story?: StoryItem
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoriesStealthMode stealth_mode = 134;
    */
-  stealthMode?: StoriesStealthMode;
+  stealthMode?: StoriesStealthMode
 
   /**
    * @generated from field: optional int32 story_id = 135;
    */
-  storyId?: number;
+  storyId?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Reaction reaction = 136;
    */
-  reaction?: Reaction;
+  reaction?: Reaction
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool blocked_BOOL = 137;
    */
-  blockedBOOL?: Bool;
+  blockedBOOL?: Bool
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UserProfilePhoto photo = 138;
    */
-  photo?: UserProfilePhoto;
+  photo?: UserProfilePhoto
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Bool previous = 139;
    */
-  previous?: Bool;
+  previous?: Bool
 
   /**
    * @generated from field: optional google.protobuf.Int32Value topic_id_FLAGINT32 = 140;
    */
-  topicIdFLAGINT32?: number;
+  topicIdFLAGINT32?: number
 
   /**
    * @generated from field: optional string username = 141;
    */
-  username?: string;
+  username?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BizDataRaw biz_data = 142;
    */
-  bizData?: BizDataRaw;
-
+  bizData?: BizDataRaw
 }
 
 /**
@@ -22692,8 +21628,7 @@ export interface TLUpdateNewMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22703,8 +21638,7 @@ export interface TLUpdateMessageID {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22714,8 +21648,7 @@ export interface TLUpdateDeleteMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22725,8 +21658,7 @@ export interface TLUpdateUserTyping {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22736,8 +21668,7 @@ export interface TLUpdateChatUserTyping {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22747,8 +21678,7 @@ export interface TLUpdateChatParticipants {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22758,8 +21688,7 @@ export interface TLUpdateUserStatus {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22769,8 +21698,7 @@ export interface TLUpdateUserName {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22780,8 +21708,7 @@ export interface TLUpdateNewAuthorization {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22791,8 +21718,7 @@ export interface TLUpdateNewEncryptedMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22802,8 +21728,7 @@ export interface TLUpdateEncryptedChatTyping {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22813,8 +21738,7 @@ export interface TLUpdateEncryption {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22824,8 +21748,7 @@ export interface TLUpdateEncryptedMessagesRead {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22835,8 +21758,7 @@ export interface TLUpdateChatParticipantAdd {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22846,8 +21768,7 @@ export interface TLUpdateChatParticipantDelete {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22857,8 +21778,7 @@ export interface TLUpdateDcOptions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22868,8 +21788,7 @@ export interface TLUpdateNotifySettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22879,8 +21798,7 @@ export interface TLUpdateServiceNotification {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22890,8 +21808,7 @@ export interface TLUpdatePrivacy {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22901,8 +21818,7 @@ export interface TLUpdateUserPhone {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22912,8 +21828,7 @@ export interface TLUpdateReadHistoryInbox {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22923,8 +21838,7 @@ export interface TLUpdateReadHistoryOutbox {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22934,8 +21848,7 @@ export interface TLUpdateWebPage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22945,8 +21858,7 @@ export interface TLUpdateReadMessagesContents {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22956,8 +21868,7 @@ export interface TLUpdateChannelTooLong {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22967,8 +21878,7 @@ export interface TLUpdateChannel {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22978,8 +21888,7 @@ export interface TLUpdateNewChannelMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -22989,8 +21898,7 @@ export interface TLUpdateReadChannelInbox {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23000,8 +21908,7 @@ export interface TLUpdateDeleteChannelMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23011,8 +21918,7 @@ export interface TLUpdateChannelMessageViews {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23022,8 +21928,7 @@ export interface TLUpdateChatParticipantAdmin {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23033,8 +21938,7 @@ export interface TLUpdateNewStickerSet {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23044,8 +21948,7 @@ export interface TLUpdateStickerSetsOrder {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23055,8 +21958,7 @@ export interface TLUpdateStickerSets {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23066,8 +21968,7 @@ export interface TLUpdateSavedGifs {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23077,8 +21978,7 @@ export interface TLUpdateBotInlineQuery {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23088,8 +21988,7 @@ export interface TLUpdateBotInlineSend {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23099,8 +21998,7 @@ export interface TLUpdateEditChannelMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23110,8 +22008,7 @@ export interface TLUpdateBotCallbackQuery {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23121,8 +22018,7 @@ export interface TLUpdateEditMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23132,8 +22028,7 @@ export interface TLUpdateInlineBotCallbackQuery {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23143,8 +22038,7 @@ export interface TLUpdateReadChannelOutbox {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23154,8 +22048,7 @@ export interface TLUpdateDraftMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23165,8 +22058,7 @@ export interface TLUpdateReadFeaturedStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23176,8 +22068,7 @@ export interface TLUpdateRecentStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23187,8 +22078,7 @@ export interface TLUpdateConfig {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23198,8 +22088,7 @@ export interface TLUpdatePtsChanged {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23209,8 +22098,7 @@ export interface TLUpdateChannelWebPage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23220,8 +22108,7 @@ export interface TLUpdateDialogPinned {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23231,8 +22118,7 @@ export interface TLUpdatePinnedDialogs {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23242,8 +22128,7 @@ export interface TLUpdateBotWebhookJSON {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23253,8 +22138,7 @@ export interface TLUpdateBotWebhookJSONQuery {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23264,8 +22148,7 @@ export interface TLUpdateBotShippingQuery {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23275,8 +22158,7 @@ export interface TLUpdateBotPrecheckoutQuery {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23286,8 +22168,7 @@ export interface TLUpdatePhoneCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23297,8 +22178,7 @@ export interface TLUpdateLangPackTooLong {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23308,8 +22188,7 @@ export interface TLUpdateLangPack {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23319,8 +22198,7 @@ export interface TLUpdateFavedStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23330,8 +22208,7 @@ export interface TLUpdateChannelReadMessagesContents {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23341,8 +22218,7 @@ export interface TLUpdateContactsReset {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23352,8 +22228,7 @@ export interface TLUpdateChannelAvailableMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23363,8 +22238,7 @@ export interface TLUpdateDialogUnreadMark {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23374,8 +22248,7 @@ export interface TLUpdateMessagePoll {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23385,8 +22258,7 @@ export interface TLUpdateChatDefaultBannedRights {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23396,8 +22268,7 @@ export interface TLUpdateFolderPeers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23407,8 +22278,7 @@ export interface TLUpdatePeerSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23418,8 +22288,7 @@ export interface TLUpdatePeerLocated {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23429,8 +22298,7 @@ export interface TLUpdateNewScheduledMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23440,8 +22308,7 @@ export interface TLUpdateDeleteScheduledMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23451,8 +22318,7 @@ export interface TLUpdateTheme {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23462,8 +22328,7 @@ export interface TLUpdateGeoLiveViewed {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23473,8 +22338,7 @@ export interface TLUpdateLoginToken {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23484,8 +22348,7 @@ export interface TLUpdateMessagePollVote {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23495,8 +22358,7 @@ export interface TLUpdateDialogFilter {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23506,8 +22368,7 @@ export interface TLUpdateDialogFilterOrder {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23517,8 +22378,7 @@ export interface TLUpdateDialogFilters {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23528,8 +22388,7 @@ export interface TLUpdatePhoneCallSignalingData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23539,8 +22398,7 @@ export interface TLUpdateChannelMessageForwards {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23550,8 +22408,7 @@ export interface TLUpdateReadChannelDiscussionInbox {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23561,8 +22418,7 @@ export interface TLUpdateReadChannelDiscussionOutbox {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23572,8 +22428,7 @@ export interface TLUpdatePeerBlocked {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23583,8 +22438,7 @@ export interface TLUpdateChannelUserTyping {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23594,8 +22448,7 @@ export interface TLUpdatePinnedMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23605,8 +22458,7 @@ export interface TLUpdatePinnedChannelMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23616,8 +22468,7 @@ export interface TLUpdateChat {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23627,8 +22478,7 @@ export interface TLUpdateGroupCallParticipants {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23638,8 +22488,7 @@ export interface TLUpdateGroupCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23649,8 +22498,7 @@ export interface TLUpdatePeerHistoryTTL {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23660,8 +22508,7 @@ export interface TLUpdateChatParticipant {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23671,8 +22518,7 @@ export interface TLUpdateChannelParticipant {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23682,8 +22528,7 @@ export interface TLUpdateBotStopped {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23693,8 +22538,7 @@ export interface TLUpdateGroupCallConnection {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23704,8 +22548,7 @@ export interface TLUpdateBotCommands {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23715,8 +22558,7 @@ export interface TLUpdatePendingJoinRequests {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23726,8 +22568,7 @@ export interface TLUpdateBotChatInviteRequester {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23737,8 +22578,7 @@ export interface TLUpdateMessageReactions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23748,8 +22588,7 @@ export interface TLUpdateAttachMenuBots {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23759,8 +22598,7 @@ export interface TLUpdateWebViewResultSent {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23770,8 +22608,7 @@ export interface TLUpdateBotMenuButton {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23781,8 +22618,7 @@ export interface TLUpdateSavedRingtones {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23792,8 +22628,7 @@ export interface TLUpdateTranscribedAudio {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23803,8 +22638,7 @@ export interface TLUpdateReadFeaturedEmojiStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23814,8 +22648,7 @@ export interface TLUpdateUserEmojiStatus {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23825,8 +22658,7 @@ export interface TLUpdateRecentEmojiStatuses {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23836,8 +22668,7 @@ export interface TLUpdateRecentReactions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23847,8 +22678,7 @@ export interface TLUpdateMoveStickerSetToTop {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23858,8 +22688,7 @@ export interface TLUpdateMessageExtendedMedia {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23869,8 +22698,7 @@ export interface TLUpdateChannelPinnedTopic {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23880,8 +22708,7 @@ export interface TLUpdateChannelPinnedTopics {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23891,8 +22718,7 @@ export interface TLUpdateUser {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23902,8 +22728,7 @@ export interface TLUpdateAutoSaveSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23913,8 +22738,7 @@ export interface TLUpdateGroupInvitePrivacyForbidden {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23924,8 +22748,7 @@ export interface TLUpdateStory {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23935,8 +22758,7 @@ export interface TLUpdateReadStories {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23946,8 +22768,7 @@ export interface TLUpdateStoryID {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23957,8 +22778,7 @@ export interface TLUpdateStoriesStealthMode {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23968,8 +22788,7 @@ export interface TLUpdateSentStoryReaction {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23979,8 +22798,7 @@ export interface TLUpdateUserPhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -23990,8 +22808,7 @@ export interface TLUpdateBizDataRaw {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update data2 = 1;
    */
-  data2?: Update;
-
+  data2?: Update
 }
 
 /**
@@ -24001,18 +22818,17 @@ export interface UpdateList {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Update updates = 3;
    */
-  updates: Update[];
-
+  updates: Update[]
 }
 
 /**
@@ -24022,8 +22838,7 @@ export interface TLUpdateList {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UpdateList data2 = 1;
    */
-  data2?: UpdateList;
-
+  data2?: UpdateList
 }
 
 /**
@@ -24033,138 +22848,137 @@ export interface Updates {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool out = 3;
    */
-  out?: boolean;
+  out?: boolean
 
   /**
    * @generated from field: optional bool mentioned = 4;
    */
-  mentioned?: boolean;
+  mentioned?: boolean
 
   /**
    * @generated from field: optional bool media_unread = 5;
    */
-  mediaUnread?: boolean;
+  mediaUnread?: boolean
 
   /**
    * @generated from field: optional bool silent = 6;
    */
-  silent?: boolean;
+  silent?: boolean
 
   /**
    * @generated from field: optional int32 id = 7;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional int64 user_id = 8;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional string message = 9;
    */
-  message?: string;
+  message?: string
 
   /**
    * @generated from field: optional int32 pts = 10;
    */
-  pts?: number;
+  pts?: number
 
   /**
    * @generated from field: optional int32 pts_count = 11;
    */
-  ptsCount?: number;
+  ptsCount?: number
 
   /**
    * @generated from field: optional int32 date = 12;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageFwdHeader fwd_from = 13;
    */
-  fwdFrom?: MessageFwdHeader;
+  fwdFrom?: MessageFwdHeader
 
   /**
    * @generated from field: optional google.protobuf.Int64Value via_bot_id = 14;
    */
-  viaBotId?: bigint;
+  viaBotId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageReplyHeader reply_to = 15;
    */
-  replyTo?: MessageReplyHeader;
+  replyTo?: MessageReplyHeader
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 16;
    */
-  entities: MessageEntity[];
+  entities: MessageEntity[]
 
   /**
    * @generated from field: optional google.protobuf.Int32Value ttl_period = 17;
    */
-  ttlPeriod?: number;
+  ttlPeriod?: number
 
   /**
    * @generated from field: optional int64 from_id = 18;
    */
-  fromId?: bigint;
+  fromId?: bigint
 
   /**
    * @generated from field: optional int64 chat_id = 19;
    */
-  chatId?: bigint;
+  chatId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Update update = 20;
    */
-  update?: Update;
+  update?: Update
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Update updates = 21;
    */
-  updates: Update[];
+  updates: Update[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 22;
    */
-  users: User[];
+  users: User[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 23;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: optional int32 seq_start = 24;
    */
-  seqStart?: number;
+  seqStart?: number
 
   /**
    * @generated from field: optional int32 seq = 25;
    */
-  seq?: number;
+  seq?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessageMedia media = 26;
    */
-  media?: MessageMedia;
+  media?: MessageMedia
 
   /**
    * @generated from field: optional int64 auth_key_id = 27;
    */
-  authKeyId?: bigint;
-
+  authKeyId?: bigint
 }
 
 /**
@@ -24174,8 +22988,7 @@ export interface TLUpdatesTooLong {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Updates data2 = 1;
    */
-  data2?: Updates;
-
+  data2?: Updates
 }
 
 /**
@@ -24185,8 +22998,7 @@ export interface TLUpdateShortMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Updates data2 = 1;
    */
-  data2?: Updates;
-
+  data2?: Updates
 }
 
 /**
@@ -24196,8 +23008,7 @@ export interface TLUpdateShortChatMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Updates data2 = 1;
    */
-  data2?: Updates;
-
+  data2?: Updates
 }
 
 /**
@@ -24207,8 +23018,7 @@ export interface TLUpdateShort {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Updates data2 = 1;
    */
-  data2?: Updates;
-
+  data2?: Updates
 }
 
 /**
@@ -24218,8 +23028,7 @@ export interface TLUpdatesCombined {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Updates data2 = 1;
    */
-  data2?: Updates;
-
+  data2?: Updates
 }
 
 /**
@@ -24229,8 +23038,7 @@ export interface TLUpdates {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Updates data2 = 1;
    */
-  data2?: Updates;
-
+  data2?: Updates
 }
 
 /**
@@ -24240,8 +23048,7 @@ export interface TLUpdateShortSentMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Updates data2 = 1;
    */
-  data2?: Updates;
-
+  data2?: Updates
 }
 
 /**
@@ -24251,8 +23058,7 @@ export interface TLUpdateAccountResetAuthorization {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Updates data2 = 1;
    */
-  data2?: Updates;
-
+  data2?: Updates
 }
 
 /**
@@ -24262,33 +23068,32 @@ export interface UrlAuthResult {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool request_write_access = 3;
    */
-  requestWriteAccess?: boolean;
+  requestWriteAccess?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.User bot = 4;
    */
-  bot?: User;
+  bot?: User
 
   /**
    * @generated from field: optional string domain = 5;
    */
-  domain?: string;
+  domain?: string
 
   /**
    * @generated from field: optional string url = 6;
    */
-  url?: string;
-
+  url?: string
 }
 
 /**
@@ -24298,8 +23103,7 @@ export interface TLUrlAuthResultRequest {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UrlAuthResult data2 = 1;
    */
-  data2?: UrlAuthResult;
-
+  data2?: UrlAuthResult
 }
 
 /**
@@ -24309,8 +23113,7 @@ export interface TLUrlAuthResultAccepted {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UrlAuthResult data2 = 1;
    */
-  data2?: UrlAuthResult;
-
+  data2?: UrlAuthResult
 }
 
 /**
@@ -24320,8 +23123,7 @@ export interface TLUrlAuthResultDefault {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UrlAuthResult data2 = 1;
    */
-  data2?: UrlAuthResult;
-
+  data2?: UrlAuthResult
 }
 
 /**
@@ -24331,198 +23133,197 @@ export interface User {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional bool self = 4;
    */
-  self?: boolean;
+  self?: boolean
 
   /**
    * @generated from field: optional bool contact = 5;
    */
-  contact?: boolean;
+  contact?: boolean
 
   /**
    * @generated from field: optional bool mutual_contact = 6;
    */
-  mutualContact?: boolean;
+  mutualContact?: boolean
 
   /**
    * @generated from field: optional bool deleted = 7;
    */
-  deleted?: boolean;
+  deleted?: boolean
 
   /**
    * @generated from field: optional bool bot = 8;
    */
-  bot?: boolean;
+  bot?: boolean
 
   /**
    * @generated from field: optional bool bot_chat_history = 9;
    */
-  botChatHistory?: boolean;
+  botChatHistory?: boolean
 
   /**
    * @generated from field: optional bool bot_nochats = 10;
    */
-  botNochats?: boolean;
+  botNochats?: boolean
 
   /**
    * @generated from field: optional bool verified = 11;
    */
-  verified?: boolean;
+  verified?: boolean
 
   /**
    * @generated from field: optional bool restricted = 12;
    */
-  restricted?: boolean;
+  restricted?: boolean
 
   /**
    * @generated from field: optional bool min = 13;
    */
-  min?: boolean;
+  min?: boolean
 
   /**
    * @generated from field: optional bool bot_inline_geo = 14;
    */
-  botInlineGeo?: boolean;
+  botInlineGeo?: boolean
 
   /**
    * @generated from field: optional bool support = 15;
    */
-  support?: boolean;
+  support?: boolean
 
   /**
    * @generated from field: optional bool scam = 16;
    */
-  scam?: boolean;
+  scam?: boolean
 
   /**
    * @generated from field: optional bool apply_min_photo = 17;
    */
-  applyMinPhoto?: boolean;
+  applyMinPhoto?: boolean
 
   /**
    * @generated from field: optional bool fake = 18;
    */
-  fake?: boolean;
+  fake?: boolean
 
   /**
    * @generated from field: optional bool bot_attach_menu = 19;
    */
-  botAttachMenu?: boolean;
+  botAttachMenu?: boolean
 
   /**
    * @generated from field: optional bool premium = 20;
    */
-  premium?: boolean;
+  premium?: boolean
 
   /**
    * @generated from field: optional bool attach_menu_enabled = 21;
    */
-  attachMenuEnabled?: boolean;
+  attachMenuEnabled?: boolean
 
   /**
    * @generated from field: optional bool bot_can_edit = 22;
    */
-  botCanEdit?: boolean;
+  botCanEdit?: boolean
 
   /**
    * @generated from field: optional bool close_friend = 23;
    */
-  closeFriend?: boolean;
+  closeFriend?: boolean
 
   /**
    * @generated from field: optional bool stories_hidden = 24;
    */
-  storiesHidden?: boolean;
+  storiesHidden?: boolean
 
   /**
    * @generated from field: optional bool stories_unavailable = 25;
    */
-  storiesUnavailable?: boolean;
+  storiesUnavailable?: boolean
 
   /**
    * @generated from field: optional google.protobuf.Int64Value access_hash = 26;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional google.protobuf.StringValue first_name = 27;
    */
-  firstName?: string;
+  firstName?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue last_name = 28;
    */
-  lastName?: string;
+  lastName?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue username = 29;
    */
-  username?: string;
+  username?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue phone = 30;
    */
-  phone?: string;
+  phone?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UserProfilePhoto photo = 31;
    */
-  photo?: UserProfilePhoto;
+  photo?: UserProfilePhoto
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UserStatus status = 32;
    */
-  status?: UserStatus;
+  status?: UserStatus
 
   /**
    * @generated from field: optional google.protobuf.Int32Value bot_info_version = 33;
    */
-  botInfoVersion?: number;
+  botInfoVersion?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.RestrictionReason restriction_reason = 34;
    */
-  restrictionReason: RestrictionReason[];
+  restrictionReason: RestrictionReason[]
 
   /**
    * @generated from field: optional google.protobuf.StringValue bot_inline_placeholder = 35;
    */
-  botInlinePlaceholder?: string;
+  botInlinePlaceholder?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue lang_code = 36;
    */
-  langCode?: string;
+  langCode?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmojiStatus emoji_status = 37;
    */
-  emojiStatus?: EmojiStatus;
+  emojiStatus?: EmojiStatus
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Username usernames = 38;
    */
-  usernames: Username[];
+  usernames: Username[]
 
   /**
    * @generated from field: optional google.protobuf.Int32Value stories_max_id = 39;
    */
-  storiesMaxId?: number;
-
+  storiesMaxId?: number
 }
 
 /**
@@ -24532,8 +23333,7 @@ export interface TLUserEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.User data2 = 1;
    */
-  data2?: User;
-
+  data2?: User
 }
 
 /**
@@ -24543,8 +23343,7 @@ export interface TLUser {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.User data2 = 1;
    */
-  data2?: User;
-
+  data2?: User
 }
 
 /**
@@ -24554,133 +23353,132 @@ export interface UserData {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional int32 user_type = 5;
    */
-  userType?: number;
+  userType?: number
 
   /**
    * @generated from field: optional int64 sceret_key_id = 6;
    */
-  sceretKeyId?: bigint;
+  sceretKeyId?: bigint
 
   /**
    * @generated from field: optional string first_name = 7;
    */
-  firstName?: string;
+  firstName?: string
 
   /**
    * @generated from field: optional string last_name = 8;
    */
-  lastName?: string;
+  lastName?: string
 
   /**
    * @generated from field: optional string username = 9;
    */
-  username?: string;
+  username?: string
 
   /**
    * @generated from field: optional string phone = 10;
    */
-  phone?: string;
+  phone?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Photo profile_photo = 11;
    */
-  profilePhoto?: Photo;
+  profilePhoto?: Photo
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotData bot = 12;
    */
-  bot?: BotData;
+  bot?: BotData
 
   /**
    * @generated from field: optional string country_code = 13;
    */
-  countryCode?: string;
+  countryCode?: string
 
   /**
    * @generated from field: optional bool verified = 14;
    */
-  verified?: boolean;
+  verified?: boolean
 
   /**
    * @generated from field: optional bool support = 15;
    */
-  support?: boolean;
+  support?: boolean
 
   /**
    * @generated from field: optional bool scam = 16;
    */
-  scam?: boolean;
+  scam?: boolean
 
   /**
    * @generated from field: optional bool fake = 17;
    */
-  fake?: boolean;
+  fake?: boolean
 
   /**
    * @generated from field: optional google.protobuf.StringValue about = 18;
    */
-  about?: string;
+  about?: string
 
   /**
    * @generated from field: optional bool restricted = 19;
    */
-  restricted?: boolean;
+  restricted?: boolean
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.RestrictionReason restriction_reason = 20;
    */
-  restrictionReason: RestrictionReason[];
+  restrictionReason: RestrictionReason[]
 
   /**
    * @generated from field: optional int32 contacts_version = 21;
    */
-  contactsVersion?: number;
+  contactsVersion?: number
 
   /**
    * @generated from field: optional int32 privacies_version = 22;
    */
-  privaciesVersion?: number;
+  privaciesVersion?: number
 
   /**
    * @generated from field: optional bool deleted = 23;
    */
-  deleted?: boolean;
+  deleted?: boolean
 
   /**
    * @generated from field: optional bool bot_attach_menu = 24;
    */
-  botAttachMenu?: boolean;
+  botAttachMenu?: boolean
 
   /**
    * @generated from field: optional bool premium = 25;
    */
-  premium?: boolean;
+  premium?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EmojiStatus emoji_status = 26;
    */
-  emojiStatus?: EmojiStatus;
-
+  emojiStatus?: EmojiStatus
 }
 
 /**
@@ -24690,8 +23488,7 @@ export interface TLUserData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UserData data2 = 1;
    */
-  data2?: UserData;
-
+  data2?: UserData
 }
 
 /**
@@ -24701,163 +23498,162 @@ export interface UserFull {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool blocked = 3;
    */
-  blocked?: boolean;
+  blocked?: boolean
 
   /**
    * @generated from field: optional bool phone_calls_available = 4;
    */
-  phoneCallsAvailable?: boolean;
+  phoneCallsAvailable?: boolean
 
   /**
    * @generated from field: optional bool phone_calls_private = 5;
    */
-  phoneCallsPrivate?: boolean;
+  phoneCallsPrivate?: boolean
 
   /**
    * @generated from field: optional bool can_pin_message = 6;
    */
-  canPinMessage?: boolean;
+  canPinMessage?: boolean
 
   /**
    * @generated from field: optional bool has_scheduled = 7;
    */
-  hasScheduled?: boolean;
+  hasScheduled?: boolean
 
   /**
    * @generated from field: optional bool video_calls_available = 8;
    */
-  videoCallsAvailable?: boolean;
+  videoCallsAvailable?: boolean
 
   /**
    * @generated from field: optional bool voice_messages_forbidden = 9;
    */
-  voiceMessagesForbidden?: boolean;
+  voiceMessagesForbidden?: boolean
 
   /**
    * @generated from field: optional bool translations_disabled = 10;
    */
-  translationsDisabled?: boolean;
+  translationsDisabled?: boolean
 
   /**
    * @generated from field: optional bool stories_pinned_available = 11;
    */
-  storiesPinnedAvailable?: boolean;
+  storiesPinnedAvailable?: boolean
 
   /**
    * @generated from field: optional bool blocked_my_stories_from = 12;
    */
-  blockedMyStoriesFrom?: boolean;
+  blockedMyStoriesFrom?: boolean
 
   /**
    * @generated from field: optional int64 id = 13;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional google.protobuf.StringValue about = 14;
    */
-  about?: string;
+  about?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PeerSettings settings = 15;
    */
-  settings?: PeerSettings;
+  settings?: PeerSettings
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Photo personal_photo = 16;
    */
-  personalPhoto?: Photo;
+  personalPhoto?: Photo
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Photo profile_photo = 17;
    */
-  profilePhoto?: Photo;
+  profilePhoto?: Photo
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Photo fallback_photo = 18;
    */
-  fallbackPhoto?: Photo;
+  fallbackPhoto?: Photo
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PeerNotifySettings notify_settings = 19;
    */
-  notifySettings?: PeerNotifySettings;
+  notifySettings?: PeerNotifySettings
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotInfo bot_info = 20;
    */
-  botInfo?: BotInfo;
+  botInfo?: BotInfo
 
   /**
    * @generated from field: optional google.protobuf.Int32Value pinned_msg_id = 21;
    */
-  pinnedMsgId?: number;
+  pinnedMsgId?: number
 
   /**
    * @generated from field: optional int32 common_chats_count = 22;
    */
-  commonChatsCount?: number;
+  commonChatsCount?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value folder_id = 23;
    */
-  folderId?: number;
+  folderId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value ttl_period = 24;
    */
-  ttlPeriod?: number;
+  ttlPeriod?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue theme_emoticon = 25;
    */
-  themeEmoticon?: string;
+  themeEmoticon?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue private_forward_name = 26;
    */
-  privateForwardName?: string;
+  privateForwardName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatAdminRights bot_group_admin_rights = 27;
    */
-  botGroupAdminRights?: ChatAdminRights;
+  botGroupAdminRights?: ChatAdminRights
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatAdminRights bot_broadcast_admin_rights = 28;
    */
-  botBroadcastAdminRights?: ChatAdminRights;
+  botBroadcastAdminRights?: ChatAdminRights
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PremiumGiftOption premium_gifts = 29;
    */
-  premiumGifts: PremiumGiftOption[];
+  premiumGifts: PremiumGiftOption[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WallPaper wallpaper = 30;
    */
-  wallpaper?: WallPaper;
+  wallpaper?: WallPaper
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PeerStories stories_FLAGPEERSTORIES = 31;
    */
-  storiesFLAGPEERSTORIES?: PeerStories;
+  storiesFLAGPEERSTORIES?: PeerStories
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UserStories stories_FLAGUSERSTORIES = 32;
    */
-  storiesFLAGUSERSTORIES?: UserStories;
-
+  storiesFLAGUSERSTORIES?: UserStories
 }
 
 /**
@@ -24867,8 +23663,7 @@ export interface TLUserFull {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UserFull data2 = 1;
    */
-  data2?: UserFull;
-
+  data2?: UserFull
 }
 
 /**
@@ -24878,38 +23673,37 @@ export interface UserProfilePhoto {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool has_video = 3;
    */
-  hasVideo?: boolean;
+  hasVideo?: boolean
 
   /**
    * @generated from field: optional bool personal = 4;
    */
-  personal?: boolean;
+  personal?: boolean
 
   /**
    * @generated from field: optional int64 photo_id = 5;
    */
-  photoId?: bigint;
+  photoId?: bigint
 
   /**
    * @generated from field: optional bytes stripped_thumb = 6;
    */
-  strippedThumb?: Uint8Array;
+  strippedThumb?: Uint8Array
 
   /**
    * @generated from field: optional int32 dc_id = 7;
    */
-  dcId?: number;
-
+  dcId?: number
 }
 
 /**
@@ -24919,8 +23713,7 @@ export interface TLUserProfilePhotoEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UserProfilePhoto data2 = 1;
    */
-  data2?: UserProfilePhoto;
-
+  data2?: UserProfilePhoto
 }
 
 /**
@@ -24930,8 +23723,7 @@ export interface TLUserProfilePhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UserProfilePhoto data2 = 1;
    */
-  data2?: UserProfilePhoto;
-
+  data2?: UserProfilePhoto
 }
 
 /**
@@ -24941,23 +23733,22 @@ export interface UserStatus {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 expires = 3;
    */
-  expires?: number;
+  expires?: number
 
   /**
    * @generated from field: optional int32 was_online = 4;
    */
-  wasOnline?: number;
-
+  wasOnline?: number
 }
 
 /**
@@ -24967,8 +23758,7 @@ export interface TLUserStatusEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UserStatus data2 = 1;
    */
-  data2?: UserStatus;
-
+  data2?: UserStatus
 }
 
 /**
@@ -24978,8 +23768,7 @@ export interface TLUserStatusOnline {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UserStatus data2 = 1;
    */
-  data2?: UserStatus;
-
+  data2?: UserStatus
 }
 
 /**
@@ -24989,8 +23778,7 @@ export interface TLUserStatusOffline {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UserStatus data2 = 1;
    */
-  data2?: UserStatus;
-
+  data2?: UserStatus
 }
 
 /**
@@ -25000,8 +23788,7 @@ export interface TLUserStatusRecently {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UserStatus data2 = 1;
    */
-  data2?: UserStatus;
-
+  data2?: UserStatus
 }
 
 /**
@@ -25011,8 +23798,7 @@ export interface TLUserStatusLastWeek {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UserStatus data2 = 1;
    */
-  data2?: UserStatus;
-
+  data2?: UserStatus
 }
 
 /**
@@ -25022,8 +23808,7 @@ export interface TLUserStatusLastMonth {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UserStatus data2 = 1;
    */
-  data2?: UserStatus;
-
+  data2?: UserStatus
 }
 
 /**
@@ -25033,28 +23818,27 @@ export interface UserStories {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 user_id = 3;
    */
-  userId?: bigint;
+  userId?: bigint
 
   /**
    * @generated from field: optional google.protobuf.Int32Value max_read_id = 4;
    */
-  maxReadId?: number;
+  maxReadId?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.StoryItem stories = 5;
    */
-  stories: StoryItem[];
-
+  stories: StoryItem[]
 }
 
 /**
@@ -25064,8 +23848,7 @@ export interface TLUserStories {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UserStories data2 = 1;
    */
-  data2?: UserStories;
-
+  data2?: UserStories
 }
 
 /**
@@ -25075,28 +23858,27 @@ export interface Username {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool editable = 3;
    */
-  editable?: boolean;
+  editable?: boolean
 
   /**
    * @generated from field: optional bool active = 4;
    */
-  active?: boolean;
+  active?: boolean
 
   /**
    * @generated from field: optional string username = 5;
    */
-  username?: string;
-
+  username?: string
 }
 
 /**
@@ -25106,8 +23888,7 @@ export interface TLUsername {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Username data2 = 1;
    */
-  data2?: Username;
-
+  data2?: Username
 }
 
 /**
@@ -25117,58 +23898,57 @@ export interface VideoSize {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string type = 3;
    */
-  type?: string;
+  type?: string
 
   /**
    * @generated from field: optional int32 w = 4;
    */
-  w?: number;
+  w?: number
 
   /**
    * @generated from field: optional int32 h = 5;
    */
-  h?: number;
+  h?: number
 
   /**
    * @generated from field: optional int32 size2 = 6;
    */
-  size2?: number;
+  size2?: number
 
   /**
    * @generated from field: optional google.protobuf.DoubleValue video_start_ts = 7;
    */
-  videoStartTs?: number;
+  videoStartTs?: number
 
   /**
    * @generated from field: optional int64 emoji_id = 8;
    */
-  emojiId?: bigint;
+  emojiId?: bigint
 
   /**
    * @generated from field: repeated int32 background_colors = 9;
    */
-  backgroundColors: number[];
+  backgroundColors: number[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputStickerSet stickerset = 10;
    */
-  stickerset?: InputStickerSet;
+  stickerset?: InputStickerSet
 
   /**
    * @generated from field: optional int64 sticker_id = 11;
    */
-  stickerId?: bigint;
-
+  stickerId?: bigint
 }
 
 /**
@@ -25178,8 +23958,7 @@ export interface TLVideoSize {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.VideoSize data2 = 1;
    */
-  data2?: VideoSize;
-
+  data2?: VideoSize
 }
 
 /**
@@ -25189,8 +23968,7 @@ export interface TLVideoSizeEmojiMarkup {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.VideoSize data2 = 1;
    */
-  data2?: VideoSize;
-
+  data2?: VideoSize
 }
 
 /**
@@ -25200,8 +23978,7 @@ export interface TLVideoSizeStickerMarkup {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.VideoSize data2 = 1;
    */
-  data2?: VideoSize;
-
+  data2?: VideoSize
 }
 
 /**
@@ -25211,13 +23988,12 @@ export interface Void {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -25227,8 +24003,7 @@ export interface TLVoid {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Void data2 = 1;
    */
-  data2?: Void;
-
+  data2?: Void
 }
 
 /**
@@ -25238,58 +24013,57 @@ export interface WallPaper {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional bool creator = 4;
    */
-  creator?: boolean;
+  creator?: boolean
 
   /**
    * @generated from field: optional bool default = 5;
    */
-  default?: boolean;
+  default?: boolean
 
   /**
    * @generated from field: optional bool pattern = 6;
    */
-  pattern?: boolean;
+  pattern?: boolean
 
   /**
    * @generated from field: optional bool dark = 7;
    */
-  dark?: boolean;
+  dark?: boolean
 
   /**
    * @generated from field: optional int64 access_hash = 8;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional string slug = 9;
    */
-  slug?: string;
+  slug?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document document = 10;
    */
-  document?: Document;
+  document?: Document
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WallPaperSettings settings = 11;
    */
-  settings?: WallPaperSettings;
-
+  settings?: WallPaperSettings
 }
 
 /**
@@ -25299,8 +24073,7 @@ export interface TLWallPaper {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WallPaper data2 = 1;
    */
-  data2?: WallPaper;
-
+  data2?: WallPaper
 }
 
 /**
@@ -25310,8 +24083,7 @@ export interface TLWallPaperNoFile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WallPaper data2 = 1;
    */
-  data2?: WallPaper;
-
+  data2?: WallPaper
 }
 
 /**
@@ -25321,53 +24093,52 @@ export interface WallPaperSettings {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool blur = 3;
    */
-  blur?: boolean;
+  blur?: boolean
 
   /**
    * @generated from field: optional bool motion = 4;
    */
-  motion?: boolean;
+  motion?: boolean
 
   /**
    * @generated from field: optional google.protobuf.Int32Value background_color = 5;
    */
-  backgroundColor?: number;
+  backgroundColor?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value second_background_color = 6;
    */
-  secondBackgroundColor?: number;
+  secondBackgroundColor?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value third_background_color = 7;
    */
-  thirdBackgroundColor?: number;
+  thirdBackgroundColor?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value fourth_background_color = 8;
    */
-  fourthBackgroundColor?: number;
+  fourthBackgroundColor?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value intensity = 9;
    */
-  intensity?: number;
+  intensity?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value rotation = 10;
    */
-  rotation?: number;
-
+  rotation?: number
 }
 
 /**
@@ -25377,8 +24148,7 @@ export interface TLWallPaperSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WallPaperSettings data2 = 1;
    */
-  data2?: WallPaperSettings;
-
+  data2?: WallPaperSettings
 }
 
 /**
@@ -25388,58 +24158,57 @@ export interface WebAuthorization {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
+  hash?: bigint
 
   /**
    * @generated from field: optional int64 bot_id = 4;
    */
-  botId?: bigint;
+  botId?: bigint
 
   /**
    * @generated from field: optional string domain = 5;
    */
-  domain?: string;
+  domain?: string
 
   /**
    * @generated from field: optional string browser = 6;
    */
-  browser?: string;
+  browser?: string
 
   /**
    * @generated from field: optional string platform = 7;
    */
-  platform?: string;
+  platform?: string
 
   /**
    * @generated from field: optional int32 date_created = 8;
    */
-  dateCreated?: number;
+  dateCreated?: number
 
   /**
    * @generated from field: optional int32 date_active = 9;
    */
-  dateActive?: number;
+  dateActive?: number
 
   /**
    * @generated from field: optional string ip = 10;
    */
-  ip?: string;
+  ip?: string
 
   /**
    * @generated from field: optional string region = 11;
    */
-  region?: string;
-
+  region?: string
 }
 
 /**
@@ -25449,8 +24218,7 @@ export interface TLWebAuthorization {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WebAuthorization data2 = 1;
    */
-  data2?: WebAuthorization;
-
+  data2?: WebAuthorization
 }
 
 /**
@@ -25460,38 +24228,37 @@ export interface WebDocument {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string url = 3;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional int64 access_hash = 4;
    */
-  accessHash?: bigint;
+  accessHash?: bigint
 
   /**
    * @generated from field: optional int32 size2 = 5;
    */
-  size2?: number;
+  size2?: number
 
   /**
    * @generated from field: optional string mime_type = 6;
    */
-  mimeType?: string;
+  mimeType?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.DocumentAttribute attributes = 7;
    */
-  attributes: DocumentAttribute[];
-
+  attributes: DocumentAttribute[]
 }
 
 /**
@@ -25501,8 +24268,7 @@ export interface TLWebDocument {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WebDocument data2 = 1;
    */
-  data2?: WebDocument;
-
+  data2?: WebDocument
 }
 
 /**
@@ -25512,8 +24278,7 @@ export interface TLWebDocumentNoProxy {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WebDocument data2 = 1;
    */
-  data2?: WebDocument;
-
+  data2?: WebDocument
 }
 
 /**
@@ -25523,113 +24288,112 @@ export interface WebPage {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional int32 date = 4;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional string url = 5;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional string display_url = 6;
    */
-  displayUrl?: string;
+  displayUrl?: string
 
   /**
    * @generated from field: optional int32 hash = 7;
    */
-  hash?: number;
+  hash?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue type = 8;
    */
-  type?: string;
+  type?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue site_name = 9;
    */
-  siteName?: string;
+  siteName?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue title = 10;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue description = 11;
    */
-  description?: string;
+  description?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Photo photo = 12;
    */
-  photo?: Photo;
+  photo?: Photo
 
   /**
    * @generated from field: optional google.protobuf.StringValue embed_url = 13;
    */
-  embedUrl?: string;
+  embedUrl?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue embed_type = 14;
    */
-  embedType?: string;
+  embedType?: string
 
   /**
    * @generated from field: optional google.protobuf.Int32Value embed_width = 15;
    */
-  embedWidth?: number;
+  embedWidth?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value embed_height = 16;
    */
-  embedHeight?: number;
+  embedHeight?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value duration = 17;
    */
-  duration?: number;
+  duration?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue author = 18;
    */
-  author?: string;
+  author?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document document = 19;
    */
-  document?: Document;
+  document?: Document
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Page cached_page = 20;
    */
-  cachedPage?: Page;
+  cachedPage?: Page
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.WebPageAttribute attributes = 21;
    */
-  attributes: WebPageAttribute[];
+  attributes: WebPageAttribute[]
 
   /**
    * @generated from field: optional google.protobuf.Int32Value cached_page_views = 22;
    */
-  cachedPageViews?: number;
-
+  cachedPageViews?: number
 }
 
 /**
@@ -25639,8 +24403,7 @@ export interface TLWebPageEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WebPage data2 = 1;
    */
-  data2?: WebPage;
-
+  data2?: WebPage
 }
 
 /**
@@ -25650,8 +24413,7 @@ export interface TLWebPagePending {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WebPage data2 = 1;
    */
-  data2?: WebPage;
-
+  data2?: WebPage
 }
 
 /**
@@ -25661,8 +24423,7 @@ export interface TLWebPage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WebPage data2 = 1;
    */
-  data2?: WebPage;
-
+  data2?: WebPage
 }
 
 /**
@@ -25672,8 +24433,7 @@ export interface TLWebPageNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WebPage data2 = 1;
    */
-  data2?: WebPage;
-
+  data2?: WebPage
 }
 
 /**
@@ -25683,43 +24443,42 @@ export interface WebPageAttribute {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Document documents = 3;
    */
-  documents: Document[];
+  documents: Document[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ThemeSettings settings = 4;
    */
-  settings?: ThemeSettings;
+  settings?: ThemeSettings
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer = 5;
    */
-  peer?: Peer;
+  peer?: Peer
 
   /**
    * @generated from field: optional int32 id = 6;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoryItem story = 7;
    */
-  story?: StoryItem;
+  story?: StoryItem
 
   /**
    * @generated from field: optional int64 user_id = 8;
    */
-  userId?: bigint;
-
+  userId?: bigint
 }
 
 /**
@@ -25729,8 +24488,7 @@ export interface TLWebPageAttributeTheme {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WebPageAttribute data2 = 1;
    */
-  data2?: WebPageAttribute;
-
+  data2?: WebPageAttribute
 }
 
 /**
@@ -25740,8 +24498,7 @@ export interface TLWebPageAttributeStory {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WebPageAttribute data2 = 1;
    */
-  data2?: WebPageAttribute;
-
+  data2?: WebPageAttribute
 }
 
 /**
@@ -25751,18 +24508,17 @@ export interface WebViewMessageSent {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InputBotInlineMessageID msg_id = 3;
    */
-  msgId?: InputBotInlineMessageID;
-
+  msgId?: InputBotInlineMessageID
 }
 
 /**
@@ -25772,8 +24528,7 @@ export interface TLWebViewMessageSent {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WebViewMessageSent data2 = 1;
    */
-  data2?: WebViewMessageSent;
-
+  data2?: WebViewMessageSent
 }
 
 /**
@@ -25783,23 +24538,22 @@ export interface WebViewResult {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 query_id = 3;
    */
-  queryId?: bigint;
+  queryId?: bigint
 
   /**
    * @generated from field: optional string url = 4;
    */
-  url?: string;
-
+  url?: string
 }
 
 /**
@@ -25809,8 +24563,7 @@ export interface TLWebViewResultUrl {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WebViewResult data2 = 1;
    */
-  data2?: WebViewResult;
-
+  data2?: WebViewResult
 }
 
 /**
@@ -25820,38 +24573,37 @@ export interface AccountAuthorizationForm {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SecureRequiredType required_types = 3;
    */
-  requiredTypes: SecureRequiredType[];
+  requiredTypes: SecureRequiredType[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SecureValue values = 4;
    */
-  values: SecureValue[];
+  values: SecureValue[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SecureValueError errors = 5;
    */
-  errors: SecureValueError[];
+  errors: SecureValueError[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 6;
    */
-  users: User[];
+  users: User[]
 
   /**
    * @generated from field: optional google.protobuf.StringValue privacy_policy_url = 7;
    */
-  privacyPolicyUrl?: string;
-
+  privacyPolicyUrl?: string
 }
 
 /**
@@ -25861,8 +24613,7 @@ export interface TLAccountAuthorizationForm {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountAuthorizationForm data2 = 1;
    */
-  data2?: AccountAuthorizationForm;
-
+  data2?: AccountAuthorizationForm
 }
 
 /**
@@ -25872,23 +24623,22 @@ export interface AccountAuthorizations {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 authorization_ttl_days = 3;
    */
-  authorizationTtlDays?: number;
+  authorizationTtlDays?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Authorization authorizations = 4;
    */
-  authorizations: Authorization[];
-
+  authorizations: Authorization[]
 }
 
 /**
@@ -25898,8 +24648,7 @@ export interface TLAccountAuthorizations {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountAuthorizations data2 = 1;
    */
-  data2?: AccountAuthorizations;
-
+  data2?: AccountAuthorizations
 }
 
 /**
@@ -25909,28 +24658,27 @@ export interface AccountAutoDownloadSettings {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AutoDownloadSettings low = 3;
    */
-  low?: AutoDownloadSettings;
+  low?: AutoDownloadSettings
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AutoDownloadSettings medium = 4;
    */
-  medium?: AutoDownloadSettings;
+  medium?: AutoDownloadSettings
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AutoDownloadSettings high = 5;
    */
-  high?: AutoDownloadSettings;
-
+  high?: AutoDownloadSettings
 }
 
 /**
@@ -25940,8 +24688,7 @@ export interface TLAccountAutoDownloadSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountAutoDownloadSettings data2 = 1;
    */
-  data2?: AccountAutoDownloadSettings;
-
+  data2?: AccountAutoDownloadSettings
 }
 
 /**
@@ -25951,43 +24698,42 @@ export interface AccountAutoSaveSettings {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AutoSaveSettings users_settings = 3;
    */
-  usersSettings?: AutoSaveSettings;
+  usersSettings?: AutoSaveSettings
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AutoSaveSettings chats_settings = 4;
    */
-  chatsSettings?: AutoSaveSettings;
+  chatsSettings?: AutoSaveSettings
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AutoSaveSettings broadcasts_settings = 5;
    */
-  broadcastsSettings?: AutoSaveSettings;
+  broadcastsSettings?: AutoSaveSettings
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.AutoSaveException exceptions = 6;
    */
-  exceptions: AutoSaveException[];
+  exceptions: AutoSaveException[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 7;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 8;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -25997,8 +24743,7 @@ export interface TLAccountAutoSaveSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountAutoSaveSettings data2 = 1;
    */
-  data2?: AccountAutoSaveSettings;
-
+  data2?: AccountAutoSaveSettings
 }
 
 /**
@@ -26008,23 +24753,22 @@ export interface AccountContentSettings {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool sensitive_enabled = 3;
    */
-  sensitiveEnabled?: boolean;
+  sensitiveEnabled?: boolean
 
   /**
    * @generated from field: optional bool sensitive_can_change = 4;
    */
-  sensitiveCanChange?: boolean;
-
+  sensitiveCanChange?: boolean
 }
 
 /**
@@ -26034,8 +24778,7 @@ export interface TLAccountContentSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountContentSettings data2 = 1;
    */
-  data2?: AccountContentSettings;
-
+  data2?: AccountContentSettings
 }
 
 /**
@@ -26045,23 +24788,22 @@ export interface AccountEmailVerified {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string email = 3;
    */
-  email?: string;
+  email?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthSentCode sent_code = 4;
    */
-  sentCode?: AuthSentCode;
-
+  sentCode?: AuthSentCode
 }
 
 /**
@@ -26071,8 +24813,7 @@ export interface TLAccountEmailVerified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountEmailVerified data2 = 1;
    */
-  data2?: AccountEmailVerified;
-
+  data2?: AccountEmailVerified
 }
 
 /**
@@ -26082,8 +24823,7 @@ export interface TLAccountEmailVerifiedLogin {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountEmailVerified data2 = 1;
    */
-  data2?: AccountEmailVerified;
-
+  data2?: AccountEmailVerified
 }
 
 /**
@@ -26093,23 +24833,22 @@ export interface AccountEmojiStatuses {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
+  hash?: bigint
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.EmojiStatus statuses = 4;
    */
-  statuses: EmojiStatus[];
-
+  statuses: EmojiStatus[]
 }
 
 /**
@@ -26119,8 +24858,7 @@ export interface TLAccountEmojiStatusesNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountEmojiStatuses data2 = 1;
    */
-  data2?: AccountEmojiStatuses;
-
+  data2?: AccountEmojiStatuses
 }
 
 /**
@@ -26130,8 +24868,7 @@ export interface TLAccountEmojiStatuses {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountEmojiStatuses data2 = 1;
    */
-  data2?: AccountEmojiStatuses;
-
+  data2?: AccountEmojiStatuses
 }
 
 /**
@@ -26141,78 +24878,77 @@ export interface AccountPassword {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool has_recovery = 3;
    */
-  hasRecovery?: boolean;
+  hasRecovery?: boolean
 
   /**
    * @generated from field: optional bool has_secure_values = 4;
    */
-  hasSecureValues?: boolean;
+  hasSecureValues?: boolean
 
   /**
    * @generated from field: optional bool has_password = 5;
    */
-  hasPassword?: boolean;
+  hasPassword?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PasswordKdfAlgo current_algo = 6;
    */
-  currentAlgo?: PasswordKdfAlgo;
+  currentAlgo?: PasswordKdfAlgo
 
   /**
    * @generated from field: optional bytes srp_B = 7;
    */
-  srpB?: Uint8Array;
+  srpB?: Uint8Array
 
   /**
    * @generated from field: optional google.protobuf.Int64Value srp_id = 8;
    */
-  srpId?: bigint;
+  srpId?: bigint
 
   /**
    * @generated from field: optional google.protobuf.StringValue hint = 9;
    */
-  hint?: string;
+  hint?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue email_unconfirmed_pattern = 10;
    */
-  emailUnconfirmedPattern?: string;
+  emailUnconfirmedPattern?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PasswordKdfAlgo new_algo = 11;
    */
-  newAlgo?: PasswordKdfAlgo;
+  newAlgo?: PasswordKdfAlgo
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecurePasswordKdfAlgo new_secure_algo = 12;
    */
-  newSecureAlgo?: SecurePasswordKdfAlgo;
+  newSecureAlgo?: SecurePasswordKdfAlgo
 
   /**
    * @generated from field: optional bytes secure_random = 13;
    */
-  secureRandom?: Uint8Array;
+  secureRandom?: Uint8Array
 
   /**
    * @generated from field: optional google.protobuf.Int32Value pending_reset_date = 14;
    */
-  pendingResetDate?: number;
+  pendingResetDate?: number
 
   /**
    * @generated from field: optional google.protobuf.StringValue login_email_pattern = 15;
    */
-  loginEmailPattern?: string;
-
+  loginEmailPattern?: string
 }
 
 /**
@@ -26222,8 +24958,7 @@ export interface TLAccountPassword {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountPassword data2 = 1;
    */
-  data2?: AccountPassword;
-
+  data2?: AccountPassword
 }
 
 /**
@@ -26233,38 +24968,37 @@ export interface AccountPasswordInputSettings {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PasswordKdfAlgo new_algo = 3;
    */
-  newAlgo?: PasswordKdfAlgo;
+  newAlgo?: PasswordKdfAlgo
 
   /**
    * @generated from field: optional bytes new_password_hash = 4;
    */
-  newPasswordHash?: Uint8Array;
+  newPasswordHash?: Uint8Array
 
   /**
    * @generated from field: optional google.protobuf.StringValue hint = 5;
    */
-  hint?: string;
+  hint?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue email = 6;
    */
-  email?: string;
+  email?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureSecretSettings new_secure_settings = 7;
    */
-  newSecureSettings?: SecureSecretSettings;
-
+  newSecureSettings?: SecureSecretSettings
 }
 
 /**
@@ -26274,8 +25008,7 @@ export interface TLAccountPasswordInputSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountPasswordInputSettings data2 = 1;
    */
-  data2?: AccountPasswordInputSettings;
-
+  data2?: AccountPasswordInputSettings
 }
 
 /**
@@ -26285,23 +25018,22 @@ export interface AccountPasswordSettings {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional google.protobuf.StringValue email = 3;
    */
-  email?: string;
+  email?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.SecureSecretSettings secure_settings = 4;
    */
-  secureSettings?: SecureSecretSettings;
-
+  secureSettings?: SecureSecretSettings
 }
 
 /**
@@ -26311,8 +25043,7 @@ export interface TLAccountPasswordSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountPasswordSettings data2 = 1;
    */
-  data2?: AccountPasswordSettings;
-
+  data2?: AccountPasswordSettings
 }
 
 /**
@@ -26322,28 +25053,27 @@ export interface AccountPrivacyRules {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PrivacyRule rules = 3;
    */
-  rules: PrivacyRule[];
+  rules: PrivacyRule[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 4;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -26353,8 +25083,7 @@ export interface TLAccountPrivacyRules {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountPrivacyRules data2 = 1;
    */
-  data2?: AccountPrivacyRules;
-
+  data2?: AccountPrivacyRules
 }
 
 /**
@@ -26364,23 +25093,22 @@ export interface AccountResetPasswordResult {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 retry_date = 3;
    */
-  retryDate?: number;
+  retryDate?: number
 
   /**
    * @generated from field: optional int32 until_date = 4;
    */
-  untilDate?: number;
-
+  untilDate?: number
 }
 
 /**
@@ -26390,8 +25118,7 @@ export interface TLAccountResetPasswordFailedWait {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountResetPasswordResult data2 = 1;
    */
-  data2?: AccountResetPasswordResult;
-
+  data2?: AccountResetPasswordResult
 }
 
 /**
@@ -26401,8 +25128,7 @@ export interface TLAccountResetPasswordRequestedWait {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountResetPasswordResult data2 = 1;
    */
-  data2?: AccountResetPasswordResult;
-
+  data2?: AccountResetPasswordResult
 }
 
 /**
@@ -26412,8 +25138,7 @@ export interface TLAccountResetPasswordOk {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountResetPasswordResult data2 = 1;
    */
-  data2?: AccountResetPasswordResult;
-
+  data2?: AccountResetPasswordResult
 }
 
 /**
@@ -26423,18 +25148,17 @@ export interface AccountSavedRingtone {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document document = 3;
    */
-  document?: Document;
-
+  document?: Document
 }
 
 /**
@@ -26444,8 +25168,7 @@ export interface TLAccountSavedRingtone {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountSavedRingtone data2 = 1;
    */
-  data2?: AccountSavedRingtone;
-
+  data2?: AccountSavedRingtone
 }
 
 /**
@@ -26455,8 +25178,7 @@ export interface TLAccountSavedRingtoneConverted {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountSavedRingtone data2 = 1;
    */
-  data2?: AccountSavedRingtone;
-
+  data2?: AccountSavedRingtone
 }
 
 /**
@@ -26466,23 +25188,22 @@ export interface AccountSavedRingtones {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
+  hash?: bigint
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Document ringtones = 4;
    */
-  ringtones: Document[];
-
+  ringtones: Document[]
 }
 
 /**
@@ -26492,8 +25213,7 @@ export interface TLAccountSavedRingtonesNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountSavedRingtones data2 = 1;
    */
-  data2?: AccountSavedRingtones;
-
+  data2?: AccountSavedRingtones
 }
 
 /**
@@ -26503,8 +25223,7 @@ export interface TLAccountSavedRingtones {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountSavedRingtones data2 = 1;
    */
-  data2?: AccountSavedRingtones;
-
+  data2?: AccountSavedRingtones
 }
 
 /**
@@ -26514,23 +25233,22 @@ export interface AccountSentEmailCode {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string email_pattern = 3;
    */
-  emailPattern?: string;
+  emailPattern?: string
 
   /**
    * @generated from field: optional int32 length = 4;
    */
-  length?: number;
-
+  length?: number
 }
 
 /**
@@ -26540,8 +25258,7 @@ export interface TLAccountSentEmailCode {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountSentEmailCode data2 = 1;
    */
-  data2?: AccountSentEmailCode;
-
+  data2?: AccountSentEmailCode
 }
 
 /**
@@ -26551,18 +25268,17 @@ export interface AccountTakeout {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
-
+  id?: bigint
 }
 
 /**
@@ -26572,8 +25288,7 @@ export interface TLAccountTakeout {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountTakeout data2 = 1;
    */
-  data2?: AccountTakeout;
-
+  data2?: AccountTakeout
 }
 
 /**
@@ -26583,23 +25298,22 @@ export interface AccountThemes {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
+  hash?: bigint
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Theme themes = 4;
    */
-  themes: Theme[];
-
+  themes: Theme[]
 }
 
 /**
@@ -26609,8 +25323,7 @@ export interface TLAccountThemesNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountThemes data2 = 1;
    */
-  data2?: AccountThemes;
-
+  data2?: AccountThemes
 }
 
 /**
@@ -26620,8 +25333,7 @@ export interface TLAccountThemes {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountThemes data2 = 1;
    */
-  data2?: AccountThemes;
-
+  data2?: AccountThemes
 }
 
 /**
@@ -26631,23 +25343,22 @@ export interface AccountTmpPassword {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes tmp_password = 3;
    */
-  tmpPassword?: Uint8Array;
+  tmpPassword?: Uint8Array
 
   /**
    * @generated from field: optional int32 valid_until = 4;
    */
-  validUntil?: number;
-
+  validUntil?: number
 }
 
 /**
@@ -26657,8 +25368,7 @@ export interface TLAccountTmpPassword {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountTmpPassword data2 = 1;
    */
-  data2?: AccountTmpPassword;
-
+  data2?: AccountTmpPassword
 }
 
 /**
@@ -26668,23 +25378,22 @@ export interface AccountWallPapers {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
+  hash?: bigint
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.WallPaper wallpapers = 4;
    */
-  wallpapers: WallPaper[];
-
+  wallpapers: WallPaper[]
 }
 
 /**
@@ -26694,8 +25403,7 @@ export interface TLAccountWallPapersNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountWallPapers data2 = 1;
    */
-  data2?: AccountWallPapers;
-
+  data2?: AccountWallPapers
 }
 
 /**
@@ -26705,8 +25413,7 @@ export interface TLAccountWallPapers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountWallPapers data2 = 1;
    */
-  data2?: AccountWallPapers;
-
+  data2?: AccountWallPapers
 }
 
 /**
@@ -26716,23 +25423,22 @@ export interface AccountWebAuthorizations {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.WebAuthorization authorizations = 3;
    */
-  authorizations: WebAuthorization[];
+  authorizations: WebAuthorization[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 4;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -26742,8 +25448,7 @@ export interface TLAccountWebAuthorizations {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccountWebAuthorizations data2 = 1;
    */
-  data2?: AccountWebAuthorizations;
-
+  data2?: AccountWebAuthorizations
 }
 
 /**
@@ -26753,43 +25458,42 @@ export interface AuthAuthorization {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool setup_password_required = 3;
    */
-  setupPasswordRequired?: boolean;
+  setupPasswordRequired?: boolean
 
   /**
    * @generated from field: optional google.protobuf.Int32Value otherwise_relogin_days = 4;
    */
-  otherwiseReloginDays?: number;
+  otherwiseReloginDays?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value tmp_sessions = 5;
    */
-  tmpSessions?: number;
+  tmpSessions?: number
 
   /**
    * @generated from field: optional bytes future_auth_token = 6;
    */
-  futureAuthToken?: Uint8Array;
+  futureAuthToken?: Uint8Array
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.User user = 7;
    */
-  user?: User;
+  user?: User
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpTermsOfService terms_of_service = 8;
    */
-  termsOfService?: HelpTermsOfService;
-
+  termsOfService?: HelpTermsOfService
 }
 
 /**
@@ -26799,8 +25503,7 @@ export interface TLAuthAuthorization {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthAuthorization data2 = 1;
    */
-  data2?: AuthAuthorization;
-
+  data2?: AuthAuthorization
 }
 
 /**
@@ -26810,8 +25513,7 @@ export interface TLAuthAuthorizationSignUpRequired {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthAuthorization data2 = 1;
    */
-  data2?: AuthAuthorization;
-
+  data2?: AuthAuthorization
 }
 
 /**
@@ -26821,13 +25523,12 @@ export interface AuthCodeType {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -26837,8 +25538,7 @@ export interface TLAuthCodeTypeSms {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthCodeType data2 = 1;
    */
-  data2?: AuthCodeType;
-
+  data2?: AuthCodeType
 }
 
 /**
@@ -26848,8 +25548,7 @@ export interface TLAuthCodeTypeCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthCodeType data2 = 1;
    */
-  data2?: AuthCodeType;
-
+  data2?: AuthCodeType
 }
 
 /**
@@ -26859,8 +25558,7 @@ export interface TLAuthCodeTypeFlashCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthCodeType data2 = 1;
    */
-  data2?: AuthCodeType;
-
+  data2?: AuthCodeType
 }
 
 /**
@@ -26870,8 +25568,7 @@ export interface TLAuthCodeTypeMissedCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthCodeType data2 = 1;
    */
-  data2?: AuthCodeType;
-
+  data2?: AuthCodeType
 }
 
 /**
@@ -26881,8 +25578,7 @@ export interface TLAuthCodeTypeFragmentSms {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthCodeType data2 = 1;
    */
-  data2?: AuthCodeType;
-
+  data2?: AuthCodeType
 }
 
 /**
@@ -26892,23 +25588,22 @@ export interface AuthExportedAuthorization {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
+  id?: bigint
 
   /**
    * @generated from field: optional bytes bytes = 4;
    */
-  bytes?: Uint8Array;
-
+  bytes?: Uint8Array
 }
 
 /**
@@ -26918,8 +25613,7 @@ export interface TLAuthExportedAuthorization {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthExportedAuthorization data2 = 1;
    */
-  data2?: AuthExportedAuthorization;
-
+  data2?: AuthExportedAuthorization
 }
 
 /**
@@ -26929,18 +25623,17 @@ export interface AuthLoggedOut {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes future_auth_token = 3;
    */
-  futureAuthToken?: Uint8Array;
-
+  futureAuthToken?: Uint8Array
 }
 
 /**
@@ -26950,8 +25643,7 @@ export interface TLAuthLoggedOut {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthLoggedOut data2 = 1;
    */
-  data2?: AuthLoggedOut;
-
+  data2?: AuthLoggedOut
 }
 
 /**
@@ -26961,33 +25653,32 @@ export interface AuthLoginToken {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 expires = 3;
    */
-  expires?: number;
+  expires?: number
 
   /**
    * @generated from field: optional bytes token = 4;
    */
-  token?: Uint8Array;
+  token?: Uint8Array
 
   /**
    * @generated from field: optional int32 dc_id = 5;
    */
-  dcId?: number;
+  dcId?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthAuthorization authorization = 6;
    */
-  authorization?: AuthAuthorization;
-
+  authorization?: AuthAuthorization
 }
 
 /**
@@ -26997,8 +25688,7 @@ export interface TLAuthLoginToken {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthLoginToken data2 = 1;
    */
-  data2?: AuthLoginToken;
-
+  data2?: AuthLoginToken
 }
 
 /**
@@ -27008,8 +25698,7 @@ export interface TLAuthLoginTokenMigrateTo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthLoginToken data2 = 1;
    */
-  data2?: AuthLoginToken;
-
+  data2?: AuthLoginToken
 }
 
 /**
@@ -27019,8 +25708,7 @@ export interface TLAuthLoginTokenSuccess {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthLoginToken data2 = 1;
    */
-  data2?: AuthLoginToken;
-
+  data2?: AuthLoginToken
 }
 
 /**
@@ -27030,18 +25718,17 @@ export interface AuthPasswordRecovery {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string email_pattern = 3;
    */
-  emailPattern?: string;
-
+  emailPattern?: string
 }
 
 /**
@@ -27051,8 +25738,7 @@ export interface TLAuthPasswordRecovery {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthPasswordRecovery data2 = 1;
    */
-  data2?: AuthPasswordRecovery;
-
+  data2?: AuthPasswordRecovery
 }
 
 /**
@@ -27062,38 +25748,37 @@ export interface AuthSentCode {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthSentCodeType type = 3;
    */
-  type?: AuthSentCodeType;
+  type?: AuthSentCodeType
 
   /**
    * @generated from field: optional string phone_code_hash = 4;
    */
-  phoneCodeHash?: string;
+  phoneCodeHash?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthCodeType next_type = 5;
    */
-  nextType?: AuthCodeType;
+  nextType?: AuthCodeType
 
   /**
    * @generated from field: optional google.protobuf.Int32Value timeout = 6;
    */
-  timeout?: number;
+  timeout?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthAuthorization authorization = 7;
    */
-  authorization?: AuthAuthorization;
-
+  authorization?: AuthAuthorization
 }
 
 /**
@@ -27103,8 +25788,7 @@ export interface TLAuthSentCode {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthSentCode data2 = 1;
    */
-  data2?: AuthSentCode;
-
+  data2?: AuthSentCode
 }
 
 /**
@@ -27114,8 +25798,7 @@ export interface TLAuthSentCodeSuccess {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthSentCode data2 = 1;
    */
-  data2?: AuthSentCode;
-
+  data2?: AuthSentCode
 }
 
 /**
@@ -27125,78 +25808,77 @@ export interface AuthSentCodeType {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 length = 3;
    */
-  length?: number;
+  length?: number
 
   /**
    * @generated from field: optional string pattern = 4;
    */
-  pattern?: string;
+  pattern?: string
 
   /**
    * @generated from field: optional string prefix = 5;
    */
-  prefix?: string;
+  prefix?: string
 
   /**
    * @generated from field: optional bool apple_signin_allowed = 6;
    */
-  appleSigninAllowed?: boolean;
+  appleSigninAllowed?: boolean
 
   /**
    * @generated from field: optional bool google_signin_allowed = 7;
    */
-  googleSigninAllowed?: boolean;
+  googleSigninAllowed?: boolean
 
   /**
    * @generated from field: optional string email_pattern = 8;
    */
-  emailPattern?: string;
+  emailPattern?: string
 
   /**
    * @generated from field: optional google.protobuf.Int32Value reset_available_period = 9;
    */
-  resetAvailablePeriod?: number;
+  resetAvailablePeriod?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value reset_pending_date = 10;
    */
-  resetPendingDate?: number;
+  resetPendingDate?: number
 
   /**
    * @generated from field: optional string url = 11;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional bytes nonce = 12;
    */
-  nonce?: Uint8Array;
+  nonce?: Uint8Array
 
   /**
    * @generated from field: optional google.protobuf.StringValue receipt = 13;
    */
-  receipt?: string;
+  receipt?: string
 
   /**
    * @generated from field: optional google.protobuf.Int32Value push_timeout = 14;
    */
-  pushTimeout?: number;
+  pushTimeout?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value next_phone_login_date = 15;
    */
-  nextPhoneLoginDate?: number;
-
+  nextPhoneLoginDate?: number
 }
 
 /**
@@ -27206,8 +25888,7 @@ export interface TLAuthSentCodeTypeApp {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthSentCodeType data2 = 1;
    */
-  data2?: AuthSentCodeType;
-
+  data2?: AuthSentCodeType
 }
 
 /**
@@ -27217,8 +25898,7 @@ export interface TLAuthSentCodeTypeSms {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthSentCodeType data2 = 1;
    */
-  data2?: AuthSentCodeType;
-
+  data2?: AuthSentCodeType
 }
 
 /**
@@ -27228,8 +25908,7 @@ export interface TLAuthSentCodeTypeCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthSentCodeType data2 = 1;
    */
-  data2?: AuthSentCodeType;
-
+  data2?: AuthSentCodeType
 }
 
 /**
@@ -27239,8 +25918,7 @@ export interface TLAuthSentCodeTypeFlashCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthSentCodeType data2 = 1;
    */
-  data2?: AuthSentCodeType;
-
+  data2?: AuthSentCodeType
 }
 
 /**
@@ -27250,8 +25928,7 @@ export interface TLAuthSentCodeTypeMissedCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthSentCodeType data2 = 1;
    */
-  data2?: AuthSentCodeType;
-
+  data2?: AuthSentCodeType
 }
 
 /**
@@ -27261,8 +25938,7 @@ export interface TLAuthSentCodeTypeEmailCode {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthSentCodeType data2 = 1;
    */
-  data2?: AuthSentCodeType;
-
+  data2?: AuthSentCodeType
 }
 
 /**
@@ -27272,8 +25948,7 @@ export interface TLAuthSentCodeTypeSetUpEmailRequired {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthSentCodeType data2 = 1;
    */
-  data2?: AuthSentCodeType;
-
+  data2?: AuthSentCodeType
 }
 
 /**
@@ -27283,8 +25958,7 @@ export interface TLAuthSentCodeTypeFragmentSms {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthSentCodeType data2 = 1;
    */
-  data2?: AuthSentCodeType;
-
+  data2?: AuthSentCodeType
 }
 
 /**
@@ -27294,8 +25968,7 @@ export interface TLAuthSentCodeTypeFirebaseSms {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthSentCodeType data2 = 1;
    */
-  data2?: AuthSentCodeType;
-
+  data2?: AuthSentCodeType
 }
 
 /**
@@ -27305,28 +25978,27 @@ export interface BotsBotInfo {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string name = 3;
    */
-  name?: string;
+  name?: string
 
   /**
    * @generated from field: optional string about = 4;
    */
-  about?: string;
+  about?: string
 
   /**
    * @generated from field: optional string description = 5;
    */
-  description?: string;
-
+  description?: string
 }
 
 /**
@@ -27336,8 +26008,7 @@ export interface TLBotsBotInfo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotsBotInfo data2 = 1;
    */
-  data2?: BotsBotInfo;
-
+  data2?: BotsBotInfo
 }
 
 /**
@@ -27347,28 +26018,27 @@ export interface ChannelsAdminLogResults {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ChannelAdminLogEvent events = 3;
    */
-  events: ChannelAdminLogEvent[];
+  events: ChannelAdminLogEvent[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 4;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -27378,8 +26048,7 @@ export interface TLChannelsAdminLogResults {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelsAdminLogResults data2 = 1;
    */
-  data2?: ChannelsAdminLogResults;
-
+  data2?: ChannelsAdminLogResults
 }
 
 /**
@@ -27389,28 +26058,27 @@ export interface ChannelsChannelParticipant {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelParticipant participant = 3;
    */
-  participant?: ChannelParticipant;
+  participant?: ChannelParticipant
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 4;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -27420,8 +26088,7 @@ export interface TLChannelsChannelParticipant {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelsChannelParticipant data2 = 1;
    */
-  data2?: ChannelsChannelParticipant;
-
+  data2?: ChannelsChannelParticipant
 }
 
 /**
@@ -27431,33 +26098,32 @@ export interface ChannelsChannelParticipants {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 count = 3;
    */
-  count?: number;
+  count?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ChannelParticipant participants = 4;
    */
-  participants: ChannelParticipant[];
+  participants: ChannelParticipant[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 5;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 6;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -27467,8 +26133,7 @@ export interface TLChannelsChannelParticipants {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelsChannelParticipants data2 = 1;
    */
-  data2?: ChannelsChannelParticipants;
-
+  data2?: ChannelsChannelParticipants
 }
 
 /**
@@ -27478,8 +26143,7 @@ export interface TLChannelsChannelParticipantsNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelsChannelParticipants data2 = 1;
    */
-  data2?: ChannelsChannelParticipants;
-
+  data2?: ChannelsChannelParticipants
 }
 
 /**
@@ -27489,33 +26153,32 @@ export interface ChannelsSendAsPeers {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SendAsPeer peers_VECTORSENDASPEER = 3;
    */
-  peersVECTORSENDASPEER: SendAsPeer[];
+  peersVECTORSENDASPEER: SendAsPeer[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 4;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
+  users: User[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Peer peers_VECTORPEER = 6;
    */
-  peersVECTORPEER: Peer[];
-
+  peersVECTORPEER: Peer[]
 }
 
 /**
@@ -27525,8 +26188,7 @@ export interface TLChannelsSendAsPeers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChannelsSendAsPeers data2 = 1;
    */
-  data2?: ChannelsSendAsPeers;
-
+  data2?: ChannelsSendAsPeers
 }
 
 /**
@@ -27536,53 +26198,52 @@ export interface ChatlistsChatlistInvite {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 filter_id = 3;
    */
-  filterId?: number;
+  filterId?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Peer missing_peers = 4;
    */
-  missingPeers: Peer[];
+  missingPeers: Peer[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Peer already_peers = 5;
    */
-  alreadyPeers: Peer[];
+  alreadyPeers: Peer[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 6;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 7;
    */
-  users: User[];
+  users: User[]
 
   /**
    * @generated from field: optional string title = 8;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue emoticon = 9;
    */
-  emoticon?: string;
+  emoticon?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Peer peers = 10;
    */
-  peers: Peer[];
-
+  peers: Peer[]
 }
 
 /**
@@ -27592,8 +26253,7 @@ export interface TLChatlistsChatlistInviteAlready {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatlistsChatlistInvite data2 = 1;
    */
-  data2?: ChatlistsChatlistInvite;
-
+  data2?: ChatlistsChatlistInvite
 }
 
 /**
@@ -27603,8 +26263,7 @@ export interface TLChatlistsChatlistInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatlistsChatlistInvite data2 = 1;
    */
-  data2?: ChatlistsChatlistInvite;
-
+  data2?: ChatlistsChatlistInvite
 }
 
 /**
@@ -27614,28 +26273,27 @@ export interface ChatlistsChatlistUpdates {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Peer missing_peers = 3;
    */
-  missingPeers: Peer[];
+  missingPeers: Peer[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 4;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -27645,8 +26303,7 @@ export interface TLChatlistsChatlistUpdates {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatlistsChatlistUpdates data2 = 1;
    */
-  data2?: ChatlistsChatlistUpdates;
-
+  data2?: ChatlistsChatlistUpdates
 }
 
 /**
@@ -27656,23 +26313,22 @@ export interface ChatlistsExportedChatlistInvite {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DialogFilter filter = 3;
    */
-  filter?: DialogFilter;
+  filter?: DialogFilter
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ExportedChatlistInvite invite = 4;
    */
-  invite?: ExportedChatlistInvite;
-
+  invite?: ExportedChatlistInvite
 }
 
 /**
@@ -27682,8 +26338,7 @@ export interface TLChatlistsExportedChatlistInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatlistsExportedChatlistInvite data2 = 1;
    */
-  data2?: ChatlistsExportedChatlistInvite;
-
+  data2?: ChatlistsExportedChatlistInvite
 }
 
 /**
@@ -27693,28 +26348,27 @@ export interface ChatlistsExportedInvites {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ExportedChatlistInvite invites = 3;
    */
-  invites: ExportedChatlistInvite[];
+  invites: ExportedChatlistInvite[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 4;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -27724,8 +26378,7 @@ export interface TLChatlistsExportedInvites {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatlistsExportedInvites data2 = 1;
    */
-  data2?: ChatlistsExportedInvites;
-
+  data2?: ChatlistsExportedInvites
 }
 
 /**
@@ -27735,33 +26388,32 @@ export interface ContactsBlocked {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PeerBlocked blocked = 3;
    */
-  blocked: PeerBlocked[];
+  blocked: PeerBlocked[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 4;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
+  users: User[]
 
   /**
    * @generated from field: optional int32 count = 6;
    */
-  count?: number;
-
+  count?: number
 }
 
 /**
@@ -27771,8 +26423,7 @@ export interface TLContactsBlocked {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ContactsBlocked data2 = 1;
    */
-  data2?: ContactsBlocked;
-
+  data2?: ContactsBlocked
 }
 
 /**
@@ -27782,8 +26433,7 @@ export interface TLContactsBlockedSlice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ContactsBlocked data2 = 1;
    */
-  data2?: ContactsBlocked;
-
+  data2?: ContactsBlocked
 }
 
 /**
@@ -27793,28 +26443,27 @@ export interface ContactsContacts {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Contact contacts = 3;
    */
-  contacts: Contact[];
+  contacts: Contact[]
 
   /**
    * @generated from field: optional int32 saved_count = 4;
    */
-  savedCount?: number;
+  savedCount?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -27824,8 +26473,7 @@ export interface TLContactsContactsNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ContactsContacts data2 = 1;
    */
-  data2?: ContactsContacts;
-
+  data2?: ContactsContacts
 }
 
 /**
@@ -27835,8 +26483,7 @@ export interface TLContactsContacts {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ContactsContacts data2 = 1;
    */
-  data2?: ContactsContacts;
-
+  data2?: ContactsContacts
 }
 
 /**
@@ -27846,33 +26493,32 @@ export interface ContactsFound {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Peer my_results = 3;
    */
-  myResults: Peer[];
+  myResults: Peer[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Peer results = 4;
    */
-  results: Peer[];
+  results: Peer[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 5;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 6;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -27882,8 +26528,7 @@ export interface TLContactsFound {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ContactsFound data2 = 1;
    */
-  data2?: ContactsFound;
-
+  data2?: ContactsFound
 }
 
 /**
@@ -27893,33 +26538,32 @@ export interface ContactsImportedContacts {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ImportedContact imported = 3;
    */
-  imported: ImportedContact[];
+  imported: ImportedContact[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PopularContact popular_invites = 4;
    */
-  popularInvites: PopularContact[];
+  popularInvites: PopularContact[]
 
   /**
    * @generated from field: repeated int64 retry_contacts = 5;
    */
-  retryContacts: bigint[];
+  retryContacts: bigint[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 6;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -27929,8 +26573,7 @@ export interface TLContactsImportedContacts {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ContactsImportedContacts data2 = 1;
    */
-  data2?: ContactsImportedContacts;
-
+  data2?: ContactsImportedContacts
 }
 
 /**
@@ -27940,28 +26583,27 @@ export interface ContactsResolvedPeer {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer = 3;
    */
-  peer?: Peer;
+  peer?: Peer
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 4;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -27971,8 +26613,7 @@ export interface TLContactsResolvedPeer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ContactsResolvedPeer data2 = 1;
    */
-  data2?: ContactsResolvedPeer;
-
+  data2?: ContactsResolvedPeer
 }
 
 /**
@@ -27982,28 +26623,27 @@ export interface ContactsTopPeers {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.TopPeerCategoryPeers categories = 3;
    */
-  categories: TopPeerCategoryPeers[];
+  categories: TopPeerCategoryPeers[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 4;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -28013,8 +26653,7 @@ export interface TLContactsTopPeersNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ContactsTopPeers data2 = 1;
    */
-  data2?: ContactsTopPeers;
-
+  data2?: ContactsTopPeers
 }
 
 /**
@@ -28024,8 +26663,7 @@ export interface TLContactsTopPeers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ContactsTopPeers data2 = 1;
    */
-  data2?: ContactsTopPeers;
-
+  data2?: ContactsTopPeers
 }
 
 /**
@@ -28035,8 +26673,7 @@ export interface TLContactsTopPeersDisabled {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ContactsTopPeers data2 = 1;
    */
-  data2?: ContactsTopPeers;
-
+  data2?: ContactsTopPeers
 }
 
 /**
@@ -28046,23 +26683,22 @@ export interface HelpAppConfig {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 hash = 3;
    */
-  hash?: number;
+  hash?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.JSONValue config = 4;
    */
-  config?: JSONValue;
-
+  config?: JSONValue
 }
 
 /**
@@ -28072,8 +26708,7 @@ export interface TLHelpAppConfigNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpAppConfig data2 = 1;
    */
-  data2?: HelpAppConfig;
-
+  data2?: HelpAppConfig
 }
 
 /**
@@ -28083,8 +26718,7 @@ export interface TLHelpAppConfig {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpAppConfig data2 = 1;
    */
-  data2?: HelpAppConfig;
-
+  data2?: HelpAppConfig
 }
 
 /**
@@ -28094,53 +26728,52 @@ export interface HelpAppUpdate {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool can_not_skip = 3;
    */
-  canNotSkip?: boolean;
+  canNotSkip?: boolean
 
   /**
    * @generated from field: optional int32 id = 4;
    */
-  id?: number;
+  id?: number
 
   /**
    * @generated from field: optional string version = 5;
    */
-  version?: string;
+  version?: string
 
   /**
    * @generated from field: optional string text = 6;
    */
-  text?: string;
+  text?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 7;
    */
-  entities: MessageEntity[];
+  entities: MessageEntity[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document document = 8;
    */
-  document?: Document;
+  document?: Document
 
   /**
    * @generated from field: optional google.protobuf.StringValue url = 9;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Document sticker = 10;
    */
-  sticker?: Document;
-
+  sticker?: Document
 }
 
 /**
@@ -28150,8 +26783,7 @@ export interface TLHelpAppUpdate {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpAppUpdate data2 = 1;
    */
-  data2?: HelpAppUpdate;
-
+  data2?: HelpAppUpdate
 }
 
 /**
@@ -28161,8 +26793,7 @@ export interface TLHelpNoAppUpdate {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpAppUpdate data2 = 1;
    */
-  data2?: HelpAppUpdate;
-
+  data2?: HelpAppUpdate
 }
 
 /**
@@ -28172,23 +26803,22 @@ export interface HelpCountriesList {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.HelpCountry countries = 3;
    */
-  countries: HelpCountry[];
+  countries: HelpCountry[]
 
   /**
    * @generated from field: optional int32 hash = 4;
    */
-  hash?: number;
-
+  hash?: number
 }
 
 /**
@@ -28198,8 +26828,7 @@ export interface TLHelpCountriesListNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpCountriesList data2 = 1;
    */
-  data2?: HelpCountriesList;
-
+  data2?: HelpCountriesList
 }
 
 /**
@@ -28209,8 +26838,7 @@ export interface TLHelpCountriesList {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpCountriesList data2 = 1;
    */
-  data2?: HelpCountriesList;
-
+  data2?: HelpCountriesList
 }
 
 /**
@@ -28220,38 +26848,37 @@ export interface HelpCountry {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool hidden = 3;
    */
-  hidden?: boolean;
+  hidden?: boolean
 
   /**
    * @generated from field: optional string iso2 = 4;
    */
-  iso2?: string;
+  iso2?: string
 
   /**
    * @generated from field: optional string default_name = 5;
    */
-  defaultName?: string;
+  defaultName?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue name = 6;
    */
-  name?: string;
+  name?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.HelpCountryCode country_codes = 7;
    */
-  countryCodes: HelpCountryCode[];
-
+  countryCodes: HelpCountryCode[]
 }
 
 /**
@@ -28261,8 +26888,7 @@ export interface TLHelpCountry {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpCountry data2 = 1;
    */
-  data2?: HelpCountry;
-
+  data2?: HelpCountry
 }
 
 /**
@@ -28272,28 +26898,27 @@ export interface HelpCountryCode {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string country_code = 3;
    */
-  countryCode?: string;
+  countryCode?: string
 
   /**
    * @generated from field: repeated string prefixes = 4;
    */
-  prefixes: string[];
+  prefixes: string[]
 
   /**
    * @generated from field: repeated string patterns = 5;
    */
-  patterns: string[];
-
+  patterns: string[]
 }
 
 /**
@@ -28303,8 +26928,7 @@ export interface TLHelpCountryCode {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpCountryCode data2 = 1;
    */
-  data2?: HelpCountryCode;
-
+  data2?: HelpCountryCode
 }
 
 /**
@@ -28314,28 +26938,27 @@ export interface HelpDeepLinkInfo {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool update_app = 3;
    */
-  updateApp?: boolean;
+  updateApp?: boolean
 
   /**
    * @generated from field: optional string message = 4;
    */
-  message?: string;
+  message?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 5;
    */
-  entities: MessageEntity[];
-
+  entities: MessageEntity[]
 }
 
 /**
@@ -28345,8 +26968,7 @@ export interface TLHelpDeepLinkInfoEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpDeepLinkInfo data2 = 1;
    */
-  data2?: HelpDeepLinkInfo;
-
+  data2?: HelpDeepLinkInfo
 }
 
 /**
@@ -28356,8 +26978,7 @@ export interface TLHelpDeepLinkInfo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpDeepLinkInfo data2 = 1;
    */
-  data2?: HelpDeepLinkInfo;
-
+  data2?: HelpDeepLinkInfo
 }
 
 /**
@@ -28367,18 +26988,17 @@ export interface HelpInviteText {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string message = 3;
    */
-  message?: string;
-
+  message?: string
 }
 
 /**
@@ -28388,8 +27008,7 @@ export interface TLHelpInviteText {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpInviteText data2 = 1;
    */
-  data2?: HelpInviteText;
-
+  data2?: HelpInviteText
 }
 
 /**
@@ -28399,23 +27018,22 @@ export interface HelpPassportConfig {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 hash = 3;
    */
-  hash?: number;
+  hash?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON countries_langs = 4;
    */
-  countriesLangs?: DataJSON;
-
+  countriesLangs?: DataJSON
 }
 
 /**
@@ -28425,8 +27043,7 @@ export interface TLHelpPassportConfigNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpPassportConfig data2 = 1;
    */
-  data2?: HelpPassportConfig;
-
+  data2?: HelpPassportConfig
 }
 
 /**
@@ -28436,8 +27053,7 @@ export interface TLHelpPassportConfig {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpPassportConfig data2 = 1;
    */
-  data2?: HelpPassportConfig;
-
+  data2?: HelpPassportConfig
 }
 
 /**
@@ -28447,53 +27063,52 @@ export interface HelpPremiumPromo {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string status_text = 3;
    */
-  statusText?: string;
+  statusText?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity status_entities = 4;
    */
-  statusEntities: MessageEntity[];
+  statusEntities: MessageEntity[]
 
   /**
    * @generated from field: repeated string video_sections = 5;
    */
-  videoSections: string[];
+  videoSections: string[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Document videos = 6;
    */
-  videos: Document[];
+  videos: Document[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PremiumSubscriptionOption period_options = 7;
    */
-  periodOptions: PremiumSubscriptionOption[];
+  periodOptions: PremiumSubscriptionOption[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 8;
    */
-  users: User[];
+  users: User[]
 
   /**
    * @generated from field: optional string currency = 9;
    */
-  currency?: string;
+  currency?: string
 
   /**
    * @generated from field: optional int64 monthly_amount = 10;
    */
-  monthlyAmount?: bigint;
-
+  monthlyAmount?: bigint
 }
 
 /**
@@ -28503,8 +27118,7 @@ export interface TLHelpPremiumPromo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpPremiumPromo data2 = 1;
    */
-  data2?: HelpPremiumPromo;
-
+  data2?: HelpPremiumPromo
 }
 
 /**
@@ -28514,48 +27128,47 @@ export interface HelpPromoData {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 expires = 3;
    */
-  expires?: number;
+  expires?: number
 
   /**
    * @generated from field: optional bool proxy = 4;
    */
-  proxy?: boolean;
+  proxy?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer peer = 5;
    */
-  peer?: Peer;
+  peer?: Peer
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 6;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 7;
    */
-  users: User[];
+  users: User[]
 
   /**
    * @generated from field: optional google.protobuf.StringValue psa_type = 8;
    */
-  psaType?: string;
+  psaType?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue psa_message = 9;
    */
-  psaMessage?: string;
-
+  psaMessage?: string
 }
 
 /**
@@ -28565,8 +27178,7 @@ export interface TLHelpPromoDataEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpPromoData data2 = 1;
    */
-  data2?: HelpPromoData;
-
+  data2?: HelpPromoData
 }
 
 /**
@@ -28576,8 +27188,7 @@ export interface TLHelpPromoData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpPromoData data2 = 1;
    */
-  data2?: HelpPromoData;
-
+  data2?: HelpPromoData
 }
 
 /**
@@ -28587,28 +27198,27 @@ export interface HelpRecentMeUrls {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.RecentMeUrl urls = 3;
    */
-  urls: RecentMeUrl[];
+  urls: RecentMeUrl[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 4;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -28618,8 +27228,7 @@ export interface TLHelpRecentMeUrls {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpRecentMeUrls data2 = 1;
    */
-  data2?: HelpRecentMeUrls;
-
+  data2?: HelpRecentMeUrls
 }
 
 /**
@@ -28629,23 +27238,22 @@ export interface HelpSupport {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone_number = 3;
    */
-  phoneNumber?: string;
+  phoneNumber?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.User user = 4;
    */
-  user?: User;
-
+  user?: User
 }
 
 /**
@@ -28655,8 +27263,7 @@ export interface TLHelpSupport {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpSupport data2 = 1;
    */
-  data2?: HelpSupport;
-
+  data2?: HelpSupport
 }
 
 /**
@@ -28666,18 +27273,17 @@ export interface HelpSupportName {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string name = 3;
    */
-  name?: string;
-
+  name?: string
 }
 
 /**
@@ -28687,8 +27293,7 @@ export interface TLHelpSupportName {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpSupportName data2 = 1;
    */
-  data2?: HelpSupportName;
-
+  data2?: HelpSupportName
 }
 
 /**
@@ -28698,38 +27303,37 @@ export interface HelpTermsOfService {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool popup = 3;
    */
-  popup?: boolean;
+  popup?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON id = 4;
    */
-  id?: DataJSON;
+  id?: DataJSON
 
   /**
    * @generated from field: optional string text = 5;
    */
-  text?: string;
+  text?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 6;
    */
-  entities: MessageEntity[];
+  entities: MessageEntity[]
 
   /**
    * @generated from field: optional google.protobuf.Int32Value min_age_confirm = 7;
    */
-  minAgeConfirm?: number;
-
+  minAgeConfirm?: number
 }
 
 /**
@@ -28739,8 +27343,7 @@ export interface TLHelpTermsOfService {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpTermsOfService data2 = 1;
    */
-  data2?: HelpTermsOfService;
-
+  data2?: HelpTermsOfService
 }
 
 /**
@@ -28750,23 +27353,22 @@ export interface HelpTermsOfServiceUpdate {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 expires = 3;
    */
-  expires?: number;
+  expires?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpTermsOfService terms_of_service = 4;
    */
-  termsOfService?: HelpTermsOfService;
-
+  termsOfService?: HelpTermsOfService
 }
 
 /**
@@ -28776,8 +27378,7 @@ export interface TLHelpTermsOfServiceUpdateEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpTermsOfServiceUpdate data2 = 1;
    */
-  data2?: HelpTermsOfServiceUpdate;
-
+  data2?: HelpTermsOfServiceUpdate
 }
 
 /**
@@ -28787,8 +27388,7 @@ export interface TLHelpTermsOfServiceUpdate {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpTermsOfServiceUpdate data2 = 1;
    */
-  data2?: HelpTermsOfServiceUpdate;
-
+  data2?: HelpTermsOfServiceUpdate
 }
 
 /**
@@ -28798,33 +27398,32 @@ export interface HelpUserInfo {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string message = 3;
    */
-  message?: string;
+  message?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageEntity entities = 4;
    */
-  entities: MessageEntity[];
+  entities: MessageEntity[]
 
   /**
    * @generated from field: optional string author = 5;
    */
-  author?: string;
+  author?: string
 
   /**
    * @generated from field: optional int32 date = 6;
    */
-  date?: number;
-
+  date?: number
 }
 
 /**
@@ -28834,8 +27433,7 @@ export interface TLHelpUserInfoEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpUserInfo data2 = 1;
    */
-  data2?: HelpUserInfo;
-
+  data2?: HelpUserInfo
 }
 
 /**
@@ -28845,8 +27443,7 @@ export interface TLHelpUserInfo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpUserInfo data2 = 1;
    */
-  data2?: HelpUserInfo;
-
+  data2?: HelpUserInfo
 }
 
 /**
@@ -28856,33 +27453,32 @@ export interface MessagesAffectedFoundMessages {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 pts = 3;
    */
-  pts?: number;
+  pts?: number
 
   /**
    * @generated from field: optional int32 pts_count = 4;
    */
-  ptsCount?: number;
+  ptsCount?: number
 
   /**
    * @generated from field: optional int32 offset = 5;
    */
-  offset?: number;
+  offset?: number
 
   /**
    * @generated from field: repeated int32 messages = 6;
    */
-  messages: number[];
-
+  messages: number[]
 }
 
 /**
@@ -28892,8 +27488,7 @@ export interface TLMessagesAffectedFoundMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesAffectedFoundMessages data2 = 1;
    */
-  data2?: MessagesAffectedFoundMessages;
-
+  data2?: MessagesAffectedFoundMessages
 }
 
 /**
@@ -28903,28 +27498,27 @@ export interface MessagesAffectedHistory {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 pts = 3;
    */
-  pts?: number;
+  pts?: number
 
   /**
    * @generated from field: optional int32 pts_count = 4;
    */
-  ptsCount?: number;
+  ptsCount?: number
 
   /**
    * @generated from field: optional int32 offset = 5;
    */
-  offset?: number;
-
+  offset?: number
 }
 
 /**
@@ -28934,8 +27528,7 @@ export interface TLMessagesAffectedHistory {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesAffectedHistory data2 = 1;
    */
-  data2?: MessagesAffectedHistory;
-
+  data2?: MessagesAffectedHistory
 }
 
 /**
@@ -28945,23 +27538,22 @@ export interface MessagesAffectedMessages {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 pts = 3;
    */
-  pts?: number;
+  pts?: number
 
   /**
    * @generated from field: optional int32 pts_count = 4;
    */
-  ptsCount?: number;
-
+  ptsCount?: number
 }
 
 /**
@@ -28971,8 +27563,7 @@ export interface TLMessagesAffectedMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesAffectedMessages data2 = 1;
    */
-  data2?: MessagesAffectedMessages;
-
+  data2?: MessagesAffectedMessages
 }
 
 /**
@@ -28982,23 +27573,22 @@ export interface MessagesAllStickers {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
+  hash?: bigint
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.StickerSet sets = 4;
    */
-  sets: StickerSet[];
-
+  sets: StickerSet[]
 }
 
 /**
@@ -29008,8 +27598,7 @@ export interface TLMessagesAllStickersNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesAllStickers data2 = 1;
    */
-  data2?: MessagesAllStickers;
-
+  data2?: MessagesAllStickers
 }
 
 /**
@@ -29019,8 +27608,7 @@ export interface TLMessagesAllStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesAllStickers data2 = 1;
    */
-  data2?: MessagesAllStickers;
-
+  data2?: MessagesAllStickers
 }
 
 /**
@@ -29030,23 +27618,22 @@ export interface MessagesArchivedStickers {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 count = 3;
    */
-  count?: number;
+  count?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.StickerSetCovered sets = 4;
    */
-  sets: StickerSetCovered[];
-
+  sets: StickerSetCovered[]
 }
 
 /**
@@ -29056,8 +27643,7 @@ export interface TLMessagesArchivedStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesArchivedStickers data2 = 1;
    */
-  data2?: MessagesArchivedStickers;
-
+  data2?: MessagesArchivedStickers
 }
 
 /**
@@ -29067,23 +27653,22 @@ export interface MessagesAvailableReactions {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 hash = 3;
    */
-  hash?: number;
+  hash?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.AvailableReaction reactions = 4;
    */
-  reactions: AvailableReaction[];
-
+  reactions: AvailableReaction[]
 }
 
 /**
@@ -29093,8 +27678,7 @@ export interface TLMessagesAvailableReactionsNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesAvailableReactions data2 = 1;
    */
-  data2?: MessagesAvailableReactions;
-
+  data2?: MessagesAvailableReactions
 }
 
 /**
@@ -29104,8 +27688,7 @@ export interface TLMessagesAvailableReactions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesAvailableReactions data2 = 1;
    */
-  data2?: MessagesAvailableReactions;
-
+  data2?: MessagesAvailableReactions
 }
 
 /**
@@ -29115,33 +27698,32 @@ export interface MessagesBotApp {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool inactive = 3;
    */
-  inactive?: boolean;
+  inactive?: boolean
 
   /**
    * @generated from field: optional bool request_write_access = 4;
    */
-  requestWriteAccess?: boolean;
+  requestWriteAccess?: boolean
 
   /**
    * @generated from field: optional bool has_settings = 5;
    */
-  hasSettings?: boolean;
+  hasSettings?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BotApp app = 6;
    */
-  app?: BotApp;
-
+  app?: BotApp
 }
 
 /**
@@ -29151,8 +27733,7 @@ export interface TLMessagesBotApp {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesBotApp data2 = 1;
    */
-  data2?: MessagesBotApp;
-
+  data2?: MessagesBotApp
 }
 
 /**
@@ -29162,43 +27743,42 @@ export interface MessagesBotCallbackAnswer {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool alert = 3;
    */
-  alert?: boolean;
+  alert?: boolean
 
   /**
    * @generated from field: optional bool has_url = 4;
    */
-  hasUrl?: boolean;
+  hasUrl?: boolean
 
   /**
    * @generated from field: optional bool native_ui = 5;
    */
-  nativeUi?: boolean;
+  nativeUi?: boolean
 
   /**
    * @generated from field: optional google.protobuf.StringValue message = 6;
    */
-  message?: string;
+  message?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue url = 7;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional int32 cache_time = 8;
    */
-  cacheTime?: number;
-
+  cacheTime?: number
 }
 
 /**
@@ -29208,8 +27788,7 @@ export interface TLMessagesBotCallbackAnswer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesBotCallbackAnswer data2 = 1;
    */
-  data2?: MessagesBotCallbackAnswer;
-
+  data2?: MessagesBotCallbackAnswer
 }
 
 /**
@@ -29219,53 +27798,52 @@ export interface MessagesBotResults {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool gallery = 3;
    */
-  gallery?: boolean;
+  gallery?: boolean
 
   /**
    * @generated from field: optional int64 query_id = 4;
    */
-  queryId?: bigint;
+  queryId?: bigint
 
   /**
    * @generated from field: optional google.protobuf.StringValue next_offset = 5;
    */
-  nextOffset?: string;
+  nextOffset?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InlineBotSwitchPM switch_pm = 6;
    */
-  switchPm?: InlineBotSwitchPM;
+  switchPm?: InlineBotSwitchPM
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.InlineBotWebView switch_webview = 7;
    */
-  switchWebview?: InlineBotWebView;
+  switchWebview?: InlineBotWebView
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.BotInlineResult results = 8;
    */
-  results: BotInlineResult[];
+  results: BotInlineResult[]
 
   /**
    * @generated from field: optional int32 cache_time = 9;
    */
-  cacheTime?: number;
+  cacheTime?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 10;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -29275,8 +27853,7 @@ export interface TLMessagesBotResults {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesBotResults data2 = 1;
    */
-  data2?: MessagesBotResults;
-
+  data2?: MessagesBotResults
 }
 
 /**
@@ -29286,23 +27863,22 @@ export interface MessagesChatAdminsWithInvites {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ChatAdminWithInvites admins = 3;
    */
-  admins: ChatAdminWithInvites[];
+  admins: ChatAdminWithInvites[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 4;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -29312,8 +27888,7 @@ export interface TLMessagesChatAdminsWithInvites {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesChatAdminsWithInvites data2 = 1;
    */
-  data2?: MessagesChatAdminsWithInvites;
-
+  data2?: MessagesChatAdminsWithInvites
 }
 
 /**
@@ -29323,28 +27898,27 @@ export interface MessagesChatFull {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ChatFull full_chat = 3;
    */
-  fullChat?: ChatFull;
+  fullChat?: ChatFull
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 4;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -29354,8 +27928,7 @@ export interface TLMessagesChatFull {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesChatFull data2 = 1;
    */
-  data2?: MessagesChatFull;
-
+  data2?: MessagesChatFull
 }
 
 /**
@@ -29365,28 +27938,27 @@ export interface MessagesChatInviteImporters {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 count = 3;
    */
-  count?: number;
+  count?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ChatInviteImporter importers = 4;
    */
-  importers: ChatInviteImporter[];
+  importers: ChatInviteImporter[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -29396,8 +27968,7 @@ export interface TLMessagesChatInviteImporters {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesChatInviteImporters data2 = 1;
    */
-  data2?: MessagesChatInviteImporters;
-
+  data2?: MessagesChatInviteImporters
 }
 
 /**
@@ -29407,23 +27978,22 @@ export interface MessagesChats {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 3;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: optional int32 count = 4;
    */
-  count?: number;
-
+  count?: number
 }
 
 /**
@@ -29433,8 +28003,7 @@ export interface TLMessagesChats {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesChats data2 = 1;
    */
-  data2?: MessagesChats;
-
+  data2?: MessagesChats
 }
 
 /**
@@ -29444,8 +28013,7 @@ export interface TLMessagesChatsSlice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesChats data2 = 1;
    */
-  data2?: MessagesChats;
-
+  data2?: MessagesChats
 }
 
 /**
@@ -29455,18 +28023,17 @@ export interface MessagesCheckedHistoryImportPeer {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string confirm_text = 3;
    */
-  confirmText?: string;
-
+  confirmText?: string
 }
 
 /**
@@ -29476,8 +28043,7 @@ export interface TLMessagesCheckedHistoryImportPeer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesCheckedHistoryImportPeer data2 = 1;
    */
-  data2?: MessagesCheckedHistoryImportPeer;
-
+  data2?: MessagesCheckedHistoryImportPeer
 }
 
 /**
@@ -29487,33 +28053,32 @@ export interface MessagesDhConfig {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes random = 3;
    */
-  random?: Uint8Array;
+  random?: Uint8Array
 
   /**
    * @generated from field: optional int32 g = 4;
    */
-  g?: number;
+  g?: number
 
   /**
    * @generated from field: optional bytes p = 5;
    */
-  p?: Uint8Array;
+  p?: Uint8Array
 
   /**
    * @generated from field: optional int32 version = 6;
    */
-  version?: number;
-
+  version?: number
 }
 
 /**
@@ -29523,8 +28088,7 @@ export interface TLMessagesDhConfigNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesDhConfig data2 = 1;
    */
-  data2?: MessagesDhConfig;
-
+  data2?: MessagesDhConfig
 }
 
 /**
@@ -29534,8 +28098,7 @@ export interface TLMessagesDhConfig {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesDhConfig data2 = 1;
    */
-  data2?: MessagesDhConfig;
-
+  data2?: MessagesDhConfig
 }
 
 /**
@@ -29545,38 +28108,37 @@ export interface MessagesDialogs {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Dialog dialogs = 3;
    */
-  dialogs: Dialog[];
+  dialogs: Dialog[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Message messages = 4;
    */
-  messages: Message[];
+  messages: Message[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 5;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 6;
    */
-  users: User[];
+  users: User[]
 
   /**
    * @generated from field: optional int32 count = 7;
    */
-  count?: number;
-
+  count?: number
 }
 
 /**
@@ -29586,8 +28148,7 @@ export interface TLMessagesDialogs {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesDialogs data2 = 1;
    */
-  data2?: MessagesDialogs;
-
+  data2?: MessagesDialogs
 }
 
 /**
@@ -29597,8 +28158,7 @@ export interface TLMessagesDialogsSlice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesDialogs data2 = 1;
    */
-  data2?: MessagesDialogs;
-
+  data2?: MessagesDialogs
 }
 
 /**
@@ -29608,8 +28168,7 @@ export interface TLMessagesDialogsNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesDialogs data2 = 1;
    */
-  data2?: MessagesDialogs;
-
+  data2?: MessagesDialogs
 }
 
 /**
@@ -29619,48 +28178,47 @@ export interface MessagesDiscussionMessage {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Message messages = 3;
    */
-  messages: Message[];
+  messages: Message[]
 
   /**
    * @generated from field: optional google.protobuf.Int32Value max_id = 4;
    */
-  maxId?: number;
+  maxId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value read_inbox_max_id = 5;
    */
-  readInboxMaxId?: number;
+  readInboxMaxId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value read_outbox_max_id = 6;
    */
-  readOutboxMaxId?: number;
+  readOutboxMaxId?: number
 
   /**
    * @generated from field: optional int32 unread_count = 7;
    */
-  unreadCount?: number;
+  unreadCount?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 8;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 9;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -29670,8 +28228,7 @@ export interface TLMessagesDiscussionMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesDiscussionMessage data2 = 1;
    */
-  data2?: MessagesDiscussionMessage;
-
+  data2?: MessagesDiscussionMessage
 }
 
 /**
@@ -29681,23 +28238,22 @@ export interface MessagesEmojiGroups {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 hash = 3;
    */
-  hash?: number;
+  hash?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.EmojiGroup groups = 4;
    */
-  groups: EmojiGroup[];
-
+  groups: EmojiGroup[]
 }
 
 /**
@@ -29707,8 +28263,7 @@ export interface TLMessagesEmojiGroupsNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesEmojiGroups data2 = 1;
    */
-  data2?: MessagesEmojiGroups;
-
+  data2?: MessagesEmojiGroups
 }
 
 /**
@@ -29718,8 +28273,7 @@ export interface TLMessagesEmojiGroups {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesEmojiGroups data2 = 1;
    */
-  data2?: MessagesEmojiGroups;
-
+  data2?: MessagesEmojiGroups
 }
 
 /**
@@ -29729,28 +28283,27 @@ export interface MessagesExportedChatInvite {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ExportedChatInvite invite = 3;
    */
-  invite?: ExportedChatInvite;
+  invite?: ExportedChatInvite
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 4;
    */
-  users: User[];
+  users: User[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ExportedChatInvite new_invite = 5;
    */
-  newInvite?: ExportedChatInvite;
-
+  newInvite?: ExportedChatInvite
 }
 
 /**
@@ -29760,8 +28313,7 @@ export interface TLMessagesExportedChatInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesExportedChatInvite data2 = 1;
    */
-  data2?: MessagesExportedChatInvite;
-
+  data2?: MessagesExportedChatInvite
 }
 
 /**
@@ -29771,8 +28323,7 @@ export interface TLMessagesExportedChatInviteReplaced {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesExportedChatInvite data2 = 1;
    */
-  data2?: MessagesExportedChatInvite;
-
+  data2?: MessagesExportedChatInvite
 }
 
 /**
@@ -29782,28 +28333,27 @@ export interface MessagesExportedChatInvites {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 count = 3;
    */
-  count?: number;
+  count?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ExportedChatInvite invites = 4;
    */
-  invites: ExportedChatInvite[];
+  invites: ExportedChatInvite[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -29813,8 +28363,7 @@ export interface TLMessagesExportedChatInvites {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesExportedChatInvites data2 = 1;
    */
-  data2?: MessagesExportedChatInvites;
-
+  data2?: MessagesExportedChatInvites
 }
 
 /**
@@ -29824,28 +28373,27 @@ export interface MessagesFavedStickers {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
+  hash?: bigint
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.StickerPack packs = 4;
    */
-  packs: StickerPack[];
+  packs: StickerPack[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Document stickers = 5;
    */
-  stickers: Document[];
-
+  stickers: Document[]
 }
 
 /**
@@ -29855,8 +28403,7 @@ export interface TLMessagesFavedStickersNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFavedStickers data2 = 1;
    */
-  data2?: MessagesFavedStickers;
-
+  data2?: MessagesFavedStickers
 }
 
 /**
@@ -29866,8 +28413,7 @@ export interface TLMessagesFavedStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFavedStickers data2 = 1;
    */
-  data2?: MessagesFavedStickers;
-
+  data2?: MessagesFavedStickers
 }
 
 /**
@@ -29877,38 +28423,37 @@ export interface MessagesFeaturedStickers {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 count = 3;
    */
-  count?: number;
+  count?: number
 
   /**
    * @generated from field: optional bool premium = 4;
    */
-  premium?: boolean;
+  premium?: boolean
 
   /**
    * @generated from field: optional int64 hash = 5;
    */
-  hash?: bigint;
+  hash?: bigint
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.StickerSetCovered sets = 6;
    */
-  sets: StickerSetCovered[];
+  sets: StickerSetCovered[]
 
   /**
    * @generated from field: repeated int64 unread = 7;
    */
-  unread: bigint[];
-
+  unread: bigint[]
 }
 
 /**
@@ -29918,8 +28463,7 @@ export interface TLMessagesFeaturedStickersNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFeaturedStickers data2 = 1;
    */
-  data2?: MessagesFeaturedStickers;
-
+  data2?: MessagesFeaturedStickers
 }
 
 /**
@@ -29929,8 +28473,7 @@ export interface TLMessagesFeaturedStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFeaturedStickers data2 = 1;
    */
-  data2?: MessagesFeaturedStickers;
-
+  data2?: MessagesFeaturedStickers
 }
 
 /**
@@ -29940,48 +28483,47 @@ export interface MessagesForumTopics {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool order_by_create_date = 3;
    */
-  orderByCreateDate?: boolean;
+  orderByCreateDate?: boolean
 
   /**
    * @generated from field: optional int32 count = 4;
    */
-  count?: number;
+  count?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ForumTopic topics = 5;
    */
-  topics: ForumTopic[];
+  topics: ForumTopic[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Message messages = 6;
    */
-  messages: Message[];
+  messages: Message[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 7;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 8;
    */
-  users: User[];
+  users: User[]
 
   /**
    * @generated from field: optional int32 pts = 9;
    */
-  pts?: number;
-
+  pts?: number
 }
 
 /**
@@ -29991,8 +28533,7 @@ export interface TLMessagesForumTopics {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesForumTopics data2 = 1;
    */
-  data2?: MessagesForumTopics;
-
+  data2?: MessagesForumTopics
 }
 
 /**
@@ -30002,23 +28543,22 @@ export interface MessagesFoundStickerSets {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
+  hash?: bigint
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.StickerSetCovered sets = 4;
    */
-  sets: StickerSetCovered[];
-
+  sets: StickerSetCovered[]
 }
 
 /**
@@ -30028,8 +28568,7 @@ export interface TLMessagesFoundStickerSetsNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFoundStickerSets data2 = 1;
    */
-  data2?: MessagesFoundStickerSets;
-
+  data2?: MessagesFoundStickerSets
 }
 
 /**
@@ -30039,8 +28578,7 @@ export interface TLMessagesFoundStickerSets {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFoundStickerSets data2 = 1;
    */
-  data2?: MessagesFoundStickerSets;
-
+  data2?: MessagesFoundStickerSets
 }
 
 /**
@@ -30050,23 +28588,22 @@ export interface MessagesHighScores {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.HighScore scores = 3;
    */
-  scores: HighScore[];
+  scores: HighScore[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 4;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -30076,8 +28613,7 @@ export interface TLMessagesHighScores {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesHighScores data2 = 1;
    */
-  data2?: MessagesHighScores;
-
+  data2?: MessagesHighScores
 }
 
 /**
@@ -30087,18 +28623,17 @@ export interface MessagesHistoryImport {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 id = 3;
    */
-  id?: bigint;
-
+  id?: bigint
 }
 
 /**
@@ -30108,8 +28643,7 @@ export interface TLMessagesHistoryImport {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesHistoryImport data2 = 1;
    */
-  data2?: MessagesHistoryImport;
-
+  data2?: MessagesHistoryImport
 }
 
 /**
@@ -30119,28 +28653,27 @@ export interface MessagesHistoryImportParsed {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool pm = 3;
    */
-  pm?: boolean;
+  pm?: boolean
 
   /**
    * @generated from field: optional bool group = 4;
    */
-  group?: boolean;
+  group?: boolean
 
   /**
    * @generated from field: optional google.protobuf.StringValue title = 5;
    */
-  title?: string;
-
+  title?: string
 }
 
 /**
@@ -30150,8 +28683,7 @@ export interface TLMessagesHistoryImportParsed {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesHistoryImportParsed data2 = 1;
    */
-  data2?: MessagesHistoryImportParsed;
-
+  data2?: MessagesHistoryImportParsed
 }
 
 /**
@@ -30161,28 +28693,27 @@ export interface MessagesInactiveChats {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated int32 dates = 3;
    */
-  dates: number[];
+  dates: number[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 4;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -30192,8 +28723,7 @@ export interface TLMessagesInactiveChats {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesInactiveChats data2 = 1;
    */
-  data2?: MessagesInactiveChats;
-
+  data2?: MessagesInactiveChats
 }
 
 /**
@@ -30203,18 +28733,17 @@ export interface MessagesMessageEditData {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool caption = 3;
    */
-  caption?: boolean;
-
+  caption?: boolean
 }
 
 /**
@@ -30224,8 +28753,7 @@ export interface TLMessagesMessageEditData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesMessageEditData data2 = 1;
    */
-  data2?: MessagesMessageEditData;
-
+  data2?: MessagesMessageEditData
 }
 
 /**
@@ -30235,38 +28763,37 @@ export interface MessagesMessageReactionsList {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 count = 3;
    */
-  count?: number;
+  count?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessagePeerReaction reactions = 4;
    */
-  reactions: MessagePeerReaction[];
+  reactions: MessagePeerReaction[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 5;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 6;
    */
-  users: User[];
+  users: User[]
 
   /**
    * @generated from field: optional google.protobuf.StringValue next_offset = 7;
    */
-  nextOffset?: string;
-
+  nextOffset?: string
 }
 
 /**
@@ -30276,8 +28803,7 @@ export interface TLMessagesMessageReactionsList {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesMessageReactionsList data2 = 1;
    */
-  data2?: MessagesMessageReactionsList;
-
+  data2?: MessagesMessageReactionsList
 }
 
 /**
@@ -30287,28 +28813,27 @@ export interface MessagesMessageViews {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageViews views = 3;
    */
-  views: MessageViews[];
+  views: MessageViews[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 4;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -30318,8 +28843,7 @@ export interface TLMessagesMessageViews {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesMessageViews data2 = 1;
    */
-  data2?: MessagesMessageViews;
-
+  data2?: MessagesMessageViews
 }
 
 /**
@@ -30329,58 +28853,57 @@ export interface MessagesMessages {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Message messages = 3;
    */
-  messages: Message[];
+  messages: Message[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 4;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
+  users: User[]
 
   /**
    * @generated from field: optional bool inexact = 6;
    */
-  inexact?: boolean;
+  inexact?: boolean
 
   /**
    * @generated from field: optional int32 count = 7;
    */
-  count?: number;
+  count?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value next_rate = 8;
    */
-  nextRate?: number;
+  nextRate?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value offset_id_offset = 9;
    */
-  offsetIdOffset?: number;
+  offsetIdOffset?: number
 
   /**
    * @generated from field: optional int32 pts = 10;
    */
-  pts?: number;
+  pts?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ForumTopic topics = 11;
    */
-  topics: ForumTopic[];
-
+  topics: ForumTopic[]
 }
 
 /**
@@ -30390,8 +28913,7 @@ export interface TLMessagesMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesMessages data2 = 1;
    */
-  data2?: MessagesMessages;
-
+  data2?: MessagesMessages
 }
 
 /**
@@ -30401,8 +28923,7 @@ export interface TLMessagesMessagesSlice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesMessages data2 = 1;
    */
-  data2?: MessagesMessages;
-
+  data2?: MessagesMessages
 }
 
 /**
@@ -30412,8 +28933,7 @@ export interface TLMessagesChannelMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesMessages data2 = 1;
    */
-  data2?: MessagesMessages;
-
+  data2?: MessagesMessages
 }
 
 /**
@@ -30423,8 +28943,7 @@ export interface TLMessagesMessagesNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesMessages data2 = 1;
    */
-  data2?: MessagesMessages;
-
+  data2?: MessagesMessages
 }
 
 /**
@@ -30434,38 +28953,37 @@ export interface MessagesPeerDialogs {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Dialog dialogs = 3;
    */
-  dialogs: Dialog[];
+  dialogs: Dialog[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Message messages = 4;
    */
-  messages: Message[];
+  messages: Message[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 5;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 6;
    */
-  users: User[];
+  users: User[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UpdatesState state = 7;
    */
-  state?: UpdatesState;
-
+  state?: UpdatesState
 }
 
 /**
@@ -30475,8 +28993,7 @@ export interface TLMessagesPeerDialogs {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesPeerDialogs data2 = 1;
    */
-  data2?: MessagesPeerDialogs;
-
+  data2?: MessagesPeerDialogs
 }
 
 /**
@@ -30486,28 +29003,27 @@ export interface MessagesPeerSettings {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PeerSettings settings = 3;
    */
-  settings?: PeerSettings;
+  settings?: PeerSettings
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 4;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -30517,8 +29033,7 @@ export interface TLMessagesPeerSettings {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesPeerSettings data2 = 1;
    */
-  data2?: MessagesPeerSettings;
-
+  data2?: MessagesPeerSettings
 }
 
 /**
@@ -30528,23 +29043,22 @@ export interface MessagesReactions {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
+  hash?: bigint
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Reaction reactions = 4;
    */
-  reactions: Reaction[];
-
+  reactions: Reaction[]
 }
 
 /**
@@ -30554,8 +29068,7 @@ export interface TLMessagesReactionsNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesReactions data2 = 1;
    */
-  data2?: MessagesReactions;
-
+  data2?: MessagesReactions
 }
 
 /**
@@ -30565,8 +29078,7 @@ export interface TLMessagesReactions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesReactions data2 = 1;
    */
-  data2?: MessagesReactions;
-
+  data2?: MessagesReactions
 }
 
 /**
@@ -30576,33 +29088,32 @@ export interface MessagesRecentStickers {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
+  hash?: bigint
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.StickerPack packs = 4;
    */
-  packs: StickerPack[];
+  packs: StickerPack[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Document stickers = 5;
    */
-  stickers: Document[];
+  stickers: Document[]
 
   /**
    * @generated from field: repeated int32 dates = 6;
    */
-  dates: number[];
-
+  dates: number[]
 }
 
 /**
@@ -30612,8 +29123,7 @@ export interface TLMessagesRecentStickersNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesRecentStickers data2 = 1;
    */
-  data2?: MessagesRecentStickers;
-
+  data2?: MessagesRecentStickers
 }
 
 /**
@@ -30623,8 +29133,7 @@ export interface TLMessagesRecentStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesRecentStickers data2 = 1;
    */
-  data2?: MessagesRecentStickers;
-
+  data2?: MessagesRecentStickers
 }
 
 /**
@@ -30634,23 +29143,22 @@ export interface MessagesSavedGifs {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
+  hash?: bigint
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Document gifs = 4;
    */
-  gifs: Document[];
-
+  gifs: Document[]
 }
 
 /**
@@ -30660,8 +29168,7 @@ export interface TLMessagesSavedGifsNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesSavedGifs data2 = 1;
    */
-  data2?: MessagesSavedGifs;
-
+  data2?: MessagesSavedGifs
 }
 
 /**
@@ -30671,8 +29178,7 @@ export interface TLMessagesSavedGifs {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesSavedGifs data2 = 1;
    */
-  data2?: MessagesSavedGifs;
-
+  data2?: MessagesSavedGifs
 }
 
 /**
@@ -30682,28 +29188,27 @@ export interface MessagesSearchCounter {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool inexact = 3;
    */
-  inexact?: boolean;
+  inexact?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesFilter filter = 4;
    */
-  filter?: MessagesFilter;
+  filter?: MessagesFilter
 
   /**
    * @generated from field: optional int32 count = 5;
    */
-  count?: number;
-
+  count?: number
 }
 
 /**
@@ -30713,8 +29218,7 @@ export interface TLMessagesSearchCounter {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesSearchCounter data2 = 1;
    */
-  data2?: MessagesSearchCounter;
-
+  data2?: MessagesSearchCounter
 }
 
 /**
@@ -30724,58 +29228,57 @@ export interface MessagesSearchResultsCalendar {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool inexact = 3;
    */
-  inexact?: boolean;
+  inexact?: boolean
 
   /**
    * @generated from field: optional int32 count = 4;
    */
-  count?: number;
+  count?: number
 
   /**
    * @generated from field: optional int32 min_date = 5;
    */
-  minDate?: number;
+  minDate?: number
 
   /**
    * @generated from field: optional int32 min_msg_id = 6;
    */
-  minMsgId?: number;
+  minMsgId?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value offset_id_offset = 7;
    */
-  offsetIdOffset?: number;
+  offsetIdOffset?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SearchResultsCalendarPeriod periods = 8;
    */
-  periods: SearchResultsCalendarPeriod[];
+  periods: SearchResultsCalendarPeriod[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Message messages = 9;
    */
-  messages: Message[];
+  messages: Message[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 10;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 11;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -30785,8 +29288,7 @@ export interface TLMessagesSearchResultsCalendar {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesSearchResultsCalendar data2 = 1;
    */
-  data2?: MessagesSearchResultsCalendar;
-
+  data2?: MessagesSearchResultsCalendar
 }
 
 /**
@@ -30796,23 +29298,22 @@ export interface MessagesSearchResultsPositions {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 count = 3;
    */
-  count?: number;
+  count?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SearchResultsPosition positions = 4;
    */
-  positions: SearchResultsPosition[];
-
+  positions: SearchResultsPosition[]
 }
 
 /**
@@ -30822,8 +29323,7 @@ export interface TLMessagesSearchResultsPositions {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesSearchResultsPositions data2 = 1;
    */
-  data2?: MessagesSearchResultsPositions;
-
+  data2?: MessagesSearchResultsPositions
 }
 
 /**
@@ -30833,23 +29333,22 @@ export interface MessagesSentEncryptedMessage {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 date = 3;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.EncryptedFile file = 4;
    */
-  file?: EncryptedFile;
-
+  file?: EncryptedFile
 }
 
 /**
@@ -30859,8 +29358,7 @@ export interface TLMessagesSentEncryptedMessage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesSentEncryptedMessage data2 = 1;
    */
-  data2?: MessagesSentEncryptedMessage;
-
+  data2?: MessagesSentEncryptedMessage
 }
 
 /**
@@ -30870,8 +29368,7 @@ export interface TLMessagesSentEncryptedFile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesSentEncryptedMessage data2 = 1;
    */
-  data2?: MessagesSentEncryptedMessage;
-
+  data2?: MessagesSentEncryptedMessage
 }
 
 /**
@@ -30881,33 +29378,32 @@ export interface MessagesSponsoredMessages {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional google.protobuf.Int32Value posts_between = 3;
    */
-  postsBetween?: number;
+  postsBetween?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.SponsoredMessage messages = 4;
    */
-  messages: SponsoredMessage[];
+  messages: SponsoredMessage[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 5;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 6;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -30917,8 +29413,7 @@ export interface TLMessagesSponsoredMessages {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesSponsoredMessages data2 = 1;
    */
-  data2?: MessagesSponsoredMessages;
-
+  data2?: MessagesSponsoredMessages
 }
 
 /**
@@ -30928,8 +29423,7 @@ export interface TLMessagesSponsoredMessagesEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesSponsoredMessages data2 = 1;
    */
-  data2?: MessagesSponsoredMessages;
-
+  data2?: MessagesSponsoredMessages
 }
 
 /**
@@ -30939,33 +29433,32 @@ export interface MessagesStickerSet {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StickerSet set = 3;
    */
-  set?: StickerSet;
+  set?: StickerSet
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.StickerPack packs = 4;
    */
-  packs: StickerPack[];
+  packs: StickerPack[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.StickerKeyword keywords = 5;
    */
-  keywords: StickerKeyword[];
+  keywords: StickerKeyword[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Document documents = 6;
    */
-  documents: Document[];
-
+  documents: Document[]
 }
 
 /**
@@ -30975,8 +29468,7 @@ export interface TLMessagesStickerSet {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesStickerSet data2 = 1;
    */
-  data2?: MessagesStickerSet;
-
+  data2?: MessagesStickerSet
 }
 
 /**
@@ -30986,8 +29478,7 @@ export interface TLMessagesStickerSetNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesStickerSet data2 = 1;
    */
-  data2?: MessagesStickerSet;
-
+  data2?: MessagesStickerSet
 }
 
 /**
@@ -30997,18 +29488,17 @@ export interface MessagesStickerSetInstallResult {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.StickerSetCovered sets = 3;
    */
-  sets: StickerSetCovered[];
-
+  sets: StickerSetCovered[]
 }
 
 /**
@@ -31018,8 +29508,7 @@ export interface TLMessagesStickerSetInstallResultSuccess {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesStickerSetInstallResult data2 = 1;
    */
-  data2?: MessagesStickerSetInstallResult;
-
+  data2?: MessagesStickerSetInstallResult
 }
 
 /**
@@ -31029,8 +29518,7 @@ export interface TLMessagesStickerSetInstallResultArchive {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesStickerSetInstallResult data2 = 1;
    */
-  data2?: MessagesStickerSetInstallResult;
-
+  data2?: MessagesStickerSetInstallResult
 }
 
 /**
@@ -31040,23 +29528,22 @@ export interface MessagesStickers {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 hash = 3;
    */
-  hash?: bigint;
+  hash?: bigint
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Document stickers = 4;
    */
-  stickers: Document[];
-
+  stickers: Document[]
 }
 
 /**
@@ -31066,8 +29553,7 @@ export interface TLMessagesStickersNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesStickers data2 = 1;
    */
-  data2?: MessagesStickers;
-
+  data2?: MessagesStickers
 }
 
 /**
@@ -31077,8 +29563,7 @@ export interface TLMessagesStickers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesStickers data2 = 1;
    */
-  data2?: MessagesStickers;
-
+  data2?: MessagesStickers
 }
 
 /**
@@ -31088,28 +29573,27 @@ export interface MessagesTranscribedAudio {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool pending = 3;
    */
-  pending?: boolean;
+  pending?: boolean
 
   /**
    * @generated from field: optional int64 transcription_id = 4;
    */
-  transcriptionId?: bigint;
+  transcriptionId?: bigint
 
   /**
    * @generated from field: optional string text = 5;
    */
-  text?: string;
-
+  text?: string
 }
 
 /**
@@ -31119,8 +29603,7 @@ export interface TLMessagesTranscribedAudio {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesTranscribedAudio data2 = 1;
    */
-  data2?: MessagesTranscribedAudio;
-
+  data2?: MessagesTranscribedAudio
 }
 
 /**
@@ -31130,23 +29613,22 @@ export interface MessagesTranslatedText {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.TextWithEntities result = 3;
    */
-  result: TextWithEntities[];
+  result: TextWithEntities[]
 
   /**
    * @generated from field: optional string text = 4;
    */
-  text?: string;
-
+  text?: string
 }
 
 /**
@@ -31156,8 +29638,7 @@ export interface TLMessagesTranslateResult {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesTranslatedText data2 = 1;
    */
-  data2?: MessagesTranslatedText;
-
+  data2?: MessagesTranslatedText
 }
 
 /**
@@ -31167,8 +29648,7 @@ export interface TLMessagesTranslateNoResult {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesTranslatedText data2 = 1;
    */
-  data2?: MessagesTranslatedText;
-
+  data2?: MessagesTranslatedText
 }
 
 /**
@@ -31178,8 +29658,7 @@ export interface TLMessagesTranslateResultText {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesTranslatedText data2 = 1;
    */
-  data2?: MessagesTranslatedText;
-
+  data2?: MessagesTranslatedText
 }
 
 /**
@@ -31189,43 +29668,42 @@ export interface MessagesVotesList {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 count = 3;
    */
-  count?: number;
+  count?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessagePeerVote votes_VECTORMESSAGEPEERVOTE = 4;
    */
-  votesVECTORMESSAGEPEERVOTE: MessagePeerVote[];
+  votesVECTORMESSAGEPEERVOTE: MessagePeerVote[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 5;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 6;
    */
-  users: User[];
+  users: User[]
 
   /**
    * @generated from field: optional google.protobuf.StringValue next_offset = 7;
    */
-  nextOffset?: string;
+  nextOffset?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageUserVote votes_VECTORMESSAGEUSERVOTE = 8;
    */
-  votesVECTORMESSAGEUSERVOTE: MessageUserVote[];
-
+  votesVECTORMESSAGEUSERVOTE: MessageUserVote[]
 }
 
 /**
@@ -31235,8 +29713,7 @@ export interface TLMessagesVotesList {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesVotesList data2 = 1;
    */
-  data2?: MessagesVotesList;
-
+  data2?: MessagesVotesList
 }
 
 /**
@@ -31246,28 +29723,27 @@ export interface MessagesWebPage {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WebPage webpage = 3;
    */
-  webpage?: WebPage;
+  webpage?: WebPage
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 4;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -31277,8 +29753,7 @@ export interface TLMessagesWebPage {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MessagesWebPage data2 = 1;
    */
-  data2?: MessagesWebPage;
-
+  data2?: MessagesWebPage
 }
 
 /**
@@ -31288,23 +29763,22 @@ export interface PaymentsBankCardData {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string title = 3;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.BankCardOpenUrl open_urls = 4;
    */
-  openUrls: BankCardOpenUrl[];
-
+  openUrls: BankCardOpenUrl[]
 }
 
 /**
@@ -31314,8 +29788,7 @@ export interface TLPaymentsBankCardData {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PaymentsBankCardData data2 = 1;
    */
-  data2?: PaymentsBankCardData;
-
+  data2?: PaymentsBankCardData
 }
 
 /**
@@ -31325,18 +29798,17 @@ export interface PaymentsExportedInvoice {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string url = 3;
    */
-  url?: string;
-
+  url?: string
 }
 
 /**
@@ -31346,8 +29818,7 @@ export interface TLPaymentsExportedInvoice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PaymentsExportedInvoice data2 = 1;
    */
-  data2?: PaymentsExportedInvoice;
-
+  data2?: PaymentsExportedInvoice
 }
 
 /**
@@ -31357,98 +29828,97 @@ export interface PaymentsPaymentForm {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool can_save_credentials = 3;
    */
-  canSaveCredentials?: boolean;
+  canSaveCredentials?: boolean
 
   /**
    * @generated from field: optional bool password_missing = 4;
    */
-  passwordMissing?: boolean;
+  passwordMissing?: boolean
 
   /**
    * @generated from field: optional int64 form_id = 5;
    */
-  formId?: bigint;
+  formId?: bigint
 
   /**
    * @generated from field: optional int64 bot_id = 6;
    */
-  botId?: bigint;
+  botId?: bigint
 
   /**
    * @generated from field: optional string title = 7;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional string description = 8;
    */
-  description?: string;
+  description?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WebDocument photo = 9;
    */
-  photo?: WebDocument;
+  photo?: WebDocument
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Invoice invoice = 10;
    */
-  invoice?: Invoice;
+  invoice?: Invoice
 
   /**
    * @generated from field: optional int64 provider_id = 11;
    */
-  providerId?: bigint;
+  providerId?: bigint
 
   /**
    * @generated from field: optional string url = 12;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional google.protobuf.StringValue native_provider = 13;
    */
-  nativeProvider?: string;
+  nativeProvider?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DataJSON native_params = 14;
    */
-  nativeParams?: DataJSON;
+  nativeParams?: DataJSON
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PaymentFormMethod additional_methods = 15;
    */
-  additionalMethods: PaymentFormMethod[];
+  additionalMethods: PaymentFormMethod[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PaymentRequestedInfo saved_info = 16;
    */
-  savedInfo?: PaymentRequestedInfo;
+  savedInfo?: PaymentRequestedInfo
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PaymentSavedCredentials saved_credentials_FLAGVECTORPAYMENTSAVEDCREDENTIALS = 17;
    */
-  savedCredentialsFLAGVECTORPAYMENTSAVEDCREDENTIALS: PaymentSavedCredentials[];
+  savedCredentialsFLAGVECTORPAYMENTSAVEDCREDENTIALS: PaymentSavedCredentials[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 18;
    */
-  users: User[];
+  users: User[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PaymentSavedCredentials saved_credentials_FLAGPAYMENTSAVEDCREDENTIALS = 19;
    */
-  savedCredentialsFLAGPAYMENTSAVEDCREDENTIALS?: PaymentSavedCredentials;
-
+  savedCredentialsFLAGPAYMENTSAVEDCREDENTIALS?: PaymentSavedCredentials
 }
 
 /**
@@ -31458,8 +29928,7 @@ export interface TLPaymentsPaymentForm {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PaymentsPaymentForm data2 = 1;
    */
-  data2?: PaymentsPaymentForm;
-
+  data2?: PaymentsPaymentForm
 }
 
 /**
@@ -31469,83 +29938,82 @@ export interface PaymentsPaymentReceipt {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 date = 3;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional int64 bot_id = 4;
    */
-  botId?: bigint;
+  botId?: bigint
 
   /**
    * @generated from field: optional int64 provider_id = 5;
    */
-  providerId?: bigint;
+  providerId?: bigint
 
   /**
    * @generated from field: optional string title = 6;
    */
-  title?: string;
+  title?: string
 
   /**
    * @generated from field: optional string description = 7;
    */
-  description?: string;
+  description?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.WebDocument photo = 8;
    */
-  photo?: WebDocument;
+  photo?: WebDocument
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Invoice invoice = 9;
    */
-  invoice?: Invoice;
+  invoice?: Invoice
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PaymentRequestedInfo info = 10;
    */
-  info?: PaymentRequestedInfo;
+  info?: PaymentRequestedInfo
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.ShippingOption shipping = 11;
    */
-  shipping?: ShippingOption;
+  shipping?: ShippingOption
 
   /**
    * @generated from field: optional google.protobuf.Int64Value tip_amount = 12;
    */
-  tipAmount?: bigint;
+  tipAmount?: bigint
 
   /**
    * @generated from field: optional string currency = 13;
    */
-  currency?: string;
+  currency?: string
 
   /**
    * @generated from field: optional int64 total_amount = 14;
    */
-  totalAmount?: bigint;
+  totalAmount?: bigint
 
   /**
    * @generated from field: optional string credentials_title = 15;
    */
-  credentialsTitle?: string;
+  credentialsTitle?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 16;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -31555,8 +30023,7 @@ export interface TLPaymentsPaymentReceipt {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PaymentsPaymentReceipt data2 = 1;
    */
-  data2?: PaymentsPaymentReceipt;
-
+  data2?: PaymentsPaymentReceipt
 }
 
 /**
@@ -31566,23 +30033,22 @@ export interface PaymentsPaymentResult {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Updates updates = 3;
    */
-  updates?: Updates;
+  updates?: Updates
 
   /**
    * @generated from field: optional string url = 4;
    */
-  url?: string;
-
+  url?: string
 }
 
 /**
@@ -31592,8 +30058,7 @@ export interface TLPaymentsPaymentResult {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PaymentsPaymentResult data2 = 1;
    */
-  data2?: PaymentsPaymentResult;
-
+  data2?: PaymentsPaymentResult
 }
 
 /**
@@ -31603,8 +30068,7 @@ export interface TLPaymentsPaymentVerificationNeeded {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PaymentsPaymentResult data2 = 1;
    */
-  data2?: PaymentsPaymentResult;
-
+  data2?: PaymentsPaymentResult
 }
 
 /**
@@ -31614,23 +30078,22 @@ export interface PaymentsSavedInfo {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool has_saved_credentials = 3;
    */
-  hasSavedCredentials?: boolean;
+  hasSavedCredentials?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PaymentRequestedInfo saved_info = 4;
    */
-  savedInfo?: PaymentRequestedInfo;
-
+  savedInfo?: PaymentRequestedInfo
 }
 
 /**
@@ -31640,8 +30103,7 @@ export interface TLPaymentsSavedInfo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PaymentsSavedInfo data2 = 1;
    */
-  data2?: PaymentsSavedInfo;
-
+  data2?: PaymentsSavedInfo
 }
 
 /**
@@ -31651,23 +30113,22 @@ export interface PaymentsValidatedRequestedInfo {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional google.protobuf.StringValue id = 3;
    */
-  id?: string;
+  id?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.ShippingOption shipping_options = 4;
    */
-  shippingOptions: ShippingOption[];
-
+  shippingOptions: ShippingOption[]
 }
 
 /**
@@ -31677,8 +30138,7 @@ export interface TLPaymentsValidatedRequestedInfo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PaymentsValidatedRequestedInfo data2 = 1;
    */
-  data2?: PaymentsValidatedRequestedInfo;
-
+  data2?: PaymentsValidatedRequestedInfo
 }
 
 /**
@@ -31688,18 +30148,17 @@ export interface PhoneExportedGroupCallInvite {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string link = 3;
    */
-  link?: string;
-
+  link?: string
 }
 
 /**
@@ -31709,8 +30168,7 @@ export interface TLPhoneExportedGroupCallInvite {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneExportedGroupCallInvite data2 = 1;
    */
-  data2?: PhoneExportedGroupCallInvite;
-
+  data2?: PhoneExportedGroupCallInvite
 }
 
 /**
@@ -31720,38 +30178,37 @@ export interface PhoneGroupCall {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.GroupCall call = 3;
    */
-  call?: GroupCall;
+  call?: GroupCall
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.GroupCallParticipant participants = 4;
    */
-  participants: GroupCallParticipant[];
+  participants: GroupCallParticipant[]
 
   /**
    * @generated from field: optional string participants_next_offset = 5;
    */
-  participantsNextOffset?: string;
+  participantsNextOffset?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 6;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 7;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -31761,8 +30218,7 @@ export interface TLPhoneGroupCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneGroupCall data2 = 1;
    */
-  data2?: PhoneGroupCall;
-
+  data2?: PhoneGroupCall
 }
 
 /**
@@ -31772,18 +30228,17 @@ export interface PhoneGroupCallStreamChannels {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.GroupCallStreamChannel channels = 3;
    */
-  channels: GroupCallStreamChannel[];
-
+  channels: GroupCallStreamChannel[]
 }
 
 /**
@@ -31793,8 +30248,7 @@ export interface TLPhoneGroupCallStreamChannels {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneGroupCallStreamChannels data2 = 1;
    */
-  data2?: PhoneGroupCallStreamChannels;
-
+  data2?: PhoneGroupCallStreamChannels
 }
 
 /**
@@ -31804,23 +30258,22 @@ export interface PhoneGroupCallStreamRtmpUrl {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string url = 3;
    */
-  url?: string;
+  url?: string
 
   /**
    * @generated from field: optional string key = 4;
    */
-  key?: string;
-
+  key?: string
 }
 
 /**
@@ -31830,8 +30283,7 @@ export interface TLPhoneGroupCallStreamRtmpUrl {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneGroupCallStreamRtmpUrl data2 = 1;
    */
-  data2?: PhoneGroupCallStreamRtmpUrl;
-
+  data2?: PhoneGroupCallStreamRtmpUrl
 }
 
 /**
@@ -31841,43 +30293,42 @@ export interface PhoneGroupParticipants {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 count = 3;
    */
-  count?: number;
+  count?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.GroupCallParticipant participants = 4;
    */
-  participants: GroupCallParticipant[];
+  participants: GroupCallParticipant[]
 
   /**
    * @generated from field: optional string next_offset = 5;
    */
-  nextOffset?: string;
+  nextOffset?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 6;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 7;
    */
-  users: User[];
+  users: User[]
 
   /**
    * @generated from field: optional int32 version = 8;
    */
-  version?: number;
-
+  version?: number
 }
 
 /**
@@ -31887,8 +30338,7 @@ export interface TLPhoneGroupParticipants {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneGroupParticipants data2 = 1;
    */
-  data2?: PhoneGroupParticipants;
-
+  data2?: PhoneGroupParticipants
 }
 
 /**
@@ -31898,28 +30348,27 @@ export interface PhoneJoinAsPeers {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Peer peers = 3;
    */
-  peers: Peer[];
+  peers: Peer[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 4;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -31929,8 +30378,7 @@ export interface TLPhoneJoinAsPeers {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneJoinAsPeers data2 = 1;
    */
-  data2?: PhoneJoinAsPeers;
-
+  data2?: PhoneJoinAsPeers
 }
 
 /**
@@ -31940,23 +30388,22 @@ export interface PhonePhoneCall {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhoneCall phone_call = 3;
    */
-  phoneCall?: PhoneCall;
+  phoneCall?: PhoneCall
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 4;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -31966,8 +30413,7 @@ export interface TLPhonePhoneCall {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhonePhoneCall data2 = 1;
    */
-  data2?: PhonePhoneCall;
-
+  data2?: PhonePhoneCall
 }
 
 /**
@@ -31977,23 +30423,22 @@ export interface PhotosPhoto {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Photo photo = 3;
    */
-  photo?: Photo;
+  photo?: Photo
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 4;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -32003,8 +30448,7 @@ export interface TLPhotosPhoto {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhotosPhoto data2 = 1;
    */
-  data2?: PhotosPhoto;
-
+  data2?: PhotosPhoto
 }
 
 /**
@@ -32014,28 +30458,27 @@ export interface PhotosPhotos {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Photo photos = 3;
    */
-  photos: Photo[];
+  photos: Photo[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 4;
    */
-  users: User[];
+  users: User[]
 
   /**
    * @generated from field: optional int32 count = 5;
    */
-  count?: number;
-
+  count?: number
 }
 
 /**
@@ -32045,8 +30488,7 @@ export interface TLPhotosPhotos {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhotosPhotos data2 = 1;
    */
-  data2?: PhotosPhotos;
-
+  data2?: PhotosPhotos
 }
 
 /**
@@ -32056,8 +30498,7 @@ export interface TLPhotosPhotosSlice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PhotosPhotos data2 = 1;
    */
-  data2?: PhotosPhotos;
-
+  data2?: PhotosPhotos
 }
 
 /**
@@ -32067,88 +30508,87 @@ export interface StatsBroadcastStats {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsDateRangeDays period = 3;
    */
-  period?: StatsDateRangeDays;
+  period?: StatsDateRangeDays
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsAbsValueAndPrev followers = 4;
    */
-  followers?: StatsAbsValueAndPrev;
+  followers?: StatsAbsValueAndPrev
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsAbsValueAndPrev views_per_post = 5;
    */
-  viewsPerPost?: StatsAbsValueAndPrev;
+  viewsPerPost?: StatsAbsValueAndPrev
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsAbsValueAndPrev shares_per_post = 6;
    */
-  sharesPerPost?: StatsAbsValueAndPrev;
+  sharesPerPost?: StatsAbsValueAndPrev
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsPercentValue enabled_notifications = 7;
    */
-  enabledNotifications?: StatsPercentValue;
+  enabledNotifications?: StatsPercentValue
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGraph growth_graph = 8;
    */
-  growthGraph?: StatsGraph;
+  growthGraph?: StatsGraph
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGraph followers_graph = 9;
    */
-  followersGraph?: StatsGraph;
+  followersGraph?: StatsGraph
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGraph mute_graph = 10;
    */
-  muteGraph?: StatsGraph;
+  muteGraph?: StatsGraph
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGraph top_hours_graph = 11;
    */
-  topHoursGraph?: StatsGraph;
+  topHoursGraph?: StatsGraph
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGraph interactions_graph = 12;
    */
-  interactionsGraph?: StatsGraph;
+  interactionsGraph?: StatsGraph
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGraph iv_interactions_graph = 13;
    */
-  ivInteractionsGraph?: StatsGraph;
+  ivInteractionsGraph?: StatsGraph
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGraph views_by_source_graph = 14;
    */
-  viewsBySourceGraph?: StatsGraph;
+  viewsBySourceGraph?: StatsGraph
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGraph new_followers_by_source_graph = 15;
    */
-  newFollowersBySourceGraph?: StatsGraph;
+  newFollowersBySourceGraph?: StatsGraph
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGraph languages_graph = 16;
    */
-  languagesGraph?: StatsGraph;
+  languagesGraph?: StatsGraph
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.MessageInteractionCounters recent_message_interactions = 17;
    */
-  recentMessageInteractions: MessageInteractionCounters[];
-
+  recentMessageInteractions: MessageInteractionCounters[]
 }
 
 /**
@@ -32158,8 +30598,7 @@ export interface TLStatsBroadcastStats {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsBroadcastStats data2 = 1;
    */
-  data2?: StatsBroadcastStats;
-
+  data2?: StatsBroadcastStats
 }
 
 /**
@@ -32169,98 +30608,97 @@ export interface StatsMegagroupStats {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsDateRangeDays period = 3;
    */
-  period?: StatsDateRangeDays;
+  period?: StatsDateRangeDays
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsAbsValueAndPrev members = 4;
    */
-  members?: StatsAbsValueAndPrev;
+  members?: StatsAbsValueAndPrev
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsAbsValueAndPrev messages = 5;
    */
-  messages?: StatsAbsValueAndPrev;
+  messages?: StatsAbsValueAndPrev
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsAbsValueAndPrev viewers = 6;
    */
-  viewers?: StatsAbsValueAndPrev;
+  viewers?: StatsAbsValueAndPrev
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsAbsValueAndPrev posters = 7;
    */
-  posters?: StatsAbsValueAndPrev;
+  posters?: StatsAbsValueAndPrev
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGraph growth_graph = 8;
    */
-  growthGraph?: StatsGraph;
+  growthGraph?: StatsGraph
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGraph members_graph = 9;
    */
-  membersGraph?: StatsGraph;
+  membersGraph?: StatsGraph
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGraph new_members_by_source_graph = 10;
    */
-  newMembersBySourceGraph?: StatsGraph;
+  newMembersBySourceGraph?: StatsGraph
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGraph languages_graph = 11;
    */
-  languagesGraph?: StatsGraph;
+  languagesGraph?: StatsGraph
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGraph messages_graph = 12;
    */
-  messagesGraph?: StatsGraph;
+  messagesGraph?: StatsGraph
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGraph actions_graph = 13;
    */
-  actionsGraph?: StatsGraph;
+  actionsGraph?: StatsGraph
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGraph top_hours_graph = 14;
    */
-  topHoursGraph?: StatsGraph;
+  topHoursGraph?: StatsGraph
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGraph weekdays_graph = 15;
    */
-  weekdaysGraph?: StatsGraph;
+  weekdaysGraph?: StatsGraph
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.StatsGroupTopPoster top_posters = 16;
    */
-  topPosters: StatsGroupTopPoster[];
+  topPosters: StatsGroupTopPoster[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.StatsGroupTopAdmin top_admins = 17;
    */
-  topAdmins: StatsGroupTopAdmin[];
+  topAdmins: StatsGroupTopAdmin[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.StatsGroupTopInviter top_inviters = 18;
    */
-  topInviters: StatsGroupTopInviter[];
+  topInviters: StatsGroupTopInviter[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 19;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -32270,8 +30708,7 @@ export interface TLStatsMegagroupStats {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsMegagroupStats data2 = 1;
    */
-  data2?: StatsMegagroupStats;
-
+  data2?: StatsMegagroupStats
 }
 
 /**
@@ -32281,18 +30718,17 @@ export interface StatsMessageStats {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsGraph views_graph = 3;
    */
-  viewsGraph?: StatsGraph;
-
+  viewsGraph?: StatsGraph
 }
 
 /**
@@ -32302,8 +30738,7 @@ export interface TLStatsMessageStats {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsMessageStats data2 = 1;
    */
-  data2?: StatsMessageStats;
-
+  data2?: StatsMessageStats
 }
 
 /**
@@ -32313,18 +30748,17 @@ export interface StickersSuggestedShortName {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string short_name = 3;
    */
-  shortName?: string;
-
+  shortName?: string
 }
 
 /**
@@ -32334,8 +30768,7 @@ export interface TLStickersSuggestedShortName {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StickersSuggestedShortName data2 = 1;
    */
-  data2?: StickersSuggestedShortName;
-
+  data2?: StickersSuggestedShortName
 }
 
 /**
@@ -32345,13 +30778,12 @@ export interface StorageFileType {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
-
+  constructor$?: TLConstructor
 }
 
 /**
@@ -32361,8 +30793,7 @@ export interface TLStorageFileUnknown {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StorageFileType data2 = 1;
    */
-  data2?: StorageFileType;
-
+  data2?: StorageFileType
 }
 
 /**
@@ -32372,8 +30803,7 @@ export interface TLStorageFilePartial {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StorageFileType data2 = 1;
    */
-  data2?: StorageFileType;
-
+  data2?: StorageFileType
 }
 
 /**
@@ -32383,8 +30813,7 @@ export interface TLStorageFileJpeg {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StorageFileType data2 = 1;
    */
-  data2?: StorageFileType;
-
+  data2?: StorageFileType
 }
 
 /**
@@ -32394,8 +30823,7 @@ export interface TLStorageFileGif {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StorageFileType data2 = 1;
    */
-  data2?: StorageFileType;
-
+  data2?: StorageFileType
 }
 
 /**
@@ -32405,8 +30833,7 @@ export interface TLStorageFilePng {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StorageFileType data2 = 1;
    */
-  data2?: StorageFileType;
-
+  data2?: StorageFileType
 }
 
 /**
@@ -32416,8 +30843,7 @@ export interface TLStorageFilePdf {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StorageFileType data2 = 1;
    */
-  data2?: StorageFileType;
-
+  data2?: StorageFileType
 }
 
 /**
@@ -32427,8 +30853,7 @@ export interface TLStorageFileMp3 {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StorageFileType data2 = 1;
    */
-  data2?: StorageFileType;
-
+  data2?: StorageFileType
 }
 
 /**
@@ -32438,8 +30863,7 @@ export interface TLStorageFileMov {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StorageFileType data2 = 1;
    */
-  data2?: StorageFileType;
-
+  data2?: StorageFileType
 }
 
 /**
@@ -32449,8 +30873,7 @@ export interface TLStorageFileMp4 {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StorageFileType data2 = 1;
    */
-  data2?: StorageFileType;
-
+  data2?: StorageFileType
 }
 
 /**
@@ -32460,8 +30883,7 @@ export interface TLStorageFileWebp {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StorageFileType data2 = 1;
    */
-  data2?: StorageFileType;
-
+  data2?: StorageFileType
 }
 
 /**
@@ -32471,53 +30893,52 @@ export interface StoriesAllStories {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string state = 3;
    */
-  state?: string;
+  state?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoriesStealthMode stealth_mode = 4;
    */
-  stealthMode?: StoriesStealthMode;
+  stealthMode?: StoriesStealthMode
 
   /**
    * @generated from field: optional bool has_more = 5;
    */
-  hasMore?: boolean;
+  hasMore?: boolean
 
   /**
    * @generated from field: optional int32 count = 6;
    */
-  count?: number;
+  count?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.PeerStories peer_stories = 7;
    */
-  peerStories: PeerStories[];
+  peerStories: PeerStories[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 8;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 9;
    */
-  users: User[];
+  users: User[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.UserStories user_stories = 10;
    */
-  userStories: UserStories[];
-
+  userStories: UserStories[]
 }
 
 /**
@@ -32527,8 +30948,7 @@ export interface TLStoriesAllStoriesNotModified {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoriesAllStories data2 = 1;
    */
-  data2?: StoriesAllStories;
-
+  data2?: StoriesAllStories
 }
 
 /**
@@ -32538,8 +30958,7 @@ export interface TLStoriesAllStories {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoriesAllStories data2 = 1;
    */
-  data2?: StoriesAllStories;
-
+  data2?: StoriesAllStories
 }
 
 /**
@@ -32549,33 +30968,32 @@ export interface StoriesBoostersList {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 count = 3;
    */
-  count?: number;
+  count?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Booster boosters = 4;
    */
-  boosters: Booster[];
+  boosters: Booster[]
 
   /**
    * @generated from field: optional google.protobuf.StringValue next_offset = 5;
    */
-  nextOffset?: string;
+  nextOffset?: string
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 6;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -32585,8 +31003,7 @@ export interface TLStoriesBoostersList {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoriesBoostersList data2 = 1;
    */
-  data2?: StoriesBoostersList;
-
+  data2?: StoriesBoostersList
 }
 
 /**
@@ -32596,48 +31013,47 @@ export interface StoriesBoostsStatus {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool my_boost = 3;
    */
-  myBoost?: boolean;
+  myBoost?: boolean
 
   /**
    * @generated from field: optional int32 level = 4;
    */
-  level?: number;
+  level?: number
 
   /**
    * @generated from field: optional int32 current_level_boosts = 5;
    */
-  currentLevelBoosts?: number;
+  currentLevelBoosts?: number
 
   /**
    * @generated from field: optional int32 boosts = 6;
    */
-  boosts?: number;
+  boosts?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value next_level_boosts = 7;
    */
-  nextLevelBoosts?: number;
+  nextLevelBoosts?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StatsPercentValue premium_audience = 8;
    */
-  premiumAudience?: StatsPercentValue;
+  premiumAudience?: StatsPercentValue
 
   /**
    * @generated from field: optional string boost_url = 9;
    */
-  boostUrl?: string;
-
+  boostUrl?: string
 }
 
 /**
@@ -32647,8 +31063,7 @@ export interface TLStoriesBoostsStatus {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoriesBoostsStatus data2 = 1;
    */
-  data2?: StoriesBoostsStatus;
-
+  data2?: StoriesBoostsStatus
 }
 
 /**
@@ -32658,23 +31073,22 @@ export interface StoriesCanApplyBoostResult {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Peer current_boost = 3;
    */
-  currentBoost?: Peer;
+  currentBoost?: Peer
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 4;
    */
-  chats: Chat[];
-
+  chats: Chat[]
 }
 
 /**
@@ -32684,8 +31098,7 @@ export interface TLStoriesCanApplyBoostOk {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoriesCanApplyBoostResult data2 = 1;
    */
-  data2?: StoriesCanApplyBoostResult;
-
+  data2?: StoriesCanApplyBoostResult
 }
 
 /**
@@ -32695,8 +31108,7 @@ export interface TLStoriesCanApplyBoostReplace {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoriesCanApplyBoostResult data2 = 1;
    */
-  data2?: StoriesCanApplyBoostResult;
-
+  data2?: StoriesCanApplyBoostResult
 }
 
 /**
@@ -32706,28 +31118,27 @@ export interface StoriesPeerStories {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.PeerStories stories = 3;
    */
-  stories?: PeerStories;
+  stories?: PeerStories
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 4;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -32737,8 +31148,7 @@ export interface TLStoriesPeerStories {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoriesPeerStories data2 = 1;
    */
-  data2?: StoriesPeerStories;
-
+  data2?: StoriesPeerStories
 }
 
 /**
@@ -32748,33 +31158,32 @@ export interface StoriesStories {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 count = 3;
    */
-  count?: number;
+  count?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.StoryItem stories = 4;
    */
-  stories: StoryItem[];
+  stories: StoryItem[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 5;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 6;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -32784,8 +31193,7 @@ export interface TLStoriesStories {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoriesStories data2 = 1;
    */
-  data2?: StoriesStories;
-
+  data2?: StoriesStories
 }
 
 /**
@@ -32795,23 +31203,22 @@ export interface StoriesStoryViews {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.StoryViews views = 3;
    */
-  views: StoryViews[];
+  views: StoryViews[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 4;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -32821,8 +31228,7 @@ export interface TLStoriesStoryViews {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoriesStoryViews data2 = 1;
    */
-  data2?: StoriesStoryViews;
-
+  data2?: StoriesStoryViews
 }
 
 /**
@@ -32832,38 +31238,37 @@ export interface StoriesStoryViewsList {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 count = 3;
    */
-  count?: number;
+  count?: number
 
   /**
    * @generated from field: optional int32 reactions_count = 4;
    */
-  reactionsCount?: number;
+  reactionsCount?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.StoryView views = 5;
    */
-  views: StoryView[];
+  views: StoryView[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 6;
    */
-  users: User[];
+  users: User[]
 
   /**
    * @generated from field: optional google.protobuf.StringValue next_offset = 7;
    */
-  nextOffset?: string;
-
+  nextOffset?: string
 }
 
 /**
@@ -32873,8 +31278,7 @@ export interface TLStoriesStoryViewsList {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoriesStoryViewsList data2 = 1;
    */
-  data2?: StoriesStoryViewsList;
-
+  data2?: StoriesStoryViewsList
 }
 
 /**
@@ -32884,23 +31288,22 @@ export interface StoriesUserStories {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UserStories stories = 3;
    */
-  stories?: UserStories;
+  stories?: UserStories
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 4;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -32910,8 +31313,7 @@ export interface TLStoriesUserStories {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StoriesUserStories data2 = 1;
    */
-  data2?: StoriesUserStories;
-
+  data2?: StoriesUserStories
 }
 
 /**
@@ -32921,58 +31323,57 @@ export interface UpdatesChannelDifference {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bool final = 3;
    */
-  final?: boolean;
+  final?: boolean
 
   /**
    * @generated from field: optional int32 pts = 4;
    */
-  pts?: number;
+  pts?: number
 
   /**
    * @generated from field: optional google.protobuf.Int32Value timeout = 5;
    */
-  timeout?: number;
+  timeout?: number
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Dialog dialog = 6;
    */
-  dialog?: Dialog;
+  dialog?: Dialog
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Message messages = 7;
    */
-  messages: Message[];
+  messages: Message[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 8;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 9;
    */
-  users: User[];
+  users: User[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Message new_messages = 10;
    */
-  newMessages: Message[];
+  newMessages: Message[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Update other_updates = 11;
    */
-  otherUpdates: Update[];
-
+  otherUpdates: Update[]
 }
 
 /**
@@ -32982,8 +31383,7 @@ export interface TLUpdatesChannelDifferenceEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UpdatesChannelDifference data2 = 1;
    */
-  data2?: UpdatesChannelDifference;
-
+  data2?: UpdatesChannelDifference
 }
 
 /**
@@ -32993,8 +31393,7 @@ export interface TLUpdatesChannelDifferenceTooLong {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UpdatesChannelDifference data2 = 1;
    */
-  data2?: UpdatesChannelDifference;
-
+  data2?: UpdatesChannelDifference
 }
 
 /**
@@ -33004,8 +31403,7 @@ export interface TLUpdatesChannelDifference {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UpdatesChannelDifference data2 = 1;
    */
-  data2?: UpdatesChannelDifference;
-
+  data2?: UpdatesChannelDifference
 }
 
 /**
@@ -33015,63 +31413,62 @@ export interface UpdatesDifference {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 date = 3;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional int32 seq = 4;
    */
-  seq?: number;
+  seq?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Message new_messages = 5;
    */
-  newMessages: Message[];
+  newMessages: Message[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.EncryptedMessage new_encrypted_messages = 6;
    */
-  newEncryptedMessages: EncryptedMessage[];
+  newEncryptedMessages: EncryptedMessage[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Update other_updates = 7;
    */
-  otherUpdates: Update[];
+  otherUpdates: Update[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 8;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 9;
    */
-  users: User[];
+  users: User[]
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UpdatesState state = 10;
    */
-  state?: UpdatesState;
+  state?: UpdatesState
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UpdatesState intermediate_state = 11;
    */
-  intermediateState?: UpdatesState;
+  intermediateState?: UpdatesState
 
   /**
    * @generated from field: optional int32 pts = 12;
    */
-  pts?: number;
-
+  pts?: number
 }
 
 /**
@@ -33081,8 +31478,7 @@ export interface TLUpdatesDifferenceEmpty {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UpdatesDifference data2 = 1;
    */
-  data2?: UpdatesDifference;
-
+  data2?: UpdatesDifference
 }
 
 /**
@@ -33092,8 +31488,7 @@ export interface TLUpdatesDifference {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UpdatesDifference data2 = 1;
    */
-  data2?: UpdatesDifference;
-
+  data2?: UpdatesDifference
 }
 
 /**
@@ -33103,8 +31498,7 @@ export interface TLUpdatesDifferenceSlice {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UpdatesDifference data2 = 1;
    */
-  data2?: UpdatesDifference;
-
+  data2?: UpdatesDifference
 }
 
 /**
@@ -33114,8 +31508,7 @@ export interface TLUpdatesDifferenceTooLong {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UpdatesDifference data2 = 1;
    */
-  data2?: UpdatesDifference;
-
+  data2?: UpdatesDifference
 }
 
 /**
@@ -33125,38 +31518,37 @@ export interface UpdatesState {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 pts = 3;
    */
-  pts?: number;
+  pts?: number
 
   /**
    * @generated from field: optional int32 qts = 4;
    */
-  qts?: number;
+  qts?: number
 
   /**
    * @generated from field: optional int32 date = 5;
    */
-  date?: number;
+  date?: number
 
   /**
    * @generated from field: optional int32 seq = 6;
    */
-  seq?: number;
+  seq?: number
 
   /**
    * @generated from field: optional int32 unread_count = 7;
    */
-  unreadCount?: number;
-
+  unreadCount?: number
 }
 
 /**
@@ -33166,8 +31558,7 @@ export interface TLUpdatesState {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UpdatesState data2 = 1;
    */
-  data2?: UpdatesState;
-
+  data2?: UpdatesState
 }
 
 /**
@@ -33177,23 +31568,22 @@ export interface UploadCdnFile {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes request_token = 3;
    */
-  requestToken?: Uint8Array;
+  requestToken?: Uint8Array
 
   /**
    * @generated from field: optional bytes bytes = 4;
    */
-  bytes?: Uint8Array;
-
+  bytes?: Uint8Array
 }
 
 /**
@@ -33203,8 +31593,7 @@ export interface TLUploadCdnFileReuploadNeeded {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UploadCdnFile data2 = 1;
    */
-  data2?: UploadCdnFile;
-
+  data2?: UploadCdnFile
 }
 
 /**
@@ -33214,8 +31603,7 @@ export interface TLUploadCdnFile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UploadCdnFile data2 = 1;
    */
-  data2?: UploadCdnFile;
-
+  data2?: UploadCdnFile
 }
 
 /**
@@ -33225,53 +31613,52 @@ export interface UploadFile {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StorageFileType type = 3;
    */
-  type?: StorageFileType;
+  type?: StorageFileType
 
   /**
    * @generated from field: optional int32 mtime = 4;
    */
-  mtime?: number;
+  mtime?: number
 
   /**
    * @generated from field: optional bytes bytes = 5;
    */
-  bytes?: Uint8Array;
+  bytes?: Uint8Array
 
   /**
    * @generated from field: optional int32 dc_id = 6;
    */
-  dcId?: number;
+  dcId?: number
 
   /**
    * @generated from field: optional bytes file_token = 7;
    */
-  fileToken?: Uint8Array;
+  fileToken?: Uint8Array
 
   /**
    * @generated from field: optional bytes encryption_key = 8;
    */
-  encryptionKey?: Uint8Array;
+  encryptionKey?: Uint8Array
 
   /**
    * @generated from field: optional bytes encryption_iv = 9;
    */
-  encryptionIv?: Uint8Array;
+  encryptionIv?: Uint8Array
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.FileHash file_hashes = 10;
    */
-  fileHashes: FileHash[];
-
+  fileHashes: FileHash[]
 }
 
 /**
@@ -33281,8 +31668,7 @@ export interface TLUploadFile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UploadFile data2 = 1;
    */
-  data2?: UploadFile;
-
+  data2?: UploadFile
 }
 
 /**
@@ -33292,8 +31678,7 @@ export interface TLUploadFileCdnRedirect {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UploadFile data2 = 1;
    */
-  data2?: UploadFile;
-
+  data2?: UploadFile
 }
 
 /**
@@ -33303,38 +31688,37 @@ export interface UploadWebFile {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 size2 = 3;
    */
-  size2?: number;
+  size2?: number
 
   /**
    * @generated from field: optional string mime_type = 4;
    */
-  mimeType?: string;
+  mimeType?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.StorageFileType file_type = 5;
    */
-  fileType?: StorageFileType;
+  fileType?: StorageFileType
 
   /**
    * @generated from field: optional int32 mtime = 6;
    */
-  mtime?: number;
+  mtime?: number
 
   /**
    * @generated from field: optional bytes bytes = 7;
    */
-  bytes?: Uint8Array;
-
+  bytes?: Uint8Array
 }
 
 /**
@@ -33344,8 +31728,7 @@ export interface TLUploadWebFile {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UploadWebFile data2 = 1;
    */
-  data2?: UploadWebFile;
-
+  data2?: UploadWebFile
 }
 
 /**
@@ -33355,28 +31738,27 @@ export interface UsersUserFull {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UserFull full_user = 3;
    */
-  fullUser?: UserFull;
+  fullUser?: UserFull
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.Chat chats = 4;
    */
-  chats: Chat[];
+  chats: Chat[]
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.User users = 5;
    */
-  users: User[];
-
+  users: User[]
 }
 
 /**
@@ -33386,7 +31768,5 @@ export interface TLUsersUserFull {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.UsersUserFull data2 = 1;
    */
-  data2?: UsersUserFull;
-
+  data2?: UsersUserFull
 }
-

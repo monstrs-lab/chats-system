@@ -3,10 +3,25 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3 } from "@bufbuild/protobuf";
-import { AuthKeyInfo, Updates } from "../../core/v1alpha1/schema.tl.sync_pb.js";
-import { FutureSalt } from "../../core/v1alpha1/schema.tl.transport_pb.js";
+import type { BinaryReadOptions }                                                                      from '@bufbuild/protobuf'
+
+import type { FieldList }                                                           from '@bufbuild/protobuf'
+
+import type { JsonReadOptions }                                          from '@bufbuild/protobuf'
+
+import type { JsonValue }                               from '@bufbuild/protobuf'
+
+import type { PartialMessage }               from '@bufbuild/protobuf'
+
+import type { PlainMessage } from '@bufbuild/protobuf'
+
+import { Message }                                                                                     from '@bufbuild/protobuf'
+
+import { proto3 }                                                                             from '@bufbuild/protobuf'
+
+import { AuthKeyInfo }                                                                                 from '../../core/v1alpha1/schema.tl.sync_pb.js'
+import { Updates }                                                                        from '../../core/v1alpha1/schema.tl.sync_pb.js'
+import { FutureSalt }                                                                                  from '../../core/v1alpha1/schema.tl.transport_pb.js'
 
 /**
  * @generated from enum tech.monstrs.chats_system.session.v1alpha1.TLConstructor
@@ -78,21 +93,21 @@ export enum TLConstructor {
   CRC32_session_pushRpcResultData = 556344000,
 }
 // Retrieve enum metadata with: proto3.getEnumType(TLConstructor)
-proto3.util.setEnumType(TLConstructor, "tech.monstrs.chats_system.session.v1alpha1.TLConstructor", [
-  { no: 0, name: "CRC32_UNKNOWN" },
-  { no: -739769057, name: "CRC32_sessionClientEvent" },
-  { no: 825806990, name: "CRC32_sessionClientData" },
-  { no: -606579889, name: "CRC32_httpSessionData" },
-  { no: 1798174801, name: "CRC32_session_queryAuthKey" },
-  { no: 487672075, name: "CRC32_session_setAuthKey" },
-  { no: 1091351053, name: "CRC32_session_createSession" },
-  { no: -2023019028, name: "CRC32_session_sendDataToSession" },
-  { no: -1142152274, name: "CRC32_session_sendHttpDataToSession" },
-  { no: 393200211, name: "CRC32_session_closeSession" },
-  { no: 1075152191, name: "CRC32_session_pushUpdatesData" },
-  { no: 106898165, name: "CRC32_session_pushSessionUpdatesData" },
-  { no: 556344000, name: "CRC32_session_pushRpcResultData" },
-]);
+proto3.util.setEnumType(TLConstructor, 'tech.monstrs.chats_system.session.v1alpha1.TLConstructor', [
+  { no: 0, name: 'CRC32_UNKNOWN' },
+  { no: -739769057, name: 'CRC32_sessionClientEvent' },
+  { no: 825806990, name: 'CRC32_sessionClientData' },
+  { no: -606579889, name: 'CRC32_httpSessionData' },
+  { no: 1798174801, name: 'CRC32_session_queryAuthKey' },
+  { no: 487672075, name: 'CRC32_session_setAuthKey' },
+  { no: 1091351053, name: 'CRC32_session_createSession' },
+  { no: -2023019028, name: 'CRC32_session_sendDataToSession' },
+  { no: -1142152274, name: 'CRC32_session_sendHttpDataToSession' },
+  { no: 393200211, name: 'CRC32_session_closeSession' },
+  { no: 1075152191, name: 'CRC32_session_pushUpdatesData' },
+  { no: 106898165, name: 'CRC32_session_pushSessionUpdatesData' },
+  { no: 556344000, name: 'CRC32_session_pushRpcResultData' },
+])
 
 /**
  * @generated from message tech.monstrs.chats_system.session.v1alpha1.SessionClientEvent
@@ -101,69 +116,75 @@ export class SessionClientEvent extends Message<SessionClientEvent> {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string server_id = 3;
    */
-  serverId?: string;
+  serverId?: string
 
   /**
    * @generated from field: optional int32 conn_type = 4;
    */
-  connType?: number;
+  connType?: number
 
   /**
    * @generated from field: optional int64 auth_key_id = 5;
    */
-  authKeyId?: bigint;
+  authKeyId?: bigint
 
   /**
    * @generated from field: optional int64 session_id = 6;
    */
-  sessionId?: bigint;
+  sessionId?: bigint
 
   /**
    * @generated from field: optional string client_ip = 7;
    */
-  clientIp?: string;
+  clientIp?: string
 
   constructor(data?: PartialMessage<SessionClientEvent>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "tech.monstrs.chats_system.session.v1alpha1.SessionClientEvent";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.session.v1alpha1.SessionClientEvent'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "predicate_name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 2, name: "constructor", kind: "enum", T: proto3.getEnumType(TLConstructor), opt: true },
-    { no: 3, name: "server_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 4, name: "conn_type", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
-    { no: 5, name: "auth_key_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
-    { no: 6, name: "session_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
-    { no: 7, name: "client_ip", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-  ]);
+    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'server_id', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 4, name: 'conn_type', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 5, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 6, name: 'session_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 7, name: 'client_ip', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+  ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SessionClientEvent {
-    return new SessionClientEvent().fromBinary(bytes, options);
+    return new SessionClientEvent().fromBinary(bytes, options)
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SessionClientEvent {
-    return new SessionClientEvent().fromJson(jsonValue, options);
+    return new SessionClientEvent().fromJson(jsonValue, options)
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SessionClientEvent {
-    return new SessionClientEvent().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): SessionClientEvent {
+    return new SessionClientEvent().fromJsonString(jsonString, options)
   }
 
-  static equals(a: SessionClientEvent | PlainMessage<SessionClientEvent> | undefined, b: SessionClientEvent | PlainMessage<SessionClientEvent> | undefined): boolean {
-    return proto3.util.equals(SessionClientEvent, a, b);
+  static equals(
+    a: SessionClientEvent | PlainMessage<SessionClientEvent> | undefined,
+    b: SessionClientEvent | PlainMessage<SessionClientEvent> | undefined
+  ): boolean {
+    return proto3.util.equals(SessionClientEvent, a, b)
   }
 }
 
@@ -174,33 +195,39 @@ export class TLSessionClientEvent extends Message<TLSessionClientEvent> {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.SessionClientEvent data2 = 1;
    */
-  data2?: SessionClientEvent;
+  data2?: SessionClientEvent
 
   constructor(data?: PartialMessage<TLSessionClientEvent>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "tech.monstrs.chats_system.session.v1alpha1.TLSessionClientEvent";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.session.v1alpha1.TLSessionClientEvent'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "data2", kind: "message", T: SessionClientEvent, opt: true },
-  ]);
+    { no: 1, name: 'data2', kind: 'message', T: SessionClientEvent, opt: true },
+  ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLSessionClientEvent {
-    return new TLSessionClientEvent().fromBinary(bytes, options);
+    return new TLSessionClientEvent().fromBinary(bytes, options)
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TLSessionClientEvent {
-    return new TLSessionClientEvent().fromJson(jsonValue, options);
+    return new TLSessionClientEvent().fromJson(jsonValue, options)
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TLSessionClientEvent {
-    return new TLSessionClientEvent().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): TLSessionClientEvent {
+    return new TLSessionClientEvent().fromJsonString(jsonString, options)
   }
 
-  static equals(a: TLSessionClientEvent | PlainMessage<TLSessionClientEvent> | undefined, b: TLSessionClientEvent | PlainMessage<TLSessionClientEvent> | undefined): boolean {
-    return proto3.util.equals(TLSessionClientEvent, a, b);
+  static equals(
+    a: TLSessionClientEvent | PlainMessage<TLSessionClientEvent> | undefined,
+    b: TLSessionClientEvent | PlainMessage<TLSessionClientEvent> | undefined
+  ): boolean {
+    return proto3.util.equals(TLSessionClientEvent, a, b)
   }
 }
 
@@ -211,87 +238,90 @@ export class SessionClientData extends Message<SessionClientData> {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string server_id = 3;
    */
-  serverId?: string;
+  serverId?: string
 
   /**
    * @generated from field: optional int32 conn_type = 4;
    */
-  connType?: number;
+  connType?: number
 
   /**
    * @generated from field: optional int64 auth_key_id = 5;
    */
-  authKeyId?: bigint;
+  authKeyId?: bigint
 
   /**
    * @generated from field: optional int64 session_id = 6;
    */
-  sessionId?: bigint;
+  sessionId?: bigint
 
   /**
    * @generated from field: optional string client_ip = 7;
    */
-  clientIp?: string;
+  clientIp?: string
 
   /**
    * @generated from field: optional int32 quick_ack = 8;
    */
-  quickAck?: number;
+  quickAck?: number
 
   /**
    * @generated from field: optional int64 salt = 9;
    */
-  salt?: bigint;
+  salt?: bigint
 
   /**
    * @generated from field: optional bytes payload = 10;
    */
-  payload?: Uint8Array;
+  payload?: Uint8Array
 
   constructor(data?: PartialMessage<SessionClientData>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "tech.monstrs.chats_system.session.v1alpha1.SessionClientData";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.session.v1alpha1.SessionClientData'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "predicate_name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 2, name: "constructor", kind: "enum", T: proto3.getEnumType(TLConstructor), opt: true },
-    { no: 3, name: "server_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 4, name: "conn_type", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
-    { no: 5, name: "auth_key_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
-    { no: 6, name: "session_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
-    { no: 7, name: "client_ip", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 8, name: "quick_ack", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
-    { no: 9, name: "salt", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
-    { no: 10, name: "payload", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
-  ]);
+    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'server_id', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 4, name: 'conn_type', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 5, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 6, name: 'session_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 7, name: 'client_ip', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 8, name: 'quick_ack', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 9, name: 'salt', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 10, name: 'payload', kind: 'scalar', T: 12 /* ScalarType.BYTES */, opt: true },
+  ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SessionClientData {
-    return new SessionClientData().fromBinary(bytes, options);
+    return new SessionClientData().fromBinary(bytes, options)
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SessionClientData {
-    return new SessionClientData().fromJson(jsonValue, options);
+    return new SessionClientData().fromJson(jsonValue, options)
   }
 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SessionClientData {
-    return new SessionClientData().fromJsonString(jsonString, options);
+    return new SessionClientData().fromJsonString(jsonString, options)
   }
 
-  static equals(a: SessionClientData | PlainMessage<SessionClientData> | undefined, b: SessionClientData | PlainMessage<SessionClientData> | undefined): boolean {
-    return proto3.util.equals(SessionClientData, a, b);
+  static equals(
+    a: SessionClientData | PlainMessage<SessionClientData> | undefined,
+    b: SessionClientData | PlainMessage<SessionClientData> | undefined
+  ): boolean {
+    return proto3.util.equals(SessionClientData, a, b)
   }
 }
 
@@ -302,33 +332,39 @@ export class TLSessionClientData extends Message<TLSessionClientData> {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.SessionClientData data2 = 1;
    */
-  data2?: SessionClientData;
+  data2?: SessionClientData
 
   constructor(data?: PartialMessage<TLSessionClientData>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "tech.monstrs.chats_system.session.v1alpha1.TLSessionClientData";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.session.v1alpha1.TLSessionClientData'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "data2", kind: "message", T: SessionClientData, opt: true },
-  ]);
+    { no: 1, name: 'data2', kind: 'message', T: SessionClientData, opt: true },
+  ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLSessionClientData {
-    return new TLSessionClientData().fromBinary(bytes, options);
+    return new TLSessionClientData().fromBinary(bytes, options)
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TLSessionClientData {
-    return new TLSessionClientData().fromJson(jsonValue, options);
+    return new TLSessionClientData().fromJson(jsonValue, options)
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TLSessionClientData {
-    return new TLSessionClientData().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): TLSessionClientData {
+    return new TLSessionClientData().fromJsonString(jsonString, options)
   }
 
-  static equals(a: TLSessionClientData | PlainMessage<TLSessionClientData> | undefined, b: TLSessionClientData | PlainMessage<TLSessionClientData> | undefined): boolean {
-    return proto3.util.equals(TLSessionClientData, a, b);
+  static equals(
+    a: TLSessionClientData | PlainMessage<TLSessionClientData> | undefined,
+    b: TLSessionClientData | PlainMessage<TLSessionClientData> | undefined
+  ): boolean {
+    return proto3.util.equals(TLSessionClientData, a, b)
   }
 }
 
@@ -339,45 +375,48 @@ export class HttpSessionData extends Message<HttpSessionData> {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  predicateName?: string;
+  predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 2;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes payload = 3;
    */
-  payload?: Uint8Array;
+  payload?: Uint8Array
 
   constructor(data?: PartialMessage<HttpSessionData>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "tech.monstrs.chats_system.session.v1alpha1.HttpSessionData";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.session.v1alpha1.HttpSessionData'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "predicate_name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 2, name: "constructor", kind: "enum", T: proto3.getEnumType(TLConstructor), opt: true },
-    { no: 3, name: "payload", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
-  ]);
+    { no: 1, name: 'predicate_name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'payload', kind: 'scalar', T: 12 /* ScalarType.BYTES */, opt: true },
+  ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HttpSessionData {
-    return new HttpSessionData().fromBinary(bytes, options);
+    return new HttpSessionData().fromBinary(bytes, options)
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HttpSessionData {
-    return new HttpSessionData().fromJson(jsonValue, options);
+    return new HttpSessionData().fromJson(jsonValue, options)
   }
 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HttpSessionData {
-    return new HttpSessionData().fromJsonString(jsonString, options);
+    return new HttpSessionData().fromJsonString(jsonString, options)
   }
 
-  static equals(a: HttpSessionData | PlainMessage<HttpSessionData> | undefined, b: HttpSessionData | PlainMessage<HttpSessionData> | undefined): boolean {
-    return proto3.util.equals(HttpSessionData, a, b);
+  static equals(
+    a: HttpSessionData | PlainMessage<HttpSessionData> | undefined,
+    b: HttpSessionData | PlainMessage<HttpSessionData> | undefined
+  ): boolean {
+    return proto3.util.equals(HttpSessionData, a, b)
   }
 }
 
@@ -388,33 +427,36 @@ export class TLHttpSessionData extends Message<TLHttpSessionData> {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.HttpSessionData data2 = 1;
    */
-  data2?: HttpSessionData;
+  data2?: HttpSessionData
 
   constructor(data?: PartialMessage<TLHttpSessionData>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "tech.monstrs.chats_system.session.v1alpha1.TLHttpSessionData";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.session.v1alpha1.TLHttpSessionData'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "data2", kind: "message", T: HttpSessionData, opt: true },
-  ]);
+    { no: 1, name: 'data2', kind: 'message', T: HttpSessionData, opt: true },
+  ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLHttpSessionData {
-    return new TLHttpSessionData().fromBinary(bytes, options);
+    return new TLHttpSessionData().fromBinary(bytes, options)
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TLHttpSessionData {
-    return new TLHttpSessionData().fromJson(jsonValue, options);
+    return new TLHttpSessionData().fromJson(jsonValue, options)
   }
 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TLHttpSessionData {
-    return new TLHttpSessionData().fromJsonString(jsonString, options);
+    return new TLHttpSessionData().fromJsonString(jsonString, options)
   }
 
-  static equals(a: TLHttpSessionData | PlainMessage<TLHttpSessionData> | undefined, b: TLHttpSessionData | PlainMessage<TLHttpSessionData> | undefined): boolean {
-    return proto3.util.equals(TLHttpSessionData, a, b);
+  static equals(
+    a: TLHttpSessionData | PlainMessage<TLHttpSessionData> | undefined,
+    b: TLHttpSessionData | PlainMessage<TLHttpSessionData> | undefined
+  ): boolean {
+    return proto3.util.equals(TLHttpSessionData, a, b)
   }
 }
 
@@ -425,39 +467,48 @@ export class TLSessionQueryAuthKey extends Message<TLSessionQueryAuthKey> {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId?: bigint;
+  authKeyId?: bigint
 
   constructor(data?: PartialMessage<TLSessionQueryAuthKey>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "tech.monstrs.chats_system.session.v1alpha1.TLSessionQueryAuthKey";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.session.v1alpha1.TLSessionQueryAuthKey'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "constructor", kind: "enum", T: proto3.getEnumType(TLConstructor), opt: true },
-    { no: 3, name: "auth_key_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
-  ]);
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+  ])
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLSessionQueryAuthKey {
-    return new TLSessionQueryAuthKey().fromBinary(bytes, options);
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>
+  ): TLSessionQueryAuthKey {
+    return new TLSessionQueryAuthKey().fromBinary(bytes, options)
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TLSessionQueryAuthKey {
-    return new TLSessionQueryAuthKey().fromJson(jsonValue, options);
+    return new TLSessionQueryAuthKey().fromJson(jsonValue, options)
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TLSessionQueryAuthKey {
-    return new TLSessionQueryAuthKey().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): TLSessionQueryAuthKey {
+    return new TLSessionQueryAuthKey().fromJsonString(jsonString, options)
   }
 
-  static equals(a: TLSessionQueryAuthKey | PlainMessage<TLSessionQueryAuthKey> | undefined, b: TLSessionQueryAuthKey | PlainMessage<TLSessionQueryAuthKey> | undefined): boolean {
-    return proto3.util.equals(TLSessionQueryAuthKey, a, b);
+  static equals(
+    a: TLSessionQueryAuthKey | PlainMessage<TLSessionQueryAuthKey> | undefined,
+    b: TLSessionQueryAuthKey | PlainMessage<TLSessionQueryAuthKey> | undefined
+  ): boolean {
+    return proto3.util.equals(TLSessionQueryAuthKey, a, b)
   }
 }
 
@@ -468,51 +519,57 @@ export class TLSessionSetAuthKey extends Message<TLSessionSetAuthKey> {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthKeyInfo auth_key = 3;
    */
-  authKey?: AuthKeyInfo;
+  authKey?: AuthKeyInfo
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.FutureSalt future_salt = 4;
    */
-  futureSalt?: FutureSalt;
+  futureSalt?: FutureSalt
 
   /**
    * @generated from field: optional int32 expires_in = 5;
    */
-  expiresIn?: number;
+  expiresIn?: number
 
   constructor(data?: PartialMessage<TLSessionSetAuthKey>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "tech.monstrs.chats_system.session.v1alpha1.TLSessionSetAuthKey";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.session.v1alpha1.TLSessionSetAuthKey'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "constructor", kind: "enum", T: proto3.getEnumType(TLConstructor), opt: true },
-    { no: 3, name: "auth_key", kind: "message", T: AuthKeyInfo, opt: true },
-    { no: 4, name: "future_salt", kind: "message", T: FutureSalt, opt: true },
-    { no: 5, name: "expires_in", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
-  ]);
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key', kind: 'message', T: AuthKeyInfo, opt: true },
+    { no: 4, name: 'future_salt', kind: 'message', T: FutureSalt, opt: true },
+    { no: 5, name: 'expires_in', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
+  ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLSessionSetAuthKey {
-    return new TLSessionSetAuthKey().fromBinary(bytes, options);
+    return new TLSessionSetAuthKey().fromBinary(bytes, options)
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TLSessionSetAuthKey {
-    return new TLSessionSetAuthKey().fromJson(jsonValue, options);
+    return new TLSessionSetAuthKey().fromJson(jsonValue, options)
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TLSessionSetAuthKey {
-    return new TLSessionSetAuthKey().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): TLSessionSetAuthKey {
+    return new TLSessionSetAuthKey().fromJsonString(jsonString, options)
   }
 
-  static equals(a: TLSessionSetAuthKey | PlainMessage<TLSessionSetAuthKey> | undefined, b: TLSessionSetAuthKey | PlainMessage<TLSessionSetAuthKey> | undefined): boolean {
-    return proto3.util.equals(TLSessionSetAuthKey, a, b);
+  static equals(
+    a: TLSessionSetAuthKey | PlainMessage<TLSessionSetAuthKey> | undefined,
+    b: TLSessionSetAuthKey | PlainMessage<TLSessionSetAuthKey> | undefined
+  ): boolean {
+    return proto3.util.equals(TLSessionSetAuthKey, a, b)
   }
 }
 
@@ -523,39 +580,51 @@ export class TLSessionCreateSession extends Message<TLSessionCreateSession> {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.SessionClientEvent client = 3;
    */
-  client?: SessionClientEvent;
+  client?: SessionClientEvent
 
   constructor(data?: PartialMessage<TLSessionCreateSession>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "tech.monstrs.chats_system.session.v1alpha1.TLSessionCreateSession";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.session.v1alpha1.TLSessionCreateSession'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "constructor", kind: "enum", T: proto3.getEnumType(TLConstructor), opt: true },
-    { no: 3, name: "client", kind: "message", T: SessionClientEvent, opt: true },
-  ]);
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'client', kind: 'message', T: SessionClientEvent, opt: true },
+  ])
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLSessionCreateSession {
-    return new TLSessionCreateSession().fromBinary(bytes, options);
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>
+  ): TLSessionCreateSession {
+    return new TLSessionCreateSession().fromBinary(bytes, options)
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TLSessionCreateSession {
-    return new TLSessionCreateSession().fromJson(jsonValue, options);
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>
+  ): TLSessionCreateSession {
+    return new TLSessionCreateSession().fromJson(jsonValue, options)
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TLSessionCreateSession {
-    return new TLSessionCreateSession().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): TLSessionCreateSession {
+    return new TLSessionCreateSession().fromJsonString(jsonString, options)
   }
 
-  static equals(a: TLSessionCreateSession | PlainMessage<TLSessionCreateSession> | undefined, b: TLSessionCreateSession | PlainMessage<TLSessionCreateSession> | undefined): boolean {
-    return proto3.util.equals(TLSessionCreateSession, a, b);
+  static equals(
+    a: TLSessionCreateSession | PlainMessage<TLSessionCreateSession> | undefined,
+    b: TLSessionCreateSession | PlainMessage<TLSessionCreateSession> | undefined
+  ): boolean {
+    return proto3.util.equals(TLSessionCreateSession, a, b)
   }
 }
 
@@ -566,39 +635,51 @@ export class TLSessionSendDataToSession extends Message<TLSessionSendDataToSessi
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.SessionClientData data = 3;
    */
-  data?: SessionClientData;
+  data?: SessionClientData
 
   constructor(data?: PartialMessage<TLSessionSendDataToSession>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "tech.monstrs.chats_system.session.v1alpha1.TLSessionSendDataToSession";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.session.v1alpha1.TLSessionSendDataToSession'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "constructor", kind: "enum", T: proto3.getEnumType(TLConstructor), opt: true },
-    { no: 3, name: "data", kind: "message", T: SessionClientData, opt: true },
-  ]);
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'data', kind: 'message', T: SessionClientData, opt: true },
+  ])
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLSessionSendDataToSession {
-    return new TLSessionSendDataToSession().fromBinary(bytes, options);
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>
+  ): TLSessionSendDataToSession {
+    return new TLSessionSendDataToSession().fromBinary(bytes, options)
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TLSessionSendDataToSession {
-    return new TLSessionSendDataToSession().fromJson(jsonValue, options);
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>
+  ): TLSessionSendDataToSession {
+    return new TLSessionSendDataToSession().fromJson(jsonValue, options)
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TLSessionSendDataToSession {
-    return new TLSessionSendDataToSession().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): TLSessionSendDataToSession {
+    return new TLSessionSendDataToSession().fromJsonString(jsonString, options)
   }
 
-  static equals(a: TLSessionSendDataToSession | PlainMessage<TLSessionSendDataToSession> | undefined, b: TLSessionSendDataToSession | PlainMessage<TLSessionSendDataToSession> | undefined): boolean {
-    return proto3.util.equals(TLSessionSendDataToSession, a, b);
+  static equals(
+    a: TLSessionSendDataToSession | PlainMessage<TLSessionSendDataToSession> | undefined,
+    b: TLSessionSendDataToSession | PlainMessage<TLSessionSendDataToSession> | undefined
+  ): boolean {
+    return proto3.util.equals(TLSessionSendDataToSession, a, b)
   }
 }
 
@@ -609,39 +690,52 @@ export class TLSessionSendHttpDataToSession extends Message<TLSessionSendHttpDat
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.SessionClientData client = 3;
    */
-  client?: SessionClientData;
+  client?: SessionClientData
 
   constructor(data?: PartialMessage<TLSessionSendHttpDataToSession>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "tech.monstrs.chats_system.session.v1alpha1.TLSessionSendHttpDataToSession";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName =
+    'tech.monstrs.chats_system.session.v1alpha1.TLSessionSendHttpDataToSession'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "constructor", kind: "enum", T: proto3.getEnumType(TLConstructor), opt: true },
-    { no: 3, name: "client", kind: "message", T: SessionClientData, opt: true },
-  ]);
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'client', kind: 'message', T: SessionClientData, opt: true },
+  ])
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLSessionSendHttpDataToSession {
-    return new TLSessionSendHttpDataToSession().fromBinary(bytes, options);
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>
+  ): TLSessionSendHttpDataToSession {
+    return new TLSessionSendHttpDataToSession().fromBinary(bytes, options)
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TLSessionSendHttpDataToSession {
-    return new TLSessionSendHttpDataToSession().fromJson(jsonValue, options);
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>
+  ): TLSessionSendHttpDataToSession {
+    return new TLSessionSendHttpDataToSession().fromJson(jsonValue, options)
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TLSessionSendHttpDataToSession {
-    return new TLSessionSendHttpDataToSession().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): TLSessionSendHttpDataToSession {
+    return new TLSessionSendHttpDataToSession().fromJsonString(jsonString, options)
   }
 
-  static equals(a: TLSessionSendHttpDataToSession | PlainMessage<TLSessionSendHttpDataToSession> | undefined, b: TLSessionSendHttpDataToSession | PlainMessage<TLSessionSendHttpDataToSession> | undefined): boolean {
-    return proto3.util.equals(TLSessionSendHttpDataToSession, a, b);
+  static equals(
+    a: TLSessionSendHttpDataToSession | PlainMessage<TLSessionSendHttpDataToSession> | undefined,
+    b: TLSessionSendHttpDataToSession | PlainMessage<TLSessionSendHttpDataToSession> | undefined
+  ): boolean {
+    return proto3.util.equals(TLSessionSendHttpDataToSession, a, b)
   }
 }
 
@@ -652,39 +746,48 @@ export class TLSessionCloseSession extends Message<TLSessionCloseSession> {
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.SessionClientEvent client = 3;
    */
-  client?: SessionClientEvent;
+  client?: SessionClientEvent
 
   constructor(data?: PartialMessage<TLSessionCloseSession>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "tech.monstrs.chats_system.session.v1alpha1.TLSessionCloseSession";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.session.v1alpha1.TLSessionCloseSession'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "constructor", kind: "enum", T: proto3.getEnumType(TLConstructor), opt: true },
-    { no: 3, name: "client", kind: "message", T: SessionClientEvent, opt: true },
-  ]);
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'client', kind: 'message', T: SessionClientEvent, opt: true },
+  ])
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLSessionCloseSession {
-    return new TLSessionCloseSession().fromBinary(bytes, options);
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>
+  ): TLSessionCloseSession {
+    return new TLSessionCloseSession().fromBinary(bytes, options)
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TLSessionCloseSession {
-    return new TLSessionCloseSession().fromJson(jsonValue, options);
+    return new TLSessionCloseSession().fromJson(jsonValue, options)
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TLSessionCloseSession {
-    return new TLSessionCloseSession().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): TLSessionCloseSession {
+    return new TLSessionCloseSession().fromJsonString(jsonString, options)
   }
 
-  static equals(a: TLSessionCloseSession | PlainMessage<TLSessionCloseSession> | undefined, b: TLSessionCloseSession | PlainMessage<TLSessionCloseSession> | undefined): boolean {
-    return proto3.util.equals(TLSessionCloseSession, a, b);
+  static equals(
+    a: TLSessionCloseSession | PlainMessage<TLSessionCloseSession> | undefined,
+    b: TLSessionCloseSession | PlainMessage<TLSessionCloseSession> | undefined
+  ): boolean {
+    return proto3.util.equals(TLSessionCloseSession, a, b)
   }
 }
 
@@ -695,51 +798,63 @@ export class TLSessionPushUpdatesData extends Message<TLSessionPushUpdatesData> 
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId?: bigint;
+  authKeyId?: bigint
 
   /**
    * @generated from field: optional bool notification = 4;
    */
-  notification?: boolean;
+  notification?: boolean
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Updates updates = 5;
    */
-  updates?: Updates;
+  updates?: Updates
 
   constructor(data?: PartialMessage<TLSessionPushUpdatesData>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "tech.monstrs.chats_system.session.v1alpha1.TLSessionPushUpdatesData";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.session.v1alpha1.TLSessionPushUpdatesData'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "constructor", kind: "enum", T: proto3.getEnumType(TLConstructor), opt: true },
-    { no: 3, name: "auth_key_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
-    { no: 4, name: "notification", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
-    { no: 5, name: "updates", kind: "message", T: Updates, opt: true },
-  ]);
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 4, name: 'notification', kind: 'scalar', T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 5, name: 'updates', kind: 'message', T: Updates, opt: true },
+  ])
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLSessionPushUpdatesData {
-    return new TLSessionPushUpdatesData().fromBinary(bytes, options);
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>
+  ): TLSessionPushUpdatesData {
+    return new TLSessionPushUpdatesData().fromBinary(bytes, options)
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TLSessionPushUpdatesData {
-    return new TLSessionPushUpdatesData().fromJson(jsonValue, options);
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>
+  ): TLSessionPushUpdatesData {
+    return new TLSessionPushUpdatesData().fromJson(jsonValue, options)
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TLSessionPushUpdatesData {
-    return new TLSessionPushUpdatesData().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): TLSessionPushUpdatesData {
+    return new TLSessionPushUpdatesData().fromJsonString(jsonString, options)
   }
 
-  static equals(a: TLSessionPushUpdatesData | PlainMessage<TLSessionPushUpdatesData> | undefined, b: TLSessionPushUpdatesData | PlainMessage<TLSessionPushUpdatesData> | undefined): boolean {
-    return proto3.util.equals(TLSessionPushUpdatesData, a, b);
+  static equals(
+    a: TLSessionPushUpdatesData | PlainMessage<TLSessionPushUpdatesData> | undefined,
+    b: TLSessionPushUpdatesData | PlainMessage<TLSessionPushUpdatesData> | undefined
+  ): boolean {
+    return proto3.util.equals(TLSessionPushUpdatesData, a, b)
   }
 }
 
@@ -750,51 +865,64 @@ export class TLSessionPushSessionUpdatesData extends Message<TLSessionPushSessio
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId?: bigint;
+  authKeyId?: bigint
 
   /**
    * @generated from field: optional int64 session_id = 4;
    */
-  sessionId?: bigint;
+  sessionId?: bigint
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Updates updates = 5;
    */
-  updates?: Updates;
+  updates?: Updates
 
   constructor(data?: PartialMessage<TLSessionPushSessionUpdatesData>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "tech.monstrs.chats_system.session.v1alpha1.TLSessionPushSessionUpdatesData";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName =
+    'tech.monstrs.chats_system.session.v1alpha1.TLSessionPushSessionUpdatesData'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "constructor", kind: "enum", T: proto3.getEnumType(TLConstructor), opt: true },
-    { no: 3, name: "auth_key_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
-    { no: 4, name: "session_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
-    { no: 5, name: "updates", kind: "message", T: Updates, opt: true },
-  ]);
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 4, name: 'session_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 5, name: 'updates', kind: 'message', T: Updates, opt: true },
+  ])
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLSessionPushSessionUpdatesData {
-    return new TLSessionPushSessionUpdatesData().fromBinary(bytes, options);
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>
+  ): TLSessionPushSessionUpdatesData {
+    return new TLSessionPushSessionUpdatesData().fromBinary(bytes, options)
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TLSessionPushSessionUpdatesData {
-    return new TLSessionPushSessionUpdatesData().fromJson(jsonValue, options);
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>
+  ): TLSessionPushSessionUpdatesData {
+    return new TLSessionPushSessionUpdatesData().fromJson(jsonValue, options)
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TLSessionPushSessionUpdatesData {
-    return new TLSessionPushSessionUpdatesData().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): TLSessionPushSessionUpdatesData {
+    return new TLSessionPushSessionUpdatesData().fromJsonString(jsonString, options)
   }
 
-  static equals(a: TLSessionPushSessionUpdatesData | PlainMessage<TLSessionPushSessionUpdatesData> | undefined, b: TLSessionPushSessionUpdatesData | PlainMessage<TLSessionPushSessionUpdatesData> | undefined): boolean {
-    return proto3.util.equals(TLSessionPushSessionUpdatesData, a, b);
+  static equals(
+    a: TLSessionPushSessionUpdatesData | PlainMessage<TLSessionPushSessionUpdatesData> | undefined,
+    b: TLSessionPushSessionUpdatesData | PlainMessage<TLSessionPushSessionUpdatesData> | undefined
+  ): boolean {
+    return proto3.util.equals(TLSessionPushSessionUpdatesData, a, b)
   }
 }
 
@@ -805,57 +933,68 @@ export class TLSessionPushRpcResultData extends Message<TLSessionPushRpcResultDa
   /**
    * @generated from field: optional tech.monstrs.chats_system.session.v1alpha1.TLConstructor constructor = 1;
    */
-  constructor$?: TLConstructor;
+  constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 auth_key_id = 3;
    */
-  authKeyId?: bigint;
+  authKeyId?: bigint
 
   /**
    * @generated from field: optional int64 session_id = 4;
    */
-  sessionId?: bigint;
+  sessionId?: bigint
 
   /**
    * @generated from field: optional int64 client_req_msg_id = 5;
    */
-  clientReqMsgId?: bigint;
+  clientReqMsgId?: bigint
 
   /**
    * @generated from field: optional bytes rpc_result_data = 6;
    */
-  rpcResultData?: Uint8Array;
+  rpcResultData?: Uint8Array
 
   constructor(data?: PartialMessage<TLSessionPushRpcResultData>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "tech.monstrs.chats_system.session.v1alpha1.TLSessionPushRpcResultData";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.session.v1alpha1.TLSessionPushRpcResultData'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "constructor", kind: "enum", T: proto3.getEnumType(TLConstructor), opt: true },
-    { no: 3, name: "auth_key_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
-    { no: 4, name: "session_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
-    { no: 5, name: "client_req_msg_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
-    { no: 6, name: "rpc_result_data", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
-  ]);
+    { no: 1, name: 'constructor', kind: 'enum', T: proto3.getEnumType(TLConstructor), opt: true },
+    { no: 3, name: 'auth_key_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 4, name: 'session_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 5, name: 'client_req_msg_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 6, name: 'rpc_result_data', kind: 'scalar', T: 12 /* ScalarType.BYTES */, opt: true },
+  ])
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TLSessionPushRpcResultData {
-    return new TLSessionPushRpcResultData().fromBinary(bytes, options);
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>
+  ): TLSessionPushRpcResultData {
+    return new TLSessionPushRpcResultData().fromBinary(bytes, options)
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TLSessionPushRpcResultData {
-    return new TLSessionPushRpcResultData().fromJson(jsonValue, options);
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>
+  ): TLSessionPushRpcResultData {
+    return new TLSessionPushRpcResultData().fromJson(jsonValue, options)
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TLSessionPushRpcResultData {
-    return new TLSessionPushRpcResultData().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): TLSessionPushRpcResultData {
+    return new TLSessionPushRpcResultData().fromJsonString(jsonString, options)
   }
 
-  static equals(a: TLSessionPushRpcResultData | PlainMessage<TLSessionPushRpcResultData> | undefined, b: TLSessionPushRpcResultData | PlainMessage<TLSessionPushRpcResultData> | undefined): boolean {
-    return proto3.util.equals(TLSessionPushRpcResultData, a, b);
+  static equals(
+    a: TLSessionPushRpcResultData | PlainMessage<TLSessionPushRpcResultData> | undefined,
+    b: TLSessionPushRpcResultData | PlainMessage<TLSessionPushRpcResultData> | undefined
+  ): boolean {
+    return proto3.util.equals(TLSessionPushRpcResultData, a, b)
   }
 }
-

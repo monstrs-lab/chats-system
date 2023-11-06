@@ -20,17 +20,30 @@ import { ConnectRpcMethod }                     from '@monstrs/nestjs-connectrpc
 import { ConnectRpcService }                    from '@monstrs/nestjs-connectrpc'
 import { Controller }                           from '@nestjs/common'
 
+import { TLAuthsessionQueryAuthKey }            from '@chats-system/auth-rpc-client'
+import { BoolTrue }                             from '@chats-system/core-rpc'
+import { BoolFalse }                            from '@chats-system/core-rpc'
 import { SessionService }                       from '@chats-system/session-rpc'
+import { client }                               from '@chats-system/auth-rpc-client'
+
+import { AuthCache }                            from '../cache/index.js'
+import { SessionsManager }                      from '../service/index.js'
+import { AuthSessions }                         from '../service/index.js'
 
 @Controller()
 @ConnectRpcService(SessionService)
 export class SessionServiceController implements ServiceImpl<typeof SessionService> {
+  constructor(private readonly authCache: AuthCache) {}
+
   @ConnectRpcMethod()
   async queryAuthKey(request: TLSessionQueryAuthKey): Promise<AuthKeyInfo> {
-    // eslint-disable-next-line
-    console.log(request, 'queryAuthKey')
+    const authKey = await client.queryAuthKey(
+      new TLAuthsessionQueryAuthKey({
+        authKeyId: request.authKeyId,
+      })
+    )
 
-    return undefined as any
+    return authKey
   }
 
   @ConnectRpcMethod()
@@ -43,18 +56,51 @@ export class SessionServiceController implements ServiceImpl<typeof SessionServi
 
   @ConnectRpcMethod()
   async createSession(request: TLSessionCreateSession): Promise<Bool> {
-    // eslint-disable-next-line
     console.log(request, 'createSession')
+    if (!request.client?.authKeyId) {
+      return BoolFalse
+    }
 
-    return undefined as any
+    if (!SessionsManager.hasByAuthKeyId(request.client.authKeyId)) {
+      const sessions = new AuthSessions(request.client.authKeyId, this.authCache)
+
+      SessionsManager.setByAuthKeyId(request.client.authKeyId, sessions)
+    }
+
+    SessionsManager.getByAuthKeyId(request.client.authKeyId)!.sessionClientNew(
+      request.client.serverId!,
+      request.client.sessionId!
+    )
+
+    return BoolTrue
   }
 
   @ConnectRpcMethod()
   async sendDataToSession(request: TLSessionSendDataToSession): Promise<Bool> {
-    // eslint-disable-next-line
-    console.log(request, 'sendDataToSession')
+    console.log(
+      request,
+      Buffer.from(request.data!.payload!).toString('base64'),
+      'sendDataToSession'
+    )
+    if (!request.data?.authKeyId) {
+      return BoolFalse
+    }
 
-    return undefined as any
+    if (!SessionsManager.hasByAuthKeyId(request.data.authKeyId)) {
+      const sessions = new AuthSessions(request.data.authKeyId, this.authCache)
+
+      SessionsManager.setByAuthKeyId(request.data.authKeyId, sessions)
+    }
+
+    SessionsManager.getByAuthKeyId(request.data.authKeyId)!.sessionDataArrived(
+      request.data.serverId!,
+      request.data.clientIp!,
+      request.data.sessionId!,
+      request.data.salt!,
+      request.data.payload!
+    )
+
+    return BoolTrue
   }
 
   @ConnectRpcMethod()

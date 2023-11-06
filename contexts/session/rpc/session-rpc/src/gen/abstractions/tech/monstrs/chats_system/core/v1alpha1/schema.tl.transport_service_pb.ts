@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { TLConstructor } from "./schema.tl.crc32_pb.js";
+import type { TLConstructor } from './schema.tl.crc32_pb.js'
 
 /**
  * @generated from message tech.monstrs.chats_system.core.v1alpha1.TLRpcDropAnswer
@@ -12,13 +12,12 @@ export abstract class TLRpcDropAnswer {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 req_msg_id = 3;
    */
-  abstract readonly reqMsgId?: bigint;
-
+  abstract readonly reqMsgId?: bigint
 }
 
 /**
@@ -28,13 +27,12 @@ export abstract class TLGetFutureSalts {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 num = 3;
    */
-  abstract readonly num?: number;
-
+  abstract readonly num?: number
 }
 
 /**
@@ -44,13 +42,12 @@ export abstract class TLPing {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 ping_id = 3;
    */
-  abstract readonly pingId?: bigint;
-
+  abstract readonly pingId?: bigint
 }
 
 /**
@@ -60,18 +57,17 @@ export abstract class TLPingDelayDisconnect {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 ping_id = 3;
    */
-  abstract readonly pingId?: bigint;
+  abstract readonly pingId?: bigint
 
   /**
    * @generated from field: optional int32 disconnect_delay = 4;
    */
-  abstract readonly disconnectDelay?: number;
-
+  abstract readonly disconnectDelay?: number
 }
 
 /**
@@ -81,13 +77,12 @@ export abstract class TLDestroySession {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 session_id = 3;
    */
-  abstract readonly sessionId?: bigint;
-
+  abstract readonly sessionId?: bigint
 }
 
 /**
@@ -97,8 +92,7 @@ export abstract class TLTestUseError {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  abstract readonly constructor$?: TLConstructor;
-
+  abstract readonly constructor$?: TLConstructor
 }
 
 /**
@@ -108,7 +102,5 @@ export abstract class TLTestUseConfigSimple {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  abstract readonly constructor$?: TLConstructor;
-
+  abstract readonly constructor$?: TLConstructor
 }
-

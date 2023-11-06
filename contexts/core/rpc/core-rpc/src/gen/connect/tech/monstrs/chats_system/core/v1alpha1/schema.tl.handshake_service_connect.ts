@@ -3,21 +3,17 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { MethodKind }                                                                  from '@bufbuild/protobuf'
+import { MethodKind }              from '@bufbuild/protobuf'
 
-import { DestroyAuthKeyRes }                                                           from './schema.tl.handshake_pb.js'
-import { ResPQ }                                                    from './schema.tl.handshake_pb.js'
-import { ServerDHParams }                                    from './schema.tl.handshake_pb.js'
-import { SetClientDHParamsAnswer }           from './schema.tl.handshake_pb.js'
-import { TLDestroyAuthKey }                                                            from './schema.tl.handshake_service_pb.js'
-
-import { TLReqDHParams }                                             from './schema.tl.handshake_service_pb.js'
-
-import { TLReqPq }                                    from './schema.tl.handshake_service_pb.js'
-
-import { TLReqPqMulti }                      from './schema.tl.handshake_service_pb.js'
-
-import { TLSetClientDHParams } from './schema.tl.handshake_service_pb.js'
+import { DestroyAuthKeyRes }       from './schema.tl.handshake_pb.js'
+import { ResPQ }                   from './schema.tl.handshake_pb.js'
+import { ServerDHParams }          from './schema.tl.handshake_pb.js'
+import { SetClientDHParamsAnswer } from './schema.tl.handshake_pb.js'
+import { TLDestroyAuthKey }        from './schema.tl.handshake_service_pb.js'
+import { TLReqDHParams }           from './schema.tl.handshake_service_pb.js'
+import { TLReqPq }                 from './schema.tl.handshake_service_pb.js'
+import { TLReqPqMulti }            from './schema.tl.handshake_service_pb.js'
+import { TLSetClientDHParams }     from './schema.tl.handshake_service_pb.js'
 
 /**
  * @generated from service tech.monstrs.chats_system.core.v1alpha1.RPCAuthKey

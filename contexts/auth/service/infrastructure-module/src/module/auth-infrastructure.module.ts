@@ -33,7 +33,7 @@ export class AuthInfrastructureModule implements OnModuleInit {
         MicroservisesRegistryModule.connect({
           strategy: new ConnectRpcServer({
             protocol: ServerProtocol.HTTP2_INSECURE,
-            port: 50051,
+            port: 50052,
           }),
         }),
         MikroOrmModule.forFeature(Object.values(entities)),

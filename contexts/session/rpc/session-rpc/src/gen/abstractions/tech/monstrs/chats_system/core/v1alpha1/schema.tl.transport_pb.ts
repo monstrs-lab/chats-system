@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { TLConstructor } from "./schema.tl.crc32_pb.js";
+import type { TLConstructor } from './schema.tl.crc32_pb.js'
 
 /**
  * @generated from message tech.monstrs.chats_system.core.v1alpha1.AccessPointRule
@@ -12,28 +12,27 @@ export abstract class AccessPointRule {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string phone_prefix_rules = 3;
    */
-  abstract readonly phonePrefixRules?: string;
+  abstract readonly phonePrefixRules?: string
 
   /**
    * @generated from field: optional int32 dc_id = 4;
    */
-  abstract readonly dcId?: number;
+  abstract readonly dcId?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.IpPort ips = 5;
    */
-  abstract readonly ips: IpPort[];
-
+  abstract readonly ips: IpPort[]
 }
 
 /**
@@ -43,8 +42,7 @@ export abstract class TLAccessPointRule {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AccessPointRule data2 = 1;
    */
-  abstract readonly data2?: AccessPointRule;
-
+  abstract readonly data2?: AccessPointRule
 }
 
 /**
@@ -54,33 +52,32 @@ export abstract class BadMsgNotification {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 bad_msg_id = 3;
    */
-  abstract readonly badMsgId?: bigint;
+  abstract readonly badMsgId?: bigint
 
   /**
    * @generated from field: optional int32 bad_msg_seqno = 4;
    */
-  abstract readonly badMsgSeqno?: number;
+  abstract readonly badMsgSeqno?: number
 
   /**
    * @generated from field: optional int32 error_code = 5;
    */
-  abstract readonly errorCode?: number;
+  abstract readonly errorCode?: number
 
   /**
    * @generated from field: optional int64 new_server_salt = 6;
    */
-  abstract readonly newServerSalt?: bigint;
-
+  abstract readonly newServerSalt?: bigint
 }
 
 /**
@@ -90,8 +87,7 @@ export abstract class TLBadMsgNotification {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BadMsgNotification data2 = 1;
    */
-  abstract readonly data2?: BadMsgNotification;
-
+  abstract readonly data2?: BadMsgNotification
 }
 
 /**
@@ -101,8 +97,7 @@ export abstract class TLBadServerSalt {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.BadMsgNotification data2 = 1;
    */
-  abstract readonly data2?: BadMsgNotification;
-
+  abstract readonly data2?: BadMsgNotification
 }
 
 /**
@@ -112,18 +107,17 @@ export abstract class DestroySessionRes {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 session_id = 3;
    */
-  abstract readonly sessionId?: bigint;
-
+  abstract readonly sessionId?: bigint
 }
 
 /**
@@ -133,8 +127,7 @@ export abstract class TLDestroySessionOk {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DestroySessionRes data2 = 1;
    */
-  abstract readonly data2?: DestroySessionRes;
-
+  abstract readonly data2?: DestroySessionRes
 }
 
 /**
@@ -144,8 +137,7 @@ export abstract class TLDestroySessionNone {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.DestroySessionRes data2 = 1;
    */
-  abstract readonly data2?: DestroySessionRes;
-
+  abstract readonly data2?: DestroySessionRes
 }
 
 /**
@@ -155,28 +147,27 @@ export abstract class FutureSalt {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 valid_since = 3;
    */
-  abstract readonly validSince?: number;
+  abstract readonly validSince?: number
 
   /**
    * @generated from field: optional int32 valid_until = 4;
    */
-  abstract readonly validUntil?: number;
+  abstract readonly validUntil?: number
 
   /**
    * @generated from field: optional int64 salt = 5;
    */
-  abstract readonly salt?: bigint;
-
+  abstract readonly salt?: bigint
 }
 
 /**
@@ -186,8 +177,7 @@ export abstract class TLFutureSalt {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.FutureSalt data2 = 1;
    */
-  abstract readonly data2?: FutureSalt;
-
+  abstract readonly data2?: FutureSalt
 }
 
 /**
@@ -197,28 +187,27 @@ export abstract class FutureSalts {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 req_msg_id = 3;
    */
-  abstract readonly reqMsgId?: bigint;
+  abstract readonly reqMsgId?: bigint
 
   /**
    * @generated from field: optional int32 now = 4;
    */
-  abstract readonly now?: number;
+  abstract readonly now?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.TLFutureSalt salts = 5;
    */
-  abstract readonly salts: TLFutureSalt[];
-
+  abstract readonly salts: TLFutureSalt[]
 }
 
 /**
@@ -228,8 +217,7 @@ export abstract class TLFutureSalts {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.FutureSalts data2 = 1;
    */
-  abstract readonly data2?: FutureSalts;
-
+  abstract readonly data2?: FutureSalts
 }
 
 /**
@@ -239,28 +227,27 @@ export abstract class HttpWait {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 max_delay = 3;
    */
-  abstract readonly maxDelay?: number;
+  abstract readonly maxDelay?: number
 
   /**
    * @generated from field: optional int32 wait_after = 4;
    */
-  abstract readonly waitAfter?: number;
+  abstract readonly waitAfter?: number
 
   /**
    * @generated from field: optional int32 max_wait = 5;
    */
-  abstract readonly maxWait?: number;
-
+  abstract readonly maxWait?: number
 }
 
 /**
@@ -270,8 +257,7 @@ export abstract class TLHttpWait {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HttpWait data2 = 1;
    */
-  abstract readonly data2?: HttpWait;
-
+  abstract readonly data2?: HttpWait
 }
 
 /**
@@ -281,28 +267,27 @@ export abstract class IpPort {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 ipv4 = 3;
    */
-  abstract readonly ipv4?: number;
+  abstract readonly ipv4?: number
 
   /**
    * @generated from field: optional int32 port = 4;
    */
-  abstract readonly port?: number;
+  abstract readonly port?: number
 
   /**
    * @generated from field: optional bytes secret = 5;
    */
-  abstract readonly secret?: Uint8Array;
-
+  abstract readonly secret?: Uint8Array
 }
 
 /**
@@ -312,8 +297,7 @@ export abstract class TLIpPort {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.IpPort data2 = 1;
    */
-  abstract readonly data2?: IpPort;
-
+  abstract readonly data2?: IpPort
 }
 
 /**
@@ -323,8 +307,7 @@ export abstract class TLIpPortSecret {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.IpPort data2 = 1;
    */
-  abstract readonly data2?: IpPort;
-
+  abstract readonly data2?: IpPort
 }
 
 /**
@@ -334,33 +317,32 @@ export abstract class MsgDetailedInfo {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 msg_id = 3;
    */
-  abstract readonly msgId?: bigint;
+  abstract readonly msgId?: bigint
 
   /**
    * @generated from field: optional int64 answer_msg_id = 4;
    */
-  abstract readonly answerMsgId?: bigint;
+  abstract readonly answerMsgId?: bigint
 
   /**
    * @generated from field: optional int32 bytes = 5;
    */
-  abstract readonly bytes?: number;
+  abstract readonly bytes?: number
 
   /**
    * @generated from field: optional int32 status = 6;
    */
-  abstract readonly status?: number;
-
+  abstract readonly status?: number
 }
 
 /**
@@ -370,8 +352,7 @@ export abstract class TLMsgDetailedInfo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MsgDetailedInfo data2 = 1;
    */
-  abstract readonly data2?: MsgDetailedInfo;
-
+  abstract readonly data2?: MsgDetailedInfo
 }
 
 /**
@@ -381,8 +362,7 @@ export abstract class TLMsgNewDetailedInfo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MsgDetailedInfo data2 = 1;
    */
-  abstract readonly data2?: MsgDetailedInfo;
-
+  abstract readonly data2?: MsgDetailedInfo
 }
 
 /**
@@ -392,18 +372,17 @@ export abstract class MsgResendReq {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated int64 msg_ids = 3;
    */
-  abstract readonly msgIds: bigint[];
-
+  abstract readonly msgIds: bigint[]
 }
 
 /**
@@ -413,8 +392,7 @@ export abstract class TLMsgResendReq {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MsgResendReq data2 = 1;
    */
-  abstract readonly data2?: MsgResendReq;
-
+  abstract readonly data2?: MsgResendReq
 }
 
 /**
@@ -424,18 +402,17 @@ export abstract class MsgsAck {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated int64 msg_ids = 3;
    */
-  abstract readonly msgIds: bigint[];
-
+  abstract readonly msgIds: bigint[]
 }
 
 /**
@@ -445,8 +422,7 @@ export abstract class TLMsgsAck {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MsgsAck data2 = 1;
    */
-  abstract readonly data2?: MsgsAck;
-
+  abstract readonly data2?: MsgsAck
 }
 
 /**
@@ -456,23 +432,22 @@ export abstract class MsgsAllInfo {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated int64 msg_ids = 3;
    */
-  abstract readonly msgIds: bigint[];
+  abstract readonly msgIds: bigint[]
 
   /**
    * @generated from field: optional string info = 4;
    */
-  abstract readonly info?: string;
-
+  abstract readonly info?: string
 }
 
 /**
@@ -482,8 +457,7 @@ export abstract class TLMsgsAllInfo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MsgsAllInfo data2 = 1;
    */
-  abstract readonly data2?: MsgsAllInfo;
-
+  abstract readonly data2?: MsgsAllInfo
 }
 
 /**
@@ -493,23 +467,22 @@ export abstract class MsgsStateInfo {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 req_msg_id = 3;
    */
-  abstract readonly reqMsgId?: bigint;
+  abstract readonly reqMsgId?: bigint
 
   /**
    * @generated from field: optional string info = 4;
    */
-  abstract readonly info?: string;
-
+  abstract readonly info?: string
 }
 
 /**
@@ -519,8 +492,7 @@ export abstract class TLMsgsStateInfo {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MsgsStateInfo data2 = 1;
    */
-  abstract readonly data2?: MsgsStateInfo;
-
+  abstract readonly data2?: MsgsStateInfo
 }
 
 /**
@@ -530,18 +502,17 @@ export abstract class MsgsStateReq {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated int64 msg_ids = 3;
    */
-  abstract readonly msgIds: bigint[];
-
+  abstract readonly msgIds: bigint[]
 }
 
 /**
@@ -551,8 +522,7 @@ export abstract class TLMsgsStateReq {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.MsgsStateReq data2 = 1;
    */
-  abstract readonly data2?: MsgsStateReq;
-
+  abstract readonly data2?: MsgsStateReq
 }
 
 /**
@@ -562,28 +532,27 @@ export abstract class NewSession {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 first_msg_id = 3;
    */
-  abstract readonly firstMsgId?: bigint;
+  abstract readonly firstMsgId?: bigint
 
   /**
    * @generated from field: optional int64 unique_id = 4;
    */
-  abstract readonly uniqueId?: bigint;
+  abstract readonly uniqueId?: bigint
 
   /**
    * @generated from field: optional int64 server_salt = 5;
    */
-  abstract readonly serverSalt?: bigint;
-
+  abstract readonly serverSalt?: bigint
 }
 
 /**
@@ -593,8 +562,7 @@ export abstract class TLNewSessionCreated {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.NewSession data2 = 1;
    */
-  abstract readonly data2?: NewSession;
-
+  abstract readonly data2?: NewSession
 }
 
 /**
@@ -604,23 +572,22 @@ export abstract class Pong {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 msg_id = 3;
    */
-  abstract readonly msgId?: bigint;
+  abstract readonly msgId?: bigint
 
   /**
    * @generated from field: optional int64 ping_id = 4;
    */
-  abstract readonly pingId?: bigint;
-
+  abstract readonly pingId?: bigint
 }
 
 /**
@@ -630,8 +597,7 @@ export abstract class TLPong {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Pong data2 = 1;
    */
-  abstract readonly data2?: Pong;
-
+  abstract readonly data2?: Pong
 }
 
 /**
@@ -641,28 +607,27 @@ export abstract class RpcDropAnswer {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int64 msg_id = 3;
    */
-  abstract readonly msgId?: bigint;
+  abstract readonly msgId?: bigint
 
   /**
    * @generated from field: optional int32 seq_no = 4;
    */
-  abstract readonly seqNo?: number;
+  abstract readonly seqNo?: number
 
   /**
    * @generated from field: optional int32 bytes = 5;
    */
-  abstract readonly bytes?: number;
-
+  abstract readonly bytes?: number
 }
 
 /**
@@ -672,8 +637,7 @@ export abstract class TLRpcAnswerUnknown {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RpcDropAnswer data2 = 1;
    */
-  abstract readonly data2?: RpcDropAnswer;
-
+  abstract readonly data2?: RpcDropAnswer
 }
 
 /**
@@ -683,8 +647,7 @@ export abstract class TLRpcAnswerDroppedRunning {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RpcDropAnswer data2 = 1;
    */
-  abstract readonly data2?: RpcDropAnswer;
-
+  abstract readonly data2?: RpcDropAnswer
 }
 
 /**
@@ -694,8 +657,7 @@ export abstract class TLRpcAnswerDropped {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RpcDropAnswer data2 = 1;
    */
-  abstract readonly data2?: RpcDropAnswer;
-
+  abstract readonly data2?: RpcDropAnswer
 }
 
 /**
@@ -705,23 +667,22 @@ export abstract class RpcError {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 error_code = 3;
    */
-  abstract readonly errorCode?: number;
+  abstract readonly errorCode?: number
 
   /**
    * @generated from field: optional string error_message = 4;
    */
-  abstract readonly errorMessage?: string;
-
+  abstract readonly errorMessage?: string
 }
 
 /**
@@ -731,8 +692,7 @@ export abstract class TLRpcError {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.RpcError data2 = 1;
    */
-  abstract readonly data2?: RpcError;
-
+  abstract readonly data2?: RpcError
 }
 
 /**
@@ -742,33 +702,32 @@ export abstract class TlsBlock {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional string data = 3;
    */
-  abstract readonly data?: string;
+  abstract readonly data?: string
 
   /**
    * @generated from field: optional int32 length = 4;
    */
-  abstract readonly length?: number;
+  abstract readonly length?: number
 
   /**
    * @generated from field: optional int32 seed = 5;
    */
-  abstract readonly seed?: number;
+  abstract readonly seed?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.TlsBlock entries = 6;
    */
-  abstract readonly entries: TlsBlock[];
-
+  abstract readonly entries: TlsBlock[]
 }
 
 /**
@@ -778,8 +737,7 @@ export abstract class TLTlsBlockString {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TlsBlock data2 = 1;
    */
-  abstract readonly data2?: TlsBlock;
-
+  abstract readonly data2?: TlsBlock
 }
 
 /**
@@ -789,8 +747,7 @@ export abstract class TLTlsBlockRandom {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TlsBlock data2 = 1;
    */
-  abstract readonly data2?: TlsBlock;
-
+  abstract readonly data2?: TlsBlock
 }
 
 /**
@@ -800,8 +757,7 @@ export abstract class TLTlsBlockZero {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TlsBlock data2 = 1;
    */
-  abstract readonly data2?: TlsBlock;
-
+  abstract readonly data2?: TlsBlock
 }
 
 /**
@@ -811,8 +767,7 @@ export abstract class TLTlsBlockDomain {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TlsBlock data2 = 1;
    */
-  abstract readonly data2?: TlsBlock;
-
+  abstract readonly data2?: TlsBlock
 }
 
 /**
@@ -822,8 +777,7 @@ export abstract class TLTlsBlockGrease {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TlsBlock data2 = 1;
    */
-  abstract readonly data2?: TlsBlock;
-
+  abstract readonly data2?: TlsBlock
 }
 
 /**
@@ -833,8 +787,7 @@ export abstract class TLTlsBlockPublicKey {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TlsBlock data2 = 1;
    */
-  abstract readonly data2?: TlsBlock;
-
+  abstract readonly data2?: TlsBlock
 }
 
 /**
@@ -844,8 +797,7 @@ export abstract class TLTlsBlockScope {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TlsBlock data2 = 1;
    */
-  abstract readonly data2?: TlsBlock;
-
+  abstract readonly data2?: TlsBlock
 }
 
 /**
@@ -855,18 +807,17 @@ export abstract class TlsClientHello {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.TlsBlock blocks = 3;
    */
-  abstract readonly blocks: TlsBlock[];
-
+  abstract readonly blocks: TlsBlock[]
 }
 
 /**
@@ -876,8 +827,7 @@ export abstract class TLTlsClientHello {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TlsClientHello data2 = 1;
    */
-  abstract readonly data2?: TlsClientHello;
-
+  abstract readonly data2?: TlsClientHello
 }
 
 /**
@@ -887,28 +837,27 @@ export abstract class HelpConfigSimple {
   /**
    * @generated from field: optional string predicate_name = 1;
    */
-  abstract readonly predicateName?: string;
+  abstract readonly predicateName?: string
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 2;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional int32 date = 3;
    */
-  abstract readonly date?: number;
+  abstract readonly date?: number
 
   /**
    * @generated from field: optional int32 expires = 4;
    */
-  abstract readonly expires?: number;
+  abstract readonly expires?: number
 
   /**
    * @generated from field: repeated tech.monstrs.chats_system.core.v1alpha1.AccessPointRule rules = 5;
    */
-  abstract readonly rules: AccessPointRule[];
-
+  abstract readonly rules: AccessPointRule[]
 }
 
 /**
@@ -918,7 +867,5 @@ export abstract class TLHelpConfigSimple {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.HelpConfigSimple data2 = 1;
    */
-  abstract readonly data2?: HelpConfigSimple;
-
+  abstract readonly data2?: HelpConfigSimple
 }
-

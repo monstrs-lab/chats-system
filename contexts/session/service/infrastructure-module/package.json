@@ -17,11 +17,13 @@
     "@monstrs/rpc-query-payloads": "^0.0.11",
     "ajv": "^8.12.0",
     "bignumber.js": "9.1.2",
+    "lru-cache": "^10.0.1",
     "random-bigint": "^0.0.1",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@bufbuild/protobuf": "^1.3.1",
+    "@chats-system/auth-rpc-client": "workspace:0.0.1",
     "@chats-system/core-rpc": "workspace:0.0.1",
     "@chats-system/session-rpc": "workspace:0.0.1",
     "@connectrpc/connect": "^1.0.0",

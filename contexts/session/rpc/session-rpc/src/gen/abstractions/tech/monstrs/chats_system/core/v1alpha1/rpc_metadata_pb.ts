@@ -10,13 +10,12 @@ export abstract class TakeoutMessageRange {
   /**
    * @generated from field: optional int32 min_id = 1;
    */
-  abstract readonly minId?: number;
+  abstract readonly minId?: number
 
   /**
    * @generated from field: optional int32 max_id = 2;
    */
-  abstract readonly maxId?: number;
-
+  abstract readonly maxId?: number
 }
 
 /**
@@ -26,13 +25,12 @@ export abstract class Takeout {
   /**
    * @generated from field: optional int64 id = 1;
    */
-  abstract readonly id?: bigint;
+  abstract readonly id?: bigint
 
   /**
    * @generated from field: optional metadata.TakeoutMessageRange range = 2;
    */
-  abstract readonly range?: TakeoutMessageRange;
-
+  abstract readonly range?: TakeoutMessageRange
 }
 
 /**
@@ -42,72 +40,70 @@ export abstract class RpcMetadata {
   /**
    * @generated from field: optional string server_id = 1;
    */
-  abstract readonly serverId?: string;
+  abstract readonly serverId?: string
 
   /**
    * @generated from field: optional string client_addr = 3;
    */
-  abstract readonly clientAddr?: string;
+  abstract readonly clientAddr?: string
 
   /**
    * @generated from field: optional int64 auth_id = 4;
    */
-  abstract readonly authId?: bigint;
+  abstract readonly authId?: bigint
 
   /**
    * @generated from field: optional int64 session_id = 5;
    */
-  abstract readonly sessionId?: bigint;
+  abstract readonly sessionId?: bigint
 
   /**
    * @generated from field: optional int64 receive_time = 8;
    */
-  abstract readonly receiveTime?: bigint;
+  abstract readonly receiveTime?: bigint
 
   /**
    * @generated from field: optional int64 user_id = 11;
    */
-  abstract readonly userId?: bigint;
+  abstract readonly userId?: bigint
 
   /**
    * @generated from field: optional int64 client_msg_id = 12;
    */
-  abstract readonly clientMsgId?: bigint;
+  abstract readonly clientMsgId?: bigint
 
   /**
    * @generated from field: optional bool is_bot = 13;
    */
-  abstract readonly isBot?: boolean;
+  abstract readonly isBot?: boolean
 
   /**
    * @generated from field: optional int32 layer = 14;
    */
-  abstract readonly layer?: number;
+  abstract readonly layer?: number
 
   /**
    * @generated from field: optional string client = 15;
    */
-  abstract readonly client?: string;
+  abstract readonly client?: string
 
   /**
    * @generated from field: optional bool is_admin = 16;
    */
-  abstract readonly isAdmin?: boolean;
+  abstract readonly isAdmin?: boolean
 
   /**
    * @generated from field: optional metadata.Takeout takeout = 20;
    */
-  abstract readonly takeout?: Takeout;
+  abstract readonly takeout?: Takeout
 
   /**
    * @generated from field: optional string langpack = 21;
    */
-  abstract readonly langpack?: string;
+  abstract readonly langpack?: string
 
   /**
    * @generated from field: optional int64 perm_auth_key_id = 22;
    */
-  abstract readonly permAuthKeyId?: bigint;
-
+  abstract readonly permAuthKeyId?: bigint
 }
-

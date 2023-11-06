@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { TLConstructor } from "./schema.tl.crc32_pb.js";
+import type { TLConstructor } from './schema.tl.crc32_pb.js'
 
 /**
  * @generated from message tech.monstrs.chats_system.core.v1alpha1.TLReqPq
@@ -12,13 +12,12 @@ export abstract class TLReqPq {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes nonce = 3;
    */
-  abstract readonly nonce?: Uint8Array;
-
+  abstract readonly nonce?: Uint8Array
 }
 
 /**
@@ -28,13 +27,12 @@ export abstract class TLReqPqMulti {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes nonce = 3;
    */
-  abstract readonly nonce?: Uint8Array;
-
+  abstract readonly nonce?: Uint8Array
 }
 
 /**
@@ -44,38 +42,37 @@ export abstract class TLReqDHParams {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes nonce = 3;
    */
-  abstract readonly nonce?: Uint8Array;
+  abstract readonly nonce?: Uint8Array
 
   /**
    * @generated from field: optional bytes server_nonce = 4;
    */
-  abstract readonly serverNonce?: Uint8Array;
+  abstract readonly serverNonce?: Uint8Array
 
   /**
    * @generated from field: optional string p = 5;
    */
-  abstract readonly p?: string;
+  abstract readonly p?: string
 
   /**
    * @generated from field: optional string q = 6;
    */
-  abstract readonly q?: string;
+  abstract readonly q?: string
 
   /**
    * @generated from field: optional int64 public_key_fingerprint = 7;
    */
-  abstract readonly publicKeyFingerprint?: bigint;
+  abstract readonly publicKeyFingerprint?: bigint
 
   /**
    * @generated from field: optional string encrypted_data = 8;
    */
-  abstract readonly encryptedData?: string;
-
+  abstract readonly encryptedData?: string
 }
 
 /**
@@ -85,23 +82,22 @@ export abstract class TLSetClientDHParams {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  abstract readonly constructor$?: TLConstructor;
+  abstract readonly constructor$?: TLConstructor
 
   /**
    * @generated from field: optional bytes nonce = 3;
    */
-  abstract readonly nonce?: Uint8Array;
+  abstract readonly nonce?: Uint8Array
 
   /**
    * @generated from field: optional bytes server_nonce = 4;
    */
-  abstract readonly serverNonce?: Uint8Array;
+  abstract readonly serverNonce?: Uint8Array
 
   /**
    * @generated from field: optional string encrypted_data = 5;
    */
-  abstract readonly encryptedData?: string;
-
+  abstract readonly encryptedData?: string
 }
 
 /**
@@ -111,7 +107,5 @@ export abstract class TLDestroyAuthKey {
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.TLConstructor constructor = 1;
    */
-  abstract readonly constructor$?: TLConstructor;
-
+  abstract readonly constructor$?: TLConstructor
 }
-
