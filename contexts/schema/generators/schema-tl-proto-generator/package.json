@@ -1,0 +1,35 @@
+{
+    "name": "@chats-system/schema-tl-pb-generator",
+    "version": "0.0.1",
+    "license": "MIT",
+    "type": "module",
+    "private": true,
+    "exports": {
+        "./package.json": "./package.json",
+        ".": "./src/index.ts"
+    },
+    "bin": {
+        "schema-tl-to-proto": "./bin/schema-tl-to-pb.js"
+    },
+    "files": [
+        "bin",
+        "dist"
+    ],
+    "main": "src/index.ts",
+    "scripts": {
+        "build": "yarn library build",
+        "prepack": "yarn run build",
+        "postpack": "rm -rf dist",
+        "dev": "node --loader ts-node/esm --loader $(pwd)/../../../../.pnp.loader.mjs --loader $(pwd)/../../../../.pnp-ts.loader.mjs ./src/schema.tl.pb.generator.cli.ts"
+    },
+    "dependencies": {
+        "@chats-system/schema-tl-base-generator": "workspace:0.0.1",
+        "camelcase": "^8.0.0",
+        "commander": "^11.1.0",
+        "decamelize": "^6.0.0"
+    },
+    "devDependencies": {
+        "ts-node": "^10.9.1",
+        "typescript": "^5.2.2"
+    }
+}

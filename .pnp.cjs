@@ -30,6 +30,18 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:contexts/core/rpc/core-rpc"\
     },\
     {\
+      "name": "@chats-system/schema-tl-base-generator",\
+      "reference": "workspace:contexts/schema/generators/schema-tl-base-generator"\
+    },\
+    {\
+      "name": "@chats-system/schema-tl-pb-generator",\
+      "reference": "workspace:contexts/schema/generators/schema-tl-proto-generator"\
+    },\
+    {\
+      "name": "@chats-system/schema-tl-loader",\
+      "reference": "workspace:contexts/schema/loaders/schema-tl-loader"\
+    },\
+    {\
       "name": "@chats-system/session-rpc",\
       "reference": "workspace:contexts/session/rpc/session-rpc"\
     },\
@@ -49,6 +61,9 @@ const RAW_RUNTIME_STATE =
     ["@chats-system/auth-rpc", ["virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#workspace:contexts/auth/rpc/auth-rpc", "workspace:contexts/auth/rpc/auth-rpc"]],\
     ["@chats-system/auth-service-entrypoint", ["workspace:contexts/auth/service/service-entrypoint"]],\
     ["@chats-system/core-rpc", ["virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#workspace:contexts/core/rpc/core-rpc", "workspace:contexts/core/rpc/core-rpc"]],\
+    ["@chats-system/schema-tl-base-generator", ["workspace:contexts/schema/generators/schema-tl-base-generator"]],\
+    ["@chats-system/schema-tl-loader", ["workspace:contexts/schema/loaders/schema-tl-loader"]],\
+    ["@chats-system/schema-tl-pb-generator", ["workspace:contexts/schema/generators/schema-tl-proto-generator"]],\
     ["@chats-system/session-infrastructure-module", ["virtual:a45b73e4ddea4b585aef9acec377f5481565662c46b28915812d889a1a3c2ccded76a762511eb0b2869e5eaa8546d900a1453e44611b35adc9d8fee701e387ae#workspace:contexts/session/service/infrastructure-module", "workspace:contexts/session/service/infrastructure-module"]],\
     ["@chats-system/session-rpc", ["virtual:690407a8d86dc802e6089752b2c7705fe10a2f6c49dfe1a05e4789a4979d4c37bc26efc784142215157a5b1c8f8c0bf6cc0c4ab3183e6d15598d098f7efb88d2#workspace:contexts/session/rpc/session-rpc", "workspace:contexts/session/rpc/session-rpc"]],\
     ["@chats-system/session-service-entrypoint", ["workspace:contexts/session/service/service-entrypoint"]],\
@@ -1451,6 +1466,40 @@ const RAW_RUNTIME_STATE =
           ["@connectrpc/protoc-gen-connect-es", "virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:0.13.2"],\
           ["@monstrs/protoc-gen-abstractions", "virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:0.0.5"],\
           ["@monstrs/protoc-gen-interfaces", "virtual:64e40aef7206911019c11619e6ac88b30c95ef75794674b1524fdf7045513c22251a5d69b774aa06103ef5288e6d6819a77babcdad4ffd284cfcccee9755fb0b#npm:0.0.4"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@chats-system/schema-tl-base-generator", [\
+      ["workspace:contexts/schema/generators/schema-tl-base-generator", {\
+        "packageLocation": "./contexts/schema/generators/schema-tl-base-generator/",\
+        "packageDependencies": [\
+          ["@chats-system/schema-tl-base-generator", "workspace:contexts/schema/generators/schema-tl-base-generator"],\
+          ["@chats-system/schema-tl-loader", "workspace:contexts/schema/loaders/schema-tl-loader"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@chats-system/schema-tl-loader", [\
+      ["workspace:contexts/schema/loaders/schema-tl-loader", {\
+        "packageLocation": "./contexts/schema/loaders/schema-tl-loader/",\
+        "packageDependencies": [\
+          ["@chats-system/schema-tl-loader", "workspace:contexts/schema/loaders/schema-tl-loader"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@chats-system/schema-tl-pb-generator", [\
+      ["workspace:contexts/schema/generators/schema-tl-proto-generator", {\
+        "packageLocation": "./contexts/schema/generators/schema-tl-proto-generator/",\
+        "packageDependencies": [\
+          ["@chats-system/schema-tl-pb-generator", "workspace:contexts/schema/generators/schema-tl-proto-generator"],\
+          ["@chats-system/schema-tl-base-generator", "workspace:contexts/schema/generators/schema-tl-base-generator"],\
+          ["camelcase", "npm:8.0.0"],\
+          ["commander", "npm:11.1.0"],\
+          ["decamelize", "npm:6.0.0"],\
+          ["ts-node", "virtual:8f84f7131b5eca22f4b96a9dfc8451442d99ee98fbf0664adbe0dcb318aff29a55f2cedc8f0700704c15402d93dbc66a0029de0ad3e8fb18fe5132f2aa8b2743#npm:10.9.1"],\
+          ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -8246,6 +8295,13 @@ const RAW_RUNTIME_STATE =
           ["camelcase", "npm:6.3.0"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:8.0.0", {\
+        "packageLocation": "./.yarn/cache/camelcase-npm-8.0.0-a3fa03dcc3-56c5fe072f.zip/node_modules/camelcase/",\
+        "packageDependencies": [\
+          ["camelcase", "npm:8.0.0"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["caniuse-lite", [\
@@ -8487,6 +8543,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/commander-npm-10.0.1-f17613b72b-53f33d8927.zip/node_modules/commander/",\
         "packageDependencies": [\
           ["commander", "npm:10.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:11.1.0", {\
+        "packageLocation": "./.yarn/cache/commander-npm-11.1.0-56e979613c-13cc6ac875.zip/node_modules/commander/",\
+        "packageDependencies": [\
+          ["commander", "npm:11.1.0"]\
         ],\
         "linkType": "HARD"\
       }],\
@@ -8773,6 +8836,15 @@ const RAW_RUNTIME_STATE =
         "packagePeers": [\
           "@types/supports-color",\
           "supports-color"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["decamelize", [\
+      ["npm:6.0.0", {\
+        "packageLocation": "./.yarn/cache/decamelize-npm-6.0.0-109b08ac0a-689888f5ea.zip/node_modules/decamelize/",\
+        "packageDependencies": [\
+          ["decamelize", "npm:6.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -15377,6 +15449,42 @@ const RAW_RUNTIME_STATE =
           ["@tsconfig/node14", "npm:1.0.3"],\
           ["@tsconfig/node16", "npm:1.0.4"],\
           ["@types/node", "npm:20.8.7"],\
+          ["@types/swc__core", null],\
+          ["@types/swc__wasm", null],\
+          ["@types/typescript", null],\
+          ["acorn", "npm:8.11.2"],\
+          ["acorn-walk", "npm:8.3.0"],\
+          ["arg", "npm:4.1.3"],\
+          ["create-require", "npm:1.1.1"],\
+          ["diff", "npm:4.0.2"],\
+          ["make-error", "npm:1.3.6"],\
+          ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
+          ["v8-compile-cache-lib", "npm:3.0.1"],\
+          ["yn", "npm:3.1.1"]\
+        ],\
+        "packagePeers": [\
+          "@swc/core",\
+          "@swc/wasm",\
+          "@types/node",\
+          "@types/swc__core",\
+          "@types/swc__wasm",\
+          "@types/typescript",\
+          "typescript"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:8f84f7131b5eca22f4b96a9dfc8451442d99ee98fbf0664adbe0dcb318aff29a55f2cedc8f0700704c15402d93dbc66a0029de0ad3e8fb18fe5132f2aa8b2743#npm:10.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/ts-node-virtual-756d695762/0/cache/ts-node-npm-10.9.1-6c268be7f4-95187932fb.zip/node_modules/ts-node/",\
+        "packageDependencies": [\
+          ["ts-node", "virtual:8f84f7131b5eca22f4b96a9dfc8451442d99ee98fbf0664adbe0dcb318aff29a55f2cedc8f0700704c15402d93dbc66a0029de0ad3e8fb18fe5132f2aa8b2743#npm:10.9.1"],\
+          ["@cspotcode/source-map-support", "npm:0.8.1"],\
+          ["@swc/core", null],\
+          ["@swc/wasm", null],\
+          ["@tsconfig/node10", "npm:1.0.9"],\
+          ["@tsconfig/node12", "npm:1.0.11"],\
+          ["@tsconfig/node14", "npm:1.0.3"],\
+          ["@tsconfig/node16", "npm:1.0.4"],\
+          ["@types/node", null],\
           ["@types/swc__core", null],\
           ["@types/swc__wasm", null],\
           ["@types/typescript", null],\

@@ -1,0 +1,15 @@
+{
+    "name": "@chats-system/schema-tl-base-generator",
+    "version": "0.0.1",
+    "license": "MIT",
+    "type": "module",
+    "private": true,
+    "exports": {
+        "./package.json": "./package.json",
+        ".": "./src/index.ts"
+    },
+    "main": "src/index.ts",
+    "devDependencies": {
+        "@chats-system/schema-tl-loader": "workspace:0.0.1"
+    }
+}
