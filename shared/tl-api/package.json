@@ -1,0 +1,21 @@
+{
+  "name": "@chats-system/tl-api",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./src/index.js"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "generate": "node --loader ts-node/esm --loader $(pwd)/../../.pnp.loader.mjs --loader $(pwd)/../../.pnp-ts.loader.mjs ./src/tl-api.generate.ts"
+  },
+  "devDependencies": {
+    "@chats-system/tl-schema": "workspace:0.0.1",
+    "camelcase": "^8.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@chats-system/tl-parser",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./src/index.ts"
+  },
+  "main": "src/index.ts",
+  "bin": {
+    "tl-parse": "./bin/tl-parse.js"
+  },
+  "scripts": {
+    "build": "yarn library build",
+    "prepack": "yarn run build",
+    "postpack": "rm -rf dist"
+  },
+  "dependencies": {
+    "commander": "^11.1.0"
+  }
+}

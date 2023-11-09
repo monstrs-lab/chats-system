@@ -1,0 +1,20 @@
+{
+  "name": "@chats-system/tl-schema",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./src/index.ts"
+  },
+  "main": "src/index.ts",
+  "scripts": {
+    "generate:mtproto": "tl-parse --input src/mtproto.tl.json --output src/mtproto.tl.parsed.json",
+    "generate:core": "tl-parse --input src/core.tl.json --output src/core.tl.parsed.json",
+    "generate": "yarn generate:mtproto && yarn generate:core"
+  },
+  "dependencies": {
+    "@chats-system/tl-parser": "workspace:0.0.1"
+  }
+}

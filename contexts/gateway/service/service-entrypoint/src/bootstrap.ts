@@ -1,18 +1,21 @@
 import { NestLogger }                     from '@monstrs/nestjs-logger'
+import { MicroservisesRegistry }          from '@monstrs/nestjs-microservices-registry'
 import { NestFactory }                    from '@nestjs/core'
-import { WsAdapter }                      from '@nestjs/platform-ws'
 
-import { GatewayServiceEntrypointModule } from './gateway-service-entrypoint.module.js'
+import { SessionServiceEntrypointModule } from './session-service-entrypoint.module.js'
 
 const bootstrap = async (): Promise<void> => {
-  const app = await NestFactory.create(GatewayServiceEntrypointModule, {
+  const app = await NestFactory.create(SessionServiceEntrypointModule, {
     logger: new NestLogger(),
   })
 
   app.enableShutdownHooks()
 
-  app.useWebSocketAdapter(new WsAdapter(app))
+  app
+    .get<typeof MicroservisesRegistry>(MicroservisesRegistry, { strict: false })
+    .connect(app, { inheritAppConfig: true })
 
+  await app.startAllMicroservices()
   await app.listen(3000)
 
   if (import.meta.webpackHot) {
