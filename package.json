@@ -9,6 +9,7 @@
     "pg": "8.10.0"
   },
   "devDependencies": {
+    "@cryptography/aes": "^0.1.1",
     "@monstrs/tools-runtime": "^0.2.17",
     "@types/node": "^20.6.5",
     "big-integer": "^1.6.51",

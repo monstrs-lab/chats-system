@@ -864,6 +864,48 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@chats-system/gateway-service-entrypoint@workspace:contexts/gateway/service/service-entrypoint":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/gateway-service-entrypoint@workspace:contexts/gateway/service/service-entrypoint"
+  dependencies:
+    "@bufbuild/protobuf": "npm:^1.3.1"
+    "@chats-system/core-rpc": "workspace:0.0.1"
+    "@chats-system/session-infrastructure-module": "workspace:0.0.1"
+    "@chats-system/session-rpc": "workspace:0.0.1"
+    "@connectrpc/connect": "npm:^1.0.0"
+    "@connectrpc/connect-node": "npm:^1.0.0"
+    "@faker-js/faker": "npm:^8.1.0"
+    "@jest/globals": "npm:^29.7.0"
+    "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
+    "@monstrs/nestjs-logger": "npm:^0.4.2"
+    "@monstrs/nestjs-microservices-registry": "npm:^0.1.0"
+    "@monstrs/protobuf-rpc": "npm:0.0.7"
+    "@nestjs/common": "npm:^10.2.6"
+    "@nestjs/core": "npm:^10.2.6"
+    "@nestjs/cqrs": "npm:^10.2.5"
+    "@nestjs/microservices": "npm:^10.2.6"
+    "@nestjs/platform-express": "npm:^10.2.6"
+    "@nestjs/platform-socket.io": "npm:^10.2.6"
+    "@nestjs/platform-ws": "npm:^10.2.6"
+    "@nestjs/testing": "npm:^10.2.6"
+    "@nestjs/websockets": "npm:^10.2.6"
+    "@testcontainers/kafka": "npm:^10.2.1"
+    "@types/node": "npm:^20.6.5"
+    "@types/pg": "npm:^8.10.3"
+    "@types/ws": "npm:^8.5.9"
+    cache-manager: "npm:^5.2.3"
+    class-transformer: "npm:^0.5.1"
+    class-validator: "npm:^0.14.0"
+    get-port: "npm:^7.0.0"
+    p-retry: "npm:^6.0.0"
+    pg: "npm:^8.11.3"
+    reflect-metadata: "npm:^0.1.13"
+    rxjs: "npm:^7.8.1"
+    testcontainers: "npm:^10.2.1"
+    ws: "npm:^8.14.2"
+  languageName: unknown
+  linkType: soft
+
 "@chats-system/session-infrastructure-module@workspace:0.0.1, @chats-system/session-infrastructure-module@workspace:contexts/session/service/infrastructure-module":
   version: 0.0.0-use.local
   resolution: "@chats-system/session-infrastructure-module@workspace:contexts/session/service/infrastructure-module"
@@ -1048,6 +1090,13 @@ __metadata:
   bin:
     protoc-gen-connect-es: bin/protoc-gen-connect-es
   checksum: a2f99ad26d6a12401ec38058f8ff24db2ea19179e0085f1778334a5725d145d7af2011ccb522f238c6492d28380d705bf71cb5ba8de98d2518fe7338475833a7
+  languageName: node
+  linkType: hard
+
+"@cryptography/aes@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@cryptography/aes@npm:0.1.1"
+  checksum: cc736d1410a389c1b9bb84c38ed8ef72ada779cacc692d39762e9912014ee2c44c5f7d15c03655acb28b635eaa1d19fc75c6932e4d423fd0406ac4f175907212
   languageName: node
   linkType: hard
 
@@ -2282,6 +2331,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nestjs/platform-ws@npm:^10.2.6":
+  version: 10.2.8
+  resolution: "@nestjs/platform-ws@npm:10.2.8"
+  dependencies:
+    tslib: "npm:2.6.2"
+    ws: "npm:8.14.2"
+  peerDependencies:
+    "@nestjs/common": ^10.0.0
+    "@nestjs/websockets": ^10.0.0
+    rxjs: ^7.1.0
+  checksum: d9e311b5dab5d469b3692173cb72d0ba6c4f7b36c46f057b0e12db579d858ee45427d2bb12d71415bbfad9f3cf3a52519e82c1143bbe3105b115c708200e3aab
+  languageName: node
+  linkType: hard
+
 "@nestjs/testing@npm:^10.2.6":
   version: 10.2.7
   resolution: "@nestjs/testing@npm:10.2.7"
@@ -3219,6 +3282,15 @@ __metadata:
   version: 13.11.5
   resolution: "@types/validator@npm:13.11.5"
   checksum: 3c85a355802b97c71986c2b326bf0003bc32ae0283c780312feb984edaa98f786f26431031dae803e4cb603c097b51864e13792e06d85343a8fcbcf19d0fac7e
+  languageName: node
+  linkType: hard
+
+"@types/ws@npm:^8.5.9":
+  version: 8.5.9
+  resolution: "@types/ws@npm:8.5.9"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 678bdd6461c4653f2975c537fb673cb1918c331558e2d2422b69761c9ced67200bb07c664e2593f3864077a891cb7c13ef2a40d303b4aacb06173d095d8aa3ce
   languageName: node
   linkType: hard
 
@@ -4499,6 +4571,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "chats-system@workspace:."
   dependencies:
+    "@cryptography/aes": "npm:^0.1.1"
     "@monstrs/tools-runtime": "npm:^0.2.17"
     "@types/node": "npm:^20.6.5"
     big-integer: "npm:^1.6.51"
@@ -11189,6 +11262,21 @@ __metadata:
     imurmurhash: "npm:^0.1.4"
     signal-exit: "npm:^3.0.7"
   checksum: a2c282c95ef5d8e1c27b335ae897b5eca00e85590d92a3fd69a437919b7b93ff36a69ea04145da55829d2164e724bc62202cdb5f4b208b425aba0807889375c7
+  languageName: node
+  linkType: hard
+
+"ws@npm:8.14.2, ws@npm:^8.14.2":
+  version: 8.14.2
+  resolution: "ws@npm:8.14.2"
+  peerDependencies:
+    bufferutil: ^4.0.1
+    utf-8-validate: ">=5.0.2"
+  peerDependenciesMeta:
+    bufferutil:
+      optional: true
+    utf-8-validate:
+      optional: true
+  checksum: 35b4c2da048b8015c797fd14bcb5a5766216ce65c8a5965616a5440ca7b6c3681ee3cbd0ea0c184a59975556e9d58f2002abf8485a14d11d3371770811050a16
   languageName: node
   linkType: hard
 
