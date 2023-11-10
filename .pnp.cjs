@@ -40,6 +40,22 @@ const RAW_RUNTIME_STATE =
     {\
       "name": "@chats-system/session-service-entrypoint",\
       "reference": "workspace:contexts/session/service/service-entrypoint"\
+    },\
+    {\
+      "name": "@chats-system/tl-json-schema",\
+      "reference": "workspace:utils/tl-json-schema"\
+    },\
+    {\
+      "name": "@chats-system/tl-json-schema-parser",\
+      "reference": "workspace:utils/tl-json-schema-parser"\
+    },\
+    {\
+      "name": "@chats-system/tl-to-typescript",\
+      "reference": "workspace:utils/tl-to-typescript"\
+    },\
+    {\
+      "name": "@chats-system/tl-types",\
+      "reference": "workspace:utils/tl-types"\
     }\
   ],\
   "enableTopLevelFallback": true,\
@@ -52,6 +68,10 @@ const RAW_RUNTIME_STATE =
     ["@chats-system/session-infrastructure-module", ["virtual:a45b73e4ddea4b585aef9acec377f5481565662c46b28915812d889a1a3c2ccded76a762511eb0b2869e5eaa8546d900a1453e44611b35adc9d8fee701e387ae#workspace:contexts/session/service/infrastructure-module", "workspace:contexts/session/service/infrastructure-module"]],\
     ["@chats-system/session-rpc", ["virtual:690407a8d86dc802e6089752b2c7705fe10a2f6c49dfe1a05e4789a4979d4c37bc26efc784142215157a5b1c8f8c0bf6cc0c4ab3183e6d15598d098f7efb88d2#workspace:contexts/session/rpc/session-rpc", "workspace:contexts/session/rpc/session-rpc"]],\
     ["@chats-system/session-service-entrypoint", ["workspace:contexts/session/service/service-entrypoint"]],\
+    ["@chats-system/tl-json-schema", ["workspace:utils/tl-json-schema"]],\
+    ["@chats-system/tl-json-schema-parser", ["workspace:utils/tl-json-schema-parser"]],\
+    ["@chats-system/tl-to-typescript", ["workspace:utils/tl-to-typescript"]],\
+    ["@chats-system/tl-types", ["workspace:utils/tl-types"]],\
     ["chats-system", ["workspace:."]]\
   ],\
   "fallbackPool": [\
@@ -63,6 +83,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@monstrs/tools-runtime", "npm:0.2.17"],\
           ["@types/node", "npm:20.8.7"],\
+          ["big-integer", "npm:1.6.51"],\
           ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
         ],\
         "linkType": "SOFT"\
@@ -1652,6 +1673,52 @@ const RAW_RUNTIME_STATE =
           ["reflect-metadata", "npm:0.1.13"],\
           ["rxjs", "npm:7.8.1"],\
           ["testcontainers", "npm:10.2.2"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@chats-system/tl-json-schema", [\
+      ["workspace:utils/tl-json-schema", {\
+        "packageLocation": "./utils/tl-json-schema/",\
+        "packageDependencies": [\
+          ["@chats-system/tl-json-schema", "workspace:utils/tl-json-schema"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@chats-system/tl-json-schema-parser", [\
+      ["workspace:utils/tl-json-schema-parser", {\
+        "packageLocation": "./utils/tl-json-schema-parser/",\
+        "packageDependencies": [\
+          ["@chats-system/tl-json-schema-parser", "workspace:utils/tl-json-schema-parser"],\
+          ["@chats-system/tl-json-schema", "workspace:utils/tl-json-schema"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@chats-system/tl-to-typescript", [\
+      ["workspace:utils/tl-to-typescript", {\
+        "packageLocation": "./utils/tl-to-typescript/",\
+        "packageDependencies": [\
+          ["@chats-system/tl-to-typescript", "workspace:utils/tl-to-typescript"],\
+          ["@chats-system/tl-json-schema", "workspace:utils/tl-json-schema"],\
+          ["@chats-system/tl-json-schema-parser", "workspace:utils/tl-json-schema-parser"],\
+          ["@chats-system/tl-types", "workspace:utils/tl-types"],\
+          ["camelcase", "npm:8.0.0"],\
+          ["ts-morph", "npm:20.0.0"],\
+          ["ts-node", "virtual:33228a9bf28210983be55709373bb47b9a60e5897134afa7cfffe2c85c5e6688056670620e4ca6427282acbad04ff9847377b0053884084cb8cc5308c494afee#npm:10.9.1"],\
+          ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@chats-system/tl-types", [\
+      ["workspace:utils/tl-types", {\
+        "packageLocation": "./utils/tl-types/",\
+        "packageDependencies": [\
+          ["@chats-system/tl-types", "workspace:utils/tl-types"],\
+          ["@chats-system/tl-json-schema-parser", "workspace:utils/tl-json-schema-parser"],\
+          ["big-integer", "npm:1.6.51"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -6264,6 +6331,19 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@ts-morph/common", [\
+      ["npm:0.21.0", {\
+        "packageLocation": "./.yarn/cache/@ts-morph-common-npm-0.21.0-493913debc-1d7f544d62.zip/node_modules/@ts-morph/common/",\
+        "packageDependencies": [\
+          ["@ts-morph/common", "npm:0.21.0"],\
+          ["fast-glob", "npm:3.3.2"],\
+          ["minimatch", "npm:7.4.6"],\
+          ["mkdirp", "npm:2.1.6"],\
+          ["path-browserify", "npm:1.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@tsconfig/node10", [\
       ["npm:1.0.9", {\
         "packageLocation": "./.yarn/cache/@tsconfig-node10-npm-1.0.9-f2e2d20feb-c176a2c1e1.zip/node_modules/@tsconfig/node10/",\
@@ -8246,6 +8326,13 @@ const RAW_RUNTIME_STATE =
           ["camelcase", "npm:6.3.0"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:8.0.0", {\
+        "packageLocation": "./.yarn/cache/camelcase-npm-8.0.0-a3fa03dcc3-56c5fe072f.zip/node_modules/camelcase/",\
+        "packageDependencies": [\
+          ["camelcase", "npm:8.0.0"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["caniuse-lite", [\
@@ -8294,6 +8381,7 @@ const RAW_RUNTIME_STATE =
           ["chats-system", "workspace:."],\
           ["@monstrs/tools-runtime", "npm:0.2.17"],\
           ["@types/node", "npm:20.8.7"],\
+          ["big-integer", "npm:1.6.51"],\
           ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
         ],\
         "linkType": "SOFT"\
@@ -8398,6 +8486,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/co-npm-4.6.0-03f2d1feb6-c0e85ea0ca.zip/node_modules/co/",\
         "packageDependencies": [\
           ["co", "npm:4.6.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["code-block-writer", [\
+      ["npm:12.0.0", {\
+        "packageLocation": "./.yarn/cache/code-block-writer-npm-12.0.0-943b9e5c78-ced73cdc46.zip/node_modules/code-block-writer/",\
+        "packageDependencies": [\
+          ["code-block-writer", "npm:12.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -9997,6 +10094,18 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/fast-glob-npm-3.3.1-8045ff8f4d-b68431128f.zip/node_modules/fast-glob/",\
         "packageDependencies": [\
           ["fast-glob", "npm:3.3.1"],\
+          ["@nodelib/fs.stat", "npm:2.0.5"],\
+          ["@nodelib/fs.walk", "npm:1.2.8"],\
+          ["glob-parent", "npm:5.1.2"],\
+          ["merge2", "npm:1.4.1"],\
+          ["micromatch", "npm:4.0.5"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:3.3.2", {\
+        "packageLocation": "./.yarn/cache/fast-glob-npm-3.3.2-0a8cb4f2ca-42baad7b9c.zip/node_modules/fast-glob/",\
+        "packageDependencies": [\
+          ["fast-glob", "npm:3.3.2"],\
           ["@nodelib/fs.stat", "npm:2.0.5"],\
           ["@nodelib/fs.walk", "npm:1.2.8"],\
           ["glob-parent", "npm:5.1.2"],\
@@ -12615,6 +12724,14 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["npm:7.4.6", {\
+        "packageLocation": "./.yarn/cache/minimatch-npm-7.4.6-f3feee458c-e587bf3d90.zip/node_modules/minimatch/",\
+        "packageDependencies": [\
+          ["minimatch", "npm:7.4.6"],\
+          ["brace-expansion", "npm:2.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["npm:9.0.3", {\
         "packageLocation": "./.yarn/cache/minimatch-npm-9.0.3-69d7d6fad5-85f407dcd3.zip/node_modules/minimatch/",\
         "packageDependencies": [\
@@ -12734,6 +12851,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/mkdirp-npm-1.0.4-37f6ef56b9-46ea0f3ffa.zip/node_modules/mkdirp/",\
         "packageDependencies": [\
           ["mkdirp", "npm:1.0.4"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:2.1.6", {\
+        "packageLocation": "./.yarn/cache/mkdirp-npm-2.1.6-832c38f12a-96f551c651.zip/node_modules/mkdirp/",\
+        "packageDependencies": [\
+          ["mkdirp", "npm:2.1.6"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -13302,6 +13426,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/parseurl-npm-1.3.3-1542397e00-90dd4760d6.zip/node_modules/parseurl/",\
         "packageDependencies": [\
           ["parseurl", "npm:1.3.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["path-browserify", [\
+      ["npm:1.0.1", {\
+        "packageLocation": "./.yarn/cache/path-browserify-npm-1.0.1-f975d99a99-8b8c3fd5c6.zip/node_modules/path-browserify/",\
+        "packageDependencies": [\
+          ["path-browserify", "npm:1.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -15357,6 +15490,17 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["ts-morph", [\
+      ["npm:20.0.0", {\
+        "packageLocation": "./.yarn/cache/ts-morph-npm-20.0.0-8ba424c0d4-ce2f5b2f8b.zip/node_modules/ts-morph/",\
+        "packageDependencies": [\
+          ["ts-morph", "npm:20.0.0"],\
+          ["@ts-morph/common", "npm:0.21.0"],\
+          ["code-block-writer", "npm:12.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["ts-node", [\
       ["npm:10.9.1", {\
         "packageLocation": "./.yarn/cache/ts-node-npm-10.9.1-6c268be7f4-95187932fb.zip/node_modules/ts-node/",\
@@ -15364,6 +15508,42 @@ const RAW_RUNTIME_STATE =
           ["ts-node", "npm:10.9.1"]\
         ],\
         "linkType": "SOFT"\
+      }],\
+      ["virtual:33228a9bf28210983be55709373bb47b9a60e5897134afa7cfffe2c85c5e6688056670620e4ca6427282acbad04ff9847377b0053884084cb8cc5308c494afee#npm:10.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/ts-node-virtual-c925dd120b/0/cache/ts-node-npm-10.9.1-6c268be7f4-95187932fb.zip/node_modules/ts-node/",\
+        "packageDependencies": [\
+          ["ts-node", "virtual:33228a9bf28210983be55709373bb47b9a60e5897134afa7cfffe2c85c5e6688056670620e4ca6427282acbad04ff9847377b0053884084cb8cc5308c494afee#npm:10.9.1"],\
+          ["@cspotcode/source-map-support", "npm:0.8.1"],\
+          ["@swc/core", null],\
+          ["@swc/wasm", null],\
+          ["@tsconfig/node10", "npm:1.0.9"],\
+          ["@tsconfig/node12", "npm:1.0.11"],\
+          ["@tsconfig/node14", "npm:1.0.3"],\
+          ["@tsconfig/node16", "npm:1.0.4"],\
+          ["@types/node", null],\
+          ["@types/swc__core", null],\
+          ["@types/swc__wasm", null],\
+          ["@types/typescript", null],\
+          ["acorn", "npm:8.11.2"],\
+          ["acorn-walk", "npm:8.3.0"],\
+          ["arg", "npm:4.1.3"],\
+          ["create-require", "npm:1.1.1"],\
+          ["diff", "npm:4.0.2"],\
+          ["make-error", "npm:1.3.6"],\
+          ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
+          ["v8-compile-cache-lib", "npm:3.0.1"],\
+          ["yn", "npm:3.1.1"]\
+        ],\
+        "packagePeers": [\
+          "@swc/core",\
+          "@swc/wasm",\
+          "@types/node",\
+          "@types/swc__core",\
+          "@types/swc__wasm",\
+          "@types/typescript",\
+          "typescript"\
+        ],\
+        "linkType": "HARD"\
       }],\
       ["virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#npm:10.9.1", {\
         "packageLocation": "./.yarn/__virtual__/ts-node-virtual-81bc4fd961/0/cache/ts-node-npm-10.9.1-6c268be7f4-95187932fb.zip/node_modules/ts-node/",\

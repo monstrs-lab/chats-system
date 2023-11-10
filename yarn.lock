@@ -973,6 +973,43 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@chats-system/tl-json-schema-parser@workspace:0.0.1, @chats-system/tl-json-schema-parser@workspace:utils/tl-json-schema-parser":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/tl-json-schema-parser@workspace:utils/tl-json-schema-parser"
+  dependencies:
+    "@chats-system/tl-json-schema": "workspace:0.0.1"
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/tl-json-schema@workspace:0.0.1, @chats-system/tl-json-schema@workspace:utils/tl-json-schema":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/tl-json-schema@workspace:utils/tl-json-schema"
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/tl-to-typescript@workspace:utils/tl-to-typescript":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/tl-to-typescript@workspace:utils/tl-to-typescript"
+  dependencies:
+    "@chats-system/tl-json-schema": "workspace:0.0.1"
+    "@chats-system/tl-json-schema-parser": "workspace:0.0.1"
+    "@chats-system/tl-types": "workspace:0.0.1"
+    camelcase: "npm:^8.0.0"
+    ts-morph: "npm:^20.0.0"
+    ts-node: "npm:^10.9.1"
+    typescript: "npm:^5.2.2"
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/tl-types@workspace:0.0.1, @chats-system/tl-types@workspace:utils/tl-types":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/tl-types@workspace:utils/tl-types"
+  dependencies:
+    "@chats-system/tl-json-schema-parser": "workspace:0.0.1"
+    big-integer: "npm:^1.6.51"
+  languageName: unknown
+  linkType: soft
+
 "@connectrpc/connect-node@npm:^1.0.0":
   version: 1.1.3
   resolution: "@connectrpc/connect-node@npm:1.1.3"
@@ -2786,6 +2823,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ts-morph/common@npm:~0.21.0":
+  version: 0.21.0
+  resolution: "@ts-morph/common@npm:0.21.0"
+  dependencies:
+    fast-glob: "npm:^3.2.12"
+    minimatch: "npm:^7.4.3"
+    mkdirp: "npm:^2.1.6"
+    path-browserify: "npm:^1.0.1"
+  checksum: 1d7f544d6235b3cd14cf4a7eb4f567bf1aeb9907e0932ee636c53fd7988dc4488b4c8901eaf862f726d87a2f7c074e598b518b447a8521a5c5713216b20a8596
+  languageName: node
+  linkType: hard
+
 "@tsconfig/node10@npm:^1.0.7":
   version: 1.0.9
   resolution: "@tsconfig/node10@npm:1.0.9"
@@ -4094,7 +4143,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"big-integer@npm:^1.6.44":
+"big-integer@npm:^1.6.44, big-integer@npm:^1.6.51":
   version: 1.6.51
   resolution: "big-integer@npm:1.6.51"
   checksum: c8139662d57f8833a44802f4b65be911679c569535ea73c5cfd3c1c8994eaead1b84b6f63e1db63833e4d4cacb6b6a9e5522178113dfdc8e4c81ed8436f1e8cc
@@ -4404,6 +4453,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"camelcase@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "camelcase@npm:8.0.0"
+  checksum: 56c5fe072f0523c9908cdaac21d4a3b3fb0f608fb2e9ba90a60e792b95dd3bb3d1f3523873ab17d86d146e94171305f73ef619e2f538bd759675bc4a14b4bff3
+  languageName: node
+  linkType: hard
+
 "caniuse-lite@npm:^1.0.30001541":
   version: 1.0.30001551
   resolution: "caniuse-lite@npm:1.0.30001551"
@@ -4445,6 +4501,7 @@ __metadata:
   dependencies:
     "@monstrs/tools-runtime": "npm:^0.2.17"
     "@types/node": "npm:^20.6.5"
+    big-integer: "npm:^1.6.51"
     typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
@@ -4531,6 +4588,13 @@ __metadata:
   version: 4.6.0
   resolution: "co@npm:4.6.0"
   checksum: c0e85ea0ca8bf0a50cbdca82efc5af0301240ca88ebe3644a6ffb8ffe911f34d40f8fbcf8f1d52c5ddd66706abd4d3bfcd64259f1e8e2371d4f47573b0dc8c28
+  languageName: node
+  linkType: hard
+
+"code-block-writer@npm:^12.0.0":
+  version: 12.0.0
+  resolution: "code-block-writer@npm:12.0.0"
+  checksum: ced73cdc466bff968bba9e8e32340d88420d25a229b9269f7425a10a7c2c9a12ca702dcb601b2462b96472d354f021cf66e552179fcbe30c8f7ecd0173c5fa07
   languageName: node
   linkType: hard
 
@@ -5806,6 +5870,19 @@ __metadata:
   version: 1.3.2
   resolution: "fast-fifo@npm:1.3.2"
   checksum: d53f6f786875e8b0529f784b59b4b05d4b5c31c651710496440006a398389a579c8dbcd2081311478b5bf77f4b0b21de69109c5a4eabea9d8e8783d1eb864e4c
+  languageName: node
+  linkType: hard
+
+"fast-glob@npm:^3.2.12":
+  version: 3.3.2
+  resolution: "fast-glob@npm:3.3.2"
+  dependencies:
+    "@nodelib/fs.stat": "npm:^2.0.2"
+    "@nodelib/fs.walk": "npm:^1.2.3"
+    glob-parent: "npm:^5.1.2"
+    merge2: "npm:^1.3.0"
+    micromatch: "npm:^4.0.4"
+  checksum: 42baad7b9cd40b63e42039132bde27ca2cb3a4950d0a0f9abe4639ea1aa9d3e3b40f98b1fe31cbc0cc17b664c9ea7447d911a152fa34ec5b72977b125a6fc845
   languageName: node
   linkType: hard
 
@@ -8093,6 +8170,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"minimatch@npm:^7.4.3":
+  version: 7.4.6
+  resolution: "minimatch@npm:7.4.6"
+  dependencies:
+    brace-expansion: "npm:^2.0.1"
+  checksum: e587bf3d90542555a3d58aca94c549b72d58b0a66545dd00eef808d0d66e5d9a163d3084da7f874e83ca8cc47e91c670e6c6f6593a3e7bb27fcc0e6512e87c67
+  languageName: node
+  linkType: hard
+
 "minimatch@npm:^9.0.1":
   version: 9.0.3
   resolution: "minimatch@npm:9.0.3"
@@ -8217,6 +8303,15 @@ __metadata:
   bin:
     mkdirp: bin/cmd.js
   checksum: 46ea0f3ffa8bc6a5bc0c7081ffc3907777f0ed6516888d40a518c5111f8366d97d2678911ad1a6882bf592fa9de6c784fea32e1687bb94e1f4944170af48a5cf
+  languageName: node
+  linkType: hard
+
+"mkdirp@npm:^2.1.6":
+  version: 2.1.6
+  resolution: "mkdirp@npm:2.1.6"
+  bin:
+    mkdirp: dist/cjs/src/bin.js
+  checksum: 96f551c651dd8f5f9435d53df1a7b9bfc553be769ee6da5192c37c1f303a376ef1c6996f96913d4a8d357060451d4526a346031d1919f92c58806a5fa3cd8dfe
   languageName: node
   linkType: hard
 
@@ -8702,6 +8797,13 @@ __metadata:
   version: 1.3.3
   resolution: "parseurl@npm:1.3.3"
   checksum: 90dd4760d6f6174adb9f20cf0965ae12e23879b5f5464f38e92fce8073354341e4b3b76fa3d878351efe7d01e617121955284cfd002ab087fba1a0726ec0b4f5
+  languageName: node
+  linkType: hard
+
+"path-browserify@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "path-browserify@npm:1.0.1"
+  checksum: 8b8c3fd5c66bd340272180590ae4ff139769e9ab79522e2eb82e3d571a89b8117c04147f65ad066dccfb42fcad902e5b7d794b3d35e0fd840491a8ddbedf8c66
   languageName: node
   linkType: hard
 
@@ -10472,6 +10574,16 @@ __metadata:
     typescript: "*"
     webpack: ^5.0.0
   checksum: 433664f4dc52a91cc297266e142633c5398ebae8dbc70da12ce88d0468bd35f536d5aeb59233718d22750648a2770509bd36b29565ada356e5f1533cdfbb6da4
+  languageName: node
+  linkType: hard
+
+"ts-morph@npm:^20.0.0":
+  version: 20.0.0
+  resolution: "ts-morph@npm:20.0.0"
+  dependencies:
+    "@ts-morph/common": "npm:~0.21.0"
+    code-block-writer: "npm:^12.0.0"
+  checksum: ce2f5b2f8be4492726c4025bc4a7e2b731d3e82b00f9363c95c1094e0f944d09589381a4701ec7a7f0f94d4263d7bc7c2222d767935507589c842cce475ad623
   languageName: node
   linkType: hard
 
