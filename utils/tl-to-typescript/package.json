@@ -1,0 +1,26 @@
+{
+  "name": "@chats-system/tl-to-typescript",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./src/index.ts"
+  },
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "node --loader ts-node/esm --loader $(pwd)/../../.pnp.loader.mjs --loader $(pwd)/../../.pnp-ts.loader.mjs ./src/dev.ts"
+  },
+  "dependencies": {
+    "@chats-system/tl-json-schema-parser": "workspace:0.0.1",
+    "@chats-system/tl-types": "workspace:0.0.1",
+    "camelcase": "^8.0.0",
+    "ts-morph": "^20.0.0"
+  },
+  "devDependencies": {
+    "@chats-system/tl-json-schema": "workspace:0.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
