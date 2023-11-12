@@ -2,12 +2,12 @@ import type { TLSchemaParamParsed } from '@chats-system/tl-json-schema-parser'
 
 import { TLConstructor }            from '@chats-system/tl-types'
 
-export class Message extends TLConstructor {
-  static override CONSTRUCTOR_ID: number = 1538843921
+export class ServerDHInnerData extends TLConstructor {
+  static override CONSTRUCTOR_ID: number = -1249309254
   static override PARAMS: Array<TLSchemaParamParsed> = [
     {
-      name: 'msg_id',
-      type: 'long',
+      name: 'nonce',
+      type: 'int128',
       isVector: false,
       isFlag: false,
       skipConstructorId: true,
@@ -17,7 +17,18 @@ export class Message extends TLConstructor {
       useVectorId: false,
     },
     {
-      name: 'seqno',
+      name: 'server_nonce',
+      type: 'int128',
+      isVector: false,
+      isFlag: false,
+      skipConstructorId: true,
+      flagGroup: 0,
+      flagIndex: -1,
+      flagIndicator: false,
+      useVectorId: false,
+    },
+    {
+      name: 'g',
       type: 'int',
       isVector: false,
       isFlag: false,
@@ -28,8 +39,8 @@ export class Message extends TLConstructor {
       useVectorId: false,
     },
     {
-      name: 'bytes',
-      type: 'int',
+      name: 'dh_prime',
+      type: 'bytes',
       isVector: false,
       isFlag: false,
       skipConstructorId: true,
@@ -39,11 +50,22 @@ export class Message extends TLConstructor {
       useVectorId: false,
     },
     {
-      name: 'body',
-      type: 'Object',
+      name: 'g_a',
+      type: 'bytes',
       isVector: false,
       isFlag: false,
-      skipConstructorId: false,
+      skipConstructorId: true,
+      flagGroup: 0,
+      flagIndex: -1,
+      flagIndicator: false,
+      useVectorId: false,
+    },
+    {
+      name: 'server_time',
+      type: 'int',
+      isVector: false,
+      isFlag: false,
+      skipConstructorId: true,
       flagGroup: 0,
       flagIndex: -1,
       flagIndicator: false,
@@ -52,10 +74,12 @@ export class Message extends TLConstructor {
   ]
 
   constructor(
-    public readonly msgId: bigint,
-    public readonly seqno: number,
-    public readonly bytes: number,
-    public readonly body: any
+    public readonly nonce: bigint,
+    public readonly serverNonce: bigint,
+    public readonly g: number,
+    public readonly dhPrime: Buffer,
+    public readonly gA: Buffer,
+    public readonly serverTime: number
   ) {
     super()
   }

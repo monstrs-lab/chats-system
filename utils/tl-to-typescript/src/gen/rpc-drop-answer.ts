@@ -2,11 +2,11 @@ import type { TLSchemaParamParsed } from '@chats-system/tl-json-schema-parser'
 
 import { TLMethod }                 from '@chats-system/tl-types'
 
-export class Ping extends TLMethod {
-  static override CONSTRUCTOR_ID = 2059302892
+export class RpcDropAnswer extends TLMethod {
+  static override CONSTRUCTOR_ID = 1491380032
   static override PARAMS: Array<TLSchemaParamParsed> = [
     {
-      name: 'ping_id',
+      name: 'req_msg_id',
       type: 'long',
       isVector: false,
       isFlag: false,
@@ -18,7 +18,7 @@ export class Ping extends TLMethod {
     },
   ]
 
-  constructor(public readonly pingId: bigint) {
+  constructor(public readonly reqMsgId: bigint) {
     super()
   }
 }

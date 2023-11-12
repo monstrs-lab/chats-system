@@ -16,6 +16,7 @@
     "@chats-system/tl-json-schema-parser": "workspace:0.0.1",
     "@chats-system/tl-types": "workspace:0.0.1",
     "camelcase": "^8.0.0",
+    "decamelize": "^6.0.0",
     "ts-morph": "^20.0.0"
   },
   "devDependencies": {

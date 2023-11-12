@@ -1,13 +1,13 @@
 import type { TLSchemaParamParsed } from '@chats-system/tl-json-schema-parser'
 
-import { TLConstructor }            from '@chats-system/tl-types'
+import { TLMethod }                 from '@chats-system/tl-types'
 
-export class Message extends TLConstructor {
-  static override CONSTRUCTOR_ID: number = 1538843921
+export class SetClientDHParams extends TLMethod {
+  static override CONSTRUCTOR_ID = -184262881
   static override PARAMS: Array<TLSchemaParamParsed> = [
     {
-      name: 'msg_id',
-      type: 'long',
+      name: 'nonce',
+      type: 'int128',
       isVector: false,
       isFlag: false,
       skipConstructorId: true,
@@ -17,8 +17,8 @@ export class Message extends TLConstructor {
       useVectorId: false,
     },
     {
-      name: 'seqno',
-      type: 'int',
+      name: 'server_nonce',
+      type: 'int128',
       isVector: false,
       isFlag: false,
       skipConstructorId: true,
@@ -28,22 +28,11 @@ export class Message extends TLConstructor {
       useVectorId: false,
     },
     {
-      name: 'bytes',
-      type: 'int',
+      name: 'encrypted_data',
+      type: 'bytes',
       isVector: false,
       isFlag: false,
       skipConstructorId: true,
-      flagGroup: 0,
-      flagIndex: -1,
-      flagIndicator: false,
-      useVectorId: false,
-    },
-    {
-      name: 'body',
-      type: 'Object',
-      isVector: false,
-      isFlag: false,
-      skipConstructorId: false,
       flagGroup: 0,
       flagIndex: -1,
       flagIndicator: false,
@@ -52,10 +41,9 @@ export class Message extends TLConstructor {
   ]
 
   constructor(
-    public readonly msgId: bigint,
-    public readonly seqno: number,
-    public readonly bytes: number,
-    public readonly body: any
+    public readonly nonce: bigint,
+    public readonly serverNonce: bigint,
+    public readonly encryptedData: Buffer
   ) {
     super()
   }

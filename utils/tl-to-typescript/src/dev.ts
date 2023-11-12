@@ -210,7 +210,7 @@ await tlToTypeScript.execute({
     {
       id: '1945237724',
       predicate: 'msg_container',
-      params: [{ name: 'messages', type: 'vector<%Message>' }],
+      params: [{ name: 'messages', type: 'vector<Message>' }],
       type: 'MessageContainer',
     },
     {

@@ -2,11 +2,11 @@ import type { TLSchemaParamParsed } from '@chats-system/tl-json-schema-parser'
 
 import { TLConstructor }            from '@chats-system/tl-types'
 
-export class Pong extends TLConstructor {
-  static override CONSTRUCTOR_ID: number = 880243653
+export class RpcResult extends TLConstructor {
+  static override CONSTRUCTOR_ID: number = -212046591
   static override PARAMS: Array<TLSchemaParamParsed> = [
     {
-      name: 'msg_id',
+      name: 'req_msg_id',
       type: 'long',
       isVector: false,
       isFlag: false,
@@ -17,11 +17,11 @@ export class Pong extends TLConstructor {
       useVectorId: false,
     },
     {
-      name: 'ping_id',
-      type: 'long',
+      name: 'result',
+      type: 'Object',
       isVector: false,
       isFlag: false,
-      skipConstructorId: true,
+      skipConstructorId: false,
       flagGroup: 0,
       flagIndex: -1,
       flagIndicator: false,
@@ -30,8 +30,8 @@ export class Pong extends TLConstructor {
   ]
 
   constructor(
-    public readonly msgId: bigint,
-    public readonly pingId: bigint
+    public readonly reqMsgId: bigint,
+    public readonly result: any
   ) {
     super()
   }

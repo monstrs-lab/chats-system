@@ -1,13 +1,13 @@
 import type { TLSchemaParamParsed } from '@chats-system/tl-json-schema-parser'
 
-import { TLMethod }                 from '@chats-system/tl-types'
+import { TLConstructor }            from '@chats-system/tl-types'
 
-export class Ping extends TLMethod {
-  static override CONSTRUCTOR_ID = 2059302892
+export class GzipPacked extends TLConstructor {
+  static override CONSTRUCTOR_ID: number = 812830625
   static override PARAMS: Array<TLSchemaParamParsed> = [
     {
-      name: 'ping_id',
-      type: 'long',
+      name: 'packed_data',
+      type: 'bytes',
       isVector: false,
       isFlag: false,
       skipConstructorId: true,
@@ -18,7 +18,7 @@ export class Ping extends TLMethod {
     },
   ]
 
-  constructor(public readonly pingId: bigint) {
+  constructor(public readonly packedData: Buffer) {
     super()
   }
 }

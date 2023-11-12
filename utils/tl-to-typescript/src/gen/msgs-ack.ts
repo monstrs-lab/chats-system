@@ -1,24 +1,24 @@
 import type { TLSchemaParamParsed } from '@chats-system/tl-json-schema-parser'
 
-import { TLMethod }                 from '@chats-system/tl-types'
+import { TLConstructor }            from '@chats-system/tl-types'
 
-export class Ping extends TLMethod {
-  static override CONSTRUCTOR_ID = 2059302892
+export class MsgsAck extends TLConstructor {
+  static override CONSTRUCTOR_ID: number = 1658238041
   static override PARAMS: Array<TLSchemaParamParsed> = [
     {
-      name: 'ping_id',
+      name: 'msg_ids',
       type: 'long',
-      isVector: false,
+      isVector: true,
       isFlag: false,
       skipConstructorId: true,
       flagGroup: 0,
       flagIndex: -1,
       flagIndicator: false,
-      useVectorId: false,
+      useVectorId: true,
     },
   ]
 
-  constructor(public readonly pingId: bigint) {
+  constructor(public readonly msgIds: Array<bigint>) {
     super()
   }
 }

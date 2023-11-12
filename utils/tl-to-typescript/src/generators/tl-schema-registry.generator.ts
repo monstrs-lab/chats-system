@@ -1,6 +1,5 @@
 import { basename }                from 'node:path'
-
-import { join }          from 'node:path'
+import { join }                    from 'node:path'
 
 import { Project }                 from 'ts-morph'
 import { VariableDeclarationKind } from 'ts-morph'

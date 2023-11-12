@@ -1,5 +1,5 @@
-import { WebSocketGateway } from '@nestjs/websockets'
-import { OnGatewayConnection } from '@nestjs/websockets'
+import { WebSocketGateway }       from '@nestjs/websockets'
+import { OnGatewayConnection }    from '@nestjs/websockets'
 import { WebSocket }              from 'ws'
 
 import { SchemaRegistry }         from '@chats-system/tl-to-typescript'

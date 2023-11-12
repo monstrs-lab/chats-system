@@ -2,11 +2,11 @@ import type { TLSchemaParamParsed } from '@chats-system/tl-json-schema-parser'
 
 import { TLConstructor }            from '@chats-system/tl-types'
 
-export class Message extends TLConstructor {
-  static override CONSTRUCTOR_ID: number = 1538843921
+export class BindAuthKeyInner extends TLConstructor {
+  static override CONSTRUCTOR_ID: number = 1973679973
   static override PARAMS: Array<TLSchemaParamParsed> = [
     {
-      name: 'msg_id',
+      name: 'nonce',
       type: 'long',
       isVector: false,
       isFlag: false,
@@ -17,8 +17,8 @@ export class Message extends TLConstructor {
       useVectorId: false,
     },
     {
-      name: 'seqno',
-      type: 'int',
+      name: 'temp_auth_key_id',
+      type: 'long',
       isVector: false,
       isFlag: false,
       skipConstructorId: true,
@@ -28,8 +28,8 @@ export class Message extends TLConstructor {
       useVectorId: false,
     },
     {
-      name: 'bytes',
-      type: 'int',
+      name: 'perm_auth_key_id',
+      type: 'long',
       isVector: false,
       isFlag: false,
       skipConstructorId: true,
@@ -39,11 +39,22 @@ export class Message extends TLConstructor {
       useVectorId: false,
     },
     {
-      name: 'body',
-      type: 'Object',
+      name: 'temp_session_id',
+      type: 'long',
       isVector: false,
       isFlag: false,
-      skipConstructorId: false,
+      skipConstructorId: true,
+      flagGroup: 0,
+      flagIndex: -1,
+      flagIndicator: false,
+      useVectorId: false,
+    },
+    {
+      name: 'expires_at',
+      type: 'int',
+      isVector: false,
+      isFlag: false,
+      skipConstructorId: true,
       flagGroup: 0,
       flagIndex: -1,
       flagIndicator: false,
@@ -52,10 +63,11 @@ export class Message extends TLConstructor {
   ]
 
   constructor(
-    public readonly msgId: bigint,
-    public readonly seqno: number,
-    public readonly bytes: number,
-    public readonly body: any
+    public readonly nonce: bigint,
+    public readonly tempAuthKeyId: bigint,
+    public readonly permAuthKeyId: bigint,
+    public readonly tempSessionId: bigint,
+    public readonly expiresAt: number
   ) {
     super()
   }

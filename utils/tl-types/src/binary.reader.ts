@@ -1,22 +1,7 @@
-import { fromBufferToBigInt } from '@monstrs/buffer-utils'
+import { fromBufferToBigInt }                 from '@monstrs/buffer-utils'
 
-import { TLObject }           from './tl.object.js'
-
-class TypeNotFoundError extends Error {
-  constructor(invalidConstructorId: number, remaining: Buffer) {
-    super(`Could not find a matching Constructor ID for the TLObject that was supposed to be
-        read with ID ${invalidConstructorId}. Most likely, a TLObject was trying to be read when
-         it should not be read. Remaining bytes: ${remaining.length}`)
-    //if (typeof alert !== 'undefined') {
-    // eslint-disable-next-line no-alert
-    //    alert(`Missing MTProto Entity: Please, make sure to add TL definition for ID ${invalidConstructorId}`);
-    //}
-    // @ts-expect-error
-    this.invalidConstructorId = invalidConstructorId
-    // @ts-expect-error
-    this.remaining = remaining
-  }
-}
+import { TLObjectConstructorIdNotFoundError } from './errors/index.js'
+import { TLObject }                           from './tl.object.js'
 
 export class BinaryReader {
   #offset: number = 0
@@ -30,6 +15,22 @@ export class BinaryReader {
   constructor(input: Buffer, schemaRegistry: Map<number, TLObject>) {
     this.#input = input
     this.#schemaRegistry = schemaRegistry
+  }
+
+  getBuffer() {
+    return this.#input
+  }
+
+  tellPosition() {
+    return this.#offset
+  }
+
+  setPosition(position: number) {
+    this.#offset = position
+  }
+
+  seek(offset: number) {
+    this.#offset += offset
   }
 
   readByte() {
@@ -82,10 +83,6 @@ export class BinaryReader {
     this.#last = result
 
     return result
-  }
-
-  getBuffer() {
-    return this.#input
   }
 
   readBytes() {
@@ -160,7 +157,7 @@ export class BinaryReader {
         this.seek(-4)
         this.setPosition(this.tellPosition())
 
-        throw new TypeNotFoundError(constructorId, this.read())
+        throw new TLObjectConstructorIdNotFoundError(constructorId, this.read())
       }
     }
 
@@ -181,17 +178,5 @@ export class BinaryReader {
     }
 
     return temp
-  }
-
-  tellPosition() {
-    return this.#offset
-  }
-
-  setPosition(position: number) {
-    this.#offset = position
-  }
-
-  seek(offset: number) {
-    this.#offset += offset
   }
 }

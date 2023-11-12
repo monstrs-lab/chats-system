@@ -1843,6 +1843,7 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/tl-json-schema-parser", "workspace:utils/tl-json-schema-parser"],\
           ["@chats-system/tl-types", "workspace:utils/tl-types"],\
           ["camelcase", "npm:8.0.0"],\
+          ["decamelize", "npm:6.0.0"],\
           ["ts-morph", "npm:20.0.0"],\
           ["ts-node", "virtual:33228a9bf28210983be55709373bb47b9a60e5897134afa7cfffe2c85c5e6688056670620e4ca6427282acbad04ff9847377b0053884084cb8cc5308c494afee#npm:10.9.1"],\
           ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
@@ -9506,6 +9507,15 @@ const RAW_RUNTIME_STATE =
         "packagePeers": [\
           "@types/supports-color",\
           "supports-color"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["decamelize", [\
+      ["npm:6.0.0", {\
+        "packageLocation": "./.yarn/cache/decamelize-npm-6.0.0-109b08ac0a-689888f5ea.zip/node_modules/decamelize/",\
+        "packageDependencies": [\
+          ["decamelize", "npm:6.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\

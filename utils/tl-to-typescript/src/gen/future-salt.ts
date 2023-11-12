@@ -2,11 +2,33 @@ import type { TLSchemaParamParsed } from '@chats-system/tl-json-schema-parser'
 
 import { TLConstructor }            from '@chats-system/tl-types'
 
-export class Message extends TLConstructor {
-  static override CONSTRUCTOR_ID: number = 1538843921
+export class FutureSalt extends TLConstructor {
+  static override CONSTRUCTOR_ID: number = 155834844
   static override PARAMS: Array<TLSchemaParamParsed> = [
     {
-      name: 'msg_id',
+      name: 'valid_since',
+      type: 'int',
+      isVector: false,
+      isFlag: false,
+      skipConstructorId: true,
+      flagGroup: 0,
+      flagIndex: -1,
+      flagIndicator: false,
+      useVectorId: false,
+    },
+    {
+      name: 'valid_until',
+      type: 'int',
+      isVector: false,
+      isFlag: false,
+      skipConstructorId: true,
+      flagGroup: 0,
+      flagIndex: -1,
+      flagIndicator: false,
+      useVectorId: false,
+    },
+    {
+      name: 'salt',
       type: 'long',
       isVector: false,
       isFlag: false,
@@ -16,46 +38,12 @@ export class Message extends TLConstructor {
       flagIndicator: false,
       useVectorId: false,
     },
-    {
-      name: 'seqno',
-      type: 'int',
-      isVector: false,
-      isFlag: false,
-      skipConstructorId: true,
-      flagGroup: 0,
-      flagIndex: -1,
-      flagIndicator: false,
-      useVectorId: false,
-    },
-    {
-      name: 'bytes',
-      type: 'int',
-      isVector: false,
-      isFlag: false,
-      skipConstructorId: true,
-      flagGroup: 0,
-      flagIndex: -1,
-      flagIndicator: false,
-      useVectorId: false,
-    },
-    {
-      name: 'body',
-      type: 'Object',
-      isVector: false,
-      isFlag: false,
-      skipConstructorId: false,
-      flagGroup: 0,
-      flagIndex: -1,
-      flagIndicator: false,
-      useVectorId: false,
-    },
   ]
 
   constructor(
-    public readonly msgId: bigint,
-    public readonly seqno: number,
-    public readonly bytes: number,
-    public readonly body: any
+    public readonly validSince: number,
+    public readonly validUntil: number,
+    public readonly salt: bigint
   ) {
     super()
   }

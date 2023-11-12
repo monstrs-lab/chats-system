@@ -1,9 +1,9 @@
 import type { TLSchemaParamParsed } from '@chats-system/tl-json-schema-parser'
 
-import { TLConstructor }            from '@chats-system/tl-types'
+import { TLMethod }                 from '@chats-system/tl-types'
 
-export class ResPQ extends TLConstructor {
-  static override CONSTRUCTOR_ID: number = 85337187
+export class ReqDHParams extends TLMethod {
+  static override CONSTRUCTOR_ID = -686627650
   static override PARAMS: Array<TLSchemaParamParsed> = [
     {
       name: 'nonce',
@@ -28,7 +28,7 @@ export class ResPQ extends TLConstructor {
       useVectorId: false,
     },
     {
-      name: 'pq',
+      name: 'p',
       type: 'bytes',
       isVector: false,
       isFlag: false,
@@ -39,23 +39,47 @@ export class ResPQ extends TLConstructor {
       useVectorId: false,
     },
     {
-      name: 'server_public_key_fingerprints',
-      type: 'long',
-      isVector: true,
+      name: 'q',
+      type: 'bytes',
+      isVector: false,
       isFlag: false,
       skipConstructorId: true,
       flagGroup: 0,
       flagIndex: -1,
       flagIndicator: false,
-      useVectorId: true,
+      useVectorId: false,
+    },
+    {
+      name: 'public_key_fingerprint',
+      type: 'long',
+      isVector: false,
+      isFlag: false,
+      skipConstructorId: true,
+      flagGroup: 0,
+      flagIndex: -1,
+      flagIndicator: false,
+      useVectorId: false,
+    },
+    {
+      name: 'encrypted_data',
+      type: 'bytes',
+      isVector: false,
+      isFlag: false,
+      skipConstructorId: true,
+      flagGroup: 0,
+      flagIndex: -1,
+      flagIndicator: false,
+      useVectorId: false,
     },
   ]
 
   constructor(
     public readonly nonce: bigint,
     public readonly serverNonce: bigint,
-    public readonly pq: Buffer,
-    public readonly serverPublicKeyFingerprints: Array<bigint>
+    public readonly p: Buffer,
+    public readonly q: Buffer,
+    public readonly publicKeyFingerprint: bigint,
+    public readonly encryptedData: Buffer
   ) {
     super()
   }

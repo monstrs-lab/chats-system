@@ -6,18 +6,24 @@ import { join }                      from 'node:path'
 import { Scope }                     from 'ts-morph'
 import camelcase                     from 'camelcase'
 
-export class TLMethodGenerator {
+import { TLObjectGenerator }         from './tl-object.generator.js'
+
+export class TLMethodGenerator extends TLObjectGenerator {
   constructor(
     private readonly project: Project,
     private readonly outDir: string
-  ) {}
+  ) {
+    super()
+  }
 
   generate(schema: TLSchemaMethodParsed): void {
     const sourceFile = this.project.createSourceFile(
       join(
         this.outDir,
         schema.namespace ? `${schema.namespace}.${schema.name}.ts` : `${schema.name}.ts`
-      ),
+      )
+        .toLowerCase()
+        .replaceAll('_', '-'),
       '',
       { overwrite: true }
     )
@@ -63,8 +69,11 @@ export class TLMethodGenerator {
         parameters: schema.params.map((param) => ({
           isReadonly: true,
           scope: Scope.Public,
-          name: param.name,
-          type: 'any',
+          name: camelcase(param.name, {
+            pascalCase: false,
+            preserveConsecutiveUppercase: true,
+          }),
+          type: this.getTypeForParam(sourceFile, param),
         })),
       })
     }

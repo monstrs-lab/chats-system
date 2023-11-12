@@ -2,12 +2,12 @@ import type { TLSchemaParamParsed } from '@chats-system/tl-json-schema-parser'
 
 import { TLMethod }                 from '@chats-system/tl-types'
 
-export class Ping extends TLMethod {
-  static override CONSTRUCTOR_ID = 2059302892
+export class ReqPqMulti extends TLMethod {
+  static override CONSTRUCTOR_ID = -1099002127
   static override PARAMS: Array<TLSchemaParamParsed> = [
     {
-      name: 'ping_id',
-      type: 'long',
+      name: 'nonce',
+      type: 'int128',
       isVector: false,
       isFlag: false,
       skipConstructorId: true,
@@ -18,7 +18,7 @@ export class Ping extends TLMethod {
     },
   ]
 
-  constructor(public readonly pingId: bigint) {
+  constructor(public readonly nonce: bigint) {
     super()
   }
 }

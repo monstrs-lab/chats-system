@@ -2,11 +2,11 @@ import type { TLSchemaParamParsed } from '@chats-system/tl-json-schema-parser'
 
 import { TLConstructor }            from '@chats-system/tl-types'
 
-export class Message extends TLConstructor {
-  static override CONSTRUCTOR_ID: number = 1538843921
+export class BadMsgNotification extends TLConstructor {
+  static override CONSTRUCTOR_ID: number = -1477445615
   static override PARAMS: Array<TLSchemaParamParsed> = [
     {
-      name: 'msg_id',
+      name: 'bad_msg_id',
       type: 'long',
       isVector: false,
       isFlag: false,
@@ -17,7 +17,7 @@ export class Message extends TLConstructor {
       useVectorId: false,
     },
     {
-      name: 'seqno',
+      name: 'bad_msg_seqno',
       type: 'int',
       isVector: false,
       isFlag: false,
@@ -28,22 +28,11 @@ export class Message extends TLConstructor {
       useVectorId: false,
     },
     {
-      name: 'bytes',
+      name: 'error_code',
       type: 'int',
       isVector: false,
       isFlag: false,
       skipConstructorId: true,
-      flagGroup: 0,
-      flagIndex: -1,
-      flagIndicator: false,
-      useVectorId: false,
-    },
-    {
-      name: 'body',
-      type: 'Object',
-      isVector: false,
-      isFlag: false,
-      skipConstructorId: false,
       flagGroup: 0,
       flagIndex: -1,
       flagIndicator: false,
@@ -52,10 +41,9 @@ export class Message extends TLConstructor {
   ]
 
   constructor(
-    public readonly msgId: bigint,
-    public readonly seqno: number,
-    public readonly bytes: number,
-    public readonly body: any
+    public readonly badMsgId: bigint,
+    public readonly badMsgSeqno: number,
+    public readonly errorCode: number
   ) {
     super()
   }

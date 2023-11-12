@@ -2,11 +2,11 @@ import type { TLSchemaParamParsed } from '@chats-system/tl-json-schema-parser'
 
 import { TLConstructor }            from '@chats-system/tl-types'
 
-export class Message extends TLConstructor {
-  static override CONSTRUCTOR_ID: number = 1538843921
+export class NewSessionCreated extends TLConstructor {
+  static override CONSTRUCTOR_ID: number = -1631450872
   static override PARAMS: Array<TLSchemaParamParsed> = [
     {
-      name: 'msg_id',
+      name: 'first_msg_id',
       type: 'long',
       isVector: false,
       isFlag: false,
@@ -17,8 +17,8 @@ export class Message extends TLConstructor {
       useVectorId: false,
     },
     {
-      name: 'seqno',
-      type: 'int',
+      name: 'unique_id',
+      type: 'long',
       isVector: false,
       isFlag: false,
       skipConstructorId: true,
@@ -28,22 +28,11 @@ export class Message extends TLConstructor {
       useVectorId: false,
     },
     {
-      name: 'bytes',
-      type: 'int',
+      name: 'server_salt',
+      type: 'long',
       isVector: false,
       isFlag: false,
       skipConstructorId: true,
-      flagGroup: 0,
-      flagIndex: -1,
-      flagIndicator: false,
-      useVectorId: false,
-    },
-    {
-      name: 'body',
-      type: 'Object',
-      isVector: false,
-      isFlag: false,
-      skipConstructorId: false,
       flagGroup: 0,
       flagIndex: -1,
       flagIndicator: false,
@@ -52,10 +41,9 @@ export class Message extends TLConstructor {
   ]
 
   constructor(
-    public readonly msgId: bigint,
-    public readonly seqno: number,
-    public readonly bytes: number,
-    public readonly body: any
+    public readonly firstMsgId: bigint,
+    public readonly uniqueId: bigint,
+    public readonly serverSalt: bigint
   ) {
     super()
   }
