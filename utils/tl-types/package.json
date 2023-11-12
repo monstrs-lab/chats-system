@@ -10,6 +10,7 @@
   },
   "main": "src/index.ts",
   "dependencies": {
+    "@monstrs/buffer-utils": "^0.0.2",
     "big-integer": "^1.6.51"
   },
   "devDependencies": {

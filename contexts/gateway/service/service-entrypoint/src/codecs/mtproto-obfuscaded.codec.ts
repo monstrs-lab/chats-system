@@ -1,42 +1,45 @@
-import { createCipheriv } from 'node:crypto'
-import { Cipher } from 'node:crypto'
+import { createCipheriv }       from 'node:crypto'
+import { Cipher }               from 'node:crypto'
 
-import { MTProtoRawMessage} from '@chats-system/tl-types'
-//import { BinaryReader } from '@chats-system/tl-types'
-
+import { MTProtoRawMessage }    from '@chats-system/tl-types'
 
 import { MTProtoAbridgedCodec } from './mtproto-abridged.codec.js'
 
+//import { BinaryReader } from '@chats-system/tl-types'
+
 export class MTProtoObfuscadetCodec {
-    protected decryptor: Cipher
-    
-    protected encryptor: Cipher
+  protected decryptor: Cipher
 
-    protected codec: MTProtoAbridgedCodec
+  protected encryptor: Cipher
 
-    constructor(header: Buffer) {
-        if (header.length !== 64) {
-            throw new Error('Invalid header size')
-        }
+  protected codec: MTProtoAbridgedCodec
 
-        const reservedHeader = Buffer.from(header.subarray(8, 56)).reverse()
-
-        this.decryptor = createCipheriv('AES-256-CTR', header.subarray(8, 40), header.subarray(40,56))
-        this.encryptor = createCipheriv('AES-256-CTR', reservedHeader.subarray(0, 32), reservedHeader.subarray(32, 48))
-
-        const obfuscaded = this.decryptor.update(header)
-
-        const protocolType = obfuscaded.subarray(56, obfuscaded.length).readUint32BE()
-
-        if (protocolType !== 0xefefefef) {
-            throw new Error('Invalid protocol')
-        }
-
-        this.codec = new MTProtoAbridgedCodec()
+  constructor(header: Buffer) {
+    if (header.length !== 64) {
+      throw new Error('Invalid header size')
     }
 
-    receive(payload: Buffer): MTProtoRawMessage {
-        return this.codec.receive(this.decryptor.update(payload))
+    const reservedHeader = Buffer.from(header.subarray(8, 56)).reverse()
+
+    this.decryptor = createCipheriv('AES-256-CTR', header.subarray(8, 40), header.subarray(40, 56))
+    this.encryptor = createCipheriv(
+      'AES-256-CTR',
+      reservedHeader.subarray(0, 32),
+      reservedHeader.subarray(32, 48)
+    )
+
+    const obfuscaded = this.decryptor.update(header)
+
+    const protocolType = obfuscaded.subarray(56, obfuscaded.length).readUint32BE()
+
+    if (protocolType !== 0xefefefef) {
+      throw new Error('Invalid protocol')
     }
-    
+
+    this.codec = new MTProtoAbridgedCodec()
+  }
+
+  receive(payload: Buffer): MTProtoRawMessage {
+    return this.codec.receive(this.decryptor.update(payload))
+  }
 }

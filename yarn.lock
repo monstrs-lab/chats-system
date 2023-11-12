@@ -1050,6 +1050,7 @@ __metadata:
   resolution: "@chats-system/tl-types@workspace:utils/tl-types"
   dependencies:
     "@chats-system/tl-json-schema-parser": "workspace:0.0.1"
+    "@monstrs/buffer-utils": "npm:^0.0.2"
     big-integer: "npm:^1.6.51"
   languageName: unknown
   linkType: soft
@@ -1829,6 +1830,13 @@ __metadata:
   version: 0.0.2
   resolution: "@monstrs/base-types@npm:0.0.2"
   checksum: f8bb27ba006ba6420cc7ac85c2f942a8d0e796468c0dfc96e1df7334a3fcadc0764b4fdf9722b16a3df73d7de5e0b17f6f8a6b956352440d8640753260b03cd2
+  languageName: node
+  linkType: hard
+
+"@monstrs/buffer-utils@npm:^0.0.2":
+  version: 0.0.2
+  resolution: "@monstrs/buffer-utils@npm:0.0.2"
+  checksum: c58bbbc8068a7bf84af7cef1583011f8f99cc187969beb6e2a10ed41ed52dd5c69be122b435acdae59f44e4afb079a40d901eb4c9a32fa55bb49b3ae5a405246
   languageName: node
   linkType: hard
 

@@ -1856,6 +1856,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/tl-types", "workspace:utils/tl-types"],\
           ["@chats-system/tl-json-schema-parser", "workspace:utils/tl-json-schema-parser"],\
+          ["@monstrs/buffer-utils", "npm:0.0.2"],\
           ["big-integer", "npm:1.6.51"]\
         ],\
         "linkType": "SOFT"\
@@ -3431,6 +3432,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/@monstrs-base-types-npm-0.0.2-d0fc031395-f8bb27ba00.zip/node_modules/@monstrs/base-types/",\
         "packageDependencies": [\
           ["@monstrs/base-types", "npm:0.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@monstrs/buffer-utils", [\
+      ["npm:0.0.2", {\
+        "packageLocation": "./.yarn/cache/@monstrs-buffer-utils-npm-0.0.2-39bbe75ab8-c58bbbc806.zip/node_modules/@monstrs/buffer-utils/",\
+        "packageDependencies": [\
+          ["@monstrs/buffer-utils", "npm:0.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\

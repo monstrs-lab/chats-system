@@ -1,15 +1,25 @@
+import { basename }                from 'node:path'
+
+import { join }          from 'node:path'
+
 import { Project }                 from 'ts-morph'
 import { VariableDeclarationKind } from 'ts-morph'
-import { SyntaxKind }              from 'ts-morph'
-import { StructureKind }           from 'ts-morph'
 
-import { basename, join } from 'node:path'
-
-export class TLClassMapGenerator {
-  constructor(private readonly project: Project, private readonly outDir: string) {}
+export class TLSchemaRegistryGenerator {
+  constructor(
+    private readonly project: Project,
+    private readonly outDir: string
+  ) {}
 
   generate(): void {
-    const sourceFile = this.project.createSourceFile(join(this.outDir, 'class.map.ts'), '', { overwrite: true })
+    const sourceFile = this.project.createSourceFile(join(this.outDir, 'schema.registry.ts'), '', {
+      overwrite: true,
+    })
+
+    sourceFile.addImportDeclaration({
+      moduleSpecifier: '@chats-system/tl-types',
+      namedImports: ['TLObject'],
+    })
 
     const classMap: Map<string, string> = new Map()
 
@@ -35,23 +45,12 @@ export class TLClassMapGenerator {
       declarationKind: VariableDeclarationKind.Const,
       declarations: [
         {
-          name: 'classmap',
-          initializer: '{}',
+          name: 'SchemaRegistry',
+          initializer: `new Map<number, TLObject>([${Array.from(classMap.keys())
+            .map((key) => `[${key}, ${classMap.get(key)}]`)
+            .join(',')}])`,
         },
       ],
     })
-
-    const objectLiteralExpression = sourceFile
-      .getVariableDeclarationOrThrow('classmap')
-      .getInitializerIfKindOrThrow(SyntaxKind.ObjectLiteralExpression)
-
-    objectLiteralExpression.insertProperties(
-      0,
-      Array.from(classMap.keys()).map((key) => ({
-        kind: StructureKind.PropertyAssignment,
-        name: `[Number(${key})]`,
-        initializer: classMap.get(key)!,
-      }))
-    )
   }
 }

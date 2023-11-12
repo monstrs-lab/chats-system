@@ -1,14 +1,14 @@
-import type { TLSchemaParsed }     from '@chats-system/tl-json-schema-parser'
+import type { TLSchemaParsed }       from '@chats-system/tl-json-schema-parser'
 
-import { Project }                 from 'ts-morph'
-import { ScriptTarget }            from 'ts-morph'
-import { ModuleKind }              from 'ts-morph'
-import { ModuleResolutionKind }    from 'ts-morph'
+import { Project }                   from 'ts-morph'
+import { ScriptTarget }              from 'ts-morph'
+import { ModuleKind }                from 'ts-morph'
+import { ModuleResolutionKind }      from 'ts-morph'
 
-import { TLConstructorGenerator }  from './tl-constructor.generator.js'
-import { TLClassMapGenerator } from './tl-classmap.generator.js'
-import { TLMethodGenerator } from './tl-method.generator.js'
-import { TLIndexGenerator} from './tl-index.generator.js'
+import { TLConstructorGenerator }    from './tl-constructor.generator.js'
+import { TLIndexGenerator }          from './tl-index.generator.js'
+import { TLMethodGenerator }         from './tl-method.generator.js'
+import { TLSchemaRegistryGenerator } from './tl-schema-registry.generator.js'
 
 export interface TLSchemaGeneratorOptions {
   outDir: string
@@ -17,11 +17,11 @@ export interface TLSchemaGeneratorOptions {
 export class TLSchemaGenerator {
   private project: Project
 
-  private constructorGenerator: TLConstructorGenerator
-  
-  private methodGenerator: TLMethodGenerator
+  private schemaRegistryGenerator: TLSchemaRegistryGenerator
 
-  private classMapGenerator: TLClassMapGenerator
+  private constructorGenerator: TLConstructorGenerator
+
+  private methodGenerator: TLMethodGenerator
 
   private indexGenerator: TLIndexGenerator
 
@@ -35,9 +35,9 @@ export class TLSchemaGenerator {
       },
     })
 
+    this.schemaRegistryGenerator = new TLSchemaRegistryGenerator(this.project, options.outDir)
     this.constructorGenerator = new TLConstructorGenerator(this.project, options.outDir)
     this.methodGenerator = new TLMethodGenerator(this.project, options.outDir)
-    this.classMapGenerator = new TLClassMapGenerator(this.project, options.outDir)
     this.indexGenerator = new TLIndexGenerator(this.project, options.outDir)
   }
 
@@ -46,16 +46,15 @@ export class TLSchemaGenerator {
       this.constructorGenerator.generate(ctr)
     })
 
-    schema.methods.forEach(method => {
+    schema.methods.forEach((method) => {
       this.methodGenerator.generate(method)
     })
   }
 
   async emit(): Promise<void> {
-    this.classMapGenerator.generate()
+    this.schemaRegistryGenerator.generate()
     this.indexGenerator.generate()
 
-    //console.log(this.project.emitToMemory())
     await this.project.save()
   }
 }

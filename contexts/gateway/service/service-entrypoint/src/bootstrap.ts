@@ -1,6 +1,6 @@
 import { NestLogger }                     from '@monstrs/nestjs-logger'
 import { NestFactory }                    from '@nestjs/core'
-import { WsAdapter } from '@nestjs/platform-ws'
+import { WsAdapter }                      from '@nestjs/platform-ws'
 
 import { GatewayServiceEntrypointModule } from './gateway-service-entrypoint.module.js'
 
@@ -11,7 +11,7 @@ const bootstrap = async (): Promise<void> => {
 
   app.enableShutdownHooks()
 
-  app.useWebSocketAdapter(new WsAdapter(app));
+  app.useWebSocketAdapter(new WsAdapter(app))
 
   await app.listen(3000)
 

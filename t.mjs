@@ -13,7 +13,7 @@ const header = Buffer.from(
 )
 const data = Buffer.from('ENdaLmWAmSKcFt8HgHevQlqObPMDhOVxm+rPxGYjgfcuwEqFIvRNTcI=', 'base64')
 
-const dd = createCipheriv('AES-256-CTR', header.subarray(8, 40), header.subarray(40,56))
+const dd = createCipheriv('AES-256-CTR', header.subarray(8, 40), header.subarray(40, 56))
 const decryptor = () => dd
 
 const obfuscatedHeader = decryptor().update(header)
@@ -26,9 +26,7 @@ const obfuscated = decryptor().update(data)
 let length = obfuscated[0]
 
 if (length >= 127) {
-    length = Buffer.concat([obfuscated.subarray(0, 3), Buffer.alloc(1)])
-                .readInt32LE(0);
-
+  length = Buffer.concat([obfuscated.subarray(0, 3), Buffer.alloc(1)]).readInt32LE(0)
 }
 
 const d = obfuscated.subarray(1, length << 2)
@@ -39,7 +37,6 @@ const msgLength = d.readUInt32LE(16)
 const constructorId = d.readInt32LE(20)
 const msgData = d.subarray(24, d.length)
 console.log(length << 2, authKeyId, msgId, msgLength, constructorId, msgData.length)
-
 
 /*
 AAAAAAAAAADA5fGGzXROZRQAAADxjn6+gt0VifZ3Li6EP7VQtaXpVA== Cg== encode
