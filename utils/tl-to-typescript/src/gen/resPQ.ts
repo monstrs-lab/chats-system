@@ -1,9 +1,9 @@
+import type { TLSchemaParamParsed } from "@chats-system/tl-json-schema-parser";
 import { TLConstructor } from "@chats-system/tl-types";
 
 export class ResPQ extends TLConstructor {
-    type = "ResPQ";
-    constructorId = 85337187;
-    params = [
+    static override CONSTRUCTOR_ID: number = 85337187;
+    static override PARAMS: Array<TLSchemaParamParsed> = [
           {
             "name": "nonce",
             "type": "int128",
@@ -49,4 +49,8 @@ export class ResPQ extends TLConstructor {
             "useVectorId": true
           }
         ];
+
+    constructor(public readonly nonce: any, public readonly server_nonce: any, public readonly pq: any, public readonly server_public_key_fingerprints: any) {
+        super()
+    }
 }

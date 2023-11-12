@@ -1,9 +1,9 @@
+import type { TLSchemaParamParsed } from "@chats-system/tl-json-schema-parser";
 import { TLConstructor } from "@chats-system/tl-types";
 
 export class ClientDHInnerData extends TLConstructor {
-    type = "Client_DH_Inner_Data";
-    constructorId = 1715713620;
-    params = [
+    static override CONSTRUCTOR_ID: number = 1715713620;
+    static override PARAMS: Array<TLSchemaParamParsed> = [
           {
             "name": "nonce",
             "type": "int128",
@@ -49,4 +49,8 @@ export class ClientDHInnerData extends TLConstructor {
             "useVectorId": false
           }
         ];
+
+    constructor(public readonly nonce: any, public readonly server_nonce: any, public readonly retry_id: any, public readonly g_b: any) {
+        super()
+    }
 }

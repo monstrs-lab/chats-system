@@ -1,9 +1,9 @@
+import type { TLSchemaParamParsed } from "@chats-system/tl-json-schema-parser";
 import { TLConstructor } from "@chats-system/tl-types";
 
 export class NewSessionCreated extends TLConstructor {
-    type = "NewSession";
-    constructorId = -1631450872;
-    params = [
+    static override CONSTRUCTOR_ID: number = -1631450872;
+    static override PARAMS: Array<TLSchemaParamParsed> = [
           {
             "name": "first_msg_id",
             "type": "long",
@@ -38,4 +38,8 @@ export class NewSessionCreated extends TLConstructor {
             "useVectorId": false
           }
         ];
+
+    constructor(public readonly first_msg_id: any, public readonly unique_id: any, public readonly server_salt: any) {
+        super()
+    }
 }

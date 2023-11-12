@@ -1,9 +1,9 @@
+import type { TLSchemaParamParsed } from "@chats-system/tl-json-schema-parser";
 import { TLConstructor } from "@chats-system/tl-types";
 
 export class GzipPacked extends TLConstructor {
-    type = "Object";
-    constructorId = 812830625;
-    params = [
+    static override CONSTRUCTOR_ID: number = 812830625;
+    static override PARAMS: Array<TLSchemaParamParsed> = [
           {
             "name": "packed_data",
             "type": "bytes",
@@ -16,4 +16,8 @@ export class GzipPacked extends TLConstructor {
             "useVectorId": false
           }
         ];
+
+    constructor(public readonly packed_data: any) {
+        super()
+    }
 }

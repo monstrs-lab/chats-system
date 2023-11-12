@@ -1,9 +1,9 @@
+import type { TLSchemaParamParsed } from "@chats-system/tl-json-schema-parser";
 import { TLConstructor } from "@chats-system/tl-types";
 
 export class DestroySessionOk extends TLConstructor {
-    type = "DestroySessionRes";
-    constructorId = -501201412;
-    params = [
+    static override CONSTRUCTOR_ID: number = -501201412;
+    static override PARAMS: Array<TLSchemaParamParsed> = [
           {
             "name": "session_id",
             "type": "long",
@@ -16,4 +16,8 @@ export class DestroySessionOk extends TLConstructor {
             "useVectorId": false
           }
         ];
+
+    constructor(public readonly session_id: any) {
+        super()
+    }
 }

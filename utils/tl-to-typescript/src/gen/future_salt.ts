@@ -1,9 +1,9 @@
+import type { TLSchemaParamParsed } from "@chats-system/tl-json-schema-parser";
 import { TLConstructor } from "@chats-system/tl-types";
 
 export class FutureSalt extends TLConstructor {
-    type = "FutureSalt";
-    constructorId = 155834844;
-    params = [
+    static override CONSTRUCTOR_ID: number = 155834844;
+    static override PARAMS: Array<TLSchemaParamParsed> = [
           {
             "name": "valid_since",
             "type": "int",
@@ -38,4 +38,8 @@ export class FutureSalt extends TLConstructor {
             "useVectorId": false
           }
         ];
+
+    constructor(public readonly valid_since: any, public readonly valid_until: any, public readonly salt: any) {
+        super()
+    }
 }

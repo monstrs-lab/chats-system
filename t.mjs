@@ -31,13 +31,15 @@ if (length >= 127) {
 
 }
 
-const d = obfuscated.subarray(0, length << 2)
+const d = obfuscated.subarray(1, length << 2)
+console.log(d.length, obfuscated.length)
+const authKeyId = d.readBigUint64LE(0)
+const msgId = d.readBigUint64LE(8)
+const msgLength = d.readUInt32LE(16)
+const constructorId = d.readInt32LE(20)
+const msgData = d.subarray(24, d.length)
+console.log(length << 2, authKeyId, msgId, msgLength, constructorId, msgData.length)
 
-const authKeyId = d.readBigUint64LE(1)
-const msgId = d.readBigUint64LE(9)
-const msgLength = d.readUInt32LE(17)
-const constructorId = d.readInt32LE(21)
-console.log(length << 2, authKeyId, msgId, msgLength, constructorId)
 
 /*
 AAAAAAAAAADA5fGGzXROZRQAAADxjn6+gt0VifZ3Li6EP7VQtaXpVA== Cg== encode

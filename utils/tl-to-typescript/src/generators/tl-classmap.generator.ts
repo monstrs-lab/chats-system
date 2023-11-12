@@ -17,7 +17,7 @@ export class TLClassMapGenerator {
       sf.getClasses().forEach((clazz) => {
         const idConstructor = clazz
           .getProperties()
-          .find((property) => property.getName() === 'constructorId')
+          .find((property) => property.getName() === 'CONSTRUCTOR_ID')
 
         if (idConstructor) {
           classMap.set(idConstructor.getInitializer()!.getText()!, clazz.getName()!)

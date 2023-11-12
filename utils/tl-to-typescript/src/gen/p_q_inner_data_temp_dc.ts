@@ -1,9 +1,9 @@
+import type { TLSchemaParamParsed } from "@chats-system/tl-json-schema-parser";
 import { TLConstructor } from "@chats-system/tl-types";
 
 export class PQInnerDataTempDc extends TLConstructor {
-    type = "P_Q_inner_data";
-    constructorId = 1459478408;
-    params = [
+    static override CONSTRUCTOR_ID: number = 1459478408;
+    static override PARAMS: Array<TLSchemaParamParsed> = [
           {
             "name": "pq",
             "type": "bytes",
@@ -93,4 +93,8 @@ export class PQInnerDataTempDc extends TLConstructor {
             "useVectorId": false
           }
         ];
+
+    constructor(public readonly pq: any, public readonly p: any, public readonly q: any, public readonly nonce: any, public readonly server_nonce: any, public readonly new_nonce: any, public readonly dc: any, public readonly expires_in: any) {
+        super()
+    }
 }

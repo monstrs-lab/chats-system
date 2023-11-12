@@ -7,6 +7,7 @@ import { ModuleResolutionKind }    from 'ts-morph'
 
 import { TLConstructorGenerator }  from './tl-constructor.generator.js'
 import { TLClassMapGenerator } from './tl-classmap.generator.js'
+import { TLMethodGenerator } from './tl-method.generator.js'
 import { TLIndexGenerator} from './tl-index.generator.js'
 
 export interface TLSchemaGeneratorOptions {
@@ -18,6 +19,8 @@ export class TLSchemaGenerator {
 
   private constructorGenerator: TLConstructorGenerator
   
+  private methodGenerator: TLMethodGenerator
+
   private classMapGenerator: TLClassMapGenerator
 
   private indexGenerator: TLIndexGenerator
@@ -33,6 +36,7 @@ export class TLSchemaGenerator {
     })
 
     this.constructorGenerator = new TLConstructorGenerator(this.project, options.outDir)
+    this.methodGenerator = new TLMethodGenerator(this.project, options.outDir)
     this.classMapGenerator = new TLClassMapGenerator(this.project, options.outDir)
     this.indexGenerator = new TLIndexGenerator(this.project, options.outDir)
   }
@@ -40,6 +44,10 @@ export class TLSchemaGenerator {
   async generate(schema: TLSchemaParsed): Promise<void> {
     schema.constructors.forEach((ctr) => {
       this.constructorGenerator.generate(ctr)
+    })
+
+    schema.methods.forEach(method => {
+      this.methodGenerator.generate(method)
     })
   }
 

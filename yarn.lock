@@ -872,6 +872,8 @@ __metadata:
     "@chats-system/core-rpc": "workspace:0.0.1"
     "@chats-system/session-infrastructure-module": "workspace:0.0.1"
     "@chats-system/session-rpc": "workspace:0.0.1"
+    "@chats-system/tl-to-typescript": "workspace:0.0.1"
+    "@chats-system/tl-types": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.0.0"
     "@connectrpc/connect-node": "npm:^1.0.0"
     "@faker-js/faker": "npm:^8.1.0"
@@ -1029,7 +1031,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@chats-system/tl-to-typescript@workspace:utils/tl-to-typescript":
+"@chats-system/tl-to-typescript@workspace:0.0.1, @chats-system/tl-to-typescript@workspace:utils/tl-to-typescript":
   version: 0.0.0-use.local
   resolution: "@chats-system/tl-to-typescript@workspace:utils/tl-to-typescript"
   dependencies:

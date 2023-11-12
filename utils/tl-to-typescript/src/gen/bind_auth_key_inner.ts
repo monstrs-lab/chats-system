@@ -1,9 +1,9 @@
+import type { TLSchemaParamParsed } from "@chats-system/tl-json-schema-parser";
 import { TLConstructor } from "@chats-system/tl-types";
 
 export class BindAuthKeyInner extends TLConstructor {
-    type = "BindAuthKeyInner";
-    constructorId = 1973679973;
-    params = [
+    static override CONSTRUCTOR_ID: number = 1973679973;
+    static override PARAMS: Array<TLSchemaParamParsed> = [
           {
             "name": "nonce",
             "type": "long",
@@ -60,4 +60,8 @@ export class BindAuthKeyInner extends TLConstructor {
             "useVectorId": false
           }
         ];
+
+    constructor(public readonly nonce: any, public readonly temp_auth_key_id: any, public readonly perm_auth_key_id: any, public readonly temp_session_id: any, public readonly expires_at: any) {
+        super()
+    }
 }

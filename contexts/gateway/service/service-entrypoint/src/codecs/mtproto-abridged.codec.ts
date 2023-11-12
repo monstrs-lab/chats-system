@@ -1,15 +1,17 @@
+import { MTProtoRawMessage} from '@chats-system/tl-types'
+
 export class MTProtoAbridgedCodec {
-    receive(buf: Buffer): Buffer {
-        let length = buf[0]
+    receive(payload: Buffer): MTProtoRawMessage {
+        let length = payload[0]
 
         if (length >= 127) {
-            length = Buffer.concat([buf.subarray(0, 3), Buffer.alloc(1)])
+            length = Buffer.concat([payload.subarray(0, 3), Buffer.alloc(1)])
                         .readInt32LE(0);
 
         }
 
-        const data = buf.subarray(0, length << 2)
+        const data = payload.subarray(1, (length << 2) + 1)
 
-        return data.subarray(1, data.length)
+        return new MTProtoRawMessage(data)
     }
 }

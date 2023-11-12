@@ -1,6 +1,10 @@
 import { createCipheriv } from 'node:crypto'
 import { Cipher } from 'node:crypto'
 
+import { MTProtoRawMessage} from '@chats-system/tl-types'
+//import { BinaryReader } from '@chats-system/tl-types'
+
+
 import { MTProtoAbridgedCodec } from './mtproto-abridged.codec.js'
 
 export class MTProtoObfuscadetCodec {
@@ -23,7 +27,7 @@ export class MTProtoObfuscadetCodec {
         const obfuscaded = this.decryptor.update(header)
 
         const protocolType = obfuscaded.subarray(56, obfuscaded.length).readUint32BE()
-console.log(protocolType, 0xefefefef, 'asdflajsdk')
+
         if (protocolType !== 0xefefefef) {
             throw new Error('Invalid protocol')
         }
@@ -31,14 +35,8 @@ console.log(protocolType, 0xefefefef, 'asdflajsdk')
         this.codec = new MTProtoAbridgedCodec()
     }
 
-    receive(buf: Buffer) {
-        const data = this.codec.receive(this.decryptor.update(buf))
-
-        const authKeyId = data.readBigUint64LE(0)
-        const msgId = data.readBigUint64LE(8)
-        const msgLength = data.readUInt32LE(16)
-        const constructorId = data.readInt32LE(20)
-        console.log(authKeyId, msgId, msgLength, constructorId)
+    receive(payload: Buffer): MTProtoRawMessage {
+        return this.codec.receive(this.decryptor.update(payload))
     }
     
 }

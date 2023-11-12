@@ -1,9 +1,9 @@
+import type { TLSchemaParamParsed } from "@chats-system/tl-json-schema-parser";
 import { TLConstructor } from "@chats-system/tl-types";
 
 export class MsgNewDetailedInfo extends TLConstructor {
-    type = "MsgDetailedInfo";
-    constructorId = -2137147681;
-    params = [
+    static override CONSTRUCTOR_ID: number = -2137147681;
+    static override PARAMS: Array<TLSchemaParamParsed> = [
           {
             "name": "answer_msg_id",
             "type": "long",
@@ -38,4 +38,8 @@ export class MsgNewDetailedInfo extends TLConstructor {
             "useVectorId": false
           }
         ];
+
+    constructor(public readonly answer_msg_id: any, public readonly bytes: any, public readonly status: any) {
+        super()
+    }
 }

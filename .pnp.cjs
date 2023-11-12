@@ -1491,6 +1491,8 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/core-rpc", "virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#workspace:contexts/core/rpc/core-rpc"],\
           ["@chats-system/session-infrastructure-module", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#workspace:contexts/session/service/infrastructure-module"],\
           ["@chats-system/session-rpc", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#workspace:contexts/session/rpc/session-rpc"],\
+          ["@chats-system/tl-to-typescript", "workspace:utils/tl-to-typescript"],\
+          ["@chats-system/tl-types", "workspace:utils/tl-types"],\
           ["@connectrpc/connect", "virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#npm:1.1.3"],\
           ["@connectrpc/connect-node", "virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#npm:1.1.3"],\
           ["@faker-js/faker", "npm:8.2.0"],\

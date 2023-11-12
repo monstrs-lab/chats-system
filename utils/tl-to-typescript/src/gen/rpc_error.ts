@@ -1,9 +1,9 @@
+import type { TLSchemaParamParsed } from "@chats-system/tl-json-schema-parser";
 import { TLConstructor } from "@chats-system/tl-types";
 
 export class RpcError extends TLConstructor {
-    type = "RpcError";
-    constructorId = 558156313;
-    params = [
+    static override CONSTRUCTOR_ID: number = 558156313;
+    static override PARAMS: Array<TLSchemaParamParsed> = [
           {
             "name": "error_code",
             "type": "int",
@@ -27,4 +27,8 @@ export class RpcError extends TLConstructor {
             "useVectorId": false
           }
         ];
+
+    constructor(public readonly error_code: any, public readonly error_message: any) {
+        super()
+    }
 }

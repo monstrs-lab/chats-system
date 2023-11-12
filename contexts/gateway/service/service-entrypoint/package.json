@@ -16,6 +16,8 @@
     "@chats-system/core-rpc": "workspace:0.0.1",
     "@chats-system/session-infrastructure-module": "workspace:0.0.1",
     "@chats-system/session-rpc": "workspace:0.0.1",
+    "@chats-system/tl-to-typescript": "workspace:0.0.1",
+    "@chats-system/tl-types": "workspace:0.0.1",
     "@connectrpc/connect": "^1.0.0",
     "@connectrpc/connect-node": "^1.0.0",
     "@faker-js/faker": "^8.1.0",

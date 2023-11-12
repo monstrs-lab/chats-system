@@ -1,9 +1,9 @@
+import type { TLSchemaParamParsed } from "@chats-system/tl-json-schema-parser";
 import { TLConstructor } from "@chats-system/tl-types";
 
 export class BadMsgNotification extends TLConstructor {
-    type = "BadMsgNotification";
-    constructorId = -1477445615;
-    params = [
+    static override CONSTRUCTOR_ID: number = -1477445615;
+    static override PARAMS: Array<TLSchemaParamParsed> = [
           {
             "name": "bad_msg_id",
             "type": "long",
@@ -38,4 +38,8 @@ export class BadMsgNotification extends TLConstructor {
             "useVectorId": false
           }
         ];
+
+    constructor(public readonly bad_msg_id: any, public readonly bad_msg_seqno: any, public readonly error_code: any) {
+        super()
+    }
 }
