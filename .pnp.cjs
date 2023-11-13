@@ -90,6 +90,7 @@ const RAW_RUNTIME_STATE =
           ["@monstrs/tools-runtime", "npm:0.2.17"],\
           ["@types/node", "npm:20.8.7"],\
           ["big-integer", "npm:1.6.51"],\
+          ["node-rsa", "npm:1.1.1"],\
           ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
         ],\
         "linkType": "SOFT"\
@@ -1495,8 +1496,10 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/tl-types", "workspace:utils/tl-types"],\
           ["@connectrpc/connect", "virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#npm:1.1.3"],\
           ["@connectrpc/connect-node", "virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#npm:1.1.3"],\
+          ["@cryptography/aes", "npm:0.1.1"],\
           ["@faker-js/faker", "npm:8.2.0"],\
           ["@jest/globals", "npm:29.7.0"],\
+          ["@monstrs/buffer-utils", "npm:0.0.2"],\
           ["@monstrs/nestjs-connectrpc", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#npm:0.0.3"],\
           ["@monstrs/nestjs-logger", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#npm:0.4.2"],\
           ["@monstrs/nestjs-microservices-registry", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#npm:0.1.0"],\
@@ -1514,6 +1517,7 @@ const RAW_RUNTIME_STATE =
           ["@types/node", "npm:20.8.7"],\
           ["@types/pg", "npm:8.10.7"],\
           ["@types/ws", "npm:8.5.9"],\
+          ["big-integer", "npm:1.6.51"],\
           ["cache-manager", "npm:5.2.4"],\
           ["class-transformer", "npm:0.5.1"],\
           ["class-validator", "npm:0.14.0"],\
@@ -9019,6 +9023,7 @@ const RAW_RUNTIME_STATE =
           ["@monstrs/tools-runtime", "npm:0.2.17"],\
           ["@types/node", "npm:20.8.7"],\
           ["big-integer", "npm:1.6.51"],\
+          ["node-rsa", "npm:1.1.1"],\
           ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
         ],\
         "linkType": "SOFT"\
@@ -13702,6 +13707,16 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/node-releases-npm-2.0.13-1f2e177887-2fb44bf70f.zip/node_modules/node-releases/",\
         "packageDependencies": [\
           ["node-releases", "npm:2.0.13"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["node-rsa", [\
+      ["npm:1.1.1", {\
+        "packageLocation": "./.yarn/cache/node-rsa-npm-1.1.1-ff58d35e03-af3b653484.zip/node_modules/node-rsa/",\
+        "packageDependencies": [\
+          ["node-rsa", "npm:1.1.1"],\
+          ["asn1", "npm:0.2.6"]\
         ],\
         "linkType": "HARD"\
       }]\

@@ -42,4 +42,8 @@ export class MTProtoUnencryptedRawMessage {
   getMessageData(): Buffer {
     return this.#messageData
   }
+
+  getMessageId(): bigint {
+    return this.#messageId
+  }
 }

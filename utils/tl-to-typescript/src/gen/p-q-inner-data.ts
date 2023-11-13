@@ -1,12 +1,12 @@
 import type { TLSchemaParamParsed } from "@chats-system/tl-json-schema-parser";
 import { TLConstructor } from "@chats-system/tl-types";
 
-export class PQInnerDataDc extends TLConstructor {
-    static override CONSTRUCTOR_ID: number = -1443537003;
+export class PQInnerData extends TLConstructor {
+    static override CONSTRUCTOR_ID: number = -2083955988;
     static override PARAMS: Array<TLSchemaParamParsed> = [
           {
             "name": "pq",
-            "type": "bytes",
+            "type": "string",
             "isVector": false,
             "isFlag": false,
             "skipConstructorId": true,
@@ -17,7 +17,7 @@ export class PQInnerDataDc extends TLConstructor {
           },
           {
             "name": "p",
-            "type": "bytes",
+            "type": "string",
             "isVector": false,
             "isFlag": false,
             "skipConstructorId": true,
@@ -28,7 +28,7 @@ export class PQInnerDataDc extends TLConstructor {
           },
           {
             "name": "q",
-            "type": "bytes",
+            "type": "string",
             "isVector": false,
             "isFlag": false,
             "skipConstructorId": true,
@@ -69,21 +69,10 @@ export class PQInnerDataDc extends TLConstructor {
             "flagIndex": -1,
             "flagIndicator": false,
             "useVectorId": false
-          },
-          {
-            "name": "dc",
-            "type": "int",
-            "isVector": false,
-            "isFlag": false,
-            "skipConstructorId": true,
-            "flagGroup": 0,
-            "flagIndex": -1,
-            "flagIndicator": false,
-            "useVectorId": false
           }
         ];
 
-    constructor(public readonly pq: Buffer, public readonly p: Buffer, public readonly q: Buffer, public readonly nonce: bigint, public readonly server_nonce: bigint, public readonly new_nonce: bigint, public readonly dc: number) {
+    constructor(public readonly pq: string, public readonly p: string, public readonly q: string, public readonly nonce: bigint, public readonly server_nonce: bigint, public readonly new_nonce: bigint) {
         super()
     }
 }

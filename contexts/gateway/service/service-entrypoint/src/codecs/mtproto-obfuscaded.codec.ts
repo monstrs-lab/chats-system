@@ -5,8 +5,6 @@ import { MTProtoRawMessage }    from '@chats-system/tl-types'
 
 import { MTProtoAbridgedCodec } from './mtproto-abridged.codec.js'
 
-//import { BinaryReader } from '@chats-system/tl-types'
-
 export class MTProtoObfuscadetCodec {
   protected decryptor: Cipher
 
@@ -41,5 +39,9 @@ export class MTProtoObfuscadetCodec {
 
   receive(payload: Buffer): MTProtoRawMessage {
     return this.codec.receive(this.decryptor.update(payload))
+  }
+
+  send(message: MTProtoRawMessage): Buffer {
+    return this.encryptor.update(this.codec.send(message.encode()))
   }
 }

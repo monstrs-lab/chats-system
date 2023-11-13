@@ -17,6 +17,19 @@ await tlToTypeScript.execute({
       type: 'ResPQ',
     },
     {
+      id: '-2083955988',
+      predicate: 'p_q_inner_data',
+      params: [
+        { name: 'pq', type: 'string' },
+        { name: 'p', type: 'string' },
+        { name: 'q', type: 'string' },
+        { name: 'nonce', type: 'int128' },
+        { name: 'server_nonce', type: 'int128' },
+        { name: 'new_nonce', type: 'int256' },
+      ],
+      type: 'P_Q_inner_data',
+    },
+    {
       id: '-1443537003',
       predicate: 'p_q_inner_data_dc',
       params: [
