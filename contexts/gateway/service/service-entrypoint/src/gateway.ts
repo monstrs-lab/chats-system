@@ -9,7 +9,7 @@ import bigInt            from 'big-integer'
 import { SchemaRegistry }               from '@chats-system/tl-to-typescript'
 import { ReqPqMulti }                   from '@chats-system/tl-to-typescript'
 import { ReqDHParams }                  from '@chats-system/tl-to-typescript'
-import { ResPQ, ServerDHInnerData, PQInnerData, ServerDHParamsOk }                        from '@chats-system/tl-to-typescript'
+import { ResPQ, ServerDHInnerData, PQInnerData, ServerDHParamsOk, SetClientDHParams, ClientDHInnerData , DhGenOk}                        from '@chats-system/tl-to-typescript'
 import { BinaryReader }                 from '@chats-system/tl-types'
 import { MTProtoUnencryptedRawMessage } from '@chats-system/tl-types'
 import { MTProtoRawMessage }            from '@chats-system/tl-types'
@@ -21,7 +21,7 @@ import { modExp } from './dhparams.js'
 import { readBufferFromBigInt } from './dhparams.js'
 import { sha256 } from './dhparams.js'
 import { bufferXor } from './dhparams.js'
-import { IGE } from './dhparams.js'
+import { IGE, sha1, AuthKey, getByteArray } from './dhparams.js'
 import { key, dh2048P, dh2048G }                          from './key.js'
 
 @WebSocketGateway({
@@ -30,7 +30,7 @@ import { key, dh2048P, dh2048G }                          from './key.js'
   },
 })
 export class EventsGateway implements OnGatewayConnection {
-  handleConnection(connection: WebSocket & { codec: MTProtoObfuscadetCodec }) {
+  handleConnection(connection: WebSocket & { codec: MTProtoObfuscadetCodec, newNonce: any }) {
     connection.on('message', (message: Buffer) => {
       if (!connection.codec) {
         connection.codec = new MTProtoObfuscadetCodec(message)
@@ -54,7 +54,7 @@ export class EventsGateway implements OnGatewayConnection {
   }
 
   async onUnencryptedMessage(
-    connection: WebSocket & { codec: MTProtoObfuscadetCodec },
+    connection: WebSocket & { codec: MTProtoObfuscadetCodec, newNonce: any  },
     message: TLObject,
     messageId: bigint
   ) {
@@ -62,13 +62,15 @@ export class EventsGateway implements OnGatewayConnection {
       await this.onReqPqMulti(connection, message, messageId)
     } else if (message instanceof ReqDHParams) {
       await this.onReqDHParams(connection, message, messageId)
+    } else if (message instanceof SetClientDHParams) {
+      await this.onSetClientDHParams(connection, message, messageId)
     } else {
       console.log(message)
     }
   }
 
   async onReqPqMulti(
-    connection: WebSocket & { codec: MTProtoObfuscadetCodec },
+    connection: WebSocket & { codec: MTProtoObfuscadetCodec, newNonce: any },
     message: ReqPqMulti,
     messageId: bigint
   ) {
@@ -98,10 +100,8 @@ export class EventsGateway implements OnGatewayConnection {
   }
 
   async onReqDHParams(
-    // @ts-expect-error
-    connection: WebSocket & { codec: MTProtoObfuscadetCodec },
+    connection: WebSocket & { codec: MTProtoObfuscadetCodec, newNonce: any },
     message: ReqDHParams,
-    // @ts-expect-error
     messageId: bigint
   ) {
     const encryptedDataBuffer = readBigIntFromBuffer(message.encrypted_data, false)
@@ -146,10 +146,58 @@ export class EventsGateway implements OnGatewayConnection {
     const pok = new ServerDHParamsOk(
       message.nonce,
       message.server_nonce,
-      igeEncode.encryptIge(Buffer.concat([Buffer.alloc(20), bytes]))
+      igeEncode.encryptIge(Buffer.concat([await sha1(bytes), bytes]))
     )
 
     const messageData = pok.getBytes()
+
+    connection.send(
+      connection.codec.send(
+        new MTProtoRawMessage(
+          BigInt(0),
+          new MTProtoUnencryptedRawMessage(messageId + BigInt(20), messageData.length, messageData)
+        )
+      )
+    )
+
+    connection.newNonce = request.new_nonce;
+    (connection as any).a = a
+  }
+
+  async onSetClientDHParams(
+    connection: WebSocket & { codec: MTProtoObfuscadetCodec, newNonce: any },
+    message: SetClientDHParams,
+    messageId: bigint
+  ) {
+    const { key: igekey, iv } = await generateKeyDataFromNonce(
+      message.server_nonce,
+      bigInt(connection.newNonce),
+    )
+
+    const igeEncode = new IGE(igekey, iv);
+    const clientDhEncrypted = igeEncode.decryptIge(message.encrypted_data)
+    const clientDh = clientDhEncrypted.subarray(20, clientDhEncrypted.length)
+
+    const innerData = new BinaryReader(clientDh, SchemaRegistry).readObject() as ClientDHInnerData
+    console.log(innerData)
+
+    const a = readBigIntFromBuffer(Buffer.from(randomBytes(16)), false, true);
+    const gA = modExp(readBigIntFromBuffer(dh2048G), a, readBigIntFromBuffer(dh2048P))
+
+    const gab = modExp(readBigIntFromBuffer(innerData.g_b), (connection as any).a, readBigIntFromBuffer(dh2048P));
+
+    // @ts-expect-error
+    const authKey = new AuthKey();
+
+    await authKey.setKey(getByteArray(gab));
+
+    const dhGenOk = new DhGenOk(
+      message.nonce,
+      message.server_nonce,
+      BigInt((await authKey.calcNewNonceHash(connection.newNonce, 1)).toString())
+    )
+
+    const messageData = dhGenOk.getBytes()
 
     connection.send(
       connection.codec.send(
