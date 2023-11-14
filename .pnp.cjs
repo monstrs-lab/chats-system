@@ -1494,7 +1494,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/crypto", "workspace:shared/crypto"],\
           ["@cryptography/aes", "npm:0.1.1"],\
-          ["@monstrs/buffer-utils", "npm:0.0.5"]\
+          ["@monstrs/buffer-utils", "npm:0.0.6"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -1516,7 +1516,7 @@ const RAW_RUNTIME_STATE =
           ["@cryptography/aes", "npm:0.1.1"],\
           ["@faker-js/faker", "npm:8.2.0"],\
           ["@jest/globals", "npm:29.7.0"],\
-          ["@monstrs/buffer-utils", "npm:0.0.5"],\
+          ["@monstrs/buffer-utils", "npm:0.0.6"],\
           ["@monstrs/crypto-utils", "npm:0.0.2"],\
           ["@monstrs/nestjs-connectrpc", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#npm:0.0.3"],\
           ["@monstrs/nestjs-logger", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#npm:0.4.2"],\
@@ -1879,7 +1879,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/tl-types", "workspace:utils/tl-types"],\
           ["@chats-system/tl-json-schema-parser", "workspace:utils/tl-json-schema-parser"],\
-          ["@monstrs/buffer-utils", "npm:0.0.5"],\
+          ["@monstrs/buffer-utils", "npm:0.0.6"],\
           ["big-integer", "npm:1.6.51"]\
         ],\
         "linkType": "SOFT"\
@@ -3469,10 +3469,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@monstrs/buffer-utils", [\
-      ["npm:0.0.5", {\
-        "packageLocation": "./.yarn/cache/@monstrs-buffer-utils-npm-0.0.5-1ee762eb09-a1d0f954e0.zip/node_modules/@monstrs/buffer-utils/",\
+      ["npm:0.0.6", {\
+        "packageLocation": "./.yarn/cache/@monstrs-buffer-utils-npm-0.0.6-c95d7f3927-85245c0dc2.zip/node_modules/@monstrs/buffer-utils/",\
         "packageDependencies": [\
-          ["@monstrs/buffer-utils", "npm:0.0.5"],\
+          ["@monstrs/buffer-utils", "npm:0.0.6"],\
           ["@monstrs/bigint-utils", "npm:0.0.2"]\
         ],\
         "linkType": "HARD"\

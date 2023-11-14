@@ -869,7 +869,7 @@ __metadata:
   resolution: "@chats-system/crypto@workspace:shared/crypto"
   dependencies:
     "@cryptography/aes": "npm:^0.1.1"
-    "@monstrs/buffer-utils": "npm:^0.0.5"
+    "@monstrs/buffer-utils": "npm:^0.0.6"
   languageName: unknown
   linkType: soft
 
@@ -889,7 +889,7 @@ __metadata:
     "@cryptography/aes": "npm:^0.1.1"
     "@faker-js/faker": "npm:^8.1.0"
     "@jest/globals": "npm:^29.7.0"
-    "@monstrs/buffer-utils": "npm:^0.0.5"
+    "@monstrs/buffer-utils": "npm:^0.0.6"
     "@monstrs/crypto-utils": "npm:^0.0.2"
     "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
     "@monstrs/nestjs-logger": "npm:^0.4.2"
@@ -1065,7 +1065,7 @@ __metadata:
   resolution: "@chats-system/tl-types@workspace:utils/tl-types"
   dependencies:
     "@chats-system/tl-json-schema-parser": "workspace:0.0.1"
-    "@monstrs/buffer-utils": "npm:^0.0.5"
+    "@monstrs/buffer-utils": "npm:^0.0.6"
     big-integer: "npm:^1.6.51"
   languageName: unknown
   linkType: soft
@@ -1855,12 +1855,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/buffer-utils@npm:^0.0.5":
-  version: 0.0.5
-  resolution: "@monstrs/buffer-utils@npm:0.0.5"
+"@monstrs/buffer-utils@npm:^0.0.6":
+  version: 0.0.6
+  resolution: "@monstrs/buffer-utils@npm:0.0.6"
   dependencies:
     "@monstrs/bigint-utils": "npm:0.0.2"
-  checksum: a1d0f954e0ee89a1c7597be8aff7883748f6d1dce097591bddb1414b218ab07e55fab1b8d0e4c4dd7f7ea068bce76ad6c3bea5044196c491770ba3e04fa26f25
+  checksum: 85245c0dc2f76a5b0e0656f0b41d16177a53a97851852611cd41ad6a7fc5656b83100e0f8963359729897577453a5d6ea3775d98536b247123ee892e09860a41
   languageName: node
   linkType: hard
 

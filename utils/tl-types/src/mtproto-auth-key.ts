@@ -1,8 +1,8 @@
 import { createHash }   from 'crypto'
 
-import { BinaryReader } from '@chats-system/tl-types'
+import { BinaryReader } from './binary.reader.js'
 
-export class AuthKey {
+export class MTProtoAuthKey {
   #hash: Buffer
 
   #id: bigint

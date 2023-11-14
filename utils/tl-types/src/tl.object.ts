@@ -1,8 +1,9 @@
 import type { TLSchemaParamParsed } from '@chats-system/tl-json-schema-parser'
 
+import { fromDateToBuffer }         from '@monstrs/buffer-utils'
+import { fromBigIntToSignedLittleBuffer }       from '@monstrs/buffer-utils'
+
 import { BinaryReader }             from './binary.reader.js'
-import { fromDateToBuffer }         from './buffer.utils.js'
-import { fromBigIntToBuffer }       from './buffer.utils.js'
 import { serializeBytes }           from './serialize.utils.js'
 
 export abstract class TLObject {
@@ -104,11 +105,11 @@ export abstract class TLObject {
         return int
       }
       case 'long':
-        return fromBigIntToBuffer(paramValue, 8)
+        return fromBigIntToSignedLittleBuffer(paramValue, 8)
       case 'int128':
-        return fromBigIntToBuffer(paramValue, 16)
+        return fromBigIntToSignedLittleBuffer(paramValue, 16)
       case 'int256':
-        return fromBigIntToBuffer(paramValue, 32)
+        return fromBigIntToSignedLittleBuffer(paramValue, 32)
       case 'double': {
         const double = Buffer.alloc(8)
 

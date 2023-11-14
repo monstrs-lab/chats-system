@@ -12,6 +12,8 @@ export class MTProtoEncryptedRawMessage {
   }
 
   static decode(payload: Buffer): MTProtoEncryptedRawMessage {
+    
+
     const messageId = payload.readBigUint64LE(8)
     const messageLength = payload.readUInt32LE(16)
     const messageData = payload.subarray(20, payload.length)

@@ -24,7 +24,7 @@
     "@cryptography/aes": "^0.1.1",
     "@faker-js/faker": "^8.1.0",
     "@jest/globals": "^29.7.0",
-    "@monstrs/buffer-utils": "^0.0.5",
+    "@monstrs/buffer-utils": "^0.0.6",
     "@monstrs/crypto-utils": "^0.0.2",
     "@monstrs/nestjs-connectrpc": "^0.0.3",
     "@monstrs/nestjs-logger": "^0.4.2",

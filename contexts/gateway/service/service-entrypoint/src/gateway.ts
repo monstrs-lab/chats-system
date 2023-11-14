@@ -23,16 +23,17 @@ import { ClientDHInnerData }            from '@chats-system/tl-to-typescript'
 import { DhGenOk }                      from '@chats-system/tl-to-typescript'
 import { BinaryReader }                 from '@chats-system/tl-types'
 import { MTProtoUnencryptedRawMessage } from '@chats-system/tl-types'
-import { MTProtoRawMessage }            from '@chats-system/tl-types'
+import { MTProtoRawMessage, MTProtoAuthKey, MTProtoAuthKeyManager }            from '@chats-system/tl-types'
 import { TLObject }                     from '@chats-system/tl-types'
 import { calculateNonceHash }           from '@chats-system/crypto'
 import { generateKeyDataFromNonce }     from '@chats-system/crypto'
 
-import { AuthKey }                      from './auth.key.js'
 import { MTProtoObfuscadetCodec }       from './codecs/index.js'
 import { key }                          from './key.js'
 import { dh2048P }                      from './key.js'
 import { dh2048G }                      from './key.js'
+
+type MTProtoConnection =  WebSocket & { codec: MTProtoObfuscadetCodec, authManager: MTProtoAuthKeyManager, newNonce: any }
 
 @WebSocketGateway({
   cors: {
@@ -40,10 +41,11 @@ import { dh2048G }                      from './key.js'
   },
 })
 export class EventsGateway implements OnGatewayConnection {
-  handleConnection(connection: WebSocket & { codec: MTProtoObfuscadetCodec; newNonce: any }) {
+  handleConnection(connection:MTProtoConnection) {
     connection.on('message', (message: Buffer) => {
       if (!connection.codec) {
         connection.codec = new MTProtoObfuscadetCodec(message)
+        connection.authManager = new MTProtoAuthKeyManager()
       } else {
         const rawMessage = connection.codec.receive(message)
 
@@ -64,7 +66,7 @@ export class EventsGateway implements OnGatewayConnection {
   }
 
   async onUnencryptedMessage(
-    connection: WebSocket & { codec: MTProtoObfuscadetCodec; newNonce: any },
+    connection:MTProtoConnection,
     message: TLObject,
     messageId: bigint
   ) {
@@ -80,7 +82,7 @@ export class EventsGateway implements OnGatewayConnection {
   }
 
   async onReqPqMulti(
-    connection: WebSocket & { codec: MTProtoObfuscadetCodec; newNonce: any },
+    connection:MTProtoConnection,
     message: ReqPqMulti,
     messageId: bigint
   ) {
@@ -110,7 +112,7 @@ export class EventsGateway implements OnGatewayConnection {
   }
 
   async onReqDHParams(
-    connection: WebSocket & { codec: MTProtoObfuscadetCodec; newNonce: any },
+    connection:MTProtoConnection,
     message: ReqDHParams,
     messageId: bigint
   ) {
@@ -177,7 +179,7 @@ export class EventsGateway implements OnGatewayConnection {
   }
 
   async onSetClientDHParams(
-    connection: WebSocket & { codec: MTProtoObfuscadetCodec; newNonce: any },
+    connection:MTProtoConnection,
     message: SetClientDHParams,
     messageId: bigint
   ) {
@@ -202,7 +204,9 @@ export class EventsGateway implements OnGatewayConnection {
       fromBufferToBigInt(dh2048P)
     )
 
-    const authKey = new AuthKey(fromBigIntToByteArrayBuffer(gab))
+    const authKey = new MTProtoAuthKey(fromBigIntToByteArrayBuffer(gab))
+
+    connection.authManager.setAuthKey(authKey.id, authKey)
 
     const dhGenOk = new DhGenOk(
       message.nonce,
