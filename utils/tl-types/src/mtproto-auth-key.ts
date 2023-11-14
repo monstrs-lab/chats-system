@@ -3,6 +3,8 @@ import { createHash }   from 'crypto'
 import { BinaryReader } from './binary.reader.js'
 
 export class MTProtoAuthKey {
+  #key: Buffer
+
   #hash: Buffer
 
   #id: bigint
@@ -10,6 +12,7 @@ export class MTProtoAuthKey {
   #auxHash: bigint
 
   constructor(value: Buffer) {
+    this.#key = value
     this.#hash = createHash('sha1').update(value).digest()
 
     const reader = new BinaryReader(this.#hash, new Map())
@@ -19,6 +22,10 @@ export class MTProtoAuthKey {
     reader.read(4)
 
     this.#id = reader.readLong(false)
+  }
+
+  get key(): Buffer {
+    return this.#key
   }
 
   get hash(): Buffer {

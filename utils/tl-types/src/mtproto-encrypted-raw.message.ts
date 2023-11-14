@@ -1,51 +1,40 @@
+import type { MTProtoRawMessageContext } from './mtproto-raw.message.js'
+
+import { IGE }                           from '@chats-system/crypto'
+
+import { MTProtoKeyPair, MTProtoKeyPairType }                from './mtproto-key-pair.js'
+
 export class MTProtoEncryptedRawMessage {
-  #messageId: bigint
-
-  #messageLength: number
-
   #messageData: Buffer
 
-  constructor(messageId: bigint, messageLength: number, messageData: Buffer) {
-    this.#messageId = messageId
-    this.#messageLength = messageLength
+  constructor(messageData: Buffer) {
     this.#messageData = messageData
   }
 
-  static decode(payload: Buffer): MTProtoEncryptedRawMessage {
-    
+  static decode(payload: Buffer, context: MTProtoRawMessageContext): MTProtoEncryptedRawMessage {
+    const authKeyId = payload.readBigUint64LE(0)
 
-    const messageId = payload.readBigUint64LE(8)
-    const messageLength = payload.readUInt32LE(16)
-    const messageData = payload.subarray(20, payload.length)
+    const authKey = context.authKeyManager.getAuthKey(authKeyId)
 
-    if (messageId === BigInt(0)) {
-      throw new Error('Bad message id')
+    if (!authKey) {
+      //TODO: move to errors
+      throw new Error('Auth key not found')
     }
 
-    if (messageLength <= 0) {
-      throw new Error('Bad message length')
-    }
+    const keyPair = MTProtoKeyPair.fromAuthAndMsgKey(authKey, payload.subarray(8, 24), MTProtoKeyPairType.CLIENT)
 
-    return new MTProtoEncryptedRawMessage(messageId, messageLength, messageData)
+    const messageData = new IGE(keyPair.key, keyPair.iv).decrypt(
+      payload.subarray(24, payload.length)
+    )
+
+    return new MTProtoEncryptedRawMessage(messageData)
   }
 
   encode(): Buffer {
-    const authKeyId = Buffer.alloc(8)
-    const messageId = Buffer.alloc(8)
-    const messageLength = Buffer.alloc(4)
-
-    authKeyId.writeBigUint64LE(BigInt(0))
-    messageId.writeBigUInt64LE(this.#messageId)
-    messageLength.writeUInt32LE(this.#messageLength)
-
-    return Buffer.concat([authKeyId, messageId, messageLength, this.#messageData])
+    throw new Error('TODO')
   }
 
   getMessageData(): Buffer {
     return this.#messageData
-  }
-
-  getMessageId(): bigint {
-    return this.#messageId
   }
 }

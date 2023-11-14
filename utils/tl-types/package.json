@@ -10,6 +10,7 @@
   },
   "main": "src/index.ts",
   "dependencies": {
+    "@chats-system/crypto": "workspace:0.0.1",
     "@monstrs/buffer-utils": "^0.0.6",
     "big-integer": "^1.6.51"
   },

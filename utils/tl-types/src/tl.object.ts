@@ -1,10 +1,10 @@
-import type { TLSchemaParamParsed } from '@chats-system/tl-json-schema-parser'
+import type { TLSchemaParamParsed }       from '@chats-system/tl-json-schema-parser'
 
-import { fromDateToBuffer }         from '@monstrs/buffer-utils'
-import { fromBigIntToSignedLittleBuffer }       from '@monstrs/buffer-utils'
+import { fromDateToBuffer }               from '@monstrs/buffer-utils'
+import { fromBigIntToSignedLittleBuffer } from '@monstrs/buffer-utils'
 
-import { BinaryReader }             from './binary.reader.js'
-import { serializeBytes }           from './serialize.utils.js'
+import { BinaryReader }                   from './binary.reader.js'
+import { serializeBytes }                 from './serialize.utils.js'
 
 export abstract class TLObject {
   static CONSTRUCTOR_ID: number

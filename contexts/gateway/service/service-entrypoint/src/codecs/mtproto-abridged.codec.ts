@@ -1,8 +1,11 @@
-import { MTProtoRawMessage }  from '@chats-system/tl-types'
-import { fromBigIntToBuffer } from '@monstrs/buffer-utils'
+import { fromBigIntToBuffer }                          from '@monstrs/buffer-utils'
+
+import { MTProtoRawMessage }                           from '@chats-system/tl-types'
+
+import { MTProtoRawMessageContext } from '@chats-system/tl-types'
 
 export class MTProtoAbridgedCodec {
-  receive(payload: Buffer): MTProtoRawMessage {
+  receive(payload: Buffer, context: MTProtoRawMessageContext): MTProtoRawMessage {
     let length = payload[0]
 
     if (length >= 127) {
@@ -11,7 +14,7 @@ export class MTProtoAbridgedCodec {
 
     const data = payload.subarray(1, (length << 2) + 1)
 
-    return MTProtoRawMessage.decode(data)
+    return MTProtoRawMessage.decode(data, context)
   }
 
   send(data: Buffer): Buffer {

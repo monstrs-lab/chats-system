@@ -1,23 +1,32 @@
+import { MTProtoAuthKeyManager }        from './mtproto-auth-key.manager.js'
+import { MTProtoEncryptedRawMessage }   from './mtproto-encrypted-raw.message.js'
 import { MTProtoUnencryptedRawMessage } from './mtproto-unencrypted-raw.message.js'
+
+export interface MTProtoRawMessageContext {
+  authKeyManager: MTProtoAuthKeyManager
+}
 
 export class MTProtoRawMessage {
   #authKeyId: bigint
 
-  #message: MTProtoUnencryptedRawMessage
+  #message: MTProtoUnencryptedRawMessage | MTProtoEncryptedRawMessage
 
-  constructor(authKeyId: bigint, message: MTProtoUnencryptedRawMessage) {
+  constructor(
+    authKeyId: bigint,
+    message: MTProtoUnencryptedRawMessage | MTProtoEncryptedRawMessage
+  ) {
     this.#authKeyId = authKeyId
     this.#message = message
   }
 
-  static decode(payload: Buffer): MTProtoRawMessage {
+  static decode(payload: Buffer, context: MTProtoRawMessageContext): MTProtoRawMessage {
     const authKeyId = payload.readBigUint64LE(0)
 
     if (authKeyId === BigInt(0)) {
       return new MTProtoRawMessage(authKeyId, MTProtoUnencryptedRawMessage.decode(payload))
     }
 
-    throw new Error('TODO: encrypted raw message')
+    return new MTProtoRawMessage(authKeyId, MTProtoEncryptedRawMessage.decode(payload, context))
   }
 
   encode(): Buffer {
@@ -28,7 +37,7 @@ export class MTProtoRawMessage {
     return this.#authKeyId
   }
 
-  getMessage(): MTProtoUnencryptedRawMessage {
+  getMessage(): MTProtoUnencryptedRawMessage | MTProtoEncryptedRawMessage {
     return this.#message
   }
 }

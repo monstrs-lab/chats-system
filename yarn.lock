@@ -1064,6 +1064,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@chats-system/tl-types@workspace:utils/tl-types"
   dependencies:
+    "@chats-system/crypto": "workspace:0.0.1"
     "@chats-system/tl-json-schema-parser": "workspace:0.0.1"
     "@monstrs/buffer-utils": "npm:^0.0.6"
     big-integer: "npm:^1.6.51"
