@@ -1,5 +1,5 @@
 {
-  "name": "@chats-system/tl-types",
+  "name": "@chats-system/crypto",
   "version": "0.0.1",
   "private": true,
   "license": "MIT",
@@ -10,10 +10,7 @@
   },
   "main": "src/index.ts",
   "dependencies": {
-    "@monstrs/buffer-utils": "^0.0.5",
-    "big-integer": "^1.6.51"
-  },
-  "devDependencies": {
-    "@chats-system/tl-json-schema-parser": "workspace:0.0.1"
+    "@cryptography/aes": "^0.1.1",
+    "@monstrs/buffer-utils": "^0.0.5"
   }
 }

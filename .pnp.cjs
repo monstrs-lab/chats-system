@@ -46,6 +46,10 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:contexts/session/service/service-entrypoint"\
     },\
     {\
+      "name": "@chats-system/crypto",\
+      "reference": "workspace:shared/crypto"\
+    },\
+    {\
       "name": "@chats-system/tl-json-schema",\
       "reference": "workspace:utils/tl-json-schema"\
     },\
@@ -69,6 +73,7 @@ const RAW_RUNTIME_STATE =
     ["@chats-system/auth-rpc", ["virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#workspace:contexts/auth/rpc/auth-rpc", "workspace:contexts/auth/rpc/auth-rpc"]],\
     ["@chats-system/auth-service-entrypoint", ["workspace:contexts/auth/service/service-entrypoint"]],\
     ["@chats-system/core-rpc", ["virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#workspace:contexts/core/rpc/core-rpc", "workspace:contexts/core/rpc/core-rpc"]],\
+    ["@chats-system/crypto", ["workspace:shared/crypto"]],\
     ["@chats-system/gateway-service-entrypoint", ["workspace:contexts/gateway/service/service-entrypoint"]],\
     ["@chats-system/session-infrastructure-module", ["virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#workspace:contexts/session/service/infrastructure-module", "virtual:a45b73e4ddea4b585aef9acec377f5481565662c46b28915812d889a1a3c2ccded76a762511eb0b2869e5eaa8546d900a1453e44611b35adc9d8fee701e387ae#workspace:contexts/session/service/infrastructure-module", "workspace:contexts/session/service/infrastructure-module"]],\
     ["@chats-system/session-rpc", ["virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#workspace:contexts/session/rpc/session-rpc", "workspace:contexts/session/rpc/session-rpc"]],\
@@ -1483,6 +1488,17 @@ const RAW_RUNTIME_STATE =
         "linkType": "SOFT"\
       }]\
     ]],\
+    ["@chats-system/crypto", [\
+      ["workspace:shared/crypto", {\
+        "packageLocation": "./shared/crypto/",\
+        "packageDependencies": [\
+          ["@chats-system/crypto", "workspace:shared/crypto"],\
+          ["@cryptography/aes", "npm:0.1.1"],\
+          ["@monstrs/buffer-utils", "npm:0.0.5"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
     ["@chats-system/gateway-service-entrypoint", [\
       ["workspace:contexts/gateway/service/service-entrypoint", {\
         "packageLocation": "./contexts/gateway/service/service-entrypoint/",\
@@ -1490,6 +1506,7 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/gateway-service-entrypoint", "workspace:contexts/gateway/service/service-entrypoint"],\
           ["@bufbuild/protobuf", "npm:1.4.1"],\
           ["@chats-system/core-rpc", "virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#workspace:contexts/core/rpc/core-rpc"],\
+          ["@chats-system/crypto", "workspace:shared/crypto"],\
           ["@chats-system/session-infrastructure-module", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#workspace:contexts/session/service/infrastructure-module"],\
           ["@chats-system/session-rpc", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#workspace:contexts/session/rpc/session-rpc"],\
           ["@chats-system/tl-to-typescript", "workspace:utils/tl-to-typescript"],\
@@ -1499,7 +1516,8 @@ const RAW_RUNTIME_STATE =
           ["@cryptography/aes", "npm:0.1.1"],\
           ["@faker-js/faker", "npm:8.2.0"],\
           ["@jest/globals", "npm:29.7.0"],\
-          ["@monstrs/buffer-utils", "npm:0.0.2"],\
+          ["@monstrs/buffer-utils", "npm:0.0.5"],\
+          ["@monstrs/crypto-utils", "npm:0.0.2"],\
           ["@monstrs/nestjs-connectrpc", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#npm:0.0.3"],\
           ["@monstrs/nestjs-logger", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#npm:0.4.2"],\
           ["@monstrs/nestjs-microservices-registry", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#npm:0.1.0"],\
@@ -1861,7 +1879,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/tl-types", "workspace:utils/tl-types"],\
           ["@chats-system/tl-json-schema-parser", "workspace:utils/tl-json-schema-parser"],\
-          ["@monstrs/buffer-utils", "npm:0.0.2"],\
+          ["@monstrs/buffer-utils", "npm:0.0.5"],\
           ["big-integer", "npm:1.6.51"]\
         ],\
         "linkType": "SOFT"\
@@ -3441,11 +3459,21 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["@monstrs/buffer-utils", [\
+    ["@monstrs/bigint-utils", [\
       ["npm:0.0.2", {\
-        "packageLocation": "./.yarn/cache/@monstrs-buffer-utils-npm-0.0.2-39bbe75ab8-c58bbbc806.zip/node_modules/@monstrs/buffer-utils/",\
+        "packageLocation": "./.yarn/cache/@monstrs-bigint-utils-npm-0.0.2-a455020e5b-484837a22a.zip/node_modules/@monstrs/bigint-utils/",\
         "packageDependencies": [\
-          ["@monstrs/buffer-utils", "npm:0.0.2"]\
+          ["@monstrs/bigint-utils", "npm:0.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@monstrs/buffer-utils", [\
+      ["npm:0.0.5", {\
+        "packageLocation": "./.yarn/cache/@monstrs-buffer-utils-npm-0.0.5-1ee762eb09-a1d0f954e0.zip/node_modules/@monstrs/buffer-utils/",\
+        "packageDependencies": [\
+          ["@monstrs/buffer-utils", "npm:0.0.5"],\
+          ["@monstrs/bigint-utils", "npm:0.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3542,6 +3570,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/@monstrs-core-errors-npm-0.0.2-28b08a04fc-a1fb9b8388.zip/node_modules/@monstrs/core-errors/",\
         "packageDependencies": [\
           ["@monstrs/core-errors", "npm:0.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@monstrs/crypto-utils", [\
+      ["npm:0.0.2", {\
+        "packageLocation": "./.yarn/cache/@monstrs-crypto-utils-npm-0.0.2-0a32aa28ce-439d057f29.zip/node_modules/@monstrs/crypto-utils/",\
+        "packageDependencies": [\
+          ["@monstrs/crypto-utils", "npm:0.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\

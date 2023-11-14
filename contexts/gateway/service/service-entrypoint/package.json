@@ -14,6 +14,7 @@
   "devDependencies": {
     "@bufbuild/protobuf": "^1.3.1",
     "@chats-system/core-rpc": "workspace:0.0.1",
+    "@chats-system/crypto": "workspace:0.0.1",
     "@chats-system/session-infrastructure-module": "workspace:0.0.1",
     "@chats-system/session-rpc": "workspace:0.0.1",
     "@chats-system/tl-to-typescript": "workspace:0.0.1",
@@ -23,7 +24,8 @@
     "@cryptography/aes": "^0.1.1",
     "@faker-js/faker": "^8.1.0",
     "@jest/globals": "^29.7.0",
-    "@monstrs/buffer-utils": "^0.0.2",
+    "@monstrs/buffer-utils": "^0.0.5",
+    "@monstrs/crypto-utils": "^0.0.2",
     "@monstrs/nestjs-connectrpc": "^0.0.3",
     "@monstrs/nestjs-logger": "^0.4.2",
     "@monstrs/nestjs-microservices-registry": "^0.1.0",

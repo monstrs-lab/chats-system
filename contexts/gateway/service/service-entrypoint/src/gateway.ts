@@ -1,28 +1,38 @@
 import { randomBytes }                  from 'node:crypto'
+import { createHash }                   from 'node:crypto'
 
 import { WebSocketGateway }             from '@nestjs/websockets'
 import { OnGatewayConnection }          from '@nestjs/websockets'
+import { fromBigIntToByteArrayBuffer }  from '@monstrs/buffer-utils'
 import { fromBufferToBigInt }           from '@monstrs/buffer-utils'
+import { bufferXor }                    from '@monstrs/buffer-utils'
+import { fromBigIntToBuffer }           from '@monstrs/buffer-utils'
+import { modExp }                       from '@monstrs/crypto-utils'
 import { WebSocket }                    from 'ws'
-import bigInt            from 'big-integer'
 
+import { IGE }                          from '@chats-system/crypto'
 import { SchemaRegistry }               from '@chats-system/tl-to-typescript'
 import { ReqPqMulti }                   from '@chats-system/tl-to-typescript'
 import { ReqDHParams }                  from '@chats-system/tl-to-typescript'
-import { ResPQ, ServerDHInnerData, PQInnerData, ServerDHParamsOk, SetClientDHParams, ClientDHInnerData , DhGenOk}                        from '@chats-system/tl-to-typescript'
+import { ResPQ }                        from '@chats-system/tl-to-typescript'
+import { ServerDHInnerData }            from '@chats-system/tl-to-typescript'
+import { PQInnerData }                  from '@chats-system/tl-to-typescript'
+import { ServerDHParamsOk }             from '@chats-system/tl-to-typescript'
+import { SetClientDHParams }            from '@chats-system/tl-to-typescript'
+import { ClientDHInnerData }            from '@chats-system/tl-to-typescript'
+import { DhGenOk }                      from '@chats-system/tl-to-typescript'
 import { BinaryReader }                 from '@chats-system/tl-types'
 import { MTProtoUnencryptedRawMessage } from '@chats-system/tl-types'
 import { MTProtoRawMessage }            from '@chats-system/tl-types'
 import { TLObject }                     from '@chats-system/tl-types'
+import { calculateNonceHash }           from '@chats-system/crypto'
+import { generateKeyDataFromNonce }     from '@chats-system/crypto'
 
+import { AuthKey }                      from './auth.key.js'
 import { MTProtoObfuscadetCodec }       from './codecs/index.js'
-import { readBigIntFromBuffer, generateKeyDataFromNonce } from './dhparams.js'
-import { modExp } from './dhparams.js'
-import { readBufferFromBigInt } from './dhparams.js'
-import { sha256 } from './dhparams.js'
-import { bufferXor } from './dhparams.js'
-import { IGE, sha1, AuthKey, getByteArray } from './dhparams.js'
-import { key, dh2048P, dh2048G }                          from './key.js'
+import { key }                          from './key.js'
+import { dh2048P }                      from './key.js'
+import { dh2048G }                      from './key.js'
 
 @WebSocketGateway({
   cors: {
@@ -30,7 +40,7 @@ import { key, dh2048P, dh2048G }                          from './key.js'
   },
 })
 export class EventsGateway implements OnGatewayConnection {
-  handleConnection(connection: WebSocket & { codec: MTProtoObfuscadetCodec, newNonce: any }) {
+  handleConnection(connection: WebSocket & { codec: MTProtoObfuscadetCodec; newNonce: any }) {
     connection.on('message', (message: Buffer) => {
       if (!connection.codec) {
         connection.codec = new MTProtoObfuscadetCodec(message)
@@ -54,7 +64,7 @@ export class EventsGateway implements OnGatewayConnection {
   }
 
   async onUnencryptedMessage(
-    connection: WebSocket & { codec: MTProtoObfuscadetCodec, newNonce: any  },
+    connection: WebSocket & { codec: MTProtoObfuscadetCodec; newNonce: any },
     message: TLObject,
     messageId: bigint
   ) {
@@ -70,7 +80,7 @@ export class EventsGateway implements OnGatewayConnection {
   }
 
   async onReqPqMulti(
-    connection: WebSocket & { codec: MTProtoObfuscadetCodec, newNonce: any },
+    connection: WebSocket & { codec: MTProtoObfuscadetCodec; newNonce: any },
     message: ReqPqMulti,
     messageId: bigint
   ) {
@@ -100,37 +110,39 @@ export class EventsGateway implements OnGatewayConnection {
   }
 
   async onReqDHParams(
-    connection: WebSocket & { codec: MTProtoObfuscadetCodec, newNonce: any },
+    connection: WebSocket & { codec: MTProtoObfuscadetCodec; newNonce: any },
     message: ReqDHParams,
     messageId: bigint
   ) {
-    const encryptedDataBuffer = readBigIntFromBuffer(message.encrypted_data, false)
+    const encryptedDataBuffer = fromBufferToBigInt(message.encrypted_data, false)
     const keyAesEncryptedInt = modExp(encryptedDataBuffer, key.d, key.n)
-    const keyAesEncrypted = readBufferFromBigInt(keyAesEncryptedInt, 256, false)
+    const keyAesEncrypted = fromBigIntToBuffer(keyAesEncryptedInt, 256, false)
     const tempKeyXor = keyAesEncrypted.subarray(0, 32) // key
     const aesEncrypted = keyAesEncrypted.subarray(32, keyAesEncrypted.length)
-    const aesEncryptedHash = sha256(aesEncrypted) // hash
+    const aesEncryptedHash = createHash('sha256').update(aesEncrypted).digest()
     const tempKey = bufferXor(tempKeyXor, aesEncryptedHash)
 
     const ige = new IGE(tempKey, Buffer.alloc(32))
 
-    const dataWithHash = ige.decryptIge(aesEncrypted)
+    const dataWithHash = ige.decrypt(aesEncrypted)
 
     const dataPadReversed = dataWithHash.subarray(0, dataWithHash.length - 32)
-    //const shaDigestKeyWithData = dataWithHash.subarray(dataWithHash.length - 32, dataWithHash.length)
     const dataWithPadding = Buffer.from(dataPadReversed).reverse()
 
-    const request: PQInnerData = new BinaryReader(dataWithPadding, SchemaRegistry).readObject() as PQInnerData
+    const request: PQInnerData = new BinaryReader(
+      dataWithPadding,
+      SchemaRegistry
+    ).readObject() as PQInnerData
 
-    const a = readBigIntFromBuffer(Buffer.from(randomBytes(16)), false, true);
-    const gA = modExp(readBigIntFromBuffer(dh2048G), a, readBigIntFromBuffer(dh2048P))
+    const a = fromBufferToBigInt(Buffer.from(randomBytes(16)), false, true)
+    const gA = modExp(fromBufferToBigInt(dh2048G), a, fromBufferToBigInt(dh2048P))
 
     const serverDHInnerData = new ServerDHInnerData(
       message.nonce,
       message.server_nonce,
       dh2048G[0],
       dh2048P,
-      readBufferFromBigInt(gA, 256, false),
+      fromBigIntToBuffer(gA, 256, false),
       Math.floor(new Date().getTime() / 1000)
     )
 
@@ -138,15 +150,15 @@ export class EventsGateway implements OnGatewayConnection {
 
     const { key: igekey, iv } = await generateKeyDataFromNonce(
       message.server_nonce,
-      bigInt(request.new_nonce),
+      request.new_nonce
     )
 
-    const igeEncode = new IGE(igekey, iv);
+    const igeEncode = new IGE(igekey, iv)
 
     const pok = new ServerDHParamsOk(
       message.nonce,
       message.server_nonce,
-      igeEncode.encryptIge(Buffer.concat([await sha1(bytes), bytes]))
+      igeEncode.encrypt(Buffer.concat([createHash('sha1').update(bytes).digest(), bytes]))
     )
 
     const messageData = pok.getBytes()
@@ -160,41 +172,42 @@ export class EventsGateway implements OnGatewayConnection {
       )
     )
 
-    connection.newNonce = request.new_nonce;
-    (connection as any).a = a
+    connection.newNonce = request.new_nonce
+    ;(connection as any).a = a
   }
 
   async onSetClientDHParams(
-    connection: WebSocket & { codec: MTProtoObfuscadetCodec, newNonce: any },
+    connection: WebSocket & { codec: MTProtoObfuscadetCodec; newNonce: any },
     message: SetClientDHParams,
     messageId: bigint
   ) {
     const { key: igekey, iv } = await generateKeyDataFromNonce(
       message.server_nonce,
-      bigInt(connection.newNonce),
+      connection.newNonce
     )
 
-    const igeEncode = new IGE(igekey, iv);
-    const clientDhEncrypted = igeEncode.decryptIge(message.encrypted_data)
+    const igeEncode = new IGE(igekey, iv)
+    const clientDhEncrypted = igeEncode.decrypt(message.encrypted_data)
     const clientDh = clientDhEncrypted.subarray(20, clientDhEncrypted.length)
 
     const innerData = new BinaryReader(clientDh, SchemaRegistry).readObject() as ClientDHInnerData
     console.log(innerData)
 
-    const a = readBigIntFromBuffer(Buffer.from(randomBytes(16)), false, true);
-    const gA = modExp(readBigIntFromBuffer(dh2048G), a, readBigIntFromBuffer(dh2048P))
+    const a = fromBufferToBigInt(Buffer.from(randomBytes(16)), false, true)
+    const gA = modExp(fromBufferToBigInt(dh2048G), a, fromBufferToBigInt(dh2048P))
 
-    const gab = modExp(readBigIntFromBuffer(innerData.g_b), (connection as any).a, readBigIntFromBuffer(dh2048P));
+    const gab = modExp(
+      fromBufferToBigInt(innerData.g_b),
+      (connection as any).a,
+      fromBufferToBigInt(dh2048P)
+    )
 
-    // @ts-expect-error
-    const authKey = new AuthKey();
-
-    await authKey.setKey(getByteArray(gab));
+    const authKey = new AuthKey(fromBigIntToByteArrayBuffer(gab))
 
     const dhGenOk = new DhGenOk(
       message.nonce,
       message.server_nonce,
-      BigInt((await authKey.calcNewNonceHash(connection.newNonce, 1)).toString())
+      calculateNonceHash(connection.newNonce, authKey.auxHash, 1)
     )
 
     const messageData = dhGenOk.getBytes()

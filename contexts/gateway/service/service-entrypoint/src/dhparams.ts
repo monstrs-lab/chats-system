@@ -1,9 +1,11 @@
 // @ts-nocheck
-import { createHash, randomBytes }    from 'node:crypto'
+import { createHash }    from 'node:crypto'
+import { randomBytes }   from 'node:crypto'
 
 import { IGE as AESIGE } from '@cryptography/aes'
 import BigInt            from 'big-integer'
-import { BinaryReader }                 from '@chats-system/tl-types'
+
+import { BinaryReader }  from '@chats-system/tl-types'
 
 export function modExp(a, b, n) {
   a = a.remainder(n)
@@ -109,7 +111,7 @@ export function convertToLittle(buf) {
 }
 
 function generateRandomBytes(count) {
-  return Buffer.from(randomBytes(count));
+  return Buffer.from(randomBytes(count))
 }
 
 export class IGE {
@@ -122,113 +124,120 @@ export class IGE {
   }
 
   encryptIge(plainText) {
-    const padding = plainText.length % 16;
+    const padding = plainText.length % 16
     if (padding) {
-        plainText = Buffer.concat([plainText, generateRandomBytes(16 - padding)]);
+      plainText = Buffer.concat([plainText, generateRandomBytes(16 - padding)])
     }
 
-    return convertToLittle(this.ige.encrypt(plainText));
-}
+    return convertToLittle(this.ige.encrypt(plainText))
+  }
 }
 
 export function sha1(data) {
-  const shaSum = createHash('sha1');
-  shaSum.update(data);
-  return shaSum.digest();
+  const shaSum = createHash('sha1')
+  shaSum.update(data)
+  return shaSum.digest()
 }
 
 export function toSignedLittleBuffer(big, number = 8) {
-  const bigNumber = BigInt(big);
-  const byteArray = [];
+  const bigNumber = BigInt(big)
+  const byteArray = []
   for (let i = 0; i < number; i++) {
-      byteArray[i] = bigNumber.shiftRight(8 * i)
-          .and(255);
+    byteArray[i] = bigNumber.shiftRight(8 * i).and(255)
   }
-  return Buffer.from(byteArray);
+  return Buffer.from(byteArray)
 }
 
 export async function generateKeyDataFromNonce(serverNonce, newNonce) {
-  serverNonce = toSignedLittleBuffer(serverNonce, 16);
-  newNonce = toSignedLittleBuffer(newNonce, 32);
+  serverNonce = toSignedLittleBuffer(serverNonce, 16)
+  newNonce = toSignedLittleBuffer(newNonce, 32)
   const [hash1, hash2, hash3] = await Promise.all([
-      sha1(Buffer.concat([newNonce, serverNonce])),
-      sha1(Buffer.concat([serverNonce, newNonce])),
-      sha1(Buffer.concat([newNonce, newNonce])),
-  ]);
-  const keyBuffer = Buffer.concat([hash1, hash2.slice(0, 12)]);
-  const ivBuffer = Buffer.concat([hash2.slice(12, 20), hash3, newNonce.slice(0, 4)]);
+    sha1(Buffer.concat([newNonce, serverNonce])),
+    sha1(Buffer.concat([serverNonce, newNonce])),
+    sha1(Buffer.concat([newNonce, newNonce])),
+  ])
+  const keyBuffer = Buffer.concat([hash1, hash2.slice(0, 12)])
+  const ivBuffer = Buffer.concat([hash2.slice(12, 20), hash3, newNonce.slice(0, 4)])
   return {
-      key: keyBuffer,
-      iv: ivBuffer,
-  };
+    key: keyBuffer,
+    iv: ivBuffer,
+  }
 }
 
 export class AuthKey {
   constructor(value, hash) {
-      if (!hash || !value) {
-          return;
-      }
-      this._key = value;
-      this._hash = hash;
-      const reader = new BinaryReader(hash);
-      this.auxHash = reader.readLong(false);
-      reader.read(4);
-      this.keyId = reader.readLong(false);
+    if (!hash || !value) {
+      return
+    }
+    this._key = value
+    this._hash = hash
+    const reader = new BinaryReader(hash)
+    this.auxHash = reader.readLong(false)
+    reader.read(4)
+    this.keyId = reader.readLong(false)
   }
 
   async setKey(value) {
-      if (!value) {
-          this._key = undefined;
-          this.auxHash = undefined;
-          this.keyId = undefined;
-          this._hash = undefined;
-          return;
-      }
-      if (value instanceof AuthKey) {
-          this._key = value._key;
-          this.auxHash = value.auxHash;
-          this.keyId = value.keyId;
-          this._hash = value._hash;
-          return;
-      }
-      this._key = value;
-      this._hash = await sha1(this._key);
-      const reader = new BinaryReader(this._hash);
-      this.auxHash = reader.readLong(false);
-      reader.read(4);
-      this.keyId = reader.readLong(false);
+    if (!value) {
+      this._key = undefined
+      this.auxHash = undefined
+      this.keyId = undefined
+      this._hash = undefined
+      return
+    }
+    if (value instanceof AuthKey) {
+      this._key = value._key
+      this.auxHash = value.auxHash
+      this.keyId = value.keyId
+      this._hash = value._hash
+      return
+    }
+    this._key = value
+    this._hash = await sha1(this._key)
+    const reader = new BinaryReader(this._hash)
+    this.auxHash = reader.readLong(false)
+    reader.read(4)
+    this.keyId = reader.readLong(false)
   }
 
   async waitForKey() {
-      while (!this.keyId) {
-          await sleep(20);
-      }
+    while (!this.keyId) {
+      await sleep(20)
+    }
   }
 
   getKey() {
-      return this._key;
+    return this._key
   }
 
   async calcNewNonceHash(newNonce, number) {
-      newNonce = toSignedLittleBuffer(newNonce, 32);
-      const n = Buffer.alloc(1);
-      n.writeUInt8(number, 0);
-      const data = Buffer.concat([newNonce,
-          Buffer.concat([n, readBufferFromBigInt(this.auxHash, 8, true)])]);
+    newNonce = toSignedLittleBuffer(newNonce, 32)
+    const n = Buffer.alloc(1)
+    n.writeUInt8(number, 0)
+    const data = Buffer.concat([
+      newNonce,
+      Buffer.concat([n, readBufferFromBigInt(this.auxHash, 8, true)]),
+    ])
 
-      // Calculates the message key from the given data
-      const shaData = (await sha1(data)).slice(4, 20);
-      return readBigIntFromBuffer(shaData, true, true);
+    // Calculates the message key from the given data
+    const shaData = (await sha1(data)).slice(4, 20)
+
+    return readBigIntFromBuffer(shaData, true, true)
   }
 
   equals(other) {
-      return other instanceof this.constructor && this._key && other.getKey() && other.getKey()
-          .equals(this._key);
+    return (
+      other instanceof this.constructor &&
+      this._key &&
+      other.getKey() &&
+      other.getKey().equals(this._key)
+    )
   }
 }
 
+// fromBigIntToByteArrayBuffer
 export function getByteArray(integer, signed = false) {
-  const bits = integer.toString(2).length;
-  const byteLength = Math.floor((bits + 8 - 1) / 8);
-  return readBufferFromBigInt(BigInt(integer), byteLength, false, signed);
+  const bits = integer.toString(2).length
+  const byteLength = Math.floor((bits + 8 - 1) / 8)
+  return readBufferFromBigInt(BigInt(integer), byteLength, false, signed)
 }

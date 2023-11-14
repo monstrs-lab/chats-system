@@ -1,6 +1,6 @@
-import { randomBytes }             from 'crypto'
-import { createHash } from 'crypto'
-import bigInt                      from 'big-integer'
+import { randomBytes } from 'crypto'
+import { createHash }  from 'crypto'
+import bigInt          from 'big-integer'
 
 export const SERVER_KEYS = [
   {
