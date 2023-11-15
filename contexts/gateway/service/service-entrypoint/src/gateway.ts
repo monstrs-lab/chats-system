@@ -129,7 +129,7 @@ export class EventsGateway implements OnGatewayConnection {
   }
 
   async onReqDHParams(connection: MTProtoConnection, message: ReqDHParams, messageId: bigint) {
-    const encryptedDataBuffer = fromBufferToBigInt(message.encrypted_data, false)
+    const encryptedDataBuffer = fromBufferToBigInt(message.encryptedData, false)
     const keyAesEncryptedInt = modExp(encryptedDataBuffer, key.d, key.n)
     const keyAesEncrypted = fromBigIntToBuffer(keyAesEncryptedInt, 256, false)
     const tempKeyXor = keyAesEncrypted.subarray(0, 32) // key
@@ -154,7 +154,7 @@ export class EventsGateway implements OnGatewayConnection {
 
     const serverDHInnerData = new ServerDHInnerData(
       message.nonce,
-      message.server_nonce,
+      message.serverNonce,
       dh2048G[0],
       dh2048P,
       fromBigIntToBuffer(gA, 256, false),
@@ -164,15 +164,15 @@ export class EventsGateway implements OnGatewayConnection {
     const bytes = serverDHInnerData.getBytes()
 
     const { key: igekey, iv } = await generateKeyDataFromNonce(
-      message.server_nonce,
-      request.new_nonce
+      message.serverNonce,
+      request.newNonce
     )
 
     const igeEncode = new IGE(igekey, iv)
 
     const pok = new ServerDHParamsOk(
       message.nonce,
-      message.server_nonce,
+      message.serverNonce,
       igeEncode.encrypt(Buffer.concat([createHash('sha1').update(bytes).digest(), bytes]))
     )
 
@@ -187,7 +187,7 @@ export class EventsGateway implements OnGatewayConnection {
       )
     )
 
-    connection.newNonce = request.new_nonce
+    connection.newNonce = request.newNonce
     ;(connection as any).a = a
   }
 
@@ -197,12 +197,12 @@ export class EventsGateway implements OnGatewayConnection {
     messageId: bigint
   ) {
     const { key: igekey, iv } = await generateKeyDataFromNonce(
-      message.server_nonce,
+      message.serverNonce,
       connection.newNonce
     )
 
     const igeEncode = new IGE(igekey, iv)
-    const clientDhEncrypted = igeEncode.decrypt(message.encrypted_data)
+    const clientDhEncrypted = igeEncode.decrypt(message.encryptedData)
     const clientDh = clientDhEncrypted.subarray(20, clientDhEncrypted.length)
 
     const innerData = new BinaryReader(clientDh, SchemaRegistry).readObject() as ClientDHInnerData
@@ -212,7 +212,7 @@ export class EventsGateway implements OnGatewayConnection {
     const gA = modExp(fromBufferToBigInt(dh2048G), a, fromBufferToBigInt(dh2048P))
 
     const gab = modExp(
-      fromBufferToBigInt(innerData.g_b),
+      fromBufferToBigInt(innerData.gB),
       (connection as any).a,
       fromBufferToBigInt(dh2048P)
     )
@@ -223,7 +223,7 @@ export class EventsGateway implements OnGatewayConnection {
 
     const dhGenOk = new DhGenOk(
       message.nonce,
-      message.server_nonce,
+      message.serverNonce,
       calculateNonceHash(connection.newNonce, authKey.auxHash, 1)
     )
 

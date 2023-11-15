@@ -1068,6 +1068,7 @@ __metadata:
     "@chats-system/tl-json-schema-parser": "workspace:0.0.1"
     "@monstrs/buffer-utils": "npm:^0.0.6"
     big-integer: "npm:^1.6.51"
+    camelcase: "npm:^8.0.0"
   languageName: unknown
   linkType: soft
 

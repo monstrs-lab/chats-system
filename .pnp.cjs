@@ -1881,7 +1881,8 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/crypto", "workspace:shared/crypto"],\
           ["@chats-system/tl-json-schema-parser", "workspace:utils/tl-json-schema-parser"],\
           ["@monstrs/buffer-utils", "npm:0.0.6"],\
-          ["big-integer", "npm:1.6.51"]\
+          ["big-integer", "npm:1.6.51"],\
+          ["camelcase", "npm:8.0.0"]\
         ],\
         "linkType": "SOFT"\
       }]\

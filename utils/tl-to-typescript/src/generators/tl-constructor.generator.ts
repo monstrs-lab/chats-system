@@ -70,7 +70,10 @@ export class TLConstructorGenerator extends TLObjectGenerator {
         parameters: schema.params.map((param) => ({
           isReadonly: true,
           scope: Scope.Public,
-          name: param.name,
+          name: camelcase(param.name, {
+            pascalCase: false,
+            preserveConsecutiveUppercase: true,
+          }),
           type: this.getTypeForParam(sourceFile, param),
         })),
       })

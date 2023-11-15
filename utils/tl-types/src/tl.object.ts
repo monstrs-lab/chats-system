@@ -2,6 +2,7 @@ import type { TLSchemaParamParsed }       from '@chats-system/tl-json-schema-par
 
 import { fromDateToBuffer }               from '@monstrs/buffer-utils'
 import { fromBigIntToSignedLittleBuffer } from '@monstrs/buffer-utils'
+import camelcase from 'camelcase'
 
 import { BinaryReader }                   from './binary.reader.js'
 import { serializeBytes }                 from './serialize.utils.js'
@@ -91,8 +92,13 @@ export abstract class TLObject {
   }
 
   getParamValue(param: TLSchemaParamParsed): any {
+    const name = camelcase(param.name, {
+      pascalCase: false,
+      preserveConsecutiveUppercase: true,
+    })
+
     // @ts-expect-error
-    return this[param.name]
+    return this[name]
   }
 
   getParamValueBytes(paramValue: any, type: string) {
