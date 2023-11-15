@@ -1,39 +1,39 @@
-import { randomBytes }                                              from 'node:crypto'
-import { createHash }                                               from 'node:crypto'
+import { randomBytes }                  from 'node:crypto'
+import { createHash }                   from 'node:crypto'
 
-import { WebSocketGateway }                                         from '@nestjs/websockets'
-import { OnGatewayConnection }                                      from '@nestjs/websockets'
-import { fromBigIntToByteArrayBuffer }                              from '@monstrs/buffer-utils'
-import { fromBufferToBigInt }                                       from '@monstrs/buffer-utils'
-import { bufferXor }                                                from '@monstrs/buffer-utils'
-import { fromBigIntToBuffer }                                       from '@monstrs/buffer-utils'
-import { modExp }                                                   from '@monstrs/crypto-utils'
-import { WebSocket }                                                from 'ws'
+import { MTProtoObfuscadetCodec }       from '@monstrs/mtproto-codecs'
+import { MTProtoUnencryptedRawMessage } from '@monstrs/mtproto-core'
+import { MTProtoRawMessage }            from '@monstrs/mtproto-core'
+import { MTProtoAuthKey }               from '@monstrs/mtproto-core'
+import { MTProtoAuthKeyManager }        from '@monstrs/mtproto-core'
+import { BinaryReader }                 from '@monstrs/mtproto-extensions'
+import { TLObject }                     from '@monstrs/mtproto-tl-core'
+import { WebSocketGateway }             from '@nestjs/websockets'
+import { OnGatewayConnection }          from '@nestjs/websockets'
+import { fromBigIntToByteArrayBuffer }  from '@monstrs/buffer-utils'
+import { fromBufferToBigInt }           from '@monstrs/buffer-utils'
+import { bufferXor }                    from '@monstrs/buffer-utils'
+import { fromBigIntToBuffer }           from '@monstrs/buffer-utils'
+import { modExp }                       from '@monstrs/crypto-utils'
+import { WebSocket }                    from 'ws'
 
-import { IGE }                                                      from '@chats-system/crypto'
-import { SchemaRegistry }                                           from '@chats-system/tl-to-typescript'
-import { ReqPqMulti }                                               from '@chats-system/tl-to-typescript'
-import { ReqDHParams }                                              from '@chats-system/tl-to-typescript'
-import { ResPQ }                                                    from '@chats-system/tl-to-typescript'
-import { ServerDHInnerData }                                        from '@chats-system/tl-to-typescript'
-import { PQInnerData }                                              from '@chats-system/tl-to-typescript'
-import { ServerDHParamsOk }                                         from '@chats-system/tl-to-typescript'
-import { SetClientDHParams }                                        from '@chats-system/tl-to-typescript'
-import { ClientDHInnerData }                                        from '@chats-system/tl-to-typescript'
-import { DhGenOk }                                                  from '@chats-system/tl-to-typescript'
-import { BinaryReader }                                             from '@chats-system/tl-types'
-import { MTProtoUnencryptedRawMessage }                             from '@chats-system/tl-types'
-import { MTProtoRawMessage }                                        from '@chats-system/tl-types'
-import { MTProtoAuthKey }                        from '@chats-system/tl-types'
-import { MTProtoAuthKeyManager } from '@chats-system/tl-types'
-import { TLObject }                                                 from '@chats-system/tl-types'
-import { calculateNonceHash }                                       from '@chats-system/crypto'
-import { generateKeyDataFromNonce }                                 from '@chats-system/crypto'
+import { IGE }                          from '@chats-system/crypto'
+import { SchemaRegistry }               from '@chats-system/tl-to-typescript'
+import { ReqPqMulti }                   from '@chats-system/tl-to-typescript'
+import { ReqDHParams }                  from '@chats-system/tl-to-typescript'
+import { ResPQ }                        from '@chats-system/tl-to-typescript'
+import { ServerDHInnerData }            from '@chats-system/tl-to-typescript'
+import { PQInnerData }                  from '@chats-system/tl-to-typescript'
+import { ServerDHParamsOk }             from '@chats-system/tl-to-typescript'
+import { SetClientDHParams }            from '@chats-system/tl-to-typescript'
+import { ClientDHInnerData }            from '@chats-system/tl-to-typescript'
+import { DhGenOk }                      from '@chats-system/tl-to-typescript'
+import { calculateNonceHash }           from '@chats-system/crypto'
+import { generateKeyDataFromNonce }     from '@chats-system/crypto'
 
-import { MTProtoObfuscadetCodec }                                   from './codecs/index.js'
-import { key }                                                      from './key.js'
-import { dh2048P }                                                  from './key.js'
-import { dh2048G }                                                  from './key.js'
+import { key }                          from './key.js'
+import { dh2048P }                      from './key.js'
+import { dh2048G }                      from './key.js'
 
 type MTProtoConnection = WebSocket & {
   codec: MTProtoObfuscadetCodec
@@ -48,12 +48,12 @@ type MTProtoConnection = WebSocket & {
 })
 export class EventsGateway implements OnGatewayConnection {
   handleConnection(connection: MTProtoConnection) {
-    connection.on('message', (message: Buffer) => {
+    connection.on('message', async (message: Buffer) => {
       if (!connection.codec) {
         connection.codec = new MTProtoObfuscadetCodec(message)
         connection.authKeyManager = new MTProtoAuthKeyManager()
       } else {
-        const rawMessage = connection.codec.receive(message, connection)
+        const rawMessage = await connection.codec.receive(message, connection)
 
         if (rawMessage.getAuthKeyId() === BigInt(0)) {
           const request = new BinaryReader(
@@ -119,7 +119,7 @@ export class EventsGateway implements OnGatewayConnection {
     const messageData = resPQ.getBytes()
 
     connection.send(
-      connection.codec.send(
+      await connection.codec.send(
         new MTProtoRawMessage(
           BigInt(0),
           new MTProtoUnencryptedRawMessage(messageId + BigInt(10), messageData.length, messageData)
@@ -144,10 +144,7 @@ export class EventsGateway implements OnGatewayConnection {
     const dataPadReversed = dataWithHash.subarray(0, dataWithHash.length - 32)
     const dataWithPadding = Buffer.from(dataPadReversed).reverse()
 
-    const request: PQInnerData = new BinaryReader(
-      dataWithPadding,
-      SchemaRegistry
-    ).readObject() as PQInnerData
+    const request = new BinaryReader(dataWithPadding, SchemaRegistry).readObject<PQInnerData>() as PQInnerData
 
     const a = fromBufferToBigInt(Buffer.from(randomBytes(16)), false, true)
     const gA = modExp(fromBufferToBigInt(dh2048G), a, fromBufferToBigInt(dh2048P))
@@ -179,7 +176,7 @@ export class EventsGateway implements OnGatewayConnection {
     const messageData = pok.getBytes()
 
     connection.send(
-      connection.codec.send(
+      await connection.codec.send(
         new MTProtoRawMessage(
           BigInt(0),
           new MTProtoUnencryptedRawMessage(messageId + BigInt(20), messageData.length, messageData)
@@ -230,7 +227,7 @@ export class EventsGateway implements OnGatewayConnection {
     const messageData = dhGenOk.getBytes()
 
     connection.send(
-      connection.codec.send(
+      await connection.codec.send(
         new MTProtoRawMessage(
           BigInt(0),
           new MTProtoUnencryptedRawMessage(messageId + BigInt(20), messageData.length, messageData)

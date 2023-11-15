@@ -1,11 +1,10 @@
-import { createCipheriv }                              from 'node:crypto'
-import { Cipher }                                      from 'node:crypto'
+import { createCipheriv }           from 'node:crypto'
+import { Cipher }                   from 'node:crypto'
 
-import { MTProtoRawMessage }                           from '@chats-system/tl-types'
-
+import { MTProtoRawMessage }        from '@chats-system/tl-types'
 import { MTProtoRawMessageContext } from '@chats-system/tl-types'
 
-import { MTProtoAbridgedCodec }                        from './mtproto-abridged.codec.js'
+import { MTProtoAbridgedCodec }     from './mtproto-abridged.codec.js'
 
 export class MTProtoObfuscadetCodec {
   protected decryptor: Cipher

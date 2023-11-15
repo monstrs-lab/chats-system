@@ -1,7 +1,6 @@
-import { fromBigIntToBuffer }                          from '@monstrs/buffer-utils'
+import { fromBigIntToBuffer }       from '@monstrs/buffer-utils'
 
-import { MTProtoRawMessage }                           from '@chats-system/tl-types'
-
+import { MTProtoRawMessage }        from '@chats-system/tl-types'
 import { MTProtoRawMessageContext } from '@chats-system/tl-types'
 
 export class MTProtoAbridgedCodec {

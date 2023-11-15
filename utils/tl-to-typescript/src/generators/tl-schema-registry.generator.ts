@@ -16,7 +16,7 @@ export class TLSchemaRegistryGenerator {
     })
 
     sourceFile.addImportDeclaration({
-      moduleSpecifier: '@chats-system/tl-types',
+      moduleSpecifier: '@monstrs/mtproto-tl-core',
       namedImports: ['TLObject'],
     })
 

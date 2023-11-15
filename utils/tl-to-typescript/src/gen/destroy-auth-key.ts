@@ -1,7 +1,8 @@
-import type { TLSchemaParamParsed } from "@chats-system/tl-json-schema-parser";
-import { TLMethod } from "@chats-system/tl-types";
+import type { TLExtendedSchemaParam } from '@monstrs/mtproto-tl-types'
+
+import { TLMethod }                   from '@monstrs/mtproto-tl-core'
 
 export class DestroyAuthKey extends TLMethod {
-    static override CONSTRUCTOR_ID = -784117408;
-    static override PARAMS: Array<TLSchemaParamParsed> = [];
+  static override CONSTRUCTOR_ID = -784117408
+  static override PARAMS: Array<TLExtendedSchemaParam> = []
 }

@@ -1518,6 +1518,10 @@ const RAW_RUNTIME_STATE =
           ["@jest/globals", "npm:29.7.0"],\
           ["@monstrs/buffer-utils", "npm:0.0.6"],\
           ["@monstrs/crypto-utils", "npm:0.0.2"],\
+          ["@monstrs/mtproto-codecs", "npm:0.0.3"],\
+          ["@monstrs/mtproto-core", "npm:0.0.3"],\
+          ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
+          ["@monstrs/mtproto-tl-core", "npm:0.0.3"],\
           ["@monstrs/nestjs-connectrpc", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#npm:0.0.3"],\
           ["@monstrs/nestjs-logger", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#npm:0.4.2"],\
           ["@monstrs/nestjs-microservices-registry", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#npm:0.1.0"],\
@@ -1864,6 +1868,8 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/tl-json-schema", "workspace:utils/tl-json-schema"],\
           ["@chats-system/tl-json-schema-parser", "workspace:utils/tl-json-schema-parser"],\
           ["@chats-system/tl-types", "workspace:utils/tl-types"],\
+          ["@monstrs/mtproto-tl-core", "npm:0.0.3"],\
+          ["@monstrs/mtproto-tl-types", "npm:0.0.2"],\
           ["camelcase", "npm:8.0.0"],\
           ["decamelize", "npm:6.0.0"],\
           ["ts-morph", "npm:20.0.0"],\
@@ -3727,6 +3733,71 @@ const RAW_RUNTIME_STATE =
           "@mikro-orm/postgresql",\
           "@types/mikro-orm__core",\
           "@types/mikro-orm__postgresql"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@monstrs/mtproto-codecs", [\
+      ["npm:0.0.3", {\
+        "packageLocation": "./.yarn/cache/@monstrs-mtproto-codecs-npm-0.0.3-b3c04468c6-284e8359a7.zip/node_modules/@monstrs/mtproto-codecs/",\
+        "packageDependencies": [\
+          ["@monstrs/mtproto-codecs", "npm:0.0.3"],\
+          ["@monstrs/buffer-utils", "npm:0.0.6"],\
+          ["@monstrs/mtproto-core", "npm:0.0.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@monstrs/mtproto-core", [\
+      ["npm:0.0.3", {\
+        "packageLocation": "./.yarn/cache/@monstrs-mtproto-core-npm-0.0.3-1624c36e26-c7a9a0b173.zip/node_modules/@monstrs/mtproto-core/",\
+        "packageDependencies": [\
+          ["@monstrs/mtproto-core", "npm:0.0.3"],\
+          ["@monstrs/buffer-utils", "npm:0.0.6"],\
+          ["@monstrs/mtproto-crypto", "npm:0.0.2"],\
+          ["@monstrs/mtproto-extensions", "npm:0.0.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@monstrs/mtproto-crypto", [\
+      ["npm:0.0.2", {\
+        "packageLocation": "./.yarn/cache/@monstrs-mtproto-crypto-npm-0.0.2-f30f0d2ee5-061044924e.zip/node_modules/@monstrs/mtproto-crypto/",\
+        "packageDependencies": [\
+          ["@monstrs/mtproto-crypto", "npm:0.0.2"],\
+          ["@cryptography/aes", "npm:0.1.1"],\
+          ["@monstrs/buffer-utils", "npm:0.0.6"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@monstrs/mtproto-extensions", [\
+      ["npm:0.0.3", {\
+        "packageLocation": "./.yarn/cache/@monstrs-mtproto-extensions-npm-0.0.3-5f852e05a9-2523aa93c8.zip/node_modules/@monstrs/mtproto-extensions/",\
+        "packageDependencies": [\
+          ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
+          ["@monstrs/buffer-utils", "npm:0.0.6"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@monstrs/mtproto-tl-core", [\
+      ["npm:0.0.3", {\
+        "packageLocation": "./.yarn/cache/@monstrs-mtproto-tl-core-npm-0.0.3-0755b330dc-50df20c3eb.zip/node_modules/@monstrs/mtproto-tl-core/",\
+        "packageDependencies": [\
+          ["@monstrs/mtproto-tl-core", "npm:0.0.3"],\
+          ["@monstrs/buffer-utils", "npm:0.0.6"],\
+          ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
+          ["camelcase", "npm:8.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@monstrs/mtproto-tl-types", [\
+      ["npm:0.0.2", {\
+        "packageLocation": "./.yarn/cache/@monstrs-mtproto-tl-types-npm-0.0.2-124538b825-47df06e079.zip/node_modules/@monstrs/mtproto-tl-types/",\
+        "packageDependencies": [\
+          ["@monstrs/mtproto-tl-types", "npm:0.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\

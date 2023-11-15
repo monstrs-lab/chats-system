@@ -2,7 +2,7 @@ import type { TLSchemaParamParsed }       from '@chats-system/tl-json-schema-par
 
 import { fromDateToBuffer }               from '@monstrs/buffer-utils'
 import { fromBigIntToSignedLittleBuffer } from '@monstrs/buffer-utils'
-import camelcase from 'camelcase'
+import camelcase                          from 'camelcase'
 
 import { BinaryReader }                   from './binary.reader.js'
 import { serializeBytes }                 from './binary.utils.js'

@@ -29,13 +29,13 @@ export class TLConstructorGenerator extends TLObjectGenerator {
     )
 
     sourceFile.addImportDeclaration({
-      moduleSpecifier: '@chats-system/tl-json-schema-parser',
-      namedImports: ['TLSchemaParamParsed'],
+      moduleSpecifier: '@monstrs/mtproto-tl-types',
+      namedImports: ['TLExtendedSchemaParam'],
       isTypeOnly: true,
     })
 
     sourceFile.addImportDeclaration({
-      moduleSpecifier: '@chats-system/tl-types',
+      moduleSpecifier: '@monstrs/mtproto-tl-core',
       namedImports: ['TLConstructor'],
     })
 
@@ -59,7 +59,7 @@ export class TLConstructorGenerator extends TLObjectGenerator {
     classDeclaration.addProperty({
       isStatic: true,
       hasOverrideKeyword: true,
-      type: 'Array<TLSchemaParamParsed>',
+      type: 'Array<TLExtendedSchemaParam>',
       name: 'PARAMS',
       initializer: JSON.stringify(schema.params, null, 2),
     })

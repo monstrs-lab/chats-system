@@ -1,7 +1,8 @@
-import type { TLSchemaParamParsed } from "@chats-system/tl-json-schema-parser";
-import { TLConstructor } from "@chats-system/tl-types";
+import type { TLExtendedSchemaParam } from '@monstrs/mtproto-tl-types'
+
+import { TLConstructor }              from '@monstrs/mtproto-tl-core'
 
 export class Vector extends TLConstructor {
-    static override CONSTRUCTOR_ID: number = 481674261;
-    static override PARAMS: Array<TLSchemaParamParsed> = [];
+  static override CONSTRUCTOR_ID: number = 481674261
+  static override PARAMS: Array<TLExtendedSchemaParam> = []
 }

@@ -1,8 +1,10 @@
-import type { MTProtoRawMessageContext } from './mtproto-raw.message.js'
+import type { MTProtoRawMessageContext }      from './mtproto-raw.message.js'
 
-import { IGE }                           from '@chats-system/crypto'
+import { IGE }                                from '@chats-system/crypto'
 
-import { MTProtoKeyPair, MTProtoKeyPairType }                from './mtproto-key-pair.js'
+import { MTProtoKeyPair }                     from './mtproto-key-pair.js'
+
+import { MTProtoKeyPairType } from './mtproto-key-pair.js'
 
 export class MTProtoEncryptedRawMessage {
   #messageData: Buffer
@@ -21,7 +23,11 @@ export class MTProtoEncryptedRawMessage {
       throw new Error('Auth key not found')
     }
 
-    const keyPair = MTProtoKeyPair.fromAuthAndMsgKey(authKey, payload.subarray(8, 24), MTProtoKeyPairType.CLIENT)
+    const keyPair = MTProtoKeyPair.fromAuthAndMsgKey(
+      authKey,
+      payload.subarray(8, 24),
+      MTProtoKeyPairType.CLIENT
+    )
 
     const messageData = new IGE(keyPair.key, keyPair.iv).decrypt(
       payload.subarray(24, payload.length)

@@ -15,6 +15,8 @@
   "dependencies": {
     "@chats-system/tl-json-schema-parser": "workspace:0.0.1",
     "@chats-system/tl-types": "workspace:0.0.1",
+    "@monstrs/mtproto-tl-core": "^0.0.3",
+    "@monstrs/mtproto-tl-types": "^0.0.2",
     "camelcase": "^8.0.0",
     "decamelize": "^6.0.0",
     "ts-morph": "^20.0.0"
