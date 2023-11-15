@@ -1520,6 +1520,7 @@ const RAW_RUNTIME_STATE =
           ["@monstrs/crypto-utils", "npm:0.0.2"],\
           ["@monstrs/mtproto-codecs", "npm:0.0.3"],\
           ["@monstrs/mtproto-core", "npm:0.0.3"],\
+          ["@monstrs/mtproto-crypto", "npm:0.0.2"],\
           ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
           ["@monstrs/mtproto-tl-core", "npm:0.0.3"],\
           ["@monstrs/nestjs-connectrpc", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#npm:0.0.3"],\

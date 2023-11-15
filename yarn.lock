@@ -893,6 +893,7 @@ __metadata:
     "@monstrs/crypto-utils": "npm:^0.0.2"
     "@monstrs/mtproto-codecs": "npm:^0.0.3"
     "@monstrs/mtproto-core": "npm:^0.0.3"
+    "@monstrs/mtproto-crypto": "npm:^0.0.2"
     "@monstrs/mtproto-extensions": "npm:^0.0.3"
     "@monstrs/mtproto-tl-core": "npm:^0.0.3"
     "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
@@ -2055,7 +2056,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/mtproto-crypto@npm:0.0.2":
+"@monstrs/mtproto-crypto@npm:0.0.2, @monstrs/mtproto-crypto@npm:^0.0.2":
   version: 0.0.2
   resolution: "@monstrs/mtproto-crypto@npm:0.0.2"
   dependencies:

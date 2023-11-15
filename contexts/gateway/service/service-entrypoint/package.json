@@ -28,6 +28,7 @@
     "@monstrs/crypto-utils": "^0.0.2",
     "@monstrs/mtproto-codecs": "^0.0.3",
     "@monstrs/mtproto-core": "^0.0.3",
+    "@monstrs/mtproto-crypto": "^0.0.2",
     "@monstrs/mtproto-extensions": "^0.0.3",
     "@monstrs/mtproto-tl-core": "^0.0.3",
     "@monstrs/nestjs-connectrpc": "^0.0.3",
