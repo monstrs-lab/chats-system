@@ -1,24 +1,27 @@
-import type { TLExtendedSchemaParam } from '@monstrs/mtproto-tl-types'
+import type { TLExtendedSchemaParam } from "@monstrs/mtproto-tl-types";
+import { TLConstructor } from "@monstrs/mtproto-tl-core";
 
-import { TLConstructor }              from '@monstrs/mtproto-tl-core'
+interface MsgResendReqValues {
+    msgIds: Array<bigint>;
+}
 
-export class MsgResendReq extends TLConstructor {
-  static override CONSTRUCTOR_ID: number = 2105940488
-  static override PARAMS: Array<TLExtendedSchemaParam> = [
-    {
-      name: 'msg_ids',
-      type: 'long',
-      isVector: true,
-      isFlag: false,
-      skipConstructorId: true,
-      flagGroup: 0,
-      flagIndex: -1,
-      flagIndicator: false,
-      useVectorId: true,
-    },
-  ]
+export class MsgResendReq extends TLConstructor<MsgResendReqValues> {
+    static override CONSTRUCTOR_ID: number = 2105940488;
+    static override PARAMS: Array<TLExtendedSchemaParam> = [
+          {
+            "name": "msg_ids",
+            "type": "long",
+            "isVector": true,
+            "isFlag": false,
+            "skipConstructorId": true,
+            "flagGroup": 0,
+            "flagIndex": -1,
+            "flagIndicator": false,
+            "useVectorId": true
+          }
+        ];
 
-  constructor(public readonly msgIds: Array<bigint>) {
-    super()
-  }
+    get msgIds(): Array<bigint> {
+        return this.values.msgIds
+    }
 }

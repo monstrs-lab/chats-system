@@ -1522,7 +1522,7 @@ const RAW_RUNTIME_STATE =
           ["@monstrs/mtproto-core", "npm:0.0.3"],\
           ["@monstrs/mtproto-crypto", "npm:0.0.2"],\
           ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
-          ["@monstrs/mtproto-tl-core", "npm:0.0.3"],\
+          ["@monstrs/mtproto-tl-core", "npm:0.0.4"],\
           ["@monstrs/nestjs-connectrpc", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#npm:0.0.3"],\
           ["@monstrs/nestjs-logger", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#npm:0.4.2"],\
           ["@monstrs/nestjs-microservices-registry", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#npm:0.1.0"],\
@@ -1869,7 +1869,7 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/tl-json-schema", "workspace:utils/tl-json-schema"],\
           ["@chats-system/tl-json-schema-parser", "workspace:utils/tl-json-schema-parser"],\
           ["@chats-system/tl-types", "workspace:utils/tl-types"],\
-          ["@monstrs/mtproto-tl-core", "npm:0.0.3"],\
+          ["@monstrs/mtproto-tl-core", "npm:0.0.4"],\
           ["@monstrs/mtproto-tl-types", "npm:0.0.2"],\
           ["camelcase", "npm:8.0.0"],\
           ["decamelize", "npm:6.0.0"],\
@@ -3783,10 +3783,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@monstrs/mtproto-tl-core", [\
-      ["npm:0.0.3", {\
-        "packageLocation": "./.yarn/cache/@monstrs-mtproto-tl-core-npm-0.0.3-0755b330dc-50df20c3eb.zip/node_modules/@monstrs/mtproto-tl-core/",\
+      ["npm:0.0.4", {\
+        "packageLocation": "./.yarn/cache/@monstrs-mtproto-tl-core-npm-0.0.4-bf64129902-1a81e9ba92.zip/node_modules/@monstrs/mtproto-tl-core/",\
         "packageDependencies": [\
-          ["@monstrs/mtproto-tl-core", "npm:0.0.3"],\
+          ["@monstrs/mtproto-tl-core", "npm:0.0.4"],\
           ["@monstrs/buffer-utils", "npm:0.0.6"],\
           ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
           ["camelcase", "npm:8.0.0"]\

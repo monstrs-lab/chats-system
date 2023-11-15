@@ -3,7 +3,6 @@ import type { Project }              from 'ts-morph'
 
 import { join }                      from 'node:path'
 
-import { Scope }                     from 'ts-morph'
 import camelcase                     from 'camelcase'
 
 import { TLObjectGenerator }         from './tl-object.generator.js'
@@ -39,12 +38,26 @@ export class TLMethodGenerator extends TLObjectGenerator {
       namedImports: ['TLMethod'],
     })
 
+    const interfaceDeclaration = sourceFile.addInterface({
+      name: camelcase(`${schema.method}Values`, {
+       pascalCase: true,
+       preserveConsecutiveUppercase: true,
+     }),
+     properties: schema.params.map(param => ({
+       name: camelcase(param.name, {
+         pascalCase: false,
+         preserveConsecutiveUppercase: true,
+       }),
+       type: this.getTypeForParam(sourceFile, param),
+     }))
+   })
+
     const classDeclaration = sourceFile.addClass({
       name: camelcase(schema.method, {
         pascalCase: true,
         preserveConsecutiveUppercase: true,
       }),
-      extends: 'TLMethod',
+      extends: `TLMethod<${interfaceDeclaration.getName()}>`,
       isExported: true,
     })
 
@@ -63,19 +76,18 @@ export class TLMethodGenerator extends TLObjectGenerator {
       initializer: JSON.stringify(schema.params, null, 2),
     })
 
-    if (schema.params.length > 0) {
-      classDeclaration.addConstructor({
-        statements: 'super()',
-        parameters: schema.params.map((param) => ({
-          isReadonly: true,
-          scope: Scope.Public,
-          name: camelcase(param.name, {
-            pascalCase: false,
-            preserveConsecutiveUppercase: true,
-          }),
-          type: this.getTypeForParam(sourceFile, param),
-        })),
+    schema.params.forEach(param => {
+      classDeclaration.addGetAccessor({
+        name: camelcase(param.name, {
+          pascalCase: false,
+          preserveConsecutiveUppercase: true,
+        }),
+        returnType: this.getTypeForParam(sourceFile, param),
+        statements: [`return this.values.${camelcase(param.name, {
+          pascalCase: false,
+          preserveConsecutiveUppercase: true,
+        })}`],
       })
-    }
+    })
   }
 }

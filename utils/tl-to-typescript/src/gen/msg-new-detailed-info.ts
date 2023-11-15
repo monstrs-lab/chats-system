@@ -1,50 +1,59 @@
-import type { TLExtendedSchemaParam } from '@monstrs/mtproto-tl-types'
+import type { TLExtendedSchemaParam } from "@monstrs/mtproto-tl-types";
+import { TLConstructor } from "@monstrs/mtproto-tl-core";
 
-import { TLConstructor }              from '@monstrs/mtproto-tl-core'
+interface MsgNewDetailedInfoValues {
+    answerMsgId: bigint;
+    bytes: number;
+    status: number;
+}
 
-export class MsgNewDetailedInfo extends TLConstructor {
-  static override CONSTRUCTOR_ID: number = -2137147681
-  static override PARAMS: Array<TLExtendedSchemaParam> = [
-    {
-      name: 'answer_msg_id',
-      type: 'long',
-      isVector: false,
-      isFlag: false,
-      skipConstructorId: true,
-      flagGroup: 0,
-      flagIndex: -1,
-      flagIndicator: false,
-      useVectorId: false,
-    },
-    {
-      name: 'bytes',
-      type: 'int',
-      isVector: false,
-      isFlag: false,
-      skipConstructorId: true,
-      flagGroup: 0,
-      flagIndex: -1,
-      flagIndicator: false,
-      useVectorId: false,
-    },
-    {
-      name: 'status',
-      type: 'int',
-      isVector: false,
-      isFlag: false,
-      skipConstructorId: true,
-      flagGroup: 0,
-      flagIndex: -1,
-      flagIndicator: false,
-      useVectorId: false,
-    },
-  ]
+export class MsgNewDetailedInfo extends TLConstructor<MsgNewDetailedInfoValues> {
+    static override CONSTRUCTOR_ID: number = -2137147681;
+    static override PARAMS: Array<TLExtendedSchemaParam> = [
+          {
+            "name": "answer_msg_id",
+            "type": "long",
+            "isVector": false,
+            "isFlag": false,
+            "skipConstructorId": true,
+            "flagGroup": 0,
+            "flagIndex": -1,
+            "flagIndicator": false,
+            "useVectorId": false
+          },
+          {
+            "name": "bytes",
+            "type": "int",
+            "isVector": false,
+            "isFlag": false,
+            "skipConstructorId": true,
+            "flagGroup": 0,
+            "flagIndex": -1,
+            "flagIndicator": false,
+            "useVectorId": false
+          },
+          {
+            "name": "status",
+            "type": "int",
+            "isVector": false,
+            "isFlag": false,
+            "skipConstructorId": true,
+            "flagGroup": 0,
+            "flagIndex": -1,
+            "flagIndicator": false,
+            "useVectorId": false
+          }
+        ];
 
-  constructor(
-    public readonly answerMsgId: bigint,
-    public readonly bytes: number,
-    public readonly status: number
-  ) {
-    super()
-  }
+    get answerMsgId(): bigint {
+        return this.values.answerMsgId
+    }
+
+    get bytes(): number {
+        return this.values.bytes
+    }
+
+    get status(): number {
+        return this.values.status
+    }
 }

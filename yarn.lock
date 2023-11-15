@@ -895,7 +895,7 @@ __metadata:
     "@monstrs/mtproto-core": "npm:^0.0.3"
     "@monstrs/mtproto-crypto": "npm:^0.0.2"
     "@monstrs/mtproto-extensions": "npm:^0.0.3"
-    "@monstrs/mtproto-tl-core": "npm:^0.0.3"
+    "@monstrs/mtproto-tl-core": "npm:^0.0.4"
     "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
     "@monstrs/nestjs-logger": "npm:^0.4.2"
     "@monstrs/nestjs-microservices-registry": "npm:^0.1.0"
@@ -1057,7 +1057,7 @@ __metadata:
     "@chats-system/tl-json-schema": "workspace:0.0.1"
     "@chats-system/tl-json-schema-parser": "workspace:0.0.1"
     "@chats-system/tl-types": "workspace:0.0.1"
-    "@monstrs/mtproto-tl-core": "npm:^0.0.3"
+    "@monstrs/mtproto-tl-core": "npm:^0.0.4"
     "@monstrs/mtproto-tl-types": "npm:^0.0.2"
     camelcase: "npm:^8.0.0"
     decamelize: "npm:^6.0.0"
@@ -2075,14 +2075,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/mtproto-tl-core@npm:^0.0.3":
-  version: 0.0.3
-  resolution: "@monstrs/mtproto-tl-core@npm:0.0.3"
+"@monstrs/mtproto-tl-core@npm:^0.0.4":
+  version: 0.0.4
+  resolution: "@monstrs/mtproto-tl-core@npm:0.0.4"
   dependencies:
     "@monstrs/buffer-utils": "npm:^0.0.6"
     "@monstrs/mtproto-extensions": "npm:0.0.3"
     camelcase: "npm:^8.0.0"
-  checksum: 50df20c3ebf54b28a9ceba1cbbdaf1ec461749284e4470696fc9b3844da5d6c2d88463e822d588d5c04a2b7f9902698fb64d2abda4877900763205e505c1cbbc
+  checksum: 1a81e9ba9288f811bf2cb27c67fa812c3663add1483d9dd0f504924b2c293c5a35624197c0997dda6aaed069a52291ffd7206ac270989dc8999a05c1a04a7b9a
   languageName: node
   linkType: hard
 

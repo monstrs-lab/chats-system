@@ -1,98 +1,123 @@
-import type { TLExtendedSchemaParam } from '@monstrs/mtproto-tl-types'
+import type { TLExtendedSchemaParam } from "@monstrs/mtproto-tl-types";
+import { TLConstructor } from "@monstrs/mtproto-tl-core";
 
-import { TLConstructor }              from '@monstrs/mtproto-tl-core'
+interface PQInnerDataDcValues {
+    pq: Buffer;
+    p: Buffer;
+    q: Buffer;
+    nonce: bigint;
+    serverNonce: bigint;
+    newNonce: bigint;
+    dc: number;
+}
 
-export class PQInnerDataDc extends TLConstructor {
-  static override CONSTRUCTOR_ID: number = -1443537003
-  static override PARAMS: Array<TLExtendedSchemaParam> = [
-    {
-      name: 'pq',
-      type: 'bytes',
-      isVector: false,
-      isFlag: false,
-      skipConstructorId: true,
-      flagGroup: 0,
-      flagIndex: -1,
-      flagIndicator: false,
-      useVectorId: false,
-    },
-    {
-      name: 'p',
-      type: 'bytes',
-      isVector: false,
-      isFlag: false,
-      skipConstructorId: true,
-      flagGroup: 0,
-      flagIndex: -1,
-      flagIndicator: false,
-      useVectorId: false,
-    },
-    {
-      name: 'q',
-      type: 'bytes',
-      isVector: false,
-      isFlag: false,
-      skipConstructorId: true,
-      flagGroup: 0,
-      flagIndex: -1,
-      flagIndicator: false,
-      useVectorId: false,
-    },
-    {
-      name: 'nonce',
-      type: 'int128',
-      isVector: false,
-      isFlag: false,
-      skipConstructorId: true,
-      flagGroup: 0,
-      flagIndex: -1,
-      flagIndicator: false,
-      useVectorId: false,
-    },
-    {
-      name: 'server_nonce',
-      type: 'int128',
-      isVector: false,
-      isFlag: false,
-      skipConstructorId: true,
-      flagGroup: 0,
-      flagIndex: -1,
-      flagIndicator: false,
-      useVectorId: false,
-    },
-    {
-      name: 'new_nonce',
-      type: 'int256',
-      isVector: false,
-      isFlag: false,
-      skipConstructorId: true,
-      flagGroup: 0,
-      flagIndex: -1,
-      flagIndicator: false,
-      useVectorId: false,
-    },
-    {
-      name: 'dc',
-      type: 'int',
-      isVector: false,
-      isFlag: false,
-      skipConstructorId: true,
-      flagGroup: 0,
-      flagIndex: -1,
-      flagIndicator: false,
-      useVectorId: false,
-    },
-  ]
+export class PQInnerDataDc extends TLConstructor<PQInnerDataDcValues> {
+    static override CONSTRUCTOR_ID: number = -1443537003;
+    static override PARAMS: Array<TLExtendedSchemaParam> = [
+          {
+            "name": "pq",
+            "type": "bytes",
+            "isVector": false,
+            "isFlag": false,
+            "skipConstructorId": true,
+            "flagGroup": 0,
+            "flagIndex": -1,
+            "flagIndicator": false,
+            "useVectorId": false
+          },
+          {
+            "name": "p",
+            "type": "bytes",
+            "isVector": false,
+            "isFlag": false,
+            "skipConstructorId": true,
+            "flagGroup": 0,
+            "flagIndex": -1,
+            "flagIndicator": false,
+            "useVectorId": false
+          },
+          {
+            "name": "q",
+            "type": "bytes",
+            "isVector": false,
+            "isFlag": false,
+            "skipConstructorId": true,
+            "flagGroup": 0,
+            "flagIndex": -1,
+            "flagIndicator": false,
+            "useVectorId": false
+          },
+          {
+            "name": "nonce",
+            "type": "int128",
+            "isVector": false,
+            "isFlag": false,
+            "skipConstructorId": true,
+            "flagGroup": 0,
+            "flagIndex": -1,
+            "flagIndicator": false,
+            "useVectorId": false
+          },
+          {
+            "name": "server_nonce",
+            "type": "int128",
+            "isVector": false,
+            "isFlag": false,
+            "skipConstructorId": true,
+            "flagGroup": 0,
+            "flagIndex": -1,
+            "flagIndicator": false,
+            "useVectorId": false
+          },
+          {
+            "name": "new_nonce",
+            "type": "int256",
+            "isVector": false,
+            "isFlag": false,
+            "skipConstructorId": true,
+            "flagGroup": 0,
+            "flagIndex": -1,
+            "flagIndicator": false,
+            "useVectorId": false
+          },
+          {
+            "name": "dc",
+            "type": "int",
+            "isVector": false,
+            "isFlag": false,
+            "skipConstructorId": true,
+            "flagGroup": 0,
+            "flagIndex": -1,
+            "flagIndicator": false,
+            "useVectorId": false
+          }
+        ];
 
-  constructor(
-    public readonly pq: Buffer,
-    public readonly p: Buffer,
-    public readonly q: Buffer,
-    public readonly nonce: bigint,
-    public readonly serverNonce: bigint,
-    public readonly newNonce: bigint,
-    public readonly dc: number
-  ) {
-    super()
-  }
+    get pq(): Buffer {
+        return this.values.pq
+    }
+
+    get p(): Buffer {
+        return this.values.p
+    }
+
+    get q(): Buffer {
+        return this.values.q
+    }
+
+    get nonce(): bigint {
+        return this.values.nonce
+    }
+
+    get serverNonce(): bigint {
+        return this.values.serverNonce
+    }
+
+    get newNonce(): bigint {
+        return this.values.newNonce
+    }
+
+    get dc(): number {
+        return this.values.dc
+    }
 }

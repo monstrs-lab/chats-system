@@ -10,12 +10,13 @@
   },
   "main": "src/index.ts",
   "scripts": {
-    "dev": "node --loader ts-node/esm --loader $(pwd)/../../.pnp.loader.mjs --loader $(pwd)/../../.pnp-ts.loader.mjs ./src/dev.ts"
+    "dev": "node --loader ts-node/esm --loader $(pwd)/../../.pnp.loader.mjs --loader $(pwd)/../../.pnp-ts.loader.mjs ./src/dev.ts",
+    "dev2": "node --loader ts-node/esm --loader $(pwd)/../../.pnp.loader.mjs --loader $(pwd)/../../.pnp-ts.loader.mjs ./src/dev2.ts"
   },
   "dependencies": {
     "@chats-system/tl-json-schema-parser": "workspace:0.0.1",
     "@chats-system/tl-types": "workspace:0.0.1",
-    "@monstrs/mtproto-tl-core": "^0.0.3",
+    "@monstrs/mtproto-tl-core": "^0.0.4",
     "@monstrs/mtproto-tl-types": "^0.0.2",
     "camelcase": "^8.0.0",
     "decamelize": "^6.0.0",

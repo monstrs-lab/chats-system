@@ -1,24 +1,27 @@
-import type { TLExtendedSchemaParam } from '@monstrs/mtproto-tl-types'
+import type { TLExtendedSchemaParam } from "@monstrs/mtproto-tl-types";
+import { TLConstructor } from "@monstrs/mtproto-tl-core";
 
-import { TLConstructor }              from '@monstrs/mtproto-tl-core'
+interface MsgContainerValues {
+    messages: Array<any>;
+}
 
-export class MsgContainer extends TLConstructor {
-  static override CONSTRUCTOR_ID: number = 1945237724
-  static override PARAMS: Array<TLExtendedSchemaParam> = [
-    {
-      name: 'messages',
-      type: 'Message',
-      isVector: true,
-      isFlag: false,
-      skipConstructorId: false,
-      flagGroup: 0,
-      flagIndex: -1,
-      flagIndicator: false,
-      useVectorId: false,
-    },
-  ]
+export class MsgContainer extends TLConstructor<MsgContainerValues> {
+    static override CONSTRUCTOR_ID: number = 1945237724;
+    static override PARAMS: Array<TLExtendedSchemaParam> = [
+          {
+            "name": "messages",
+            "type": "Message",
+            "isVector": true,
+            "isFlag": false,
+            "skipConstructorId": false,
+            "flagGroup": 0,
+            "flagIndex": -1,
+            "flagIndicator": false,
+            "useVectorId": false
+          }
+        ];
 
-  constructor(public readonly messages: Array<any>) {
-    super()
-  }
+    get messages(): Array<any> {
+        return this.values.messages
+    }
 }

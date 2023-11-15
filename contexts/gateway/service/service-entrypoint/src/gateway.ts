@@ -63,7 +63,7 @@ export class EventsGateway implements OnGatewayConnection {
 
           this.onUnencryptedMessage(
             connection,
-            request as TLObject,
+            request as TLObject<any>,
             message.getMessageId()
           )
         } else {
@@ -89,7 +89,7 @@ export class EventsGateway implements OnGatewayConnection {
     })
   }
 
-  async onUnencryptedMessage(connection: MTProtoConnection, message: TLObject, messageId: bigint) {
+  async onUnencryptedMessage(connection: MTProtoConnection, message: TLObject<any>, messageId: bigint) {
     if (message instanceof ReqPqMulti) {
       await this.onReqPqMulti(connection, message, messageId)
     } else if (message instanceof ReqDHParams) {
@@ -108,12 +108,12 @@ export class EventsGateway implements OnGatewayConnection {
 
     const pq = Buffer.from([0x17, 0xed, 0x48, 0x94, 0x1a, 0x08, 0xf9, 0x81])
 
-    const resPQ = new ResPQ(
-      message.nonce,
-      fromBufferToBigInt(Buffer.from(randomBytes(16)), false, true),
+    const resPQ = new ResPQ({
+      nonce: message.nonce,
+      serverNonce: fromBufferToBigInt(Buffer.from(randomBytes(16)), false, true),
       pq,
-      [BigInt('-6205835210776354611')]
-    )
+      serverPublicKeyFingerprints: [BigInt('-6205835210776354611')]
+    })
 
     const messageData = resPQ.getBytes()
 
@@ -148,14 +148,14 @@ export class EventsGateway implements OnGatewayConnection {
     const a = fromBufferToBigInt(Buffer.from(randomBytes(16)), false, true)
     const gA = modExp(fromBufferToBigInt(dh2048G), a, fromBufferToBigInt(dh2048P))
 
-    const serverDHInnerData = new ServerDHInnerData(
-      message.nonce,
-      message.serverNonce,
-      dh2048G[0],
-      dh2048P,
-      fromBigIntToBuffer(gA, 256, false),
-      Math.floor(new Date().getTime() / 1000)
-    )
+    const serverDHInnerData = new ServerDHInnerData({
+      nonce: message.nonce,
+      serverNonce: message.serverNonce,
+      g: dh2048G[0],
+      dhPrime: dh2048P,
+      gA: fromBigIntToBuffer(gA, 256, false),
+      serverTime: Math.floor(new Date().getTime() / 1000)
+  })
 
     const bytes = serverDHInnerData.getBytes()
 
@@ -166,11 +166,11 @@ export class EventsGateway implements OnGatewayConnection {
 
     const igeEncode = new IGE(igekey, iv)
 
-    const pok = new ServerDHParamsOk(
-      message.nonce,
-      message.serverNonce,
-      igeEncode.encrypt(Buffer.concat([createHash('sha1').update(bytes).digest(), bytes]))
-    )
+    const pok = new ServerDHParamsOk({
+      nonce: message.nonce,
+      serverNonce: message.serverNonce,
+      encryptedAnswer: igeEncode.encrypt(Buffer.concat([createHash('sha1').update(bytes).digest(), bytes]))
+    })
 
     const messageData = pok.getBytes()
 
@@ -217,11 +217,11 @@ export class EventsGateway implements OnGatewayConnection {
 
     connection.authKeyManager.setAuthKey(authKey.id, authKey)
 
-    const dhGenOk = new DhGenOk(
-      message.nonce,
-      message.serverNonce,
-      calculateNonceHash(connection.newNonce, authKey.auxHash, 1)
-    )
+    const dhGenOk = new DhGenOk({
+      nonce: message.nonce,
+      serverNonce: message.serverNonce,
+      newNonceHash1: calculateNonceHash(connection.newNonce, authKey.auxHash, 1)
+  })
 
     const messageData = dhGenOk.getBytes()
 
