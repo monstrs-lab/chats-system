@@ -5,7 +5,7 @@ import { fromBigIntToSignedLittleBuffer } from '@monstrs/buffer-utils'
 import camelcase from 'camelcase'
 
 import { BinaryReader }                   from './binary.reader.js'
-import { serializeBytes }                 from './serialize.utils.js'
+import { serializeBytes }                 from './binary.utils.js'
 
 export abstract class TLObject {
   static CONSTRUCTOR_ID: number
