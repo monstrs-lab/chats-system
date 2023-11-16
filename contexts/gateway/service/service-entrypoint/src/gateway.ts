@@ -1,17 +1,20 @@
-import { MTProtoObfuscadetCodec }           from '@monstrs/mtproto-codecs'
-import { MTProtoUnencryptedRawMessage }     from '@monstrs/mtproto-core'
-import { MTProtoRawMessage }                from '@monstrs/mtproto-core'
-import { MTProtoAuthKeyManager }            from '@monstrs/mtproto-core'
-import { MTProtoMessageId, MTProtoState } from '@monstrs/mtproto-core'
-import { BinaryReader }                     from '@monstrs/mtproto-extensions'
-import { TLObject }                         from '@monstrs/mtproto-tl-core'
-import { WebSocketGateway }                 from '@nestjs/websockets'
-import { OnGatewayConnection }              from '@nestjs/websockets'
-import { WebSocket }                        from 'ws'
+import { MTProtoObfuscadetCodec }         from '@monstrs/mtproto-codecs'
+import { MTProtoUnencryptedRawMessage }   from '@monstrs/mtproto-core'
+import { MTProtoRawMessage }              from '@monstrs/mtproto-core'
+import { MTProtoAuthKeyManager }          from '@monstrs/mtproto-core'
+import { MTProtoMessageId }               from '@monstrs/mtproto-core'
+import { MTProtoState } from '@monstrs/mtproto-core'
+import { BinaryReader }                   from '@monstrs/mtproto-extensions'
+import { WebSocketGateway }               from '@nestjs/websockets'
+import type { OnGatewayConnection }            from '@nestjs/websockets'
+import type { WebSocket }                      from 'ws'
 
-import { SchemaRegistry }                   from '@chats-system/operations'
+import { HandshakeReceiver }              from '@chats-system/handshake'
+import { SchemaRegistry }                 from '@chats-system/operations'
 
-import { HandshakeReceiver } from '@chats-system/handshake'
+import type { ReqPqMulti }                  from '@chats-system/operations'
+import type { ReqDHParams }                 from '@chats-system/operations'
+import type { SetClientDHParams }           from '@chats-system/operations'
 
 type MTProtoConnection = WebSocket & {
   state: MTProtoState
@@ -23,9 +26,11 @@ type MTProtoConnection = WebSocket & {
   },
 })
 export class EventsGateway implements OnGatewayConnection {
-  handleConnection(connection: MTProtoConnection) {
-    connection.on('message', async (data: Buffer) => {
+  handleConnection(connection: MTProtoConnection): void {
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
+    connection.on('message', async (data: Buffer): Promise<void> => {
       if (!connection.state) {
+        // eslint-disable-next-line no-param-reassign
         connection.state = new MTProtoState(
           new MTProtoObfuscadetCodec(data),
           new MTProtoAuthKeyManager()
@@ -38,9 +43,9 @@ export class EventsGateway implements OnGatewayConnection {
           const request = new BinaryReader<any>(
             rawMessage.getMessage().getMessageData(),
             SchemaRegistry
-          ).readObject()
+          ).readObject() as ReqDHParams | ReqPqMulti | SetClientDHParams
 
-          this.onUnencryptedMessage(connection, request as TLObject<any>)
+          this.onUnencryptedMessage(connection, request)
         } else {
           // eslint-disable-next-line
           console.log(message)
@@ -49,29 +54,25 @@ export class EventsGateway implements OnGatewayConnection {
     })
   }
 
-  async onUnencryptedMessage(connection: MTProtoConnection, message: TLObject<any>) {
+  async onUnencryptedMessage(connection: MTProtoConnection, message: ReqDHParams | ReqPqMulti | SetClientDHParams): Promise<void> {
     try {
-      const result = await new HandshakeReceiver().handle(message as any, connection.state)
+      const result = await new HandshakeReceiver().handle(message, connection.state)
 
       const bytes = result.getBytes()
 
-    connection.send(
-      await connection.state.codec.send(
-        new MTProtoRawMessage(
-          BigInt(0),
-          new MTProtoUnencryptedRawMessage(
-            MTProtoMessageId.generate(),
-            bytes.length,
-            bytes
+      connection.send(
+        await connection.state.codec.send(
+          new MTProtoRawMessage(
+            BigInt(0),
+            new MTProtoUnencryptedRawMessage(MTProtoMessageId.generate(), bytes.length, bytes)
           )
         )
       )
-    )
     } catch (error) {
+      connection.close()
+
       // eslint-disable-next-line
       console.log(error)
-
-      connection.close()
     }
   }
 }

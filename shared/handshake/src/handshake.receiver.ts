@@ -1,11 +1,9 @@
-import { ReqPqMulti }             from '@chats-system/operations'
-import { ReqDHParams }            from '@chats-system/operations'
-
 import { randomBytes }                 from 'node:crypto'
 import { createHash }                  from 'node:crypto'
 
 import { MTProtoKeyPair }              from '@monstrs/mtproto-core'
 import { MTProtoAuthKey }              from '@monstrs/mtproto-core'
+import type { MTProtoState }                from '@monstrs/mtproto-core'
 import { IGE }                         from '@monstrs/mtproto-crypto'
 import { BinaryReader }                from '@monstrs/mtproto-extensions'
 import { fromBufferToBigInt }          from '@monstrs/buffer-utils'
@@ -15,6 +13,8 @@ import { fromBigIntToBuffer }          from '@monstrs/buffer-utils'
 import { modExp }                      from '@monstrs/crypto-utils'
 import { calculateNonceHash }          from '@monstrs/mtproto-crypto'
 
+import { ReqPqMulti }                  from '@chats-system/operations'
+import { ReqDHParams }                 from '@chats-system/operations'
 import { ResPQ }                       from '@chats-system/operations'
 import { PQInnerData }                 from '@chats-system/operations'
 import { SchemaRegistry }              from '@chats-system/operations'
@@ -25,7 +25,6 @@ import { ClientDHInnerData }           from '@chats-system/operations'
 import { DhGenOk }                     from '@chats-system/operations'
 import { DhGenRetry }                  from '@chats-system/operations'
 
-import { MTProtoState }                from '@monstrs/mtproto-core'
 import { key }                         from './constants.js'
 import { dh2048G }                     from './constants.js'
 import { dh2048P }                     from './constants.js'
@@ -34,15 +33,22 @@ import { p }                           from './constants.js'
 import { q }                           from './constants.js'
 
 export class HandshakeReceiver {
-  async handle(message: ReqPqMulti | ReqDHParams | SetClientDHParams, state: MTProtoState ): Promise<ResPQ | ServerDHParamsOk | DhGenOk | DhGenRetry> {
+  async handle(
+    message: ReqDHParams | ReqPqMulti | SetClientDHParams,
+    state: MTProtoState
+  ): Promise<DhGenOk | DhGenRetry | ResPQ | ServerDHParamsOk> {
     if (message instanceof ReqPqMulti) {
       return new HandshakeReceiver().handleReqPqMulti(message, state)
-    } else if (message instanceof ReqDHParams) {
-      return new HandshakeReceiver().handleReqDHParams(message, state)
-    } else if (message instanceof SetClientDHParams) {
-      return new HandshakeReceiver().handleSetClientDHParams(message, state)
     }
     
+    if (message instanceof ReqDHParams) {
+      return new HandshakeReceiver().handleReqDHParams(message, state)
+    }
+    
+    if (message instanceof SetClientDHParams) {
+      return new HandshakeReceiver().handleSetClientDHParams(message, state)
+    }
+
     throw new Error('Handshake: invalid message')
   }
 
