@@ -1491,11 +1491,11 @@ const RAW_RUNTIME_STATE =
           ["@jest/globals", "npm:29.7.0"],\
           ["@monstrs/buffer-utils", "npm:0.0.6"],\
           ["@monstrs/crypto-utils", "npm:0.0.2"],\
-          ["@monstrs/mtproto-codecs", "npm:0.0.7"],\
-          ["@monstrs/mtproto-core", "npm:0.0.7"],\
+          ["@monstrs/mtproto-codecs", "npm:0.0.9"],\
+          ["@monstrs/mtproto-core", "npm:0.0.9"],\
           ["@monstrs/mtproto-crypto", "npm:0.0.5"],\
           ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
-          ["@monstrs/mtproto-tl-core", "npm:0.0.6"],\
+          ["@monstrs/mtproto-tl-core", "npm:0.0.8"],\
           ["@monstrs/nestjs-connectrpc", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#npm:0.0.3"],\
           ["@monstrs/nestjs-logger", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#npm:0.4.2"],\
           ["@monstrs/nestjs-microservices-registry", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#npm:0.1.0"],\
@@ -1536,11 +1536,11 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/operations", "workspace:shared/operations"],\
           ["@monstrs/buffer-utils", "npm:0.0.6"],\
           ["@monstrs/crypto-utils", "npm:0.0.2"],\
-          ["@monstrs/mtproto-codecs", "npm:0.0.7"],\
-          ["@monstrs/mtproto-core", "npm:0.0.7"],\
+          ["@monstrs/mtproto-codecs", "npm:0.0.9"],\
+          ["@monstrs/mtproto-core", "npm:0.0.9"],\
           ["@monstrs/mtproto-crypto", "npm:0.0.5"],\
           ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
-          ["@monstrs/mtproto-tl-core", "npm:0.0.6"]\
+          ["@monstrs/mtproto-tl-core", "npm:0.0.8"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -1550,8 +1550,8 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./shared/operations/",\
         "packageDependencies": [\
           ["@chats-system/operations", "workspace:shared/operations"],\
-          ["@monstrs/mtproto-tl-core", "npm:0.0.6"],\
-          ["@monstrs/mtproto-tl-to-typescript", "npm:0.0.5"],\
+          ["@monstrs/mtproto-tl-core", "npm:0.0.8"],\
+          ["@monstrs/mtproto-tl-to-typescript", "npm:0.0.7"],\
           ["@monstrs/mtproto-tl-types", "npm:0.0.2"]\
         ],\
         "linkType": "SOFT"\
@@ -3689,21 +3689,21 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@monstrs/mtproto-codecs", [\
-      ["npm:0.0.7", {\
-        "packageLocation": "./.yarn/cache/@monstrs-mtproto-codecs-npm-0.0.7-a35c65e1de-45c5978b2d.zip/node_modules/@monstrs/mtproto-codecs/",\
+      ["npm:0.0.9", {\
+        "packageLocation": "./.yarn/cache/@monstrs-mtproto-codecs-npm-0.0.9-3f6f9e644f-445bcd2a09.zip/node_modules/@monstrs/mtproto-codecs/",\
         "packageDependencies": [\
-          ["@monstrs/mtproto-codecs", "npm:0.0.7"],\
+          ["@monstrs/mtproto-codecs", "npm:0.0.9"],\
           ["@monstrs/buffer-utils", "npm:0.0.6"],\
-          ["@monstrs/mtproto-core", "npm:0.0.7"]\
+          ["@monstrs/mtproto-core", "npm:0.0.9"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@monstrs/mtproto-core", [\
-      ["npm:0.0.7", {\
-        "packageLocation": "./.yarn/cache/@monstrs-mtproto-core-npm-0.0.7-e76da5d4d0-b93db5c4b5.zip/node_modules/@monstrs/mtproto-core/",\
+      ["npm:0.0.9", {\
+        "packageLocation": "./.yarn/cache/@monstrs-mtproto-core-npm-0.0.9-4d1cc19bed-336095a502.zip/node_modules/@monstrs/mtproto-core/",\
         "packageDependencies": [\
-          ["@monstrs/mtproto-core", "npm:0.0.7"],\
+          ["@monstrs/mtproto-core", "npm:0.0.9"],\
           ["@monstrs/bigint-utils", "npm:0.0.2"],\
           ["@monstrs/buffer-utils", "npm:0.0.6"],\
           ["@monstrs/mtproto-crypto", "npm:0.0.5"],\
@@ -3734,10 +3734,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@monstrs/mtproto-tl-core", [\
-      ["npm:0.0.6", {\
-        "packageLocation": "./.yarn/cache/@monstrs-mtproto-tl-core-npm-0.0.6-8f3e1cbcbe-e56cff066d.zip/node_modules/@monstrs/mtproto-tl-core/",\
+      ["npm:0.0.8", {\
+        "packageLocation": "./.yarn/cache/@monstrs-mtproto-tl-core-npm-0.0.8-c98504685e-b137af1114.zip/node_modules/@monstrs/mtproto-tl-core/",\
         "packageDependencies": [\
-          ["@monstrs/mtproto-tl-core", "npm:0.0.6"],\
+          ["@monstrs/mtproto-tl-core", "npm:0.0.8"],\
           ["@monstrs/buffer-utils", "npm:0.0.6"],\
           ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
           ["@monstrs/mtproto-tl-types", "npm:0.0.2"],\
@@ -3756,11 +3756,11 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@monstrs/mtproto-tl-to-typescript", [\
-      ["npm:0.0.5", {\
-        "packageLocation": "./.yarn/cache/@monstrs-mtproto-tl-to-typescript-npm-0.0.5-f9cebfcba7-2fcdf19d0f.zip/node_modules/@monstrs/mtproto-tl-to-typescript/",\
+      ["npm:0.0.7", {\
+        "packageLocation": "./.yarn/cache/@monstrs-mtproto-tl-to-typescript-npm-0.0.7-7b3d0b267a-db03a1ef33.zip/node_modules/@monstrs/mtproto-tl-to-typescript/",\
         "packageDependencies": [\
-          ["@monstrs/mtproto-tl-to-typescript", "npm:0.0.5"],\
-          ["@monstrs/mtproto-tl-core", "npm:0.0.6"],\
+          ["@monstrs/mtproto-tl-to-typescript", "npm:0.0.7"],\
+          ["@monstrs/mtproto-tl-core", "npm:0.0.8"],\
           ["@monstrs/mtproto-tl-json-parser", "npm:0.0.2"],\
           ["@monstrs/mtproto-tl-types", "npm:0.0.2"],\
           ["camelcase", "npm:8.0.0"],\

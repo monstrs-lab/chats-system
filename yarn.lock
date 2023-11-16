@@ -881,11 +881,11 @@ __metadata:
     "@jest/globals": "npm:^29.7.0"
     "@monstrs/buffer-utils": "npm:^0.0.6"
     "@monstrs/crypto-utils": "npm:^0.0.2"
-    "@monstrs/mtproto-codecs": "npm:^0.0.7"
-    "@monstrs/mtproto-core": "npm:^0.0.7"
+    "@monstrs/mtproto-codecs": "npm:^0.0.9"
+    "@monstrs/mtproto-core": "npm:^0.0.9"
     "@monstrs/mtproto-crypto": "npm:^0.0.5"
     "@monstrs/mtproto-extensions": "npm:^0.0.3"
-    "@monstrs/mtproto-tl-core": "npm:^0.0.6"
+    "@monstrs/mtproto-tl-core": "npm:^0.0.8"
     "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
     "@monstrs/nestjs-logger": "npm:^0.4.2"
     "@monstrs/nestjs-microservices-registry": "npm:^0.1.0"
@@ -924,11 +924,11 @@ __metadata:
     "@chats-system/operations": "workspace:0.0.1"
     "@monstrs/buffer-utils": "npm:^0.0.6"
     "@monstrs/crypto-utils": "npm:^0.0.2"
-    "@monstrs/mtproto-codecs": "npm:^0.0.7"
-    "@monstrs/mtproto-core": "npm:^0.0.7"
+    "@monstrs/mtproto-codecs": "npm:^0.0.9"
+    "@monstrs/mtproto-core": "npm:^0.0.9"
     "@monstrs/mtproto-crypto": "npm:^0.0.5"
     "@monstrs/mtproto-extensions": "npm:^0.0.3"
-    "@monstrs/mtproto-tl-core": "npm:^0.0.6"
+    "@monstrs/mtproto-tl-core": "npm:^0.0.8"
   languageName: unknown
   linkType: soft
 
@@ -936,8 +936,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@chats-system/operations@workspace:shared/operations"
   dependencies:
-    "@monstrs/mtproto-tl-core": "npm:^0.0.6"
-    "@monstrs/mtproto-tl-to-typescript": "npm:^0.0.5"
+    "@monstrs/mtproto-tl-core": "npm:^0.0.8"
+    "@monstrs/mtproto-tl-to-typescript": "npm:^0.0.7"
     "@monstrs/mtproto-tl-types": "npm:^0.0.2"
   languageName: unknown
   linkType: soft
@@ -2007,25 +2007,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/mtproto-codecs@npm:^0.0.7":
-  version: 0.0.7
-  resolution: "@monstrs/mtproto-codecs@npm:0.0.7"
+"@monstrs/mtproto-codecs@npm:^0.0.9":
+  version: 0.0.9
+  resolution: "@monstrs/mtproto-codecs@npm:0.0.9"
   dependencies:
     "@monstrs/buffer-utils": "npm:^0.0.6"
-    "@monstrs/mtproto-core": "npm:0.0.7"
-  checksum: 45c5978b2d46517c0132959709641832d1eed89e896223b15127c47d5919c6f6faf5854116ed1baa1670e7997bbd1a0a23507cf78f7cc906dc1e9b5ffc608c7d
+    "@monstrs/mtproto-core": "npm:0.0.9"
+  checksum: 445bcd2a09abf8e7f9ac13328bd2976afd26a227bc81502788454e9c0369790ee5c7af616a3ee40798a13e7b6e2b2d187901871fdfe69c4159ca3a9e22623f67
   languageName: node
   linkType: hard
 
-"@monstrs/mtproto-core@npm:0.0.7, @monstrs/mtproto-core@npm:^0.0.7":
-  version: 0.0.7
-  resolution: "@monstrs/mtproto-core@npm:0.0.7"
+"@monstrs/mtproto-core@npm:0.0.9, @monstrs/mtproto-core@npm:^0.0.9":
+  version: 0.0.9
+  resolution: "@monstrs/mtproto-core@npm:0.0.9"
   dependencies:
     "@monstrs/bigint-utils": "npm:^0.0.2"
     "@monstrs/buffer-utils": "npm:^0.0.6"
     "@monstrs/mtproto-crypto": "npm:0.0.5"
     "@monstrs/mtproto-extensions": "npm:0.0.3"
-  checksum: b93db5c4b5cd528b4a3e5ccb2a5c7a915ea87a2e4194891c413ce6e65118ca2ade825c0e73bfd7e2f91781602b9692a6898ab3180434b2ae1b37e6a4285f649f
+  checksum: 336095a502de05074c627f0082774a73e04f298b6bc41ae782d3331d3036236dda243c8676e137898bbf999216cfc19ed5065f7f105823ba0d585945ce2601f9
   languageName: node
   linkType: hard
 
@@ -2048,15 +2048,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/mtproto-tl-core@npm:0.0.6, @monstrs/mtproto-tl-core@npm:^0.0.6":
-  version: 0.0.6
-  resolution: "@monstrs/mtproto-tl-core@npm:0.0.6"
+"@monstrs/mtproto-tl-core@npm:0.0.8, @monstrs/mtproto-tl-core@npm:^0.0.8":
+  version: 0.0.8
+  resolution: "@monstrs/mtproto-tl-core@npm:0.0.8"
   dependencies:
     "@monstrs/buffer-utils": "npm:^0.0.6"
     "@monstrs/mtproto-extensions": "npm:0.0.3"
     "@monstrs/mtproto-tl-types": "npm:0.0.2"
     camelcase: "npm:^8.0.0"
-  checksum: e56cff066d58119f756934c212e54858004fb2eb495ce7b3146420e7d10bba91991096dc2356410b7955480c8d251b342f719821b93aaf6347d3824619c63c32
+  checksum: b137af111464662550eac4cb8fefb5f82004c0fcc1f9d9b31863e8768f8dcd6c286d697ddfc169db48fa1249c511afefed225ebe3667074eafb91488b6be9756
   languageName: node
   linkType: hard
 
@@ -2067,11 +2067,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/mtproto-tl-to-typescript@npm:^0.0.5":
-  version: 0.0.5
-  resolution: "@monstrs/mtproto-tl-to-typescript@npm:0.0.5"
+"@monstrs/mtproto-tl-to-typescript@npm:^0.0.7":
+  version: 0.0.7
+  resolution: "@monstrs/mtproto-tl-to-typescript@npm:0.0.7"
   dependencies:
-    "@monstrs/mtproto-tl-core": "npm:0.0.6"
+    "@monstrs/mtproto-tl-core": "npm:0.0.8"
     "@monstrs/mtproto-tl-json-parser": "npm:0.0.2"
     "@monstrs/mtproto-tl-types": "npm:0.0.2"
     camelcase: "npm:^8.0.0"
@@ -2080,7 +2080,7 @@ __metadata:
     ts-morph: "npm:^20.0.0"
   bin:
     tl-to-typescript: ./bin/tl-to-typescript.js
-  checksum: 2fcdf19d0f362892d1c3b5d2e6572b99ede1e31b60ca094f07057e65fdcf362ac747f6563a5608b69659fe217761e83815a3eff1ed5ba40339d1484fda6653a6
+  checksum: db03a1ef336d162530dd8acb6dd6b2b07cada08ffe14fdeca85da73cd792864acfc36202e33e92813ed21036ff5f2a9a5930e3e898a4971dc8b761c293ecd5f3
   languageName: node
   linkType: hard
 
