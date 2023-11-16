@@ -1,0 +1,22 @@
+{
+  "name": "@chats-system/operations",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./src/index.ts"
+  },
+  "main": "src/index.ts",
+  "scripts": {
+    "generate": "yarn run tl-to-typescript --schema ./schema.core.json --schema ./schema.api.json --output ./src/gen"
+  },
+  "dependencies": {
+    "@monstrs/mtproto-tl-core": "^0.0.8",
+    "@monstrs/mtproto-tl-types": "^0.0.2"
+  },
+  "devDependencies": {
+    "@monstrs/mtproto-tl-to-typescript": "^0.0.7"
+  }
+}

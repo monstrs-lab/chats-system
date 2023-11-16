@@ -1,0 +1,22 @@
+{
+  "name": "@chats-system/handshake",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./src/index.ts"
+  },
+  "main": "src/index.ts",
+  "dependencies": {
+    "@chats-system/operations": "workspace:0.0.1",
+    "@monstrs/buffer-utils": "^0.0.6",
+    "@monstrs/crypto-utils": "^0.0.2",
+    "@monstrs/mtproto-codecs": "^0.0.10",
+    "@monstrs/mtproto-core": "^0.0.10",
+    "@monstrs/mtproto-crypto": "^0.0.5",
+    "@monstrs/mtproto-extensions": "^0.0.3",
+    "@monstrs/mtproto-tl-core": "^0.0.8"
+  }
+}

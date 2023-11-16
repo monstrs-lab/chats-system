@@ -864,6 +864,120 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@chats-system/gateway-infrastructure-module@workspace:0.0.1, @chats-system/gateway-infrastructure-module@workspace:contexts/gateway/service/infrastructure-module":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/gateway-infrastructure-module@workspace:contexts/gateway/service/infrastructure-module"
+  dependencies:
+    "@bufbuild/protobuf": "npm:^1.3.1"
+    "@chats-system/handshake": "workspace:0.0.1"
+    "@chats-system/operations": "workspace:0.0.1"
+    "@connectrpc/connect": "npm:^1.0.0"
+    "@connectrpc/connect-node": "npm:^1.0.0"
+    "@faker-js/faker": "npm:^8.1.0"
+    "@jest/globals": "npm:^29.7.0"
+    "@monstrs/logger": "npm:^0.0.19"
+    "@monstrs/mtproto-codecs": "npm:^0.0.10"
+    "@monstrs/mtproto-core": "npm:^0.0.10"
+    "@monstrs/mtproto-extensions": "npm:^0.0.3"
+    "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
+    "@monstrs/nestjs-connectrpc-errors": "npm:^0.0.3"
+    "@monstrs/nestjs-validation": "npm:^0.1.1"
+    "@nestjs/common": "npm:^10.2.6"
+    "@nestjs/core": "npm:^10.2.6"
+    "@nestjs/cqrs": "npm:^10.2.5"
+    "@nestjs/microservices": "npm:^10.2.6"
+    "@nestjs/platform-express": "npm:^10.2.6"
+    "@nestjs/testing": "npm:^10.2.6"
+    "@nestjs/websockets": "npm:^10.2.6"
+    "@types/express": "npm:^4.17.18"
+    "@types/node": "npm:^20.6.5"
+    "@types/uuid": "npm:^9.0.4"
+    "@types/ws": "npm:^8.5.9"
+    class-transformer: "npm:^0.5.1"
+    class-validator: "npm:^0.14.0"
+    reflect-metadata: "npm:^0.1.13"
+    rxjs: "npm:^7.8.1"
+  peerDependencies:
+    "@bufbuild/protobuf": ^1.3.1
+    "@connectrpc/connect": ^0.13
+    "@connectrpc/connect-node": ^0.13
+    "@monstrs/nestjs-connectrpc": ^0.0.2
+    "@nestjs/common": ^10
+    "@nestjs/core": ^10
+    "@nestjs/cqrs": ^10
+    "@nestjs/microservices": ^10
+    "@nestjs/websockets": ^10.2.6
+    class-transformer: ^0.5
+    class-validator: ^0.14
+    reflect-metadata: ^0.1
+    rxjs: ^7
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/gateway-service-entrypoint@workspace:contexts/gateway/service/service-entrypoint":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/gateway-service-entrypoint@workspace:contexts/gateway/service/service-entrypoint"
+  dependencies:
+    "@bufbuild/protobuf": "npm:^1.3.1"
+    "@chats-system/gateway-infrastructure-module": "workspace:0.0.1"
+    "@connectrpc/connect": "npm:^1.0.0"
+    "@connectrpc/connect-node": "npm:^1.0.0"
+    "@faker-js/faker": "npm:^8.1.0"
+    "@jest/globals": "npm:^29.7.0"
+    "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
+    "@monstrs/nestjs-logger": "npm:^0.4.2"
+    "@monstrs/protobuf-rpc": "npm:0.0.7"
+    "@nestjs/common": "npm:^10.2.6"
+    "@nestjs/core": "npm:^10.2.6"
+    "@nestjs/cqrs": "npm:^10.2.5"
+    "@nestjs/microservices": "npm:^10.2.6"
+    "@nestjs/platform-express": "npm:^10.2.6"
+    "@nestjs/platform-socket.io": "npm:^10.2.6"
+    "@nestjs/platform-ws": "npm:^10.2.6"
+    "@nestjs/testing": "npm:^10.2.6"
+    "@nestjs/websockets": "npm:^10.2.6"
+    "@testcontainers/kafka": "npm:^10.2.1"
+    "@types/node": "npm:^20.6.5"
+    "@types/pg": "npm:^8.10.3"
+    "@types/ws": "npm:^8.5.9"
+    cache-manager: "npm:^5.2.3"
+    class-transformer: "npm:^0.5.1"
+    class-validator: "npm:^0.14.0"
+    get-port: "npm:^7.0.0"
+    p-retry: "npm:^6.0.0"
+    pg: "npm:^8.11.3"
+    reflect-metadata: "npm:^0.1.13"
+    rxjs: "npm:^7.8.1"
+    testcontainers: "npm:^10.2.1"
+    ws: "npm:^8.14.2"
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/handshake@workspace:0.0.1, @chats-system/handshake@workspace:shared/handshake":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/handshake@workspace:shared/handshake"
+  dependencies:
+    "@chats-system/operations": "workspace:0.0.1"
+    "@monstrs/buffer-utils": "npm:^0.0.6"
+    "@monstrs/crypto-utils": "npm:^0.0.2"
+    "@monstrs/mtproto-codecs": "npm:^0.0.10"
+    "@monstrs/mtproto-core": "npm:^0.0.10"
+    "@monstrs/mtproto-crypto": "npm:^0.0.5"
+    "@monstrs/mtproto-extensions": "npm:^0.0.3"
+    "@monstrs/mtproto-tl-core": "npm:^0.0.8"
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/operations@workspace:0.0.1, @chats-system/operations@workspace:shared/operations":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/operations@workspace:shared/operations"
+  dependencies:
+    "@monstrs/mtproto-tl-core": "npm:^0.0.8"
+    "@monstrs/mtproto-tl-to-typescript": "npm:^0.0.7"
+    "@monstrs/mtproto-tl-types": "npm:^0.0.2"
+  languageName: unknown
+  linkType: soft
+
 "@chats-system/session-infrastructure-module@workspace:0.0.1, @chats-system/session-infrastructure-module@workspace:contexts/session/service/infrastructure-module":
   version: 0.0.0-use.local
   resolution: "@chats-system/session-infrastructure-module@workspace:contexts/session/service/infrastructure-module"
@@ -1011,6 +1125,13 @@ __metadata:
   bin:
     protoc-gen-connect-es: bin/protoc-gen-connect-es
   checksum: a2f99ad26d6a12401ec38058f8ff24db2ea19179e0085f1778334a5725d145d7af2011ccb522f238c6492d28380d705bf71cb5ba8de98d2518fe7338475833a7
+  languageName: node
+  linkType: hard
+
+"@cryptography/aes@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@cryptography/aes@npm:0.1.1"
+  checksum: cc736d1410a389c1b9bb84c38ed8ef72ada779cacc692d39762e9912014ee2c44c5f7d15c03655acb28b635eaa1d19fc75c6932e4d423fd0406ac4f175907212
   languageName: node
   linkType: hard
 
@@ -1744,6 +1865,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@monstrs/bigint-utils@npm:0.0.2, @monstrs/bigint-utils@npm:^0.0.2":
+  version: 0.0.2
+  resolution: "@monstrs/bigint-utils@npm:0.0.2"
+  checksum: 484837a22afa6c23bb9c556edbb01e89b0c24e6594fa59e13c42a4c76589ea236eb5f0b66a6b50a4d2a6dd68c52aaed5210fc66e490430a872004a0ff7604a7f
+  languageName: node
+  linkType: hard
+
+"@monstrs/buffer-utils@npm:^0.0.6":
+  version: 0.0.6
+  resolution: "@monstrs/buffer-utils@npm:0.0.6"
+  dependencies:
+    "@monstrs/bigint-utils": "npm:0.0.2"
+  checksum: 85245c0dc2f76a5b0e0656f0b41d16177a53a97851852611cd41ad6a7fc5656b83100e0f8963359729897577453a5d6ea3775d98536b247123ee892e09860a41
+  languageName: node
+  linkType: hard
+
 "@monstrs/config-eslint@npm:0.3.12":
   version: 0.3.12
   resolution: "@monstrs/config-eslint@npm:0.3.12"
@@ -1808,6 +1945,13 @@ __metadata:
   version: 0.0.2
   resolution: "@monstrs/core-errors@npm:0.0.2"
   checksum: a1fb9b8388b5b90d8f80ee0bf8ace2e4d655320070af43d541466afef3705768ff985ebbedfc4caa281d589e865fb164792a49d7a0568e731856b5f8614d0a67
+  languageName: node
+  linkType: hard
+
+"@monstrs/crypto-utils@npm:^0.0.2":
+  version: 0.0.2
+  resolution: "@monstrs/crypto-utils@npm:0.0.2"
+  checksum: 439d057f291797a411164c20f2116f5c231fb0658f0d21cf62dcb5d3a9dfb1a47451ca4d5e2e00f896128c8fdb37e822ebc6a1069f29cf1cd067fea6f41ed85a
   languageName: node
   linkType: hard
 
@@ -1896,6 +2040,90 @@ __metadata:
     "@mikro-orm/core":
       optional: true
   checksum: 6927072eb160783b3e09cf0a3080d63432b8c31d9933571c865a5ba62ec398b44d92298659b97d4b8b9a23485e2dcda0ee0e0042ba1c2458918809cd4b3cfdaf
+  languageName: node
+  linkType: hard
+
+"@monstrs/mtproto-codecs@npm:^0.0.10":
+  version: 0.0.10
+  resolution: "@monstrs/mtproto-codecs@npm:0.0.10"
+  dependencies:
+    "@monstrs/buffer-utils": "npm:^0.0.6"
+    "@monstrs/mtproto-core": "npm:0.0.10"
+  checksum: 8a1c28777cd953aec5ec658a2003e6f8e363164382e6c4dd6cb59b3748081a71e2be930e11e4084db6e3d90ecfdd0459d229dd0ec27d7d294a9e5d446483cdd4
+  languageName: node
+  linkType: hard
+
+"@monstrs/mtproto-core@npm:0.0.10, @monstrs/mtproto-core@npm:^0.0.10":
+  version: 0.0.10
+  resolution: "@monstrs/mtproto-core@npm:0.0.10"
+  dependencies:
+    "@monstrs/bigint-utils": "npm:^0.0.2"
+    "@monstrs/buffer-utils": "npm:^0.0.6"
+    "@monstrs/mtproto-crypto": "npm:0.0.5"
+    "@monstrs/mtproto-extensions": "npm:0.0.3"
+  checksum: c33b816d2b8992e82e0ad8402819d6cdb4ea1adde41d5f07a756451c531f7b3dda2f7f6a6c6b492467b10f7ee11d36b7ea885d9c6881963ba90339df18f34ad7
+  languageName: node
+  linkType: hard
+
+"@monstrs/mtproto-crypto@npm:0.0.5, @monstrs/mtproto-crypto@npm:^0.0.5":
+  version: 0.0.5
+  resolution: "@monstrs/mtproto-crypto@npm:0.0.5"
+  dependencies:
+    "@cryptography/aes": "npm:^0.1.1"
+    "@monstrs/buffer-utils": "npm:^0.0.6"
+  checksum: 163aae15a9024c1f53da35a6d88fafbab13ff873f1002868a8bb23e9805c3cb0a3d4b4d2911301d4f148e2bab600025cb699ae4e0d14302688da4d44993e0788
+  languageName: node
+  linkType: hard
+
+"@monstrs/mtproto-extensions@npm:0.0.3, @monstrs/mtproto-extensions@npm:^0.0.3":
+  version: 0.0.3
+  resolution: "@monstrs/mtproto-extensions@npm:0.0.3"
+  dependencies:
+    "@monstrs/buffer-utils": "npm:^0.0.6"
+  checksum: 2523aa93c855b226bb37a70f6ec84fa77d3a46759efe6fb00c27a12dc1338950d7beacde7aa2ea607c4ac164daf2a5ac5d4eb1f25420fd37ec4943a0c613601e
+  languageName: node
+  linkType: hard
+
+"@monstrs/mtproto-tl-core@npm:0.0.8, @monstrs/mtproto-tl-core@npm:^0.0.8":
+  version: 0.0.8
+  resolution: "@monstrs/mtproto-tl-core@npm:0.0.8"
+  dependencies:
+    "@monstrs/buffer-utils": "npm:^0.0.6"
+    "@monstrs/mtproto-extensions": "npm:0.0.3"
+    "@monstrs/mtproto-tl-types": "npm:0.0.2"
+    camelcase: "npm:^8.0.0"
+  checksum: b137af111464662550eac4cb8fefb5f82004c0fcc1f9d9b31863e8768f8dcd6c286d697ddfc169db48fa1249c511afefed225ebe3667074eafb91488b6be9756
+  languageName: node
+  linkType: hard
+
+"@monstrs/mtproto-tl-json-parser@npm:0.0.2":
+  version: 0.0.2
+  resolution: "@monstrs/mtproto-tl-json-parser@npm:0.0.2"
+  checksum: 9941c3fd51f301ba2195055f5cdbd608f1d234e5f752676b5117abf2db11c853174eca217d92f971de6e1fb8a1688183258a2c7871159438782a40060ba27f77
+  languageName: node
+  linkType: hard
+
+"@monstrs/mtproto-tl-to-typescript@npm:^0.0.7":
+  version: 0.0.7
+  resolution: "@monstrs/mtproto-tl-to-typescript@npm:0.0.7"
+  dependencies:
+    "@monstrs/mtproto-tl-core": "npm:0.0.8"
+    "@monstrs/mtproto-tl-json-parser": "npm:0.0.2"
+    "@monstrs/mtproto-tl-types": "npm:0.0.2"
+    camelcase: "npm:^8.0.0"
+    commander: "npm:^11.1.0"
+    decamelize: "npm:^6.0.0"
+    ts-morph: "npm:^20.0.0"
+  bin:
+    tl-to-typescript: ./bin/tl-to-typescript.js
+  checksum: db03a1ef336d162530dd8acb6dd6b2b07cada08ffe14fdeca85da73cd792864acfc36202e33e92813ed21036ff5f2a9a5930e3e898a4971dc8b761c293ecd5f3
+  languageName: node
+  linkType: hard
+
+"@monstrs/mtproto-tl-types@npm:0.0.2, @monstrs/mtproto-tl-types@npm:^0.0.2":
+  version: 0.0.2
+  resolution: "@monstrs/mtproto-tl-types@npm:0.0.2"
+  checksum: 47df06e07960a8ba7ffa9432757995879c8cdfa03f33da64c3c0a2d5c589a325f41cac888a817568ddb8907d959d1db55ea0dfcdc8200e3d5f9d0e93fd32815b
   languageName: node
   linkType: hard
 
@@ -2242,6 +2470,20 @@ __metadata:
     "@nestjs/websockets": ^10.0.0
     rxjs: ^7.1.0
   checksum: d8c1711f29f7dd7aab9089d53992a908b0542d39777bffab2efdb672c434e30e9d37663947d4327c102c37506de47bfc641eaceb3e9a03b1ff026aa5867c2aba
+  languageName: node
+  linkType: hard
+
+"@nestjs/platform-ws@npm:^10.2.6":
+  version: 10.2.8
+  resolution: "@nestjs/platform-ws@npm:10.2.8"
+  dependencies:
+    tslib: "npm:2.6.2"
+    ws: "npm:8.14.2"
+  peerDependencies:
+    "@nestjs/common": ^10.0.0
+    "@nestjs/websockets": ^10.0.0
+    rxjs: ^7.1.0
+  checksum: d9e311b5dab5d469b3692173cb72d0ba6c4f7b36c46f057b0e12db579d858ee45427d2bb12d71415bbfad9f3cf3a52519e82c1143bbe3105b115c708200e3aab
   languageName: node
   linkType: hard
 
@@ -2786,6 +3028,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ts-morph/common@npm:~0.21.0":
+  version: 0.21.0
+  resolution: "@ts-morph/common@npm:0.21.0"
+  dependencies:
+    fast-glob: "npm:^3.2.12"
+    minimatch: "npm:^7.4.3"
+    mkdirp: "npm:^2.1.6"
+    path-browserify: "npm:^1.0.1"
+  checksum: 1d7f544d6235b3cd14cf4a7eb4f567bf1aeb9907e0932ee636c53fd7988dc4488b4c8901eaf862f726d87a2f7c074e598b518b447a8521a5c5713216b20a8596
+  languageName: node
+  linkType: hard
+
 "@tsconfig/node10@npm:^1.0.7":
   version: 1.0.9
   resolution: "@tsconfig/node10@npm:1.0.9"
@@ -3170,6 +3424,15 @@ __metadata:
   version: 13.11.5
   resolution: "@types/validator@npm:13.11.5"
   checksum: 3c85a355802b97c71986c2b326bf0003bc32ae0283c780312feb984edaa98f786f26431031dae803e4cb603c097b51864e13792e06d85343a8fcbcf19d0fac7e
+  languageName: node
+  linkType: hard
+
+"@types/ws@npm:^8.5.9":
+  version: 8.5.9
+  resolution: "@types/ws@npm:8.5.9"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 678bdd6461c4653f2975c537fb673cb1918c331558e2d2422b69761c9ced67200bb07c664e2593f3864077a891cb7c13ef2a40d303b4aacb06173d095d8aa3ce
   languageName: node
   linkType: hard
 
@@ -4404,6 +4667,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"camelcase@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "camelcase@npm:8.0.0"
+  checksum: 56c5fe072f0523c9908cdaac21d4a3b3fb0f608fb2e9ba90a60e792b95dd3bb3d1f3523873ab17d86d146e94171305f73ef619e2f538bd759675bc4a14b4bff3
+  languageName: node
+  linkType: hard
+
 "caniuse-lite@npm:^1.0.30001541":
   version: 1.0.30001551
   resolution: "caniuse-lite@npm:1.0.30001551"
@@ -4534,6 +4804,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"code-block-writer@npm:^12.0.0":
+  version: 12.0.0
+  resolution: "code-block-writer@npm:12.0.0"
+  checksum: ced73cdc466bff968bba9e8e32340d88420d25a229b9269f7425a10a7c2c9a12ca702dcb601b2462b96472d354f021cf66e552179fcbe30c8f7ecd0173c5fa07
+  languageName: node
+  linkType: hard
+
 "collect-v8-coverage@npm:^1.0.0":
   version: 1.0.2
   resolution: "collect-v8-coverage@npm:1.0.2"
@@ -4609,6 +4886,13 @@ __metadata:
   version: 10.0.1
   resolution: "commander@npm:10.0.1"
   checksum: 53f33d8927758a911094adadda4b2cbac111a5b377d8706700587650fd8f45b0bbe336de4b5c3fe47fd61f420a3d9bd452b6e0e6e5600a7e74d7bf0174f6efe3
+  languageName: node
+  linkType: hard
+
+"commander@npm:^11.1.0":
+  version: 11.1.0
+  resolution: "commander@npm:11.1.0"
+  checksum: 13cc6ac875e48780250f723fb81c1c1178d35c5decb1abb1b628b3177af08a8554e76b2c0f29de72d69eef7c864d12613272a71fabef8047922bc622ab75a179
   languageName: node
   linkType: hard
 
@@ -4824,6 +5108,13 @@ __metadata:
   dependencies:
     ms: "npm:^2.1.1"
   checksum: 37d96ae42cbc71c14844d2ae3ba55adf462ec89fd3a999459dec3833944cd999af6007ff29c780f1c61153bcaaf2c842d1e4ce1ec621e4fc4923244942e4a02a
+  languageName: node
+  linkType: hard
+
+"decamelize@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "decamelize@npm:6.0.0"
+  checksum: 689888f5ea39add843d79fb5a8d3bc1ce1df7583899bc7cef081c3deecd54758e24e8692f4c214e0ea6917742bb05ea1991e3e15c33031e7aa7b9041e8e8033a
   languageName: node
   linkType: hard
 
@@ -5806,6 +6097,19 @@ __metadata:
   version: 1.3.2
   resolution: "fast-fifo@npm:1.3.2"
   checksum: d53f6f786875e8b0529f784b59b4b05d4b5c31c651710496440006a398389a579c8dbcd2081311478b5bf77f4b0b21de69109c5a4eabea9d8e8783d1eb864e4c
+  languageName: node
+  linkType: hard
+
+"fast-glob@npm:^3.2.12":
+  version: 3.3.2
+  resolution: "fast-glob@npm:3.3.2"
+  dependencies:
+    "@nodelib/fs.stat": "npm:^2.0.2"
+    "@nodelib/fs.walk": "npm:^1.2.3"
+    glob-parent: "npm:^5.1.2"
+    merge2: "npm:^1.3.0"
+    micromatch: "npm:^4.0.4"
+  checksum: 42baad7b9cd40b63e42039132bde27ca2cb3a4950d0a0f9abe4639ea1aa9d3e3b40f98b1fe31cbc0cc17b664c9ea7447d911a152fa34ec5b72977b125a6fc845
   languageName: node
   linkType: hard
 
@@ -8093,6 +8397,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"minimatch@npm:^7.4.3":
+  version: 7.4.6
+  resolution: "minimatch@npm:7.4.6"
+  dependencies:
+    brace-expansion: "npm:^2.0.1"
+  checksum: e587bf3d90542555a3d58aca94c549b72d58b0a66545dd00eef808d0d66e5d9a163d3084da7f874e83ca8cc47e91c670e6c6f6593a3e7bb27fcc0e6512e87c67
+  languageName: node
+  linkType: hard
+
 "minimatch@npm:^9.0.1":
   version: 9.0.3
   resolution: "minimatch@npm:9.0.3"
@@ -8217,6 +8530,15 @@ __metadata:
   bin:
     mkdirp: bin/cmd.js
   checksum: 46ea0f3ffa8bc6a5bc0c7081ffc3907777f0ed6516888d40a518c5111f8366d97d2678911ad1a6882bf592fa9de6c784fea32e1687bb94e1f4944170af48a5cf
+  languageName: node
+  linkType: hard
+
+"mkdirp@npm:^2.1.6":
+  version: 2.1.6
+  resolution: "mkdirp@npm:2.1.6"
+  bin:
+    mkdirp: dist/cjs/src/bin.js
+  checksum: 96f551c651dd8f5f9435d53df1a7b9bfc553be769ee6da5192c37c1f303a376ef1c6996f96913d4a8d357060451d4526a346031d1919f92c58806a5fa3cd8dfe
   languageName: node
   linkType: hard
 
@@ -8702,6 +9024,13 @@ __metadata:
   version: 1.3.3
   resolution: "parseurl@npm:1.3.3"
   checksum: 90dd4760d6f6174adb9f20cf0965ae12e23879b5f5464f38e92fce8073354341e4b3b76fa3d878351efe7d01e617121955284cfd002ab087fba1a0726ec0b4f5
+  languageName: node
+  linkType: hard
+
+"path-browserify@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "path-browserify@npm:1.0.1"
+  checksum: 8b8c3fd5c66bd340272180590ae4ff139769e9ab79522e2eb82e3d571a89b8117c04147f65ad066dccfb42fcad902e5b7d794b3d35e0fd840491a8ddbedf8c66
   languageName: node
   linkType: hard
 
@@ -10475,6 +10804,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ts-morph@npm:^20.0.0":
+  version: 20.0.0
+  resolution: "ts-morph@npm:20.0.0"
+  dependencies:
+    "@ts-morph/common": "npm:~0.21.0"
+    code-block-writer: "npm:^12.0.0"
+  checksum: ce2f5b2f8be4492726c4025bc4a7e2b731d3e82b00f9363c95c1094e0f944d09589381a4701ec7a7f0f94d4263d7bc7c2222d767935507589c842cce475ad623
+  languageName: node
+  linkType: hard
+
 "ts-node@npm:^10.9.1":
   version: 10.9.1
   resolution: "ts-node@npm:10.9.1"
@@ -11077,6 +11416,21 @@ __metadata:
     imurmurhash: "npm:^0.1.4"
     signal-exit: "npm:^3.0.7"
   checksum: a2c282c95ef5d8e1c27b335ae897b5eca00e85590d92a3fd69a437919b7b93ff36a69ea04145da55829d2164e724bc62202cdb5f4b208b425aba0807889375c7
+  languageName: node
+  linkType: hard
+
+"ws@npm:8.14.2, ws@npm:^8.14.2":
+  version: 8.14.2
+  resolution: "ws@npm:8.14.2"
+  peerDependencies:
+    bufferutil: ^4.0.1
+    utf-8-validate: ">=5.0.2"
+  peerDependenciesMeta:
+    bufferutil:
+      optional: true
+    utf-8-validate:
+      optional: true
+  checksum: 35b4c2da048b8015c797fd14bcb5a5766216ce65c8a5965616a5440ca7b6c3681ee3cbd0ea0c184a59975556e9d58f2002abf8485a14d11d3371770811050a16
   languageName: node
   linkType: hard
 
