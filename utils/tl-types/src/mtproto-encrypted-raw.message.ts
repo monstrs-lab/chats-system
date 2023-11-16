@@ -1,10 +1,9 @@
-import type { MTProtoRawMessageContext }      from './mtproto-raw.message.js'
+import type { MTProtoRawMessageContext } from './mtproto-raw.message.js'
 
-import { IGE }                                from '@chats-system/crypto'
+import { IGE }                           from '@chats-system/crypto'
 
-import { MTProtoKeyPair }                     from './mtproto-key-pair.js'
-
-import { MTProtoKeyPairType } from './mtproto-key-pair.js'
+import { MTProtoKeyPair }                from './mtproto-key-pair.js'
+import { MTProtoKeyPairType }            from './mtproto-key-pair.js'
 
 export class MTProtoEncryptedRawMessage {
   #messageData: Buffer

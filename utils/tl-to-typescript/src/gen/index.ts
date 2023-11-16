@@ -37,7 +37,7 @@ export * from "./ping.js";
 export * from "./pong.js";
 export * from "./req-dh-params.js";
 export * from "./req-pq-multi.js";
-export * from "./respq.js";
+export * from "./res-pq.js";
 export * from "./rpc-answer-dropped-running.js";
 export * from "./rpc-answer-dropped.js";
 export * from "./rpc-answer-unknown.js";

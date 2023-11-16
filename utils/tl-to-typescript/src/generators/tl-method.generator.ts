@@ -4,6 +4,7 @@ import type { Project }              from 'ts-morph'
 import { join }                      from 'node:path'
 
 import camelcase                     from 'camelcase'
+import decamelize                   from 'decamelize'
 
 import { TLObjectGenerator }         from './tl-object.generator.js'
 
@@ -19,7 +20,9 @@ export class TLMethodGenerator extends TLObjectGenerator {
     const sourceFile = this.project.createSourceFile(
       join(
         this.outDir,
-        schema.namespace ? `${schema.namespace}.${schema.name}.ts` : `${schema.name}.ts`
+        schema.namespace ? `${schema.namespace}.${decamelize(schema.name, {separator: '-',
+        preserveConsecutiveUppercase: false,})}.ts` : `${decamelize(schema.name, {separator: '-',
+        preserveConsecutiveUppercase: false,})}.ts`
       )
         .toLowerCase()
         .replaceAll('_', '-'),
@@ -40,17 +43,17 @@ export class TLMethodGenerator extends TLObjectGenerator {
 
     const interfaceDeclaration = sourceFile.addInterface({
       name: camelcase(`${schema.method}Values`, {
-       pascalCase: true,
-       preserveConsecutiveUppercase: true,
-     }),
-     properties: schema.params.map(param => ({
-       name: camelcase(param.name, {
-         pascalCase: false,
-         preserveConsecutiveUppercase: true,
-       }),
-       type: this.getTypeForParam(sourceFile, param),
-     }))
-   })
+        pascalCase: true,
+        preserveConsecutiveUppercase: true,
+      }),
+      properties: schema.params.map((param) => ({
+        name: camelcase(param.name, {
+          pascalCase: false,
+          preserveConsecutiveUppercase: true,
+        }),
+        type: this.getTypeForParam(sourceFile, param),
+      })),
+    })
 
     const classDeclaration = sourceFile.addClass({
       name: camelcase(schema.method, {
@@ -76,17 +79,19 @@ export class TLMethodGenerator extends TLObjectGenerator {
       initializer: JSON.stringify(schema.params, null, 2),
     })
 
-    schema.params.forEach(param => {
+    schema.params.forEach((param) => {
       classDeclaration.addGetAccessor({
         name: camelcase(param.name, {
           pascalCase: false,
           preserveConsecutiveUppercase: true,
         }),
         returnType: this.getTypeForParam(sourceFile, param),
-        statements: [`return this.values.${camelcase(param.name, {
-          pascalCase: false,
-          preserveConsecutiveUppercase: true,
-        })}`],
+        statements: [
+          `return this.values.${camelcase(param.name, {
+            pascalCase: false,
+            preserveConsecutiveUppercase: true,
+          })}`,
+        ],
       })
     })
   }

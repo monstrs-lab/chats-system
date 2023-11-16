@@ -37,7 +37,7 @@ import { Ping } from "./ping.js";
 import { Pong } from "./pong.js";
 import { ReqDHParams } from "./req-dh-params.js";
 import { ReqPqMulti } from "./req-pq-multi.js";
-import { ResPQ } from "./respq.js";
+import { ResPQ } from "./res-pq.js";
 import { RpcAnswerDroppedRunning } from "./rpc-answer-dropped-running.js";
 import { RpcAnswerDropped } from "./rpc-answer-dropped.js";
 import { RpcAnswerUnknown } from "./rpc-answer-unknown.js";
