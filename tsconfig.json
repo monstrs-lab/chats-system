@@ -49,5 +49,5 @@
     "outDir": "./dist",
     "noImplicitOverride": true
   },
-  "include": ["project.types.d.ts", "contexts/**/*", "shared/**/*", "utils/**/*"]
+  "include": ["project.types.d.ts", "contexts/**/*", "shared/**/*"]
 }

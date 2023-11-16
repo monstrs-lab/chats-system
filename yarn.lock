@@ -864,26 +864,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@chats-system/crypto@workspace:0.0.1, @chats-system/crypto@workspace:shared/crypto":
-  version: 0.0.0-use.local
-  resolution: "@chats-system/crypto@workspace:shared/crypto"
-  dependencies:
-    "@cryptography/aes": "npm:^0.1.1"
-    "@monstrs/buffer-utils": "npm:^0.0.6"
-  languageName: unknown
-  linkType: soft
-
 "@chats-system/gateway-service-entrypoint@workspace:contexts/gateway/service/service-entrypoint":
   version: 0.0.0-use.local
   resolution: "@chats-system/gateway-service-entrypoint@workspace:contexts/gateway/service/service-entrypoint"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.3.1"
     "@chats-system/core-rpc": "workspace:0.0.1"
-    "@chats-system/crypto": "workspace:0.0.1"
+    "@chats-system/handshake": "workspace:0.0.1"
+    "@chats-system/operations": "workspace:0.0.1"
     "@chats-system/session-infrastructure-module": "workspace:0.0.1"
     "@chats-system/session-rpc": "workspace:0.0.1"
-    "@chats-system/tl-to-typescript": "workspace:0.0.1"
-    "@chats-system/tl-types": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.0.0"
     "@connectrpc/connect-node": "npm:^1.0.0"
     "@cryptography/aes": "npm:^0.1.1"
@@ -891,11 +881,11 @@ __metadata:
     "@jest/globals": "npm:^29.7.0"
     "@monstrs/buffer-utils": "npm:^0.0.6"
     "@monstrs/crypto-utils": "npm:^0.0.2"
-    "@monstrs/mtproto-codecs": "npm:^0.0.3"
-    "@monstrs/mtproto-core": "npm:^0.0.3"
-    "@monstrs/mtproto-crypto": "npm:^0.0.2"
+    "@monstrs/mtproto-codecs": "npm:^0.0.7"
+    "@monstrs/mtproto-core": "npm:^0.0.7"
+    "@monstrs/mtproto-crypto": "npm:^0.0.5"
     "@monstrs/mtproto-extensions": "npm:^0.0.3"
-    "@monstrs/mtproto-tl-core": "npm:^0.0.4"
+    "@monstrs/mtproto-tl-core": "npm:^0.0.6"
     "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
     "@monstrs/nestjs-logger": "npm:^0.4.2"
     "@monstrs/nestjs-microservices-registry": "npm:^0.1.0"
@@ -924,6 +914,31 @@ __metadata:
     rxjs: "npm:^7.8.1"
     testcontainers: "npm:^10.2.1"
     ws: "npm:^8.14.2"
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/handshake@workspace:0.0.1, @chats-system/handshake@workspace:shared/handshake":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/handshake@workspace:shared/handshake"
+  dependencies:
+    "@chats-system/operations": "workspace:0.0.1"
+    "@monstrs/buffer-utils": "npm:^0.0.6"
+    "@monstrs/crypto-utils": "npm:^0.0.2"
+    "@monstrs/mtproto-codecs": "npm:^0.0.7"
+    "@monstrs/mtproto-core": "npm:^0.0.7"
+    "@monstrs/mtproto-crypto": "npm:^0.0.5"
+    "@monstrs/mtproto-extensions": "npm:^0.0.3"
+    "@monstrs/mtproto-tl-core": "npm:^0.0.6"
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/operations@workspace:0.0.1, @chats-system/operations@workspace:shared/operations":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/operations@workspace:shared/operations"
+  dependencies:
+    "@monstrs/mtproto-tl-core": "npm:^0.0.6"
+    "@monstrs/mtproto-tl-to-typescript": "npm:^0.0.5"
+    "@monstrs/mtproto-tl-types": "npm:^0.0.2"
   languageName: unknown
   linkType: soft
 
@@ -1033,49 +1048,6 @@ __metadata:
     reflect-metadata: "npm:^0.1.13"
     rxjs: "npm:^7.8.1"
     testcontainers: "npm:^10.2.1"
-  languageName: unknown
-  linkType: soft
-
-"@chats-system/tl-json-schema-parser@workspace:0.0.1, @chats-system/tl-json-schema-parser@workspace:utils/tl-json-schema-parser":
-  version: 0.0.0-use.local
-  resolution: "@chats-system/tl-json-schema-parser@workspace:utils/tl-json-schema-parser"
-  dependencies:
-    "@chats-system/tl-json-schema": "workspace:0.0.1"
-  languageName: unknown
-  linkType: soft
-
-"@chats-system/tl-json-schema@workspace:0.0.1, @chats-system/tl-json-schema@workspace:utils/tl-json-schema":
-  version: 0.0.0-use.local
-  resolution: "@chats-system/tl-json-schema@workspace:utils/tl-json-schema"
-  languageName: unknown
-  linkType: soft
-
-"@chats-system/tl-to-typescript@workspace:0.0.1, @chats-system/tl-to-typescript@workspace:utils/tl-to-typescript":
-  version: 0.0.0-use.local
-  resolution: "@chats-system/tl-to-typescript@workspace:utils/tl-to-typescript"
-  dependencies:
-    "@chats-system/tl-json-schema": "workspace:0.0.1"
-    "@chats-system/tl-json-schema-parser": "workspace:0.0.1"
-    "@chats-system/tl-types": "workspace:0.0.1"
-    "@monstrs/mtproto-tl-core": "npm:^0.0.4"
-    "@monstrs/mtproto-tl-types": "npm:^0.0.2"
-    camelcase: "npm:^8.0.0"
-    decamelize: "npm:^6.0.0"
-    ts-morph: "npm:^20.0.0"
-    ts-node: "npm:^10.9.1"
-    typescript: "npm:^5.2.2"
-  languageName: unknown
-  linkType: soft
-
-"@chats-system/tl-types@workspace:0.0.1, @chats-system/tl-types@workspace:utils/tl-types":
-  version: 0.0.0-use.local
-  resolution: "@chats-system/tl-types@workspace:utils/tl-types"
-  dependencies:
-    "@chats-system/crypto": "workspace:0.0.1"
-    "@chats-system/tl-json-schema-parser": "workspace:0.0.1"
-    "@monstrs/buffer-utils": "npm:^0.0.6"
-    big-integer: "npm:^1.6.51"
-    camelcase: "npm:^8.0.0"
   languageName: unknown
   linkType: soft
 
@@ -1857,7 +1829,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/bigint-utils@npm:0.0.2":
+"@monstrs/bigint-utils@npm:0.0.2, @monstrs/bigint-utils@npm:^0.0.2":
   version: 0.0.2
   resolution: "@monstrs/bigint-utils@npm:0.0.2"
   checksum: 484837a22afa6c23bb9c556edbb01e89b0c24e6594fa59e13c42a4c76589ea236eb5f0b66a6b50a4d2a6dd68c52aaed5210fc66e490430a872004a0ff7604a7f
@@ -2035,34 +2007,35 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/mtproto-codecs@npm:^0.0.3":
-  version: 0.0.3
-  resolution: "@monstrs/mtproto-codecs@npm:0.0.3"
+"@monstrs/mtproto-codecs@npm:^0.0.7":
+  version: 0.0.7
+  resolution: "@monstrs/mtproto-codecs@npm:0.0.7"
   dependencies:
     "@monstrs/buffer-utils": "npm:^0.0.6"
-    "@monstrs/mtproto-core": "npm:0.0.3"
-  checksum: 284e8359a778e8d0326ce176d5ed1dff187f33eb828004f8dc47d5228113dcde11d0f5b5d6ab148fb0ceb458a86fcf1b881683951e93ef394a0c70e961d87faa
+    "@monstrs/mtproto-core": "npm:0.0.7"
+  checksum: 45c5978b2d46517c0132959709641832d1eed89e896223b15127c47d5919c6f6faf5854116ed1baa1670e7997bbd1a0a23507cf78f7cc906dc1e9b5ffc608c7d
   languageName: node
   linkType: hard
 
-"@monstrs/mtproto-core@npm:0.0.3, @monstrs/mtproto-core@npm:^0.0.3":
-  version: 0.0.3
-  resolution: "@monstrs/mtproto-core@npm:0.0.3"
+"@monstrs/mtproto-core@npm:0.0.7, @monstrs/mtproto-core@npm:^0.0.7":
+  version: 0.0.7
+  resolution: "@monstrs/mtproto-core@npm:0.0.7"
   dependencies:
+    "@monstrs/bigint-utils": "npm:^0.0.2"
     "@monstrs/buffer-utils": "npm:^0.0.6"
-    "@monstrs/mtproto-crypto": "npm:0.0.2"
+    "@monstrs/mtproto-crypto": "npm:0.0.5"
     "@monstrs/mtproto-extensions": "npm:0.0.3"
-  checksum: c7a9a0b1731e0e79b632d9f2a8414e4e18b422f4ca81293dfd27eba66cd76e2c20bdcd0803834d478ba015f278689671074a6b21103d70fa3217995bf8dec2a9
+  checksum: b93db5c4b5cd528b4a3e5ccb2a5c7a915ea87a2e4194891c413ce6e65118ca2ade825c0e73bfd7e2f91781602b9692a6898ab3180434b2ae1b37e6a4285f649f
   languageName: node
   linkType: hard
 
-"@monstrs/mtproto-crypto@npm:0.0.2, @monstrs/mtproto-crypto@npm:^0.0.2":
-  version: 0.0.2
-  resolution: "@monstrs/mtproto-crypto@npm:0.0.2"
+"@monstrs/mtproto-crypto@npm:0.0.5, @monstrs/mtproto-crypto@npm:^0.0.5":
+  version: 0.0.5
+  resolution: "@monstrs/mtproto-crypto@npm:0.0.5"
   dependencies:
     "@cryptography/aes": "npm:^0.1.1"
     "@monstrs/buffer-utils": "npm:^0.0.6"
-  checksum: 061044924ecf2a7c41a465c765ce636c53c99d0b16e0bf3229d3ac507b4231c721e3502b3a4bf06809817a0d86828d36d1b0bd34e3d4504d7a754a5585dbd9aa
+  checksum: 163aae15a9024c1f53da35a6d88fafbab13ff873f1002868a8bb23e9805c3cb0a3d4b4d2911301d4f148e2bab600025cb699ae4e0d14302688da4d44993e0788
   languageName: node
   linkType: hard
 
@@ -2075,18 +2048,43 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/mtproto-tl-core@npm:^0.0.4":
-  version: 0.0.4
-  resolution: "@monstrs/mtproto-tl-core@npm:0.0.4"
+"@monstrs/mtproto-tl-core@npm:0.0.6, @monstrs/mtproto-tl-core@npm:^0.0.6":
+  version: 0.0.6
+  resolution: "@monstrs/mtproto-tl-core@npm:0.0.6"
   dependencies:
     "@monstrs/buffer-utils": "npm:^0.0.6"
     "@monstrs/mtproto-extensions": "npm:0.0.3"
+    "@monstrs/mtproto-tl-types": "npm:0.0.2"
     camelcase: "npm:^8.0.0"
-  checksum: 1a81e9ba9288f811bf2cb27c67fa812c3663add1483d9dd0f504924b2c293c5a35624197c0997dda6aaed069a52291ffd7206ac270989dc8999a05c1a04a7b9a
+  checksum: e56cff066d58119f756934c212e54858004fb2eb495ce7b3146420e7d10bba91991096dc2356410b7955480c8d251b342f719821b93aaf6347d3824619c63c32
   languageName: node
   linkType: hard
 
-"@monstrs/mtproto-tl-types@npm:^0.0.2":
+"@monstrs/mtproto-tl-json-parser@npm:0.0.2":
+  version: 0.0.2
+  resolution: "@monstrs/mtproto-tl-json-parser@npm:0.0.2"
+  checksum: 9941c3fd51f301ba2195055f5cdbd608f1d234e5f752676b5117abf2db11c853174eca217d92f971de6e1fb8a1688183258a2c7871159438782a40060ba27f77
+  languageName: node
+  linkType: hard
+
+"@monstrs/mtproto-tl-to-typescript@npm:^0.0.5":
+  version: 0.0.5
+  resolution: "@monstrs/mtproto-tl-to-typescript@npm:0.0.5"
+  dependencies:
+    "@monstrs/mtproto-tl-core": "npm:0.0.6"
+    "@monstrs/mtproto-tl-json-parser": "npm:0.0.2"
+    "@monstrs/mtproto-tl-types": "npm:0.0.2"
+    camelcase: "npm:^8.0.0"
+    commander: "npm:^11.1.0"
+    decamelize: "npm:^6.0.0"
+    ts-morph: "npm:^20.0.0"
+  bin:
+    tl-to-typescript: ./bin/tl-to-typescript.js
+  checksum: 2fcdf19d0f362892d1c3b5d2e6572b99ede1e31b60ca094f07057e65fdcf362ac747f6563a5608b69659fe217761e83815a3eff1ed5ba40339d1484fda6653a6
+  languageName: node
+  linkType: hard
+
+"@monstrs/mtproto-tl-types@npm:0.0.2, @monstrs/mtproto-tl-types@npm:^0.0.2":
   version: 0.0.2
   resolution: "@monstrs/mtproto-tl-types@npm:0.0.2"
   checksum: 47df06e07960a8ba7ffa9432757995879c8cdfa03f33da64c3c0a2d5c589a325f41cac888a817568ddb8907d959d1db55ea0dfcdc8200e3d5f9d0e93fd32815b
@@ -4855,6 +4853,13 @@ __metadata:
   version: 10.0.1
   resolution: "commander@npm:10.0.1"
   checksum: 53f33d8927758a911094adadda4b2cbac111a5b377d8706700587650fd8f45b0bbe336de4b5c3fe47fd61f420a3d9bd452b6e0e6e5600a7e74d7bf0174f6efe3
+  languageName: node
+  linkType: hard
+
+"commander@npm:^11.1.0":
+  version: 11.1.0
+  resolution: "commander@npm:11.1.0"
+  checksum: 13cc6ac875e48780250f723fb81c1c1178d35c5decb1abb1b628b3177af08a8554e76b2c0f29de72d69eef7c864d12613272a71fabef8047922bc622ab75a179
   languageName: node
   linkType: hard
 

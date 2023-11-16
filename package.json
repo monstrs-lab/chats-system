@@ -3,8 +3,7 @@
   "private": true,
   "workspaces": [
     "contexts/**/*",
-    "shared/**/*",
-    "utils/**/*"
+    "shared/**/*"
   ],
   "resolutions": {
     "pg": "8.10.0"

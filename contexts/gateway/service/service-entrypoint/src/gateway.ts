@@ -1,44 +1,48 @@
-import { randomBytes }                           from 'node:crypto'
-import { createHash }                            from 'node:crypto'
+import { randomBytes }                      from 'node:crypto'
+import { createHash }                       from 'node:crypto'
 
-import { MTProtoObfuscadetCodec }                from '@monstrs/mtproto-codecs'
-import { MTProtoUnencryptedRawMessage }          from '@monstrs/mtproto-core'
-import { MTProtoRawMessage }                     from '@monstrs/mtproto-core'
-import { MTProtoAuthKey }                        from '@monstrs/mtproto-core'
-import { MTProtoAuthKeyManager }                 from '@monstrs/mtproto-core'
-import { MTProtoKeyPair } from '@monstrs/mtproto-core'
-import { IGE }                                   from '@monstrs/mtproto-crypto'
-import { BinaryReader }                          from '@monstrs/mtproto-extensions'
-import { TLObject }                              from '@monstrs/mtproto-tl-core'
-import { WebSocketGateway }                      from '@nestjs/websockets'
-import { OnGatewayConnection }                   from '@nestjs/websockets'
-import { fromBigIntToByteArrayBuffer }           from '@monstrs/buffer-utils'
-import { fromBufferToBigInt }                    from '@monstrs/buffer-utils'
-import { bufferXor }                             from '@monstrs/buffer-utils'
-import { fromBigIntToBuffer }                    from '@monstrs/buffer-utils'
-import { modExp }                                from '@monstrs/crypto-utils'
-import { WebSocket }                             from 'ws'
+import { MTProtoObfuscadetCodec }           from '@monstrs/mtproto-codecs'
+import { MTProtoUnencryptedRawMessage }     from '@monstrs/mtproto-core'
+import { MTProtoRawMessage }                from '@monstrs/mtproto-core'
+import { MTProtoAuthKey }                   from '@monstrs/mtproto-core'
+import { MTProtoAuthKeyManager }            from '@monstrs/mtproto-core'
+import { MTProtoKeyPair }                   from '@monstrs/mtproto-core'
+import { MTProtoMessageId } from '@monstrs/mtproto-core'
+import { IGE }                              from '@monstrs/mtproto-crypto'
+import { BinaryReader }                     from '@monstrs/mtproto-extensions'
+import { TLObject }                         from '@monstrs/mtproto-tl-core'
+import { WebSocketGateway }                 from '@nestjs/websockets'
+import { OnGatewayConnection }              from '@nestjs/websockets'
+import { fromBigIntToByteArrayBuffer }      from '@monstrs/buffer-utils'
+import { fromBufferToBigInt }               from '@monstrs/buffer-utils'
+import { bufferXor }                        from '@monstrs/buffer-utils'
+import { fromBigIntToBuffer }               from '@monstrs/buffer-utils'
+import { modExp }                           from '@monstrs/crypto-utils'
+import { calculateNonceHash }               from '@monstrs/mtproto-crypto'
+import { WebSocket }                        from 'ws'
 
-import { SchemaRegistry }                        from '@chats-system/tl-to-typescript'
-import { ReqPqMulti }                            from '@chats-system/tl-to-typescript'
-import { ReqDHParams }                           from '@chats-system/tl-to-typescript'
-import { ResPQ }                                 from '@chats-system/tl-to-typescript'
-import { ServerDHInnerData }                     from '@chats-system/tl-to-typescript'
-import { PQInnerData }                           from '@chats-system/tl-to-typescript'
-import { ServerDHParamsOk }                      from '@chats-system/tl-to-typescript'
-import { SetClientDHParams }                     from '@chats-system/tl-to-typescript'
-import { ClientDHInnerData }                     from '@chats-system/tl-to-typescript'
-import { DhGenOk }                               from '@chats-system/tl-to-typescript'
-import { calculateNonceHash }                    from '@chats-system/crypto'
+import { SchemaRegistry }                   from '@chats-system/operations'
+import { ReqPqMulti }                       from '@chats-system/operations'
+import { ReqDHParams }                      from '@chats-system/operations'
+import { ResPQ }                            from '@chats-system/operations'
+import { ServerDHInnerData }                from '@chats-system/operations'
+import { PQInnerData }                      from '@chats-system/operations'
+import { ServerDHParamsOk }                 from '@chats-system/operations'
+import { SetClientDHParams }                from '@chats-system/operations'
+import { ClientDHInnerData }                from '@chats-system/operations'
+import { DhGenOk }                          from '@chats-system/operations'
 
-import { key }                                   from './key.js'
-import { dh2048P }                               from './key.js'
-import { dh2048G }                               from './key.js'
+import { HandshakeReceiver, MTProtoState } from '@chats-system/handshake'
+
+import { key }                              from './key.js'
+import { dh2048P }                          from './key.js'
+import { dh2048G }                          from './key.js'
 
 type MTProtoConnection = WebSocket & {
   codec: MTProtoObfuscadetCodec
   authKeyManager: MTProtoAuthKeyManager
-  newNonce: any
+  newNonce: any,
+  state: MTProtoState
 }
 
 @WebSocketGateway({
@@ -52,24 +56,28 @@ export class EventsGateway implements OnGatewayConnection {
       if (!connection.codec) {
         connection.codec = new MTProtoObfuscadetCodec(data)
         connection.authKeyManager = new MTProtoAuthKeyManager()
+        connection.state = new MTProtoState(
+          new MTProtoObfuscadetCodec(data),
+          new MTProtoAuthKeyManager()
+        )
       } else {
-        const rawMessage = await connection.codec.receive(data, connection)
+        const rawMessage = await connection.state.codec.receive(data, connection.state)
         const message = rawMessage.getMessage()
 
         if (message instanceof MTProtoUnencryptedRawMessage) {
-          const request = new BinaryReader(
+          const request = new BinaryReader<any>(
             rawMessage.getMessage().getMessageData(),
             SchemaRegistry
           ).readObject()
 
-          this.onUnencryptedMessage(connection, request as TLObject<any>, message.getMessageId())
+          this.onUnencryptedMessage(connection, request as TLObject<any>)
         } else {
           const body = message.getMessageData()
-          const binaryReader = new BinaryReader(body, SchemaRegistry)
+          const binaryReader = new BinaryReader<any>(body, SchemaRegistry)
 
           //console.log(body)
           binaryReader.readLong()
-          const serverId = binaryReader.readLong()
+          const sessionId = binaryReader.readLong()
           //console.log(serverId)
           const remoteMsgId = binaryReader.readLong()
           //console.log(remoteMsgId)
@@ -86,23 +94,52 @@ export class EventsGateway implements OnGatewayConnection {
     })
   }
 
-  async onUnencryptedMessage(
-    connection: MTProtoConnection,
-    message: TLObject<any>,
-    messageId: bigint
-  ) {
+  async onUnencryptedMessage(connection: MTProtoConnection, message: TLObject<any>) {
+    let result: any
+
     if (message instanceof ReqPqMulti) {
-      await this.onReqPqMulti(connection, message, messageId)
+      result = await new HandshakeReceiver().handleReqPqMulti(message, connection.state)
     } else if (message instanceof ReqDHParams) {
-      await this.onReqDHParams(connection, message, messageId)
+      result = await new HandshakeReceiver().handleReqDHParams(message, connection.state)
     } else if (message instanceof SetClientDHParams) {
-      await this.onSetClientDHParams(connection, message, messageId)
+      result = await new HandshakeReceiver().handleSetClientDHParams(message, connection.state)
     } else {
       console.log(message)
     }
+
+    if (!result) {
+      throw new Error('Invalid flow')
+    }
+
+    const bytes = result.getBytes()
+
+    connection.send(
+      await connection.state.codec.send(
+        new MTProtoRawMessage(
+          BigInt(0),
+          new MTProtoUnencryptedRawMessage(
+            MTProtoMessageId.generate(),
+            bytes.length,
+            bytes
+          )
+        )
+      )
+    )
+
+    /*
+    if (message instanceof ReqPqMulti) {
+      await this.onReqPqMulti(connection, message)
+    } else if (message instanceof ReqDHParams) {
+      await this.onReqDHParams(connection, message)
+    } else if (message instanceof SetClientDHParams) {
+      await this.onSetClientDHParams(connection, message)
+    } else {
+      console.log(message)
+    }
+    */
   }
 
-  async onReqPqMulti(connection: MTProtoConnection, message: ReqPqMulti, messageId: bigint) {
+  async onReqPqMulti(connection: MTProtoConnection, message: ReqPqMulti) {
     if (!message.nonce) {
       throw new Error('Invalid nonce')
     }
@@ -122,17 +159,21 @@ export class EventsGateway implements OnGatewayConnection {
       await connection.codec.send(
         new MTProtoRawMessage(
           BigInt(0),
-          new MTProtoUnencryptedRawMessage(messageId + BigInt(10), messageData.length, messageData)
+          new MTProtoUnencryptedRawMessage(
+            MTProtoMessageId.generate(),
+            messageData.length,
+            messageData
+          )
         )
       )
     )
   }
 
-  async onReqDHParams(connection: MTProtoConnection, message: ReqDHParams, messageId: bigint) {
+  async onReqDHParams(connection: MTProtoConnection, message: ReqDHParams) {
     const encryptedDataBuffer = fromBufferToBigInt(message.encryptedData, false)
     const keyAesEncryptedInt = modExp(encryptedDataBuffer, key.d, key.n)
     const keyAesEncrypted = fromBigIntToBuffer(keyAesEncryptedInt, 256, false)
-    const tempKeyXor = keyAesEncrypted.subarray(0, 32) // key
+    const tempKeyXor = keyAesEncrypted.subarray(0, 32)
     const aesEncrypted = keyAesEncrypted.subarray(32, keyAesEncrypted.length)
     const aesEncryptedHash = createHash('sha256').update(aesEncrypted).digest()
     const tempKey = bufferXor(tempKeyXor, aesEncryptedHash)
@@ -144,7 +185,7 @@ export class EventsGateway implements OnGatewayConnection {
     const dataPadReversed = dataWithHash.subarray(0, dataWithHash.length - 32)
     const dataWithPadding = Buffer.from(dataPadReversed).reverse()
 
-    const request = new BinaryReader(
+    const request = new BinaryReader<any>(
       dataWithPadding,
       SchemaRegistry
     ).readObject<PQInnerData>() as PQInnerData
@@ -163,10 +204,7 @@ export class EventsGateway implements OnGatewayConnection {
 
     const bytes = serverDHInnerData.getBytes()
 
-    const { key: igekey, iv } = MTProtoKeyPair.generateKeyDataFromNonce(
-      message.serverNonce,
-      request.newNonce
-    )
+    const { key: igekey, iv } = MTProtoKeyPair.fromNonce(message.serverNonce, request.newNonce)
 
     const igeEncode = new IGE(igekey, iv)
 
@@ -184,7 +222,11 @@ export class EventsGateway implements OnGatewayConnection {
       await connection.codec.send(
         new MTProtoRawMessage(
           BigInt(0),
-          new MTProtoUnencryptedRawMessage(messageId + BigInt(20), messageData.length, messageData)
+          new MTProtoUnencryptedRawMessage(
+            MTProtoMessageId.generate(),
+            messageData.length,
+            messageData
+          )
         )
       )
     )
@@ -193,25 +235,20 @@ export class EventsGateway implements OnGatewayConnection {
     ;(connection as any).a = a
   }
 
-  async onSetClientDHParams(
-    connection: MTProtoConnection,
-    message: SetClientDHParams,
-    messageId: bigint
-  ) {
-    const { key: igekey, iv } = MTProtoKeyPair.generateKeyDataFromNonce(
-      message.serverNonce,
-      connection.newNonce
-    )
+  async onSetClientDHParams(connection: MTProtoConnection, message: SetClientDHParams) {
+    const { key: igekey, iv } = MTProtoKeyPair.fromNonce(message.serverNonce, connection.newNonce)
 
     const igeEncode = new IGE(igekey, iv)
     const clientDhEncrypted = igeEncode.decrypt(message.encryptedData)
     const clientDh = clientDhEncrypted.subarray(20, clientDhEncrypted.length)
 
-    const innerData = new BinaryReader(clientDh, SchemaRegistry).readObject() as ClientDHInnerData
-    console.log(innerData)
+    const innerData = new BinaryReader<any>(
+      clientDh,
+      SchemaRegistry
+    ).readObject() as ClientDHInnerData
 
-    const a = fromBufferToBigInt(Buffer.from(randomBytes(16)), false, true)
-    const gA = modExp(fromBufferToBigInt(dh2048G), a, fromBufferToBigInt(dh2048P))
+    //const a = fromBufferToBigInt(Buffer.from(randomBytes(16)), false, true)
+    //const gA = modExp(fromBufferToBigInt(dh2048G), a, fromBufferToBigInt(dh2048P))
 
     const gab = modExp(
       fromBufferToBigInt(innerData.gB),
@@ -235,7 +272,11 @@ export class EventsGateway implements OnGatewayConnection {
       await connection.codec.send(
         new MTProtoRawMessage(
           BigInt(0),
-          new MTProtoUnencryptedRawMessage(messageId + BigInt(20), messageData.length, messageData)
+          new MTProtoUnencryptedRawMessage(
+            MTProtoMessageId.generate(),
+            messageData.length,
+            messageData
+          )
         )
       )
     )
