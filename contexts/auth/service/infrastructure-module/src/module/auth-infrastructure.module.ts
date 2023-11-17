@@ -5,9 +5,6 @@ import type { OnModuleInit }                  from '@nestjs/common'
 import { MikroORM }                           from '@mikro-orm/core'
 import { MikroOrmModule }                     from '@mikro-orm/nestjs'
 import { PostgreSqlDriver }                   from '@mikro-orm/postgresql'
-import { ConnectRpcServer }                   from '@monstrs/nestjs-connectrpc'
-import { ServerProtocol }                     from '@monstrs/nestjs-connectrpc'
-import { MicroservisesRegistryModule }        from '@monstrs/nestjs-microservices-registry'
 import { MikroORMConfigModule }               from '@monstrs/nestjs-mikro-orm-config'
 import { MikroORMConfig }                     from '@monstrs/nestjs-mikro-orm-config'
 import { MikroORMRequestContextModule }       from '@monstrs/nestjs-mikro-orm-request-context'
@@ -30,12 +27,6 @@ export class AuthInfrastructureModule implements OnModuleInit {
       controllers: Object.values(controllers),
       imports: [
         MikroORMRequestContextModule.forInterceptor(),
-        MicroservisesRegistryModule.connect({
-          strategy: new ConnectRpcServer({
-            protocol: ServerProtocol.HTTP2_INSECURE,
-            port: 50051,
-          }),
-        }),
         MikroOrmModule.forFeature(Object.values(entities)),
         MikroOrmModule.forRootAsync({
           imports: [
