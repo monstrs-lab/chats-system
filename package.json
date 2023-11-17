@@ -2,6 +2,7 @@
   "name": "chats-system",
   "private": true,
   "workspaces": [
+    "applications/**/*",
     "contexts/**/*",
     "shared/**/*"
   ],

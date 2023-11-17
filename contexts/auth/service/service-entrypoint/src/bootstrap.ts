@@ -1,5 +1,6 @@
+import { ConnectRpcServer }            from '@monstrs/nestjs-connectrpc'
+import { ServerProtocol }              from '@monstrs/nestjs-connectrpc'
 import { NestLogger }                  from '@monstrs/nestjs-logger'
-import { MicroservisesRegistry }       from '@monstrs/nestjs-microservices-registry'
 import { NestFactory }                 from '@nestjs/core'
 
 import { AuthServiceEntrypointModule } from './auth-service-entrypoint.module.js'
@@ -11,9 +12,12 @@ const bootstrap = async (): Promise<void> => {
 
   app.enableShutdownHooks()
 
-  app
-    .get<typeof MicroservisesRegistry>(MicroservisesRegistry, { strict: false })
-    .connect(app, { inheritAppConfig: true })
+  app.connectMicroservice({
+    strategy: new ConnectRpcServer({
+      protocol: ServerProtocol.HTTP2_INSECURE,
+      port: 50051,
+    }),
+  })
 
   await app.startAllMicroservices()
   await app.listen(3000)

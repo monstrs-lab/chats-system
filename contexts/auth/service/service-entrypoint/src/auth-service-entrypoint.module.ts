@@ -1,9 +1,8 @@
-import { MicroservisesRegistryModule } from '@monstrs/nestjs-microservices-registry'
-import { Module }                      from '@nestjs/common'
+import { Module }                   from '@nestjs/common'
 
-import { AuthInfrastructureModule }    from '@chats-system/auth-infrastructure-module'
+import { AuthInfrastructureModule } from '@chats-system/auth-infrastructure-module'
 
 @Module({
-  imports: [MicroservisesRegistryModule.register(), AuthInfrastructureModule.register()],
+  imports: [AuthInfrastructureModule.register()],
 })
 export class AuthServiceEntrypointModule {}
