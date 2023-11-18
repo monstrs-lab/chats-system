@@ -22,5 +22,16 @@
       "type": "libraries",
       "migration": "1643131477515"
     }
+  },
+  "dependenciesMeta": {
+    "@bufbuild/protobuf@1.4.1": {
+      "unplugged": true
+    },
+    "@bufbuild/protobuf@1.4.2": {
+      "unplugged": true
+    },
+    "@connectrpc/connect@1.1.3": {
+      "unplugged": true
+    }
   }
 }

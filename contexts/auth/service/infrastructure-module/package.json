@@ -16,6 +16,7 @@
     "@mikro-orm/core": "^5.8.3",
     "@mikro-orm/nestjs": "^5.2.2",
     "@mikro-orm/postgresql": "^5.8.3",
+    "@monstrs/buffer-utils": "^0.0.6",
     "@monstrs/logger": "^0.0.19",
     "@monstrs/mikro-orm-query-builder": "^0.0.9",
     "@monstrs/nestjs-connectrpc-errors": "^0.0.3",
@@ -30,11 +31,11 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@bufbuild/protobuf": "^1.3.1",
+    "@bufbuild/protobuf": "^1.4.2",
     "@chats-system/auth-rpc": "workspace:0.0.1",
     "@chats-system/core-rpc": "workspace:0.0.1",
-    "@connectrpc/connect": "^1.0.0",
-    "@connectrpc/connect-node": "^1.0.0",
+    "@connectrpc/connect": "^1.1.3",
+    "@connectrpc/connect-node": "^1.1.3",
     "@faker-js/faker": "^8.1.0",
     "@jest/globals": "^29.7.0",
     "@mikro-orm/cli": "^5.8.3",

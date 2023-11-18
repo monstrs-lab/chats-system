@@ -1,9 +1,10 @@
-import { EntityRepository }                         from '@mikro-orm/core'
+import { EntityRepository, MikroORM, CreateRequestContext }                         from '@mikro-orm/core'
 import { EntityManager }                            from '@mikro-orm/core'
 import { InjectRepository }                         from '@mikro-orm/nestjs'
 import { EntityManager as PostgreSqlEntityManager } from '@mikro-orm/postgresql'
 import { Injectable }                               from '@nestjs/common'
 import { Inject }                                   from '@nestjs/common'
+import { fromBigIntToBuffer, fromBufferToBigInt } from '@monstrs/buffer-utils'
 
 import { AuthKeyInfo }                              from '@chats-system/core-rpc'
 import { PREDICATE_AUTH_KEY_INFO }                  from '@chats-system/core-rpc'
@@ -22,22 +23,24 @@ export class AuthKeyService {
     @InjectRepository(AuthKeyInfoEntity)
     private readonly authKeyInfoRepository: EntityRepository<AuthKeyInfoEntity>,
     @Inject(EntityManager)
-    private readonly em: PostgreSqlEntityManager
+    private readonly em: PostgreSqlEntityManager,
+    private readonly orm: MikroORM
   ) {}
 
+  @CreateRequestContext()
   async setAuthKey(tlAuthKeyInfo: AuthKeyInfo): Promise<void> {
     const authKeyEntity = new AuthKeyEntity()
 
-    authKeyEntity.authKeyId = tlAuthKeyInfo.authKeyId!
+    authKeyEntity.authKeyId = fromBufferToBigInt(Buffer.from(tlAuthKeyInfo.authKeyId!))
     authKeyEntity.body = Buffer.from(tlAuthKeyInfo.authKey!).toString('base64')
 
     const authKeyInfoEntity = new AuthKeyInfoEntity()
 
-    authKeyInfoEntity.authKeyId = tlAuthKeyInfo.authKeyId!
+    authKeyInfoEntity.authKeyId = fromBufferToBigInt(Buffer.from(tlAuthKeyInfo.authKeyId!))
     authKeyInfoEntity.authKeyType = tlAuthKeyInfo.authKeyType!
-    authKeyInfoEntity.permAuthKeyId = tlAuthKeyInfo.permAuthKeyId!
-    authKeyInfoEntity.tempAuthKeyId = tlAuthKeyInfo.tempAuthKeyId!
-    authKeyInfoEntity.mediaTempAuthKeyId = tlAuthKeyInfo.mediaTempAuthKeyId!
+    authKeyInfoEntity.permAuthKeyId = fromBufferToBigInt(Buffer.from(tlAuthKeyInfo.permAuthKeyId!))
+    authKeyInfoEntity.tempAuthKeyId = fromBufferToBigInt(Buffer.from(tlAuthKeyInfo.tempAuthKeyId!))
+    authKeyInfoEntity.mediaTempAuthKeyId = fromBufferToBigInt(Buffer.from(tlAuthKeyInfo.mediaTempAuthKeyId!))
     authKeyInfoEntity.deleted = false
 
     this.em.persist(authKeyEntity)
@@ -46,6 +49,7 @@ export class AuthKeyService {
     await this.em.flush()
   }
 
+  @CreateRequestContext()
   async getAuthKey(authKeyId: bigint): Promise<AuthKeyInfo | undefined> {
     const [authKeyEntity, authKeyInfoEntity] = await Promise.all([
       this.authKeyRepository.findOne({
@@ -60,16 +64,16 @@ export class AuthKeyService {
       const authKeyInfo = new AuthKeyInfo()
 
       authKeyInfo.predicateName = PREDICATE_AUTH_KEY_INFO
-      authKeyInfo.authKeyId = authKeyId
+      authKeyInfo.authKeyId = fromBigIntToBuffer(authKeyId, 64)
       authKeyInfo.authKeyType = 0
-      authKeyInfo.permAuthKeyId = BigInt(0)
-      authKeyInfo.tempAuthKeyId = BigInt(0)
-      authKeyInfo.mediaTempAuthKeyId = BigInt(0)
+      authKeyInfo.permAuthKeyId = fromBigIntToBuffer(BigInt(0), 64)
+      authKeyInfo.tempAuthKeyId = fromBigIntToBuffer(BigInt(0), 64)
+      authKeyInfo.mediaTempAuthKeyId = fromBigIntToBuffer(BigInt(0), 64)
 
       authKeyInfo.authKeyType = authKeyInfoEntity.authKeyType
-      authKeyInfo.permAuthKeyId = authKeyInfoEntity.permAuthKeyId
-      authKeyInfo.tempAuthKeyId = authKeyInfoEntity.tempAuthKeyId
-      authKeyInfo.mediaTempAuthKeyId = authKeyInfoEntity.mediaTempAuthKeyId
+      authKeyInfo.permAuthKeyId = fromBigIntToBuffer(authKeyInfoEntity.permAuthKeyId, 64)
+      authKeyInfo.tempAuthKeyId = fromBigIntToBuffer(authKeyInfoEntity.tempAuthKeyId, 64)
+      authKeyInfo.mediaTempAuthKeyId = fromBigIntToBuffer(authKeyInfoEntity.mediaTempAuthKeyId, 64)
 
       authKeyInfo.authKey = Buffer.from(authKeyEntity.body, 'base64')
 
@@ -79,10 +83,10 @@ export class AuthKeyService {
     return undefined
   }
 
-  async getPermAuthKeyId(authKeyId: bigint): Promise<bigint> {
+  async getPermAuthKeyId(authKeyId: bigint): Promise<Buffer> {
     const authKey = await this.getAuthKey(authKeyId)
 
-    return authKey ? authKey.permAuthKeyId! : BigInt(0)
+    return authKey ? Buffer.from(authKey.permAuthKeyId!) : fromBigIntToBuffer(BigInt(0), 64)
   }
 
   async unsafeBindKeyId(

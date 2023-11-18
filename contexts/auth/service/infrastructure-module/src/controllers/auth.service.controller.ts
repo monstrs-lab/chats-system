@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/consistent-type-imports */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 
-import type { TLAuthsessionGetAuthorizations }    from '@chats-system/auth-rpc'
+import type { AuthQueryAuthKeyResponse, TLAuthsessionGetAuthorizations }    from '@chats-system/auth-rpc'
 import type { TLAuthsessionResetAuthorization }   from '@chats-system/auth-rpc'
 import type { TLAuthsessionGetLayer }             from '@chats-system/auth-rpc'
 import type { TLAuthsessionGetLangPack }          from '@chats-system/auth-rpc'
@@ -32,6 +32,7 @@ import type { FutureSalt }                        from '@chats-system/core-rpc'
 import type { AuthKeyInfo }                       from '@chats-system/core-rpc'
 import type { Bool }                              from '@chats-system/core-rpc'
 import type { ServiceImpl }                       from '@connectrpc/connect'
+import { fromBufferToBigInt } from '@monstrs/buffer-utils'
 
 import { ConnectRpcMethod }                       from '@monstrs/nestjs-connectrpc'
 import { ConnectRpcService }                      from '@monstrs/nestjs-connectrpc'
@@ -39,9 +40,13 @@ import { Controller }                             from '@nestjs/common'
 
 import { AuthService }                            from '@chats-system/auth-rpc'
 
+import { AuthKeyService } from '../services/index.js'
+
 @Controller()
 @ConnectRpcService(AuthService)
 export class AuthServiceController implements ServiceImpl<typeof AuthService> {
+  constructor(private readonly authKeyService: AuthKeyService) {}
+
   @ConnectRpcMethod()
   async getAuthorization(request: TLAuthsessionGetAuthorization): Promise<Authorization> {
     // eslint-disable-next-line
@@ -123,19 +128,19 @@ export class AuthServiceController implements ServiceImpl<typeof AuthService> {
   }
 
   @ConnectRpcMethod()
-  async queryAuthKey(request: TLAuthsessionQueryAuthKey): Promise<AuthKeyInfo> {
-    // eslint-disable-next-line
-    console.log(request, 'queryAuthKey')
-
-    return undefined as any
+  async queryAuthKey(request: TLAuthsessionQueryAuthKey): Promise<AuthQueryAuthKeyResponse> {
+    const authKey = await this.authKeyService.getAuthKey(fromBufferToBigInt(Buffer.from(request.authKeyId!)))
+    
+    return {
+      authKey
+    } as AuthQueryAuthKeyResponse
   }
 
   @ConnectRpcMethod()
   async setAuthKey(request: TLAuthsessionSetAuthKey): Promise<Bool> {
-    // eslint-disable-next-line
-    console.log(request, 'setAuthKey')
-
-    return undefined as any
+    await this.authKeyService.setAuthKey(request.authKey!)
+    
+    return true as any
   }
 
   @ConnectRpcMethod()

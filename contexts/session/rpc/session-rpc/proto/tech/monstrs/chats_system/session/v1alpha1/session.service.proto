@@ -8,7 +8,7 @@ import "tech/monstrs/chats_system/core/v1alpha1/schema.tl.transport.proto";
 import "tech/monstrs/chats_system/core/v1alpha1/schema.tl.sync.proto";
 
 service SessionService {
-  rpc queryAuthKey (TLSessionQueryAuthKey) returns (tech.monstrs.chats_system.core.v1alpha1.AuthKeyInfo) {}
+  rpc queryAuthKey (TLSessionQueryAuthKey) returns (SessionQueryAuthKeyResponse) {}
   rpc setAuthKey (TLSessionSetAuthKey) returns (tech.monstrs.chats_system.core.v1alpha1.Bool) {}
   rpc createSession (TLSessionCreateSession) returns (tech.monstrs.chats_system.core.v1alpha1.Bool) {}
   rpc sendDataToSession (TLSessionSendDataToSession) returns (tech.monstrs.chats_system.core.v1alpha1.Bool) {}
@@ -40,8 +40,8 @@ message SessionClientEvent {
   optional TLConstructor constructor = 2;
   optional string server_id = 3;
   optional int32 conn_type = 4;
-  optional int64 auth_key_id = 5;
-  optional int64 session_id = 6;
+  optional bytes auth_key_id = 5;
+  optional bytes session_id = 6;
   optional string client_ip = 7;
 }
 
@@ -54,11 +54,11 @@ message SessionClientData {
   optional TLConstructor constructor = 2;
   optional string server_id = 3;
   optional int32 conn_type = 4;
-  optional int64 auth_key_id = 5;
-  optional int64 session_id = 6;
+  optional bytes auth_key_id = 5;
+  optional bytes session_id = 6;
   optional string client_ip = 7;
   optional int32 quick_ack = 8;
-  optional int64 salt = 9;
+  optional bytes salt = 9;
   optional bytes payload = 10;
 }
 
@@ -78,7 +78,11 @@ message TLHttpSessionData {
 
 message TLSessionQueryAuthKey {
   optional TLConstructor constructor = 1;
-  optional int64 auth_key_id = 3;
+  optional bytes auth_key_id = 3;
+}
+
+message SessionQueryAuthKeyResponse {
+  optional tech.monstrs.chats_system.core.v1alpha1.AuthKeyInfo auth_key = 1;
 }
 
 message TLSessionSetAuthKey {
@@ -110,22 +114,22 @@ message TLSessionCloseSession {
 
 message TLSessionPushUpdatesData {
   optional TLConstructor constructor = 1;
-  optional int64 auth_key_id = 3;
+  optional bytes auth_key_id = 3;
   optional bool notification = 4;
   optional tech.monstrs.chats_system.core.v1alpha1.Updates updates = 5;
 }
 
 message TLSessionPushSessionUpdatesData {
   optional TLConstructor constructor = 1;
-  optional int64 auth_key_id = 3;
-  optional int64 session_id = 4;
+  optional bytes auth_key_id = 3;
+  optional bytes session_id = 4;
   optional tech.monstrs.chats_system.core.v1alpha1.Updates updates = 5;
 }
 
 message TLSessionPushRpcResultData {
   optional TLConstructor constructor = 1;
-  optional int64 auth_key_id = 3;
-  optional int64 session_id = 4;
-  optional int64 client_req_msg_id = 5;
+  optional bytes auth_key_id = 3;
+  optional bytes session_id = 4;
+  optional bytes client_req_msg_id = 5;
   optional bytes rpc_result_data = 6;
 }

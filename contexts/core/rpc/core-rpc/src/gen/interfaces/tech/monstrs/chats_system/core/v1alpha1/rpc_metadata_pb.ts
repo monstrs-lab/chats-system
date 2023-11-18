@@ -10,12 +10,13 @@ export interface TakeoutMessageRange {
   /**
    * @generated from field: optional int32 min_id = 1;
    */
-  minId?: number
+  minId?: number;
 
   /**
    * @generated from field: optional int32 max_id = 2;
    */
-  maxId?: number
+  maxId?: number;
+
 }
 
 /**
@@ -25,12 +26,13 @@ export interface Takeout {
   /**
    * @generated from field: optional int64 id = 1;
    */
-  id?: bigint
+  id?: bigint;
 
   /**
    * @generated from field: optional metadata.TakeoutMessageRange range = 2;
    */
-  range?: TakeoutMessageRange
+  range?: TakeoutMessageRange;
+
 }
 
 /**
@@ -40,70 +42,72 @@ export interface RpcMetadata {
   /**
    * @generated from field: optional string server_id = 1;
    */
-  serverId?: string
+  serverId?: string;
 
   /**
    * @generated from field: optional string client_addr = 3;
    */
-  clientAddr?: string
+  clientAddr?: string;
 
   /**
    * @generated from field: optional int64 auth_id = 4;
    */
-  authId?: bigint
+  authId?: bigint;
 
   /**
    * @generated from field: optional int64 session_id = 5;
    */
-  sessionId?: bigint
+  sessionId?: bigint;
 
   /**
    * @generated from field: optional int64 receive_time = 8;
    */
-  receiveTime?: bigint
+  receiveTime?: bigint;
 
   /**
    * @generated from field: optional int64 user_id = 11;
    */
-  userId?: bigint
+  userId?: bigint;
 
   /**
    * @generated from field: optional int64 client_msg_id = 12;
    */
-  clientMsgId?: bigint
+  clientMsgId?: bigint;
 
   /**
    * @generated from field: optional bool is_bot = 13;
    */
-  isBot?: boolean
+  isBot?: boolean;
 
   /**
    * @generated from field: optional int32 layer = 14;
    */
-  layer?: number
+  layer?: number;
 
   /**
    * @generated from field: optional string client = 15;
    */
-  client?: string
+  client?: string;
 
   /**
    * @generated from field: optional bool is_admin = 16;
    */
-  isAdmin?: boolean
+  isAdmin?: boolean;
 
   /**
    * @generated from field: optional metadata.Takeout takeout = 20;
    */
-  takeout?: Takeout
+  takeout?: Takeout;
 
   /**
    * @generated from field: optional string langpack = 21;
    */
-  langpack?: string
+  langpack?: string;
 
   /**
    * @generated from field: optional int64 perm_auth_key_id = 22;
    */
-  permAuthKeyId?: bigint
+  permAuthKeyId?: bigint;
+
 }
+

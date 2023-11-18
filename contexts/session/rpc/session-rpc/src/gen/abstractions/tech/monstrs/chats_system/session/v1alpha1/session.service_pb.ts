@@ -101,14 +101,14 @@ export abstract class SessionClientEvent {
   abstract readonly connType?: number;
 
   /**
-   * @generated from field: optional int64 auth_key_id = 5;
+   * @generated from field: optional bytes auth_key_id = 5;
    */
-  abstract readonly authKeyId?: bigint;
+  abstract readonly authKeyId?: Uint8Array;
 
   /**
-   * @generated from field: optional int64 session_id = 6;
+   * @generated from field: optional bytes session_id = 6;
    */
-  abstract readonly sessionId?: bigint;
+  abstract readonly sessionId?: Uint8Array;
 
   /**
    * @generated from field: optional string client_ip = 7;
@@ -153,14 +153,14 @@ export abstract class SessionClientData {
   abstract readonly connType?: number;
 
   /**
-   * @generated from field: optional int64 auth_key_id = 5;
+   * @generated from field: optional bytes auth_key_id = 5;
    */
-  abstract readonly authKeyId?: bigint;
+  abstract readonly authKeyId?: Uint8Array;
 
   /**
-   * @generated from field: optional int64 session_id = 6;
+   * @generated from field: optional bytes session_id = 6;
    */
-  abstract readonly sessionId?: bigint;
+  abstract readonly sessionId?: Uint8Array;
 
   /**
    * @generated from field: optional string client_ip = 7;
@@ -173,9 +173,9 @@ export abstract class SessionClientData {
   abstract readonly quickAck?: number;
 
   /**
-   * @generated from field: optional int64 salt = 9;
+   * @generated from field: optional bytes salt = 9;
    */
-  abstract readonly salt?: bigint;
+  abstract readonly salt?: Uint8Array;
 
   /**
    * @generated from field: optional bytes payload = 10;
@@ -237,9 +237,20 @@ export abstract class TLSessionQueryAuthKey {
   abstract readonly constructor$?: TLConstructor;
 
   /**
-   * @generated from field: optional int64 auth_key_id = 3;
+   * @generated from field: optional bytes auth_key_id = 3;
    */
-  abstract readonly authKeyId?: bigint;
+  abstract readonly authKeyId?: Uint8Array;
+
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.session.v1alpha1.SessionQueryAuthKeyResponse
+ */
+export abstract class SessionQueryAuthKeyResponse {
+  /**
+   * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.AuthKeyInfo auth_key = 1;
+   */
+  abstract readonly authKey?: AuthKeyInfo;
 
 }
 
@@ -343,9 +354,9 @@ export abstract class TLSessionPushUpdatesData {
   abstract readonly constructor$?: TLConstructor;
 
   /**
-   * @generated from field: optional int64 auth_key_id = 3;
+   * @generated from field: optional bytes auth_key_id = 3;
    */
-  abstract readonly authKeyId?: bigint;
+  abstract readonly authKeyId?: Uint8Array;
 
   /**
    * @generated from field: optional bool notification = 4;
@@ -369,14 +380,14 @@ export abstract class TLSessionPushSessionUpdatesData {
   abstract readonly constructor$?: TLConstructor;
 
   /**
-   * @generated from field: optional int64 auth_key_id = 3;
+   * @generated from field: optional bytes auth_key_id = 3;
    */
-  abstract readonly authKeyId?: bigint;
+  abstract readonly authKeyId?: Uint8Array;
 
   /**
-   * @generated from field: optional int64 session_id = 4;
+   * @generated from field: optional bytes session_id = 4;
    */
-  abstract readonly sessionId?: bigint;
+  abstract readonly sessionId?: Uint8Array;
 
   /**
    * @generated from field: optional tech.monstrs.chats_system.core.v1alpha1.Updates updates = 5;
@@ -395,19 +406,19 @@ export abstract class TLSessionPushRpcResultData {
   abstract readonly constructor$?: TLConstructor;
 
   /**
-   * @generated from field: optional int64 auth_key_id = 3;
+   * @generated from field: optional bytes auth_key_id = 3;
    */
-  abstract readonly authKeyId?: bigint;
+  abstract readonly authKeyId?: Uint8Array;
 
   /**
-   * @generated from field: optional int64 session_id = 4;
+   * @generated from field: optional bytes session_id = 4;
    */
-  abstract readonly sessionId?: bigint;
+  abstract readonly sessionId?: Uint8Array;
 
   /**
-   * @generated from field: optional int64 client_req_msg_id = 5;
+   * @generated from field: optional bytes client_req_msg_id = 5;
    */
-  abstract readonly clientReqMsgId?: bigint;
+  abstract readonly clientReqMsgId?: Uint8Array;
 
   /**
    * @generated from field: optional bytes rpc_result_data = 6;

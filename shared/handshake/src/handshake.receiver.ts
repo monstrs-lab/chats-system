@@ -225,6 +225,8 @@ export class HandshakeReceiver {
 
     const authKey = new MTProtoAuthKey(fromBigIntToByteArrayBuffer(gab))
 
+    console.log(authKey.id, 'sososososos')
+
     try {
       await state.authKeyManager.setAuthKey(authKey.id, authKey)
 

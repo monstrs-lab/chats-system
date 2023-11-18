@@ -402,9 +402,9 @@ export interface AuthKeyInfo {
   constructor$?: TLConstructor;
 
   /**
-   * @generated from field: optional int64 auth_key_id = 3;
+   * @generated from field: optional bytes auth_key_id = 3;
    */
-  authKeyId?: bigint;
+  authKeyId?: Uint8Array;
 
   /**
    * @generated from field: optional bytes auth_key = 4;
@@ -417,19 +417,19 @@ export interface AuthKeyInfo {
   authKeyType?: number;
 
   /**
-   * @generated from field: optional int64 perm_auth_key_id = 6;
+   * @generated from field: optional bytes perm_auth_key_id = 6;
    */
-  permAuthKeyId?: bigint;
+  permAuthKeyId?: Uint8Array;
 
   /**
-   * @generated from field: optional int64 temp_auth_key_id = 7;
+   * @generated from field: optional bytes temp_auth_key_id = 7;
    */
-  tempAuthKeyId?: bigint;
+  tempAuthKeyId?: Uint8Array;
 
   /**
-   * @generated from field: optional int64 media_temp_auth_key_id = 8;
+   * @generated from field: optional bytes media_temp_auth_key_id = 8;
    */
-  mediaTempAuthKeyId?: bigint;
+  mediaTempAuthKeyId?: Uint8Array;
 
 }
 

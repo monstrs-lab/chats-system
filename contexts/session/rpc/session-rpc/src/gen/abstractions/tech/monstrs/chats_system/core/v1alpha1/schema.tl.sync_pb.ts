@@ -402,9 +402,9 @@ export abstract class AuthKeyInfo {
   abstract readonly constructor$?: TLConstructor;
 
   /**
-   * @generated from field: optional int64 auth_key_id = 3;
+   * @generated from field: optional bytes auth_key_id = 3;
    */
-  abstract readonly authKeyId?: bigint;
+  abstract readonly authKeyId?: Uint8Array;
 
   /**
    * @generated from field: optional bytes auth_key = 4;
@@ -417,19 +417,19 @@ export abstract class AuthKeyInfo {
   abstract readonly authKeyType?: number;
 
   /**
-   * @generated from field: optional int64 perm_auth_key_id = 6;
+   * @generated from field: optional bytes perm_auth_key_id = 6;
    */
-  abstract readonly permAuthKeyId?: bigint;
+  abstract readonly permAuthKeyId?: Uint8Array;
 
   /**
-   * @generated from field: optional int64 temp_auth_key_id = 7;
+   * @generated from field: optional bytes temp_auth_key_id = 7;
    */
-  abstract readonly tempAuthKeyId?: bigint;
+  abstract readonly tempAuthKeyId?: Uint8Array;
 
   /**
-   * @generated from field: optional int64 media_temp_auth_key_id = 8;
+   * @generated from field: optional bytes media_temp_auth_key_id = 8;
    */
-  abstract readonly mediaTempAuthKeyId?: bigint;
+  abstract readonly mediaTempAuthKeyId?: Uint8Array;
 
 }
 

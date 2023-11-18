@@ -4,7 +4,7 @@
 import type { String as CoreString }            from '@chats-system/core-rpc'
 import type { AuthKeyInfo }                     from '@chats-system/core-rpc'
 import type { Bool }                            from '@chats-system/core-rpc'
-import type { TLSessionCreateSession }          from '@chats-system/session-rpc'
+import type { SessionQueryAuthKeyResponse, TLSessionCreateSession }          from '@chats-system/session-rpc'
 import type { TLSessionQueryAuthKey }           from '@chats-system/session-rpc'
 import type { TLSessionSetAuthKey }             from '@chats-system/session-rpc'
 import type { TLSessionSendDataToSession }      from '@chats-system/session-rpc'
@@ -15,36 +15,43 @@ import type { TLSessionPushSessionUpdatesData } from '@chats-system/session-rpc'
 import type { TLSessionPushRpcResultData }      from '@chats-system/session-rpc'
 import type { HttpSessionData }                 from '@chats-system/session-rpc'
 import type { ServiceImpl }                     from '@connectrpc/connect'
+import { fromBufferToBigInt} from '@monstrs/buffer-utils'
 
 import { ConnectRpcMethod }                     from '@monstrs/nestjs-connectrpc'
 import { ConnectRpcService }                    from '@monstrs/nestjs-connectrpc'
 import { Controller }                           from '@nestjs/common'
 
 import { SessionService }                       from '@chats-system/session-rpc'
+import { client} from '@chats-system/auth-rpc-client'
 
 @Controller()
 @ConnectRpcService(SessionService)
 export class SessionServiceController implements ServiceImpl<typeof SessionService> {
   @ConnectRpcMethod()
-  async queryAuthKey(request: TLSessionQueryAuthKey): Promise<AuthKeyInfo> {
-    // eslint-disable-next-line
-    console.log(request, 'queryAuthKey')
-
-    return undefined as any
+  async queryAuthKey(request: TLSessionQueryAuthKey): Promise<SessionQueryAuthKeyResponse> {
+    return client.queryAuthKey({
+      authKeyId: Buffer.from(request.authKeyId!)
+    })
   }
 
   @ConnectRpcMethod()
   async setAuthKey(request: TLSessionSetAuthKey): Promise<Bool> {
-    // eslint-disable-next-line
-    console.log(request, 'setAuthKey')
-
-    return undefined as any
+    return client.setAuthKey({
+      authKey: request.authKey,
+      futureSalt: request.futureSalt,
+      expiresIn: request.expiresIn
+    })
   }
 
   @ConnectRpcMethod()
   async createSession(request: TLSessionCreateSession): Promise<Bool> {
     // eslint-disable-next-line
     console.log(request, 'createSession')
+    
+    const authKeyId = fromBufferToBigInt(Buffer.from(request.client!.authKeyId!))
+    const sessionId = fromBufferToBigInt(Buffer.from(request.client!.sessionId!))
+    console.log(authKeyId, sessionId)
+
 
     return undefined as any
   }
