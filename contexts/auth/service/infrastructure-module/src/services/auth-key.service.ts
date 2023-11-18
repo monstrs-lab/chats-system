@@ -1,4 +1,6 @@
 import { EntityRepository }                         from '@mikro-orm/core'
+import { MikroORM }                                 from '@mikro-orm/core'
+import { CreateRequestContext }                     from '@mikro-orm/core'
 import { EntityManager }                            from '@mikro-orm/core'
 import { InjectRepository }                         from '@mikro-orm/nestjs'
 import { EntityManager as PostgreSqlEntityManager } from '@mikro-orm/postgresql'
@@ -22,9 +24,12 @@ export class AuthKeyService {
     @InjectRepository(AuthKeyInfoEntity)
     private readonly authKeyInfoRepository: EntityRepository<AuthKeyInfoEntity>,
     @Inject(EntityManager)
-    private readonly em: PostgreSqlEntityManager
+    private readonly em: PostgreSqlEntityManager,
+    // @ts-expect-error
+    private readonly orm: MikroORM
   ) {}
 
+  @CreateRequestContext()
   async setAuthKey(tlAuthKeyInfo: AuthKeyInfo): Promise<void> {
     const authKeyEntity = new AuthKeyEntity()
 
@@ -46,6 +51,7 @@ export class AuthKeyService {
     await this.em.flush()
   }
 
+  @CreateRequestContext()
   async getAuthKey(authKeyId: bigint): Promise<AuthKeyInfo | undefined> {
     const [authKeyEntity, authKeyInfoEntity] = await Promise.all([
       this.authKeyRepository.findOne({

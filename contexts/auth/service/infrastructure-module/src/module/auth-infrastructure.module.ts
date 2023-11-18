@@ -13,6 +13,7 @@ import { Module }                             from '@nestjs/common'
 import * as controllers                       from '../controllers/index.js'
 import * as entities                          from '../entities/index.js'
 import * as migrations                        from '../migrations/index.js'
+import { AuthKeyService }                     from '../services/index.js'
 import { AuthInfrastructureModuleConfig }     from './auth-infrastructure.module.config.js'
 import { AUTH_INFRASTRUCTURE_MODULE_OPTIONS } from './auth-infrastructure.module.constants.js'
 
@@ -54,6 +55,7 @@ export class AuthInfrastructureModule implements OnModuleInit {
           provide: AuthInfrastructureModuleConfig,
           useClass: AuthInfrastructureModuleConfig,
         },
+        AuthKeyService,
       ],
       exports: [
         {

@@ -21,24 +21,25 @@ import { ConnectRpcService }                    from '@monstrs/nestjs-connectrpc
 import { Controller }                           from '@nestjs/common'
 
 import { SessionService }                       from '@chats-system/session-rpc'
+import { client }                               from '@chats-system/auth-rpc-client'
 
 @Controller()
 @ConnectRpcService(SessionService)
 export class SessionServiceController implements ServiceImpl<typeof SessionService> {
   @ConnectRpcMethod()
   async queryAuthKey(request: TLSessionQueryAuthKey): Promise<AuthKeyInfo> {
-    // eslint-disable-next-line
-    console.log(request, 'queryAuthKey')
-
-    return undefined as any
+    return client.queryAuthKey({
+      authKeyId: request.authKeyId!,
+    })
   }
 
   @ConnectRpcMethod()
   async setAuthKey(request: TLSessionSetAuthKey): Promise<Bool> {
-    // eslint-disable-next-line
-    console.log(request, 'setAuthKey')
-
-    return undefined as any
+    return client.setAuthKey({
+      authKey: request.authKey,
+      futureSalt: request.futureSalt,
+      expiresIn: request.expiresIn,
+    })
   }
 
   @ConnectRpcMethod()

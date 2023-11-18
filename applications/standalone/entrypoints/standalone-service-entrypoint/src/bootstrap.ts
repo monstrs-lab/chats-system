@@ -22,6 +22,7 @@ const bootstrap = async (): Promise<void> => {
     }),
   })
 
+  await app.startAllMicroservices()
   await app.listen(3000)
 
   if (import.meta.webpackHot) {

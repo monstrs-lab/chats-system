@@ -39,9 +39,13 @@ import { Controller }                             from '@nestjs/common'
 
 import { AuthService }                            from '@chats-system/auth-rpc'
 
+import { AuthKeyService }                         from '../services/index.js'
+
 @Controller()
 @ConnectRpcService(AuthService)
 export class AuthServiceController implements ServiceImpl<typeof AuthService> {
+  constructor(private readonly authKeyService: AuthKeyService) {}
+
   @ConnectRpcMethod()
   async getAuthorization(request: TLAuthsessionGetAuthorization): Promise<Authorization> {
     // eslint-disable-next-line
@@ -124,18 +128,17 @@ export class AuthServiceController implements ServiceImpl<typeof AuthService> {
 
   @ConnectRpcMethod()
   async queryAuthKey(request: TLAuthsessionQueryAuthKey): Promise<AuthKeyInfo> {
-    // eslint-disable-next-line
-    console.log(request, 'queryAuthKey')
-
-    return undefined as any
+    // @ts-expect-error
+    return this.authKeyService.getAuthKey(request.authKeyId!)
   }
 
   @ConnectRpcMethod()
   async setAuthKey(request: TLAuthsessionSetAuthKey): Promise<Bool> {
-    // eslint-disable-next-line
-    console.log(request, 'setAuthKey')
+    await this.authKeyService.setAuthKey(request.authKey!)
 
-    return undefined as any
+    // TODO: fix
+    // @ts-expect-error
+    return true
   }
 
   @ConnectRpcMethod()

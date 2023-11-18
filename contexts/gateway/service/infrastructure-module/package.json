@@ -11,18 +11,20 @@
   "main": "src/index.ts",
   "dependencies": {
     "@monstrs/logger": "^0.0.19",
-    "@monstrs/mtproto-codecs": "^0.0.10",
-    "@monstrs/mtproto-core": "^0.0.10",
+    "@monstrs/mtproto-codecs": "^0.0.13",
+    "@monstrs/mtproto-core": "^0.0.13",
     "@monstrs/mtproto-extensions": "^0.0.3",
     "@monstrs/nestjs-connectrpc-errors": "^0.0.3",
-    "@monstrs/nestjs-validation": "^0.1.1"
+    "@monstrs/nestjs-validation": "^0.1.1",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@bufbuild/protobuf": "^1.3.1",
+    "@bufbuild/protobuf": "^1.4.2",
     "@chats-system/handshake": "workspace:0.0.1",
     "@chats-system/operations": "workspace:0.0.1",
-    "@connectrpc/connect": "^1.0.0",
-    "@connectrpc/connect-node": "^1.0.0",
+    "@chats-system/session-rpc-client": "workspace:0.0.1",
+    "@connectrpc/connect": "^1.1.3",
+    "@connectrpc/connect-node": "^1.1.3",
     "@faker-js/faker": "^8.1.0",
     "@jest/globals": "^29.7.0",
     "@monstrs/nestjs-connectrpc": "^0.0.3",
