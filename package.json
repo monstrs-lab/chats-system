@@ -14,6 +14,11 @@
     "@types/node": "^20.6.5",
     "typescript": "^5.2.2"
   },
+  "dependenciesMeta": {
+    "@monstrs/mtproto-core@0.0.13": {
+      "unplugged": true
+    }
+  },
   "packageManager": "yarn@3.6.3",
   "tools": {
     "schematic": {
