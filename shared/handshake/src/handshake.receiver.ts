@@ -3,6 +3,7 @@ import type { MTProtoState }           from '@monstrs/mtproto-core'
 import { randomBytes }                 from 'node:crypto'
 import { createHash }                  from 'node:crypto'
 
+import { Logger }                      from '@monstrs/logger'
 import { MTProtoKeyPair }              from '@monstrs/mtproto-core'
 import { MTProtoAuthKey }              from '@monstrs/mtproto-core'
 import { IGE }                         from '@monstrs/mtproto-crypto'
@@ -34,6 +35,8 @@ import { p }                           from './constants.js'
 import { q }                           from './constants.js'
 
 export class HandshakeReceiver {
+  #logger = new Logger(HandshakeReceiver.name)
+
   async handle(
     message: ReqDHParams | ReqPqMulti | SetClientDHParams,
     state: MTProtoState
@@ -233,7 +236,11 @@ export class HandshakeReceiver {
         serverNonce: setClientDHParams.serverNonce,
         newNonceHash1: calculateNonceHash(state.handshake.newNonce!, authKey.auxHash, 1),
       })
-    } catch {
+    } catch (error) {
+      if (error instanceof Error) {
+        this.#logger.error(error)
+      }
+
       return new DhGenRetry({
         nonce: setClientDHParams.nonce,
         serverNonce: setClientDHParams.serverNonce,

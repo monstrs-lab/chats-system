@@ -1,26 +1,30 @@
-import type { ReqPqMulti }                 from '@chats-system/operations'
-import type { ReqDHParams }                from '@chats-system/operations'
-import type { SetClientDHParams }          from '@chats-system/operations'
-import type { MTProtoEncryptedRawMessage } from '@monstrs/mtproto-core'
-import type { OnGatewayConnection }        from '@nestjs/websockets'
-import type { WebSocket }                  from 'ws'
+import type { ReqPqMulti }                  from '@chats-system/operations'
+import type { ReqDHParams }                 from '@chats-system/operations'
+import type { SetClientDHParams }           from '@chats-system/operations'
+import type { MTProtoEncryptedRawMessage }  from '@monstrs/mtproto-core'
+import type { OnGatewayConnection }         from '@nestjs/websockets'
+import type { OnGatewayInit }               from '@nestjs/websockets'
+import type { WebSocket }                   from 'ws'
+import type { WebSocketServer as WSServer } from 'ws'
 
-import { Logger }                          from '@monstrs/logger'
-import { MTProtoObfuscadetCodec }          from '@monstrs/mtproto-codecs'
-import { MTProtoUnencryptedRawMessage }    from '@monstrs/mtproto-core'
-import { MTProtoRawMessage }               from '@monstrs/mtproto-core'
-import { MTProtoMessageId }                from '@monstrs/mtproto-core'
-import { MTProtoState }                    from '@monstrs/mtproto-core'
-import { BinaryReader }                    from '@monstrs/mtproto-extensions'
-import { WebSocketGateway }                from '@nestjs/websockets'
-import { v4 as uuid }                      from 'uuid'
+import { Logger }                           from '@monstrs/logger'
+import { MTProtoObfuscadetCodec }           from '@monstrs/mtproto-codecs'
+import { MTProtoUnencryptedRawMessage }     from '@monstrs/mtproto-core'
+import { MTProtoRawMessage }                from '@monstrs/mtproto-core'
+import { MTProtoAuthKey }                   from '@monstrs/mtproto-core'
+import { MTProtoMessageId }                 from '@monstrs/mtproto-core'
+import { MTProtoState }                     from '@monstrs/mtproto-core'
+import { BinaryReader }                     from '@monstrs/mtproto-extensions'
+import { WebSocketGateway }                 from '@nestjs/websockets'
+import { v4 as uuid }                       from 'uuid'
 
-import { HandshakeReceiver }               from '@chats-system/handshake'
-import { SchemaRegistry }                  from '@chats-system/operations'
-import { client }                          from '@chats-system/session-rpc-client'
+import { HandshakeReceiver }                from '@chats-system/handshake'
+import { SchemaRegistry }                   from '@chats-system/operations'
+import { client }                           from '@chats-system/session-rpc-client'
 
-import { SessionAuthManager }              from '../session/index.js'
-import { SessionAuthKeyManager }           from '../session/index.js'
+import { SessionAuthManager }               from '../session/index.js'
+import { SessionAuthKeyManager }            from '../session/index.js'
+import { MTProtoGatewayClientSender }       from './mtproto-gateway-client.sender.js'
 
 type MTProtoConnection = WebSocket & {
   id: string
@@ -32,32 +36,48 @@ type MTProtoConnection = WebSocket & {
     origin: '*',
   },
 })
-export class MTProtoGateway implements OnGatewayConnection {
+export class MTProtoGateway implements OnGatewayConnection, OnGatewayInit {
   #logger = new Logger(MTProtoGateway.name)
 
-  constructor(private readonly sessionAuthManager: SessionAuthManager) {}
+  constructor(
+    private readonly sessionAuthManager: SessionAuthManager,
+    private readonly clientSender: MTProtoGatewayClientSender
+  ) {}
 
-  handleConnection(connection: MTProtoConnection): void {
+  afterInit(server: WSServer): void {
+    this.clientSender.setServer(server)
+  }
+
+  handleConnection(
+    connection: MTProtoConnection,
+    request: { socket: { remoteAddress: string } }
+  ): void {
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
     connection.on('message', async (data: Buffer): Promise<void> => {
-      if (!connection.id) {
-        // eslint-disable-next-line no-param-reassign
-        connection.id = uuid()
-      }
+      try {
+        if (!connection.id) {
+          // eslint-disable-next-line no-param-reassign
+          connection.id = uuid()
+        }
 
-      if (!connection.state) {
-        // eslint-disable-next-line no-param-reassign
-        connection.state = new MTProtoState(
-          new MTProtoObfuscadetCodec(data),
-          new SessionAuthKeyManager()
-        )
-      } else {
-        const rawMessage = await connection.state.codec.receive(data, connection.state)
-
-        if (rawMessage.getMessage() instanceof MTProtoUnencryptedRawMessage) {
-          await this.onUnencryptedMessage(connection, rawMessage)
+        if (!connection.state) {
+          // eslint-disable-next-line no-param-reassign
+          connection.state = new MTProtoState(
+            new MTProtoObfuscadetCodec(data),
+            new SessionAuthKeyManager()
+          )
         } else {
-          await this.onEncryptedMessage(connection, rawMessage)
+          const rawMessage = await connection.state.codec.receive(data, connection.state)
+
+          if (rawMessage.getMessage() instanceof MTProtoUnencryptedRawMessage) {
+            await this.onUnencryptedMessage(connection, rawMessage)
+          } else {
+            await this.onEncryptedMessage(connection, rawMessage, request.socket.remoteAddress)
+          }
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          this.#logger.error(error)
         }
       }
     })
@@ -80,8 +100,12 @@ export class MTProtoGateway implements OnGatewayConnection {
       connection.send(
         await connection.state.codec.send(
           new MTProtoRawMessage(
-            BigInt(0),
-            new MTProtoUnencryptedRawMessage(MTProtoMessageId.generate(), bytes.length, bytes)
+            new MTProtoUnencryptedRawMessage(
+              new MTProtoAuthKey(),
+              MTProtoMessageId.generate(),
+              bytes.length,
+              bytes
+            )
           )
         )
       )
@@ -96,7 +120,8 @@ export class MTProtoGateway implements OnGatewayConnection {
 
   async onEncryptedMessage(
     connection: MTProtoConnection,
-    rawMessage: MTProtoRawMessage
+    rawMessage: MTProtoRawMessage,
+    clientIp: string
   ): Promise<void> {
     const message = rawMessage.getMessage() as MTProtoEncryptedRawMessage
     const body = message.getMessageData()
@@ -107,11 +132,24 @@ export class MTProtoGateway implements OnGatewayConnection {
       if (this.sessionAuthManager.addNewSession(message.getAuthKey(), sessionId, connection.id)) {
         await client.createSession({
           client: {
+            serverId: '127.0.0.1',
             authKeyId: message.getAuthKey().id,
             sessionId,
+            clientIp,
           },
         })
       }
     }
+
+    await client.sendDataToSession({
+      data: {
+        serverId: '127.0.0.1',
+        authKeyId: message.getAuthKey().id,
+        sessionId,
+        salt: message.getMessageData().readBigUint64LE(0),
+        payload: message.getMessageData().subarray(16, message.getMessageData().length),
+        clientIp,
+      },
+    })
   }
 }

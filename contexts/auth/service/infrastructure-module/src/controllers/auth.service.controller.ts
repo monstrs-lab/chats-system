@@ -83,7 +83,7 @@ export class AuthServiceController implements ServiceImpl<typeof AuthService> {
     // eslint-disable-next-line
     console.log(request, 'getLangPack')
 
-    return undefined as any
+    return {} as CoreString
   }
 
   @ConnectRpcMethod()
@@ -104,8 +104,18 @@ export class AuthServiceController implements ServiceImpl<typeof AuthService> {
 
   @ConnectRpcMethod()
   async getUserId(request: TLAuthsessionGetUserId): Promise<Int64> {
+    const authKey = await this.authKeyService.getAuthKey(request.authKeyId!)
+
+    if (!authKey) {
+      throw new Error('Auth key not found')
+    }
+
+    if (authKey.permAuthKeyId === 0n) {
+      throw new Error('PermAuthKeyId is empty')
+    }
+
     // eslint-disable-next-line
-    console.log(request, 'getUserId')
+    console.log('query user id by auth key')
 
     return undefined as any
   }

@@ -1,16 +1,19 @@
-import type { DynamicModule } from '@nestjs/common'
+import type { DynamicModule }         from '@nestjs/common'
 
-import { Module }             from '@nestjs/common'
+import { Module }                     from '@nestjs/common'
 
-import { MTProtoGateway }     from '../gateway/index.js'
-import { SessionAuthManager } from '../session/index.js'
+import * as controllers               from '../controllers/index.js'
+import { MTProtoGateway }             from '../gateway/index.js'
+import { MTProtoGatewayClientSender } from '../gateway/index.js'
+import { SessionAuthManager }         from '../session/index.js'
 
 @Module({})
 export class GatewayInfrastructureModule {
   static register(): DynamicModule {
     return {
       module: GatewayInfrastructureModule,
-      providers: [MTProtoGateway, SessionAuthManager],
+      controllers: Object.values(controllers),
+      providers: [MTProtoGateway, SessionAuthManager, MTProtoGatewayClientSender],
     }
   }
 }
