@@ -897,6 +897,7 @@ __metadata:
   resolution: "@chats-system/gateway-infrastructure-module@workspace:contexts/gateway/service/infrastructure-module"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.4.2"
+    "@chats-system/gateway-rpc": "workspace:0.0.1"
     "@chats-system/handshake": "workspace:0.0.1"
     "@chats-system/operations": "workspace:0.0.1"
     "@chats-system/session-rpc-client": "workspace:0.0.1"
@@ -905,8 +906,8 @@ __metadata:
     "@faker-js/faker": "npm:^8.1.0"
     "@jest/globals": "npm:^29.7.0"
     "@monstrs/logger": "npm:^0.0.19"
-    "@monstrs/mtproto-codecs": "npm:^0.0.13"
-    "@monstrs/mtproto-core": "npm:^0.0.13"
+    "@monstrs/mtproto-codecs": "npm:^0.0.15"
+    "@monstrs/mtproto-core": "npm:^0.0.15"
     "@monstrs/mtproto-extensions": "npm:^0.0.3"
     "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
     "@monstrs/nestjs-connectrpc-errors": "npm:^0.0.3"
@@ -941,6 +942,32 @@ __metadata:
     class-validator: ^0.14
     reflect-metadata: ^0.1
     rxjs: ^7
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/gateway-rpc-client@workspace:0.0.1, @chats-system/gateway-rpc-client@workspace:contexts/gateway/rpc/gateway-rpc-client":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/gateway-rpc-client@workspace:contexts/gateway/rpc/gateway-rpc-client"
+  dependencies:
+    "@bufbuild/protobuf": "npm:^1.4.2"
+    "@chats-system/gateway-rpc": "workspace:0.0.1"
+    "@connectrpc/connect": "npm:^1.1.3"
+    "@connectrpc/connect-node": "npm:^1.1.3"
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/gateway-rpc@workspace:0.0.1, @chats-system/gateway-rpc@workspace:contexts/gateway/rpc/gateway-rpc":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/gateway-rpc@workspace:contexts/gateway/rpc/gateway-rpc"
+  dependencies:
+    "@bufbuild/buf": "npm:^1.28.1"
+    "@bufbuild/protobuf": "npm:^1.4.2"
+    "@bufbuild/protoc-gen-es": "npm:^1.4.2"
+    "@connectrpc/protoc-gen-connect-es": "npm:^1.1.3"
+    "@monstrs/protoc-gen-abstractions": "npm:^0.0.5"
+    "@monstrs/protoc-gen-interfaces": "npm:^0.0.4"
+  peerDependencies:
+    "@bufbuild/protobuf": ^1
   languageName: unknown
   linkType: soft
 
@@ -990,8 +1017,9 @@ __metadata:
     "@chats-system/operations": "workspace:0.0.1"
     "@monstrs/buffer-utils": "npm:^0.0.6"
     "@monstrs/crypto-utils": "npm:^0.0.2"
-    "@monstrs/mtproto-codecs": "npm:^0.0.13"
-    "@monstrs/mtproto-core": "npm:^0.0.13"
+    "@monstrs/logger": "npm:^0.0.19"
+    "@monstrs/mtproto-codecs": "npm:^0.0.15"
+    "@monstrs/mtproto-core": "npm:^0.0.15"
     "@monstrs/mtproto-crypto": "npm:^0.0.5"
     "@monstrs/mtproto-extensions": "npm:^0.0.3"
     "@monstrs/mtproto-tl-core": "npm:^0.0.8"
@@ -1015,13 +1043,19 @@ __metadata:
     "@bufbuild/protobuf": "npm:^1.4.2"
     "@chats-system/auth-rpc-client": "workspace:0.0.1"
     "@chats-system/core-rpc": "workspace:0.0.1"
+    "@chats-system/gateway-rpc-client": "workspace:0.0.1"
+    "@chats-system/operations": "workspace:0.0.1"
     "@chats-system/session-rpc": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.1.3"
     "@connectrpc/connect-node": "npm:^1.1.3"
     "@faker-js/faker": "npm:^8.1.0"
     "@jest/globals": "npm:^29.7.0"
     "@monstrs/base-types": "npm:^0.0.2"
+    "@monstrs/buffer-utils": "npm:^0.0.6"
     "@monstrs/logger": "npm:^0.0.19"
+    "@monstrs/mtproto-core": "npm:^0.0.15"
+    "@monstrs/mtproto-extensions": "npm:^0.0.3"
+    "@monstrs/mtproto-tl-core": "npm:^0.0.8"
     "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
     "@monstrs/nestjs-connectrpc-errors": "npm:^0.0.3"
     "@monstrs/nestjs-cqrs": "npm:^0.0.4"
@@ -1040,6 +1074,7 @@ __metadata:
     bignumber.js: "npm:9.1.2"
     class-transformer: "npm:^0.5.1"
     class-validator: "npm:^0.14.0"
+    lru-cache: "npm:^10.0.3"
     random-bigint: "npm:^0.0.1"
     reflect-metadata: "npm:^0.1.13"
     rxjs: "npm:^7.8.1"
@@ -2124,25 +2159,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/mtproto-codecs@npm:^0.0.13":
-  version: 0.0.13
-  resolution: "@monstrs/mtproto-codecs@npm:0.0.13"
+"@monstrs/mtproto-codecs@npm:^0.0.15":
+  version: 0.0.15
+  resolution: "@monstrs/mtproto-codecs@npm:0.0.15"
   dependencies:
     "@monstrs/buffer-utils": "npm:^0.0.6"
-    "@monstrs/mtproto-core": "npm:0.0.13"
-  checksum: 77fa085c124f952aea99acc7641b18238a9692c55c743535cb1e91c25ad6b054d2e214e1832af7435d99110e582c03cc02de33ff595b72d075f48785a450e9ce
+    "@monstrs/mtproto-core": "npm:0.0.15"
+  checksum: eed1628b0e955128ecf9c192fc396dac731a828d0ea77ee96014a9d43895db2956b16065f7fd20579d5bc7ad7ab086f2c45a6bf8c32fed9e732c813c9b7abd8b
   languageName: node
   linkType: hard
 
-"@monstrs/mtproto-core@npm:0.0.13, @monstrs/mtproto-core@npm:^0.0.13":
-  version: 0.0.13
-  resolution: "@monstrs/mtproto-core@npm:0.0.13"
+"@monstrs/mtproto-core@npm:0.0.15, @monstrs/mtproto-core@npm:^0.0.15":
+  version: 0.0.15
+  resolution: "@monstrs/mtproto-core@npm:0.0.15"
   dependencies:
     "@monstrs/bigint-utils": "npm:^0.0.2"
     "@monstrs/buffer-utils": "npm:^0.0.6"
     "@monstrs/mtproto-crypto": "npm:0.0.5"
     "@monstrs/mtproto-extensions": "npm:0.0.3"
-  checksum: 9c4918aa0986f3ee9d39d689b8d19590b371d32ca36fe5133e3fd5874df720c6d13c2b00940d571e5b0e93d10c7f16ca5c9b2265607f72f0540f7d30d9c716bc
+  checksum: 6fdd3fd2b49871430919646ca9bdfccbd252b95872f4ff1d49cc4f45163f744b51a0c6603eeabbdb76a55f04372da1b4d96783f6f0262b4912780dd07e787fcb
   languageName: node
   linkType: hard
 
@@ -4798,7 +4833,11 @@ __metadata:
     "@types/node": "npm:^20.6.5"
     typescript: "npm:^5.2.2"
   dependenciesMeta:
-    "@monstrs/mtproto-core@0.0.13":
+    "@monstrs/mtproto-core@0.0.15":
+      unplugged: true
+    "@monstrs/mtproto-extensions@0.0.3":
+      unplugged: true
+    "@monstrs/mtproto-tl-core@0.0.8":
       unplugged: true
   languageName: unknown
   linkType: soft
@@ -8296,6 +8335,13 @@ __metadata:
   version: 10.0.1
   resolution: "lru-cache@npm:10.0.1"
   checksum: 982dabfb227b9a2daf56d712ae0e72e01115a28c0a2068cd71277bca04568f3417bbf741c6c7941abc5c620fd8059e34f15607f90ebccbfa0a17533322d27a8e
+  languageName: node
+  linkType: hard
+
+"lru-cache@npm:^10.0.3":
+  version: 10.0.3
+  resolution: "lru-cache@npm:10.0.3"
+  checksum: e1745db7682df7ea890aced922975528e9fd85897459e003ff3b71d7f69656792ddd9c50e852b7c461000b9c08a9370b110bfbe6e44de3d81f43c197eaa652b1
   languageName: node
   linkType: hard
 

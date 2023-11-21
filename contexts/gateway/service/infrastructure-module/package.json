@@ -10,9 +10,10 @@
   },
   "main": "src/index.ts",
   "dependencies": {
+    "@chats-system/gateway-rpc": "workspace:0.0.1",
     "@monstrs/logger": "^0.0.19",
-    "@monstrs/mtproto-codecs": "^0.0.13",
-    "@monstrs/mtproto-core": "^0.0.13",
+    "@monstrs/mtproto-codecs": "^0.0.15",
+    "@monstrs/mtproto-core": "^0.0.15",
     "@monstrs/mtproto-extensions": "^0.0.3",
     "@monstrs/nestjs-connectrpc-errors": "^0.0.3",
     "@monstrs/nestjs-validation": "^0.1.1",

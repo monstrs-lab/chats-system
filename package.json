@@ -15,7 +15,13 @@
     "typescript": "^5.2.2"
   },
   "dependenciesMeta": {
-    "@monstrs/mtproto-core@0.0.13": {
+    "@monstrs/mtproto-core@0.0.15": {
+      "unplugged": true
+    },
+    "@monstrs/mtproto-extensions@0.0.3": {
+      "unplugged": true
+    },
+    "@monstrs/mtproto-tl-core@0.0.8": {
       "unplugged": true
     }
   },

@@ -52,4 +52,23 @@ export class SessionAuthManager {
 
     return true
   }
+
+  findSessionConnectionIds(
+    authKeyId: bigint,
+    sessionId: bigint
+  ): { authKey: MTProtoAuthKey; connectionIds: Set<string> } | undefined {
+    if (this.#sessions.has(authKeyId)) {
+      const { authKey, sessions } = this.#sessions.get(authKeyId)!
+      const session = sessions.find((s) => s.sessionId === sessionId)
+
+      if (session) {
+        return {
+          authKey,
+          connectionIds: session.connectionIds,
+        }
+      }
+    }
+
+    return undefined
+  }
 }
