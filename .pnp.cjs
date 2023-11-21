@@ -38,6 +38,14 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:contexts/core/rpc/core-rpc"\
     },\
     {\
+      "name": "@chats-system/gateway-rpc",\
+      "reference": "workspace:contexts/gateway/rpc/gateway-rpc"\
+    },\
+    {\
+      "name": "@chats-system/gateway-rpc-client",\
+      "reference": "workspace:contexts/gateway/rpc/gateway-rpc-client"\
+    },\
+    {\
       "name": "@chats-system/gateway-infrastructure-module",\
       "reference": "workspace:contexts/gateway/service/infrastructure-module"\
     },\
@@ -79,6 +87,8 @@ const RAW_RUNTIME_STATE =
     ["@chats-system/auth-service-entrypoint", ["workspace:contexts/auth/service/service-entrypoint"]],\
     ["@chats-system/core-rpc", ["virtual:def7aae208f5b2868c884172e7d3c7dd4ce75b13232c07d0b7a7ec485224492ec603e85ac533f0271bb023d37bf6d1cae174a7dbfde35b0df369b9dd0df8ff5b#workspace:contexts/core/rpc/core-rpc", "workspace:contexts/core/rpc/core-rpc"]],\
     ["@chats-system/gateway-infrastructure-module", ["virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#workspace:contexts/gateway/service/infrastructure-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/gateway/service/infrastructure-module", "workspace:contexts/gateway/service/infrastructure-module"]],\
+    ["@chats-system/gateway-rpc", ["virtual:dfbe61e4f62815636492187a2d22f09104bc50655360901d3c2612cff2679b9b143fb8ae49f6c937247857761621d3c101a726fd0253082e5db2253f31d5e318#workspace:contexts/gateway/rpc/gateway-rpc", "workspace:contexts/gateway/rpc/gateway-rpc"]],\
+    ["@chats-system/gateway-rpc-client", ["workspace:contexts/gateway/rpc/gateway-rpc-client"]],\
     ["@chats-system/gateway-service-entrypoint", ["workspace:contexts/gateway/service/service-entrypoint"]],\
     ["@chats-system/handshake", ["workspace:shared/handshake"]],\
     ["@chats-system/operations", ["workspace:shared/operations"]],\
@@ -1614,6 +1624,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/gateway-infrastructure-module", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#workspace:contexts/gateway/service/infrastructure-module"],\
           ["@bufbuild/protobuf", "npm:1.4.2"],\
+          ["@chats-system/gateway-rpc", "virtual:dfbe61e4f62815636492187a2d22f09104bc50655360901d3c2612cff2679b9b143fb8ae49f6c937247857761621d3c101a726fd0253082e5db2253f31d5e318#workspace:contexts/gateway/rpc/gateway-rpc"],\
           ["@chats-system/handshake", "workspace:shared/handshake"],\
           ["@chats-system/operations", "workspace:shared/operations"],\
           ["@chats-system/session-rpc-client", "workspace:contexts/session/rpc/session-rpc-client"],\
@@ -1622,8 +1633,8 @@ const RAW_RUNTIME_STATE =
           ["@faker-js/faker", "npm:8.2.0"],\
           ["@jest/globals", "npm:29.7.0"],\
           ["@monstrs/logger", "npm:0.0.19"],\
-          ["@monstrs/mtproto-codecs", "npm:0.0.13"],\
-          ["@monstrs/mtproto-core", "npm:0.0.13"],\
+          ["@monstrs/mtproto-codecs", "npm:0.0.15"],\
+          ["@monstrs/mtproto-core", "npm:0.0.15"],\
           ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
           ["@monstrs/nestjs-connectrpc", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#npm:0.0.3"],\
           ["@monstrs/nestjs-connectrpc-errors", "virtual:7f82297873259a0a60cf275b1db7557b87dda938a85dd17fff2c7c9838346deba09cf9c5158e57324e9a63f663006d2e1d28cf1ddd46f1a330bc8d5ecfba3936#npm:0.0.3"],\
@@ -1693,6 +1704,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/gateway-infrastructure-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/gateway/service/infrastructure-module"],\
           ["@bufbuild/protobuf", "npm:1.4.2"],\
+          ["@chats-system/gateway-rpc", "virtual:dfbe61e4f62815636492187a2d22f09104bc50655360901d3c2612cff2679b9b143fb8ae49f6c937247857761621d3c101a726fd0253082e5db2253f31d5e318#workspace:contexts/gateway/rpc/gateway-rpc"],\
           ["@chats-system/handshake", "workspace:shared/handshake"],\
           ["@chats-system/operations", "workspace:shared/operations"],\
           ["@chats-system/session-rpc-client", "workspace:contexts/session/rpc/session-rpc-client"],\
@@ -1701,8 +1713,8 @@ const RAW_RUNTIME_STATE =
           ["@faker-js/faker", "npm:8.2.0"],\
           ["@jest/globals", "npm:29.7.0"],\
           ["@monstrs/logger", "npm:0.0.19"],\
-          ["@monstrs/mtproto-codecs", "npm:0.0.13"],\
-          ["@monstrs/mtproto-core", "npm:0.0.13"],\
+          ["@monstrs/mtproto-codecs", "npm:0.0.15"],\
+          ["@monstrs/mtproto-core", "npm:0.0.15"],\
           ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
           ["@monstrs/nestjs-connectrpc", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:0.0.3"],\
           ["@monstrs/nestjs-connectrpc-errors", "virtual:def7aae208f5b2868c884172e7d3c7dd4ce75b13232c07d0b7a7ec485224492ec603e85ac533f0271bb023d37bf6d1cae174a7dbfde35b0df369b9dd0df8ff5b#npm:0.0.3"],\
@@ -1772,6 +1784,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/gateway-infrastructure-module", "workspace:contexts/gateway/service/infrastructure-module"],\
           ["@bufbuild/protobuf", "npm:1.4.2"],\
+          ["@chats-system/gateway-rpc", "virtual:dfbe61e4f62815636492187a2d22f09104bc50655360901d3c2612cff2679b9b143fb8ae49f6c937247857761621d3c101a726fd0253082e5db2253f31d5e318#workspace:contexts/gateway/rpc/gateway-rpc"],\
           ["@chats-system/handshake", "workspace:shared/handshake"],\
           ["@chats-system/operations", "workspace:shared/operations"],\
           ["@chats-system/session-rpc-client", "workspace:contexts/session/rpc/session-rpc-client"],\
@@ -1780,8 +1793,8 @@ const RAW_RUNTIME_STATE =
           ["@faker-js/faker", "npm:8.2.0"],\
           ["@jest/globals", "npm:29.7.0"],\
           ["@monstrs/logger", "npm:0.0.19"],\
-          ["@monstrs/mtproto-codecs", "npm:0.0.13"],\
-          ["@monstrs/mtproto-core", "npm:0.0.13"],\
+          ["@monstrs/mtproto-codecs", "npm:0.0.15"],\
+          ["@monstrs/mtproto-core", "npm:0.0.15"],\
           ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
           ["@monstrs/nestjs-connectrpc", "virtual:9e882501ecd5efcf844b4864bd49121b45317d9b35b65457b3b3aaf8ce3851b3a5925a87eecfbcc2575f066c2b4e44c01774eba257717f854d5a5d1b6593d86f#npm:0.0.3"],\
           ["@monstrs/nestjs-connectrpc-errors", "virtual:9e882501ecd5efcf844b4864bd49121b45317d9b35b65457b3b3aaf8ce3851b3a5925a87eecfbcc2575f066c2b4e44c01774eba257717f854d5a5d1b6593d86f#npm:0.0.3"],\
@@ -1802,6 +1815,52 @@ const RAW_RUNTIME_STATE =
           ["reflect-metadata", "npm:0.1.13"],\
           ["rxjs", "npm:7.8.1"],\
           ["uuid", "npm:9.0.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@chats-system/gateway-rpc", [\
+      ["virtual:dfbe61e4f62815636492187a2d22f09104bc50655360901d3c2612cff2679b9b143fb8ae49f6c937247857761621d3c101a726fd0253082e5db2253f31d5e318#workspace:contexts/gateway/rpc/gateway-rpc", {\
+        "packageLocation": "./.yarn/__virtual__/@chats-system-gateway-rpc-virtual-8a85c8f053/1/contexts/gateway/rpc/gateway-rpc/",\
+        "packageDependencies": [\
+          ["@chats-system/gateway-rpc", "virtual:dfbe61e4f62815636492187a2d22f09104bc50655360901d3c2612cff2679b9b143fb8ae49f6c937247857761621d3c101a726fd0253082e5db2253f31d5e318#workspace:contexts/gateway/rpc/gateway-rpc"],\
+          ["@bufbuild/buf", "npm:1.28.1"],\
+          ["@bufbuild/protobuf", "npm:1.4.2"],\
+          ["@bufbuild/protoc-gen-es", "virtual:d7d1879331d99f54c1fdb65d330e03c85f8db2293dcc4d7d0094fff8243be2ccf5406c655f022e8397c93892001c52b583434e80d90e66d21b47a1e6e6f52ab7#npm:1.4.2"],\
+          ["@connectrpc/protoc-gen-connect-es", "virtual:d7d1879331d99f54c1fdb65d330e03c85f8db2293dcc4d7d0094fff8243be2ccf5406c655f022e8397c93892001c52b583434e80d90e66d21b47a1e6e6f52ab7#npm:1.1.3"],\
+          ["@monstrs/protoc-gen-abstractions", "virtual:d7d1879331d99f54c1fdb65d330e03c85f8db2293dcc4d7d0094fff8243be2ccf5406c655f022e8397c93892001c52b583434e80d90e66d21b47a1e6e6f52ab7#npm:0.0.5"],\
+          ["@monstrs/protoc-gen-interfaces", "virtual:d7d1879331d99f54c1fdb65d330e03c85f8db2293dcc4d7d0094fff8243be2ccf5406c655f022e8397c93892001c52b583434e80d90e66d21b47a1e6e6f52ab7#npm:0.0.4"],\
+          ["@types/bufbuild__protobuf", null]\
+        ],\
+        "packagePeers": [\
+          "@bufbuild/protobuf",\
+          "@types/bufbuild__protobuf"\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["workspace:contexts/gateway/rpc/gateway-rpc", {\
+        "packageLocation": "./contexts/gateway/rpc/gateway-rpc/",\
+        "packageDependencies": [\
+          ["@chats-system/gateway-rpc", "workspace:contexts/gateway/rpc/gateway-rpc"],\
+          ["@bufbuild/buf", "npm:1.28.1"],\
+          ["@bufbuild/protobuf", "npm:1.4.2"],\
+          ["@bufbuild/protoc-gen-es", "virtual:d7d1879331d99f54c1fdb65d330e03c85f8db2293dcc4d7d0094fff8243be2ccf5406c655f022e8397c93892001c52b583434e80d90e66d21b47a1e6e6f52ab7#npm:1.4.2"],\
+          ["@connectrpc/protoc-gen-connect-es", "virtual:d7d1879331d99f54c1fdb65d330e03c85f8db2293dcc4d7d0094fff8243be2ccf5406c655f022e8397c93892001c52b583434e80d90e66d21b47a1e6e6f52ab7#npm:1.1.3"],\
+          ["@monstrs/protoc-gen-abstractions", "virtual:d7d1879331d99f54c1fdb65d330e03c85f8db2293dcc4d7d0094fff8243be2ccf5406c655f022e8397c93892001c52b583434e80d90e66d21b47a1e6e6f52ab7#npm:0.0.5"],\
+          ["@monstrs/protoc-gen-interfaces", "virtual:d7d1879331d99f54c1fdb65d330e03c85f8db2293dcc4d7d0094fff8243be2ccf5406c655f022e8397c93892001c52b583434e80d90e66d21b47a1e6e6f52ab7#npm:0.0.4"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@chats-system/gateway-rpc-client", [\
+      ["workspace:contexts/gateway/rpc/gateway-rpc-client", {\
+        "packageLocation": "./contexts/gateway/rpc/gateway-rpc-client/",\
+        "packageDependencies": [\
+          ["@chats-system/gateway-rpc-client", "workspace:contexts/gateway/rpc/gateway-rpc-client"],\
+          ["@bufbuild/protobuf", "npm:1.4.2"],\
+          ["@chats-system/gateway-rpc", "virtual:dfbe61e4f62815636492187a2d22f09104bc50655360901d3c2612cff2679b9b143fb8ae49f6c937247857761621d3c101a726fd0253082e5db2253f31d5e318#workspace:contexts/gateway/rpc/gateway-rpc"],\
+          ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
+          ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -1855,8 +1914,9 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/operations", "workspace:shared/operations"],\
           ["@monstrs/buffer-utils", "npm:0.0.6"],\
           ["@monstrs/crypto-utils", "npm:0.0.2"],\
-          ["@monstrs/mtproto-codecs", "npm:0.0.13"],\
-          ["@monstrs/mtproto-core", "npm:0.0.13"],\
+          ["@monstrs/logger", "npm:0.0.19"],\
+          ["@monstrs/mtproto-codecs", "npm:0.0.15"],\
+          ["@monstrs/mtproto-core", "npm:0.0.15"],\
           ["@monstrs/mtproto-crypto", "npm:0.0.5"],\
           ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
           ["@monstrs/mtproto-tl-core", "npm:0.0.8"]\
@@ -1884,13 +1944,19 @@ const RAW_RUNTIME_STATE =
           ["@bufbuild/protobuf", "npm:1.4.2"],\
           ["@chats-system/auth-rpc-client", "workspace:contexts/auth/rpc/auth-rpc-client"],\
           ["@chats-system/core-rpc", "virtual:def7aae208f5b2868c884172e7d3c7dd4ce75b13232c07d0b7a7ec485224492ec603e85ac533f0271bb023d37bf6d1cae174a7dbfde35b0df369b9dd0df8ff5b#workspace:contexts/core/rpc/core-rpc"],\
+          ["@chats-system/gateway-rpc-client", "workspace:contexts/gateway/rpc/gateway-rpc-client"],\
+          ["@chats-system/operations", "workspace:shared/operations"],\
           ["@chats-system/session-rpc", "virtual:e79801e617d3cc1337f5b1591df86aa6f97f24ac89530901cdab719724ea3506d6e9f2555041588ffbfbd497d2376360f00211047547099d6c513d12c844ec6a#workspace:contexts/session/rpc/session-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@faker-js/faker", "npm:8.2.0"],\
           ["@jest/globals", "npm:29.7.0"],\
           ["@monstrs/base-types", "npm:0.0.2"],\
+          ["@monstrs/buffer-utils", "npm:0.0.6"],\
           ["@monstrs/logger", "npm:0.0.19"],\
+          ["@monstrs/mtproto-core", "npm:0.0.15"],\
+          ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
+          ["@monstrs/mtproto-tl-core", "npm:0.0.8"],\
           ["@monstrs/nestjs-connectrpc", "virtual:a45b73e4ddea4b585aef9acec377f5481565662c46b28915812d889a1a3c2ccded76a762511eb0b2869e5eaa8546d900a1453e44611b35adc9d8fee701e387ae#npm:0.0.3"],\
           ["@monstrs/nestjs-connectrpc-errors", "virtual:082f4ab6efc7c9e4c474491709b151182cef922ac4da574491d2d23143de1370dba52710150d8d29ecff7de87459d8b081a807ae9ab6653880378e58363cef41#npm:0.0.3"],\
           ["@monstrs/nestjs-cqrs", "virtual:082f4ab6efc7c9e4c474491709b151182cef922ac4da574491d2d23143de1370dba52710150d8d29ecff7de87459d8b081a807ae9ab6653880378e58363cef41#npm:0.0.4"],\
@@ -1923,6 +1989,7 @@ const RAW_RUNTIME_STATE =
           ["bignumber.js", "npm:9.1.2"],\
           ["class-transformer", "npm:0.5.1"],\
           ["class-validator", "npm:0.14.0"],\
+          ["lru-cache", "npm:10.0.3"],\
           ["random-bigint", "npm:0.0.1"],\
           ["reflect-metadata", "npm:0.1.13"],\
           ["rxjs", "npm:7.8.1"],\
@@ -1967,13 +2034,19 @@ const RAW_RUNTIME_STATE =
           ["@bufbuild/protobuf", "npm:1.4.2"],\
           ["@chats-system/auth-rpc-client", "workspace:contexts/auth/rpc/auth-rpc-client"],\
           ["@chats-system/core-rpc", "virtual:def7aae208f5b2868c884172e7d3c7dd4ce75b13232c07d0b7a7ec485224492ec603e85ac533f0271bb023d37bf6d1cae174a7dbfde35b0df369b9dd0df8ff5b#workspace:contexts/core/rpc/core-rpc"],\
+          ["@chats-system/gateway-rpc-client", "workspace:contexts/gateway/rpc/gateway-rpc-client"],\
+          ["@chats-system/operations", "workspace:shared/operations"],\
           ["@chats-system/session-rpc", "virtual:e79801e617d3cc1337f5b1591df86aa6f97f24ac89530901cdab719724ea3506d6e9f2555041588ffbfbd497d2376360f00211047547099d6c513d12c844ec6a#workspace:contexts/session/rpc/session-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@faker-js/faker", "npm:8.2.0"],\
           ["@jest/globals", "npm:29.7.0"],\
           ["@monstrs/base-types", "npm:0.0.2"],\
+          ["@monstrs/buffer-utils", "npm:0.0.6"],\
           ["@monstrs/logger", "npm:0.0.19"],\
+          ["@monstrs/mtproto-core", "npm:0.0.15"],\
+          ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
+          ["@monstrs/mtproto-tl-core", "npm:0.0.8"],\
           ["@monstrs/nestjs-connectrpc", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:0.0.3"],\
           ["@monstrs/nestjs-connectrpc-errors", "virtual:def7aae208f5b2868c884172e7d3c7dd4ce75b13232c07d0b7a7ec485224492ec603e85ac533f0271bb023d37bf6d1cae174a7dbfde35b0df369b9dd0df8ff5b#npm:0.0.3"],\
           ["@monstrs/nestjs-cqrs", "virtual:def7aae208f5b2868c884172e7d3c7dd4ce75b13232c07d0b7a7ec485224492ec603e85ac533f0271bb023d37bf6d1cae174a7dbfde35b0df369b9dd0df8ff5b#npm:0.0.4"],\
@@ -2006,6 +2079,7 @@ const RAW_RUNTIME_STATE =
           ["bignumber.js", "npm:9.1.2"],\
           ["class-transformer", "npm:0.5.1"],\
           ["class-validator", "npm:0.14.0"],\
+          ["lru-cache", "npm:10.0.3"],\
           ["random-bigint", "npm:0.0.1"],\
           ["reflect-metadata", "npm:0.1.13"],\
           ["rxjs", "npm:7.8.1"],\
@@ -2048,13 +2122,19 @@ const RAW_RUNTIME_STATE =
           ["@bufbuild/protobuf", "npm:1.4.2"],\
           ["@chats-system/auth-rpc-client", "workspace:contexts/auth/rpc/auth-rpc-client"],\
           ["@chats-system/core-rpc", "virtual:def7aae208f5b2868c884172e7d3c7dd4ce75b13232c07d0b7a7ec485224492ec603e85ac533f0271bb023d37bf6d1cae174a7dbfde35b0df369b9dd0df8ff5b#workspace:contexts/core/rpc/core-rpc"],\
+          ["@chats-system/gateway-rpc-client", "workspace:contexts/gateway/rpc/gateway-rpc-client"],\
+          ["@chats-system/operations", "workspace:shared/operations"],\
           ["@chats-system/session-rpc", "virtual:e79801e617d3cc1337f5b1591df86aa6f97f24ac89530901cdab719724ea3506d6e9f2555041588ffbfbd497d2376360f00211047547099d6c513d12c844ec6a#workspace:contexts/session/rpc/session-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@faker-js/faker", "npm:8.2.0"],\
           ["@jest/globals", "npm:29.7.0"],\
           ["@monstrs/base-types", "npm:0.0.2"],\
+          ["@monstrs/buffer-utils", "npm:0.0.6"],\
           ["@monstrs/logger", "npm:0.0.19"],\
+          ["@monstrs/mtproto-core", "npm:0.0.15"],\
+          ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
+          ["@monstrs/mtproto-tl-core", "npm:0.0.8"],\
           ["@monstrs/nestjs-connectrpc", "virtual:690407a8d86dc802e6089752b2c7705fe10a2f6c49dfe1a05e4789a4979d4c37bc26efc784142215157a5b1c8f8c0bf6cc0c4ab3183e6d15598d098f7efb88d2#npm:0.0.3"],\
           ["@monstrs/nestjs-connectrpc-errors", "virtual:690407a8d86dc802e6089752b2c7705fe10a2f6c49dfe1a05e4789a4979d4c37bc26efc784142215157a5b1c8f8c0bf6cc0c4ab3183e6d15598d098f7efb88d2#npm:0.0.3"],\
           ["@monstrs/nestjs-cqrs", "virtual:690407a8d86dc802e6089752b2c7705fe10a2f6c49dfe1a05e4789a4979d4c37bc26efc784142215157a5b1c8f8c0bf6cc0c4ab3183e6d15598d098f7efb88d2#npm:0.0.4"],\
@@ -2073,6 +2153,7 @@ const RAW_RUNTIME_STATE =
           ["bignumber.js", "npm:9.1.2"],\
           ["class-transformer", "npm:0.5.1"],\
           ["class-validator", "npm:0.14.0"],\
+          ["lru-cache", "npm:10.0.3"],\
           ["random-bigint", "npm:0.0.1"],\
           ["reflect-metadata", "npm:0.1.13"],\
           ["rxjs", "npm:7.8.1"],\
@@ -4486,21 +4567,21 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@monstrs/mtproto-codecs", [\
-      ["npm:0.0.13", {\
-        "packageLocation": "./.yarn/cache/@monstrs-mtproto-codecs-npm-0.0.13-e12da78500-77fa085c12.zip/node_modules/@monstrs/mtproto-codecs/",\
+      ["npm:0.0.15", {\
+        "packageLocation": "./.yarn/cache/@monstrs-mtproto-codecs-npm-0.0.15-2997808517-eed1628b0e.zip/node_modules/@monstrs/mtproto-codecs/",\
         "packageDependencies": [\
-          ["@monstrs/mtproto-codecs", "npm:0.0.13"],\
+          ["@monstrs/mtproto-codecs", "npm:0.0.15"],\
           ["@monstrs/buffer-utils", "npm:0.0.6"],\
-          ["@monstrs/mtproto-core", "npm:0.0.13"]\
+          ["@monstrs/mtproto-core", "npm:0.0.15"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@monstrs/mtproto-core", [\
-      ["npm:0.0.13", {\
-        "packageLocation": "./.yarn/unplugged/@monstrs-mtproto-core-npm-0.0.13-ebc0035719/node_modules/@monstrs/mtproto-core/",\
+      ["npm:0.0.15", {\
+        "packageLocation": "./.yarn/unplugged/@monstrs-mtproto-core-npm-0.0.15-d713281063/node_modules/@monstrs/mtproto-core/",\
         "packageDependencies": [\
-          ["@monstrs/mtproto-core", "npm:0.0.13"],\
+          ["@monstrs/mtproto-core", "npm:0.0.15"],\
           ["@monstrs/bigint-utils", "npm:0.0.2"],\
           ["@monstrs/buffer-utils", "npm:0.0.6"],\
           ["@monstrs/mtproto-crypto", "npm:0.0.5"],\
@@ -4522,7 +4603,7 @@ const RAW_RUNTIME_STATE =
     ]],\
     ["@monstrs/mtproto-extensions", [\
       ["npm:0.0.3", {\
-        "packageLocation": "./.yarn/cache/@monstrs-mtproto-extensions-npm-0.0.3-5f852e05a9-2523aa93c8.zip/node_modules/@monstrs/mtproto-extensions/",\
+        "packageLocation": "./.yarn/unplugged/@monstrs-mtproto-extensions-npm-0.0.3-5f852e05a9/node_modules/@monstrs/mtproto-extensions/",\
         "packageDependencies": [\
           ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
           ["@monstrs/buffer-utils", "npm:0.0.6"]\
@@ -4532,7 +4613,7 @@ const RAW_RUNTIME_STATE =
     ]],\
     ["@monstrs/mtproto-tl-core", [\
       ["npm:0.0.8", {\
-        "packageLocation": "./.yarn/cache/@monstrs-mtproto-tl-core-npm-0.0.8-c98504685e-b137af1114.zip/node_modules/@monstrs/mtproto-tl-core/",\
+        "packageLocation": "./.yarn/unplugged/@monstrs-mtproto-tl-core-npm-0.0.8-c98504685e/node_modules/@monstrs/mtproto-tl-core/",\
         "packageDependencies": [\
           ["@monstrs/mtproto-tl-core", "npm:0.0.8"],\
           ["@monstrs/buffer-utils", "npm:0.0.6"],\
@@ -14780,6 +14861,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/lru-cache-npm-10.0.1-0e1abf4c13-982dabfb22.zip/node_modules/lru-cache/",\
         "packageDependencies": [\
           ["lru-cache", "npm:10.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:10.0.3", {\
+        "packageLocation": "./.yarn/cache/lru-cache-npm-10.0.3-1c2f93d565-e1745db768.zip/node_modules/lru-cache/",\
+        "packageDependencies": [\
+          ["lru-cache", "npm:10.0.3"]\
         ],\
         "linkType": "HARD"\
       }],\

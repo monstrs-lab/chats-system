@@ -31,12 +31,16 @@ export class AuthKeyService {
 
   @CreateRequestContext()
   async setAuthKey(tlAuthKeyInfo: AuthKeyInfo): Promise<void> {
-    const authKeyEntity = new AuthKeyEntity()
+    const authKeyEntity =
+      (await this.authKeyRepository.findOne({ authKeyId: tlAuthKeyInfo.authKeyId })) ||
+      new AuthKeyEntity()
 
     authKeyEntity.authKeyId = tlAuthKeyInfo.authKeyId!
     authKeyEntity.body = Buffer.from(tlAuthKeyInfo.authKey!).toString('base64')
 
-    const authKeyInfoEntity = new AuthKeyInfoEntity()
+    const authKeyInfoEntity =
+      (await this.authKeyInfoRepository.findOne({ authKeyId: tlAuthKeyInfo.authKeyId })) ||
+      new AuthKeyInfoEntity()
 
     authKeyInfoEntity.authKeyId = tlAuthKeyInfo.authKeyId!
     authKeyInfoEntity.authKeyType = tlAuthKeyInfo.authKeyType!
@@ -88,7 +92,7 @@ export class AuthKeyService {
   async getPermAuthKeyId(authKeyId: bigint): Promise<bigint> {
     const authKey = await this.getAuthKey(authKeyId)
 
-    return authKey ? authKey.permAuthKeyId! : BigInt(0)
+    return authKey ? authKey.permAuthKeyId! : 0n
   }
 
   async unsafeBindKeyId(

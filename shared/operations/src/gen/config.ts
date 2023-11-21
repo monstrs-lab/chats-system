@@ -551,6 +551,7 @@ export class Config extends TLConstructor<ConfigValues> {
       flagIndicator: false,
       useVectorId: false,
     },
+    
     {
       name: 'base_lang_pack_version',
       type: 'int',

@@ -13,7 +13,7 @@ export class SessionAuthKeyManager extends MTProtoAuthKeyManager {
           authKeyId,
           authKey: authKey.key,
           authKeyType: 0,
-          permAuthKeyId: BigInt(0),
+          permAuthKeyId: authKeyId, //TODO change by type
           tempAuthKeyId: BigInt(0),
           mediaTempAuthKeyId: BigInt(0),
         },
@@ -28,14 +28,20 @@ export class SessionAuthKeyManager extends MTProtoAuthKeyManager {
       return super.getAuthKey(authKeyId)
     }
 
-    const authKey = await client.queryAuthKey({
-      authKeyId,
-    })
+    try {
+      const authKey = await client.queryAuthKey({
+        authKeyId,
+      })
 
-    if (authKey?.authKey) {
-      return new MTProtoAuthKey(Buffer.from(authKey.authKey))
+      if (authKey?.authKey) {
+        return new MTProtoAuthKey(Buffer.from(authKey.authKey))
+      }
+
+      return undefined
+    } catch (error) {
+      console.log(error, 'ggggeeet')
+
+      return undefined
     }
-
-    return undefined
   }
 }
