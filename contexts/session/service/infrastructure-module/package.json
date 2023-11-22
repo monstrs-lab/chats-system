@@ -10,7 +10,10 @@
   },
   "main": "src/index.ts",
   "dependencies": {
+    "@chats-system/auth-session-rpc-client": "workspace:0.0.1",
+    "@chats-system/core-rpc": "workspace:0.0.1",
     "@chats-system/gateway-rpc-client": "workspace:0.0.1",
+    "@chats-system/session-rpc": "workspace:0.0.1",
     "@chats-system/tl": "workspace:0.0.1",
     "@monstrs/buffer-utils": "^0.0.6",
     "@monstrs/logger": "^0.0.19",
@@ -29,9 +32,6 @@
   },
   "devDependencies": {
     "@bufbuild/protobuf": "^1.4.2",
-    "@chats-system/auth-rpc-client": "workspace:0.0.1",
-    "@chats-system/core-rpc": "workspace:0.0.1",
-    "@chats-system/session-rpc": "workspace:0.0.1",
     "@connectrpc/connect": "^1.1.3",
     "@connectrpc/connect-node": "^1.1.3",
     "@faker-js/faker": "^8.1.0",

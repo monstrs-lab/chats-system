@@ -3,12 +3,12 @@ import type TL                           from '@chats-system/tl'
 import { Logger }                        from '@monstrs/logger'
 import { LRUCache }                      from 'lru-cache'
 
-import { TLAuthsessionGetUserId }        from '@chats-system/auth-rpc-client'
-import { TLAuthsessionGetPermAuthKeyId } from '@chats-system/auth-rpc-client'
-import { TLAuthsessionGetLangPack }      from '@chats-system/auth-rpc-client'
-import { TLAuthsessionGetClient }        from '@chats-system/auth-rpc-client'
-import { TLAuthsessionGetLayer }         from '@chats-system/auth-rpc-client'
-import { client }                        from '@chats-system/auth-rpc-client'
+import { TLAuthsessionGetUserId }        from '@chats-system/auth-session-rpc-client'
+import { TLAuthsessionGetPermAuthKeyId } from '@chats-system/auth-session-rpc-client'
+import { TLAuthsessionGetLangPack }      from '@chats-system/auth-session-rpc-client'
+import { TLAuthsessionGetClient }        from '@chats-system/auth-session-rpc-client'
+import { TLAuthsessionGetLayer }         from '@chats-system/auth-session-rpc-client'
+import { client }                        from '@chats-system/auth-session-rpc-client'
 
 import { AuthCacheValue }                from './auth-cache.value.js'
 

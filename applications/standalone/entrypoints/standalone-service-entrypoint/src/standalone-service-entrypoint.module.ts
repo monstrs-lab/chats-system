@@ -1,14 +1,14 @@
-import { Module }                      from '@nestjs/common'
+import { Module }                          from '@nestjs/common'
 
-import { AuthInfrastructureModule }    from '@chats-system/auth-infrastructure-module'
-import { GatewayInfrastructureModule } from '@chats-system/gateway-infrastructure-module'
-import { SessionInfrastructureModule } from '@chats-system/session-infrastructure-module'
+import { AuthSessionInfrastructureModule } from '@chats-system/auth-session-infrastructure-module'
+import { GatewayInfrastructureModule }     from '@chats-system/gateway-infrastructure-module'
+import { SessionInfrastructureModule }     from '@chats-system/session-infrastructure-module'
 
 @Module({
   imports: [
     GatewayInfrastructureModule.register(),
     SessionInfrastructureModule.register(),
-    AuthInfrastructureModule.register(),
+    AuthSessionInfrastructureModule.register(),
   ],
 })
 export class StandaloneServiceEntrypointModule {}
