@@ -7,14 +7,15 @@ import { EntityManager as PostgreSqlEntityManager } from '@mikro-orm/postgresql'
 import { Injectable }                               from '@nestjs/common'
 import { Inject }                                   from '@nestjs/common'
 
-import { AuthKeyInfo }                              from '@chats-system/core-rpc'
-import { PREDICATE_AUTH_KEY_INFO }                  from '@chats-system/core-rpc'
-import { AUTH_KEY_TYPE_PERM }                       from '@chats-system/core-rpc'
-import { AUTH_KEY_TYPE_TEMP }                       from '@chats-system/core-rpc'
-import { AUTH_KEY_TYPE_MEDIA_TEMP }                 from '@chats-system/core-rpc'
+import { AuthKeyInfo }                              from '@chats-system/auth-session-rpc'
 
 import { AuthKeyEntity }                            from '../entities/index.js'
 import { AuthKeyInfoEntity }                        from '../entities/index.js'
+
+export const AUTH_KEY_TYPE_UNKNOWN = -1
+export const AUTH_KEY_TYPE_PERM = 0
+export const AUTH_KEY_TYPE_TEMP = 1
+export const AUTH_KEY_TYPE_MEDIA_TEMP = 2
 
 @Injectable()
 export class AuthKeyService {
@@ -36,7 +37,7 @@ export class AuthKeyService {
       new AuthKeyEntity()
 
     authKeyEntity.authKeyId = tlAuthKeyInfo.authKeyId!
-    authKeyEntity.body = Buffer.from(tlAuthKeyInfo.authKey!).toString('base64')
+    authKeyEntity.body = Buffer.from(tlAuthKeyInfo.authKey).toString('base64')
 
     const authKeyInfoEntity =
       (await this.authKeyInfoRepository.findOne({ authKeyId: tlAuthKeyInfo.authKeyId })) ||
@@ -69,7 +70,6 @@ export class AuthKeyService {
     if (authKeyEntity && authKeyInfoEntity) {
       const authKeyInfo = new AuthKeyInfo()
 
-      authKeyInfo.predicateName = PREDICATE_AUTH_KEY_INFO
       authKeyInfo.authKeyId = authKeyId
       authKeyInfo.authKeyType = 0
       authKeyInfo.permAuthKeyId = BigInt(0)
@@ -92,7 +92,7 @@ export class AuthKeyService {
   async getPermAuthKeyId(authKeyId: bigint): Promise<bigint> {
     const authKey = await this.getAuthKey(authKeyId)
 
-    return authKey ? authKey.permAuthKeyId! : 0n
+    return authKey ? authKey.permAuthKeyId : 0n
   }
 
   async unsafeBindKeyId(

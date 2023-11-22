@@ -1,16 +1,16 @@
-import type TL                           from '@chats-system/tl'
+import type TL                     from '@chats-system/tl'
 
-import { Logger }                        from '@monstrs/logger'
-import { LRUCache }                      from 'lru-cache'
+import { Logger }                  from '@monstrs/logger'
+import { LRUCache }                from 'lru-cache'
 
-import { TLAuthsessionGetUserId }        from '@chats-system/auth-session-rpc-client'
-import { TLAuthsessionGetPermAuthKeyId } from '@chats-system/auth-session-rpc-client'
-import { TLAuthsessionGetLangPack }      from '@chats-system/auth-session-rpc-client'
-import { TLAuthsessionGetClient }        from '@chats-system/auth-session-rpc-client'
-import { TLAuthsessionGetLayer }         from '@chats-system/auth-session-rpc-client'
-import { client }                        from '@chats-system/auth-session-rpc-client'
+import { GetUserIdRequest }        from '@chats-system/auth-session-rpc-client'
+import { GetPermAuthKeyIdRequest } from '@chats-system/auth-session-rpc-client'
+import { GetLangPackRequest }      from '@chats-system/auth-session-rpc-client'
+import { GetClientRequest }        from '@chats-system/auth-session-rpc-client'
+import { GetLayerRequest }         from '@chats-system/auth-session-rpc-client'
+import { client }                  from '@chats-system/auth-session-rpc-client'
 
-import { AuthCacheValue }                from './auth-cache.value.js'
+import { AuthCacheValue }          from './auth-cache.value.js'
 
 export class AuthCache {
   #logger = new Logger(AuthCache.name)
@@ -43,13 +43,13 @@ export class AuthCache {
 
     if (!cv.userId) {
       try {
-        const userId = await client.getUserId(
-          new TLAuthsessionGetUserId({
+        const response = await client.getUserId(
+          new GetUserIdRequest({
             authKeyId,
           })
         )
 
-        cv.userId = userId.v!
+        cv.userId = response.userId
       } catch (error) {
         if (error instanceof Error) {
           this.#logger.error(error)
@@ -67,13 +67,13 @@ export class AuthCache {
 
     if (!cv.layer) {
       try {
-        const layer = await client.getLayer(
-          new TLAuthsessionGetLayer({
+        const response = await client.getLayer(
+          new GetLayerRequest({
             authKeyId,
           })
         )
 
-        cv.layer = layer.v!
+        cv.layer = response.layer
       } catch (error) {
         if (error instanceof Error) {
           this.#logger.error(error)
@@ -91,13 +91,13 @@ export class AuthCache {
 
     if (!cv.client) {
       try {
-        const c = await client.getClient(
-          new TLAuthsessionGetClient({
+        const response = await client.getClient(
+          new GetClientRequest({
             authKeyId,
           })
         )
 
-        cv.client = c.v!
+        cv.client = response.client
       } catch (error) {
         if (error instanceof Error) {
           this.#logger.error(error)
@@ -115,13 +115,13 @@ export class AuthCache {
 
     if (!cv.langpack) {
       try {
-        const langpack = await client.getLangPack(
-          new TLAuthsessionGetLangPack({
+        const response = await client.getLangPack(
+          new GetLangPackRequest({
             authKeyId,
           })
         )
 
-        cv.langpack = langpack.v!
+        cv.langpack = response.langPack
       } catch (error) {
         if (error instanceof Error) {
           this.#logger.error(error)
@@ -139,13 +139,13 @@ export class AuthCache {
 
     if (!cv.permAuthKeyId) {
       try {
-        const permAuthKeyId = await client.getPermAuthKeyId(
-          new TLAuthsessionGetPermAuthKeyId({
+        const response = await client.getPermAuthKeyId(
+          new GetPermAuthKeyIdRequest({
             authKeyId,
           })
         )
 
-        cv.permAuthKeyId = permAuthKeyId.v!
+        cv.permAuthKeyId = response.permAuthKeyId
       } catch (error) {
         if (error instanceof Error) {
           this.#logger.error(error)

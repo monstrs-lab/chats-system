@@ -11,7 +11,6 @@
   "main": "src/index.ts",
   "dependencies": {
     "@chats-system/auth-session-rpc-client": "workspace:0.0.1",
-    "@chats-system/core-rpc": "workspace:0.0.1",
     "@chats-system/gateway-rpc-client": "workspace:0.0.1",
     "@chats-system/session-rpc": "workspace:0.0.1",
     "@chats-system/tl": "workspace:0.0.1",
@@ -54,7 +53,6 @@
   },
   "peerDependencies": {
     "@bufbuild/protobuf": "^1.3.1",
-    "@chats-system/core-rpc": "workspace:0.0.1",
     "@chats-system/session-rpc": "workspace:0.0.1",
     "@connectrpc/connect": "^0.13",
     "@connectrpc/connect-node": "^0.13",

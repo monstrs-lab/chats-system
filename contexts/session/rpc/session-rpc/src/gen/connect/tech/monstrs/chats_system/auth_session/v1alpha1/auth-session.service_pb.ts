@@ -460,16 +460,6 @@ export class ClientSession extends Message<ClientSession> {
    */
   langCode = ''
 
-  /**
-   * @generated from field: optional string proxy = 11;
-   */
-  proxy?: string
-
-  /**
-   * @generated from field: optional string params = 12;
-   */
-  params?: string
-
   constructor(data?: PartialMessage<ClientSession>) {
     super()
     proto3.util.initPartial(data, this)
@@ -488,8 +478,6 @@ export class ClientSession extends Message<ClientSession> {
     { no: 8, name: 'system_lang_code', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
     { no: 9, name: 'lang_pack', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
     { no: 10, name: 'lang_code', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 11, name: 'proxy', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 12, name: 'params', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClientSession {

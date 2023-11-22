@@ -20,7 +20,7 @@ export class Invoker {
       })
 
       return new TL.LangPackDifference({
-        langCode: result.v || message.langCode,
+        langCode: result.langPack || message.langCode,
         fromVersion: 0,
         version: 0,
         strings: [],

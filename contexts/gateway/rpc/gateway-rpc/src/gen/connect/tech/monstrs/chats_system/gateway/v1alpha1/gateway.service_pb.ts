@@ -3,23 +3,16 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions }                                                                      from '@bufbuild/protobuf'
+import type { BinaryReadOptions } from '@bufbuild/protobuf'
+import type { FieldList }         from '@bufbuild/protobuf'
+import type { JsonReadOptions }   from '@bufbuild/protobuf'
+import type { JsonValue }         from '@bufbuild/protobuf'
+import type { PartialMessage }    from '@bufbuild/protobuf'
+import type { PlainMessage }      from '@bufbuild/protobuf'
 
-import type { FieldList }                                                           from '@bufbuild/protobuf'
-
-import type { JsonReadOptions }                                          from '@bufbuild/protobuf'
-
-import type { JsonValue }                               from '@bufbuild/protobuf'
-
-import type { PartialMessage }               from '@bufbuild/protobuf'
-
-import type { PlainMessage } from '@bufbuild/protobuf'
-
-import { Message }                                                                                     from '@bufbuild/protobuf'
-
-import { proto3 }                                                                             from '@bufbuild/protobuf'
-
-import { protoInt64 }                                                                 from '@bufbuild/protobuf'
+import { Message }                from '@bufbuild/protobuf'
+import { proto3 }                 from '@bufbuild/protobuf'
+import { protoInt64 }             from '@bufbuild/protobuf'
 
 /**
  * @generated from message tech.monstrs.chats_system.gateway.v1alpha1.SendDataRequest
@@ -77,6 +70,11 @@ export class SendDataRequest extends Message<SendDataRequest> {
  * @generated from message tech.monstrs.chats_system.gateway.v1alpha1.SendDataResponse
  */
 export class SendDataResponse extends Message<SendDataResponse> {
+  /**
+   * @generated from field: bool success = 1;
+   */
+  success = false
+
   constructor(data?: PartialMessage<SendDataResponse>) {
     super()
     proto3.util.initPartial(data, this)
@@ -84,7 +82,9 @@ export class SendDataResponse extends Message<SendDataResponse> {
 
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.gateway.v1alpha1.SendDataResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'success', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
+  ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SendDataResponse {
     return new SendDataResponse().fromBinary(bytes, options)

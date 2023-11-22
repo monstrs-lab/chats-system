@@ -26,4 +26,9 @@ export interface SendDataRequest {
 /**
  * @generated from message tech.monstrs.chats_system.gateway.v1alpha1.SendDataResponse
  */
-export interface SendDataResponse {}
+export interface SendDataResponse {
+  /**
+   * @generated from field: bool success = 1;
+   */
+  success: boolean
+}
