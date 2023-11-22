@@ -7,7 +7,6 @@ import { Logger }                      from '@monstrs/logger'
 import { MTProtoKeyPair }              from '@monstrs/mtproto-core'
 import { MTProtoAuthKey }              from '@monstrs/mtproto-core'
 import { IGE }                         from '@monstrs/mtproto-crypto'
-import { BinaryReader }                from '@monstrs/mtproto-extensions'
 import { fromBufferToBigInt }          from '@monstrs/buffer-utils'
 import { fromBigIntToByteArrayBuffer } from '@monstrs/buffer-utils'
 import { bufferXor }                   from '@monstrs/buffer-utils'
@@ -15,17 +14,9 @@ import { fromBigIntToBuffer }          from '@monstrs/buffer-utils'
 import { modExp }                      from '@monstrs/crypto-utils'
 import { calculateNonceHash }          from '@monstrs/mtproto-crypto'
 
-import { ReqPqMulti }                  from '@chats-system/operations'
-import { ReqDHParams }                 from '@chats-system/operations'
-import { ResPQ }                       from '@chats-system/operations'
-import { PQInnerData }                 from '@chats-system/operations'
-import { SchemaRegistry }              from '@chats-system/operations'
-import { ServerDHInnerData }           from '@chats-system/operations'
-import { ServerDHParamsOk }            from '@chats-system/operations'
-import { SetClientDHParams }           from '@chats-system/operations'
-import { ClientDHInnerData }           from '@chats-system/operations'
-import { DhGenOk }                     from '@chats-system/operations'
-import { DhGenRetry }                  from '@chats-system/operations'
+import { TLObject }                    from '@chats-system/tl'
+import { BytesIO }                     from '@chats-system/tl'
+import TL                              from '@chats-system/tl'
 
 import { key }                         from './constants.js'
 import { dh2048G }                     from './constants.js'
@@ -38,30 +29,30 @@ export class HandshakeReceiver {
   #logger = new Logger(HandshakeReceiver.name)
 
   async handle(
-    message: ReqDHParams | ReqPqMulti | SetClientDHParams,
+    message: TL.ReqDhParams | TL.ReqPqMulti | TL.SetClientDhParams,
     state: MTProtoState
-  ): Promise<DhGenOk | DhGenRetry | ResPQ | ServerDHParamsOk> {
-    if (message instanceof ReqPqMulti) {
+  ): Promise<TL.DhGenOk | TL.DhGenRetry | TL.ResPQ | TL.ServerDhParamsOk> {
+    if (message instanceof TL.ReqPqMulti) {
       return new HandshakeReceiver().handleReqPqMulti(message, state)
     }
 
-    if (message instanceof ReqDHParams) {
+    if (message instanceof TL.ReqDhParams) {
       return new HandshakeReceiver().handleReqDHParams(message, state)
     }
 
-    if (message instanceof SetClientDHParams) {
+    if (message instanceof TL.SetClientDhParams) {
       return new HandshakeReceiver().handleSetClientDHParams(message, state)
     }
 
     throw new Error('Handshake: invalid message')
   }
 
-  async handleReqPqMulti(reqPQ: ReqPqMulti, state: MTProtoState): Promise<ResPQ> {
+  async handleReqPqMulti(reqPQ: TL.ReqPqMulti, state: MTProtoState): Promise<TL.ResPQ> {
     if (!reqPQ.nonce) {
       throw new Error('ReqPqMulti: Invalid nonce')
     }
 
-    const resPQ = new ResPQ({
+    const resPQ = new TL.ResPQ({
       nonce: reqPQ.nonce,
       serverNonce: fromBufferToBigInt(Buffer.from(randomBytes(16)), false, true),
       pq,
@@ -74,9 +65,9 @@ export class HandshakeReceiver {
   }
 
   async handleReqDHParams(
-    reqDHParams: ReqDHParams,
+    reqDHParams: TL.ReqDhParams,
     state: MTProtoState
-  ): Promise<ServerDHParamsOk> {
+  ): Promise<TL.ServerDhParamsOk> {
     if (reqDHParams.nonce !== state.handshake?.nonce) {
       throw new Error(
         `ReqDHParams: invalid nonce, require ${state.handshake?.nonce}, received ${reqDHParams.nonce}`
@@ -120,9 +111,9 @@ export class HandshakeReceiver {
     const dataPadReversed = dataWithHash.subarray(0, dataWithHash.length - 32)
     const dataWithPadding = Buffer.from(dataPadReversed).reverse()
 
-    const innerData = new BinaryReader<any>(dataWithPadding, SchemaRegistry).readObject()
+    const innerData = await TLObject.read(new BytesIO(dataWithPadding))
 
-    if (!(innerData instanceof PQInnerData)) {
+    if (!(innerData instanceof TL.PQInnerData)) {
       throw new Error(`ReqDHParams: invalid pq inner data ${innerData.constructor.name}`)
     }
 
@@ -143,7 +134,7 @@ export class HandshakeReceiver {
     const a = fromBufferToBigInt(Buffer.from(randomBytes(16)), false, true)
     const gA = modExp(fromBufferToBigInt(dh2048G), a, fromBufferToBigInt(dh2048P))
 
-    const serverDHInnerData = new ServerDHInnerData({
+    const serverDHInnerData = new TL.ServerDhInnerData({
       nonce: reqDHParams.nonce,
       serverNonce: reqDHParams.serverNonce,
       g: dh2048G[0],
@@ -159,9 +150,9 @@ export class HandshakeReceiver {
 
     const igeEncode = new IGE(igekey, iv)
 
-    const bytes = serverDHInnerData.getBytes()
+    const bytes = serverDHInnerData.write()
 
-    const serverDHParamsOk = new ServerDHParamsOk({
+    const serverDHParamsOk = new TL.ServerDhParamsOk({
       nonce: reqDHParams.nonce,
       serverNonce: reqDHParams.serverNonce,
       encryptedAnswer: igeEncode.encrypt(
@@ -176,9 +167,9 @@ export class HandshakeReceiver {
   }
 
   async handleSetClientDHParams(
-    setClientDHParams: SetClientDHParams,
+    setClientDHParams: TL.SetClientDhParams,
     state: MTProtoState
-  ): Promise<DhGenOk | DhGenRetry> {
+  ): Promise<TL.DhGenOk | TL.DhGenRetry> {
     if (setClientDHParams.nonce !== state.handshake?.nonce) {
       throw new Error(
         `SetClientDHParams: invalid nonce, require ${state.handshake?.nonce}, received ${setClientDHParams.nonce}`
@@ -200,9 +191,9 @@ export class HandshakeReceiver {
     const clientDhEncrypted = igeEncode.decrypt(setClientDHParams.encryptedData)
     const clientDh = clientDhEncrypted.subarray(20, clientDhEncrypted.length)
 
-    const clientDHInnerData = new BinaryReader<any>(clientDh, SchemaRegistry).readObject()
+    const clientDHInnerData = await TLObject.read(new BytesIO(clientDh))
 
-    if (!(clientDHInnerData instanceof ClientDHInnerData)) {
+    if (!(clientDHInnerData instanceof TL.ClientDhInnerData)) {
       throw new Error(
         `SetClientDHParams: invalid pq inner data ${clientDHInnerData.constructor.name}`
       )
@@ -231,7 +222,7 @@ export class HandshakeReceiver {
     try {
       await state.authKeyManager.setAuthKey(authKey.id, authKey)
 
-      return new DhGenOk({
+      return new TL.DhGenOk({
         nonce: setClientDHParams.nonce,
         serverNonce: setClientDHParams.serverNonce,
         newNonceHash1: calculateNonceHash(state.handshake.newNonce!, authKey.auxHash, 1),
@@ -241,7 +232,7 @@ export class HandshakeReceiver {
         this.#logger.error(error)
       }
 
-      return new DhGenRetry({
+      return new TL.DhGenRetry({
         nonce: setClientDHParams.nonce,
         serverNonce: setClientDHParams.serverNonce,
         newNonceHash2: calculateNonceHash(state.handshake.newNonce!, authKey.auxHash, 2),

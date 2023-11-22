@@ -1,18 +1,14 @@
-import type { TLObject }        from '@monstrs/mtproto-tl-core'
-
 import type { ConnectionData }  from '../data/index.js'
 import type { SessionData }     from '../data/index.js'
 
 import { MTProtoMessageId }     from '@monstrs/mtproto-core'
-import { BinaryReader }         from '@monstrs/mtproto-extensions'
 import { Injectable }           from '@nestjs/common'
 
-import { SchemaRegistry }       from '@chats-system/operations'
-import { InvokeWithLayer }      from '@chats-system/operations'
-import { InitConnection }       from '@chats-system/operations'
-import { RpcResult }            from '@chats-system/operations'
-import { RpcError }             from '@chats-system/operations'
-import { MsgContainer }         from '@chats-system/operations'
+import { BytesIO }              from '@chats-system/tl'
+import { MsgContainer }         from '@chats-system/tl'
+import { Primitive }            from '@chats-system/tl'
+import { TLObject }             from '@chats-system/tl'
+import TL                       from '@chats-system/tl'
 
 import { AuthCache }            from '../cache/index.js'
 import { AuthSession }          from './auth.session.js'
@@ -84,37 +80,48 @@ export class SessionProcessor {
   async processSessionData(sessionData: SessionData): Promise<void> {
     this.processSessionNew(sessionData)
 
-    const reader = new BinaryReader<any>(Buffer.from(sessionData.payload), SchemaRegistry)
+    const bytesIO = new BytesIO(Buffer.from(sessionData.payload))
 
-    const messageId = reader.readLong()
-    const seqNo = reader.readInt()
-    const messageLength = reader.readInt()
+    const messageId = await Primitive.Long.read(bytesIO)
+    const seqNo = await Primitive.Int.read(bytesIO)
+    const messageLength = await Primitive.Int.read(bytesIO)
 
-    const message = reader.readObject() as TLObject<any>
+    const message = await TLObject.read(bytesIO)
 
     await this.processMessage(sessionData, { seqNo, messageId, messageLength, message })
   }
 
-  protected isRpcWithoutLogin(message: TLObject<any>): boolean {
+  protected isRpcWithoutLogin(message: InstanceType<typeof TLObject>): boolean {
     return Boolean(message)
   }
 
   protected async processMessage(
     sessionData: SessionData,
-    message: SessionProcessorRawMessage<TLObject<any>>
+    message: SessionProcessorRawMessage<InstanceType<typeof TLObject>>
   ): Promise<void> {
-    if (message.message instanceof InvokeWithLayer) {
+    if (message.message instanceof TL.InvokeWithLayer) {
       return this.processInvokeWithLayer(
         sessionData,
-        message as SessionProcessorRawMessage<InvokeWithLayer>
+        message as SessionProcessorRawMessage<TL.InvokeWithLayer>
       )
     }
 
-    if (message.message instanceof InitConnection) {
+    if (message.message instanceof TL.InitConnection) {
       return this.processInitConnection(
         sessionData,
-        message as SessionProcessorRawMessage<InitConnection>
+        message as SessionProcessorRawMessage<TL.InitConnection>
       )
+    }
+
+    if (message.message instanceof TL.PingDelayDisconnect) {
+      return this.processPingDeLayDisconnect(
+        sessionData,
+        message as SessionProcessorRawMessage<TL.PingDelayDisconnect>
+      )
+    }
+
+    if (message.message instanceof TL.MsgsAck) {
+      return this.processMsgsAck(sessionData, message as SessionProcessorRawMessage<TL.MsgsAck>)
     }
 
     return this.processRpcRequest(sessionData, message)
@@ -122,7 +129,7 @@ export class SessionProcessor {
 
   protected async processInvokeWithLayer(
     sessionData: SessionData,
-    message: SessionProcessorRawMessage<InvokeWithLayer>
+    message: SessionProcessorRawMessage<TL.InvokeWithLayer>
   ): Promise<void> {
     if (message.message.query) {
       this.authSessionsManager
@@ -141,7 +148,7 @@ export class SessionProcessor {
 
   protected async processInitConnection(
     sessionData: SessionData,
-    message: SessionProcessorRawMessage<InitConnection>
+    message: SessionProcessorRawMessage<TL.InitConnection>
   ): Promise<void> {
     if (message.message.query) {
       await this.authCache.putInitConnection(
@@ -154,9 +161,30 @@ export class SessionProcessor {
     }
   }
 
+  protected async processPingDeLayDisconnect(
+    sessionData: SessionData,
+    message: SessionProcessorRawMessage<TL.PingDelayDisconnect>
+  ): Promise<void> {
+    this.putResultToResponseQueue(
+      sessionData,
+      message,
+      new TL.Pong({
+        msgId: message.messageId,
+        pingId: message.message.pingId,
+      })
+    )
+  }
+
+  protected async processMsgsAck(
+    sessionData: SessionData,
+    message: SessionProcessorRawMessage<TL.MsgsAck>
+  ): Promise<void> {
+    this.putResultToResponseQueue(sessionData, message, message.message)
+  }
+
   protected async processRpcRequest(
     sessionData: SessionData,
-    message: SessionProcessorRawMessage<TLObject<any>>
+    message: SessionProcessorRawMessage<InstanceType<typeof TLObject>>
   ): Promise<void> {
     const authSession = this.authSessionsManager.getByAuthKeyId(sessionData.authKeyId)!
 
@@ -165,7 +193,7 @@ export class SessionProcessor {
         const authUserId = await this.authCache.getUserID(sessionData.authKeyId)
 
         if (authUserId === 0n) {
-          const rpcError = new RpcError({
+          const rpcError = new TL.RpcError({
             errorCode: 401,
             errorMessage: 'AUTH_KEY_INVALID',
           })
@@ -193,15 +221,19 @@ export class SessionProcessor {
 
   protected putRpcRequestToInvokeQueue(
     sessionData: SessionData,
-    message: SessionProcessorRawMessage<TLObject<any>>
+    message: SessionProcessorRawMessage<InstanceType<typeof TLObject>>
   ): void {
     if (message.message instanceof MsgContainer) {
-      message.message.messages.forEach((msg: {
-        messageId: bigint
-        seqNo: number
-        obj: TLObject<any>
-      }) => {
-        this.invokeQueue.push(sessionData, {}, { ...msg, message: msg.obj })
+      message.message.messages.forEach((msg) => {
+        this.invokeQueue.push(
+          sessionData,
+          {},
+          {
+            seqNo: msg.seqNo,
+            messageId: msg.msgId,
+            message: msg.body,
+          }
+        )
       })
     } else {
       this.invokeQueue.push(sessionData, {}, message)
@@ -210,15 +242,23 @@ export class SessionProcessor {
 
   protected putRpcResultToResponseQueue(
     sessionData: SessionData,
-    message: SessionProcessorRawMessage<TLObject<any>>,
-    result: TLObject<any>
+    message: SessionProcessorRawMessage<InstanceType<typeof TLObject>>,
+    result: InstanceType<typeof TLObject>
   ): void {
-    const rpcResult = new RpcResult({
+    const rpcResult = new TL.RpcResult({
       reqMsgId: message.messageId,
       result,
     })
 
-    const bytes = rpcResult.getBytes()
+    this.putResultToResponseQueue(sessionData, message, rpcResult)
+  }
+
+  protected putResultToResponseQueue(
+    sessionData: SessionData,
+    message: SessionProcessorRawMessage<InstanceType<typeof TLObject>>,
+    result: InstanceType<typeof TLObject>
+  ): void {
+    const bytes = result.write()
 
     const response = {
       seqNo: generateMessageSeqNo(message.seqNo, true),
