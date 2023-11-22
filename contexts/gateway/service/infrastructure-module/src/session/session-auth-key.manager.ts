@@ -28,12 +28,12 @@ export class SessionAuthKeyManager extends MTProtoAuthKeyManager {
       return super.getAuthKey(authKeyId)
     }
 
-    const authKey = await client.queryAuthKey({
+    const response = await client.queryAuthKey({
       authKeyId,
     })
 
-    if (authKey?.authKey) {
-      return new MTProtoAuthKey(Buffer.from(authKey.authKey))
+    if (response?.authKey) {
+      return new MTProtoAuthKey(Buffer.from(response.authKey.authKey))
     }
 
     return undefined

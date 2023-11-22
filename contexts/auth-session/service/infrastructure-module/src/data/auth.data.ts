@@ -18,43 +18,43 @@ export class AuthData {
   }
 
   get authKeyId(): bigint {
-    return this.#client.authKeyId!
+    return this.#client.authKeyId
   }
 
   get layer(): number {
-    return this.#client.layer!
+    return this.#client.layer
   }
 
   get apiId(): number {
-    return this.#client.apiId!
+    return this.#client.apiId
   }
 
   get deviceModel(): string {
-    return this.#client.deviceModel!
+    return this.#client.deviceModel
   }
 
   get systemVersion(): string {
-    return this.#client.systemVersion!
+    return this.#client.systemVersion
   }
 
   get appVersion(): string {
-    return this.#client.appVersion!
+    return this.#client.appVersion
   }
 
   get systemLangCode(): string {
-    return this.#client.systemLangCode!
+    return this.#client.systemLangCode
   }
 
   get langPack(): string {
-    return this.#client.langPack!
+    return this.#client.langPack
   }
 
   get langCode(): string {
-    return this.#client.langCode!
+    return this.#client.langCode
   }
 
   get clientIp(): string {
-    return this.#client.ip!
+    return this.#client.ip
   }
 
   get proxy(): string {

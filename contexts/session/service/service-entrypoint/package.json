@@ -13,7 +13,6 @@
   },
   "devDependencies": {
     "@bufbuild/protobuf": "^1.4.2",
-    "@chats-system/core-rpc": "workspace:0.0.1",
     "@chats-system/session-infrastructure-module": "workspace:0.0.1",
     "@chats-system/session-rpc": "workspace:0.0.1",
     "@connectrpc/connect": "^1.1.3",

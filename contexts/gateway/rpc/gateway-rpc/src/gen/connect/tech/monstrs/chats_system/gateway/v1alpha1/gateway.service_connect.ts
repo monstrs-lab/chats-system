@@ -3,10 +3,9 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { MethodKind }                        from '@bufbuild/protobuf'
+import { MethodKind }       from '@bufbuild/protobuf'
 
-import { SendDataRequest }                   from './gateway.service_pb.js'
-
+import { SendDataRequest }  from './gateway.service_pb.js'
 import { SendDataResponse } from './gateway.service_pb.js'
 
 /**

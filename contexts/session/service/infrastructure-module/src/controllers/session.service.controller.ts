@@ -1,33 +1,27 @@
 /* eslint-disable @typescript-eslint/consistent-type-imports */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 
-import type { String as CoreString }            from '@chats-system/core-rpc'
-import type { AuthKeyInfo }                     from '@chats-system/core-rpc'
-import type { Bool }                            from '@chats-system/core-rpc'
-import type { TLSessionCreateSession }          from '@chats-system/session-rpc'
-import type { TLSessionQueryAuthKey }           from '@chats-system/session-rpc'
-import type { TLSessionSetAuthKey }             from '@chats-system/session-rpc'
-import type { TLSessionSendDataToSession }      from '@chats-system/session-rpc'
-import type { TLSessionSendHttpDataToSession }  from '@chats-system/session-rpc'
-import type { TLSessionCloseSession }           from '@chats-system/session-rpc'
-import type { TLSessionPushUpdatesData }        from '@chats-system/session-rpc'
-import type { TLSessionPushSessionUpdatesData } from '@chats-system/session-rpc'
-import type { TLSessionPushRpcResultData }      from '@chats-system/session-rpc'
-import type { HttpSessionData }                 from '@chats-system/session-rpc'
-import type { ServiceImpl }                     from '@connectrpc/connect'
+import type { CreateSessionRequest }     from '@chats-system/session-rpc'
+import type { CloseSessionRequest }      from '@chats-system/session-rpc'
+import type { QueryAuthKeyRequest }      from '@chats-system/session-rpc'
+import type { QueryAuthKeyResponse }     from '@chats-system/session-rpc'
+import type { SetAuthKeyRequest }        from '@chats-system/session-rpc'
+import type { SetAuthKeyResponse }       from '@chats-system/session-rpc'
+import type { SendDataToSessionRequest } from '@chats-system/session-rpc'
+import type { ServiceImpl }              from '@connectrpc/connect'
 
-import { ConnectRpcMethod }                     from '@monstrs/nestjs-connectrpc'
-import { ConnectRpcService }                    from '@monstrs/nestjs-connectrpc'
-import { Controller }                           from '@nestjs/common'
+import { ConnectRpcMethod }              from '@monstrs/nestjs-connectrpc'
+import { ConnectRpcService }             from '@monstrs/nestjs-connectrpc'
+import { Controller }                    from '@nestjs/common'
 
-import { TLBoolTrue }                           from '@chats-system/core-rpc'
-import { TLBoolFalse }                          from '@chats-system/core-rpc'
-import { SessionService }                       from '@chats-system/session-rpc'
-import { client }                               from '@chats-system/auth-session-rpc-client'
+import { CloseSessionResponse }          from '@chats-system/session-rpc'
+import { CreateSessionResponse }         from '@chats-system/session-rpc'
+import { SendDataToSessionResponse }     from '@chats-system/session-rpc'
+import { SessionService }                from '@chats-system/session-rpc'
+import { client }                        from '@chats-system/auth-session-rpc-client'
 
-import { SessionData }                          from '../data/index.js'
-import { ConnectionData }                       from '../data/index.js'
-import { SessionProcessor }                     from '../session/index.js'
+import { SessionData }                   from '../data/index.js'
+import { ConnectionData }                from '../data/index.js'
+import { SessionProcessor }              from '../session/index.js'
 
 @Controller()
 @ConnectRpcService(SessionService)
@@ -35,14 +29,14 @@ export class SessionServiceController implements ServiceImpl<typeof SessionServi
   constructor(private readonly sessionProcessor: SessionProcessor) {}
 
   @ConnectRpcMethod()
-  async queryAuthKey(request: TLSessionQueryAuthKey): Promise<AuthKeyInfo> {
+  async queryAuthKey(request: QueryAuthKeyRequest): Promise<QueryAuthKeyResponse> {
     return client.queryAuthKey({
-      authKeyId: request.authKeyId!,
+      authKeyId: request.authKeyId,
     })
   }
 
   @ConnectRpcMethod()
-  async setAuthKey(request: TLSessionSetAuthKey): Promise<Bool> {
+  async setAuthKey(request: SetAuthKeyRequest): Promise<SetAuthKeyResponse> {
     return client.setAuthKey({
       authKey: request.authKey,
       futureSalt: request.futureSalt,
@@ -51,94 +45,56 @@ export class SessionServiceController implements ServiceImpl<typeof SessionServi
   }
 
   @ConnectRpcMethod()
-  async createSession(request: TLSessionCreateSession): Promise<Bool> {
+  async createSession(request: CreateSessionRequest): Promise<CreateSessionResponse> {
     if (!request.client?.authKeyId) {
-      // @ts-expect-error
-      return TLBoolFalse
+      return new CreateSessionResponse({ success: false })
     }
 
     this.sessionProcessor.processSessionNew(
       new ConnectionData(
         request.client.authKeyId,
-        request.client.sessionId!,
-        request.client.serverId!
+        request.client.sessionId,
+        request.client.serverId
       )
     )
 
-    // @ts-expect-error
-    return TLBoolTrue
+    return new CreateSessionResponse({ success: true })
   }
 
   @ConnectRpcMethod()
-  async closeSession(request: TLSessionCloseSession): Promise<Bool> {
+  async closeSession(request: CloseSessionRequest): Promise<CloseSessionResponse> {
     if (!request.client?.authKeyId) {
-      // @ts-expect-error
-      return TLBoolFalse
+      return new CloseSessionResponse({ success: false })
     }
 
     this.sessionProcessor.processSessionClose(
       new ConnectionData(
         request.client.authKeyId,
-        request.client.sessionId!,
-        request.client.serverId!
+        request.client.sessionId,
+        request.client.serverId
       )
     )
 
-    // @ts-expect-error
-    return TLBoolTrue
+    return new CloseSessionResponse({ success: true })
   }
 
   @ConnectRpcMethod()
-  async sendDataToSession(request: TLSessionSendDataToSession): Promise<Bool> {
+  async sendDataToSession(request: SendDataToSessionRequest): Promise<SendDataToSessionResponse> {
     if (!request.data?.authKeyId) {
-      // @ts-expect-error
-      return TLBoolFalse
+      return new SendDataToSessionResponse({ success: false })
     }
 
     this.sessionProcessor.processSessionData(
       new SessionData(
         request.data.authKeyId,
-        request.data.sessionId!,
-        request.data.serverId!,
-        request.data.clientIp!,
-        request.data.salt!,
-        request.data.payload!
+        request.data.sessionId,
+        request.data.serverId,
+        request.data.clientIp,
+        request.data.salt,
+        request.data.payload
       )
     )
 
-    // @ts-expect-error
-    return TLBoolTrue
-  }
-
-  @ConnectRpcMethod()
-  async sendHttpDataToSession(request: TLSessionSendHttpDataToSession): Promise<HttpSessionData> {
-    // eslint-disable-next-line
-    console.log(request, 'sendHttpDataToSession')
-
-    return undefined as any
-  }
-
-  @ConnectRpcMethod()
-  async pushUpdatesData(request: TLSessionPushUpdatesData): Promise<Bool> {
-    // eslint-disable-next-line
-    console.log(request, 'pushUpdatesData')
-
-    return undefined as any
-  }
-
-  @ConnectRpcMethod()
-  async pushSessionUpdatesData(request: TLSessionPushSessionUpdatesData): Promise<CoreString> {
-    // eslint-disable-next-line
-    console.log(request, 'pushSessionUpdatesData')
-
-    return undefined as any
-  }
-
-  @ConnectRpcMethod()
-  async pushRpcResultData(request: TLSessionPushRpcResultData): Promise<CoreString> {
-    // eslint-disable-next-line
-    console.log(request, 'getLangCode')
-
-    return undefined as any
+    return new SendDataToSessionResponse({ success: true })
   }
 }

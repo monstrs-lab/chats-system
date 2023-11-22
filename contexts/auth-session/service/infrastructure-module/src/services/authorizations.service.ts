@@ -1,14 +1,13 @@
-import type { AuthData }           from '../data/index.js'
+import type { AuthData }    from '../data/index.js'
 
-import { EntityRepository }        from '@mikro-orm/core'
-import { InjectRepository }        from '@mikro-orm/nestjs'
-import { Injectable }              from '@nestjs/common'
+import { EntityRepository } from '@mikro-orm/core'
+import { InjectRepository } from '@mikro-orm/nestjs'
+import { Injectable }       from '@nestjs/common'
 
-import { Authorization }           from '@chats-system/core-rpc'
-import { PREDICATE_AUTH_KEY_INFO } from '@chats-system/core-rpc'
+import { Authorization }    from '@chats-system/auth-session-rpc'
 
-import { AuthUserEntity }          from '../entities/index.js'
-import { AuthsService }            from './auths.service.js'
+import { AuthUserEntity }   from '../entities/index.js'
+import { AuthsService }     from './auths.service.js'
 
 @Injectable()
 export class AuthorizationsService {
@@ -23,7 +22,6 @@ export class AuthorizationsService {
 
     // TODO: getCountryAndRegionByIp(cData.ClientIp())
 
-    autorization.predicateName = PREDICATE_AUTH_KEY_INFO
     autorization.current = false
     autorization.officialApp = true
     autorization.hash = BigInt(0)

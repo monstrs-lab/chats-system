@@ -12,4 +12,6 @@ message SendDataRequest {
   bytes payload = 3;
 }
 
-message SendDataResponse {}
+message SendDataResponse {
+  bool success = 1;
+}

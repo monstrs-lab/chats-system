@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/consistent-type-imports */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 
 import type { SendDataRequest }       from '@chats-system/gateway-rpc'
-import type { SendDataResponse }      from '@chats-system/gateway-rpc'
 import type { ServiceImpl }           from '@connectrpc/connect'
 
 import { ConnectRpcMethod }           from '@monstrs/nestjs-connectrpc'
 import { ConnectRpcService }          from '@monstrs/nestjs-connectrpc'
 import { Controller }                 from '@nestjs/common'
 
+import { SendDataResponse }           from '@chats-system/gateway-rpc'
 import { GatewayService }             from '@chats-system/gateway-rpc'
 
 import { MTProtoGatewayClientSender } from '../gateway/index.js'
@@ -26,6 +25,6 @@ export class GatewayServiceController implements ServiceImpl<typeof GatewayServi
       Buffer.from(request.payload)
     )
 
-    return {} as any
+    return new SendDataResponse({ success: true })
   }
 }

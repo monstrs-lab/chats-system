@@ -38,7 +38,6 @@ export class AuthsService {
     if (auth) {
       const clientSession = new ClientSession()
 
-      clientSession.predicateName = 'clientSession'
       clientSession.authKeyId = authKeyId
       clientSession.ip = auth.clientIp
       clientSession.layer = auth.layer

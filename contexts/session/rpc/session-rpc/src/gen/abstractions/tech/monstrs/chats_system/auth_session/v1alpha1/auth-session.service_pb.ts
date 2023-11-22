@@ -256,16 +256,6 @@ export abstract class ClientSession {
    * @generated from field: string lang_code = 10;
    */
   abstract readonly langCode: string
-
-  /**
-   * @generated from field: optional string proxy = 11;
-   */
-  abstract readonly proxy?: string
-
-  /**
-   * @generated from field: optional string params = 12;
-   */
-  abstract readonly params?: string
 }
 
 /**

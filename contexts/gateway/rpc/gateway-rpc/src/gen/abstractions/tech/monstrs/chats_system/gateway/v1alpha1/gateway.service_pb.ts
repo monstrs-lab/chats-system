@@ -26,4 +26,9 @@ export abstract class SendDataRequest {
 /**
  * @generated from message tech.monstrs.chats_system.gateway.v1alpha1.SendDataResponse
  */
-export abstract class SendDataResponse {}
+export abstract class SendDataResponse {
+  /**
+   * @generated from field: bool success = 1;
+   */
+  abstract readonly success: boolean
+}

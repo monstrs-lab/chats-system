@@ -34,10 +34,6 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:contexts/auth-session/service/service-entrypoint"\
     },\
     {\
-      "name": "@chats-system/core-rpc",\
-      "reference": "workspace:contexts/core/rpc/core-rpc"\
-    },\
-    {\
       "name": "@chats-system/gateway-rpc",\
       "reference": "workspace:contexts/gateway/rpc/gateway-rpc"\
     },\
@@ -85,7 +81,6 @@ const RAW_RUNTIME_STATE =
     ["@chats-system/auth-session-rpc", ["virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#workspace:contexts/auth-session/rpc/auth-session-rpc", "workspace:contexts/auth-session/rpc/auth-session-rpc"]],\
     ["@chats-system/auth-session-rpc-client", ["workspace:contexts/auth-session/rpc/auth-session-rpc-client"]],\
     ["@chats-system/auth-session-service-entrypoint", ["workspace:contexts/auth-session/service/service-entrypoint"]],\
-    ["@chats-system/core-rpc", ["virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#workspace:contexts/core/rpc/core-rpc", "workspace:contexts/core/rpc/core-rpc"]],\
     ["@chats-system/gateway-infrastructure-module", ["virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#workspace:contexts/gateway/service/infrastructure-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/gateway/service/infrastructure-module", "workspace:contexts/gateway/service/infrastructure-module"]],\
     ["@chats-system/gateway-rpc", ["virtual:dfbe61e4f62815636492187a2d22f09104bc50655360901d3c2612cff2679b9b143fb8ae49f6c937247857761621d3c101a726fd0253082e5db2253f31d5e318#workspace:contexts/gateway/rpc/gateway-rpc", "workspace:contexts/gateway/rpc/gateway-rpc"]],\
     ["@chats-system/gateway-rpc-client", ["workspace:contexts/gateway/rpc/gateway-rpc-client"]],\
@@ -1263,9 +1258,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/auth-session-infrastructure-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/auth-session/service/infrastructure-module"],\
           ["@bufbuild/protobuf", "npm:1.4.2"],\
-          ["@chats-system/auth-rpc", null],\
           ["@chats-system/auth-session-rpc", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#workspace:contexts/auth-session/rpc/auth-session-rpc"],\
-          ["@chats-system/core-rpc", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#workspace:contexts/core/rpc/core-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@faker-js/faker", "npm:8.2.0"],\
@@ -1295,8 +1288,7 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/platform-express", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/testing", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@types/bufbuild__protobuf", null],\
-          ["@types/chats-system__auth-rpc", null],\
-          ["@types/chats-system__core-rpc", null],\
+          ["@types/chats-system__auth-session-rpc", null],\
           ["@types/class-transformer", null],\
           ["@types/class-validator", null],\
           ["@types/connectrpc__connect", null],\
@@ -1324,7 +1316,6 @@ const RAW_RUNTIME_STATE =
         ],\
         "packagePeers": [\
           "@bufbuild/protobuf",\
-          "@chats-system/auth-rpc",\
           "@connectrpc/connect-node",\
           "@connectrpc/connect",\
           "@monstrs/nestjs-connectrpc",\
@@ -1333,8 +1324,7 @@ const RAW_RUNTIME_STATE =
           "@nestjs/cqrs",\
           "@nestjs/microservices",\
           "@types/bufbuild__protobuf",\
-          "@types/chats-system__auth-rpc",\
-          "@types/chats-system__core-rpc",\
+          "@types/chats-system__auth-session-rpc",\
           "@types/class-transformer",\
           "@types/class-validator",\
           "@types/connectrpc__connect-node",\
@@ -1358,9 +1348,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/auth-session-infrastructure-module", "virtual:f64b2fb47404c5e7f28a3d34fd18c7d80f1d8c5cfbf5ed680dce93b9eea148665325649133d064d3963563f14c276bb771777a6344b8c92cf64de2bfa22ffc04#workspace:contexts/auth-session/service/infrastructure-module"],\
           ["@bufbuild/protobuf", "npm:1.4.2"],\
-          ["@chats-system/auth-rpc", null],\
           ["@chats-system/auth-session-rpc", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#workspace:contexts/auth-session/rpc/auth-session-rpc"],\
-          ["@chats-system/core-rpc", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#workspace:contexts/core/rpc/core-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@faker-js/faker", "npm:8.2.0"],\
@@ -1390,8 +1378,7 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/platform-express", "virtual:f64b2fb47404c5e7f28a3d34fd18c7d80f1d8c5cfbf5ed680dce93b9eea148665325649133d064d3963563f14c276bb771777a6344b8c92cf64de2bfa22ffc04#npm:10.2.7"],\
           ["@nestjs/testing", "virtual:f64b2fb47404c5e7f28a3d34fd18c7d80f1d8c5cfbf5ed680dce93b9eea148665325649133d064d3963563f14c276bb771777a6344b8c92cf64de2bfa22ffc04#npm:10.2.7"],\
           ["@types/bufbuild__protobuf", null],\
-          ["@types/chats-system__auth-rpc", null],\
-          ["@types/chats-system__core-rpc", null],\
+          ["@types/chats-system__auth-session-rpc", null],\
           ["@types/class-transformer", null],\
           ["@types/class-validator", null],\
           ["@types/connectrpc__connect", null],\
@@ -1419,8 +1406,7 @@ const RAW_RUNTIME_STATE =
         ],\
         "packagePeers": [\
           "@bufbuild/protobuf",\
-          "@chats-system/auth-rpc",\
-          "@chats-system/core-rpc",\
+          "@chats-system/auth-session-rpc",\
           "@connectrpc/connect-node",\
           "@connectrpc/connect",\
           "@monstrs/nestjs-connectrpc",\
@@ -1429,8 +1415,7 @@ const RAW_RUNTIME_STATE =
           "@nestjs/cqrs",\
           "@nestjs/microservices",\
           "@types/bufbuild__protobuf",\
-          "@types/chats-system__auth-rpc",\
-          "@types/chats-system__core-rpc",\
+          "@types/chats-system__auth-session-rpc",\
           "@types/class-transformer",\
           "@types/class-validator",\
           "@types/connectrpc__connect-node",\
@@ -1455,7 +1440,6 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/auth-session-infrastructure-module", "workspace:contexts/auth-session/service/infrastructure-module"],\
           ["@bufbuild/protobuf", "npm:1.4.2"],\
           ["@chats-system/auth-session-rpc", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#workspace:contexts/auth-session/rpc/auth-session-rpc"],\
-          ["@chats-system/core-rpc", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#workspace:contexts/core/rpc/core-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@faker-js/faker", "npm:8.2.0"],\
@@ -1555,7 +1539,6 @@ const RAW_RUNTIME_STATE =
           ["@bufbuild/protobuf", "npm:1.4.2"],\
           ["@chats-system/auth-session-infrastructure-module", "virtual:f64b2fb47404c5e7f28a3d34fd18c7d80f1d8c5cfbf5ed680dce93b9eea148665325649133d064d3963563f14c276bb771777a6344b8c92cf64de2bfa22ffc04#workspace:contexts/auth-session/service/infrastructure-module"],\
           ["@chats-system/auth-session-rpc", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#workspace:contexts/auth-session/rpc/auth-session-rpc"],\
-          ["@chats-system/core-rpc", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#workspace:contexts/core/rpc/core-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@faker-js/faker", "npm:8.2.0"],\
@@ -1584,39 +1567,6 @@ const RAW_RUNTIME_STATE =
           ["reflect-metadata", "npm:0.1.13"],\
           ["rxjs", "npm:7.8.1"],\
           ["testcontainers", "npm:10.2.2"]\
-        ],\
-        "linkType": "SOFT"\
-      }]\
-    ]],\
-    ["@chats-system/core-rpc", [\
-      ["virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#workspace:contexts/core/rpc/core-rpc", {\
-        "packageLocation": "./.yarn/__virtual__/@chats-system-core-rpc-virtual-45e2d1fd7a/1/contexts/core/rpc/core-rpc/",\
-        "packageDependencies": [\
-          ["@chats-system/core-rpc", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#workspace:contexts/core/rpc/core-rpc"],\
-          ["@bufbuild/buf", "npm:1.28.1"],\
-          ["@bufbuild/protobuf", "npm:1.4.2"],\
-          ["@bufbuild/protoc-gen-es", "virtual:d25aafc36fc21d095d13260e75c00faa8e6c0f491c2813d4f33d78902b1f0bce8a6194daa3f219e1ac53096bbd8f5f133e68292e4fd427903bf14d03a0deb806#npm:1.4.2"],\
-          ["@connectrpc/protoc-gen-connect-es", "virtual:d25aafc36fc21d095d13260e75c00faa8e6c0f491c2813d4f33d78902b1f0bce8a6194daa3f219e1ac53096bbd8f5f133e68292e4fd427903bf14d03a0deb806#npm:1.1.3"],\
-          ["@monstrs/protoc-gen-abstractions", "virtual:d25aafc36fc21d095d13260e75c00faa8e6c0f491c2813d4f33d78902b1f0bce8a6194daa3f219e1ac53096bbd8f5f133e68292e4fd427903bf14d03a0deb806#npm:0.0.5"],\
-          ["@monstrs/protoc-gen-interfaces", "virtual:d25aafc36fc21d095d13260e75c00faa8e6c0f491c2813d4f33d78902b1f0bce8a6194daa3f219e1ac53096bbd8f5f133e68292e4fd427903bf14d03a0deb806#npm:0.0.4"],\
-          ["@types/bufbuild__protobuf", null]\
-        ],\
-        "packagePeers": [\
-          "@bufbuild/protobuf",\
-          "@types/bufbuild__protobuf"\
-        ],\
-        "linkType": "SOFT"\
-      }],\
-      ["workspace:contexts/core/rpc/core-rpc", {\
-        "packageLocation": "./contexts/core/rpc/core-rpc/",\
-        "packageDependencies": [\
-          ["@chats-system/core-rpc", "workspace:contexts/core/rpc/core-rpc"],\
-          ["@bufbuild/buf", "npm:1.28.1"],\
-          ["@bufbuild/protobuf", "npm:1.4.2"],\
-          ["@bufbuild/protoc-gen-es", "virtual:d25aafc36fc21d095d13260e75c00faa8e6c0f491c2813d4f33d78902b1f0bce8a6194daa3f219e1ac53096bbd8f5f133e68292e4fd427903bf14d03a0deb806#npm:1.4.2"],\
-          ["@connectrpc/protoc-gen-connect-es", "virtual:d25aafc36fc21d095d13260e75c00faa8e6c0f491c2813d4f33d78902b1f0bce8a6194daa3f219e1ac53096bbd8f5f133e68292e4fd427903bf14d03a0deb806#npm:1.1.3"],\
-          ["@monstrs/protoc-gen-abstractions", "virtual:d25aafc36fc21d095d13260e75c00faa8e6c0f491c2813d4f33d78902b1f0bce8a6194daa3f219e1ac53096bbd8f5f133e68292e4fd427903bf14d03a0deb806#npm:0.0.5"],\
-          ["@monstrs/protoc-gen-interfaces", "virtual:d25aafc36fc21d095d13260e75c00faa8e6c0f491c2813d4f33d78902b1f0bce8a6194daa3f219e1ac53096bbd8f5f133e68292e4fd427903bf14d03a0deb806#npm:0.0.4"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -1934,7 +1884,6 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/session-infrastructure-module", "virtual:a45b73e4ddea4b585aef9acec377f5481565662c46b28915812d889a1a3c2ccded76a762511eb0b2869e5eaa8546d900a1453e44611b35adc9d8fee701e387ae#workspace:contexts/session/service/infrastructure-module"],\
           ["@bufbuild/protobuf", "npm:1.4.2"],\
           ["@chats-system/auth-session-rpc-client", "workspace:contexts/auth-session/rpc/auth-session-rpc-client"],\
-          ["@chats-system/core-rpc", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#workspace:contexts/core/rpc/core-rpc"],\
           ["@chats-system/gateway-rpc-client", "workspace:contexts/gateway/rpc/gateway-rpc-client"],\
           ["@chats-system/session-rpc", "virtual:e79801e617d3cc1337f5b1591df86aa6f97f24ac89530901cdab719724ea3506d6e9f2555041588ffbfbd497d2376360f00211047547099d6c513d12c844ec6a#workspace:contexts/session/rpc/session-rpc"],\
           ["@chats-system/tl", "workspace:shared/tl"],\
@@ -1960,7 +1909,6 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/platform-express", "virtual:a45b73e4ddea4b585aef9acec377f5481565662c46b28915812d889a1a3c2ccded76a762511eb0b2869e5eaa8546d900a1453e44611b35adc9d8fee701e387ae#npm:10.2.7"],\
           ["@nestjs/testing", "virtual:a45b73e4ddea4b585aef9acec377f5481565662c46b28915812d889a1a3c2ccded76a762511eb0b2869e5eaa8546d900a1453e44611b35adc9d8fee701e387ae#npm:10.2.7"],\
           ["@types/bufbuild__protobuf", null],\
-          ["@types/chats-system__core-rpc", null],\
           ["@types/chats-system__session-rpc", null],\
           ["@types/class-transformer", null],\
           ["@types/class-validator", null],\
@@ -1988,7 +1936,6 @@ const RAW_RUNTIME_STATE =
         ],\
         "packagePeers": [\
           "@bufbuild/protobuf",\
-          "@chats-system/core-rpc",\
           "@chats-system/session-rpc",\
           "@connectrpc/connect-node",\
           "@connectrpc/connect",\
@@ -1998,7 +1945,6 @@ const RAW_RUNTIME_STATE =
           "@nestjs/cqrs",\
           "@nestjs/microservices",\
           "@types/bufbuild__protobuf",\
-          "@types/chats-system__core-rpc",\
           "@types/chats-system__session-rpc",\
           "@types/class-transformer",\
           "@types/class-validator",\
@@ -2024,7 +1970,6 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/session-infrastructure-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/session/service/infrastructure-module"],\
           ["@bufbuild/protobuf", "npm:1.4.2"],\
           ["@chats-system/auth-session-rpc-client", "workspace:contexts/auth-session/rpc/auth-session-rpc-client"],\
-          ["@chats-system/core-rpc", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#workspace:contexts/core/rpc/core-rpc"],\
           ["@chats-system/gateway-rpc-client", "workspace:contexts/gateway/rpc/gateway-rpc-client"],\
           ["@chats-system/session-rpc", "virtual:e79801e617d3cc1337f5b1591df86aa6f97f24ac89530901cdab719724ea3506d6e9f2555041588ffbfbd497d2376360f00211047547099d6c513d12c844ec6a#workspace:contexts/session/rpc/session-rpc"],\
           ["@chats-system/tl", "workspace:shared/tl"],\
@@ -2050,7 +1995,6 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/platform-express", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/testing", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@types/bufbuild__protobuf", null],\
-          ["@types/chats-system__core-rpc", null],\
           ["@types/chats-system__session-rpc", null],\
           ["@types/class-transformer", null],\
           ["@types/class-validator", null],\
@@ -2086,7 +2030,6 @@ const RAW_RUNTIME_STATE =
           "@nestjs/cqrs",\
           "@nestjs/microservices",\
           "@types/bufbuild__protobuf",\
-          "@types/chats-system__core-rpc",\
           "@types/chats-system__session-rpc",\
           "@types/class-transformer",\
           "@types/class-validator",\
@@ -2112,7 +2055,6 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/session-infrastructure-module", "workspace:contexts/session/service/infrastructure-module"],\
           ["@bufbuild/protobuf", "npm:1.4.2"],\
           ["@chats-system/auth-session-rpc-client", "workspace:contexts/auth-session/rpc/auth-session-rpc-client"],\
-          ["@chats-system/core-rpc", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#workspace:contexts/core/rpc/core-rpc"],\
           ["@chats-system/gateway-rpc-client", "workspace:contexts/gateway/rpc/gateway-rpc-client"],\
           ["@chats-system/session-rpc", "virtual:e79801e617d3cc1337f5b1591df86aa6f97f24ac89530901cdab719724ea3506d6e9f2555041588ffbfbd497d2376360f00211047547099d6c513d12c844ec6a#workspace:contexts/session/rpc/session-rpc"],\
           ["@chats-system/tl", "workspace:shared/tl"],\
@@ -2205,7 +2147,6 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/session-service-entrypoint", "workspace:contexts/session/service/service-entrypoint"],\
           ["@bufbuild/protobuf", "npm:1.4.2"],\
-          ["@chats-system/core-rpc", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#workspace:contexts/core/rpc/core-rpc"],\
           ["@chats-system/session-infrastructure-module", "virtual:a45b73e4ddea4b585aef9acec377f5481565662c46b28915812d889a1a3c2ccded76a762511eb0b2869e5eaa8546d900a1453e44611b35adc9d8fee701e387ae#workspace:contexts/session/service/infrastructure-module"],\
           ["@chats-system/session-rpc", "virtual:e79801e617d3cc1337f5b1591df86aa6f97f24ac89530901cdab719724ea3506d6e9f2555041588ffbfbd497d2376360f00211047547099d6c513d12c844ec6a#workspace:contexts/session/rpc/session-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
