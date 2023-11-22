@@ -1,4 +1,4 @@
-import type { TLObject }        from '@monstrs/mtproto-tl-core'
+import type { TLObject }        from '@chats-system/tl'
 
 import type { SessionData }     from '../data/index.js'
 
@@ -8,8 +8,7 @@ import { Logger }               from '@monstrs/logger'
 import { MTProtoMessageId }     from '@monstrs/mtproto-core'
 import { Injectable }           from '@nestjs/common'
 
-import { RpcResult }            from '@chats-system/operations'
-import { RpcError }             from '@chats-system/operations'
+import TL                       from '@chats-system/tl'
 
 import { Invoker }              from '../invoke/index.js'
 import { SessionResponseQueue } from './session-response.queue.js'
@@ -31,7 +30,7 @@ export interface SessionInvokeTask {
   message: {
     messageId: bigint
     seqNo: number
-    message: TLObject<any>
+    message: InstanceType<typeof TLObject>
   }
 }
 
@@ -56,7 +55,7 @@ export class SessionInvokeQueue {
     message: {
       messageId: bigint
       seqNo: number
-      message: TLObject<any>
+      message: InstanceType<typeof TLObject>
     }
   ): void {
     this.#tasks.push({
@@ -89,12 +88,12 @@ export class SessionInvokeQueue {
       try {
         const result = await this.invoker.invoke(task.sessionData, task.message.message)
 
-        const rpcResult = new RpcResult({
+        const rpcResult = new TL.RpcResult({
           reqMsgId: task.message.messageId,
           result,
         })
 
-        const bytes = rpcResult.getBytes()
+        const bytes = rpcResult.write()
 
         const response = {
           seqNo: generateMessageSeqNo(task.message.seqNo, true),
@@ -108,16 +107,18 @@ export class SessionInvokeQueue {
         if (error instanceof Error) {
           this.#logger.error(error)
 
-          const rpcResult = new RpcResult({
+          const rpcResult = new TL.RpcResult({
             reqMsgId: task.message.messageId,
-            result: new RpcError({
+            result: new TL.RpcError({
               errorCode: 500,
-              errorMessage: '',
+              errorMessage: error.message,
             }),
           })
 
-          const bytes = rpcResult.getBytes()
+          const bytes = rpcResult.write()
 
+          // @ts-expect-error
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
           const response = {
             seqNo: generateMessageSeqNo(task.message.seqNo, true),
             messageId: MTProtoMessageId.generate().value,
@@ -125,7 +126,7 @@ export class SessionInvokeQueue {
             message: bytes,
           }
 
-          this.responseQueue.push(task.sessionData, response)
+          // this.responseQueue.push(task.sessionData, response)
         } else {
           throw error
         }

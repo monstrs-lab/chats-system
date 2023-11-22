@@ -1,11 +1,9 @@
-import type { ReqPqMulti }                  from '@chats-system/operations'
-import type { ReqDHParams }                 from '@chats-system/operations'
-import type { SetClientDHParams }           from '@chats-system/operations'
 import type { MTProtoEncryptedRawMessage }  from '@monstrs/mtproto-core'
 import type { OnGatewayConnection }         from '@nestjs/websockets'
 import type { OnGatewayInit }               from '@nestjs/websockets'
 import type { WebSocket }                   from 'ws'
 import type { WebSocketServer as WSServer } from 'ws'
+import type TL                              from '@chats-system/tl'
 
 import { Logger }                           from '@monstrs/logger'
 import { MTProtoObfuscadetCodec }           from '@monstrs/mtproto-codecs'
@@ -14,12 +12,12 @@ import { MTProtoRawMessage }                from '@monstrs/mtproto-core'
 import { MTProtoAuthKey }                   from '@monstrs/mtproto-core'
 import { MTProtoMessageId }                 from '@monstrs/mtproto-core'
 import { MTProtoState }                     from '@monstrs/mtproto-core'
-import { BinaryReader }                     from '@monstrs/mtproto-extensions'
 import { WebSocketGateway }                 from '@nestjs/websockets'
 import { v4 as uuid }                       from 'uuid'
 
 import { HandshakeReceiver }                from '@chats-system/handshake'
-import { SchemaRegistry }                   from '@chats-system/operations'
+import { TLObject }                         from '@chats-system/tl'
+import { BytesIO }                          from '@chats-system/tl'
 import { client }                           from '@chats-system/session-rpc-client'
 
 import { SessionAuthManager }               from '../session/index.js'
@@ -87,15 +85,20 @@ export class MTProtoGateway implements OnGatewayConnection, OnGatewayInit {
     connection: MTProtoConnection,
     rawMessage: MTProtoRawMessage
   ): Promise<void> {
+    const request: TL.ReqDhParams | TL.ReqPqMulti | TL.SetClientDhParams = await TLObject.read(
+      new BytesIO(rawMessage.getMessage().getMessageData())
+    )
+    /*
     const request: ReqDHParams | ReqPqMulti | SetClientDHParams = new BinaryReader<any>(
       rawMessage.getMessage().getMessageData(),
       SchemaRegistry
     ).readObject() as ReqDHParams | ReqPqMulti | SetClientDHParams
+    */
 
     try {
       const result = await new HandshakeReceiver().handle(request, connection.state)
 
-      const bytes = result.getBytes()
+      const bytes = result.write()
 
       connection.send(
         await connection.state.codec.send(

@@ -1,4 +1,4 @@
-import type { InitConnection }           from '@chats-system/operations'
+import type TL                           from '@chats-system/tl'
 
 import { Logger }                        from '@monstrs/logger'
 import { LRUCache }                      from 'lru-cache'
@@ -186,7 +186,11 @@ export class AuthCache {
     })
   }
 
-  async putInitConnection(authKeyId: bigint, ip: string, message: InitConnection): Promise<void> {
+  async putInitConnection(
+    authKeyId: bigint,
+    ip: string,
+    message: TL.InitConnection
+  ): Promise<void> {
     await client.setInitConnection({
       authKeyId,
       ip,
@@ -197,8 +201,6 @@ export class AuthCache {
       systemLangCode: message.systemLangCode,
       langPack: message.langPack,
       langCode: message.langCode,
-      proxy: message.proxy,
-      params: message.params,
     })
   }
 }

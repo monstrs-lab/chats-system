@@ -10,7 +10,7 @@
   },
   "main": "src/index.ts",
   "dependencies": {
-    "@chats-system/operations": "workspace:0.0.1",
+    "@chats-system/tl": "workspace:0.0.1",
     "@monstrs/buffer-utils": "^0.0.6",
     "@monstrs/crypto-utils": "^0.0.2",
     "@monstrs/logger": "^0.0.19",
