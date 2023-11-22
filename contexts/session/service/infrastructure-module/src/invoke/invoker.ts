@@ -5,7 +5,7 @@ import type { SessionData } from '../data/index.js'
 import { Injectable }       from '@nestjs/common'
 
 import { Primitive }        from '@chats-system/tl'
-import { client as auth }   from '@chats-system/auth-rpc-client'
+import { client as auth }   from '@chats-system/auth-session-rpc-client'
 import TL                   from '@chats-system/tl'
 
 @Injectable()

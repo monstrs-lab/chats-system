@@ -23,7 +23,7 @@ import { Controller }                           from '@nestjs/common'
 import { TLBoolTrue }                           from '@chats-system/core-rpc'
 import { TLBoolFalse }                          from '@chats-system/core-rpc'
 import { SessionService }                       from '@chats-system/session-rpc'
-import { client }                               from '@chats-system/auth-rpc-client'
+import { client }                               from '@chats-system/auth-session-rpc-client'
 
 import { SessionData }                          from '../data/index.js'
 import { ConnectionData }                       from '../data/index.js'

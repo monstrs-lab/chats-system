@@ -746,12 +746,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chats-system/auth-infrastructure-module@workspace:0.0.1, @chats-system/auth-infrastructure-module@workspace:contexts/auth/service/infrastructure-module":
+"@chats-system/auth-session-infrastructure-module@workspace:0.0.1, @chats-system/auth-session-infrastructure-module@workspace:contexts/auth-session/service/infrastructure-module":
   version: 0.0.0-use.local
-  resolution: "@chats-system/auth-infrastructure-module@workspace:contexts/auth/service/infrastructure-module"
+  resolution: "@chats-system/auth-session-infrastructure-module@workspace:contexts/auth-session/service/infrastructure-module"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.4.2"
-    "@chats-system/auth-rpc": "workspace:0.0.1"
+    "@chats-system/auth-session-rpc": "workspace:0.0.1"
     "@chats-system/core-rpc": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.1.3"
     "@connectrpc/connect-node": "npm:^1.1.3"
@@ -812,20 +812,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@chats-system/auth-rpc-client@workspace:0.0.1, @chats-system/auth-rpc-client@workspace:contexts/auth/rpc/auth-rpc-client":
+"@chats-system/auth-session-rpc-client@workspace:0.0.1, @chats-system/auth-session-rpc-client@workspace:contexts/auth-session/rpc/auth-session-rpc-client":
   version: 0.0.0-use.local
-  resolution: "@chats-system/auth-rpc-client@workspace:contexts/auth/rpc/auth-rpc-client"
+  resolution: "@chats-system/auth-session-rpc-client@workspace:contexts/auth-session/rpc/auth-session-rpc-client"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.4.2"
-    "@chats-system/auth-rpc": "workspace:0.0.1"
+    "@chats-system/auth-session-rpc": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.1.3"
     "@connectrpc/connect-node": "npm:^1.1.3"
   languageName: unknown
   linkType: soft
 
-"@chats-system/auth-rpc@workspace:0.0.1, @chats-system/auth-rpc@workspace:contexts/auth/rpc/auth-rpc":
+"@chats-system/auth-session-rpc@workspace:0.0.1, @chats-system/auth-session-rpc@workspace:contexts/auth-session/rpc/auth-session-rpc":
   version: 0.0.0-use.local
-  resolution: "@chats-system/auth-rpc@workspace:contexts/auth/rpc/auth-rpc"
+  resolution: "@chats-system/auth-session-rpc@workspace:contexts/auth-session/rpc/auth-session-rpc"
   dependencies:
     "@bufbuild/buf": "npm:^1.28.1"
     "@bufbuild/protobuf": "npm:^1.4.2"
@@ -838,13 +838,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@chats-system/auth-service-entrypoint@workspace:contexts/auth/service/service-entrypoint":
+"@chats-system/auth-session-service-entrypoint@workspace:contexts/auth-session/service/service-entrypoint":
   version: 0.0.0-use.local
-  resolution: "@chats-system/auth-service-entrypoint@workspace:contexts/auth/service/service-entrypoint"
+  resolution: "@chats-system/auth-session-service-entrypoint@workspace:contexts/auth-session/service/service-entrypoint"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.4.2"
-    "@chats-system/auth-infrastructure-module": "workspace:0.0.1"
-    "@chats-system/auth-rpc": "workspace:0.0.1"
+    "@chats-system/auth-session-infrastructure-module": "workspace:0.0.1"
+    "@chats-system/auth-session-rpc": "workspace:0.0.1"
     "@chats-system/core-rpc": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.1.3"
     "@connectrpc/connect-node": "npm:^1.1.3"
@@ -1031,7 +1031,7 @@ __metadata:
   resolution: "@chats-system/session-infrastructure-module@workspace:contexts/session/service/infrastructure-module"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.4.2"
-    "@chats-system/auth-rpc-client": "workspace:0.0.1"
+    "@chats-system/auth-session-rpc-client": "workspace:0.0.1"
     "@chats-system/core-rpc": "workspace:0.0.1"
     "@chats-system/gateway-rpc-client": "workspace:0.0.1"
     "@chats-system/session-rpc": "workspace:0.0.1"
@@ -1157,7 +1157,7 @@ __metadata:
   resolution: "@chats-system/standalone-service-entrypoint@workspace:applications/standalone/entrypoints/standalone-service-entrypoint"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.4.2"
-    "@chats-system/auth-infrastructure-module": "workspace:0.0.1"
+    "@chats-system/auth-session-infrastructure-module": "workspace:0.0.1"
     "@chats-system/gateway-infrastructure-module": "workspace:0.0.1"
     "@chats-system/session-infrastructure-module": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.1.3"
