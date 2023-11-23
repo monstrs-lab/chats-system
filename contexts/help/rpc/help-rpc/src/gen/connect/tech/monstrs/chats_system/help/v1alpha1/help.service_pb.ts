@@ -14,6 +14,174 @@ import { Message }                from '@bufbuild/protobuf'
 import { proto3 }                 from '@bufbuild/protobuf'
 
 /**
+ * @generated from message tech.monstrs.chats_system.help.v1alpha1.CountryCode
+ */
+export class CountryCode extends Message<CountryCode> {
+  /**
+   * @generated from field: string country_code = 1;
+   */
+  countryCode = ''
+
+  /**
+   * @generated from field: repeated string prefixes = 2;
+   */
+  prefixes: string[] = []
+
+  /**
+   * @generated from field: repeated string patterns = 3;
+   */
+  patterns: string[] = []
+
+  constructor(data?: PartialMessage<CountryCode>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.help.v1alpha1.CountryCode'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'country_code', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'prefixes', kind: 'scalar', T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 3, name: 'patterns', kind: 'scalar', T: 9 /* ScalarType.STRING */, repeated: true },
+  ])
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CountryCode {
+    return new CountryCode().fromBinary(bytes, options)
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CountryCode {
+    return new CountryCode().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CountryCode {
+    return new CountryCode().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: CountryCode | PlainMessage<CountryCode> | undefined,
+    b: CountryCode | PlainMessage<CountryCode> | undefined
+  ): boolean {
+    return proto3.util.equals(CountryCode, a, b)
+  }
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.help.v1alpha1.Country
+ */
+export class Country extends Message<Country> {
+  /**
+   * @generated from field: string iso2 = 1;
+   */
+  iso2 = ''
+
+  /**
+   * @generated from field: string default_name = 2;
+   */
+  defaultName = ''
+
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.help.v1alpha1.CountryCode country_codes = 3;
+   */
+  countryCodes: CountryCode[] = []
+
+  /**
+   * @generated from field: optional string name = 4;
+   */
+  name?: string
+
+  /**
+   * @generated from field: optional bool hidden = 5;
+   */
+  hidden?: boolean
+
+  constructor(data?: PartialMessage<Country>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.help.v1alpha1.Country'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'iso2', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'default_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: 'country_codes', kind: 'message', T: CountryCode, repeated: true },
+    { no: 4, name: 'name', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 5, name: 'hidden', kind: 'scalar', T: 8 /* ScalarType.BOOL */, opt: true },
+  ])
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Country {
+    return new Country().fromBinary(bytes, options)
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Country {
+    return new Country().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Country {
+    return new Country().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: Country | PlainMessage<Country> | undefined,
+    b: Country | PlainMessage<Country> | undefined
+  ): boolean {
+    return proto3.util.equals(Country, a, b)
+  }
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.help.v1alpha1.NearestDc
+ */
+export class NearestDc extends Message<NearestDc> {
+  /**
+   * @generated from field: string country = 1;
+   */
+  country = ''
+
+  /**
+   * @generated from field: int32 this_dc = 2;
+   */
+  thisDc = 0
+
+  /**
+   * @generated from field: int32 nearest_dc = 3;
+   */
+  nearestDc = 0
+
+  constructor(data?: PartialMessage<NearestDc>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.help.v1alpha1.NearestDc'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'country', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'this_dc', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'nearest_dc', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+  ])
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): NearestDc {
+    return new NearestDc().fromBinary(bytes, options)
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): NearestDc {
+    return new NearestDc().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): NearestDc {
+    return new NearestDc().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: NearestDc | PlainMessage<NearestDc> | undefined,
+    b: NearestDc | PlainMessage<NearestDc> | undefined
+  ): boolean {
+    return proto3.util.equals(NearestDc, a, b)
+  }
+}
+
+/**
  * @generated from message tech.monstrs.chats_system.help.v1alpha1.DcOption
  */
 export class DcOption extends Message<DcOption> {
@@ -574,5 +742,194 @@ export class GetConfigResponse extends Message<GetConfigResponse> {
     b: GetConfigResponse | PlainMessage<GetConfigResponse> | undefined
   ): boolean {
     return proto3.util.equals(GetConfigResponse, a, b)
+  }
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.help.v1alpha1.GetNearestDcRequest
+ */
+export class GetNearestDcRequest extends Message<GetNearestDcRequest> {
+  constructor(data?: PartialMessage<GetNearestDcRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.help.v1alpha1.GetNearestDcRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetNearestDcRequest {
+    return new GetNearestDcRequest().fromBinary(bytes, options)
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetNearestDcRequest {
+    return new GetNearestDcRequest().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): GetNearestDcRequest {
+    return new GetNearestDcRequest().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: GetNearestDcRequest | PlainMessage<GetNearestDcRequest> | undefined,
+    b: GetNearestDcRequest | PlainMessage<GetNearestDcRequest> | undefined
+  ): boolean {
+    return proto3.util.equals(GetNearestDcRequest, a, b)
+  }
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.help.v1alpha1.GetNearestDcResponse
+ */
+export class GetNearestDcResponse extends Message<GetNearestDcResponse> {
+  /**
+   * @generated from field: tech.monstrs.chats_system.help.v1alpha1.NearestDc nearest_dc = 1;
+   */
+  nearestDc?: NearestDc
+
+  constructor(data?: PartialMessage<GetNearestDcResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.help.v1alpha1.GetNearestDcResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'nearest_dc', kind: 'message', T: NearestDc },
+  ])
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetNearestDcResponse {
+    return new GetNearestDcResponse().fromBinary(bytes, options)
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetNearestDcResponse {
+    return new GetNearestDcResponse().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): GetNearestDcResponse {
+    return new GetNearestDcResponse().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: GetNearestDcResponse | PlainMessage<GetNearestDcResponse> | undefined,
+    b: GetNearestDcResponse | PlainMessage<GetNearestDcResponse> | undefined
+  ): boolean {
+    return proto3.util.equals(GetNearestDcResponse, a, b)
+  }
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.help.v1alpha1.GetCountriesListRequest
+ */
+export class GetCountriesListRequest extends Message<GetCountriesListRequest> {
+  /**
+   * @generated from field: string lang_code = 1;
+   */
+  langCode = ''
+
+  /**
+   * @generated from field: int32 hash = 2;
+   */
+  hash = 0
+
+  constructor(data?: PartialMessage<GetCountriesListRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.help.v1alpha1.GetCountriesListRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'lang_code', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'hash', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+  ])
+
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>
+  ): GetCountriesListRequest {
+    return new GetCountriesListRequest().fromBinary(bytes, options)
+  }
+
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>
+  ): GetCountriesListRequest {
+    return new GetCountriesListRequest().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): GetCountriesListRequest {
+    return new GetCountriesListRequest().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: GetCountriesListRequest | PlainMessage<GetCountriesListRequest> | undefined,
+    b: GetCountriesListRequest | PlainMessage<GetCountriesListRequest> | undefined
+  ): boolean {
+    return proto3.util.equals(GetCountriesListRequest, a, b)
+  }
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.help.v1alpha1.GetCountriesListResponse
+ */
+export class GetCountriesListResponse extends Message<GetCountriesListResponse> {
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.help.v1alpha1.Country countries = 1;
+   */
+  countries: Country[] = []
+
+  /**
+   * @generated from field: int32 hash = 2;
+   */
+  hash = 0
+
+  constructor(data?: PartialMessage<GetCountriesListResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.help.v1alpha1.GetCountriesListResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'countries', kind: 'message', T: Country, repeated: true },
+    { no: 2, name: 'hash', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+  ])
+
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>
+  ): GetCountriesListResponse {
+    return new GetCountriesListResponse().fromBinary(bytes, options)
+  }
+
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>
+  ): GetCountriesListResponse {
+    return new GetCountriesListResponse().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): GetCountriesListResponse {
+    return new GetCountriesListResponse().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: GetCountriesListResponse | PlainMessage<GetCountriesListResponse> | undefined,
+    b: GetCountriesListResponse | PlainMessage<GetCountriesListResponse> | undefined
+  ): boolean {
+    return proto3.util.equals(GetCountriesListResponse, a, b)
   }
 }

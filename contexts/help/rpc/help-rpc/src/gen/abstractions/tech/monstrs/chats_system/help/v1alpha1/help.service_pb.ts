@@ -4,6 +4,76 @@
 // @ts-nocheck
 
 /**
+ * @generated from message tech.monstrs.chats_system.help.v1alpha1.CountryCode
+ */
+export abstract class CountryCode {
+  /**
+   * @generated from field: string country_code = 1;
+   */
+  abstract readonly countryCode: string
+
+  /**
+   * @generated from field: repeated string prefixes = 2;
+   */
+  abstract readonly prefixes: string[]
+
+  /**
+   * @generated from field: repeated string patterns = 3;
+   */
+  abstract readonly patterns: string[]
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.help.v1alpha1.Country
+ */
+export abstract class Country {
+  /**
+   * @generated from field: string iso2 = 1;
+   */
+  abstract readonly iso2: string
+
+  /**
+   * @generated from field: string default_name = 2;
+   */
+  abstract readonly defaultName: string
+
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.help.v1alpha1.CountryCode country_codes = 3;
+   */
+  abstract readonly countryCodes: CountryCode[]
+
+  /**
+   * @generated from field: optional string name = 4;
+   */
+  abstract readonly name?: string
+
+  /**
+   * @generated from field: optional bool hidden = 5;
+   */
+  abstract readonly hidden?: boolean
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.help.v1alpha1.NearestDc
+ */
+export abstract class NearestDc {
+  /**
+   * @generated from field: string country = 1;
+   */
+  abstract readonly country: string
+
+  /**
+   * @generated from field: int32 this_dc = 2;
+   */
+  abstract readonly thisDc: number
+
+  /**
+   * @generated from field: int32 nearest_dc = 3;
+   */
+  abstract readonly nearestDc: number
+}
+
+/**
  * @generated from message tech.monstrs.chats_system.help.v1alpha1.DcOption
  */
 export abstract class DcOption {
@@ -316,4 +386,49 @@ export abstract class GetConfigResponse {
    * @generated from field: tech.monstrs.chats_system.help.v1alpha1.Config config = 1;
    */
   abstract readonly config?: Config
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.help.v1alpha1.GetNearestDcRequest
+ */
+export abstract class GetNearestDcRequest {}
+
+/**
+ * @generated from message tech.monstrs.chats_system.help.v1alpha1.GetNearestDcResponse
+ */
+export abstract class GetNearestDcResponse {
+  /**
+   * @generated from field: tech.monstrs.chats_system.help.v1alpha1.NearestDc nearest_dc = 1;
+   */
+  abstract readonly nearestDc?: NearestDc
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.help.v1alpha1.GetCountriesListRequest
+ */
+export abstract class GetCountriesListRequest {
+  /**
+   * @generated from field: string lang_code = 1;
+   */
+  abstract readonly langCode: string
+
+  /**
+   * @generated from field: int32 hash = 2;
+   */
+  abstract readonly hash: number
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.help.v1alpha1.GetCountriesListResponse
+ */
+export abstract class GetCountriesListResponse {
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.help.v1alpha1.Country countries = 1;
+   */
+  abstract readonly countries: Country[]
+
+  /**
+   * @generated from field: int32 hash = 2;
+   */
+  abstract readonly hash: number
 }

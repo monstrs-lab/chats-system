@@ -4,6 +4,76 @@
 // @ts-nocheck
 
 /**
+ * @generated from message tech.monstrs.chats_system.help.v1alpha1.CountryCode
+ */
+export interface CountryCode {
+  /**
+   * @generated from field: string country_code = 1;
+   */
+  countryCode: string
+
+  /**
+   * @generated from field: repeated string prefixes = 2;
+   */
+  prefixes: string[]
+
+  /**
+   * @generated from field: repeated string patterns = 3;
+   */
+  patterns: string[]
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.help.v1alpha1.Country
+ */
+export interface Country {
+  /**
+   * @generated from field: string iso2 = 1;
+   */
+  iso2: string
+
+  /**
+   * @generated from field: string default_name = 2;
+   */
+  defaultName: string
+
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.help.v1alpha1.CountryCode country_codes = 3;
+   */
+  countryCodes: CountryCode[]
+
+  /**
+   * @generated from field: optional string name = 4;
+   */
+  name?: string
+
+  /**
+   * @generated from field: optional bool hidden = 5;
+   */
+  hidden?: boolean
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.help.v1alpha1.NearestDc
+ */
+export interface NearestDc {
+  /**
+   * @generated from field: string country = 1;
+   */
+  country: string
+
+  /**
+   * @generated from field: int32 this_dc = 2;
+   */
+  thisDc: number
+
+  /**
+   * @generated from field: int32 nearest_dc = 3;
+   */
+  nearestDc: number
+}
+
+/**
  * @generated from message tech.monstrs.chats_system.help.v1alpha1.DcOption
  */
 export interface DcOption {
@@ -316,4 +386,49 @@ export interface GetConfigResponse {
    * @generated from field: tech.monstrs.chats_system.help.v1alpha1.Config config = 1;
    */
   config?: Config
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.help.v1alpha1.GetNearestDcRequest
+ */
+export interface GetNearestDcRequest {}
+
+/**
+ * @generated from message tech.monstrs.chats_system.help.v1alpha1.GetNearestDcResponse
+ */
+export interface GetNearestDcResponse {
+  /**
+   * @generated from field: tech.monstrs.chats_system.help.v1alpha1.NearestDc nearest_dc = 1;
+   */
+  nearestDc?: NearestDc
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.help.v1alpha1.GetCountriesListRequest
+ */
+export interface GetCountriesListRequest {
+  /**
+   * @generated from field: string lang_code = 1;
+   */
+  langCode: string
+
+  /**
+   * @generated from field: int32 hash = 2;
+   */
+  hash: number
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.help.v1alpha1.GetCountriesListResponse
+ */
+export interface GetCountriesListResponse {
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.help.v1alpha1.Country countries = 1;
+   */
+  countries: Country[]
+
+  /**
+   * @generated from field: int32 hash = 2;
+   */
+  hash: number
 }

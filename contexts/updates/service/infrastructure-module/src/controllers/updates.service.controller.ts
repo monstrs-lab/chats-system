@@ -10,6 +10,13 @@ import { State }             from '@chats-system/updates-rpc'
 import { GetStateResponse }  from '@chats-system/updates-rpc'
 import { UpdatesService }    from '@chats-system/updates-rpc'
 
+const bigintToNumber = (target: bigint): number => {
+  const buf = Buffer.alloc(9)
+  buf.writeBigInt64BE(target)
+
+  return Math.round(buf.readInt32BE())
+}
+
 @Controller()
 @ConnectRpcService(UpdatesService)
 export class UpdatesServiceController implements ServiceImpl<typeof UpdatesService> {
@@ -31,9 +38,9 @@ export class UpdatesServiceController implements ServiceImpl<typeof UpdatesServi
 
     return new GetStateResponse({
       state: new State({
-        pts: Number(pts),
+        pts: pts ? bigintToNumber(pts) : 0,
         qts: 0,
-        seq: Number(seq),
+        seq: bigintToNumber(seq),
         date: Date.now() / 1000,
         unreadCount: 0,
       }),

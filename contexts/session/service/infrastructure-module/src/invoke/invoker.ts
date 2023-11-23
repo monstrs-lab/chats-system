@@ -79,6 +79,55 @@ export class Invoker {
       return new TL.updates.State(response.state!)
     }
 
+    if (message instanceof TL.help.GetNearestDc) {
+      const response = await help.getNearestDc({})
+
+      return new TL.NearestDc(response.nearestDc!)
+    }
+
+    if (message instanceof TL.help.GetCountriesList) {
+      const response = await help.getCountriesList({
+        langCode: message.langCode,
+        hash: message.hash,
+      })
+
+      return new TL.help.CountriesList({
+        countries: response.countries.map(
+          (country) =>
+            new TL.help.Country({
+              ...country,
+              countryCodes: country.countryCodes.map(
+                (countryCode) => new TL.help.CountryCode(countryCode)
+              ),
+            })
+        ),
+        hash: response.hash,
+      })
+    }
+
+    if (message instanceof TL.auth.ExportLoginToken) {
+      return new TL.auth.LoginToken({
+        expires: Math.floor(Date.now() / 1000) + 3500,
+        token: Buffer.from('YWRzZmFzZGZhc2RmYXNkZmFkZmFk', 'base64'),
+      })
+    }
+
+    if (message instanceof TL.auth.SendCode) {
+      return new TL.auth.SentCode({
+        type: new TL.auth.SentCodeTypeSms({ length: 5 }),
+        phoneCodeHash: 'YWRzZmFzZGZhc2',
+        timeout: 3600,
+      })
+    }
+
+    if (message instanceof TL.auth.SignIn) {
+      return new TL.auth.Authorization({
+        user: new TL.User({
+          id: 1234134123412344n,
+        }),
+      })
+    }
+
     throw new Error(
       `Invoke unknown type: ${message.className} ${message.classType} ${message.constructorId}`
     )
