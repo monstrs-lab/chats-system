@@ -4,6 +4,7 @@ import { AuthSessionInfrastructureModule } from '@chats-system/auth-session-infr
 import { GatewayInfrastructureModule }     from '@chats-system/gateway-infrastructure-module'
 import { HelpInfrastructureModule }        from '@chats-system/help-infrastructure-module'
 import { SessionInfrastructureModule }     from '@chats-system/session-infrastructure-module'
+import { UpdatesInfrastructureModule }     from '@chats-system/updates-infrastructure-module'
 
 import { StandaloneServiceCoreModule }     from './standalone-service-core.module.js'
 
@@ -14,6 +15,7 @@ import { StandaloneServiceCoreModule }     from './standalone-service-core.modul
     SessionInfrastructureModule.register(),
     AuthSessionInfrastructureModule.register(),
     HelpInfrastructureModule.register(),
+    UpdatesInfrastructureModule.register(),
   ],
 })
 export class StandaloneServiceEntrypointModule {}
