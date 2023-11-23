@@ -9,7 +9,7 @@ export default MikroORMConfigBuilder.build({
   driver: PostgreSqlDriver,
   entities: Object.values(entities),
   migrations: {
-    tableName: 'mikro_orm_migrations_rewards_system',
+    tableName: 'mikro_orm_migrations_auth_session',
     disableForeignKeys: false,
     migrationsList: Object.keys(migrations).map((name: string) => ({
       class: migrations[name as keyof typeof migrations],

@@ -798,6 +798,9 @@ __metadata:
     "@chats-system/auth-session-rpc": "workspace:0.0.1"
     "@connectrpc/connect": ^0.13
     "@connectrpc/connect-node": ^0.13
+    "@mikro-orm/core": ^5.8.3
+    "@mikro-orm/nestjs": ^5.2.2
+    "@mikro-orm/postgresql": ^5.8.3
     "@monstrs/nestjs-connectrpc": ^0.0.2
     "@nestjs/common": ^10
     "@nestjs/core": ^10
@@ -847,9 +850,18 @@ __metadata:
     "@connectrpc/connect-node": "npm:^1.1.3"
     "@faker-js/faker": "npm:^8.1.0"
     "@jest/globals": "npm:^29.7.0"
+    "@mikro-orm/core": "npm:^5.8.3"
+    "@mikro-orm/entity-generator": "npm:^5.8.3"
+    "@mikro-orm/knex": "npm:^5.8.3"
+    "@mikro-orm/migrations": "npm:^5.8.3"
+    "@mikro-orm/nestjs": "npm:^5.2.2"
+    "@mikro-orm/postgresql": "npm:^5.8.3"
+    "@mikro-orm/seeder": "npm:^5.8.3"
     "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
     "@monstrs/nestjs-logger": "npm:^0.4.2"
     "@monstrs/nestjs-microservices-registry": "npm:^0.1.0"
+    "@monstrs/nestjs-mikro-orm-config": "npm:^0.1.3"
+    "@monstrs/nestjs-mikro-orm-request-context": "npm:^0.1.2"
     "@monstrs/protobuf-rpc": "npm:0.0.7"
     "@nestjs/common": "npm:^10.2.6"
     "@nestjs/core": "npm:^10.2.6"
@@ -1143,8 +1155,17 @@ __metadata:
     "@connectrpc/connect-node": "npm:^1.1.3"
     "@faker-js/faker": "npm:^8.1.0"
     "@jest/globals": "npm:^29.7.0"
+    "@mikro-orm/core": "npm:^5.8.3"
+    "@mikro-orm/entity-generator": "npm:^5.8.3"
+    "@mikro-orm/knex": "npm:^5.8.3"
+    "@mikro-orm/migrations": "npm:^5.8.3"
+    "@mikro-orm/nestjs": "npm:^5.2.2"
+    "@mikro-orm/postgresql": "npm:^5.8.3"
+    "@mikro-orm/seeder": "npm:^5.8.3"
     "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
     "@monstrs/nestjs-logger": "npm:^0.4.2"
+    "@monstrs/nestjs-mikro-orm-config": "npm:^0.1.3"
+    "@monstrs/nestjs-mikro-orm-request-context": "npm:^0.1.2"
     "@monstrs/protobuf-rpc": "npm:0.0.7"
     "@nestjs/common": "npm:^10.2.6"
     "@nestjs/core": "npm:^10.2.6"

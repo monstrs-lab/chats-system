@@ -4,7 +4,7 @@ import { NestLogger }                        from '@monstrs/nestjs-logger'
 import { NestFactory }                       from '@nestjs/core'
 import { WsAdapter }                         from '@nestjs/platform-ws'
 
-import { StandaloneServiceEntrypointModule } from './standalone-service-entrypoint.module.js'
+import { StandaloneServiceEntrypointModule } from './module/index.js'
 
 const bootstrap = async (): Promise<void> => {
   const app = await NestFactory.create(StandaloneServiceEntrypointModule, {
