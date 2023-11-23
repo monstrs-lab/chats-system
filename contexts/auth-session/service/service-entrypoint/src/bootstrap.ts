@@ -3,7 +3,7 @@ import { ServerProtocol }                     from '@monstrs/nestjs-connectrpc'
 import { NestLogger }                         from '@monstrs/nestjs-logger'
 import { NestFactory }                        from '@nestjs/core'
 
-import { AuthSessionServiceEntrypointModule } from './auth-session-service-entrypoint.module.js'
+import { AuthSessionServiceEntrypointModule } from './module/index.js'
 
 const bootstrap = async (): Promise<void> => {
   const app = await NestFactory.create(AuthSessionServiceEntrypointModule, {
