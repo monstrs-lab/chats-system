@@ -26,11 +26,9 @@ import type { GetPermAuthKeyIdResponse }     from '@chats-system/auth-session-rp
 import type { GetUserIdRequest }             from '@chats-system/auth-session-rpc'
 import type { GetUserIdResponse }            from '@chats-system/auth-session-rpc'
 import type { QueryAuthKeyRequest }          from '@chats-system/auth-session-rpc'
-import type { QueryAuthKeyResponse }         from '@chats-system/auth-session-rpc'
 import type { ResetAuthorizationRequest }    from '@chats-system/auth-session-rpc'
 import type { ResetAuthorizationResponse }   from '@chats-system/auth-session-rpc'
 import type { SetAuthKeyRequest }            from '@chats-system/auth-session-rpc'
-import type { SetAuthKeyResponse }           from '@chats-system/auth-session-rpc'
 import type { SetClientSessionInfoRequest }  from '@chats-system/auth-session-rpc'
 import type { SetClientSessionInfoResponse } from '@chats-system/auth-session-rpc'
 import type { SetInitConnectionRequest }     from '@chats-system/auth-session-rpc'
@@ -45,6 +43,8 @@ import { ConnectRpcMethod }                  from '@monstrs/nestjs-connectrpc'
 import { ConnectRpcService }                 from '@monstrs/nestjs-connectrpc'
 import { Controller }                        from '@nestjs/common'
 
+import { QueryAuthKeyResponse }              from '@chats-system/auth-session-rpc'
+import { SetAuthKeyResponse }                from '@chats-system/auth-session-rpc'
 import { AuthSessionService }                from '@chats-system/auth-session-rpc'
 
 import { AuthKeyService }                    from '../services/index.js'
@@ -140,17 +140,18 @@ export class AuthSessionServiceController implements ServiceImpl<typeof AuthSess
 
   @ConnectRpcMethod()
   async queryAuthKey(request: QueryAuthKeyRequest): Promise<QueryAuthKeyResponse> {
-    // @ts-expect-error
-    return this.authKeyService.getAuthKey(request.authKeyId)
+    const authKey = await this.authKeyService.getAuthKey(request.authKeyId)
+
+    return new QueryAuthKeyResponse({
+      authKey,
+    })
   }
 
   @ConnectRpcMethod()
   async setAuthKey(request: SetAuthKeyRequest): Promise<SetAuthKeyResponse> {
     await this.authKeyService.setAuthKey(request.authKey!)
 
-    // TODO: fix
-    // @ts-expect-error
-    return true
+    return new SetAuthKeyResponse({ success: true })
   }
 
   @ConnectRpcMethod()

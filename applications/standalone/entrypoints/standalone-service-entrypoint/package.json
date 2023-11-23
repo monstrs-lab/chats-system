@@ -16,6 +16,7 @@
     "@chats-system/auth-session-infrastructure-module": "workspace:0.0.1",
     "@chats-system/gateway-infrastructure-module": "workspace:0.0.1",
     "@chats-system/help-infrastructure-module": "workspace:0.0.1",
+    "@chats-system/idgen-infrastructure-module": "workspace:0.0.1",
     "@chats-system/session-infrastructure-module": "workspace:0.0.1",
     "@chats-system/updates-infrastructure-module": "workspace:0.0.1",
     "@connectrpc/connect": "^1.1.3",

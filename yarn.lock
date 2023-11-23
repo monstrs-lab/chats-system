@@ -900,8 +900,8 @@ __metadata:
     "@faker-js/faker": "npm:^8.1.0"
     "@jest/globals": "npm:^29.7.0"
     "@monstrs/logger": "npm:^0.0.19"
-    "@monstrs/mtproto-codecs": "npm:^0.0.15"
-    "@monstrs/mtproto-core": "npm:^0.0.15"
+    "@monstrs/mtproto-codecs": "npm:^0.0.21"
+    "@monstrs/mtproto-core": "npm:^0.0.21"
     "@monstrs/mtproto-extensions": "npm:^0.0.3"
     "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
     "@monstrs/nestjs-connectrpc-errors": "npm:^0.0.3"
@@ -1012,8 +1012,8 @@ __metadata:
     "@monstrs/buffer-utils": "npm:^0.0.6"
     "@monstrs/crypto-utils": "npm:^0.0.2"
     "@monstrs/logger": "npm:^0.0.19"
-    "@monstrs/mtproto-codecs": "npm:^0.0.15"
-    "@monstrs/mtproto-core": "npm:^0.0.15"
+    "@monstrs/mtproto-codecs": "npm:^0.0.21"
+    "@monstrs/mtproto-core": "npm:^0.0.21"
     "@monstrs/mtproto-crypto": "npm:^0.0.5"
     "@monstrs/mtproto-extensions": "npm:^0.0.3"
     "@monstrs/mtproto-tl-core": "npm:^0.0.8"
@@ -1160,6 +1160,157 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@chats-system/idgen-infrastructure-module@workspace:0.0.1, @chats-system/idgen-infrastructure-module@workspace:contexts/idgen/service/infrastructure-module":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/idgen-infrastructure-module@workspace:contexts/idgen/service/infrastructure-module"
+  dependencies:
+    "@bufbuild/protobuf": "npm:^1.4.2"
+    "@chats-system/idgen-rpc": "workspace:0.0.1"
+    "@connectrpc/connect": "npm:^1.1.3"
+    "@connectrpc/connect-node": "npm:^1.1.3"
+    "@faker-js/faker": "npm:^8.1.0"
+    "@jest/globals": "npm:^29.7.0"
+    "@mikro-orm/cli": "npm:^5.8.3"
+    "@mikro-orm/core": "npm:^5.8.3"
+    "@mikro-orm/entity-generator": "npm:^5.8.3"
+    "@mikro-orm/knex": "npm:^5.8.3"
+    "@mikro-orm/migrations": "npm:^5.8.3"
+    "@mikro-orm/nestjs": "npm:^5.2.2"
+    "@mikro-orm/postgresql": "npm:^5.8.3"
+    "@mikro-orm/seeder": "npm:^5.8.3"
+    "@monstrs/base-types": "npm:^0.0.2"
+    "@monstrs/logger": "npm:^0.0.19"
+    "@monstrs/mikro-orm-query-builder": "npm:^0.0.9"
+    "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
+    "@monstrs/nestjs-connectrpc-errors": "npm:^0.0.3"
+    "@monstrs/nestjs-cqrs": "npm:^0.0.4"
+    "@monstrs/nestjs-mikro-orm-config": "npm:^0.1.3"
+    "@monstrs/nestjs-mikro-orm-request-context": "npm:^0.1.2"
+    "@monstrs/nestjs-validation": "npm:^0.1.1"
+    "@monstrs/rpc-query-payloads": "npm:^0.0.11"
+    "@nestjs/common": "npm:^10.2.6"
+    "@nestjs/core": "npm:^10.2.6"
+    "@nestjs/cqrs": "npm:^10.2.5"
+    "@nestjs/microservices": "npm:^10.2.6"
+    "@nestjs/platform-express": "npm:^10.2.6"
+    "@nestjs/testing": "npm:^10.2.6"
+    "@types/express": "npm:^4.17.18"
+    "@types/flake-idgen": "npm:^0.1.34"
+    "@types/node": "npm:^20.6.5"
+    "@types/uuid": "npm:^9.0.4"
+    ajv: "npm:^8.12.0"
+    bignumber.js: "npm:9.1.2"
+    class-transformer: "npm:^0.5.1"
+    class-validator: "npm:^0.14.0"
+    flake-idgen: "npm:^1.4.0"
+    random-bigint: "npm:^0.0.1"
+    reflect-metadata: "npm:^0.1.13"
+    rxjs: "npm:^7.8.1"
+    ts-node: "npm:^10.9.1"
+    typescript: "npm:^5.2.2"
+    uuid: "npm:^9.0.1"
+  peerDependencies:
+    "@bufbuild/protobuf": ^1.3.1
+    "@chats-system/idgen-rpc": "workspace:0.0.1"
+    "@connectrpc/connect": ^0.13
+    "@connectrpc/connect-node": ^0.13
+    "@mikro-orm/core": ^5.8.3
+    "@mikro-orm/nestjs": ^5.2.2
+    "@mikro-orm/postgresql": ^5.8.3
+    "@monstrs/nestjs-connectrpc": ^0.0.2
+    "@nestjs/common": ^10
+    "@nestjs/core": ^10
+    "@nestjs/cqrs": ^10
+    "@nestjs/microservices": ^10
+    class-transformer: ^0.5
+    class-validator: ^0.14
+    reflect-metadata: ^0.1
+    rxjs: ^7
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/idgen-rpc-client@workspace:0.0.1, @chats-system/idgen-rpc-client@workspace:contexts/idgen/rpc/idgen-rpc-client":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/idgen-rpc-client@workspace:contexts/idgen/rpc/idgen-rpc-client"
+  dependencies:
+    "@bufbuild/protobuf": "npm:^1.4.2"
+    "@chats-system/idgen-rpc": "workspace:0.0.1"
+    "@connectrpc/connect": "npm:^1.1.3"
+    "@connectrpc/connect-node": "npm:^1.1.3"
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/idgen-rpc@workspace:0.0.1, @chats-system/idgen-rpc@workspace:contexts/idgen/rpc/idgen-rpc":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/idgen-rpc@workspace:contexts/idgen/rpc/idgen-rpc"
+  dependencies:
+    "@bufbuild/buf": "npm:^1.28.1"
+    "@bufbuild/protobuf": "npm:^1.4.2"
+    "@bufbuild/protoc-gen-es": "npm:^1.4.2"
+    "@connectrpc/protoc-gen-connect-es": "npm:^1.1.3"
+    "@monstrs/protoc-gen-abstractions": "npm:^0.0.5"
+    "@monstrs/protoc-gen-interfaces": "npm:^0.0.4"
+  peerDependencies:
+    "@bufbuild/protobuf": ^1
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/idgen-service-entrypoint@workspace:contexts/idgen/service/service-entrypoint":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/idgen-service-entrypoint@workspace:contexts/idgen/service/service-entrypoint"
+  dependencies:
+    "@bufbuild/protobuf": "npm:^1.4.2"
+    "@chats-system/idgen-infrastructure-module": "workspace:0.0.1"
+    "@chats-system/idgen-rpc": "workspace:0.0.1"
+    "@connectrpc/connect": "npm:^1.1.3"
+    "@connectrpc/connect-node": "npm:^1.1.3"
+    "@faker-js/faker": "npm:^8.1.0"
+    "@jest/globals": "npm:^29.7.0"
+    "@mikro-orm/core": "npm:^5.8.3"
+    "@mikro-orm/entity-generator": "npm:^5.8.3"
+    "@mikro-orm/knex": "npm:^5.8.3"
+    "@mikro-orm/migrations": "npm:^5.8.3"
+    "@mikro-orm/nestjs": "npm:^5.2.2"
+    "@mikro-orm/postgresql": "npm:^5.8.3"
+    "@mikro-orm/seeder": "npm:^5.8.3"
+    "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
+    "@monstrs/nestjs-logger": "npm:^0.4.2"
+    "@monstrs/nestjs-microservices-registry": "npm:^0.1.0"
+    "@monstrs/nestjs-mikro-orm-config": "npm:^0.1.3"
+    "@monstrs/nestjs-mikro-orm-request-context": "npm:^0.1.2"
+    "@monstrs/protobuf-rpc": "npm:0.0.7"
+    "@nestjs/common": "npm:^10.2.6"
+    "@nestjs/core": "npm:^10.2.6"
+    "@nestjs/cqrs": "npm:^10.2.5"
+    "@nestjs/microservices": "npm:^10.2.6"
+    "@nestjs/platform-express": "npm:^10.2.6"
+    "@nestjs/platform-socket.io": "npm:^10.2.6"
+    "@nestjs/testing": "npm:^10.2.6"
+    "@nestjs/websockets": "npm:^10.2.6"
+    "@testcontainers/kafka": "npm:^10.2.1"
+    "@types/node": "npm:^20.6.5"
+    "@types/pg": "npm:^8.10.3"
+    cache-manager: "npm:^5.2.3"
+    class-transformer: "npm:^0.5.1"
+    class-validator: "npm:^0.14.0"
+    get-port: "npm:^7.0.0"
+    p-retry: "npm:^6.0.0"
+    pg: "npm:^8.11.3"
+    reflect-metadata: "npm:^0.1.13"
+    rxjs: "npm:^7.8.1"
+    testcontainers: "npm:^10.2.1"
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/idgen@workspace:0.0.1, @chats-system/idgen@workspace:contexts/idgen/helpers/idgen":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/idgen@workspace:contexts/idgen/helpers/idgen"
+  dependencies:
+    "@chats-system/idgen-rpc-client": "workspace:0.0.1"
+    "@monstrs/logger": "npm:^0.0.19"
+  languageName: unknown
+  linkType: soft
+
 "@chats-system/session-infrastructure-module@workspace:0.0.1, @chats-system/session-infrastructure-module@workspace:contexts/session/service/infrastructure-module":
   version: 0.0.0-use.local
   resolution: "@chats-system/session-infrastructure-module@workspace:contexts/session/service/infrastructure-module"
@@ -1178,7 +1329,7 @@ __metadata:
     "@monstrs/base-types": "npm:^0.0.2"
     "@monstrs/buffer-utils": "npm:^0.0.6"
     "@monstrs/logger": "npm:^0.0.19"
-    "@monstrs/mtproto-core": "npm:^0.0.15"
+    "@monstrs/mtproto-core": "npm:^0.0.21"
     "@monstrs/mtproto-extensions": "npm:^0.0.3"
     "@monstrs/mtproto-tl-core": "npm:^0.0.8"
     "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
@@ -1293,6 +1444,7 @@ __metadata:
     "@chats-system/auth-session-infrastructure-module": "workspace:0.0.1"
     "@chats-system/gateway-infrastructure-module": "workspace:0.0.1"
     "@chats-system/help-infrastructure-module": "workspace:0.0.1"
+    "@chats-system/idgen-infrastructure-module": "workspace:0.0.1"
     "@chats-system/session-infrastructure-module": "workspace:0.0.1"
     "@chats-system/updates-infrastructure-module": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.1.3"
@@ -1350,6 +1502,7 @@ __metadata:
   resolution: "@chats-system/updates-infrastructure-module@workspace:contexts/updates/service/infrastructure-module"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.4.2"
+    "@chats-system/idgen": "workspace:0.0.1"
     "@chats-system/updates-rpc": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.1.3"
     "@connectrpc/connect-node": "npm:^1.1.3"
@@ -2441,25 +2594,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/mtproto-codecs@npm:^0.0.15":
-  version: 0.0.15
-  resolution: "@monstrs/mtproto-codecs@npm:0.0.15"
+"@monstrs/mtproto-codecs@npm:^0.0.21":
+  version: 0.0.21
+  resolution: "@monstrs/mtproto-codecs@npm:0.0.21"
   dependencies:
     "@monstrs/buffer-utils": "npm:^0.0.6"
-    "@monstrs/mtproto-core": "npm:0.0.15"
-  checksum: eed1628b0e955128ecf9c192fc396dac731a828d0ea77ee96014a9d43895db2956b16065f7fd20579d5bc7ad7ab086f2c45a6bf8c32fed9e732c813c9b7abd8b
+    "@monstrs/mtproto-core": "npm:0.0.21"
+  checksum: c75fe3341a29bf2ac565f390995d5b60dc5afa613b64034b66fcf501cde307633d2d4a348000fb2fba4f49ffc6c2ec47d2988f84dee58831190f516e3b682d69
   languageName: node
   linkType: hard
 
-"@monstrs/mtproto-core@npm:0.0.15, @monstrs/mtproto-core@npm:^0.0.15":
-  version: 0.0.15
-  resolution: "@monstrs/mtproto-core@npm:0.0.15"
+"@monstrs/mtproto-core@npm:0.0.21, @monstrs/mtproto-core@npm:^0.0.21":
+  version: 0.0.21
+  resolution: "@monstrs/mtproto-core@npm:0.0.21"
   dependencies:
     "@monstrs/bigint-utils": "npm:^0.0.2"
     "@monstrs/buffer-utils": "npm:^0.0.6"
     "@monstrs/mtproto-crypto": "npm:0.0.5"
     "@monstrs/mtproto-extensions": "npm:0.0.3"
-  checksum: 6fdd3fd2b49871430919646ca9bdfccbd252b95872f4ff1d49cc4f45163f744b51a0c6603eeabbdb76a55f04372da1b4d96783f6f0262b4912780dd07e787fcb
+  checksum: 3e8fd08e1a1a22fbe273f4fae1805d6bdf85cc77c19479e41771486696bb5fd11ba89b7eaea7ac987c35f7eba549c44194b832101e130b64064757823ae7790e
   languageName: node
   linkType: hard
 
@@ -3614,6 +3767,15 @@ __metadata:
     "@types/qs": "npm:*"
     "@types/serve-static": "npm:*"
   checksum: f73f5f92bd0a0fa4697598be3122c89522caa9e3bcb14c28b5e6d58a8e47f0301027478997153ae9ee4cf3d432576fb3fb0918ea0db521cc1204f8b759828a32
+  languageName: node
+  linkType: hard
+
+"@types/flake-idgen@npm:^0.1.34":
+  version: 0.1.34
+  resolution: "@types/flake-idgen@npm:0.1.34"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: ce8dbded244fbc63aaa82d19b8222580ef09483f0085f3efd69e971fb67de0c115cbbf41368778b29822c3e96bf82335ecff89a6809e0804c0a56d6c296a36f8
   languageName: node
   linkType: hard
 
@@ -5121,11 +5283,7 @@ __metadata:
     "@types/node": "npm:^20.6.5"
     typescript: "npm:^5.2.2"
   dependenciesMeta:
-    "@monstrs/mtproto-core@0.0.15":
-      unplugged: true
-    "@monstrs/mtproto-extensions@0.0.3":
-      unplugged: true
-    "@monstrs/mtproto-tl-core@0.0.8":
+    "@monstrs/mtproto-core@0.0.20":
       unplugged: true
   languageName: unknown
   linkType: soft
@@ -6608,6 +6766,13 @@ __metadata:
     locate-path: "npm:^6.0.0"
     path-exists: "npm:^4.0.0"
   checksum: 062c5a83a9c02f53cdd6d175a37ecf8f87ea5bbff1fdfb828f04bfa021441bc7583e8ebc0872a4c1baab96221fb8a8a275a19809fb93fbc40bd69ec35634069a
+  languageName: node
+  linkType: hard
+
+"flake-idgen@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "flake-idgen@npm:1.4.0"
+  checksum: 10db48eb7cbdcdebfaf38eeb1232e3bc9f2f48ba1faf52c12df03316f33185837f8d40c71cc3d058c59ef01aec5f8f3918747ef6167860db59a03ee55ead1af7
   languageName: node
   linkType: hard
 

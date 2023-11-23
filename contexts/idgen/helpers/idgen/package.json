@@ -1,0 +1,16 @@
+{
+  "name": "@chats-system/idgen",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./src/index.ts"
+  },
+  "main": "src/index.ts",
+  "dependencies": {
+    "@chats-system/idgen-rpc-client": "workspace:0.0.1",
+    "@monstrs/logger": "^0.0.19"
+  }
+}

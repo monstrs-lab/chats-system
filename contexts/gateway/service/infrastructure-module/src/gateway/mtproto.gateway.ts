@@ -88,12 +88,6 @@ export class MTProtoGateway implements OnGatewayConnection, OnGatewayInit {
     const request: TL.ReqDhParams | TL.ReqPqMulti | TL.SetClientDhParams = await TLObject.read(
       new BytesIO(rawMessage.getMessage().getMessageData())
     )
-    /*
-    const request: ReqDHParams | ReqPqMulti | SetClientDHParams = new BinaryReader<any>(
-      rawMessage.getMessage().getMessageData(),
-      SchemaRegistry
-    ).readObject() as ReqDHParams | ReqPqMulti | SetClientDHParams
-    */
 
     try {
       const result = await new HandshakeReceiver().handle(request, connection.state)
