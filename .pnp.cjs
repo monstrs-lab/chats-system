@@ -82,6 +82,22 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:contexts/session/service/service-entrypoint"\
     },\
     {\
+      "name": "@chats-system/updates-rpc",\
+      "reference": "workspace:contexts/updates/rpc/updates-rpc"\
+    },\
+    {\
+      "name": "@chats-system/updates-rpc-client",\
+      "reference": "workspace:contexts/updates/rpc/updates-rpc-client"\
+    },\
+    {\
+      "name": "@chats-system/updates-infrastructure-module",\
+      "reference": "workspace:contexts/updates/service/infrastructure-module"\
+    },\
+    {\
+      "name": "@chats-system/updates-service-entrypoint",\
+      "reference": "workspace:contexts/updates/service/service-entrypoint"\
+    },\
+    {\
       "name": "@chats-system/handshake",\
       "reference": "workspace:shared/handshake"\
     },\
@@ -112,6 +128,10 @@ const RAW_RUNTIME_STATE =
     ["@chats-system/session-service-entrypoint", ["workspace:contexts/session/service/service-entrypoint"]],\
     ["@chats-system/standalone-service-entrypoint", ["workspace:applications/standalone/entrypoints/standalone-service-entrypoint"]],\
     ["@chats-system/tl", ["workspace:shared/tl"]],\
+    ["@chats-system/updates-infrastructure-module", ["virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/updates/service/infrastructure-module", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#workspace:contexts/updates/service/infrastructure-module", "workspace:contexts/updates/service/infrastructure-module"]],\
+    ["@chats-system/updates-rpc", ["virtual:f30b919f274667006fd313cd6021372e422292945c2c6d1a5fbac01a807d30befff49ab1c42825c65a0042bf501c764e9a0afa6c0825efc3e6b34dadaf60f729#workspace:contexts/updates/rpc/updates-rpc", "workspace:contexts/updates/rpc/updates-rpc"]],\
+    ["@chats-system/updates-rpc-client", ["workspace:contexts/updates/rpc/updates-rpc-client"]],\
+    ["@chats-system/updates-service-entrypoint", ["workspace:contexts/updates/service/service-entrypoint"]],\
     ["chats-system", ["workspace:."]]\
   ],\
   "fallbackPool": [\
@@ -2281,6 +2301,7 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/help-rpc-client", "workspace:contexts/help/rpc/help-rpc-client"],\
           ["@chats-system/session-rpc", "virtual:e79801e617d3cc1337f5b1591df86aa6f97f24ac89530901cdab719724ea3506d6e9f2555041588ffbfbd497d2376360f00211047547099d6c513d12c844ec6a#workspace:contexts/session/rpc/session-rpc"],\
           ["@chats-system/tl", "workspace:shared/tl"],\
+          ["@chats-system/updates-rpc-client", "workspace:contexts/updates/rpc/updates-rpc-client"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@faker-js/faker", "npm:8.2.0"],\
@@ -2368,6 +2389,7 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/help-rpc-client", "workspace:contexts/help/rpc/help-rpc-client"],\
           ["@chats-system/session-rpc", "virtual:e79801e617d3cc1337f5b1591df86aa6f97f24ac89530901cdab719724ea3506d6e9f2555041588ffbfbd497d2376360f00211047547099d6c513d12c844ec6a#workspace:contexts/session/rpc/session-rpc"],\
           ["@chats-system/tl", "workspace:shared/tl"],\
+          ["@chats-system/updates-rpc-client", "workspace:contexts/updates/rpc/updates-rpc-client"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@faker-js/faker", "npm:8.2.0"],\
@@ -2454,6 +2476,7 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/help-rpc-client", "workspace:contexts/help/rpc/help-rpc-client"],\
           ["@chats-system/session-rpc", "virtual:e79801e617d3cc1337f5b1591df86aa6f97f24ac89530901cdab719724ea3506d6e9f2555041588ffbfbd497d2376360f00211047547099d6c513d12c844ec6a#workspace:contexts/session/rpc/session-rpc"],\
           ["@chats-system/tl", "workspace:shared/tl"],\
+          ["@chats-system/updates-rpc-client", "workspace:contexts/updates/rpc/updates-rpc-client"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@faker-js/faker", "npm:8.2.0"],\
@@ -2587,6 +2610,7 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/gateway-infrastructure-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/gateway/service/infrastructure-module"],\
           ["@chats-system/help-infrastructure-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/help/service/infrastructure-module"],\
           ["@chats-system/session-infrastructure-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/session/service/infrastructure-module"],\
+          ["@chats-system/updates-infrastructure-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/updates/service/infrastructure-module"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@faker-js/faker", "npm:8.2.0"],\
@@ -2636,6 +2660,352 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/tl", "workspace:shared/tl"],\
           ["@tgsnake/core", "patch:@tgsnake/core@npm%3A1.10.3#~/.yarn/patches/@tgsnake-core-npm-1.10.3-027becdb1d.patch::version=1.10.3&hash=2d1480"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@chats-system/updates-infrastructure-module", [\
+      ["virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/updates/service/infrastructure-module", {\
+        "packageLocation": "./.yarn/__virtual__/@chats-system-updates-infrastructure-module-virtual-19abd427f3/1/contexts/updates/service/infrastructure-module/",\
+        "packageDependencies": [\
+          ["@chats-system/updates-infrastructure-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/updates/service/infrastructure-module"],\
+          ["@bufbuild/protobuf", "npm:1.4.2"],\
+          ["@chats-system/updates-rpc", "virtual:f30b919f274667006fd313cd6021372e422292945c2c6d1a5fbac01a807d30befff49ab1c42825c65a0042bf501c764e9a0afa6c0825efc3e6b34dadaf60f729#workspace:contexts/updates/rpc/updates-rpc"],\
+          ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
+          ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
+          ["@faker-js/faker", "npm:8.2.0"],\
+          ["@jest/globals", "npm:29.7.0"],\
+          ["@mikro-orm/cli", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#npm:5.9.1"],\
+          ["@mikro-orm/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1"],\
+          ["@mikro-orm/entity-generator", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1"],\
+          ["@mikro-orm/knex", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#npm:5.9.1"],\
+          ["@mikro-orm/migrations", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1"],\
+          ["@mikro-orm/nestjs", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.2.2"],\
+          ["@mikro-orm/postgresql", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1"],\
+          ["@mikro-orm/seeder", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1"],\
+          ["@monstrs/base-types", "npm:0.0.2"],\
+          ["@monstrs/logger", "npm:0.0.19"],\
+          ["@monstrs/mikro-orm-query-builder", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#npm:0.0.9"],\
+          ["@monstrs/nestjs-connectrpc", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:0.0.3"],\
+          ["@monstrs/nestjs-connectrpc-errors", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#npm:0.0.3"],\
+          ["@monstrs/nestjs-cqrs", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#npm:0.0.4"],\
+          ["@monstrs/nestjs-mikro-orm-config", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:0.1.3"],\
+          ["@monstrs/nestjs-mikro-orm-request-context", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:0.1.2"],\
+          ["@monstrs/nestjs-validation", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#npm:0.1.1"],\
+          ["@monstrs/rpc-query-payloads", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#npm:0.0.11"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/cqrs", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.6"],\
+          ["@nestjs/microservices", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/platform-express", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/testing", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@types/bufbuild__protobuf", null],\
+          ["@types/chats-system__updates-rpc", null],\
+          ["@types/class-transformer", null],\
+          ["@types/class-validator", null],\
+          ["@types/connectrpc__connect", null],\
+          ["@types/connectrpc__connect-node", null],\
+          ["@types/express", "npm:4.17.20"],\
+          ["@types/mikro-orm__core", null],\
+          ["@types/mikro-orm__nestjs", null],\
+          ["@types/mikro-orm__postgresql", null],\
+          ["@types/monstrs__nestjs-connectrpc", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__cqrs", null],\
+          ["@types/nestjs__microservices", null],\
+          ["@types/node", "npm:20.8.7"],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["@types/uuid", "npm:9.0.6"],\
+          ["ajv", "npm:8.12.0"],\
+          ["bignumber.js", "npm:9.1.2"],\
+          ["class-transformer", "npm:0.5.1"],\
+          ["class-validator", "npm:0.14.0"],\
+          ["random-bigint", "npm:0.0.1"],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"],\
+          ["ts-node", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#npm:10.9.1"],\
+          ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
+          ["uuid", "npm:9.0.1"]\
+        ],\
+        "packagePeers": [\
+          "@bufbuild/protobuf",\
+          "@connectrpc/connect-node",\
+          "@connectrpc/connect",\
+          "@mikro-orm/core",\
+          "@mikro-orm/nestjs",\
+          "@mikro-orm/postgresql",\
+          "@monstrs/nestjs-connectrpc",\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/cqrs",\
+          "@nestjs/microservices",\
+          "@types/bufbuild__protobuf",\
+          "@types/chats-system__updates-rpc",\
+          "@types/class-transformer",\
+          "@types/class-validator",\
+          "@types/connectrpc__connect-node",\
+          "@types/connectrpc__connect",\
+          "@types/mikro-orm__core",\
+          "@types/mikro-orm__nestjs",\
+          "@types/mikro-orm__postgresql",\
+          "@types/monstrs__nestjs-connectrpc",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__cqrs",\
+          "@types/nestjs__microservices",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "class-transformer",\
+          "class-validator",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#workspace:contexts/updates/service/infrastructure-module", {\
+        "packageLocation": "./.yarn/__virtual__/@chats-system-updates-infrastructure-module-virtual-914acd01c0/1/contexts/updates/service/infrastructure-module/",\
+        "packageDependencies": [\
+          ["@chats-system/updates-infrastructure-module", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#workspace:contexts/updates/service/infrastructure-module"],\
+          ["@bufbuild/protobuf", "npm:1.4.2"],\
+          ["@chats-system/updates-rpc", "virtual:f30b919f274667006fd313cd6021372e422292945c2c6d1a5fbac01a807d30befff49ab1c42825c65a0042bf501c764e9a0afa6c0825efc3e6b34dadaf60f729#workspace:contexts/updates/rpc/updates-rpc"],\
+          ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
+          ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
+          ["@faker-js/faker", "npm:8.2.0"],\
+          ["@jest/globals", "npm:29.7.0"],\
+          ["@mikro-orm/cli", "virtual:914acd01c0dcb162325a3ee777614a801e038c12a04bd1e1dd6702928fbcf62064cfba5c70766fe93037c2effffe66995d0f80b2563be9ab74d010b7a5657918#npm:5.9.1"],\
+          ["@mikro-orm/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/entity-generator", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/knex", "virtual:914acd01c0dcb162325a3ee777614a801e038c12a04bd1e1dd6702928fbcf62064cfba5c70766fe93037c2effffe66995d0f80b2563be9ab74d010b7a5657918#npm:5.9.1"],\
+          ["@mikro-orm/migrations", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/nestjs", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.2.2"],\
+          ["@mikro-orm/postgresql", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/seeder", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@monstrs/base-types", "npm:0.0.2"],\
+          ["@monstrs/logger", "npm:0.0.19"],\
+          ["@monstrs/mikro-orm-query-builder", "virtual:914acd01c0dcb162325a3ee777614a801e038c12a04bd1e1dd6702928fbcf62064cfba5c70766fe93037c2effffe66995d0f80b2563be9ab74d010b7a5657918#npm:0.0.9"],\
+          ["@monstrs/nestjs-connectrpc", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:0.0.3"],\
+          ["@monstrs/nestjs-connectrpc-errors", "virtual:914acd01c0dcb162325a3ee777614a801e038c12a04bd1e1dd6702928fbcf62064cfba5c70766fe93037c2effffe66995d0f80b2563be9ab74d010b7a5657918#npm:0.0.3"],\
+          ["@monstrs/nestjs-cqrs", "virtual:914acd01c0dcb162325a3ee777614a801e038c12a04bd1e1dd6702928fbcf62064cfba5c70766fe93037c2effffe66995d0f80b2563be9ab74d010b7a5657918#npm:0.0.4"],\
+          ["@monstrs/nestjs-mikro-orm-config", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:0.1.3"],\
+          ["@monstrs/nestjs-mikro-orm-request-context", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:0.1.2"],\
+          ["@monstrs/nestjs-validation", "virtual:914acd01c0dcb162325a3ee777614a801e038c12a04bd1e1dd6702928fbcf62064cfba5c70766fe93037c2effffe66995d0f80b2563be9ab74d010b7a5657918#npm:0.1.1"],\
+          ["@monstrs/rpc-query-payloads", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#npm:0.0.11"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/cqrs", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.6"],\
+          ["@nestjs/microservices", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/platform-express", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/testing", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@types/bufbuild__protobuf", null],\
+          ["@types/chats-system__updates-rpc", null],\
+          ["@types/class-transformer", null],\
+          ["@types/class-validator", null],\
+          ["@types/connectrpc__connect", null],\
+          ["@types/connectrpc__connect-node", null],\
+          ["@types/express", "npm:4.17.20"],\
+          ["@types/mikro-orm__core", null],\
+          ["@types/mikro-orm__nestjs", null],\
+          ["@types/mikro-orm__postgresql", null],\
+          ["@types/monstrs__nestjs-connectrpc", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__cqrs", null],\
+          ["@types/nestjs__microservices", null],\
+          ["@types/node", "npm:20.8.7"],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["@types/uuid", "npm:9.0.6"],\
+          ["ajv", "npm:8.12.0"],\
+          ["bignumber.js", "npm:9.1.2"],\
+          ["class-transformer", "npm:0.5.1"],\
+          ["class-validator", "npm:0.14.0"],\
+          ["random-bigint", "npm:0.0.1"],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"],\
+          ["ts-node", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#npm:10.9.1"],\
+          ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
+          ["uuid", "npm:9.0.1"]\
+        ],\
+        "packagePeers": [\
+          "@bufbuild/protobuf",\
+          "@chats-system/updates-rpc",\
+          "@connectrpc/connect-node",\
+          "@connectrpc/connect",\
+          "@mikro-orm/core",\
+          "@mikro-orm/nestjs",\
+          "@mikro-orm/postgresql",\
+          "@monstrs/nestjs-connectrpc",\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/cqrs",\
+          "@nestjs/microservices",\
+          "@types/bufbuild__protobuf",\
+          "@types/chats-system__updates-rpc",\
+          "@types/class-transformer",\
+          "@types/class-validator",\
+          "@types/connectrpc__connect-node",\
+          "@types/connectrpc__connect",\
+          "@types/mikro-orm__core",\
+          "@types/mikro-orm__nestjs",\
+          "@types/mikro-orm__postgresql",\
+          "@types/monstrs__nestjs-connectrpc",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__cqrs",\
+          "@types/nestjs__microservices",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "class-transformer",\
+          "class-validator",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["workspace:contexts/updates/service/infrastructure-module", {\
+        "packageLocation": "./contexts/updates/service/infrastructure-module/",\
+        "packageDependencies": [\
+          ["@chats-system/updates-infrastructure-module", "workspace:contexts/updates/service/infrastructure-module"],\
+          ["@bufbuild/protobuf", "npm:1.4.2"],\
+          ["@chats-system/updates-rpc", "virtual:f30b919f274667006fd313cd6021372e422292945c2c6d1a5fbac01a807d30befff49ab1c42825c65a0042bf501c764e9a0afa6c0825efc3e6b34dadaf60f729#workspace:contexts/updates/rpc/updates-rpc"],\
+          ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
+          ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
+          ["@faker-js/faker", "npm:8.2.0"],\
+          ["@jest/globals", "npm:29.7.0"],\
+          ["@mikro-orm/cli", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/entity-generator", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/knex", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/migrations", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/nestjs", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.2.2"],\
+          ["@mikro-orm/postgresql", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/seeder", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@monstrs/base-types", "npm:0.0.2"],\
+          ["@monstrs/logger", "npm:0.0.19"],\
+          ["@monstrs/mikro-orm-query-builder", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.0.9"],\
+          ["@monstrs/nestjs-connectrpc", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.0.3"],\
+          ["@monstrs/nestjs-connectrpc-errors", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.0.3"],\
+          ["@monstrs/nestjs-cqrs", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.0.4"],\
+          ["@monstrs/nestjs-mikro-orm-config", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.1.3"],\
+          ["@monstrs/nestjs-mikro-orm-request-context", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.1.2"],\
+          ["@monstrs/nestjs-validation", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.1.1"],\
+          ["@monstrs/rpc-query-payloads", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#npm:0.0.11"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@nestjs/cqrs", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.6"],\
+          ["@nestjs/microservices", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@nestjs/platform-express", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@nestjs/testing", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@types/express", "npm:4.17.20"],\
+          ["@types/node", "npm:20.8.7"],\
+          ["@types/uuid", "npm:9.0.6"],\
+          ["ajv", "npm:8.12.0"],\
+          ["bignumber.js", "npm:9.1.2"],\
+          ["class-transformer", "npm:0.5.1"],\
+          ["class-validator", "npm:0.14.0"],\
+          ["random-bigint", "npm:0.0.1"],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"],\
+          ["ts-node", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#npm:10.9.1"],\
+          ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
+          ["uuid", "npm:9.0.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@chats-system/updates-rpc", [\
+      ["virtual:f30b919f274667006fd313cd6021372e422292945c2c6d1a5fbac01a807d30befff49ab1c42825c65a0042bf501c764e9a0afa6c0825efc3e6b34dadaf60f729#workspace:contexts/updates/rpc/updates-rpc", {\
+        "packageLocation": "./.yarn/__virtual__/@chats-system-updates-rpc-virtual-90b5f9fd96/1/contexts/updates/rpc/updates-rpc/",\
+        "packageDependencies": [\
+          ["@chats-system/updates-rpc", "virtual:f30b919f274667006fd313cd6021372e422292945c2c6d1a5fbac01a807d30befff49ab1c42825c65a0042bf501c764e9a0afa6c0825efc3e6b34dadaf60f729#workspace:contexts/updates/rpc/updates-rpc"],\
+          ["@bufbuild/buf", "npm:1.28.1"],\
+          ["@bufbuild/protobuf", "npm:1.4.2"],\
+          ["@bufbuild/protoc-gen-es", "virtual:d25aafc36fc21d095d13260e75c00faa8e6c0f491c2813d4f33d78902b1f0bce8a6194daa3f219e1ac53096bbd8f5f133e68292e4fd427903bf14d03a0deb806#npm:1.4.2"],\
+          ["@connectrpc/protoc-gen-connect-es", "virtual:d25aafc36fc21d095d13260e75c00faa8e6c0f491c2813d4f33d78902b1f0bce8a6194daa3f219e1ac53096bbd8f5f133e68292e4fd427903bf14d03a0deb806#npm:1.1.3"],\
+          ["@monstrs/protoc-gen-abstractions", "virtual:d25aafc36fc21d095d13260e75c00faa8e6c0f491c2813d4f33d78902b1f0bce8a6194daa3f219e1ac53096bbd8f5f133e68292e4fd427903bf14d03a0deb806#npm:0.0.5"],\
+          ["@monstrs/protoc-gen-interfaces", "virtual:d25aafc36fc21d095d13260e75c00faa8e6c0f491c2813d4f33d78902b1f0bce8a6194daa3f219e1ac53096bbd8f5f133e68292e4fd427903bf14d03a0deb806#npm:0.0.4"],\
+          ["@types/bufbuild__protobuf", null]\
+        ],\
+        "packagePeers": [\
+          "@bufbuild/protobuf",\
+          "@types/bufbuild__protobuf"\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["workspace:contexts/updates/rpc/updates-rpc", {\
+        "packageLocation": "./contexts/updates/rpc/updates-rpc/",\
+        "packageDependencies": [\
+          ["@chats-system/updates-rpc", "workspace:contexts/updates/rpc/updates-rpc"],\
+          ["@bufbuild/buf", "npm:1.28.1"],\
+          ["@bufbuild/protobuf", "npm:1.4.2"],\
+          ["@bufbuild/protoc-gen-es", "virtual:d25aafc36fc21d095d13260e75c00faa8e6c0f491c2813d4f33d78902b1f0bce8a6194daa3f219e1ac53096bbd8f5f133e68292e4fd427903bf14d03a0deb806#npm:1.4.2"],\
+          ["@connectrpc/protoc-gen-connect-es", "virtual:d25aafc36fc21d095d13260e75c00faa8e6c0f491c2813d4f33d78902b1f0bce8a6194daa3f219e1ac53096bbd8f5f133e68292e4fd427903bf14d03a0deb806#npm:1.1.3"],\
+          ["@monstrs/protoc-gen-abstractions", "virtual:d25aafc36fc21d095d13260e75c00faa8e6c0f491c2813d4f33d78902b1f0bce8a6194daa3f219e1ac53096bbd8f5f133e68292e4fd427903bf14d03a0deb806#npm:0.0.5"],\
+          ["@monstrs/protoc-gen-interfaces", "virtual:d25aafc36fc21d095d13260e75c00faa8e6c0f491c2813d4f33d78902b1f0bce8a6194daa3f219e1ac53096bbd8f5f133e68292e4fd427903bf14d03a0deb806#npm:0.0.4"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@chats-system/updates-rpc-client", [\
+      ["workspace:contexts/updates/rpc/updates-rpc-client", {\
+        "packageLocation": "./contexts/updates/rpc/updates-rpc-client/",\
+        "packageDependencies": [\
+          ["@chats-system/updates-rpc-client", "workspace:contexts/updates/rpc/updates-rpc-client"],\
+          ["@bufbuild/protobuf", "npm:1.4.2"],\
+          ["@chats-system/updates-rpc", "virtual:f30b919f274667006fd313cd6021372e422292945c2c6d1a5fbac01a807d30befff49ab1c42825c65a0042bf501c764e9a0afa6c0825efc3e6b34dadaf60f729#workspace:contexts/updates/rpc/updates-rpc"],\
+          ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
+          ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@chats-system/updates-service-entrypoint", [\
+      ["workspace:contexts/updates/service/service-entrypoint", {\
+        "packageLocation": "./contexts/updates/service/service-entrypoint/",\
+        "packageDependencies": [\
+          ["@chats-system/updates-service-entrypoint", "workspace:contexts/updates/service/service-entrypoint"],\
+          ["@bufbuild/protobuf", "npm:1.4.2"],\
+          ["@chats-system/updates-infrastructure-module", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#workspace:contexts/updates/service/infrastructure-module"],\
+          ["@chats-system/updates-rpc", "virtual:f30b919f274667006fd313cd6021372e422292945c2c6d1a5fbac01a807d30befff49ab1c42825c65a0042bf501c764e9a0afa6c0825efc3e6b34dadaf60f729#workspace:contexts/updates/rpc/updates-rpc"],\
+          ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
+          ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
+          ["@faker-js/faker", "npm:8.2.0"],\
+          ["@jest/globals", "npm:29.7.0"],\
+          ["@mikro-orm/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/entity-generator", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/knex", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/migrations", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/nestjs", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.2.2"],\
+          ["@mikro-orm/postgresql", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/seeder", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@monstrs/nestjs-connectrpc", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:0.0.3"],\
+          ["@monstrs/nestjs-logger", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:0.4.2"],\
+          ["@monstrs/nestjs-microservices-registry", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:0.1.0"],\
+          ["@monstrs/nestjs-mikro-orm-config", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:0.1.3"],\
+          ["@monstrs/nestjs-mikro-orm-request-context", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:0.1.2"],\
+          ["@monstrs/protobuf-rpc", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:0.0.7"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/cqrs", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.6"],\
+          ["@nestjs/microservices", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/platform-express", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/platform-socket.io", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/testing", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/websockets", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@testcontainers/kafka", "npm:10.2.2"],\
+          ["@types/node", "npm:20.8.7"],\
+          ["@types/pg", "npm:8.10.7"],\
+          ["cache-manager", "npm:5.2.4"],\
+          ["class-transformer", "npm:0.5.1"],\
+          ["class-validator", "npm:0.14.0"],\
+          ["get-port", "npm:7.0.0"],\
+          ["p-retry", "npm:6.1.0"],\
+          ["pg", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:8.10.0"],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"],\
+          ["testcontainers", "npm:10.2.2"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -3567,6 +3937,61 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:914acd01c0dcb162325a3ee777614a801e038c12a04bd1e1dd6702928fbcf62064cfba5c70766fe93037c2effffe66995d0f80b2563be9ab74d010b7a5657918#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-cli-virtual-d279cc0deb/0/cache/@mikro-orm-cli-npm-5.9.1-267290dc00-5db3872534.zip/node_modules/@mikro-orm/cli/",\
+        "packageDependencies": [\
+          ["@mikro-orm/cli", "virtual:914acd01c0dcb162325a3ee777614a801e038c12a04bd1e1dd6702928fbcf62064cfba5c70766fe93037c2effffe66995d0f80b2563be9ab74d010b7a5657918#npm:5.9.1"],\
+          ["@jercle/yargonaut", "npm:1.1.5"],\
+          ["@mikro-orm/better-sqlite", null],\
+          ["@mikro-orm/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/entity-generator", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/knex", "virtual:914acd01c0dcb162325a3ee777614a801e038c12a04bd1e1dd6702928fbcf62064cfba5c70766fe93037c2effffe66995d0f80b2563be9ab74d010b7a5657918#npm:5.9.1"],\
+          ["@mikro-orm/mariadb", null],\
+          ["@mikro-orm/migrations", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/migrations-mongodb", null],\
+          ["@mikro-orm/mongodb", null],\
+          ["@mikro-orm/mysql", null],\
+          ["@mikro-orm/postgresql", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/seeder", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/sqlite", null],\
+          ["@types/mikro-orm__better-sqlite", null],\
+          ["@types/mikro-orm__entity-generator", null],\
+          ["@types/mikro-orm__mariadb", null],\
+          ["@types/mikro-orm__migrations", null],\
+          ["@types/mikro-orm__migrations-mongodb", null],\
+          ["@types/mikro-orm__mongodb", null],\
+          ["@types/mikro-orm__mysql", null],\
+          ["@types/mikro-orm__postgresql", null],\
+          ["@types/mikro-orm__seeder", null],\
+          ["@types/mikro-orm__sqlite", null],\
+          ["fs-extra", "npm:11.1.1"],\
+          ["tsconfig-paths", "npm:4.2.0"],\
+          ["yargs", "npm:17.7.2"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/better-sqlite",\
+          "@mikro-orm/entity-generator",\
+          "@mikro-orm/mariadb",\
+          "@mikro-orm/migrations-mongodb",\
+          "@mikro-orm/migrations",\
+          "@mikro-orm/mongodb",\
+          "@mikro-orm/mysql",\
+          "@mikro-orm/postgresql",\
+          "@mikro-orm/seeder",\
+          "@mikro-orm/sqlite",\
+          "@types/mikro-orm__better-sqlite",\
+          "@types/mikro-orm__entity-generator",\
+          "@types/mikro-orm__mariadb",\
+          "@types/mikro-orm__migrations-mongodb",\
+          "@types/mikro-orm__migrations",\
+          "@types/mikro-orm__mongodb",\
+          "@types/mikro-orm__mysql",\
+          "@types/mikro-orm__postgresql",\
+          "@types/mikro-orm__seeder",\
+          "@types/mikro-orm__sqlite"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#npm:5.9.1", {\
         "packageLocation": "./.yarn/__virtual__/@mikro-orm-cli-virtual-9ad193118c/0/cache/@mikro-orm-cli-npm-5.9.1-267290dc00-5db3872534.zip/node_modules/@mikro-orm/cli/",\
         "packageDependencies": [\
@@ -3583,6 +4008,61 @@ const RAW_RUNTIME_STATE =
           ["@mikro-orm/mysql", null],\
           ["@mikro-orm/postgresql", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1"],\
           ["@mikro-orm/seeder", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1"],\
+          ["@mikro-orm/sqlite", null],\
+          ["@types/mikro-orm__better-sqlite", null],\
+          ["@types/mikro-orm__entity-generator", null],\
+          ["@types/mikro-orm__mariadb", null],\
+          ["@types/mikro-orm__migrations", null],\
+          ["@types/mikro-orm__migrations-mongodb", null],\
+          ["@types/mikro-orm__mongodb", null],\
+          ["@types/mikro-orm__mysql", null],\
+          ["@types/mikro-orm__postgresql", null],\
+          ["@types/mikro-orm__seeder", null],\
+          ["@types/mikro-orm__sqlite", null],\
+          ["fs-extra", "npm:11.1.1"],\
+          ["tsconfig-paths", "npm:4.2.0"],\
+          ["yargs", "npm:17.7.2"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/better-sqlite",\
+          "@mikro-orm/entity-generator",\
+          "@mikro-orm/mariadb",\
+          "@mikro-orm/migrations-mongodb",\
+          "@mikro-orm/migrations",\
+          "@mikro-orm/mongodb",\
+          "@mikro-orm/mysql",\
+          "@mikro-orm/postgresql",\
+          "@mikro-orm/seeder",\
+          "@mikro-orm/sqlite",\
+          "@types/mikro-orm__better-sqlite",\
+          "@types/mikro-orm__entity-generator",\
+          "@types/mikro-orm__mariadb",\
+          "@types/mikro-orm__migrations-mongodb",\
+          "@types/mikro-orm__migrations",\
+          "@types/mikro-orm__mongodb",\
+          "@types/mikro-orm__mysql",\
+          "@types/mikro-orm__postgresql",\
+          "@types/mikro-orm__seeder",\
+          "@types/mikro-orm__sqlite"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-cli-virtual-14ce4e54b9/0/cache/@mikro-orm-cli-npm-5.9.1-267290dc00-5db3872534.zip/node_modules/@mikro-orm/cli/",\
+        "packageDependencies": [\
+          ["@mikro-orm/cli", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@jercle/yargonaut", "npm:1.1.5"],\
+          ["@mikro-orm/better-sqlite", null],\
+          ["@mikro-orm/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/entity-generator", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/knex", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/mariadb", null],\
+          ["@mikro-orm/migrations", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/migrations-mongodb", null],\
+          ["@mikro-orm/mongodb", null],\
+          ["@mikro-orm/mysql", null],\
+          ["@mikro-orm/postgresql", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/seeder", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
           ["@mikro-orm/sqlite", null],\
           ["@types/mikro-orm__better-sqlite", null],\
           ["@types/mikro-orm__entity-generator", null],\
@@ -3743,6 +4223,62 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-core-virtual-3ca3686d36/0/cache/@mikro-orm-core-npm-5.9.1-4917ce2716-24a79eaa2e.zip/node_modules/@mikro-orm/core/",\
+        "packageDependencies": [\
+          ["@mikro-orm/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/better-sqlite", null],\
+          ["@mikro-orm/entity-generator", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/mariadb", null],\
+          ["@mikro-orm/migrations", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/migrations-mongodb", null],\
+          ["@mikro-orm/mongodb", null],\
+          ["@mikro-orm/mysql", null],\
+          ["@mikro-orm/postgresql", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/seeder", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/sqlite", null],\
+          ["@types/mikro-orm__better-sqlite", null],\
+          ["@types/mikro-orm__entity-generator", null],\
+          ["@types/mikro-orm__mariadb", null],\
+          ["@types/mikro-orm__migrations", null],\
+          ["@types/mikro-orm__migrations-mongodb", null],\
+          ["@types/mikro-orm__mongodb", null],\
+          ["@types/mikro-orm__mysql", null],\
+          ["@types/mikro-orm__postgresql", null],\
+          ["@types/mikro-orm__seeder", null],\
+          ["@types/mikro-orm__sqlite", null],\
+          ["acorn-loose", "npm:8.3.0"],\
+          ["acorn-walk", "npm:8.2.0"],\
+          ["dotenv", "npm:16.3.1"],\
+          ["fs-extra", "npm:11.1.1"],\
+          ["globby", "npm:11.1.0"],\
+          ["mikro-orm", "npm:5.9.1"],\
+          ["reflect-metadata", "npm:0.1.13"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/better-sqlite",\
+          "@mikro-orm/entity-generator",\
+          "@mikro-orm/mariadb",\
+          "@mikro-orm/migrations-mongodb",\
+          "@mikro-orm/migrations",\
+          "@mikro-orm/mongodb",\
+          "@mikro-orm/mysql",\
+          "@mikro-orm/postgresql",\
+          "@mikro-orm/seeder",\
+          "@mikro-orm/sqlite",\
+          "@types/mikro-orm__better-sqlite",\
+          "@types/mikro-orm__entity-generator",\
+          "@types/mikro-orm__mariadb",\
+          "@types/mikro-orm__migrations-mongodb",\
+          "@types/mikro-orm__migrations",\
+          "@types/mikro-orm__mongodb",\
+          "@types/mikro-orm__mysql",\
+          "@types/mikro-orm__postgresql",\
+          "@types/mikro-orm__seeder",\
+          "@types/mikro-orm__sqlite"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1", {\
         "packageLocation": "./.yarn/__virtual__/@mikro-orm-core-virtual-39c8650bdd/0/cache/@mikro-orm-core-npm-5.9.1-4917ce2716-24a79eaa2e.zip/node_modules/@mikro-orm/core/",\
         "packageDependencies": [\
@@ -3756,6 +4292,62 @@ const RAW_RUNTIME_STATE =
           ["@mikro-orm/mysql", null],\
           ["@mikro-orm/postgresql", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1"],\
           ["@mikro-orm/seeder", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1"],\
+          ["@mikro-orm/sqlite", null],\
+          ["@types/mikro-orm__better-sqlite", null],\
+          ["@types/mikro-orm__entity-generator", null],\
+          ["@types/mikro-orm__mariadb", null],\
+          ["@types/mikro-orm__migrations", null],\
+          ["@types/mikro-orm__migrations-mongodb", null],\
+          ["@types/mikro-orm__mongodb", null],\
+          ["@types/mikro-orm__mysql", null],\
+          ["@types/mikro-orm__postgresql", null],\
+          ["@types/mikro-orm__seeder", null],\
+          ["@types/mikro-orm__sqlite", null],\
+          ["acorn-loose", "npm:8.3.0"],\
+          ["acorn-walk", "npm:8.2.0"],\
+          ["dotenv", "npm:16.3.1"],\
+          ["fs-extra", "npm:11.1.1"],\
+          ["globby", "npm:11.1.0"],\
+          ["mikro-orm", "npm:5.9.1"],\
+          ["reflect-metadata", "npm:0.1.13"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/better-sqlite",\
+          "@mikro-orm/entity-generator",\
+          "@mikro-orm/mariadb",\
+          "@mikro-orm/migrations-mongodb",\
+          "@mikro-orm/migrations",\
+          "@mikro-orm/mongodb",\
+          "@mikro-orm/mysql",\
+          "@mikro-orm/postgresql",\
+          "@mikro-orm/seeder",\
+          "@mikro-orm/sqlite",\
+          "@types/mikro-orm__better-sqlite",\
+          "@types/mikro-orm__entity-generator",\
+          "@types/mikro-orm__mariadb",\
+          "@types/mikro-orm__migrations-mongodb",\
+          "@types/mikro-orm__migrations",\
+          "@types/mikro-orm__mongodb",\
+          "@types/mikro-orm__mysql",\
+          "@types/mikro-orm__postgresql",\
+          "@types/mikro-orm__seeder",\
+          "@types/mikro-orm__sqlite"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-core-virtual-c5e5fb7167/0/cache/@mikro-orm-core-npm-5.9.1-4917ce2716-24a79eaa2e.zip/node_modules/@mikro-orm/core/",\
+        "packageDependencies": [\
+          ["@mikro-orm/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/better-sqlite", null],\
+          ["@mikro-orm/entity-generator", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/mariadb", null],\
+          ["@mikro-orm/migrations", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/migrations-mongodb", null],\
+          ["@mikro-orm/mongodb", null],\
+          ["@mikro-orm/mysql", null],\
+          ["@mikro-orm/postgresql", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/seeder", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
           ["@mikro-orm/sqlite", null],\
           ["@types/mikro-orm__better-sqlite", null],\
           ["@types/mikro-orm__entity-generator", null],\
@@ -3950,12 +4542,42 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-entity-generator-virtual-ff1cdd282b/0/cache/@mikro-orm-entity-generator-npm-5.9.1-5d81e6c3a3-ef5220369b.zip/node_modules/@mikro-orm/entity-generator/",\
+        "packageDependencies": [\
+          ["@mikro-orm/entity-generator", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/knex", "virtual:ff1cdd282b63d2263980fc0d0ef75fec9bc848c2b1df0591ed7b8f9107ac210863b07b964439aef4a547d21db198b17638c7496678a04ef8bfeaf5d00e387289#npm:5.9.1"],\
+          ["@types/mikro-orm__core", null],\
+          ["fs-extra", "npm:11.1.1"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@types/mikro-orm__core"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1", {\
         "packageLocation": "./.yarn/__virtual__/@mikro-orm-entity-generator-virtual-341898dbd3/0/cache/@mikro-orm-entity-generator-npm-5.9.1-5d81e6c3a3-ef5220369b.zip/node_modules/@mikro-orm/entity-generator/",\
         "packageDependencies": [\
           ["@mikro-orm/entity-generator", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1"],\
           ["@mikro-orm/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1"],\
           ["@mikro-orm/knex", "virtual:341898dbd3d41db152386469b36d5730885a857c9569b74999b29cadee7e948a58f74079fed599e92434707e8b110e681e409b548936256e398850b2e872a9a0#npm:5.9.1"],\
+          ["@types/mikro-orm__core", null],\
+          ["fs-extra", "npm:11.1.1"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@types/mikro-orm__core"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-entity-generator-virtual-dfd5454b1a/0/cache/@mikro-orm-entity-generator-npm-5.9.1-5d81e6c3a3-ef5220369b.zip/node_modules/@mikro-orm/entity-generator/",\
+        "packageDependencies": [\
+          ["@mikro-orm/entity-generator", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/knex", "virtual:dfd5454b1ac8c8826d1937b3e1b1f6029c3b39908c7ab9da325289b3daf387520f98f0a72691c14cf1b58dbe72846865f9001cf48a6df72536c4dd788dc42a10#npm:5.9.1"],\
           ["@types/mikro-orm__core", null],\
           ["fs-extra", "npm:11.1.1"]\
         ],\
@@ -4289,6 +4911,102 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:41db746a6b23fb3ec8436a5dff4f6d2c784d757f28a54e552c12bf699b6a32d63cacbac90f7e8d8a13b501dd8bda80e502a61de248be6100acd210ef9c0815d8#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-knex-virtual-dcd533a5f1/0/cache/@mikro-orm-knex-npm-5.9.1-5010f0c9f1-c0b8cca891.zip/node_modules/@mikro-orm/knex/",\
+        "packageDependencies": [\
+          ["@mikro-orm/knex", "virtual:41db746a6b23fb3ec8436a5dff4f6d2c784d757f28a54e552c12bf699b6a32d63cacbac90f7e8d8a13b501dd8bda80e502a61de248be6100acd210ef9c0815d8#npm:5.9.1"],\
+          ["@mikro-orm/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/entity-generator", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/migrations", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@types/better-sqlite3", null],\
+          ["@types/mikro-orm__core", null],\
+          ["@types/mikro-orm__entity-generator", null],\
+          ["@types/mikro-orm__migrations", null],\
+          ["@types/mssql", null],\
+          ["@types/mysql", null],\
+          ["@types/mysql2", null],\
+          ["@types/pg", null],\
+          ["@types/sqlite3", null],\
+          ["better-sqlite3", null],\
+          ["fs-extra", "npm:11.1.1"],\
+          ["knex", "virtual:79160ef4053b267b6aafd65420b3439970e4f5cbec41657dd77c05bce898731a90391ec52f67dbfb71fdd27f005d50b62e36a7b19c548a157f7bbdebb91d1c3b#npm:2.5.1"],\
+          ["mssql", null],\
+          ["mysql", null],\
+          ["mysql2", null],\
+          ["pg", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:8.10.0"],\
+          ["sqlite3", null],\
+          ["sqlstring", "npm:2.3.3"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@mikro-orm/entity-generator",\
+          "@mikro-orm/migrations",\
+          "@types/better-sqlite3",\
+          "@types/mikro-orm__core",\
+          "@types/mikro-orm__entity-generator",\
+          "@types/mikro-orm__migrations",\
+          "@types/mssql",\
+          "@types/mysql2",\
+          "@types/mysql",\
+          "@types/pg",\
+          "@types/sqlite3",\
+          "better-sqlite3",\
+          "mssql",\
+          "mysql2",\
+          "mysql",\
+          "pg",\
+          "sqlite3"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:6483106277b4b607b6a8edd64e15f72ad336466e7bfa25be8de06c19ebc5ab04794406d75ae847e95e04533e2ee1f50bcdbfceab9b5ba3d7663c2531fb2d332f#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-knex-virtual-bb40754235/0/cache/@mikro-orm-knex-npm-5.9.1-5010f0c9f1-c0b8cca891.zip/node_modules/@mikro-orm/knex/",\
+        "packageDependencies": [\
+          ["@mikro-orm/knex", "virtual:6483106277b4b607b6a8edd64e15f72ad336466e7bfa25be8de06c19ebc5ab04794406d75ae847e95e04533e2ee1f50bcdbfceab9b5ba3d7663c2531fb2d332f#npm:5.9.1"],\
+          ["@mikro-orm/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/entity-generator", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/migrations", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@types/better-sqlite3", null],\
+          ["@types/mikro-orm__core", null],\
+          ["@types/mikro-orm__entity-generator", null],\
+          ["@types/mikro-orm__migrations", null],\
+          ["@types/mssql", null],\
+          ["@types/mysql", null],\
+          ["@types/mysql2", null],\
+          ["@types/pg", null],\
+          ["@types/sqlite3", null],\
+          ["better-sqlite3", null],\
+          ["fs-extra", "npm:11.1.1"],\
+          ["knex", "virtual:79160ef4053b267b6aafd65420b3439970e4f5cbec41657dd77c05bce898731a90391ec52f67dbfb71fdd27f005d50b62e36a7b19c548a157f7bbdebb91d1c3b#npm:2.5.1"],\
+          ["mssql", null],\
+          ["mysql", null],\
+          ["mysql2", null],\
+          ["pg", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:8.10.0"],\
+          ["sqlite3", null],\
+          ["sqlstring", "npm:2.3.3"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@mikro-orm/entity-generator",\
+          "@mikro-orm/migrations",\
+          "@types/better-sqlite3",\
+          "@types/mikro-orm__core",\
+          "@types/mikro-orm__entity-generator",\
+          "@types/mikro-orm__migrations",\
+          "@types/mssql",\
+          "@types/mysql2",\
+          "@types/mysql",\
+          "@types/pg",\
+          "@types/sqlite3",\
+          "better-sqlite3",\
+          "mssql",\
+          "mysql2",\
+          "mysql",\
+          "pg",\
+          "sqlite3"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:6fca90cce6d6831cce55875f0c91d014cb2f6ddf9bbe9a5ce756fc0e58da954d44d5b627d67034261de0efdf82feb7e7eb9b41c43c553ab680a55e6ff5bb307e#npm:5.9.1", {\
         "packageLocation": "./.yarn/__virtual__/@mikro-orm-knex-virtual-dd820a4cd1/0/cache/@mikro-orm-knex-npm-5.9.1-5010f0c9f1-c0b8cca891.zip/node_modules/@mikro-orm/knex/",\
         "packageDependencies": [\
@@ -4432,6 +5150,53 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:8036210d91bc601bda07219b2371ff1b45908220a9777e242beafd6c47900862709a408c4138847c4774a3951803791e87aa75e11efd1793e3f07f7d0bfefb52#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-knex-virtual-ba172de44c/0/cache/@mikro-orm-knex-npm-5.9.1-5010f0c9f1-c0b8cca891.zip/node_modules/@mikro-orm/knex/",\
+        "packageDependencies": [\
+          ["@mikro-orm/knex", "virtual:8036210d91bc601bda07219b2371ff1b45908220a9777e242beafd6c47900862709a408c4138847c4774a3951803791e87aa75e11efd1793e3f07f7d0bfefb52#npm:5.9.1"],\
+          ["@mikro-orm/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/entity-generator", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/migrations", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@types/better-sqlite3", null],\
+          ["@types/mikro-orm__core", null],\
+          ["@types/mikro-orm__entity-generator", null],\
+          ["@types/mikro-orm__migrations", null],\
+          ["@types/mssql", null],\
+          ["@types/mysql", null],\
+          ["@types/mysql2", null],\
+          ["@types/pg", null],\
+          ["@types/sqlite3", null],\
+          ["better-sqlite3", null],\
+          ["fs-extra", "npm:11.1.1"],\
+          ["knex", "virtual:d23d3a7d368f8867f59a7ea7b7842d870883f3671b85a96dab96630099d72e18e76ddcce7163e31029d2cb9968faa766252cce5fb28f21d45f3da00c7b05f32c#npm:2.5.1"],\
+          ["mssql", null],\
+          ["mysql", null],\
+          ["mysql2", null],\
+          ["pg", null],\
+          ["sqlite3", null],\
+          ["sqlstring", "npm:2.3.3"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@mikro-orm/migrations",\
+          "@types/better-sqlite3",\
+          "@types/mikro-orm__core",\
+          "@types/mikro-orm__entity-generator",\
+          "@types/mikro-orm__migrations",\
+          "@types/mssql",\
+          "@types/mysql2",\
+          "@types/mysql",\
+          "@types/pg",\
+          "@types/sqlite3",\
+          "better-sqlite3",\
+          "mssql",\
+          "mysql2",\
+          "mysql",\
+          "pg",\
+          "sqlite3"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:8d5591acc9b1aade58c3a0a74202009b4c81f66ac7d0a1108b728f383b775c9a6eefdc72a5378c6cb9d03de180a7c63102188a138dab73a0d317d409a4484bfb#npm:5.9.1", {\
         "packageLocation": "./.yarn/__virtual__/@mikro-orm-knex-virtual-1b7e975e7b/0/cache/@mikro-orm-knex-npm-5.9.1-5010f0c9f1-c0b8cca891.zip/node_modules/@mikro-orm/knex/",\
         "packageDependencies": [\
@@ -4487,6 +5252,101 @@ const RAW_RUNTIME_STATE =
           ["@mikro-orm/core", "virtual:2601976cbbe08b7431b682a48ea3e3841ed11adf109466013cece49cf3edd56262b9b1e46cfb27a33a3606f75535b527c4ccc536a5b58e80a2f1567b61f7bc11#npm:5.9.1"],\
           ["@mikro-orm/entity-generator", "virtual:2601976cbbe08b7431b682a48ea3e3841ed11adf109466013cece49cf3edd56262b9b1e46cfb27a33a3606f75535b527c4ccc536a5b58e80a2f1567b61f7bc11#npm:5.9.1"],\
           ["@mikro-orm/migrations", "virtual:2601976cbbe08b7431b682a48ea3e3841ed11adf109466013cece49cf3edd56262b9b1e46cfb27a33a3606f75535b527c4ccc536a5b58e80a2f1567b61f7bc11#npm:5.9.1"],\
+          ["@types/better-sqlite3", null],\
+          ["@types/mikro-orm__core", null],\
+          ["@types/mikro-orm__entity-generator", null],\
+          ["@types/mikro-orm__migrations", null],\
+          ["@types/mssql", null],\
+          ["@types/mysql", null],\
+          ["@types/mysql2", null],\
+          ["@types/pg", null],\
+          ["@types/sqlite3", null],\
+          ["better-sqlite3", null],\
+          ["fs-extra", "npm:11.1.1"],\
+          ["knex", "virtual:d23d3a7d368f8867f59a7ea7b7842d870883f3671b85a96dab96630099d72e18e76ddcce7163e31029d2cb9968faa766252cce5fb28f21d45f3da00c7b05f32c#npm:2.5.1"],\
+          ["mssql", null],\
+          ["mysql", null],\
+          ["mysql2", null],\
+          ["pg", null],\
+          ["sqlite3", null],\
+          ["sqlstring", "npm:2.3.3"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@mikro-orm/migrations",\
+          "@types/better-sqlite3",\
+          "@types/mikro-orm__core",\
+          "@types/mikro-orm__entity-generator",\
+          "@types/mikro-orm__migrations",\
+          "@types/mssql",\
+          "@types/mysql2",\
+          "@types/mysql",\
+          "@types/pg",\
+          "@types/sqlite3",\
+          "better-sqlite3",\
+          "mssql",\
+          "mysql2",\
+          "mysql",\
+          "pg",\
+          "sqlite3"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:914acd01c0dcb162325a3ee777614a801e038c12a04bd1e1dd6702928fbcf62064cfba5c70766fe93037c2effffe66995d0f80b2563be9ab74d010b7a5657918#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-knex-virtual-09454698c9/0/cache/@mikro-orm-knex-npm-5.9.1-5010f0c9f1-c0b8cca891.zip/node_modules/@mikro-orm/knex/",\
+        "packageDependencies": [\
+          ["@mikro-orm/knex", "virtual:914acd01c0dcb162325a3ee777614a801e038c12a04bd1e1dd6702928fbcf62064cfba5c70766fe93037c2effffe66995d0f80b2563be9ab74d010b7a5657918#npm:5.9.1"],\
+          ["@mikro-orm/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/entity-generator", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/migrations", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@types/better-sqlite3", null],\
+          ["@types/mikro-orm__core", null],\
+          ["@types/mikro-orm__entity-generator", null],\
+          ["@types/mikro-orm__migrations", null],\
+          ["@types/mssql", null],\
+          ["@types/mysql", null],\
+          ["@types/mysql2", null],\
+          ["@types/pg", null],\
+          ["@types/sqlite3", null],\
+          ["better-sqlite3", null],\
+          ["fs-extra", "npm:11.1.1"],\
+          ["knex", "virtual:d23d3a7d368f8867f59a7ea7b7842d870883f3671b85a96dab96630099d72e18e76ddcce7163e31029d2cb9968faa766252cce5fb28f21d45f3da00c7b05f32c#npm:2.5.1"],\
+          ["mssql", null],\
+          ["mysql", null],\
+          ["mysql2", null],\
+          ["pg", null],\
+          ["sqlite3", null],\
+          ["sqlstring", "npm:2.3.3"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@mikro-orm/entity-generator",\
+          "@mikro-orm/migrations",\
+          "@types/better-sqlite3",\
+          "@types/mikro-orm__core",\
+          "@types/mikro-orm__entity-generator",\
+          "@types/mikro-orm__migrations",\
+          "@types/mssql",\
+          "@types/mysql2",\
+          "@types/mysql",\
+          "@types/pg",\
+          "@types/sqlite3",\
+          "better-sqlite3",\
+          "mssql",\
+          "mysql2",\
+          "mysql",\
+          "pg",\
+          "sqlite3"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:9ac9553622a06d44b4c40a631e73f485d4487614abd8c155eee46228dc699223b1705ff9d6ada842c5914343dea46e3c2c6b429c8a3b1326bdf0d4fc0c609820#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-knex-virtual-c3edcd4251/0/cache/@mikro-orm-knex-npm-5.9.1-5010f0c9f1-c0b8cca891.zip/node_modules/@mikro-orm/knex/",\
+        "packageDependencies": [\
+          ["@mikro-orm/knex", "virtual:9ac9553622a06d44b4c40a631e73f485d4487614abd8c155eee46228dc699223b1705ff9d6ada842c5914343dea46e3c2c6b429c8a3b1326bdf0d4fc0c609820#npm:5.9.1"],\
+          ["@mikro-orm/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/entity-generator", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/migrations", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
           ["@types/better-sqlite3", null],\
           ["@types/mikro-orm__core", null],\
           ["@types/mikro-orm__entity-generator", null],\
@@ -4812,6 +5672,54 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-knex-virtual-9b6c95dff0/0/cache/@mikro-orm-knex-npm-5.9.1-5010f0c9f1-c0b8cca891.zip/node_modules/@mikro-orm/knex/",\
+        "packageDependencies": [\
+          ["@mikro-orm/knex", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/entity-generator", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/migrations", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@types/better-sqlite3", null],\
+          ["@types/mikro-orm__core", null],\
+          ["@types/mikro-orm__entity-generator", null],\
+          ["@types/mikro-orm__migrations", null],\
+          ["@types/mssql", null],\
+          ["@types/mysql", null],\
+          ["@types/mysql2", null],\
+          ["@types/pg", null],\
+          ["@types/sqlite3", null],\
+          ["better-sqlite3", null],\
+          ["fs-extra", "npm:11.1.1"],\
+          ["knex", "virtual:d23d3a7d368f8867f59a7ea7b7842d870883f3671b85a96dab96630099d72e18e76ddcce7163e31029d2cb9968faa766252cce5fb28f21d45f3da00c7b05f32c#npm:2.5.1"],\
+          ["mssql", null],\
+          ["mysql", null],\
+          ["mysql2", null],\
+          ["pg", null],\
+          ["sqlite3", null],\
+          ["sqlstring", "npm:2.3.3"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@mikro-orm/entity-generator",\
+          "@mikro-orm/migrations",\
+          "@types/better-sqlite3",\
+          "@types/mikro-orm__core",\
+          "@types/mikro-orm__entity-generator",\
+          "@types/mikro-orm__migrations",\
+          "@types/mssql",\
+          "@types/mysql2",\
+          "@types/mysql",\
+          "@types/pg",\
+          "@types/sqlite3",\
+          "better-sqlite3",\
+          "mssql",\
+          "mysql2",\
+          "mysql",\
+          "pg",\
+          "sqlite3"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:cfdfa0104334eddc2287e6d09bed747c6ee6b6e607ab9f6f98e2b75723d8509847ea01b451c74ed63ce5d53b01aab1b06354c361fb389af13429452b49728e8e#npm:5.9.1", {\
         "packageLocation": "./.yarn/__virtual__/@mikro-orm-knex-virtual-5ca036820f/0/cache/@mikro-orm-knex-npm-5.9.1-5010f0c9f1-c0b8cca891.zip/node_modules/@mikro-orm/knex/",\
         "packageDependencies": [\
@@ -4937,6 +5845,101 @@ const RAW_RUNTIME_STATE =
           "@mikro-orm/core",\
           "@mikro-orm/entity-generator",\
           "@mikro-orm/migrations",\
+          "@types/better-sqlite3",\
+          "@types/mikro-orm__core",\
+          "@types/mikro-orm__entity-generator",\
+          "@types/mikro-orm__migrations",\
+          "@types/mssql",\
+          "@types/mysql2",\
+          "@types/mysql",\
+          "@types/pg",\
+          "@types/sqlite3",\
+          "better-sqlite3",\
+          "mssql",\
+          "mysql2",\
+          "mysql",\
+          "pg",\
+          "sqlite3"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-knex-virtual-6fabcec012/0/cache/@mikro-orm-knex-npm-5.9.1-5010f0c9f1-c0b8cca891.zip/node_modules/@mikro-orm/knex/",\
+        "packageDependencies": [\
+          ["@mikro-orm/knex", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/entity-generator", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/migrations", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@types/better-sqlite3", null],\
+          ["@types/mikro-orm__core", null],\
+          ["@types/mikro-orm__entity-generator", null],\
+          ["@types/mikro-orm__migrations", null],\
+          ["@types/mssql", null],\
+          ["@types/mysql", null],\
+          ["@types/mysql2", null],\
+          ["@types/pg", "npm:8.10.7"],\
+          ["@types/sqlite3", null],\
+          ["better-sqlite3", null],\
+          ["fs-extra", "npm:11.1.1"],\
+          ["knex", "virtual:2f884a0fb212373968c03bda3e645cfc0ef958b94ea4915f3c6f0e276074f758a85708d19ee7c1c4c76bb272a3f913501a98e572d779e5452bcbde5531e93c69#npm:2.5.1"],\
+          ["mssql", null],\
+          ["mysql", null],\
+          ["mysql2", null],\
+          ["pg", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:8.10.0"],\
+          ["sqlite3", null],\
+          ["sqlstring", "npm:2.3.3"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@mikro-orm/entity-generator",\
+          "@mikro-orm/migrations",\
+          "@types/better-sqlite3",\
+          "@types/mikro-orm__core",\
+          "@types/mikro-orm__entity-generator",\
+          "@types/mikro-orm__migrations",\
+          "@types/mssql",\
+          "@types/mysql2",\
+          "@types/mysql",\
+          "@types/pg",\
+          "@types/sqlite3",\
+          "better-sqlite3",\
+          "mssql",\
+          "mysql2",\
+          "mysql",\
+          "pg",\
+          "sqlite3"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:dfd5454b1ac8c8826d1937b3e1b1f6029c3b39908c7ab9da325289b3daf387520f98f0a72691c14cf1b58dbe72846865f9001cf48a6df72536c4dd788dc42a10#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-knex-virtual-6f0994b609/0/cache/@mikro-orm-knex-npm-5.9.1-5010f0c9f1-c0b8cca891.zip/node_modules/@mikro-orm/knex/",\
+        "packageDependencies": [\
+          ["@mikro-orm/knex", "virtual:dfd5454b1ac8c8826d1937b3e1b1f6029c3b39908c7ab9da325289b3daf387520f98f0a72691c14cf1b58dbe72846865f9001cf48a6df72536c4dd788dc42a10#npm:5.9.1"],\
+          ["@mikro-orm/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/entity-generator", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/migrations", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@types/better-sqlite3", null],\
+          ["@types/mikro-orm__core", null],\
+          ["@types/mikro-orm__entity-generator", null],\
+          ["@types/mikro-orm__migrations", null],\
+          ["@types/mssql", null],\
+          ["@types/mysql", null],\
+          ["@types/mysql2", null],\
+          ["@types/pg", null],\
+          ["@types/sqlite3", null],\
+          ["better-sqlite3", null],\
+          ["fs-extra", "npm:11.1.1"],\
+          ["knex", "virtual:d23d3a7d368f8867f59a7ea7b7842d870883f3671b85a96dab96630099d72e18e76ddcce7163e31029d2cb9968faa766252cce5fb28f21d45f3da00c7b05f32c#npm:2.5.1"],\
+          ["mssql", null],\
+          ["mysql", null],\
+          ["mysql2", null],\
+          ["pg", null],\
+          ["sqlite3", null],\
+          ["sqlstring", "npm:2.3.3"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@mikro-orm/entity-generator",\
           "@types/better-sqlite3",\
           "@types/mikro-orm__core",\
           "@types/mikro-orm__entity-generator",\
@@ -5097,6 +6100,53 @@ const RAW_RUNTIME_STATE =
           "sqlite3"\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["virtual:ff1cdd282b63d2263980fc0d0ef75fec9bc848c2b1df0591ed7b8f9107ac210863b07b964439aef4a547d21db198b17638c7496678a04ef8bfeaf5d00e387289#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-knex-virtual-b21c1f8f6d/0/cache/@mikro-orm-knex-npm-5.9.1-5010f0c9f1-c0b8cca891.zip/node_modules/@mikro-orm/knex/",\
+        "packageDependencies": [\
+          ["@mikro-orm/knex", "virtual:ff1cdd282b63d2263980fc0d0ef75fec9bc848c2b1df0591ed7b8f9107ac210863b07b964439aef4a547d21db198b17638c7496678a04ef8bfeaf5d00e387289#npm:5.9.1"],\
+          ["@mikro-orm/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/entity-generator", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/migrations", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@types/better-sqlite3", null],\
+          ["@types/mikro-orm__core", null],\
+          ["@types/mikro-orm__entity-generator", null],\
+          ["@types/mikro-orm__migrations", null],\
+          ["@types/mssql", null],\
+          ["@types/mysql", null],\
+          ["@types/mysql2", null],\
+          ["@types/pg", null],\
+          ["@types/sqlite3", null],\
+          ["better-sqlite3", null],\
+          ["fs-extra", "npm:11.1.1"],\
+          ["knex", "virtual:d23d3a7d368f8867f59a7ea7b7842d870883f3671b85a96dab96630099d72e18e76ddcce7163e31029d2cb9968faa766252cce5fb28f21d45f3da00c7b05f32c#npm:2.5.1"],\
+          ["mssql", null],\
+          ["mysql", null],\
+          ["mysql2", null],\
+          ["pg", null],\
+          ["sqlite3", null],\
+          ["sqlstring", "npm:2.3.3"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@mikro-orm/entity-generator",\
+          "@types/better-sqlite3",\
+          "@types/mikro-orm__core",\
+          "@types/mikro-orm__entity-generator",\
+          "@types/mikro-orm__migrations",\
+          "@types/mssql",\
+          "@types/mysql2",\
+          "@types/mysql",\
+          "@types/pg",\
+          "@types/sqlite3",\
+          "better-sqlite3",\
+          "mssql",\
+          "mysql2",\
+          "mysql",\
+          "pg",\
+          "sqlite3"\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["@mikro-orm/migrations", [\
@@ -5141,12 +6191,46 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-migrations-virtual-8036210d91/0/cache/@mikro-orm-migrations-npm-5.9.1-5ff43ed13f-5470ef44ca.zip/node_modules/@mikro-orm/migrations/",\
+        "packageDependencies": [\
+          ["@mikro-orm/migrations", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/knex", "virtual:8036210d91bc601bda07219b2371ff1b45908220a9777e242beafd6c47900862709a408c4138847c4774a3951803791e87aa75e11efd1793e3f07f7d0bfefb52#npm:5.9.1"],\
+          ["@types/mikro-orm__core", null],\
+          ["fs-extra", "npm:11.1.1"],\
+          ["knex", "virtual:d23d3a7d368f8867f59a7ea7b7842d870883f3671b85a96dab96630099d72e18e76ddcce7163e31029d2cb9968faa766252cce5fb28f21d45f3da00c7b05f32c#npm:2.5.1"],\
+          ["umzug", "npm:3.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@types/mikro-orm__core"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1", {\
         "packageLocation": "./.yarn/__virtual__/@mikro-orm-migrations-virtual-fec612fc4b/0/cache/@mikro-orm-migrations-npm-5.9.1-5ff43ed13f-5470ef44ca.zip/node_modules/@mikro-orm/migrations/",\
         "packageDependencies": [\
           ["@mikro-orm/migrations", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1"],\
           ["@mikro-orm/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1"],\
           ["@mikro-orm/knex", "virtual:fec612fc4b246ac59c615ba9aafa0626d7767ca8e8d9934a2f650f3c3a44c40a5d5ea0664cc6990092168c3ebe5dacca926dcf505b73926f7831f130aa16d22d#npm:5.9.1"],\
+          ["@types/mikro-orm__core", null],\
+          ["fs-extra", "npm:11.1.1"],\
+          ["knex", "virtual:d23d3a7d368f8867f59a7ea7b7842d870883f3671b85a96dab96630099d72e18e76ddcce7163e31029d2cb9968faa766252cce5fb28f21d45f3da00c7b05f32c#npm:2.5.1"],\
+          ["umzug", "npm:3.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@types/mikro-orm__core"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-migrations-virtual-9ac9553622/0/cache/@mikro-orm-migrations-npm-5.9.1-5ff43ed13f-5470ef44ca.zip/node_modules/@mikro-orm/migrations/",\
+        "packageDependencies": [\
+          ["@mikro-orm/migrations", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/knex", "virtual:9ac9553622a06d44b4c40a631e73f485d4487614abd8c155eee46228dc699223b1705ff9d6ada842c5914343dea46e3c2c6b429c8a3b1326bdf0d4fc0c609820#npm:5.9.1"],\
           ["@types/mikro-orm__core", null],\
           ["fs-extra", "npm:11.1.1"],\
           ["knex", "virtual:d23d3a7d368f8867f59a7ea7b7842d870883f3671b85a96dab96630099d72e18e76ddcce7163e31029d2cb9968faa766252cce5fb28f21d45f3da00c7b05f32c#npm:2.5.1"],\
@@ -5243,6 +6327,27 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.2.2", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-nestjs-virtual-7b5e57490b/0/cache/@mikro-orm-nestjs-npm-5.2.2-2b602f5130-46fdb96100.zip/node_modules/@mikro-orm/nestjs/",\
+        "packageDependencies": [\
+          ["@mikro-orm/nestjs", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.2.2"],\
+          ["@mikro-orm/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@types/mikro-orm__core", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/mikro-orm__core",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.2.2", {\
         "packageLocation": "./.yarn/__virtual__/@mikro-orm-nestjs-virtual-9dd91d219f/0/cache/@mikro-orm-nestjs-npm-5.2.2-2b602f5130-46fdb96100.zip/node_modules/@mikro-orm/nestjs/",\
         "packageDependencies": [\
@@ -5250,6 +6355,27 @@ const RAW_RUNTIME_STATE =
           ["@mikro-orm/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@types/mikro-orm__core", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/mikro-orm__core",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.2.2", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-nestjs-virtual-c6b1111b44/0/cache/@mikro-orm-nestjs-npm-5.2.2-2b602f5130-46fdb96100.zip/node_modules/@mikro-orm/nestjs/",\
+        "packageDependencies": [\
+          ["@mikro-orm/nestjs", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.2.2"],\
+          ["@mikro-orm/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
           ["@types/mikro-orm__core", null],\
           ["@types/nestjs__common", null],\
           ["@types/nestjs__core", null]\
@@ -5369,6 +6495,33 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-postgresql-virtual-6483106277/0/cache/@mikro-orm-postgresql-npm-5.9.1-ded9eeec21-d36451e5ff.zip/node_modules/@mikro-orm/postgresql/",\
+        "packageDependencies": [\
+          ["@mikro-orm/postgresql", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/entity-generator", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/knex", "virtual:6483106277b4b607b6a8edd64e15f72ad336466e7bfa25be8de06c19ebc5ab04794406d75ae847e95e04533e2ee1f50bcdbfceab9b5ba3d7663c2531fb2d332f#npm:5.9.1"],\
+          ["@mikro-orm/migrations", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/seeder", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@types/mikro-orm__core", null],\
+          ["@types/mikro-orm__entity-generator", null],\
+          ["@types/mikro-orm__migrations", null],\
+          ["@types/mikro-orm__seeder", null],\
+          ["pg", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:8.10.0"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@mikro-orm/entity-generator",\
+          "@mikro-orm/migrations",\
+          "@mikro-orm/seeder",\
+          "@types/mikro-orm__core",\
+          "@types/mikro-orm__entity-generator",\
+          "@types/mikro-orm__migrations",\
+          "@types/mikro-orm__seeder"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1", {\
         "packageLocation": "./.yarn/__virtual__/@mikro-orm-postgresql-virtual-ab67d8e91d/0/cache/@mikro-orm-postgresql-npm-5.9.1-ded9eeec21-d36451e5ff.zip/node_modules/@mikro-orm/postgresql/",\
         "packageDependencies": [\
@@ -5378,6 +6531,33 @@ const RAW_RUNTIME_STATE =
           ["@mikro-orm/knex", "virtual:ab67d8e91d63806a2e209def868fccf6223d00854307bd7b90ec29ecea3a6851324b498539582e047881d99c155d85b084ff94083682b1579d393d72d6330b46#npm:5.9.1"],\
           ["@mikro-orm/migrations", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1"],\
           ["@mikro-orm/seeder", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1"],\
+          ["@types/mikro-orm__core", null],\
+          ["@types/mikro-orm__entity-generator", null],\
+          ["@types/mikro-orm__migrations", null],\
+          ["@types/mikro-orm__seeder", null],\
+          ["pg", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:8.10.0"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@mikro-orm/entity-generator",\
+          "@mikro-orm/migrations",\
+          "@mikro-orm/seeder",\
+          "@types/mikro-orm__core",\
+          "@types/mikro-orm__entity-generator",\
+          "@types/mikro-orm__migrations",\
+          "@types/mikro-orm__seeder"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-postgresql-virtual-41db746a6b/0/cache/@mikro-orm-postgresql-npm-5.9.1-ded9eeec21-d36451e5ff.zip/node_modules/@mikro-orm/postgresql/",\
+        "packageDependencies": [\
+          ["@mikro-orm/postgresql", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/entity-generator", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/knex", "virtual:41db746a6b23fb3ec8436a5dff4f6d2c784d757f28a54e552c12bf699b6a32d63cacbac90f7e8d8a13b501dd8bda80e502a61de248be6100acd210ef9c0815d8#npm:5.9.1"],\
+          ["@mikro-orm/migrations", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/seeder", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
           ["@types/mikro-orm__core", null],\
           ["@types/mikro-orm__entity-generator", null],\
           ["@types/mikro-orm__migrations", null],\
@@ -5491,12 +6671,44 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-seeder-virtual-b75c0790e2/0/cache/@mikro-orm-seeder-npm-5.9.1-559885d007-7a3bd12c8b.zip/node_modules/@mikro-orm/seeder/",\
+        "packageDependencies": [\
+          ["@mikro-orm/seeder", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@faker-js/faker", "npm:7.6.0"],\
+          ["@mikro-orm/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@types/mikro-orm__core", null],\
+          ["fs-extra", "npm:11.1.1"],\
+          ["globby", "npm:11.1.0"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@types/mikro-orm__core"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1", {\
         "packageLocation": "./.yarn/__virtual__/@mikro-orm-seeder-virtual-e02c04e4a7/0/cache/@mikro-orm-seeder-npm-5.9.1-559885d007-7a3bd12c8b.zip/node_modules/@mikro-orm/seeder/",\
         "packageDependencies": [\
           ["@mikro-orm/seeder", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1"],\
           ["@faker-js/faker", "npm:7.6.0"],\
           ["@mikro-orm/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1"],\
+          ["@types/mikro-orm__core", null],\
+          ["fs-extra", "npm:11.1.1"],\
+          ["globby", "npm:11.1.0"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@types/mikro-orm__core"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@mikro-orm-seeder-virtual-5047738d45/0/cache/@mikro-orm-seeder-npm-5.9.1-559885d007-7a3bd12c8b.zip/node_modules/@mikro-orm/seeder/",\
+        "packageDependencies": [\
+          ["@mikro-orm/seeder", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@faker-js/faker", "npm:7.6.0"],\
+          ["@mikro-orm/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
           ["@types/mikro-orm__core", null],\
           ["fs-extra", "npm:11.1.1"],\
           ["globby", "npm:11.1.0"]\
@@ -5757,6 +6969,20 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:0fb5aabddac09d21643c4656e3e37ff2761240ab9e5f31792602f7c5340ef8de9da9feac27b94ede1ac69b28c9b68de0cc3030a5b7ffd4635aa862e5967d146b#npm:0.0.12", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-mikro-orm-logger-virtual-386b5f7a00/0/cache/@monstrs-mikro-orm-logger-npm-0.0.12-7b5e69561b-bc05beab25.zip/node_modules/@monstrs/mikro-orm-logger/",\
+        "packageDependencies": [\
+          ["@monstrs/mikro-orm-logger", "virtual:0fb5aabddac09d21643c4656e3e37ff2761240ab9e5f31792602f7c5340ef8de9da9feac27b94ede1ac69b28c9b68de0cc3030a5b7ffd4635aa862e5967d146b#npm:0.0.12"],\
+          ["@mikro-orm/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@monstrs/logger", "npm:0.0.16"],\
+          ["@types/mikro-orm__core", null]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@types/mikro-orm__core"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:7a6b086922193588c3a1580204afa6ba9178afe46bfcb812c9fea243488007bc1739cef399dc6c2c5bfd72c6ea9483a67019fc602e1861f0e9b7bb47f8afd3b6#npm:0.0.12", {\
         "packageLocation": "./.yarn/__virtual__/@monstrs-mikro-orm-logger-virtual-b30d41faf5/0/cache/@monstrs-mikro-orm-logger-npm-0.0.12-7b5e69561b-bc05beab25.zip/node_modules/@monstrs/mikro-orm-logger/",\
         "packageDependencies": [\
@@ -5776,6 +7002,20 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@monstrs/mikro-orm-logger", "virtual:9405e0bcb887eee07659ce7090ebe3e53514941e2adfc96e53a107bca93ea0ac347e053423d530dc1b42cb604fdd94f0dfed61e8e7f4bf45353f37b1a27d0073#npm:0.0.12"],\
           ["@mikro-orm/core", "virtual:f64b2fb47404c5e7f28a3d34fd18c7d80f1d8c5cfbf5ed680dce93b9eea148665325649133d064d3963563f14c276bb771777a6344b8c92cf64de2bfa22ffc04#npm:5.9.1"],\
+          ["@monstrs/logger", "npm:0.0.16"],\
+          ["@types/mikro-orm__core", null]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@types/mikro-orm__core"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:a92144f2a45f557c4b6b5b866f0ab5264fc8159e98e6c2b945b4c10514db7b9f3258ad8c792ce8ce5fad9e56fc9299b917d4009f754185b362c6152f3263ec1d#npm:0.0.12", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-mikro-orm-logger-virtual-c6afee2d0c/0/cache/@monstrs-mikro-orm-logger-npm-0.0.12-7b5e69561b-bc05beab25.zip/node_modules/@monstrs/mikro-orm-logger/",\
+        "packageDependencies": [\
+          ["@monstrs/mikro-orm-logger", "virtual:a92144f2a45f557c4b6b5b866f0ab5264fc8159e98e6c2b945b4c10514db7b9f3258ad8c792ce8ce5fad9e56fc9299b917d4009f754185b362c6152f3263ec1d#npm:0.0.12"],\
+          ["@mikro-orm/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
           ["@monstrs/logger", "npm:0.0.16"],\
           ["@types/mikro-orm__core", null]\
         ],\
@@ -5898,12 +7138,50 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:914acd01c0dcb162325a3ee777614a801e038c12a04bd1e1dd6702928fbcf62064cfba5c70766fe93037c2effffe66995d0f80b2563be9ab74d010b7a5657918#npm:0.0.9", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-mikro-orm-query-builder-virtual-c21d4a5ff3/0/cache/@monstrs-mikro-orm-query-builder-npm-0.0.9-5b4222c91f-6927072eb1.zip/node_modules/@monstrs/mikro-orm-query-builder/",\
+        "packageDependencies": [\
+          ["@monstrs/mikro-orm-query-builder", "virtual:914acd01c0dcb162325a3ee777614a801e038c12a04bd1e1dd6702928fbcf62064cfba5c70766fe93037c2effffe66995d0f80b2563be9ab74d010b7a5657918#npm:0.0.9"],\
+          ["@mikro-orm/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/postgresql", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@monstrs/query-types", "npm:0.0.7"],\
+          ["@types/mikro-orm__core", null],\
+          ["@types/mikro-orm__postgresql", null],\
+          ["lodash.set", "npm:4.3.2"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@mikro-orm/postgresql",\
+          "@types/mikro-orm__core",\
+          "@types/mikro-orm__postgresql"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#npm:0.0.9", {\
         "packageLocation": "./.yarn/__virtual__/@monstrs-mikro-orm-query-builder-virtual-679cce72c9/0/cache/@monstrs-mikro-orm-query-builder-npm-0.0.9-5b4222c91f-6927072eb1.zip/node_modules/@monstrs/mikro-orm-query-builder/",\
         "packageDependencies": [\
           ["@monstrs/mikro-orm-query-builder", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#npm:0.0.9"],\
           ["@mikro-orm/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1"],\
           ["@mikro-orm/postgresql", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1"],\
+          ["@monstrs/query-types", "npm:0.0.7"],\
+          ["@types/mikro-orm__core", null],\
+          ["@types/mikro-orm__postgresql", null],\
+          ["lodash.set", "npm:4.3.2"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@mikro-orm/postgresql",\
+          "@types/mikro-orm__core",\
+          "@types/mikro-orm__postgresql"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.0.9", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-mikro-orm-query-builder-virtual-b3c085bf2c/0/cache/@monstrs-mikro-orm-query-builder-npm-0.0.9-5b4222c91f-6927072eb1.zip/node_modules/@monstrs/mikro-orm-query-builder/",\
+        "packageDependencies": [\
+          ["@monstrs/mikro-orm-query-builder", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.0.9"],\
+          ["@mikro-orm/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/postgresql", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
           ["@monstrs/query-types", "npm:0.0.7"],\
           ["@types/mikro-orm__core", null],\
           ["@types/mikro-orm__postgresql", null],\
@@ -6263,6 +7541,51 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.0.3", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-connectrpc-virtual-fca329cfae/0/cache/@monstrs-nestjs-connectrpc-npm-0.0.3-8af127544a-a5f121326a.zip/node_modules/@monstrs/nestjs-connectrpc/",\
+        "packageDependencies": [\
+          ["@monstrs/nestjs-connectrpc", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.0.3"],\
+          ["@bufbuild/protobuf", "npm:1.4.2"],\
+          ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
+          ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@nestjs/microservices", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@nestjs/platform-express", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@types/bufbuild__protobuf", null],\
+          ["@types/connectrpc__connect", null],\
+          ["@types/connectrpc__connect-node", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__microservices", null],\
+          ["@types/nestjs__platform-express", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@bufbuild/protobuf",\
+          "@connectrpc/connect-node",\
+          "@connectrpc/connect",\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/microservices",\
+          "@nestjs/platform-express",\
+          "@types/bufbuild__protobuf",\
+          "@types/connectrpc__connect-node",\
+          "@types/connectrpc__connect",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__microservices",\
+          "@types/nestjs__platform-express",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:0.0.3", {\
         "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-connectrpc-virtual-e044e58811/0/cache/@monstrs-nestjs-connectrpc-npm-0.0.3-8af127544a-a5f121326a.zip/node_modules/@monstrs/nestjs-connectrpc/",\
         "packageDependencies": [\
@@ -6274,6 +7597,51 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/microservices", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/platform-express", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@types/bufbuild__protobuf", null],\
+          ["@types/connectrpc__connect", null],\
+          ["@types/connectrpc__connect-node", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__microservices", null],\
+          ["@types/nestjs__platform-express", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@bufbuild/protobuf",\
+          "@connectrpc/connect-node",\
+          "@connectrpc/connect",\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/microservices",\
+          "@nestjs/platform-express",\
+          "@types/bufbuild__protobuf",\
+          "@types/connectrpc__connect-node",\
+          "@types/connectrpc__connect",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__microservices",\
+          "@types/nestjs__platform-express",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:0.0.3", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-connectrpc-virtual-26f84d524b/0/cache/@monstrs-nestjs-connectrpc-npm-0.0.3-8af127544a-a5f121326a.zip/node_modules/@monstrs/nestjs-connectrpc/",\
+        "packageDependencies": [\
+          ["@monstrs/nestjs-connectrpc", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:0.0.3"],\
+          ["@bufbuild/protobuf", "npm:1.4.2"],\
+          ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
+          ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/microservices", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/platform-express", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
           ["@types/bufbuild__protobuf", null],\
           ["@types/connectrpc__connect", null],\
           ["@types/connectrpc__connect-node", null],\
@@ -6743,6 +8111,54 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:914acd01c0dcb162325a3ee777614a801e038c12a04bd1e1dd6702928fbcf62064cfba5c70766fe93037c2effffe66995d0f80b2563be9ab74d010b7a5657918#npm:0.0.3", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-connectrpc-errors-virtual-d685e0b965/0/cache/@monstrs-nestjs-connectrpc-errors-npm-0.0.3-9e07eddfb2-d8932c9ddf.zip/node_modules/@monstrs/nestjs-connectrpc-errors/",\
+        "packageDependencies": [\
+          ["@monstrs/nestjs-connectrpc-errors", "virtual:914acd01c0dcb162325a3ee777614a801e038c12a04bd1e1dd6702928fbcf62064cfba5c70766fe93037c2effffe66995d0f80b2563be9ab74d010b7a5657918#npm:0.0.3"],\
+          ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
+          ["@monstrs/core-errors", "npm:0.0.2"],\
+          ["@monstrs/guard-clause", "npm:0.0.7"],\
+          ["@monstrs/nestjs-validation", "virtual:914acd01c0dcb162325a3ee777614a801e038c12a04bd1e1dd6702928fbcf62064cfba5c70766fe93037c2effffe66995d0f80b2563be9ab74d010b7a5657918#npm:0.1.1"],\
+          ["@monstrs/protobuf-rpc", "virtual:b9741d5e3936f3243df8d732173f67df672d372143c5eea74c6e2bef34322eaf2ba619ae12755019e528374d0896aeee78904050d1429de92ff94ffcb106b60d#npm:0.0.6"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/microservices", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@types/class-transformer", null],\
+          ["@types/class-validator", null],\
+          ["@types/connectrpc__connect", null],\
+          ["@types/monstrs__nestjs-validation", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__microservices", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["class-transformer", "npm:0.5.1"],\
+          ["class-validator", "npm:0.14.0"],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@connectrpc/connect",\
+          "@monstrs/nestjs-validation",\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/microservices",\
+          "@types/class-transformer",\
+          "@types/class-validator",\
+          "@types/connectrpc__connect",\
+          "@types/monstrs__nestjs-validation",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__microservices",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "class-transformer",\
+          "class-validator",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:9e882501ecd5efcf844b4864bd49121b45317d9b35b65457b3b3aaf8ce3851b3a5925a87eecfbcc2575f066c2b4e44c01774eba257717f854d5a5d1b6593d86f#npm:0.0.3", {\
         "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-connectrpc-errors-virtual-55b0880164/0/cache/@monstrs-nestjs-connectrpc-errors-npm-0.0.3-9e07eddfb2-d8932c9ddf.zip/node_modules/@monstrs/nestjs-connectrpc-errors/",\
         "packageDependencies": [\
@@ -6803,6 +8219,54 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/microservices", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@types/class-transformer", null],\
+          ["@types/class-validator", null],\
+          ["@types/connectrpc__connect", null],\
+          ["@types/monstrs__nestjs-validation", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__microservices", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["class-transformer", "npm:0.5.1"],\
+          ["class-validator", "npm:0.14.0"],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@connectrpc/connect",\
+          "@monstrs/nestjs-validation",\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/microservices",\
+          "@types/class-transformer",\
+          "@types/class-validator",\
+          "@types/connectrpc__connect",\
+          "@types/monstrs__nestjs-validation",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__microservices",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "class-transformer",\
+          "class-validator",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.0.3", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-connectrpc-errors-virtual-8f48e6d293/0/cache/@monstrs-nestjs-connectrpc-errors-npm-0.0.3-9e07eddfb2-d8932c9ddf.zip/node_modules/@monstrs/nestjs-connectrpc-errors/",\
+        "packageDependencies": [\
+          ["@monstrs/nestjs-connectrpc-errors", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.0.3"],\
+          ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
+          ["@monstrs/core-errors", "npm:0.0.2"],\
+          ["@monstrs/guard-clause", "npm:0.0.7"],\
+          ["@monstrs/nestjs-validation", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.1.1"],\
+          ["@monstrs/protobuf-rpc", "virtual:b9741d5e3936f3243df8d732173f67df672d372143c5eea74c6e2bef34322eaf2ba619ae12755019e528374d0896aeee78904050d1429de92ff94ffcb106b60d#npm:0.0.6"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@nestjs/microservices", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
           ["@types/class-transformer", null],\
           ["@types/class-validator", null],\
           ["@types/connectrpc__connect", null],\
@@ -7022,6 +8486,35 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:914acd01c0dcb162325a3ee777614a801e038c12a04bd1e1dd6702928fbcf62064cfba5c70766fe93037c2effffe66995d0f80b2563be9ab74d010b7a5657918#npm:0.0.4", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-cqrs-virtual-e78d90e027/0/cache/@monstrs-nestjs-cqrs-npm-0.0.4-182368e646-79363369d8.zip/node_modules/@monstrs/nestjs-cqrs/",\
+        "packageDependencies": [\
+          ["@monstrs/nestjs-cqrs", "virtual:914acd01c0dcb162325a3ee777614a801e038c12a04bd1e1dd6702928fbcf62064cfba5c70766fe93037c2effffe66995d0f80b2563be9ab74d010b7a5657918#npm:0.0.4"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/cqrs", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.6"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__cqrs", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/cqrs",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__cqrs",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#npm:0.0.4", {\
         "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-cqrs-virtual-8b662f9427/0/cache/@monstrs-nestjs-cqrs-npm-0.0.4-182368e646-79363369d8.zip/node_modules/@monstrs/nestjs-cqrs/",\
         "packageDependencies": [\
@@ -7029,6 +8522,35 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/cqrs", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.6"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__cqrs", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/cqrs",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__cqrs",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.0.4", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-cqrs-virtual-66a560b1d7/0/cache/@monstrs-nestjs-cqrs-npm-0.0.4-182368e646-79363369d8.zip/node_modules/@monstrs/nestjs-cqrs/",\
+        "packageDependencies": [\
+          ["@monstrs/nestjs-cqrs", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.0.4"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@nestjs/cqrs", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.6"],\
           ["@types/nestjs__common", null],\
           ["@types/nestjs__core", null],\
           ["@types/nestjs__cqrs", null],\
@@ -7138,6 +8660,32 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:0.4.2", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-logger-virtual-e5311adf4a/0/cache/@monstrs-nestjs-logger-npm-0.4.2-6f3dd1ebff-c556622c76.zip/node_modules/@monstrs/nestjs-logger/",\
+        "packageDependencies": [\
+          ["@monstrs/nestjs-logger", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:0.4.2"],\
+          ["@monstrs/logger", "npm:0.0.17"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:e80f86fd31e278e95c8d781c3918678628b157ac31a8f0986a93e6698f6097809c2974d44e6dcec746afeada6e5e00517f2e44196d27e15f7495360afabd0f9c#npm:0.4.2", {\
         "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-logger-virtual-52481fc751/0/cache/@monstrs-nestjs-logger-npm-0.4.2-6f3dd1ebff-c556622c76.zip/node_modules/@monstrs/nestjs-logger/",\
         "packageDependencies": [\
@@ -7205,6 +8753,32 @@ const RAW_RUNTIME_STATE =
           ["@monstrs/nestjs-microservices-registry", "virtual:a45b73e4ddea4b585aef9acec377f5481565662c46b28915812d889a1a3c2ccded76a762511eb0b2869e5eaa8546d900a1453e44611b35adc9d8fee701e387ae#npm:0.1.0"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/core", "virtual:a45b73e4ddea4b585aef9acec377f5481565662c46b28915812d889a1a3c2ccded76a762511eb0b2869e5eaa8546d900a1453e44611b35adc9d8fee701e387ae#npm:10.2.7"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["fast-hash-code", "npm:2.1.0"],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:0.1.0", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-microservices-registry-virtual-df3ec13807/0/cache/@monstrs-nestjs-microservices-registry-npm-0.1.0-a9cc8c5c7d-7abc5a3022.zip/node_modules/@monstrs/nestjs-microservices-registry/",\
+        "packageDependencies": [\
+          ["@monstrs/nestjs-microservices-registry", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:0.1.0"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
           ["@types/nestjs__common", null],\
           ["@types/nestjs__core", null],\
           ["@types/reflect-metadata", null],\
@@ -7356,6 +8930,41 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.1.3", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-mikro-orm-config-virtual-0fb5aabdda/0/cache/@monstrs-nestjs-mikro-orm-config-npm-0.1.3-0b13ceff5b-e2fb7835ae.zip/node_modules/@monstrs/nestjs-mikro-orm-config/",\
+        "packageDependencies": [\
+          ["@monstrs/nestjs-mikro-orm-config", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.1.3"],\
+          ["@mikro-orm/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@mikro-orm/nestjs", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.2.2"],\
+          ["@monstrs/logger", "npm:0.0.17"],\
+          ["@monstrs/mikro-orm-logger", "virtual:0fb5aabddac09d21643c4656e3e37ff2761240ab9e5f31792602f7c5340ef8de9da9feac27b94ede1ac69b28c9b68de0cc3030a5b7ffd4635aa862e5967d146b#npm:0.0.12"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@types/mikro-orm__core", null],\
+          ["@types/mikro-orm__nestjs", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@mikro-orm/nestjs",\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/mikro-orm__core",\
+          "@types/mikro-orm__nestjs",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:0.1.3", {\
         "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-mikro-orm-config-virtual-c1106ece24/0/cache/@monstrs-nestjs-mikro-orm-config-npm-0.1.3-0b13ceff5b-e2fb7835ae.zip/node_modules/@monstrs/nestjs-mikro-orm-config/",\
         "packageDependencies": [\
@@ -7366,6 +8975,41 @@ const RAW_RUNTIME_STATE =
           ["@monstrs/mikro-orm-logger", "virtual:c1106ece24012fbff4f8eccd26a9c8033a7dfe00f1b4911579a869a9e94480d7fe55ccc02a5ae855f62726203b20fa96d372f25ce6b3aaed90854a112b6bffdc#npm:0.0.12"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@types/mikro-orm__core", null],\
+          ["@types/mikro-orm__nestjs", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@mikro-orm/nestjs",\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/mikro-orm__core",\
+          "@types/mikro-orm__nestjs",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:0.1.3", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-mikro-orm-config-virtual-a92144f2a4/0/cache/@monstrs-nestjs-mikro-orm-config-npm-0.1.3-0b13ceff5b-e2fb7835ae.zip/node_modules/@monstrs/nestjs-mikro-orm-config/",\
+        "packageDependencies": [\
+          ["@monstrs/nestjs-mikro-orm-config", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:0.1.3"],\
+          ["@mikro-orm/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@mikro-orm/nestjs", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.2.2"],\
+          ["@monstrs/logger", "npm:0.0.17"],\
+          ["@monstrs/mikro-orm-logger", "virtual:a92144f2a45f557c4b6b5b866f0ab5264fc8159e98e6c2b945b4c10514db7b9f3258ad8c792ce8ce5fad9e56fc9299b917d4009f754185b362c6152f3263ec1d#npm:0.0.12"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
           ["@types/mikro-orm__core", null],\
           ["@types/mikro-orm__nestjs", null],\
           ["@types/nestjs__common", null],\
@@ -7528,6 +9172,35 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.1.2", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-mikro-orm-request-context-virtual-4a93d4b4af/0/cache/@monstrs-nestjs-mikro-orm-request-context-npm-0.1.2-38721b2cd7-a6d27c6248.zip/node_modules/@monstrs/nestjs-mikro-orm-request-context/",\
+        "packageDependencies": [\
+          ["@monstrs/nestjs-mikro-orm-request-context", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.1.2"],\
+          ["@mikro-orm/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:5.9.1"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@types/mikro-orm__core", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/mikro-orm__core",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:0.1.2", {\
         "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-mikro-orm-request-context-virtual-e997786376/0/cache/@monstrs-nestjs-mikro-orm-request-context-npm-0.1.2-38721b2cd7-a6d27c6248.zip/node_modules/@monstrs/nestjs-mikro-orm-request-context/",\
         "packageDependencies": [\
@@ -7535,6 +9208,35 @@ const RAW_RUNTIME_STATE =
           ["@mikro-orm/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.1"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@types/mikro-orm__core", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@mikro-orm/core",\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/mikro-orm__core",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:0.1.2", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-mikro-orm-request-context-virtual-4f4f12d5ac/0/cache/@monstrs-nestjs-mikro-orm-request-context-npm-0.1.2-38721b2cd7-a6d27c6248.zip/node_modules/@monstrs/nestjs-mikro-orm-request-context/",\
+        "packageDependencies": [\
+          ["@monstrs/nestjs-mikro-orm-request-context", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:0.1.2"],\
+          ["@mikro-orm/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:5.9.1"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
           ["@types/mikro-orm__core", null],\
           ["@types/nestjs__common", null],\
           ["@types/nestjs__core", null],\
@@ -7855,6 +9557,39 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:914acd01c0dcb162325a3ee777614a801e038c12a04bd1e1dd6702928fbcf62064cfba5c70766fe93037c2effffe66995d0f80b2563be9ab74d010b7a5657918#npm:0.1.1", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-validation-virtual-b859185ddc/0/cache/@monstrs-nestjs-validation-npm-0.1.1-a7d3b47896-e28c73e414.zip/node_modules/@monstrs/nestjs-validation/",\
+        "packageDependencies": [\
+          ["@monstrs/nestjs-validation", "virtual:914acd01c0dcb162325a3ee777614a801e038c12a04bd1e1dd6702928fbcf62064cfba5c70766fe93037c2effffe66995d0f80b2563be9ab74d010b7a5657918#npm:0.1.1"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@types/class-transformer", null],\
+          ["@types/class-validator", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["class-transformer", "npm:0.5.1"],\
+          ["class-validator", "npm:0.14.0"],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/class-transformer",\
+          "@types/class-validator",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "class-transformer",\
+          "class-validator",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:9e882501ecd5efcf844b4864bd49121b45317d9b35b65457b3b3aaf8ce3851b3a5925a87eecfbcc2575f066c2b4e44c01774eba257717f854d5a5d1b6593d86f#npm:0.1.1", {\
         "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-validation-virtual-aba7b87532/0/cache/@monstrs-nestjs-validation-npm-0.1.1-a7d3b47896-e28c73e414.zip/node_modules/@monstrs/nestjs-validation/",\
         "packageDependencies": [\
@@ -7894,6 +9629,39 @@ const RAW_RUNTIME_STATE =
           ["@monstrs/nestjs-validation", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#npm:0.1.1"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@types/class-transformer", null],\
+          ["@types/class-validator", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["class-transformer", "npm:0.5.1"],\
+          ["class-validator", "npm:0.14.0"],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/class-transformer",\
+          "@types/class-validator",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "class-transformer",\
+          "class-validator",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.1.1", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-validation-virtual-2aa0adbe98/0/cache/@monstrs-nestjs-validation-npm-0.1.1-a7d3b47896-e28c73e414.zip/node_modules/@monstrs/nestjs-validation/",\
+        "packageDependencies": [\
+          ["@monstrs/nestjs-validation", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:0.1.1"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
           ["@types/class-transformer", null],\
           ["@types/class-validator", null],\
           ["@types/nestjs__common", null],\
@@ -8103,7 +9871,7 @@ const RAW_RUNTIME_STATE =
     ]],\
     ["@nestjs/core", [\
       ["npm:10.2.7", {\
-        "packageLocation": "./.yarn/unplugged/@nestjs-core-virtual-c4669e0294/node_modules/@nestjs/core/",\
+        "packageLocation": "./.yarn/unplugged/@nestjs-core-virtual-292476d395/node_modules/@nestjs/core/",\
         "packageDependencies": [\
           ["@nestjs/core", "npm:10.2.7"]\
         ],\
@@ -8343,6 +10111,45 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7", {\
+        "packageLocation": "./.yarn/unplugged/@nestjs-core-virtual-7fd443b5ba/node_modules/@nestjs/core/",\
+        "packageDependencies": [\
+          ["@nestjs/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/microservices", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@nestjs/platform-express", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@nestjs/websockets", null],\
+          ["@nuxtjs/opencollective", "npm:0.3.2"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__microservices", null],\
+          ["@types/nestjs__platform-express", null],\
+          ["@types/nestjs__websockets", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["fast-safe-stringify", "npm:2.1.1"],\
+          ["iterare", "npm:1.2.1"],\
+          ["path-to-regexp", "npm:3.2.0"],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"],\
+          ["tslib", "npm:2.6.2"],\
+          ["uid", "npm:2.0.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/microservices",\
+          "@nestjs/platform-express",\
+          "@nestjs/websockets",\
+          "@types/nestjs__common",\
+          "@types/nestjs__microservices",\
+          "@types/nestjs__platform-express",\
+          "@types/nestjs__websockets",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7", {\
         "packageLocation": "./.yarn/unplugged/@nestjs-core-virtual-69a0d8ec4a/node_modules/@nestjs/core/",\
         "packageDependencies": [\
@@ -8351,6 +10158,45 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/microservices", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/platform-express", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/websockets", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nuxtjs/opencollective", "npm:0.3.2"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__microservices", null],\
+          ["@types/nestjs__platform-express", null],\
+          ["@types/nestjs__websockets", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["fast-safe-stringify", "npm:2.1.1"],\
+          ["iterare", "npm:1.2.1"],\
+          ["path-to-regexp", "npm:3.2.0"],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"],\
+          ["tslib", "npm:2.6.2"],\
+          ["uid", "npm:2.0.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/microservices",\
+          "@nestjs/platform-express",\
+          "@nestjs/websockets",\
+          "@types/nestjs__common",\
+          "@types/nestjs__microservices",\
+          "@types/nestjs__platform-express",\
+          "@types/nestjs__websockets",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7", {\
+        "packageLocation": "./.yarn/unplugged/@nestjs-core-virtual-292476d395/node_modules/@nestjs/core/",\
+        "packageDependencies": [\
+          ["@nestjs/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/microservices", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/platform-express", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/websockets", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
           ["@nuxtjs/opencollective", "npm:0.3.2"],\
           ["@types/nestjs__common", null],\
           ["@types/nestjs__microservices", null],\
@@ -8625,12 +10471,64 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.6", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-cqrs-virtual-e02b637e5c/0/cache/@nestjs-cqrs-npm-10.2.6-deef8659f2-36bc64308b.zip/node_modules/@nestjs/cqrs/",\
+        "packageDependencies": [\
+          ["@nestjs/cqrs", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.6"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"],\
+          ["uuid", "npm:9.0.0"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.6", {\
         "packageLocation": "./.yarn/__virtual__/@nestjs-cqrs-virtual-a0f3cba710/0/cache/@nestjs-cqrs-npm-10.2.6-deef8659f2-36bc64308b.zip/node_modules/@nestjs/cqrs/",\
         "packageDependencies": [\
           ["@nestjs/cqrs", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.6"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"],\
+          ["uuid", "npm:9.0.0"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.6", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-cqrs-virtual-bd213dcc36/0/cache/@nestjs-cqrs-npm-10.2.6-deef8659f2-36bc64308b.zip/node_modules/@nestjs/cqrs/",\
+        "packageDependencies": [\
+          ["@nestjs/cqrs", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.6"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
           ["@types/nestjs__common", null],\
           ["@types/nestjs__core", null],\
           ["@types/reflect-metadata", null],\
@@ -9078,6 +10976,67 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-microservices-virtual-544d4c831f/0/cache/@nestjs-microservices-npm-10.2.7-207d4f0160-6f8ee85cac.zip/node_modules/@nestjs/microservices/",\
+        "packageDependencies": [\
+          ["@nestjs/microservices", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@grpc/grpc-js", "npm:1.9.9"],\
+          ["@grpc/proto-loader", "npm:0.7.10"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@nestjs/websockets", null],\
+          ["@types/amqp-connection-manager", null],\
+          ["@types/amqplib", null],\
+          ["@types/cache-manager", null],\
+          ["@types/grpc__grpc-js", null],\
+          ["@types/ioredis", null],\
+          ["@types/kafkajs", null],\
+          ["@types/mqtt", null],\
+          ["@types/nats", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__websockets", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["amqp-connection-manager", null],\
+          ["amqplib", null],\
+          ["cache-manager", null],\
+          ["ioredis", "npm:5.3.2"],\
+          ["iterare", "npm:1.2.1"],\
+          ["kafkajs", "npm:2.2.4"],\
+          ["mqtt", null],\
+          ["nats", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"],\
+          ["tslib", "npm:2.6.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/websockets",\
+          "@types/amqp-connection-manager",\
+          "@types/amqplib",\
+          "@types/cache-manager",\
+          "@types/grpc__grpc-js",\
+          "@types/ioredis",\
+          "@types/kafkajs",\
+          "@types/mqtt",\
+          "@types/nats",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__websockets",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "amqp-connection-manager",\
+          "amqplib",\
+          "cache-manager",\
+          "mqtt",\
+          "nats",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7", {\
         "packageLocation": "./.yarn/__virtual__/@nestjs-microservices-virtual-786ff5b673/0/cache/@nestjs-microservices-npm-10.2.7-207d4f0160-6f8ee85cac.zip/node_modules/@nestjs/microservices/",\
         "packageDependencies": [\
@@ -9087,6 +11046,67 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/websockets", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@types/amqp-connection-manager", null],\
+          ["@types/amqplib", null],\
+          ["@types/cache-manager", null],\
+          ["@types/grpc__grpc-js", null],\
+          ["@types/ioredis", null],\
+          ["@types/kafkajs", null],\
+          ["@types/mqtt", null],\
+          ["@types/nats", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__websockets", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["amqp-connection-manager", null],\
+          ["amqplib", null],\
+          ["cache-manager", "npm:5.2.4"],\
+          ["ioredis", "npm:5.3.2"],\
+          ["iterare", "npm:1.2.1"],\
+          ["kafkajs", "npm:2.2.4"],\
+          ["mqtt", null],\
+          ["nats", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"],\
+          ["tslib", "npm:2.6.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/websockets",\
+          "@types/amqp-connection-manager",\
+          "@types/amqplib",\
+          "@types/cache-manager",\
+          "@types/grpc__grpc-js",\
+          "@types/ioredis",\
+          "@types/kafkajs",\
+          "@types/mqtt",\
+          "@types/nats",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__websockets",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "amqp-connection-manager",\
+          "amqplib",\
+          "cache-manager",\
+          "mqtt",\
+          "nats",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-microservices-virtual-be582e3b85/0/cache/@nestjs-microservices-npm-10.2.7-207d4f0160-6f8ee85cac.zip/node_modules/@nestjs/microservices/",\
+        "packageDependencies": [\
+          ["@nestjs/microservices", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@grpc/grpc-js", "npm:1.9.9"],\
+          ["@grpc/proto-loader", "npm:0.7.10"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/websockets", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
           ["@types/amqp-connection-manager", null],\
           ["@types/amqplib", null],\
           ["@types/cache-manager", null],\
@@ -9402,12 +11422,56 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-platform-express-virtual-b3223e87e1/0/cache/@nestjs-platform-express-npm-10.2.7-0eef88b26b-bbd2867ce0.zip/node_modules/@nestjs/platform-express/",\
+        "packageDependencies": [\
+          ["@nestjs/platform-express", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["body-parser", "npm:1.20.2"],\
+          ["cors", "npm:2.8.5"],\
+          ["express", "npm:4.18.2"],\
+          ["multer", "npm:1.4.4-lts.1"],\
+          ["tslib", "npm:2.6.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7", {\
         "packageLocation": "./.yarn/__virtual__/@nestjs-platform-express-virtual-393785cbbd/0/cache/@nestjs-platform-express-npm-10.2.7-0eef88b26b-bbd2867ce0.zip/node_modules/@nestjs/platform-express/",\
         "packageDependencies": [\
           ["@nestjs/platform-express", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["body-parser", "npm:1.20.2"],\
+          ["cors", "npm:2.8.5"],\
+          ["express", "npm:4.18.2"],\
+          ["multer", "npm:1.4.4-lts.1"],\
+          ["tslib", "npm:2.6.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-platform-express-virtual-10eaeae9c6/0/cache/@nestjs-platform-express-npm-10.2.7-0eef88b26b-bbd2867ce0.zip/node_modules/@nestjs/platform-express/",\
+        "packageDependencies": [\
+          ["@nestjs/platform-express", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
           ["@types/nestjs__common", null],\
           ["@types/nestjs__core", null],\
           ["body-parser", "npm:1.20.2"],\
@@ -9529,6 +11593,29 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/platform-socket.io", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/websockets", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__websockets", null],\
+          ["@types/rxjs", null],\
+          ["rxjs", "npm:7.8.1"],\
+          ["socket.io", "npm:4.7.2"],\
+          ["tslib", "npm:2.6.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/websockets",\
+          "@types/nestjs__common",\
+          "@types/nestjs__websockets",\
+          "@types/rxjs",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-platform-socket.io-virtual-9d970c20a3/0/cache/@nestjs-platform-socket.io-npm-10.2.7-56b1b09e57-d8c1711f29.zip/node_modules/@nestjs/platform-socket.io/",\
+        "packageDependencies": [\
+          ["@nestjs/platform-socket.io", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/websockets", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
           ["@types/nestjs__common", null],\
           ["@types/nestjs__websockets", null],\
           ["@types/rxjs", null],\
@@ -9812,6 +11899,32 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-testing-virtual-b7c097205d/0/cache/@nestjs-testing-npm-10.2.7-243f131fdb-0d78f7b7e7.zip/node_modules/@nestjs/testing/",\
+        "packageDependencies": [\
+          ["@nestjs/testing", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@nestjs/microservices", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@nestjs/platform-express", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.7"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__microservices", null],\
+          ["@types/nestjs__platform-express", null],\
+          ["tslib", "npm:2.6.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/microservices",\
+          "@nestjs/platform-express",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__microservices",\
+          "@types/nestjs__platform-express"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7", {\
         "packageLocation": "./.yarn/__virtual__/@nestjs-testing-virtual-f5668a0069/0/cache/@nestjs-testing-npm-10.2.7-243f131fdb-0d78f7b7e7.zip/node_modules/@nestjs/testing/",\
         "packageDependencies": [\
@@ -9820,6 +11933,32 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/microservices", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/platform-express", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__microservices", null],\
+          ["@types/nestjs__platform-express", null],\
+          ["tslib", "npm:2.6.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/microservices",\
+          "@nestjs/platform-express",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__microservices",\
+          "@types/nestjs__platform-express"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-testing-virtual-4f751ffa3d/0/cache/@nestjs-testing-npm-10.2.7-243f131fdb-0d78f7b7e7.zip/node_modules/@nestjs/testing/",\
+        "packageDependencies": [\
+          ["@nestjs/testing", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/microservices", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/platform-express", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
           ["@types/nestjs__common", null],\
           ["@types/nestjs__core", null],\
           ["@types/nestjs__microservices", null],\
@@ -10002,6 +12141,38 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
           ["@nestjs/platform-socket.io", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__platform-socket.io", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["iterare", "npm:1.2.1"],\
+          ["object-hash", "npm:3.0.0"],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"],\
+          ["tslib", "npm:2.6.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/platform-socket.io",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__platform-socket.io",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-websockets-virtual-2acfec15c9/0/cache/@nestjs-websockets-npm-10.2.7-a802d25fc5-640182b137.zip/node_modules/@nestjs/websockets/",\
+        "packageDependencies": [\
+          ["@nestjs/websockets", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
+          ["@nestjs/core", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
+          ["@nestjs/platform-socket.io", "virtual:d87ec54b144638b1844cb479037a2c1985f6685275d81ea3ff2b8ff98a6e960388761e0ea79639ba3e20d8c5905d3064dfe72eb63671614e4737e0769d89c6ab#npm:10.2.7"],\
           ["@types/nestjs__common", null],\
           ["@types/nestjs__core", null],\
           ["@types/nestjs__platform-socket.io", null],\

@@ -1,19 +1,26 @@
-import type { TLObject }    from '@chats-system/tl'
+import type { TLObject }     from '@chats-system/tl'
 
-import type { SessionData } from '../data/index.js'
+import type { SessionData }  from '../data/index.js'
 
-import { Injectable }       from '@nestjs/common'
+import { Injectable }        from '@nestjs/common'
 
-import { Primitive }        from '@chats-system/tl'
-import { client as auth }   from '@chats-system/auth-session-rpc-client'
-import { client as help }   from '@chats-system/help-rpc-client'
-import TL                   from '@chats-system/tl'
+import { Primitive }         from '@chats-system/tl'
+import { client as auth }    from '@chats-system/auth-session-rpc-client'
+import { client as help }    from '@chats-system/help-rpc-client'
+import { client as updates } from '@chats-system/updates-rpc-client'
+import TL                    from '@chats-system/tl'
+
+export interface InvokeRpcMetadata {
+  authKeyId: bigint
+  userId: bigint
+}
 
 @Injectable()
 export class Invoker {
   async invoke(
     sessionData: SessionData,
-    message: InstanceType<typeof TLObject>
+    message: InstanceType<typeof TLObject>,
+    metadata: InvokeRpcMetadata
   ): Promise<InstanceType<typeof TLObject>> {
     if (message instanceof TL.langpack.GetLangPack) {
       const result = await auth.getLangPack({
@@ -64,13 +71,12 @@ export class Invoker {
     }
 
     if (message instanceof TL.updates.GetState) {
-      return new TL.updates.State({
-        pts: 0,
-        qts: 0,
-        date: Date.now() / 1000,
-        seq: 23,
-        unreadCount: 0,
+      const response = await updates.getState({
+        authKeyId: metadata.authKeyId,
+        userId: metadata.userId,
       })
+
+      return new TL.updates.State(response.state!)
     }
 
     throw new Error(

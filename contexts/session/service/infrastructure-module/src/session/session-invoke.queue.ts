@@ -1,17 +1,19 @@
-import type { TLObject }        from '@chats-system/tl'
+import type { TLObject }          from '@chats-system/tl'
 
-import type { SessionData }     from '../data/index.js'
+import type { SessionData }       from '../data/index.js'
+import type { InvokeRpcMetadata } from '../invoke/index.js'
 
-import { setTimeout }           from 'node:timers/promises'
+import { setTimeout }             from 'node:timers/promises'
 
-import { Logger }               from '@monstrs/logger'
-import { MTProtoMessageId }     from '@monstrs/mtproto-core'
-import { Injectable }           from '@nestjs/common'
+import { Logger }                 from '@monstrs/logger'
+import { MTProtoMessageId }       from '@monstrs/mtproto-core'
+import { Injectable }             from '@nestjs/common'
 
-import TL                       from '@chats-system/tl'
+import TL                         from '@chats-system/tl'
 
-import { Invoker }              from '../invoke/index.js'
-import { SessionResponseQueue } from './session-response.queue.js'
+import { Invoker }                from '../invoke/index.js'
+import { SessionResponseQueue }   from './session-response.queue.js'
+import { SessionsManager }        from './session.manager.js'
 
 const generateMessageSeqNo = (sequence: number, contentRelated: boolean): number => {
   if (contentRelated) {
@@ -44,6 +46,7 @@ export class SessionInvokeQueue {
 
   constructor(
     private readonly invoker: Invoker,
+    private readonly sessionsManager: SessionsManager,
     private readonly responseQueue: SessionResponseQueue
   ) {
     this.start()
@@ -86,7 +89,12 @@ export class SessionInvokeQueue {
 
     if (task) {
       try {
-        const result = await this.invoker.invoke(task.sessionData, task.message.message)
+        const metadata: InvokeRpcMetadata = {
+          authKeyId: task.sessionData.authKeyId,
+          userId: this.sessionsManager.getByAuthKeyId(task.sessionData.authKeyId)!.getUserId(),
+        }
+
+        const result = await this.invoker.invoke(task.sessionData, task.message.message, metadata)
 
         const rpcResult = new TL.RpcResult({
           reqMsgId: task.message.messageId,
