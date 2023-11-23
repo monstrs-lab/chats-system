@@ -22,6 +22,16 @@
           "nullable": false,
           "mappedType": "bigint"
         },
+        "date_active": {
+          "name": "date_active",
+          "type": "timestamptz(0)",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 0,
+          "mappedType": "datetime"
+        },
         "layer": {
           "name": "layer",
           "type": "int",
@@ -137,6 +147,7 @@
           "autoincrement": false,
           "primary": false,
           "nullable": false,
+          "default": "'{}'",
           "mappedType": "json"
         },
         "client_ip": {
@@ -149,16 +160,6 @@
           "length": 32,
           "default": "''",
           "mappedType": "string"
-        },
-        "date_activated": {
-          "name": "date_activated",
-          "type": "bigint",
-          "unsigned": false,
-          "autoincrement": false,
-          "primary": false,
-          "nullable": false,
-          "default": "0",
-          "mappedType": "bigint"
         },
         "deleted": {
           "name": "deleted",
@@ -494,23 +495,23 @@
         },
         "date_created": {
           "name": "date_created",
-          "type": "bigint",
+          "type": "timestamptz(0)",
           "unsigned": false,
           "autoincrement": false,
           "primary": false,
-          "nullable": false,
-          "default": "0",
-          "mappedType": "bigint"
+          "nullable": true,
+          "length": 0,
+          "mappedType": "datetime"
         },
-        "date_activated": {
-          "name": "date_activated",
-          "type": "bigint",
+        "date_active": {
+          "name": "date_active",
+          "type": "timestamptz(0)",
           "unsigned": false,
           "autoincrement": false,
           "primary": false,
-          "nullable": false,
-          "default": "0",
-          "mappedType": "bigint"
+          "nullable": true,
+          "length": 0,
+          "mappedType": "datetime"
         },
         "ip": {
           "name": "ip",

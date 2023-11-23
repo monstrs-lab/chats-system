@@ -69,7 +69,7 @@ export class SessionResponseQueue {
         messageLength.writeInt32LE(task.message.messageLength, 0)
         salt.writeBigInt64BE(task.sessionData.sessionId, 0)
         sessionId.writeBigInt64BE(task.sessionData.sessionId, 0)
-        messageId.writeBigInt64BE(task.message.messageId, 0)
+        messageId.writeBigInt64LE(task.message.messageId, 0)
 
         const payload = Buffer.concat([
           salt,

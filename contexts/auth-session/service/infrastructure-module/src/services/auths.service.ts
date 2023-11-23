@@ -2,6 +2,8 @@
 
 import { EntityRepository }                         from '@mikro-orm/core'
 import { EntityManager }                            from '@mikro-orm/core'
+import { MikroORM }                                 from '@mikro-orm/core'
+import { CreateRequestContext }                     from '@mikro-orm/core'
 import { InjectRepository }                         from '@mikro-orm/nestjs'
 import { EntityManager as PostgreSqlEntityManager } from '@mikro-orm/postgresql'
 import { Injectable }                               from '@nestjs/common'
@@ -13,7 +15,6 @@ import { ClientSession }                            from '@chats-system/auth-ses
 
 import { AuthData }                                 from '../data/index.js'
 import { AuthUserEntity }                           from '../entities/index.js'
-import { DeviceEntity }                             from '../entities/index.js'
 import { AuthEntity }                               from '../entities/index.js'
 
 @Injectable()
@@ -23,12 +24,13 @@ export class AuthsService {
     private readonly authUserRepository: EntityRepository<AuthUserEntity>,
     @InjectRepository(AuthEntity)
     private readonly authRepository: EntityRepository<AuthEntity>,
-    @InjectRepository(DeviceEntity)
-    private readonly deviceRepository: EntityRepository<DeviceEntity>,
     @Inject(EntityManager)
-    private readonly em: PostgreSqlEntityManager
+    private readonly em: PostgreSqlEntityManager,
+    // @ts-expect-error
+    private readonly orm: MikroORM
   ) {}
 
+  @CreateRequestContext()
   async getAuthData(authKeyId: bigint): Promise<AuthData | undefined> {
     const [auth, authUser] = await Promise.all([
       this.authRepository.findOne({ authKeyId }),
@@ -58,13 +60,137 @@ export class AuthsService {
               userId: authUser.userId,
               hash: authUser.hash,
               dateCreated: authUser.dateCreated,
-              dateActivated: authUser.dateActivated,
+              dateActive: authUser.dateActive,
             }
           : undefined
       )
     }
 
     return undefined
+  }
+
+  @CreateRequestContext()
+  async bindAuthKeyUser(authKeyId: bigint, userId: bigint): Promise<bigint> {
+    const authUserEntity = new AuthUserEntity()
+
+    authUserEntity.authKeyId = authKeyId
+    authUserEntity.userId = userId
+    authUserEntity.dateCreated = new Date()
+    authUserEntity.dateActive = new Date()
+    // eslint-disable-next-line
+    authUserEntity.hash = random(63)
+
+    try {
+      this.em.persist(authUserEntity)
+
+      await this.em.flush()
+
+      return authUserEntity.hash
+    } catch {
+      return BigInt(0)
+    }
+  }
+
+  @CreateRequestContext()
+  async unbindAuthKeyUser(authKeyId: bigint, userId: bigint): Promise<boolean> {
+    try {
+      const authUserEntities =
+        authKeyId === BigInt(0)
+          ? await this.authUserRepository.find({
+              userId,
+              deleted: false,
+            })
+          : await this.authUserRepository.find({
+              authKeyId,
+              userId,
+            })
+
+      authUserEntities.forEach((authUserEntity) => {
+        authUserEntity.deleted = true
+
+        this.em.persist(authUserEntity)
+      })
+
+      await this.em.flush()
+
+      return true
+    } catch {
+      return false
+    }
+  }
+
+  @CreateRequestContext()
+  async setClientSessionInfo(
+    authKeyId: bigint,
+    layer: number,
+    apiId: number,
+    deviceModel: string,
+    systemVersion: string,
+    appVersion: string,
+    systemLangCode: string,
+    langPack: string,
+    langCode: string,
+    clientIp: string,
+    proxy?: string,
+    params?: string
+  ): Promise<void> {
+    const authEntity = (await this.authRepository.findOne({ authKeyId })) || new AuthEntity()
+
+    authEntity.authKeyId = authKeyId
+    authEntity.layer = layer
+    authEntity.apiId = apiId
+    authEntity.deviceModel = deviceModel
+    authEntity.systemVersion = systemVersion
+    authEntity.appVersion = appVersion
+    authEntity.systemLangCode = systemLangCode
+    authEntity.langPack = langPack
+    authEntity.langCode = langCode
+    authEntity.clientIp = clientIp
+    authEntity.proxy = proxy || ''
+    authEntity.params = JSON.parse(params! || '')
+    authEntity.dateActive = new Date()
+
+    await this.em.persist(authEntity).flush()
+  }
+
+  @CreateRequestContext()
+  async setLayer(authKeyId: bigint, layer: number, clientIp: string): Promise<void> {
+    const authEntity = (await this.authRepository.findOne({ authKeyId })) || new AuthEntity()
+
+    authEntity.authKeyId = authKeyId
+    authEntity.layer = layer
+    authEntity.clientIp = clientIp
+    authEntity.dateActive = new Date()
+
+    await this.em.persist(authEntity).flush()
+  }
+
+  @CreateRequestContext()
+  async setInitConnection(
+    authKeyId: bigint,
+    apiId: number,
+    deviceModel: string,
+    systemVersion: string,
+    appVersion: string,
+    systemLangCode: string,
+    langPack: string,
+    langCode: string,
+    clientIp: string
+  ): Promise<void> {
+    const authEntity = (await this.authRepository.findOne({ authKeyId })) || new AuthEntity()
+
+    authEntity.authKeyId = authKeyId
+    authEntity.apiId = apiId
+    authEntity.deviceModel = deviceModel
+    authEntity.systemVersion = systemVersion
+    authEntity.appVersion = appVersion
+    authEntity.systemLangCode = systemLangCode
+    authEntity.langPack = langPack
+    authEntity.langCode = langCode
+    authEntity.clientIp = clientIp
+    authEntity.dateActive = new Date()
+
+    await this.em.persist(authEntity).flush()
   }
 
   async getApiLayer(authKeyId: bigint): Promise<number> {
@@ -124,104 +250,4 @@ export class AuthsService {
 
     return authData.userId
   }
-
-  async getPushSessionId(authKeyId: bigint, userId: bigint, tokenType: number): Promise<bigint> {
-    const deviceEntity = await this.deviceRepository.findOne({
-      authKeyId,
-      userId,
-      tokenType,
-    })
-
-    if (!deviceEntity) {
-      return BigInt(0)
-    }
-
-    const sessionId = parseInt(deviceEntity.token, 10)
-
-    if (Number.isNaN(sessionId)) {
-      return BigInt(0)
-    }
-
-    return BigInt(sessionId)
-  }
-
-  async bindAuthKeyUser(authKeyId: bigint, userId: bigint): Promise<bigint> {
-    const now = Date.now()
-
-    const authUserEntity = new AuthUserEntity()
-
-    authUserEntity.authKeyId = authKeyId
-    authUserEntity.userId = userId
-    authUserEntity.dateCreated = BigInt(now)
-    authUserEntity.dateActivated = BigInt(now)
-    // eslint-disable-next-line
-    authUserEntity.hash = random(63)
-
-    try {
-      this.em.persist(authUserEntity)
-
-      await this.em.flush()
-
-      return authUserEntity.hash
-    } catch {
-      return BigInt(0)
-    }
-  }
-
-  async unbindAuthKeyUser(authKeyId: bigint, userId: bigint): Promise<boolean> {
-    try {
-      const authUserEntities =
-        authKeyId === BigInt(0)
-          ? await this.authUserRepository.find({
-              userId,
-              deleted: false,
-            })
-          : await this.authUserRepository.find({
-              authKeyId,
-              userId,
-            })
-
-      authUserEntities.forEach((authUserEntity) => {
-        authUserEntity.deleted = true
-        authUserEntity.dateActivated = BigInt(0)
-
-        this.em.persist(authUserEntity)
-      })
-
-      await this.em.flush()
-
-      return true
-    } catch {
-      return false
-    }
-  }
-
-  async setClientSessionInfo(clientSession: ClientSession): Promise<boolean> {
-    try {
-      const authEntity = new AuthEntity()
-
-      authEntity.authKeyId = clientSession.authKeyId!
-      authEntity.layer = clientSession.layer!
-      authEntity.apiId = clientSession.apiId!
-      authEntity.deviceModel = clientSession.deviceModel!
-      authEntity.systemVersion = clientSession.systemVersion!
-      authEntity.appVersion = clientSession.appVersion!
-      authEntity.systemLangCode = clientSession.systemLangCode!
-      authEntity.langPack = clientSession.langPack!
-      authEntity.langCode = clientSession.langCode!
-      authEntity.clientIp = clientSession.ip!
-      authEntity.proxy = clientSession.proxy!
-      authEntity.params = JSON.parse(clientSession.params! || '')
-      authEntity.dateActivated = BigInt(Date.now())
-
-      await this.em.persist(authEntity).flush()
-
-      return true
-    } catch {
-      return false
-    }
-  }
-
-  // TODO: SetLayer
-  // TODO: SetInitConnection
 }

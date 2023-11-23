@@ -40,11 +40,11 @@ export class AuthUserEntity extends BaseEntity<AuthUserEntity, 'id'> {
   @Property({ type: 'varchar', length: 64, default: '' })
   appVersion!: string
 
-  @Property({ type: NativeBigIntType, default: 0 })
-  dateCreated!: bigint
+  @Property({ nullable: true })
+  dateCreated!: Date
 
-  @Property({ type: NativeBigIntType, default: 0 })
-  dateActivated!: bigint
+  @Property({ nullable: true })
+  dateActive!: Date
 
   @Property({ type: 'varchar', length: 64, default: '' })
   ip!: string
