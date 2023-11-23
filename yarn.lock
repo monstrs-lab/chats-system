@@ -1020,6 +1020,146 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@chats-system/help-infrastructure-module@workspace:0.0.1, @chats-system/help-infrastructure-module@workspace:contexts/help/service/infrastructure-module":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/help-infrastructure-module@workspace:contexts/help/service/infrastructure-module"
+  dependencies:
+    "@bufbuild/protobuf": "npm:^1.4.2"
+    "@chats-system/help-rpc": "workspace:0.0.1"
+    "@connectrpc/connect": "npm:^1.1.3"
+    "@connectrpc/connect-node": "npm:^1.1.3"
+    "@faker-js/faker": "npm:^8.1.0"
+    "@jest/globals": "npm:^29.7.0"
+    "@mikro-orm/cli": "npm:^5.8.3"
+    "@mikro-orm/core": "npm:^5.8.3"
+    "@mikro-orm/entity-generator": "npm:^5.8.3"
+    "@mikro-orm/knex": "npm:^5.8.3"
+    "@mikro-orm/migrations": "npm:^5.8.3"
+    "@mikro-orm/nestjs": "npm:^5.2.2"
+    "@mikro-orm/postgresql": "npm:^5.8.3"
+    "@mikro-orm/seeder": "npm:^5.8.3"
+    "@monstrs/base-types": "npm:^0.0.2"
+    "@monstrs/logger": "npm:^0.0.19"
+    "@monstrs/mikro-orm-query-builder": "npm:^0.0.9"
+    "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
+    "@monstrs/nestjs-connectrpc-errors": "npm:^0.0.3"
+    "@monstrs/nestjs-cqrs": "npm:^0.0.4"
+    "@monstrs/nestjs-mikro-orm-config": "npm:^0.1.3"
+    "@monstrs/nestjs-mikro-orm-request-context": "npm:^0.1.2"
+    "@monstrs/nestjs-validation": "npm:^0.1.1"
+    "@monstrs/rpc-query-payloads": "npm:^0.0.11"
+    "@nestjs/common": "npm:^10.2.6"
+    "@nestjs/core": "npm:^10.2.6"
+    "@nestjs/cqrs": "npm:^10.2.5"
+    "@nestjs/microservices": "npm:^10.2.6"
+    "@nestjs/platform-express": "npm:^10.2.6"
+    "@nestjs/testing": "npm:^10.2.6"
+    "@types/express": "npm:^4.17.18"
+    "@types/node": "npm:^20.6.5"
+    "@types/uuid": "npm:^9.0.4"
+    ajv: "npm:^8.12.0"
+    bignumber.js: "npm:9.1.2"
+    class-transformer: "npm:^0.5.1"
+    class-validator: "npm:^0.14.0"
+    random-bigint: "npm:^0.0.1"
+    reflect-metadata: "npm:^0.1.13"
+    rxjs: "npm:^7.8.1"
+    ts-node: "npm:^10.9.1"
+    typescript: "npm:^5.2.2"
+    uuid: "npm:^9.0.1"
+  peerDependencies:
+    "@bufbuild/protobuf": ^1.3.1
+    "@chats-system/help-rpc": "workspace:0.0.1"
+    "@connectrpc/connect": ^0.13
+    "@connectrpc/connect-node": ^0.13
+    "@mikro-orm/core": ^5.8.3
+    "@mikro-orm/nestjs": ^5.2.2
+    "@mikro-orm/postgresql": ^5.8.3
+    "@monstrs/nestjs-connectrpc": ^0.0.2
+    "@nestjs/common": ^10
+    "@nestjs/core": ^10
+    "@nestjs/cqrs": ^10
+    "@nestjs/microservices": ^10
+    class-transformer: ^0.5
+    class-validator: ^0.14
+    reflect-metadata: ^0.1
+    rxjs: ^7
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/help-rpc-client@workspace:0.0.1, @chats-system/help-rpc-client@workspace:contexts/help/rpc/help-rpc-client":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/help-rpc-client@workspace:contexts/help/rpc/help-rpc-client"
+  dependencies:
+    "@bufbuild/protobuf": "npm:^1.4.2"
+    "@chats-system/help-rpc": "workspace:0.0.1"
+    "@connectrpc/connect": "npm:^1.1.3"
+    "@connectrpc/connect-node": "npm:^1.1.3"
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/help-rpc@workspace:0.0.1, @chats-system/help-rpc@workspace:contexts/help/rpc/help-rpc":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/help-rpc@workspace:contexts/help/rpc/help-rpc"
+  dependencies:
+    "@bufbuild/buf": "npm:^1.28.1"
+    "@bufbuild/protobuf": "npm:^1.4.2"
+    "@bufbuild/protoc-gen-es": "npm:^1.4.2"
+    "@connectrpc/protoc-gen-connect-es": "npm:^1.1.3"
+    "@monstrs/protoc-gen-abstractions": "npm:^0.0.5"
+    "@monstrs/protoc-gen-interfaces": "npm:^0.0.4"
+  peerDependencies:
+    "@bufbuild/protobuf": ^1
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/help-service-entrypoint@workspace:contexts/help/service/service-entrypoint":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/help-service-entrypoint@workspace:contexts/help/service/service-entrypoint"
+  dependencies:
+    "@bufbuild/protobuf": "npm:^1.4.2"
+    "@chats-system/help-infrastructure-module": "workspace:0.0.1"
+    "@chats-system/help-rpc": "workspace:0.0.1"
+    "@connectrpc/connect": "npm:^1.1.3"
+    "@connectrpc/connect-node": "npm:^1.1.3"
+    "@faker-js/faker": "npm:^8.1.0"
+    "@jest/globals": "npm:^29.7.0"
+    "@mikro-orm/core": "npm:^5.8.3"
+    "@mikro-orm/entity-generator": "npm:^5.8.3"
+    "@mikro-orm/knex": "npm:^5.8.3"
+    "@mikro-orm/migrations": "npm:^5.8.3"
+    "@mikro-orm/nestjs": "npm:^5.2.2"
+    "@mikro-orm/postgresql": "npm:^5.8.3"
+    "@mikro-orm/seeder": "npm:^5.8.3"
+    "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
+    "@monstrs/nestjs-logger": "npm:^0.4.2"
+    "@monstrs/nestjs-microservices-registry": "npm:^0.1.0"
+    "@monstrs/nestjs-mikro-orm-config": "npm:^0.1.3"
+    "@monstrs/nestjs-mikro-orm-request-context": "npm:^0.1.2"
+    "@monstrs/protobuf-rpc": "npm:0.0.7"
+    "@nestjs/common": "npm:^10.2.6"
+    "@nestjs/core": "npm:^10.2.6"
+    "@nestjs/cqrs": "npm:^10.2.5"
+    "@nestjs/microservices": "npm:^10.2.6"
+    "@nestjs/platform-express": "npm:^10.2.6"
+    "@nestjs/platform-socket.io": "npm:^10.2.6"
+    "@nestjs/testing": "npm:^10.2.6"
+    "@nestjs/websockets": "npm:^10.2.6"
+    "@testcontainers/kafka": "npm:^10.2.1"
+    "@types/node": "npm:^20.6.5"
+    "@types/pg": "npm:^8.10.3"
+    cache-manager: "npm:^5.2.3"
+    class-transformer: "npm:^0.5.1"
+    class-validator: "npm:^0.14.0"
+    get-port: "npm:^7.0.0"
+    p-retry: "npm:^6.0.0"
+    pg: "npm:^8.11.3"
+    reflect-metadata: "npm:^0.1.13"
+    rxjs: "npm:^7.8.1"
+    testcontainers: "npm:^10.2.1"
+  languageName: unknown
+  linkType: soft
+
 "@chats-system/session-infrastructure-module@workspace:0.0.1, @chats-system/session-infrastructure-module@workspace:contexts/session/service/infrastructure-module":
   version: 0.0.0-use.local
   resolution: "@chats-system/session-infrastructure-module@workspace:contexts/session/service/infrastructure-module"
@@ -1027,6 +1167,7 @@ __metadata:
     "@bufbuild/protobuf": "npm:^1.4.2"
     "@chats-system/auth-session-rpc-client": "workspace:0.0.1"
     "@chats-system/gateway-rpc-client": "workspace:0.0.1"
+    "@chats-system/help-rpc-client": "workspace:0.0.1"
     "@chats-system/session-rpc": "workspace:0.0.1"
     "@chats-system/tl": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.1.3"
@@ -1150,6 +1291,7 @@ __metadata:
     "@bufbuild/protobuf": "npm:^1.4.2"
     "@chats-system/auth-session-infrastructure-module": "workspace:0.0.1"
     "@chats-system/gateway-infrastructure-module": "workspace:0.0.1"
+    "@chats-system/help-infrastructure-module": "workspace:0.0.1"
     "@chats-system/session-infrastructure-module": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.1.3"
     "@connectrpc/connect-node": "npm:^1.1.3"

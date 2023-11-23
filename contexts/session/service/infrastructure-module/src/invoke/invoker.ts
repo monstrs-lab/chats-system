@@ -6,6 +6,7 @@ import { Injectable }       from '@nestjs/common'
 
 import { Primitive }        from '@chats-system/tl'
 import { client as auth }   from '@chats-system/auth-session-rpc-client'
+import { client as help }   from '@chats-system/help-rpc-client'
 import TL                   from '@chats-system/tl'
 
 @Injectable()
@@ -46,54 +47,19 @@ export class Invoker {
     }
 
     if (message instanceof TL.help.GetConfig) {
+      const response = await help.getConfig({})
+
       return new TL.Config({
-        date: Date.now() / 1000,
-        expires: Date.now() / 1000 + 100000000,
-        testMode: false,
-        thisDc: 1,
-        dcOptions: [],
-        defaultP2pContacts: true,
-        preloadFeaturedStickers: false,
-        revokePmInbox: true,
-        blockedMode: false,
-        dcTxtDomainName: 'apv2.stel.com',
-        chatSizeMax: 200,
-        megagroupSizeMax: 100000,
-        forwardedCountMax: 100,
-        onlineUpdatePeriodMs: 210000,
-        offlineBlurTimeoutMs: 5000,
-        offlineIdleTimeoutMs: 30000,
-        onlineCloudTimeoutMs: 300000,
-        notifyCloudDelayMs: 30000,
-        notifyDefaultDelayMs: 1500,
-        pushChatPeriodMs: 60000,
-        pushChatLimit: 2,
-        editTimeLimit: 172800,
-        revokeTimeLimit: 2147483647,
-        revokePmTimeLimit: 2147483647,
-        ratingEDecay: 2419200,
-        stickersRecentLimit: 200,
-        channelsReadMediaPeriod: 604800,
-        callReceiveTimeoutMs: 20000,
-        callRingTimeoutMs: 90000,
-        callConnectTimeoutMs: 30000,
-        callPacketTimeoutMs: 10000,
-        meUrlPrefix: 'https://teamgram.io/',
-        gifSearchUsername: 'gif',
-        venueSearchUsername: 'foursquare',
-        imgSearchUsername: 'bing',
-        staticMapsProvider: 'telegram',
-        captionLengthMax: 200,
-        messageLengthMax: 4096,
-        webfileDcId: 4,
-        suggestedLangCode: 'classic-zh-cn',
-        langPackVersion: 262834,
-        baseLangPackVersion: 0,
-        forceTryIpv6: false,
-        tmpSessions: 5,
-        autoupdateUrlPrefix: 'false',
-        autologinToken: 'token',
-        // reactionsDefault: []
+        ...response.config!,
+        dcOptions:
+          response.config?.dcOptions.map(
+            (dcOption): TL.DcOption =>
+              new TL.DcOption({
+                ...dcOption,
+                secret: Buffer.from(dcOption.secret || []),
+              })
+          ) || [],
+        reactionsDefault: undefined,
       })
     }
 

@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+package tech.monstrs.chats_system.help.v1alpha1;
+
+service HelpService {
+  rpc getConfig (GetConfigRequest) returns (GetConfigResponse) {}
+}
+
+message DcOption {
+  int32 id = 1;
+  string ipAddress = 2;
+  int32 port = 3;
+  optional bool ipv6 = 4;
+  optional bool mediaOnly = 5;
+  optional bool tcpoOnly = 6;
+  optional bool cdn = 7;
+  optional bool static = 8;
+  optional bool thisPortOnly = 9;
+  optional bytes secret = 10;
+}
+
+message Reaction {
+
+}
+
+message Config {
+  int32 date = 1;
+  int32 expires = 2;
+  bool test_mode = 3;
+  int32 this_dc = 4;
+  repeated DcOption dc_options = 5;
+  string dc_txt_domain_name = 6;
+  int32 chat_size_max = 7;
+  int32 megagroup_size_max = 8;
+  int32 forwarded_count_max = 9;
+  int32 online_update_period_ms = 10;
+  int32 offline_blur_timeout_ms = 11;
+  int32 offline_idle_timeout_ms = 12;
+  int32 online_cloud_timeout_ms = 13;
+  int32 notify_cloud_delay_ms = 14;
+  int32 notify_default_delay_ms = 15;
+  int32 push_chat_period_ms = 16;
+  int32 push_chat_limit = 17;
+  int32 edit_time_limit = 18;
+  int32 revoke_time_limit = 19;
+  int32 revoke_pm_time_limit = 20;
+  int32 rating_e_decay = 21;
+  int32 stickers_recent_limit = 22;
+  int32 channels_read_media_period = 23;
+  int32 call_receive_timeout_ms = 24;
+  int32 call_ring_timeout_ms = 25;
+  int32 call_connect_timeout_ms = 26;
+  int32 call_packet_timeout_ms = 27;
+  string me_url_prefix = 28;
+  int32 caption_length_max = 29;
+  int32 message_length_max = 30;
+  int32 webfile_dc_id = 31;
+  int32 tmp_sessions = 32;
+  optional bool default_p2p_contacts = 33;
+  optional bool preload_featured_stickers = 34;
+  optional bool revoke_pm_inbox = 35;
+  optional bool blocked_mode = 36;
+  optional string gif_search_username = 37;
+  optional string venue_search_username = 38;
+  optional string img_search_username = 39;
+  optional string static_maps_provider = 40;
+  optional string suggested_lang_code = 41;
+  optional int32 lang_pack_version = 42;
+  optional int32 base_lang_pack_version = 43;
+  optional bool force_try_ipv6 = 44;
+  optional string autoupdate_url_prefix = 45;
+  optional string autologin_token = 46;
+  optional Reaction reactions_default = 47;
+}
+
+message GetConfigRequest {
+
+}
+
+message GetConfigResponse {
+  Config config = 1;
+}
