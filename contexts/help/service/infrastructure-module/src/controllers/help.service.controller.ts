@@ -1,12 +1,18 @@
-import type { ServiceImpl }  from '@connectrpc/connect'
+import type { ServiceImpl }         from '@connectrpc/connect'
 
-import { ConnectRpcMethod }  from '@monstrs/nestjs-connectrpc'
-import { ConnectRpcService } from '@monstrs/nestjs-connectrpc'
-import { Controller }        from '@nestjs/common'
+import { ConnectRpcMethod }         from '@monstrs/nestjs-connectrpc'
+import { ConnectRpcService }        from '@monstrs/nestjs-connectrpc'
+import { Controller }               from '@nestjs/common'
 
-import { Config }            from '@chats-system/help-rpc'
-import { GetConfigResponse } from '@chats-system/help-rpc'
-import { HelpService }       from '@chats-system/help-rpc'
+import { Config }                   from '@chats-system/help-rpc'
+import { GetCountriesListRequest }  from '@chats-system/help-rpc'
+import { GetCountriesListResponse } from '@chats-system/help-rpc'
+import { Country }                  from '@chats-system/help-rpc'
+import { CountryCode }              from '@chats-system/help-rpc'
+import { GetConfigResponse }        from '@chats-system/help-rpc'
+import { GetNearestDcResponse }     from '@chats-system/help-rpc'
+import { NearestDc }                from '@chats-system/help-rpc'
+import { HelpService }              from '@chats-system/help-rpc'
 
 @Controller()
 @ConnectRpcService(HelpService)
@@ -15,8 +21,8 @@ export class HelpServiceController implements ServiceImpl<typeof HelpService> {
   async getConfig(): Promise<GetConfigResponse> {
     return new GetConfigResponse({
       config: new Config({
-        date: Date.now() / 1000,
-        expires: Date.now() / 1000 + 100000000,
+        date: Math.floor(Date.now() / 1000),
+        expires: Math.floor(Date.now() / 1000) + 3600,
         testMode: false,
         thisDc: 1,
         dcOptions: [],
@@ -60,6 +66,35 @@ export class HelpServiceController implements ServiceImpl<typeof HelpService> {
         forceTryIpv6: false,
         tmpSessions: 5,
       }),
+    })
+  }
+
+  @ConnectRpcMethod()
+  getNearestDc(): GetNearestDcResponse {
+    return new GetNearestDcResponse({
+      nearestDc: new NearestDc({
+        country: 'RU',
+        thisDc: 1,
+        nearestDc: 1,
+      }),
+    })
+  }
+
+  @ConnectRpcMethod()
+  async getCountriesList(request: GetCountriesListRequest): Promise<GetCountriesListResponse> {
+    return new GetCountriesListResponse({
+      countries: [
+        new Country({
+          iso2: 'RU',
+          defaultName: 'Россия',
+          countryCodes: [
+            new CountryCode({
+              countryCode: '7',
+            }),
+          ],
+        }),
+      ],
+      hash: request.hash,
     })
   }
 }

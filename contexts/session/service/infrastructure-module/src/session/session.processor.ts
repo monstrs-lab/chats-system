@@ -88,11 +88,67 @@ export class SessionProcessor {
 
     const message = await TLObject.read(bytesIO)
 
-    await this.processMessage(sessionData, { seqNo, messageId, messageLength, message })
+    const messages =
+      message instanceof MsgContainer
+        ? message.messages.map((msg) => ({
+            seqNo: msg.seqNo,
+            messageId: msg.msgId,
+            messageLength: msg.length,
+            message: msg.body,
+          }))
+        : [{ seqNo, messageId, messageLength, message }]
+
+    await Promise.all(messages.map(async (msg) => this.processMessage(sessionData, msg)))
   }
 
-  protected isRpcWithoutLogin(message: InstanceType<typeof TLObject>): boolean {
-    return Boolean(message)
+  protected checkRpcWithoutLogin(message: InstanceType<typeof TLObject>): boolean {
+    if (
+      message instanceof TL.auth.SendCode ||
+      message instanceof TL.auth.ResendCode ||
+      message instanceof TL.auth.SignUp ||
+      message instanceof TL.auth.SignIn ||
+      message instanceof TL.auth.ImportLoginToken ||
+      message instanceof TL.auth.ExportedAuthorization ||
+      message instanceof TL.auth.ExportAuthorization ||
+      message instanceof TL.auth.ImportAuthorization ||
+      message instanceof TL.auth.CancelCode ||
+      message instanceof TL.auth.ExportLoginToken ||
+      message instanceof TL.auth.AcceptLoginToken ||
+      message instanceof TL.auth.LogOut ||
+      message instanceof TL.auth.BindTempAuthKey
+    ) {
+      return true
+    }
+
+    if (
+      message instanceof TL.help.GetConfig ||
+      message instanceof TL.help.GetNearestDc ||
+      message instanceof TL.help.GetAppUpdate ||
+      message instanceof TL.help.GetCdnConfig ||
+      message instanceof TL.help.GetCountriesList
+    ) {
+      return true
+    }
+
+    if (
+      message instanceof TL.langpack.GetLangPack ||
+      message instanceof TL.langpack.GetStrings ||
+      message instanceof TL.langpack.GetDifference ||
+      message instanceof TL.langpack.GetLanguages ||
+      message instanceof TL.langpack.GetLanguage
+    ) {
+      return true
+    }
+
+    if (message instanceof TL.upload.GetWebFile || message instanceof TL.upload.GetFile) {
+      return true
+    }
+
+    if (message instanceof TL.JsonObject) {
+      return true
+    }
+
+    return false
   }
 
   protected async processMessage(
@@ -189,7 +245,7 @@ export class SessionProcessor {
     const authSession = this.authSessionsManager.getByAuthKeyId(sessionData.authKeyId)!
 
     if (authSession.getUserId() === 0n) {
-      if (this.isRpcWithoutLogin(message.message)) {
+      if (!this.checkRpcWithoutLogin(message.message)) {
         const authUserId = await this.authCache.getUserID(sessionData.authKeyId)
 
         if (authUserId === 0n) {

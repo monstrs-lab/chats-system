@@ -3,10 +3,14 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { MethodKind }        from '@bufbuild/protobuf'
+import { MethodKind }               from '@bufbuild/protobuf'
 
-import { GetConfigRequest }  from './help.service_pb.js'
-import { GetConfigResponse } from './help.service_pb.js'
+import { GetConfigRequest }         from './help.service_pb.js'
+import { GetConfigResponse }        from './help.service_pb.js'
+import { GetCountriesListRequest }  from './help.service_pb.js'
+import { GetCountriesListResponse } from './help.service_pb.js'
+import { GetNearestDcRequest }      from './help.service_pb.js'
+import { GetNearestDcResponse }     from './help.service_pb.js'
 
 /**
  * @generated from service tech.monstrs.chats_system.help.v1alpha1.HelpService
@@ -21,6 +25,24 @@ export const HelpService = {
       name: 'getConfig',
       I: GetConfigRequest,
       O: GetConfigResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc tech.monstrs.chats_system.help.v1alpha1.HelpService.getNearestDc
+     */
+    getNearestDc: {
+      name: 'getNearestDc',
+      I: GetNearestDcRequest,
+      O: GetNearestDcResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc tech.monstrs.chats_system.help.v1alpha1.HelpService.getCountriesList
+     */
+    getCountriesList: {
+      name: 'getCountriesList',
+      I: GetCountriesListRequest,
+      O: GetCountriesListResponse,
       kind: MethodKind.Unary,
     },
   },

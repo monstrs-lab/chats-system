@@ -4,6 +4,28 @@ package tech.monstrs.chats_system.help.v1alpha1;
 
 service HelpService {
   rpc getConfig (GetConfigRequest) returns (GetConfigResponse) {}
+  rpc getNearestDc (GetNearestDcRequest) returns (GetNearestDcResponse) {}
+  rpc getCountriesList (GetCountriesListRequest) returns (GetCountriesListResponse) {}
+}
+
+message CountryCode {
+  string country_code = 1;
+  repeated string prefixes = 2;
+  repeated string patterns = 3;
+}
+
+message Country {
+  string iso2 = 1;
+  string default_name = 2;
+  repeated CountryCode country_codes = 3;
+  optional string name = 4;
+  optional bool hidden = 5;
+}
+
+message NearestDc {
+  string country = 1;
+  int32 this_dc = 2;
+  int32 nearest_dc = 3;
 }
 
 message DcOption {
@@ -79,4 +101,22 @@ message GetConfigRequest {
 
 message GetConfigResponse {
   Config config = 1;
+}
+
+message GetNearestDcRequest {
+
+}
+
+message GetNearestDcResponse {
+  NearestDc nearest_dc = 1;
+}
+
+message GetCountriesListRequest {
+  string lang_code = 1;
+  int32 hash = 2;
+}
+
+message GetCountriesListResponse {
+  repeated Country countries = 1;
+  int32 hash = 2;
 }
