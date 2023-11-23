@@ -10,7 +10,7 @@ export const createClient = (options = {}): PromiseClient<typeof HelpService> =>
     HelpService,
     createGrpcTransport({
       httpVersion: '2',
-      baseUrl: process.env.HELP_URL || 'http://0.0.0.0:50051',
+      baseUrl: process.env.HELP_SERVICE_URL || 'http://0.0.0.0:50051',
       ...options,
     })
   )

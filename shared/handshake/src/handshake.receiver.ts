@@ -212,9 +212,9 @@ export class HandshakeReceiver {
     }
 
     const gab = modExp(
-      fromBufferToBigInt(clientDHInnerData.gB),
+      fromBufferToBigInt(clientDHInnerData.gB, false),
       state.handshake.a!,
-      fromBufferToBigInt(dh2048P)
+      fromBufferToBigInt(dh2048P, false, false)
     )
 
     const authKey = new MTProtoAuthKey(fromBigIntToByteArrayBuffer(gab))

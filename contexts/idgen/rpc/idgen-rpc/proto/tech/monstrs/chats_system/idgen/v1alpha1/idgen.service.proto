@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package tech.monstrs.chats_system.idgen.v1alpha1;
+
+service IdGenService {
+  rpc getNextId (GetNextIdRequest) returns (GetNextIdResponse) {}
+  rpc getCurrentSeqId (GetCurrentSeqIdRequest) returns (GetCurrentSeqIdResponse) {}
+  rpc setCurrentSeqId (SetCurrentSeqIdRequest) returns (SetCurrentSeqIdResponse) {}
+  rpc getNextSeqId (GetNextSeqIdRequest) returns (GetNextSeqIdResponse) {}
+}
+
+message InputId {
+  string key = 1;
+  optional int32 num = 2;
+  optional int32 n = 3;
+}
+
+message GetNextIdRequest {
+
+}
+
+message GetNextIdResponse {
+  int64 next_id = 1;
+}
+
+message GetCurrentSeqIdRequest {
+  InputId id = 1;
+}
+
+message GetCurrentSeqIdResponse {
+  int64 seq_id = 1;
+}
+
+message SetCurrentSeqIdRequest {
+  string key = 1;
+  int64 id = 2;
+}
+
+message SetCurrentSeqIdResponse {
+  bool success = 1;
+}
+
+message GetNextSeqIdRequest {
+  string key = 1;
+}
+
+message GetNextSeqIdResponse {
+  int64 seq_id = 1;
+}

@@ -10,7 +10,7 @@ export const createClient = (options = {}): PromiseClient<typeof AuthSessionServ
     AuthSessionService,
     createGrpcTransport({
       httpVersion: '2',
-      baseUrl: process.env.AUTH_SERVICE_URL || 'http://0.0.0.0:50051',
+      baseUrl: process.env.AUTH_SESSION_SERVICE_URL || 'http://0.0.0.0:50051',
       ...options,
     })
   )
