@@ -1324,6 +1324,7 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/auth-session-infrastructure-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/auth-session/service/infrastructure-module"],\
           ["@bufbuild/protobuf", "npm:1.4.2"],\
           ["@chats-system/auth-session-rpc", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#workspace:contexts/auth-session/rpc/auth-session-rpc"],\
+          ["@chats-system/tl", "workspace:shared/tl"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@faker-js/faker", "npm:8.2.0"],\
@@ -1423,6 +1424,7 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/auth-session-infrastructure-module", "virtual:f64b2fb47404c5e7f28a3d34fd18c7d80f1d8c5cfbf5ed680dce93b9eea148665325649133d064d3963563f14c276bb771777a6344b8c92cf64de2bfa22ffc04#workspace:contexts/auth-session/service/infrastructure-module"],\
           ["@bufbuild/protobuf", "npm:1.4.2"],\
           ["@chats-system/auth-session-rpc", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#workspace:contexts/auth-session/rpc/auth-session-rpc"],\
+          ["@chats-system/tl", "workspace:shared/tl"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@faker-js/faker", "npm:8.2.0"],\
@@ -1523,6 +1525,7 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/auth-session-infrastructure-module", "workspace:contexts/auth-session/service/infrastructure-module"],\
           ["@bufbuild/protobuf", "npm:1.4.2"],\
           ["@chats-system/auth-session-rpc", "virtual:a8104303e2832d57142ef849c98104b82c6db11d4c40f5f14b7dcf70f69c75a36aeec3011a7ff5b35c9508b36ec8d155bdbfc42e294ba06e32405e10b5858c23#workspace:contexts/auth-session/rpc/auth-session-rpc"],\
+          ["@chats-system/tl", "workspace:shared/tl"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@faker-js/faker", "npm:8.2.0"],\

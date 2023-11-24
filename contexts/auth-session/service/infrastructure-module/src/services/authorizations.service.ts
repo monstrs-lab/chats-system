@@ -1,21 +1,52 @@
-import type { AuthData }    from '../data/index.js'
+import type { AuthData }        from '../data/index.js'
 
-import { EntityRepository } from '@mikro-orm/core'
-import { InjectRepository } from '@mikro-orm/nestjs'
-import { Injectable }       from '@nestjs/common'
+import { EntityRepository }     from '@mikro-orm/core'
+import { MikroORM }             from '@mikro-orm/core'
+import { CreateRequestContext } from '@mikro-orm/core'
+import { InjectRepository }     from '@mikro-orm/nestjs'
+import { Injectable }           from '@nestjs/common'
 
-import { Authorization }    from '@chats-system/auth-session-rpc'
+import { Authorization }        from '@chats-system/auth-session-rpc'
 
-import { AuthUserEntity }   from '../entities/index.js'
-import { AuthsService }     from './auths.service.js'
+import { AuthUserEntity }       from '../entities/index.js'
+import { AuthsService }         from './auths.service.js'
 
 @Injectable()
 export class AuthorizationsService {
   constructor(
     @InjectRepository(AuthUserEntity)
     private readonly authUserRepository: EntityRepository<AuthUserEntity>,
-    private readonly authsService: AuthsService
+    private readonly authsService: AuthsService,
+    // @ts-expect-error
+    private readonly orm: MikroORM
   ) {}
+
+  @CreateRequestContext()
+  async getAuthorizations(userId: bigint, excludeAuthKeyId: bigint): Promise<Array<Authorization>> {
+    const authUserEntities = await this.authUserRepository.find({
+      userId,
+      deleted: false,
+    })
+
+    const authDatas = await Promise.all(
+      authUserEntities.map(async (authUserEntity) =>
+        this.authsService.getAuthData(authUserEntity.authKeyId))
+    )
+
+    // TODO: sort
+    return Promise.all(
+      authDatas.filter(Boolean).map(async (authData) => {
+        const authroization = await this.buildAuthorization(authData!)
+
+        if (authData?.authKeyId === excludeAuthKeyId) {
+          authroization.current = true
+          authroization.hash = BigInt(0)
+        }
+
+        return authroization
+      })
+    )
+  }
 
   async buildAuthorization(authData: AuthData): Promise<Authorization> {
     const autorization = new Authorization()
@@ -49,32 +80,6 @@ export class AuthorizationsService {
     }
 
     return this.buildAuthorization(authData)
-  }
-
-  async getAuthorizations(userId: bigint, excludeAuthKeyId: bigint): Promise<Array<Authorization>> {
-    const authUserEntities = await this.authUserRepository.find({
-      userId,
-      deleted: false,
-    })
-
-    const authDatas = await Promise.all(
-      authUserEntities.map(async (authUserEntity) =>
-        this.authsService.getAuthData(authUserEntity.authKeyId))
-    )
-
-    // TODO: sort
-    return Promise.all(
-      authDatas.filter(Boolean).map(async (authData) => {
-        const authroization = await this.buildAuthorization(authData!)
-
-        if (authData?.authKeyId === excludeAuthKeyId) {
-          authroization.current = true
-          authroization.hash = BigInt(0)
-        }
-
-        return authroization
-      })
-    )
   }
 
   // TODO

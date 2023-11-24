@@ -1,7 +1,8 @@
 /* eslint-disable prefer-destructuring */
 
-import { Raw }  from '@tgsnake/core'
-import { Raws } from '@tgsnake/core'
+import { Raw }    from '@tgsnake/core'
+import { Raws }   from '@tgsnake/core'
+import { Errors } from '@tgsnake/core'
 
 export default Raw
 
@@ -11,3 +12,4 @@ export const Message = Raws.Message
 export const MsgContainer = Raws.MsgContainer
 export const TLObject = Raws.TLObject
 export const Primitive = Raws.Primitive
+export const Exceptions = Errors.Exceptions

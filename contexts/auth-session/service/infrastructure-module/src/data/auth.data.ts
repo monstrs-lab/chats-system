@@ -3,8 +3,8 @@ import type { ClientSession } from '@chats-system/auth-session-rpc'
 export interface BindUser {
   userId: bigint
   hash: bigint
-  dateCreated: bigint
-  dateActivated: bigint
+  dateCreated?: Date
+  dateActive?: Date
 }
 
 export class AuthData {
@@ -69,27 +69,31 @@ export class AuthData {
     if (!this.#bindUser) {
       return BigInt(0)
     }
+
     return this.#bindUser.userId
   }
 
-  get dateCreated(): bigint {
+  get dateCreated(): Date | undefined {
     if (!this.#bindUser) {
-      return BigInt(0)
+      return undefined
     }
+
     return this.#bindUser.dateCreated
   }
 
-  get dateActivated(): bigint {
+  get dateActive(): Date | undefined {
     if (!this.#bindUser) {
-      return BigInt(0)
+      return undefined
     }
-    return this.#bindUser.dateActivated
+
+    return this.#bindUser.dateActive
   }
 
   get hash(): bigint {
     if (!this.#bindUser) {
       return BigInt(0)
     }
+
     return this.#bindUser.hash
   }
 }

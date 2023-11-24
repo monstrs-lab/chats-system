@@ -13,6 +13,9 @@ export class AuthEntity extends BaseEntity<AuthEntity, 'id'> {
   @Property({ type: NativeBigIntType })
   authKeyId!: bigint
 
+  @Property()
+  dateActive!: Date
+
   @Property({ type: 'integer', default: 0 })
   layer!: number
 
@@ -43,14 +46,11 @@ export class AuthEntity extends BaseEntity<AuthEntity, 'id'> {
   @Property({ type: 'varchar', length: 512, default: '' })
   proxy!: string
 
-  @Property({ type: 'jsonb' })
+  @Property({ type: 'jsonb', default: '{}' })
   params!: object
 
   @Property({ type: 'varchar', length: 32, default: '' })
   clientIp!: string
-
-  @Property({ type: NativeBigIntType, default: 0 })
-  dateActivated!: bigint
 
   @Property({ default: false })
   deleted!: boolean
