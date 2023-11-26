@@ -130,7 +130,7 @@ export class MTProtoGateway implements OnGatewayConnection, OnGatewayInit {
         await client.createSession({
           client: {
             serverId: '127.0.0.1',
-            authKeyId: message.getAuthKey().id,
+            authKeyId: message.getAuthKey().authKeyId,
             sessionId,
             clientIp,
           },
@@ -141,7 +141,7 @@ export class MTProtoGateway implements OnGatewayConnection, OnGatewayInit {
     await client.sendDataToSession({
       data: {
         serverId: '127.0.0.1',
-        authKeyId: message.getAuthKey().id,
+        authKeyId: message.getAuthKey().authKeyId,
         sessionId,
         salt: message.getMessageData().readBigUint64LE(0),
         payload: message.getMessageData().subarray(16, message.getMessageData().length),

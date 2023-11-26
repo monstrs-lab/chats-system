@@ -21,9 +21,9 @@ export class SessionAuthManager {
   }
 
   addNewSession(authKey: MTProtoAuthKey, sessionId: bigint, connectionId: string): boolean {
-    if (this.#sessions.has(authKey.id)) {
+    if (this.#sessions.has(authKey.authKeyId)) {
       const sessionData = this.#sessions
-        .get(authKey.id)!
+        .get(authKey.authKeyId)!
         .sessions.find((sd) => sd.sessionId === sessionId)
 
       if (sessionData) {
@@ -32,7 +32,7 @@ export class SessionAuthManager {
         return false
       }
 
-      this.#sessions.get(authKey.id)!.sessions.push({
+      this.#sessions.get(authKey.authKeyId)!.sessions.push({
         sessionId,
         connectionIds: new Set([connectionId]),
       })
@@ -40,7 +40,7 @@ export class SessionAuthManager {
       return true
     }
 
-    this.#sessions.set(authKey.id, {
+    this.#sessions.set(authKey.authKeyId, {
       authKey,
       sessions: [
         {

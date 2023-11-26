@@ -98,7 +98,9 @@ export class SessionProcessor {
           }))
         : [{ seqNo, messageId, messageLength, message }]
 
-    await Promise.all(messages.map(async (msg) => this.processMessage(sessionData, msg)))
+    for await (const msg of messages) {
+      await this.processMessage(sessionData, msg)
+    }
   }
 
   protected checkRpcWithoutLogin(message: InstanceType<typeof TLObject>): boolean {

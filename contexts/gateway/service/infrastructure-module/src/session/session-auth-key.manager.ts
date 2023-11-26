@@ -13,7 +13,7 @@ export class SessionAuthKeyManager extends MTProtoAuthKeyManager {
           authKeyId,
           authKey: authKey.key,
           authKeyType: 0,
-          permAuthKeyId: authKeyId, // TODO change by type
+          permAuthKeyId: authKey.permAuthKeyId,
           tempAuthKeyId: BigInt(0),
           mediaTempAuthKeyId: BigInt(0),
         },
