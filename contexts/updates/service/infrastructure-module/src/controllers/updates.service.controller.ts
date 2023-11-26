@@ -41,7 +41,7 @@ export class UpdatesServiceController implements ServiceImpl<typeof UpdatesServi
         pts: pts ? bigintToNumber(pts) : 0,
         qts: 0,
         seq: bigintToNumber(seq),
-        date: Date.now() / 1000,
+        date: Math.floor(Date.now() / 1000),
         unreadCount: 0,
       }),
     })
