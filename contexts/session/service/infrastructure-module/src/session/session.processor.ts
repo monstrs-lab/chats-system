@@ -281,18 +281,14 @@ export class SessionProcessor {
   ): void {
     if (message.message instanceof MsgContainer) {
       message.message.messages.forEach((msg) => {
-        this.invokeQueue.push(
-          sessionData,
-          {},
-          {
-            seqNo: msg.seqNo,
-            messageId: msg.msgId,
-            message: msg.body,
-          }
-        )
+        this.invokeQueue.push(sessionData, {
+          seqNo: msg.seqNo,
+          messageId: msg.msgId,
+          message: msg.body,
+        })
       })
     } else {
-      this.invokeQueue.push(sessionData, {}, message)
+      this.invokeQueue.push(sessionData, message)
     }
   }
 

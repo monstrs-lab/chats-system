@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package tech.monstrs.chats_system.core.v1alpha1;
+
+message RpcMetadata {
+  int64 auth_key_id = 1;
+  int64 session_id = 2;
+  int64 user_id = 3;
+  int64 client_message_id = 4;
+  int64 perm_auth_key_id = 5;
+  string server_id = 6;
+  string client_ip = 7;
+  int32 receive_time = 8;
+  int32 layer = 9;
+  string client = 10;
+  string lang_pack = 11;
+}

@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package tech.monstrs.chats_system.user.v1alpha1;
+
+message UserProfilePhoto {
+  bool has_video = 1;
+  bool personal = 2;
+  int64 photo_id = 3;
+  bytes stripped_thumb = 4;
+  int32 dc_id = 5;
+}
+
+message UserStatus {
+  int32 expires = 1;
+  int32 was_online = 2;
+}
+
+message RestrictionReason {
+  string platform = 1;
+  string reason = 2;
+  string text = 3;
+}
+
+message Username {
+  bool editable = 1;
+  bool active = 2;
+  string username = 3;
+}
+
+message EmojiStatus {
+  int64 document_id = 1;
+  int32 until = 2;
+}
+
+message User {
+	int64 id = 1;
+	bool self = 2;
+	bool contact = 3;
+	bool mutual_contact = 4;
+	bool deleted = 5;
+	bool bot = 6;
+	bool bot_chat_history = 7;
+	bool bot_nochats = 8;
+	bool verified = 9;
+	bool restricted = 10;
+	bool min = 11;
+	bool bot_inline_geo = 12;
+	bool support = 13;
+	bool scam = 14;
+	bool apply_min_photo = 15;
+	bool fake = 16;
+	bool bot_attach_menu = 17;
+	bool premium = 18;
+	bool attach_menu_enabled = 19;
+	bool bot_can_edit = 20;
+	bool close_friend = 21;
+	bool stories_hidden = 22;
+	bool stories_unavailable = 23;
+	int64 access_hash = 24;
+	string first_name = 25;
+	string last_name = 26;
+	string username = 27;
+	string phone = 28;
+	UserProfilePhoto photo = 29;
+	UserStatus status = 30;
+	int32 bot_info_version = 31;
+	repeated RestrictionReason restriction_reason = 32;
+	string bot_inline_placeholder = 33;
+	string lang_code = 34;
+	EmojiStatus emoji_status = 35;
+	repeated Username usernames = 36;
+	int32 stories_max_id = 37;
+}

@@ -1,19 +1,19 @@
-import type { TLObject }     from '@chats-system/tl'
+import type { TLObject }          from '@chats-system/tl'
+import type { ExtractProperties } from '@monstrs/base-types'
 
-import type { SessionData }  from '../data/index.js'
+import type { SessionData }       from '../data/index.js'
 
-import { Injectable }        from '@nestjs/common'
+import { Injectable }             from '@nestjs/common'
 
-import { Primitive }         from '@chats-system/tl'
-import { client as auth }    from '@chats-system/auth-session-rpc-client'
-import { client as help }    from '@chats-system/help-rpc-client'
-import { client as updates } from '@chats-system/updates-rpc-client'
-import TL                    from '@chats-system/tl'
+import { RpcMetadata }            from '@chats-system/core-rpc'
+import { Primitive }              from '@chats-system/tl'
+import { client as auth }         from '@chats-system/auth-rpc-client'
+import { client as authSession }  from '@chats-system/auth-session-rpc-client'
+import { client as help }         from '@chats-system/help-rpc-client'
+import { client as updates }      from '@chats-system/updates-rpc-client'
+import TL                         from '@chats-system/tl'
 
-export interface InvokeRpcMetadata {
-  authKeyId: bigint
-  userId: bigint
-}
+export type InvokeRpcMetadata = ExtractProperties<RpcMetadata>
 
 @Injectable()
 export class Invoker {
@@ -22,8 +22,12 @@ export class Invoker {
     message: InstanceType<typeof TLObject>,
     metadata: InvokeRpcMetadata
   ): Promise<InstanceType<typeof TLObject>> {
+    const headers = {
+      metadata: Buffer.from(new RpcMetadata(metadata).toBinary()).toString('base64'),
+    }
+
     if (message instanceof TL.langpack.GetLangPack) {
-      const result = await auth.getLangPack({
+      const result = await authSession.getLangPack({
         authKeyId: sessionData.authKeyId,
       })
 
@@ -113,18 +117,36 @@ export class Invoker {
     }
 
     if (message instanceof TL.auth.SendCode) {
+      const response = await auth.sendCode(message, { headers })
+
       return new TL.auth.SentCode({
         type: new TL.auth.SentCodeTypeSms({ length: 5 }),
-        phoneCodeHash: 'YWRzZmFzZGZhc2',
-        timeout: 3600,
+        phoneCodeHash: response.sentCode!.phoneCodeHash,
+        timeout: response.sentCode!.timeout,
       })
     }
 
     if (message instanceof TL.auth.SignIn) {
+      // @ts-expect-error
+      const response = await auth.signIn(message, { headers })
+
+      if (!response.authorization) {
+        return new TL.auth.AuthorizationSignUpRequired({})
+      }
+
       return new TL.auth.Authorization({
         user: new TL.User({
           id: 1234134123412344n,
         }),
+      })
+    }
+
+    if (message instanceof TL.auth.SignUp) {
+      const response = await auth.signUp(message, { headers})
+
+      return new TL.auth.Authorization({
+        // @ts-expect-error
+        user: new TL.User(response.authorization!.user!)
       })
     }
 

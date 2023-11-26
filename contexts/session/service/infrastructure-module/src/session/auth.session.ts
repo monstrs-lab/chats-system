@@ -9,7 +9,13 @@ export class AuthSession {
 
   #layer: number = 0
 
+  #client: string = ''
+
+  #langPack: string = ''
+
   #authUserId: bigint = 0n
+
+  #permAuthKeyId: bigint = 0n
 
   #sessions: Map<bigint, Session> = new Map()
 
@@ -29,9 +35,33 @@ export class AuthSession {
     return this.#authUserId
   }
 
+  getClient(): string {
+    return this.#client
+  }
+
+  setClient(client: string = ''): void {
+    this.#client = client
+  }
+
+  getLangPack(): string {
+    return this.#langPack
+  }
+
+  setLangPack(langPack: string = ''): void {
+    this.#langPack = langPack
+  }
+
   setUserId(userId: bigint): void {
     this.#state = AuthSessionState.USER_ID_LOADED
     this.#authUserId = userId
+  }
+
+  getPermAuthKeyId(): bigint {
+    return this.#permAuthKeyId
+  }
+
+  setPermAuthKeyId(permAuthKeyId: bigint = 0n): void {
+    this.#permAuthKeyId = permAuthKeyId
   }
 
   hasSessionById(sessionId: bigint): boolean {

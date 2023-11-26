@@ -8,8 +8,7 @@ import { InjectRepository }                         from '@mikro-orm/nestjs'
 import { EntityManager as PostgreSqlEntityManager } from '@mikro-orm/postgresql'
 import { Injectable }                               from '@nestjs/common'
 import { Inject }                                   from '@nestjs/common'
-// @ts-expect-error
-import { random }                                   from 'random-bigint'
+import random                                   from 'crypto-random-bigint'
 
 import { ClientSession }                            from '@chats-system/auth-session-rpc'
 
@@ -77,7 +76,6 @@ export class AuthsService {
     authUserEntity.userId = userId
     authUserEntity.dateCreated = new Date()
     authUserEntity.dateActive = new Date()
-    // eslint-disable-next-line
     authUserEntity.hash = random(63)
 
     try {

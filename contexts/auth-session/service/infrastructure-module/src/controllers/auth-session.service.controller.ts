@@ -3,7 +3,7 @@
 
 import type { GetAuthorizationsResponse }   from '@chats-system/auth-session-rpc'
 import type { BindAuthKeyUserRequest }      from '@chats-system/auth-session-rpc'
-import type { BindAuthKeyUserResponse }     from '@chats-system/auth-session-rpc'
+import  { BindAuthKeyUserResponse }     from '@chats-system/auth-session-rpc'
 import type { BindTempAuthKeyRequest }      from '@chats-system/auth-session-rpc'
 import type { BindTempAuthKeyResponse }     from '@chats-system/auth-session-rpc'
 import type { GetAuthStateDataRequest }     from '@chats-system/auth-session-rpc'
@@ -28,7 +28,7 @@ import type { SetClientSessionInfoRequest } from '@chats-system/auth-session-rpc
 import type { SetInitConnectionRequest }    from '@chats-system/auth-session-rpc'
 import type { SetLayerRequest }             from '@chats-system/auth-session-rpc'
 import type { UnbindAuthKeyUserRequest }    from '@chats-system/auth-session-rpc'
-import type { UnbindAuthKeyUserResponse }   from '@chats-system/auth-session-rpc'
+import  { UnbindAuthKeyUserResponse }   from '@chats-system/auth-session-rpc'
 import type { ServiceImpl }                 from '@connectrpc/connect'
 
 import { ConnectRpcMethod }                 from '@monstrs/nestjs-connectrpc'
@@ -176,18 +176,16 @@ export class AuthSessionServiceController implements ServiceImpl<typeof AuthSess
 
   @ConnectRpcMethod()
   async bindAuthKeyUser(request: BindAuthKeyUserRequest): Promise<BindAuthKeyUserResponse> {
-    // eslint-disable-next-line
-    console.log(request, 'bindAuthKeyUser')
+    const hash = await this.authsService.bindAuthKeyUser(request.authKeyId, request.userId)
 
-    return undefined as any
+    return new BindAuthKeyUserResponse({ hash })
   }
 
   @ConnectRpcMethod()
   async unbindAuthKeyUser(request: UnbindAuthKeyUserRequest): Promise<UnbindAuthKeyUserResponse> {
-    // eslint-disable-next-line
-    console.log(request, 'unbindAuthKeyUser')
+    await this.authsService.unbindAuthKeyUser(request.authKeyId, request.userId)
 
-    return undefined as any
+    return new UnbindAuthKeyUserResponse({ success: true })
   }
 
   @ConnectRpcMethod()

@@ -1,0 +1,163 @@
+syntax = "proto3";
+
+package tech.monstrs.chats_system.auth.v1alpha1;
+
+import "tech/monstrs/chats_system/user/v1alpha1/user.types.proto";
+
+service AuthService {
+  rpc sendCode (SendCodeRequest) returns (SendCodeResponse) {}
+  rpc signIn (SignInRequest) returns (SignInResponse) {}
+  rpc signUp (SignUpRequest) returns (SignUpResponse) {}
+}
+
+message SentCodeTypeApp {
+  int32 length = 1;
+}
+
+message SentCodeTypeSms {
+  int32 length = 1;
+}
+
+message SentCodeTypeCall {
+  int32 length = 1;
+}
+
+message SentCodeTypeFlashCall {
+  string pattern = 1;
+}
+
+message SentCodeTypeMissedCall {
+  int32 length = 1;
+  string prefix = 2;
+}
+
+message SentCodeTypeEmailCode {
+  string email_pattern = 1;
+  int32 length = 2;
+  optional bool apple_signin_allowed = 3;
+  optional bool google_signin_allowed = 4;
+  optional int32 reset_available_period = 5;
+  optional int32 reset_pending_date = 6;
+}
+
+message SentCodeTypeSetUpEmailRequired {
+  optional bool apple_signin_allowed = 1;
+  optional bool google_ignin_allowed = 2;
+}
+
+message SentCodeTypeFragmentSms {
+  string url = 1;
+  int32 length = 2;
+}
+
+message SentCodeTypeFirebaseSms {
+  int32 length = 1;
+  optional bytes nonce = 2;
+  optional string receipt = 3;
+  optional int32 push_timeout = 4;
+}
+
+message CodeSettings {
+  optional bool allow_flashcall = 1;
+  optional bool current_number = 2;
+  optional bool allow_app_hash = 3;
+  optional bool allow_missed_call = 4;
+  optional bool allow_firebase = 5;
+  optional string token = 6;
+  optional bool app_sandbox = 7;
+  repeated  bytes logout_tokens = 8;
+}
+
+message CodeTypeSms {}
+
+message CodeTypeCall {}
+
+message CodeTypeFlashCall {}
+
+message CodeTypeMissedCall {}
+
+message CodeTypeFragmentSms {}
+
+message SentCode {
+  oneof type {
+    SentCodeTypeApp type_app = 1;
+    SentCodeTypeSms type_sms = 2;
+    SentCodeTypeCall type_call = 3;
+    SentCodeTypeFlashCall type_flash_call = 4;
+    SentCodeTypeMissedCall type_missed_call = 5;
+    SentCodeTypeEmailCode type_email_code = 6;
+    SentCodeTypeSetUpEmailRequired type_set_up_email_required = 7;
+    SentCodeTypeFragmentSms type_fragment_sms = 8;
+    SentCodeTypeFirebaseSms type_firebase_sms = 9;
+  }
+  
+  string phone_code_hash = 10;
+  
+  oneof next_type {
+    CodeTypeSms next_type_sms = 11;
+    CodeTypeCall next_type_call = 12;
+    CodeTypeFlashCall next_type_flash_call = 13;
+    CodeTypeMissedCall next_type_missed_call = 14;
+    CodeTypeFragmentSms next_type_fragment_sms = 15;
+  }
+
+  optional int32 timeout = 16;
+}
+
+message EmailVerificationCode {
+  string code = 1;
+}
+
+message EmailVerificationGoogle {
+  string token = 1;
+}
+
+message EmailVerificationApple {
+  string token = 2;
+}
+
+
+message Authorization {
+  tech.monstrs.chats_system.user.v1alpha1.User user = 1;
+  optional bool setup_password_required = 2;
+  optional int32 otherwise_relogin_days = 3;
+  optional int32 tmp_sessions = 4;
+  optional bytes future_auth_token = 5;
+}
+
+message SendCodeRequest {
+  string phone_number = 1;
+  int32 api_id = 2;
+  string api_hash = 3;
+  CodeSettings settings = 4;
+}
+
+message SendCodeResponse {
+  SentCode sent_code = 1;
+}
+
+message SignInRequest {
+  string phone_number = 1;
+  string phone_code_hash = 2;
+  optional string phone_code = 3;
+  oneof email_verification {
+    EmailVerificationCode code = 4;
+    EmailVerificationGoogle google = 5;
+    EmailVerificationApple apple = 6;
+  }
+}
+
+message SignInResponse {
+  optional Authorization authorization = 1;
+}
+
+message SignUpRequest {
+  string phone_number = 1;
+  string phone_code_hash = 2;
+  string first_name = 3;
+  string last_name = 4;
+}
+
+message SignUpResponse {
+  optional Authorization authorization = 1;
+}

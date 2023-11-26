@@ -1,0 +1,171 @@
+syntax = "proto3";
+
+package tech.monstrs.chats_system.user.v1alpha1;
+
+import "tech/monstrs/chats_system/user/v1alpha1/user.types.proto";
+
+service UserService {
+  rpc getImmutableUserByPhone (GetImmutableUserByPhoneRequest) returns (GetImmutableUserByPhoneResponse) {}
+  rpc createUser (CreateUserRequest) returns (CreateUserResponse) {}
+}
+
+message InputStickerSet {
+  int64 id = 1;
+  int64 access_hash = 2;
+  string short_name = 3;
+  string emoticon = 4;
+}
+
+message VideoSize {
+  string type = 1;
+  int32 w = 2;
+  int32 h = 3;
+  int32 size2 = 4;
+  bool video_start_ts = 5;
+  int64 emoji_id = 6;
+  repeated int32 background_colors = 7;
+  InputStickerSet stickerset = 8;
+  int64 sticker_id = 9;
+}
+
+message PhotoSize {
+  string type = 1;
+  int32 w = 2;
+  int32 h = 3;
+  int32 size2 = 4;
+  bytes bytes = 5;
+  repeated int32 sizes = 6;
+}
+
+message Photo {
+  int64 id = 1;
+  bool has_stickers = 2;
+  int64 access_hash = 3;
+  bytes file_reference = 4;
+  int32 date = 5;
+  repeated PhotoSize sizes = 6;
+  repeated VideoSize video_sizes = 7;
+  int32 dc_id = 8;
+}
+
+message BotData {
+  int64 id = 1;
+  int32 bot_type = 2;
+  int64 creator = 3;
+  string token = 4;
+  string description = 5;
+  bool bot_chat_history = 6;
+  bool bot_nochats = 7;
+  bool bot_inline_geo = 8;
+  int32 bot_info_version = 9;
+  string bot_inline_placeholder = 10;
+}
+
+enum UserType {
+  UNKNOWN = 0;
+  DELETED = 1;
+  REGULAR = 2;
+  BOT = 3;
+  SERVICE = 4;
+  TEST = 5;
+}
+
+message UserData {
+  int64 id = 1;
+  int64 access_hash = 2;
+  UserType user_type = 3;
+  int64 sceret_key_id = 4;
+  string first_name = 5;
+  string last_name = 6;
+  string username = 7;
+  string phone = 8;
+  Photo profile_photo = 9;
+  BotData bot = 10;
+  string country_code = 11;
+  bool verified = 12;
+  bool support = 13;
+  bool scam = 14;
+  bool fake = 15;
+  string about = 16;
+  bool restricted = 17;
+  repeated RestrictionReason restriction_reason = 18;
+  int32 contacts_version = 19;
+  int32 privacies_version = 20;
+  bool deleted = 21;
+  bool bot_attach_menu = 22;
+  bool premium = 23;
+  EmojiStatus emoji_status = 24;
+}
+
+message ContactData {
+  int64 user_id = 1;
+  int64 contact_user_id = 2;
+  string first_name = 3;
+  string last_name = 4;
+  bool mutual_contact = 5;
+  string phone = 6;
+}
+
+enum PrivacyKeyType {
+  KEY_TYPE_INVALID = 0;
+  STATUS_TIMESTAMP = 1;
+  CHAT_INVITE      = 2;
+  PHONE_CALL       = 3;
+  PHONE_P2P        = 4;
+  FORWARDS         = 5;
+  PROFILE_PHOTO    = 6;
+  PHONE_NUMBER     = 7;
+  ADDED_BY_PHONE   = 8;
+  VOICE_MESSAGES   = 9;
+  ABOUT            = 10;
+}
+
+enum PrivacyRuleType {
+  ALLOW_CONTACTS = 0;
+  ALLOW_ALL = 1;
+  ALLOW_USERS = 2;
+  DISALLOW_CONTACTS = 3;
+  DISALLOW_ALL = 4;
+  DISALLOW_USERS = 5;
+  ALLOW_CHAT_PARTICIPANTS = 6;
+  DISALLOW_CHAT_PARTICIPANTS = 7;
+}
+
+message PrivacyRule {
+  PrivacyRuleType type = 1;
+  repeated int64 users = 2;
+  repeated int64 chats = 3;
+}
+
+message PrivacyKeyRules {
+  PrivacyKeyType key = 1;
+  repeated PrivacyRule rules = 2;
+}
+
+message ImmutableUser {
+  UserData user = 1;
+  optional int64 last_seen_at = 2;
+  repeated ContactData contacts = 3;
+  repeated ContactData reverse_contacts = 4;
+  repeated PrivacyKeyRules keys_privacy_rules = 5;
+}
+
+message GetImmutableUserByPhoneRequest {
+  string phone_number = 1;
+}
+
+message GetImmutableUserByPhoneResponse {
+  ImmutableUser immutable_user = 1;
+}
+
+message CreateUserRequest {
+  int64 secret_key_id = 1;
+  string phone = 2;
+  string country_code = 3;
+  string first_name = 4;
+  string last_name = 5;
+}
+
+message CreateUserResponse {
+  ImmutableUser immutable_user = 1;
+}

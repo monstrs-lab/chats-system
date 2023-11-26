@@ -10,7 +10,9 @@
   },
   "main": "src/index.ts",
   "dependencies": {
+    "@chats-system/auth-rpc-client": "workspace:0.0.1",
     "@chats-system/auth-session-rpc-client": "workspace:0.0.1",
+    "@chats-system/core-rpc": "workspacce:0.0.1",
     "@chats-system/gateway-rpc-client": "workspace:0.0.1",
     "@chats-system/help-rpc-client": "workspace:0.0.1",
     "@chats-system/session-rpc": "workspace:0.0.1",

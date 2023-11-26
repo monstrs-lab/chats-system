@@ -1,7 +1,6 @@
 import type { TLObject }          from '@chats-system/tl'
 
 import type { SessionData }       from '../data/index.js'
-import type { InvokeRpcMetadata } from '../invoke/index.js'
 
 import { setTimeout }             from 'node:timers/promises'
 
@@ -23,12 +22,8 @@ const generateMessageSeqNo = (sequence: number, contentRelated: boolean): number
   return sequence * 2
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface SessionInvokeMetadata {}
-
 export interface SessionInvokeTask {
   sessionData: SessionData
-  metadata: SessionInvokeMetadata
   message: {
     messageId: bigint
     seqNo: number
@@ -54,7 +49,6 @@ export class SessionInvokeQueue {
 
   push(
     sessionData: SessionData,
-    metadata: SessionInvokeMetadata,
     message: {
       messageId: bigint
       seqNo: number
@@ -63,7 +57,6 @@ export class SessionInvokeQueue {
   ): void {
     this.#tasks.push({
       sessionData,
-      metadata,
       message,
     })
   }
@@ -89,9 +82,24 @@ export class SessionInvokeQueue {
 
     if (task) {
       try {
-        const metadata: InvokeRpcMetadata = {
+        const session = this.sessionsManager.getByAuthKeyId(task.sessionData.authKeyId)!
+
+        const metadata = {
           authKeyId: task.sessionData.authKeyId,
-          userId: this.sessionsManager.getByAuthKeyId(task.sessionData.authKeyId)!.getUserId(),
+          userId: session.getUserId(),
+          sessionId: task.sessionData.sessionId,
+          clientMessageId: task.message.messageId,
+          //TODO: fix
+          permAuthKeyId:
+            session.getPermAuthKeyId() === 0n
+              ? task.sessionData.authKeyId
+              : session.getPermAuthKeyId(),
+          serverId: task.sessionData.gatewayId,
+          clientIp: task.sessionData.clientIp,
+          layer: session.getLayer(),
+          client: session.getClient(),
+          langPack: session.getLangPack(),
+          receiveTime: Math.floor(Date.now() / 1000),
         }
 
         const result = await this.invoker.invoke(task.sessionData, task.message.message, metadata)
