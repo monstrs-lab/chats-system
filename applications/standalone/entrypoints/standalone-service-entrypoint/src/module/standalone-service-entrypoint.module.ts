@@ -6,6 +6,7 @@ import { HelpInfrastructureModule }    from '@chats-system/help-infrastructure-m
 import { IdGenInfrastructureModule }   from '@chats-system/idgen-infrastructure-module'
 import { SessionInfrastructureModule } from '@chats-system/session-infrastructure-module'
 import { UpdatesInfrastructureModule } from '@chats-system/updates-infrastructure-module'
+import { UserInfrastructureModule }    from '@chats-system/user-infrastructure-module'
 
 import { StandaloneServiceCoreModule } from './standalone-service-core.module.js'
 
@@ -18,6 +19,7 @@ import { StandaloneServiceCoreModule } from './standalone-service-core.module.js
     IdGenInfrastructureModule.register(),
     HelpInfrastructureModule.register(),
     UpdatesInfrastructureModule.register(),
+    UserInfrastructureModule.register(),
   ],
 })
 export class StandaloneServiceEntrypointModule {}
