@@ -6,6 +6,7 @@ import "tech/monstrs/chats_system/auth/v1alpha1/auth.types.proto";
 
 service AuthService {
   rpc sendCode (SendCodeRequest) returns (SendCodeResponse) {}
+  rpc signIn (SignInRequest) returns (SignInResponse) {}
 }
 
 message SendCodeRequest {
@@ -14,4 +15,14 @@ message SendCodeRequest {
 
 message SendCodeResponse {
   SentCode sent_code = 1;
+}
+
+message SignInRequest {
+  string phone = 1;
+  string phone_code = 2;
+  string phone_code_hash = 3;
+}
+
+message SignInResponse {
+  optional Authorization authorization = 1;
 }

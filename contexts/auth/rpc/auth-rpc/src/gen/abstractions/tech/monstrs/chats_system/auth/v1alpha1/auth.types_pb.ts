@@ -3,50 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-/**
- * @generated from message tech.monstrs.chats_system.auth.v1alpha1.CodeSettings
- */
-export abstract class CodeSettings {
-  /**
-   * @generated from field: optional bool allow_flashcall = 1;
-   */
-  abstract readonly allowFlashcall?: boolean
-
-  /**
-   * @generated from field: optional bool current_number = 2;
-   */
-  abstract readonly currentNumber?: boolean
-
-  /**
-   * @generated from field: optional bool allow_app_hash = 3;
-   */
-  abstract readonly allowAppHash?: boolean
-
-  /**
-   * @generated from field: optional bool allow_missed_call = 4;
-   */
-  abstract readonly allowMissedCall?: boolean
-
-  /**
-   * @generated from field: optional bool allow_firebase = 5;
-   */
-  abstract readonly allowFirebase?: boolean
-
-  /**
-   * @generated from field: optional bool app_sandbox = 6;
-   */
-  abstract readonly appSandbox?: boolean
-
-  /**
-   * @generated from field: optional string token = 7;
-   */
-  abstract readonly token?: string
-
-  /**
-   * @generated from field: repeated bytes logout_tokens = 8;
-   */
-  abstract readonly logoutTokens: Uint8Array[]
-}
+import type { User } from '../../user/v1alpha1/user.types_pb.js'
 
 /**
  * @generated from message tech.monstrs.chats_system.auth.v1alpha1.SentCode
@@ -61,4 +18,14 @@ export abstract class SentCode {
    * @generated from field: optional int32 timeout = 2;
    */
   abstract readonly timeout?: number
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.auth.v1alpha1.Authorization
+ */
+export abstract class Authorization {
+  /**
+   * @generated from field: optional tech.monstrs.chats_system.user.v1alpha1.User user = 1;
+   */
+  abstract readonly user?: User
 }

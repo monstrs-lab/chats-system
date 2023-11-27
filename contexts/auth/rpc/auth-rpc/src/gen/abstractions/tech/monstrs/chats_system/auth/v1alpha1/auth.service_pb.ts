@@ -3,8 +3,8 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { CodeSettings } from './auth.types_pb.js'
-import type { SentCode }     from './auth.types_pb.js'
+import type { Authorization } from './auth.types_pb.js'
+import type { SentCode }      from './auth.types_pb.js'
 
 /**
  * @generated from message tech.monstrs.chats_system.auth.v1alpha1.SendCodeRequest
@@ -14,11 +14,6 @@ export abstract class SendCodeRequest {
    * @generated from field: string phone = 1;
    */
   abstract readonly phone: string
-
-  /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.CodeSettings settings = 2;
-   */
-  abstract readonly settings?: CodeSettings
 }
 
 /**
@@ -29,4 +24,34 @@ export abstract class SendCodeResponse {
    * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.SentCode sent_code = 1;
    */
   abstract readonly sentCode?: SentCode
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.auth.v1alpha1.SignInRequest
+ */
+export abstract class SignInRequest {
+  /**
+   * @generated from field: string phone = 1;
+   */
+  abstract readonly phone: string
+
+  /**
+   * @generated from field: string phone_code = 2;
+   */
+  abstract readonly phoneCode: string
+
+  /**
+   * @generated from field: string phone_code_hash = 3;
+   */
+  abstract readonly phoneCodeHash: string
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.auth.v1alpha1.SignInResponse
+ */
+export abstract class SignInResponse {
+  /**
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.Authorization authorization = 1;
+   */
+  abstract readonly authorization?: Authorization
 }

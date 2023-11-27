@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/consistent-type-imports */
 
 import type { SendCodeRequest } from '@chats-system/auth-rpc'
+import type { SignInRequest }   from '@chats-system/auth-rpc'
 import type { ServiceImpl }     from '@connectrpc/connect'
 import type { HandlerContext }  from '@connectrpc/connect'
 
@@ -14,6 +15,7 @@ import { Payload }              from '@nestjs/microservices'
 
 import { AuthUseCases }         from '@chats-system/auth-application-module'
 import { SendCodeResponse }     from '@chats-system/auth-rpc'
+import { SignInResponse }       from '@chats-system/auth-rpc'
 import { AuthService }          from '@chats-system/auth-rpc'
 import { RpcMetadata }          from '@chats-system/core-rpc'
 
@@ -39,6 +41,20 @@ export class AuthServiceController implements ServiceImpl<typeof AuthService> {
 
     return new SendCodeResponse({
       sentCode,
+    })
+  }
+
+  @ConnectRpcMethod()
+  @CreateRequestContext()
+  async signIn(@Payload() request: SignInRequest): Promise<SignInResponse> {
+    const authorization = await this.authUseCases.signIn.execute(
+      request.phone,
+      request.phoneCode,
+      request.phoneCodeHash
+    )
+
+    return new SignInResponse({
+      authorization,
     })
   }
 }

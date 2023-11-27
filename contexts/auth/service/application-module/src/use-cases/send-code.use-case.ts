@@ -11,7 +11,7 @@ import { PhoneNumberInvalidError } from '@chats-system/auth-domain-module'
 import { UserPort }                from '@chats-system/auth-domain-module'
 
 @Injectable()
-export class SendCodeDtoUseCase {
+export class SendCodeUseCase {
   constructor(
     private readonly sentCodeRepository: SentCodeRepository,
     private readonly sentCodeFactory: SentCodeFactory,

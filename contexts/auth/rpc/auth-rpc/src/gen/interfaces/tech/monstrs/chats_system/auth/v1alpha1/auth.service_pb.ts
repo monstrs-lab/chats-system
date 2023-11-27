@@ -3,8 +3,8 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { CodeSettings } from './auth.types_pb.js'
-import type { SentCode }     from './auth.types_pb.js'
+import type { Authorization } from './auth.types_pb.js'
+import type { SentCode }      from './auth.types_pb.js'
 
 /**
  * @generated from message tech.monstrs.chats_system.auth.v1alpha1.SendCodeRequest
@@ -14,11 +14,6 @@ export interface SendCodeRequest {
    * @generated from field: string phone = 1;
    */
   phone: string
-
-  /**
-   * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.CodeSettings settings = 2;
-   */
-  settings?: CodeSettings
 }
 
 /**
@@ -29,4 +24,34 @@ export interface SendCodeResponse {
    * @generated from field: tech.monstrs.chats_system.auth.v1alpha1.SentCode sent_code = 1;
    */
   sentCode?: SentCode
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.auth.v1alpha1.SignInRequest
+ */
+export interface SignInRequest {
+  /**
+   * @generated from field: string phone = 1;
+   */
+  phone: string
+
+  /**
+   * @generated from field: string phone_code = 2;
+   */
+  phoneCode: string
+
+  /**
+   * @generated from field: string phone_code_hash = 3;
+   */
+  phoneCodeHash: string
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.auth.v1alpha1.SignInResponse
+ */
+export interface SignInResponse {
+  /**
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.Authorization authorization = 1;
+   */
+  authorization?: Authorization
 }

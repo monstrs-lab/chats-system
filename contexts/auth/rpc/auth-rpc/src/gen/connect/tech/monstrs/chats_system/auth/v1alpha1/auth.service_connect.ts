@@ -7,6 +7,8 @@ import { MethodKind }       from '@bufbuild/protobuf'
 
 import { SendCodeRequest }  from './auth.service_pb.js'
 import { SendCodeResponse } from './auth.service_pb.js'
+import { SignInRequest }    from './auth.service_pb.js'
+import { SignInResponse }   from './auth.service_pb.js'
 
 /**
  * @generated from service tech.monstrs.chats_system.auth.v1alpha1.AuthService
@@ -21,6 +23,15 @@ export const AuthService = {
       name: 'sendCode',
       I: SendCodeRequest,
       O: SendCodeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.signIn
+     */
+    signIn: {
+      name: 'signIn',
+      I: SignInRequest,
+      O: SignInResponse,
       kind: MethodKind.Unary,
     },
   },
