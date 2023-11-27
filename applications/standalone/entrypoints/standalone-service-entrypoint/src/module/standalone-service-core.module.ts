@@ -19,6 +19,7 @@ export class StandaloneServiceCoreModule implements OnModuleInit {
 
   static register(): DynamicModule {
     return {
+      global: true,
       module: StandaloneServiceCoreModule,
       imports: [
         MikroORMRequestContextModule.forInterceptor(),
@@ -31,8 +32,9 @@ export class StandaloneServiceCoreModule implements OnModuleInit {
               entities,
             }),
           ],
-          useFactory: async (mikroORMConfig: MikroORMConfig): Promise<MikroOrmModuleOptions> =>
-            mikroORMConfig.createMikroOrmOptions(),
+          useFactory: async (mikroORMConfig: MikroORMConfig): Promise<MikroOrmModuleOptions> => ({
+            ...mikroORMConfig.createMikroOrmOptions(),
+          }),
           inject: [MikroORMConfig],
         }),
       ],

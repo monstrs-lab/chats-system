@@ -1,0 +1,94 @@
+syntax = "proto3";
+
+package tech.monstrs.chats_system.authkey.v1alpha1;
+
+import "tech/monstrs/chats_system/authkey/v1alpha1/authkey.types.proto";
+
+service AuthKeyService {
+  rpc createAuthKey (CreateAuthKeyRequest) returns (CreateAuthKeyResponse) {}
+  rpc createAuthKeyUser (CreateAuthKeyUserRequest) returns (CreateAuthKeyUserResponse) {}
+  rpc createAuthKeyConnection (CreateAuthKeyConnectionRequest) returns (CreateAuthKeyConnectionResponse) {}
+  rpc updateAuthKeyConnection (UpdateAuthKeyConnectionRequest) returns (UpdateAuthKeyConnectionResponse) {}
+  rpc getAuthKey (GetAuthKeyRequest) returns (GetAuthKeyResponse) {}
+  rpc getAuthKeyConnection (GetAuthKeyConnectionRequest) returns (GetAuthKeyConnectionResponse) {}
+  rpc getAuthKeyUser (GetAuthKeyUserRequest) returns (GetAuthKeyUserResponse) {}
+}
+
+message CreateAuthKeyRequest {
+  int64 auth_key_id = 1;
+  bytes auth_key = 2;
+  AuthKeyType auth_key_type = 3;
+}
+
+message CreateAuthKeyResponse {
+  AuthKey auth_key = 1;
+}
+
+message CreateAuthKeyUserRequest {
+  int64 auth_key_id = 1;
+  int64 user_id = 2;
+}
+
+message CreateAuthKeyUserResponse {
+  int64 hash = 1;
+}
+
+message CreateAuthKeyConnectionRequest {
+  int64 auth_key_id = 1;
+  string client_ip = 2;
+  int32 layer = 3;
+  int32 api_id = 4;
+  string device_model = 5;
+  string system_version = 6;
+  string app_version = 7;
+  string system_lang_code = 8;
+  string lang_pack = 9;
+  string lang_code = 10;
+  optional string params = 11;
+}
+
+message CreateAuthKeyConnectionResponse {
+  AuthKeyConnection auth_key_connection = 1;
+}
+
+message UpdateAuthKeyConnectionRequest {
+  int64 auth_key_id = 1;
+  optional string client_ip = 2;
+  optional int32 layer = 3;
+  optional int32 api_id = 4;
+  optional string device_model = 5;
+  optional string system_version = 6;
+  optional string app_version = 7;
+  optional string system_lang_code = 8;
+  optional string lang_pack = 9;
+  optional string lang_code = 10;
+  optional string params = 11;
+}
+
+message UpdateAuthKeyConnectionResponse {
+  AuthKeyConnection auth_key_connection = 1;
+}
+
+message GetAuthKeyRequest {
+  int64 auth_key_id = 1;
+}
+
+message GetAuthKeyResponse {
+  AuthKey auth_key = 1;
+}
+
+message GetAuthKeyConnectionRequest {
+  int64 auth_key_id = 1;
+}
+
+message GetAuthKeyConnectionResponse {
+  AuthKeyConnection auth_key_connection = 1;
+}
+
+message GetAuthKeyUserRequest {
+  int64 auth_key_id = 1;
+}
+
+message GetAuthKeyUserResponse {
+  AuthKeyUser auth_key_user = 1;
+}

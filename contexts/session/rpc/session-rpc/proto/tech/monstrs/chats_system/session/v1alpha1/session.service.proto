@@ -2,11 +2,11 @@ syntax = "proto3";
 
 package tech.monstrs.chats_system.session.v1alpha1;
 
-import "tech/monstrs/chats_system/auth_session/v1alpha1/auth-session.service.proto";
+import "tech/monstrs/chats_system/authkey/v1alpha1/authkey.service.proto";
 
 service SessionService {
-  rpc queryAuthKey (tech.monstrs.chats_system.auth_session.v1alpha1.QueryAuthKeyRequest) returns (tech.monstrs.chats_system.auth_session.v1alpha1.QueryAuthKeyResponse) {}
-  rpc setAuthKey (tech.monstrs.chats_system.auth_session.v1alpha1.SetAuthKeyRequest) returns (tech.monstrs.chats_system.auth_session.v1alpha1.SetAuthKeyResponse) {}
+  rpc queryAuthKey (tech.monstrs.chats_system.authkey.v1alpha1.GetAuthKeyRequest) returns (tech.monstrs.chats_system.authkey.v1alpha1.GetAuthKeyResponse) {}
+  rpc setAuthKey (tech.monstrs.chats_system.authkey.v1alpha1.CreateAuthKeyRequest) returns (tech.monstrs.chats_system.authkey.v1alpha1.CreateAuthKeyResponse) {}
   rpc createSession (CreateSessionRequest) returns (CreateSessionResponse) {}
   rpc closeSession (CloseSessionRequest) returns (CloseSessionResponse) {}
   rpc sendDataToSession (SendDataToSessionRequest) returns (SendDataToSessionResponse) {}
