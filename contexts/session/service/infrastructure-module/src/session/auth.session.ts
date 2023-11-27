@@ -9,6 +9,10 @@ export class AuthSession {
 
   #layer: number = 0
 
+  #client: string = ''
+
+  #langPack: string = ''
+
   #authUserId: bigint = 0n
 
   #sessions: Map<bigint, Session> = new Map()
@@ -44,5 +48,21 @@ export class AuthSession {
 
   setSessionById(sessionId: bigint, session: Session): void {
     this.#sessions.set(sessionId, session)
+  }
+
+  getClient(): string {
+    return this.#client
+  }
+
+  setClient(client: string = ''): void {
+    this.#client = client
+  }
+
+  getLangPack(): string {
+    return this.#langPack
+  }
+
+  setLangPack(langPack: string = ''): void {
+    this.#langPack = langPack
   }
 }

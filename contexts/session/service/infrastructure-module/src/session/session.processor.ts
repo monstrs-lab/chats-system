@@ -12,8 +12,8 @@ import TL                       from '@chats-system/tl'
 
 import { AuthCache }            from '../cache/index.js'
 import { AuthSession }          from './auth.session.js'
-import { SessionInvokeQueue }   from './session-invoke.queue.js'
 import { SessionResponseQueue } from './session-response.queue.js'
+import { SessionRpcQueue }      from './session-rpc.queue.js'
 import { Session }              from './session.js'
 import { SessionsManager }      from './session.manager.js'
 
@@ -38,7 +38,7 @@ export class SessionProcessor {
     protected readonly authCache: AuthCache,
     protected readonly authSessionsManager: SessionsManager,
     protected readonly responseQueue: SessionResponseQueue,
-    protected readonly invokeQueue: SessionInvokeQueue
+    protected readonly rpcQueue: SessionRpcQueue
   ) {}
 
   async processSessionNew(connectionData: ConnectionData): Promise<void> {
@@ -274,27 +274,23 @@ export class SessionProcessor {
       }
     }
 
-    this.putRpcRequestToInvokeQueue(sessionData, message)
+    this.putRpcRequestToQueue(sessionData, message)
   }
 
-  protected putRpcRequestToInvokeQueue(
+  protected putRpcRequestToQueue(
     sessionData: SessionData,
     message: SessionProcessorRawMessage<InstanceType<typeof TLObject>>
   ): void {
     if (message.message instanceof MsgContainer) {
       message.message.messages.forEach((msg) => {
-        this.invokeQueue.push(
-          sessionData,
-          {},
-          {
-            seqNo: msg.seqNo,
-            messageId: msg.msgId,
-            message: msg.body,
-          }
-        )
+        this.rpcQueue.push(sessionData, {
+          seqNo: msg.seqNo,
+          messageId: msg.msgId,
+          message: msg.body,
+        })
       })
     } else {
-      this.invokeQueue.push(sessionData, {}, message)
+      this.rpcQueue.push(sessionData, message)
     }
   }
 

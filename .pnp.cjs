@@ -42,6 +42,10 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:contexts/authkey/service/service-entrypoint"\
     },\
     {\
+      "name": "@chats-system/core-rpc",\
+      "reference": "workspace:contexts/core/rpc/core-rpc"\
+    },\
+    {\
       "name": "@chats-system/gateway-rpc",\
       "reference": "workspace:contexts/gateway/rpc/gateway-rpc"\
     },\
@@ -143,6 +147,7 @@ const RAW_RUNTIME_STATE =
     ["@chats-system/authkey-rpc", ["virtual:cfe72c248a270bedee4df84e81be9ef109d559b0ebdd20528d66dc2ed8affa7c20d7fe10994a0c410c063335228910e79c82f56a1cf0bedb6a52a0d1d408d950#workspace:contexts/authkey/rpc/authkey-rpc", "workspace:contexts/authkey/rpc/authkey-rpc"]],\
     ["@chats-system/authkey-rpc-client", ["virtual:dfbe61e4f62815636492187a2d22f09104bc50655360901d3c2612cff2679b9b143fb8ae49f6c937247857761621d3c101a726fd0253082e5db2253f31d5e318#workspace:contexts/authkey/rpc/authkey-rpc-client", "workspace:contexts/authkey/rpc/authkey-rpc-client"]],\
     ["@chats-system/authkey-service-entrypoint", ["workspace:contexts/authkey/service/service-entrypoint"]],\
+    ["@chats-system/core-rpc", ["virtual:1dfd087603ebb4a858ced72d1bf582eaf14b35d15fa069341981f24b105d92d177f97b38e6c4c2f4f68413195c705939a4c0691f1ef686bda87b1c17837a45b8#workspace:contexts/core/rpc/core-rpc", "workspace:contexts/core/rpc/core-rpc"]],\
     ["@chats-system/gateway-infrastructure-module", ["virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#workspace:contexts/gateway/service/infrastructure-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/gateway/service/infrastructure-module", "workspace:contexts/gateway/service/infrastructure-module"]],\
     ["@chats-system/gateway-rpc", ["virtual:dfbe61e4f62815636492187a2d22f09104bc50655360901d3c2612cff2679b9b143fb8ae49f6c937247857761621d3c101a726fd0253082e5db2253f31d5e318#workspace:contexts/gateway/rpc/gateway-rpc", "workspace:contexts/gateway/rpc/gateway-rpc"]],\
     ["@chats-system/gateway-rpc-client", ["virtual:1dfd087603ebb4a858ced72d1bf582eaf14b35d15fa069341981f24b105d92d177f97b38e6c4c2f4f68413195c705939a4c0691f1ef686bda87b1c17837a45b8#workspace:contexts/gateway/rpc/gateway-rpc-client", "workspace:contexts/gateway/rpc/gateway-rpc-client"]],\
@@ -1954,6 +1959,39 @@ const RAW_RUNTIME_STATE =
         "linkType": "SOFT"\
       }]\
     ]],\
+    ["@chats-system/core-rpc", [\
+      ["virtual:1dfd087603ebb4a858ced72d1bf582eaf14b35d15fa069341981f24b105d92d177f97b38e6c4c2f4f68413195c705939a4c0691f1ef686bda87b1c17837a45b8#workspace:contexts/core/rpc/core-rpc", {\
+        "packageLocation": "./.yarn/__virtual__/@chats-system-core-rpc-virtual-37c1d492a5/1/contexts/core/rpc/core-rpc/",\
+        "packageDependencies": [\
+          ["@chats-system/core-rpc", "virtual:1dfd087603ebb4a858ced72d1bf582eaf14b35d15fa069341981f24b105d92d177f97b38e6c4c2f4f68413195c705939a4c0691f1ef686bda87b1c17837a45b8#workspace:contexts/core/rpc/core-rpc"],\
+          ["@bufbuild/buf", "npm:1.28.1"],\
+          ["@bufbuild/protobuf", "npm:1.4.2"],\
+          ["@bufbuild/protoc-gen-es", "virtual:c8bb937dca3c99987e3d2c3668e9458bddc54688b34b6d822eb5f070433b9d89cdb736e4c6724c59469f04f605340caa1d7b6f72ae3d365488f026732b3b3442#npm:1.4.2"],\
+          ["@connectrpc/protoc-gen-connect-es", "virtual:c8bb937dca3c99987e3d2c3668e9458bddc54688b34b6d822eb5f070433b9d89cdb736e4c6724c59469f04f605340caa1d7b6f72ae3d365488f026732b3b3442#npm:1.1.3"],\
+          ["@monstrs/protoc-gen-abstractions", "virtual:c8bb937dca3c99987e3d2c3668e9458bddc54688b34b6d822eb5f070433b9d89cdb736e4c6724c59469f04f605340caa1d7b6f72ae3d365488f026732b3b3442#npm:0.0.5"],\
+          ["@monstrs/protoc-gen-interfaces", "virtual:c8bb937dca3c99987e3d2c3668e9458bddc54688b34b6d822eb5f070433b9d89cdb736e4c6724c59469f04f605340caa1d7b6f72ae3d365488f026732b3b3442#npm:0.0.4"],\
+          ["@types/bufbuild__protobuf", null]\
+        ],\
+        "packagePeers": [\
+          "@bufbuild/protobuf",\
+          "@types/bufbuild__protobuf"\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["workspace:contexts/core/rpc/core-rpc", {\
+        "packageLocation": "./contexts/core/rpc/core-rpc/",\
+        "packageDependencies": [\
+          ["@chats-system/core-rpc", "workspace:contexts/core/rpc/core-rpc"],\
+          ["@bufbuild/buf", "npm:1.28.1"],\
+          ["@bufbuild/protobuf", "npm:1.4.2"],\
+          ["@bufbuild/protoc-gen-es", "virtual:c8bb937dca3c99987e3d2c3668e9458bddc54688b34b6d822eb5f070433b9d89cdb736e4c6724c59469f04f605340caa1d7b6f72ae3d365488f026732b3b3442#npm:1.4.2"],\
+          ["@connectrpc/protoc-gen-connect-es", "virtual:c8bb937dca3c99987e3d2c3668e9458bddc54688b34b6d822eb5f070433b9d89cdb736e4c6724c59469f04f605340caa1d7b6f72ae3d365488f026732b3b3442#npm:1.1.3"],\
+          ["@monstrs/protoc-gen-abstractions", "virtual:c8bb937dca3c99987e3d2c3668e9458bddc54688b34b6d822eb5f070433b9d89cdb736e4c6724c59469f04f605340caa1d7b6f72ae3d365488f026732b3b3442#npm:0.0.5"],\
+          ["@monstrs/protoc-gen-interfaces", "virtual:c8bb937dca3c99987e3d2c3668e9458bddc54688b34b6d822eb5f070433b9d89cdb736e4c6724c59469f04f605340caa1d7b6f72ae3d365488f026732b3b3442#npm:0.0.4"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
     ["@chats-system/gateway-infrastructure-module", [\
       ["virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#workspace:contexts/gateway/service/infrastructure-module", {\
         "packageLocation": "./.yarn/__virtual__/@chats-system-gateway-infrastructure-module-virtual-7f82297873/1/contexts/gateway/service/infrastructure-module/",\
@@ -3038,6 +3076,7 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/session-infrastructure-module", "virtual:a45b73e4ddea4b585aef9acec377f5481565662c46b28915812d889a1a3c2ccded76a762511eb0b2869e5eaa8546d900a1453e44611b35adc9d8fee701e387ae#workspace:contexts/session/service/infrastructure-module"],\
           ["@bufbuild/protobuf", "npm:1.4.2"],\
           ["@chats-system/authkey-rpc-client", "virtual:dfbe61e4f62815636492187a2d22f09104bc50655360901d3c2612cff2679b9b143fb8ae49f6c937247857761621d3c101a726fd0253082e5db2253f31d5e318#workspace:contexts/authkey/rpc/authkey-rpc-client"],\
+          ["@chats-system/core-rpc", "virtual:1dfd087603ebb4a858ced72d1bf582eaf14b35d15fa069341981f24b105d92d177f97b38e6c4c2f4f68413195c705939a4c0691f1ef686bda87b1c17837a45b8#workspace:contexts/core/rpc/core-rpc"],\
           ["@chats-system/gateway-rpc-client", "virtual:1dfd087603ebb4a858ced72d1bf582eaf14b35d15fa069341981f24b105d92d177f97b38e6c4c2f4f68413195c705939a4c0691f1ef686bda87b1c17837a45b8#workspace:contexts/gateway/rpc/gateway-rpc-client"],\
           ["@chats-system/help-rpc-client", "virtual:1dfd087603ebb4a858ced72d1bf582eaf14b35d15fa069341981f24b105d92d177f97b38e6c4c2f4f68413195c705939a4c0691f1ef686bda87b1c17837a45b8#workspace:contexts/help/rpc/help-rpc-client"],\
           ["@chats-system/session-rpc", "virtual:ea9737c30a24dd8ea90978731d7ec021739095b4a75d4f98a325842e31b30839479448dc48aa1e4423ab5df3902c3e0f22e8324191bc343d69695251acf4ee78#workspace:contexts/session/rpc/session-rpc"],\
@@ -3125,6 +3164,7 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/session-infrastructure-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/session/service/infrastructure-module"],\
           ["@bufbuild/protobuf", "npm:1.4.2"],\
           ["@chats-system/authkey-rpc-client", "virtual:dfbe61e4f62815636492187a2d22f09104bc50655360901d3c2612cff2679b9b143fb8ae49f6c937247857761621d3c101a726fd0253082e5db2253f31d5e318#workspace:contexts/authkey/rpc/authkey-rpc-client"],\
+          ["@chats-system/core-rpc", "virtual:1dfd087603ebb4a858ced72d1bf582eaf14b35d15fa069341981f24b105d92d177f97b38e6c4c2f4f68413195c705939a4c0691f1ef686bda87b1c17837a45b8#workspace:contexts/core/rpc/core-rpc"],\
           ["@chats-system/gateway-rpc-client", "virtual:1dfd087603ebb4a858ced72d1bf582eaf14b35d15fa069341981f24b105d92d177f97b38e6c4c2f4f68413195c705939a4c0691f1ef686bda87b1c17837a45b8#workspace:contexts/gateway/rpc/gateway-rpc-client"],\
           ["@chats-system/help-rpc-client", "virtual:1dfd087603ebb4a858ced72d1bf582eaf14b35d15fa069341981f24b105d92d177f97b38e6c4c2f4f68413195c705939a4c0691f1ef686bda87b1c17837a45b8#workspace:contexts/help/rpc/help-rpc-client"],\
           ["@chats-system/session-rpc", "virtual:ea9737c30a24dd8ea90978731d7ec021739095b4a75d4f98a325842e31b30839479448dc48aa1e4423ab5df3902c3e0f22e8324191bc343d69695251acf4ee78#workspace:contexts/session/rpc/session-rpc"],\
@@ -3211,6 +3251,7 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/session-infrastructure-module", "workspace:contexts/session/service/infrastructure-module"],\
           ["@bufbuild/protobuf", "npm:1.4.2"],\
           ["@chats-system/authkey-rpc-client", "virtual:dfbe61e4f62815636492187a2d22f09104bc50655360901d3c2612cff2679b9b143fb8ae49f6c937247857761621d3c101a726fd0253082e5db2253f31d5e318#workspace:contexts/authkey/rpc/authkey-rpc-client"],\
+          ["@chats-system/core-rpc", "virtual:1dfd087603ebb4a858ced72d1bf582eaf14b35d15fa069341981f24b105d92d177f97b38e6c4c2f4f68413195c705939a4c0691f1ef686bda87b1c17837a45b8#workspace:contexts/core/rpc/core-rpc"],\
           ["@chats-system/gateway-rpc-client", "virtual:1dfd087603ebb4a858ced72d1bf582eaf14b35d15fa069341981f24b105d92d177f97b38e6c4c2f4f68413195c705939a4c0691f1ef686bda87b1c17837a45b8#workspace:contexts/gateway/rpc/gateway-rpc-client"],\
           ["@chats-system/help-rpc-client", "virtual:1dfd087603ebb4a858ced72d1bf582eaf14b35d15fa069341981f24b105d92d177f97b38e6c4c2f4f68413195c705939a4c0691f1ef686bda87b1c17837a45b8#workspace:contexts/help/rpc/help-rpc-client"],\
           ["@chats-system/session-rpc", "virtual:ea9737c30a24dd8ea90978731d7ec021739095b4a75d4f98a325842e31b30839479448dc48aa1e4423ab5df3902c3e0f22e8324191bc343d69695251acf4ee78#workspace:contexts/session/rpc/session-rpc"],\
