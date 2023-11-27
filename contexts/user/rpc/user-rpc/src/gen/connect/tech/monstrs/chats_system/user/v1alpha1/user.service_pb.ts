@@ -3,18 +3,25 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions } from '@bufbuild/protobuf'
-import type { FieldList }         from '@bufbuild/protobuf'
-import type { JsonReadOptions }   from '@bufbuild/protobuf'
-import type { JsonValue }         from '@bufbuild/protobuf'
-import type { PartialMessage }    from '@bufbuild/protobuf'
-import type { PlainMessage }      from '@bufbuild/protobuf'
+import type { BinaryReadOptions }                                                                      from '@bufbuild/protobuf'
 
-import { Message }                from '@bufbuild/protobuf'
-import { proto3 }                 from '@bufbuild/protobuf'
-import { protoInt64 }             from '@bufbuild/protobuf'
+import type { FieldList }                                                           from '@bufbuild/protobuf'
 
-import { User }                   from './user.types_pb.js'
+import type { JsonReadOptions }                                          from '@bufbuild/protobuf'
+
+import type { JsonValue }                               from '@bufbuild/protobuf'
+
+import type { PartialMessage }               from '@bufbuild/protobuf'
+
+import type { PlainMessage } from '@bufbuild/protobuf'
+
+import { Message }                                                                                     from '@bufbuild/protobuf'
+
+import { proto3 }                                                                             from '@bufbuild/protobuf'
+
+import { protoInt64 }                                                                 from '@bufbuild/protobuf'
+
+import { User }                                                                                        from './user.types_pb.js'
 
 /**
  * @generated from message tech.monstrs.chats_system.user.v1alpha1.CreateUserRequest
@@ -122,9 +129,14 @@ export class CreateUserResponse extends Message<CreateUserResponse> {
  */
 export class GetUserRequest extends Message<GetUserRequest> {
   /**
-   * @generated from field: int64 user_id = 1;
+   * @generated from field: optional int64 user_id = 1;
    */
-  userId = protoInt64.zero
+  userId?: bigint
+
+  /**
+   * @generated from field: optional string phone = 2;
+   */
+  phone?: string
 
   constructor(data?: PartialMessage<GetUserRequest>) {
     super()
@@ -134,7 +146,8 @@ export class GetUserRequest extends Message<GetUserRequest> {
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.user.v1alpha1.GetUserRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 2, name: 'phone', kind: 'scalar', T: 9 /* ScalarType.STRING */, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetUserRequest {

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package tech.monstrs.chats_system.auth.v1alpha1;
+
+import "tech/monstrs/chats_system/user/v1alpha1/user.types.proto";
+
+message SentCode {  
+  string phone_code_hash = 1;
+  optional int32 timeout = 2;
+}
+
+message Authorization {
+  optional tech.monstrs.chats_system.user.v1alpha1.User user = 1;
+}

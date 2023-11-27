@@ -45,9 +45,14 @@ export interface CreateUserResponse {
  */
 export interface GetUserRequest {
   /**
-   * @generated from field: int64 user_id = 1;
+   * @generated from field: optional int64 user_id = 1;
    */
-  userId: bigint
+  userId?: bigint
+
+  /**
+   * @generated from field: optional string phone = 2;
+   */
+  phone?: string
 }
 
 /**

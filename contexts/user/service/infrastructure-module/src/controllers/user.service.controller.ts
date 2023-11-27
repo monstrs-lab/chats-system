@@ -42,7 +42,7 @@ export class UserServiceController implements ServiceImpl<typeof UserService> {
   @ConnectRpcMethod()
   @CreateRequestContext()
   async getUser(request: GetUserRequest): Promise<GetUserResponse> {
-    const user = await this.userUseCases.getUserById.execute(request.userId)
+    const user = await this.userUseCases.getUser.execute(request.userId, request.phone)
 
     return new GetUserResponse({
       user,

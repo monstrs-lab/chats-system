@@ -21,7 +21,8 @@ message CreateUserResponse {
 }
 
 message GetUserRequest {
-  int64 user_id = 1;
+  optional int64 user_id = 1;
+  optional string phone = 2;
 }
 
 message GetUserResponse {

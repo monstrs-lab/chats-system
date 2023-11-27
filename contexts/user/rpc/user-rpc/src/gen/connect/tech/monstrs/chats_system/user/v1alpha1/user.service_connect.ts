@@ -3,12 +3,15 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { MethodKind }         from '@bufbuild/protobuf'
+import { MethodKind }                                                             from '@bufbuild/protobuf'
 
-import { CreateUserRequest }  from './user.service_pb.js'
-import { CreateUserResponse } from './user.service_pb.js'
-import { GetUserRequest }     from './user.service_pb.js'
-import { GetUserResponse }    from './user.service_pb.js'
+import { CreateUserRequest }                                                      from './user.service_pb.js'
+
+import { CreateUserResponse }                                  from './user.service_pb.js'
+
+import { GetUserRequest }                  from './user.service_pb.js'
+
+import { GetUserResponse } from './user.service_pb.js'
 
 /**
  * @generated from service tech.monstrs.chats_system.user.v1alpha1.UserService

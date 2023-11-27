@@ -43,6 +43,11 @@ export class User extends Message<User> {
    */
   phone = ''
 
+  /**
+   * @generated from field: optional int64 access_hash = 6;
+   */
+  accessHash?: bigint
+
   constructor(data?: PartialMessage<User>) {
     super()
     proto3.util.initPartial(data, this)
@@ -56,6 +61,7 @@ export class User extends Message<User> {
     { no: 3, name: 'first_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
     { no: 4, name: 'last_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
     { no: 5, name: 'phone', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: 'access_hash', kind: 'scalar', T: 3 /* ScalarType.INT64 */, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): User {

@@ -31,4 +31,9 @@ export abstract class User {
    * @generated from field: string phone = 5;
    */
   abstract readonly phone: string
+
+  /**
+   * @generated from field: optional int64 access_hash = 6;
+   */
+  abstract readonly accessHash?: bigint
 }

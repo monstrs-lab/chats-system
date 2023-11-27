@@ -1,0 +1,33 @@
+{
+  "name": "@chats-system/auth-application-module",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./src/index.ts"
+  },
+  "main": "src/index.ts",
+  "dependencies": {
+    "@chats-system/core-rpc": "workspace:0.0.1",
+    "libphonenumber-js": "^1.10.51"
+  },
+  "devDependencies": {
+    "@chats-system/auth-domain-module": "workspace:0.0.1",
+    "@nestjs/common": "^10.2.10",
+    "@nestjs/core": "^10.2.10",
+    "@nestjs/cqrs": "^10.2.6",
+    "@nestjs/testing": "^10.2.10",
+    "@types/node": "^20.10.0",
+    "rxjs": "^7.8.1"
+  },
+  "peerDependencies": {
+    "@chats-system/auth-domain-module": "workspace:0.0.1",
+    "@nestjs/common": "^10",
+    "@nestjs/core": "^10",
+    "@nestjs/cqrs": "^10",
+    "reflect-metadata": "^0.1",
+    "rxjs": "^7"
+  }
+}

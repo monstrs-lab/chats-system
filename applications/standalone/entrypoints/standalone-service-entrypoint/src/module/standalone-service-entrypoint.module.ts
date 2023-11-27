@@ -1,5 +1,6 @@
 import { Module }                      from '@nestjs/common'
 
+import { AuthInfrastructureModule }    from '@chats-system/auth-infrastructure-module'
 import { AuthKeyInfrastructureModule } from '@chats-system/authkey-infrastructure-module'
 import { GatewayInfrastructureModule } from '@chats-system/gateway-infrastructure-module'
 import { HelpInfrastructureModule }    from '@chats-system/help-infrastructure-module'
@@ -20,6 +21,7 @@ import { StandaloneServiceCoreModule } from './standalone-service-core.module.js
     HelpInfrastructureModule.register(),
     UpdatesInfrastructureModule.register(),
     UserInfrastructureModule.register(),
+    AuthInfrastructureModule.register(),
   ],
 })
 export class StandaloneServiceEntrypointModule {}

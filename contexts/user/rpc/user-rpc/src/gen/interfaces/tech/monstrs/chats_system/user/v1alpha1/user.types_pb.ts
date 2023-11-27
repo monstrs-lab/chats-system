@@ -31,4 +31,9 @@ export interface User {
    * @generated from field: string phone = 5;
    */
   phone: string
+
+  /**
+   * @generated from field: optional int64 access_hash = 6;
+   */
+  accessHash?: bigint
 }

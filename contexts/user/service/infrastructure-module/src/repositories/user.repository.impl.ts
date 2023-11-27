@@ -39,4 +39,12 @@ export class UserRepositoryImpl extends UserRepository {
 
     return entity ? this.mapper.fromPersistence(entity) : undefined
   }
+
+  override async getByPhone(phone: string): Promise<User | undefined> {
+    const entity = await this.repository.findOne({
+      phone,
+    })
+
+    return entity ? this.mapper.fromPersistence(entity) : undefined
+  }
 }
