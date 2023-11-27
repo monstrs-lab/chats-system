@@ -1,19 +1,18 @@
-import type { TLObject }          from '@chats-system/tl'
+import type { TLObject }        from '@chats-system/tl'
 
-import type { SessionData }       from '../data/index.js'
-import type { InvokeRpcMetadata } from '../invoke/index.js'
+import type { SessionData }     from '../data/index.js'
 
-import { setTimeout }             from 'node:timers/promises'
+import { setTimeout }           from 'node:timers/promises'
 
-import { Logger }                 from '@monstrs/logger'
-import { MTProtoMessageId }       from '@monstrs/mtproto-core'
-import { Injectable }             from '@nestjs/common'
+import { Logger }               from '@monstrs/logger'
+import { MTProtoMessageId }     from '@monstrs/mtproto-core'
+import { Injectable }           from '@nestjs/common'
 
-import TL                         from '@chats-system/tl'
+import TL                       from '@chats-system/tl'
 
-import { Invoker }                from '../invoke/index.js'
-import { SessionResponseQueue }   from './session-response.queue.js'
-import { SessionsManager }        from './session.manager.js'
+import { RpcHandlersRegistry }  from '../rpc/index.js'
+import { SessionResponseQueue } from './session-response.queue.js'
+import { SessionsManager }      from './session.manager.js'
 
 const generateMessageSeqNo = (sequence: number, contentRelated: boolean): number => {
   if (contentRelated) {
@@ -23,12 +22,8 @@ const generateMessageSeqNo = (sequence: number, contentRelated: boolean): number
   return sequence * 2
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface SessionInvokeMetadata {}
-
-export interface SessionInvokeTask {
+export interface SessionRpcTask {
   sessionData: SessionData
-  metadata: SessionInvokeMetadata
   message: {
     messageId: bigint
     seqNo: number
@@ -37,24 +32,23 @@ export interface SessionInvokeTask {
 }
 
 @Injectable()
-export class SessionInvokeQueue {
-  #logger = new Logger(SessionInvokeQueue.name)
+export class SessionRpcQueue {
+  #logger = new Logger(SessionRpcQueue.name)
 
   #running: boolean = false
 
-  #tasks: Array<SessionInvokeTask> = []
+  #tasks: Array<SessionRpcTask> = []
 
   constructor(
-    private readonly invoker: Invoker,
     private readonly sessionsManager: SessionsManager,
-    private readonly responseQueue: SessionResponseQueue
+    private readonly responseQueue: SessionResponseQueue,
+    private readonly rpcHandlersRegistry: RpcHandlersRegistry
   ) {
     this.start()
   }
 
   push(
     sessionData: SessionData,
-    metadata: SessionInvokeMetadata,
     message: {
       messageId: bigint
       seqNo: number
@@ -63,7 +57,6 @@ export class SessionInvokeQueue {
   ): void {
     this.#tasks.push({
       sessionData,
-      metadata,
       message,
     })
   }
@@ -89,12 +82,27 @@ export class SessionInvokeQueue {
 
     if (task) {
       try {
-        const metadata: InvokeRpcMetadata = {
+        const session = this.sessionsManager.getByAuthKeyId(task.sessionData.authKeyId)!
+
+        const metadata = {
           authKeyId: task.sessionData.authKeyId,
-          userId: this.sessionsManager.getByAuthKeyId(task.sessionData.authKeyId)!.getUserId(),
+          userId: session.getUserId(),
+          sessionId: task.sessionData.sessionId,
+          clientMessageId: task.message.messageId,
+          permAuthKeyId: task.sessionData.authKeyId,
+          serverId: task.sessionData.gatewayId,
+          clientIp: task.sessionData.clientIp,
+          layer: session.getLayer(),
+          client: session.getClient(),
+          langPack: session.getLangPack(),
+          receiveTime: Math.floor(Date.now() / 1000),
         }
 
-        const result = await this.invoker.invoke(task.sessionData, task.message.message, metadata)
+        const result = await await this.rpcHandlersRegistry.execute(
+          task.message.message,
+          task.sessionData,
+          metadata
+        )
 
         const rpcResult = new TL.RpcResult({
           reqMsgId: task.message.messageId,

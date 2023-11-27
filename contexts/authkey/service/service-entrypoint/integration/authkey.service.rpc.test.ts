@@ -27,7 +27,7 @@ import getPort                         from 'get-port'
 
 import { AuthKeyInfrastructureModule } from '@chats-system/authkey-infrastructure-module'
 import { AuthKeyService }              from '@chats-system/authkey-rpc/connect'
-import { AuthKeyType } from '@chats-system/authkey-rpc/connect'
+import { AuthKeyType }                 from '@chats-system/authkey-rpc/connect'
 import { entities }                    from '@chats-system/authkey-infrastructure-module'
 import { migrations }                  from '@chats-system/authkey-infrastructure-module'
 
