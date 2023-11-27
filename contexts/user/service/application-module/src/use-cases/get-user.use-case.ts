@@ -5,10 +5,18 @@ import { Injectable }     from '@nestjs/common'
 import { UserRepository } from '@chats-system/user-domain-module'
 
 @Injectable()
-export class GetUserByIdUseCase {
+export class GetUserUseCase {
   constructor(private readonly userRepository: UserRepository) {}
 
-  async execute(userId: bigint): Promise<User | undefined> {
-    return this.userRepository.getById(userId)
+  async execute(id?: bigint, phone?: string): Promise<User | undefined> {
+    if (id) {
+      return this.userRepository.getById(id)
+    }
+
+    if (phone) {
+      return this.userRepository.getByPhone(phone)
+    }
+
+    return undefined
   }
 }

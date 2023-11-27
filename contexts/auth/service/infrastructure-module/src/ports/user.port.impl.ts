@@ -1,11 +1,13 @@
 import { Injectable } from '@nestjs/common'
 
 import { UserPort }   from '@chats-system/auth-domain-module'
+import { client }     from '@chats-system/user-rpc-client'
 
 @Injectable()
 export class UserPortImpl extends UserPort {
-  // @ts-expect-error
   override async isUserPhoneRegistered(phone: string): Promise<boolean> {
-    return false
+    const { user } = await client.getUser({ phone })
+
+    return Boolean(user)
   }
 }

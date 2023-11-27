@@ -781,6 +781,7 @@ __metadata:
     "@chats-system/auth-rpc": "workspace:0.0.1"
     "@chats-system/core-rpc": "workspace:0.0.1"
     "@chats-system/tl": "workspace:0.0.1"
+    "@chats-system/user-rpc-client": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.1.3"
     "@connectrpc/connect-node": "npm:^1.1.3"
     "@faker-js/faker": "npm:^8.3.1"
@@ -1977,7 +1978,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@chats-system/user-rpc-client@workspace:contexts/user/rpc/user-rpc-client":
+"@chats-system/user-rpc-client@workspace:0.0.1, @chats-system/user-rpc-client@workspace:contexts/user/rpc/user-rpc-client":
   version: 0.0.0-use.local
   resolution: "@chats-system/user-rpc-client@workspace:contexts/user/rpc/user-rpc-client"
   dependencies:
