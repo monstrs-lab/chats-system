@@ -1,17 +1,16 @@
-import type { MikroOrmModuleOptions }   from '@mikro-orm/nestjs'
-import type { DynamicModule }           from '@nestjs/common'
-import type { OnModuleInit }            from '@nestjs/common'
+import type { MikroOrmModuleOptions } from '@mikro-orm/nestjs'
+import type { DynamicModule }         from '@nestjs/common'
+import type { OnModuleInit }          from '@nestjs/common'
 
-import { MikroORM }                     from '@mikro-orm/core'
-import { MikroOrmModule }               from '@mikro-orm/nestjs'
-import { PostgreSqlDriver }             from '@mikro-orm/postgresql'
-import { MikroORMConfigModule }         from '@monstrs/nestjs-mikro-orm-config'
-import { MikroORMConfig }               from '@monstrs/nestjs-mikro-orm-config'
-import { MikroORMRequestContextModule } from '@monstrs/nestjs-mikro-orm-request-context'
-import { Module }                       from '@nestjs/common'
+import { MikroORM }                   from '@mikro-orm/core'
+import { MikroOrmModule }             from '@mikro-orm/nestjs'
+import { PostgreSqlDriver }           from '@mikro-orm/postgresql'
+import { MikroORMConfigModule }       from '@monstrs/nestjs-mikro-orm-config'
+import { MikroORMConfig }             from '@monstrs/nestjs-mikro-orm-config'
+import { Module }                     from '@nestjs/common'
 
-import { entities }                     from '@chats-system/idgen-infrastructure-module'
-import { migrations }                   from '@chats-system/idgen-infrastructure-module'
+import { entities }                   from '@chats-system/idgen-infrastructure-module'
+import { migrations }                 from '@chats-system/idgen-infrastructure-module'
 
 @Module({})
 export class IdGenServiceCoreModule implements OnModuleInit {
@@ -21,7 +20,6 @@ export class IdGenServiceCoreModule implements OnModuleInit {
     return {
       module: IdGenServiceCoreModule,
       imports: [
-        MikroORMRequestContextModule.forInterceptor(),
         MikroOrmModule.forRootAsync({
           imports: [
             MikroORMConfigModule.register({

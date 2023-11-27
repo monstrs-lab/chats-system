@@ -18,7 +18,13 @@
   },
   "dependencies": {
     "@bufbuild/protobuf": "^1.4.2",
-    "@chats-system/help-rpc": "workspace:0.0.1",
+    "@chats-system/help-rpc": "workspace:0.0.1"
+  },
+  "devDependencies": {
+    "@connectrpc/connect": "^1.1.3",
+    "@connectrpc/connect-node": "^1.1.3"
+  },
+  "peerDependencies": {
     "@connectrpc/connect": "^1.1.3",
     "@connectrpc/connect-node": "^1.1.3"
   },

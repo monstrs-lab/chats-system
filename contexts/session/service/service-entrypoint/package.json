@@ -21,7 +21,6 @@
     "@jest/globals": "^29.7.0",
     "@monstrs/nestjs-connectrpc": "^0.0.3",
     "@monstrs/nestjs-logger": "^0.4.2",
-    "@monstrs/nestjs-microservices-registry": "^0.1.0",
     "@monstrs/protobuf-rpc": "0.0.7",
     "@nestjs/common": "^10.2.10",
     "@nestjs/core": "^10.2.10",

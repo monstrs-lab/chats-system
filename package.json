@@ -18,6 +18,9 @@
   "dependenciesMeta": {
     "@monstrs/mtproto-core@0.0.20": {
       "unplugged": true
+    },
+    "@monstrs/nestjs-mikro-orm-request-context@0.1.2": {
+      "unplugged": true
     }
   },
   "packageManager": "yarn@3.6.3",
