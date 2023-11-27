@@ -2,10 +2,9 @@
 
 import type { CreateSessionRequest }     from '@chats-system/session-rpc'
 import type { CloseSessionRequest }      from '@chats-system/session-rpc'
-import type { QueryAuthKeyRequest }      from '@chats-system/session-rpc'
-import type { QueryAuthKeyResponse }     from '@chats-system/session-rpc'
-import type { SetAuthKeyRequest }        from '@chats-system/session-rpc'
-import type { SetAuthKeyResponse }       from '@chats-system/session-rpc'
+import type { GetAuthKeyRequest }        from '@chats-system/session-rpc'
+import type { GetAuthKeyResponse }       from '@chats-system/session-rpc'
+import type { CreateAuthKeyRequest }     from '@chats-system/session-rpc'
 import type { SendDataToSessionRequest } from '@chats-system/session-rpc'
 import type { ServiceImpl }              from '@connectrpc/connect'
 
@@ -13,11 +12,12 @@ import { ConnectRpcMethod }              from '@monstrs/nestjs-connectrpc'
 import { ConnectRpcService }             from '@monstrs/nestjs-connectrpc'
 import { Controller }                    from '@nestjs/common'
 
+import { CreateAuthKeyResponse }         from '@chats-system/session-rpc'
 import { CloseSessionResponse }          from '@chats-system/session-rpc'
 import { CreateSessionResponse }         from '@chats-system/session-rpc'
 import { SendDataToSessionResponse }     from '@chats-system/session-rpc'
 import { SessionService }                from '@chats-system/session-rpc'
-import { client }                        from '@chats-system/auth-session-rpc-client'
+import { client }                        from '@chats-system/authkey-rpc-client'
 
 import { SessionData }                   from '../data/index.js'
 import { ConnectionData }                from '../data/index.js'
@@ -29,19 +29,13 @@ export class SessionServiceController implements ServiceImpl<typeof SessionServi
   constructor(private readonly sessionProcessor: SessionProcessor) {}
 
   @ConnectRpcMethod()
-  async queryAuthKey(request: QueryAuthKeyRequest): Promise<QueryAuthKeyResponse> {
-    return client.queryAuthKey({
-      authKeyId: request.authKeyId,
-    })
+  async queryAuthKey(request: GetAuthKeyRequest): Promise<GetAuthKeyResponse> {
+    return client.getAuthKey(request)
   }
 
   @ConnectRpcMethod()
-  async setAuthKey(request: SetAuthKeyRequest): Promise<SetAuthKeyResponse> {
-    return client.setAuthKey({
-      authKey: request.authKey,
-      futureSalt: request.futureSalt,
-      expiresIn: request.expiresIn,
-    })
+  async setAuthKey(request: CreateAuthKeyRequest): Promise<CreateAuthKeyResponse> {
+    return client.createAuthKey(request)
   }
 
   @ConnectRpcMethod()

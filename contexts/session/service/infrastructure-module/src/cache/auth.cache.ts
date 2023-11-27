@@ -1,16 +1,11 @@
-import type TL                     from '@chats-system/tl'
+import type TL            from '@chats-system/tl'
 
-import { Logger }                  from '@monstrs/logger'
-import { LRUCache }                from 'lru-cache'
+import { Logger }         from '@monstrs/logger'
+import { LRUCache }       from 'lru-cache'
 
-import { GetUserIdRequest }        from '@chats-system/auth-session-rpc-client'
-import { GetPermAuthKeyIdRequest } from '@chats-system/auth-session-rpc-client'
-import { GetLangPackRequest }      from '@chats-system/auth-session-rpc-client'
-import { GetClientRequest }        from '@chats-system/auth-session-rpc-client'
-import { GetLayerRequest }         from '@chats-system/auth-session-rpc-client'
-import { client }                  from '@chats-system/auth-session-rpc-client'
+import { client }         from '@chats-system/authkey-rpc-client'
 
-import { AuthCacheValue }          from './auth-cache.value.js'
+import { AuthCacheValue } from './auth-cache.value.js'
 
 export class AuthCache {
   #logger = new Logger(AuthCache.name)
@@ -43,19 +38,21 @@ export class AuthCache {
 
     if (!cv.userId) {
       try {
-        const response = await client.getUserId(
-          new GetUserIdRequest({
-            authKeyId,
-          })
-        )
+        const response = await client.getAuthKeyUser({
+          authKeyId,
+        })
 
-        cv.userId = response.userId
+        if (!response.authKeyUser) {
+          return 0n
+        }
+
+        cv.userId = response.authKeyUser.userId
       } catch (error) {
         if (error instanceof Error) {
           this.#logger.error(error)
         }
 
-        return BigInt(0)
+        return 0n
       }
     }
 
@@ -67,13 +64,11 @@ export class AuthCache {
 
     if (!cv.layer) {
       try {
-        const response = await client.getLayer(
-          new GetLayerRequest({
-            authKeyId,
-          })
-        )
+        const response = await client.getAuthKeyConnection({
+          authKeyId,
+        })
 
-        cv.layer = response.layer
+        cv.layer = response.authKeyConnection!.layer
       } catch (error) {
         if (error instanceof Error) {
           this.#logger.error(error)
@@ -86,42 +81,16 @@ export class AuthCache {
     return cv.layer
   }
 
-  async getClient(authKeyId: bigint): Promise<string> {
-    const cv = this.getValue(authKeyId)
-
-    if (!cv.client) {
-      try {
-        const response = await client.getClient(
-          new GetClientRequest({
-            authKeyId,
-          })
-        )
-
-        cv.client = response.client
-      } catch (error) {
-        if (error instanceof Error) {
-          this.#logger.error(error)
-        }
-
-        return ''
-      }
-    }
-
-    return cv.client
-  }
-
   async getLangPack(authKeyId: bigint): Promise<string> {
     const cv = this.getValue(authKeyId)
 
     if (!cv.langpack) {
       try {
-        const response = await client.getLangPack(
-          new GetLangPackRequest({
-            authKeyId,
-          })
-        )
+        const response = await client.getAuthKeyConnection({
+          authKeyId,
+        })
 
-        cv.langpack = response.langPack
+        cv.langpack = response.authKeyConnection!.langPack
       } catch (error) {
         if (error instanceof Error) {
           this.#logger.error(error)
@@ -139,13 +108,11 @@ export class AuthCache {
 
     if (!cv.permAuthKeyId) {
       try {
-        const response = await client.getPermAuthKeyId(
-          new GetPermAuthKeyIdRequest({
-            authKeyId,
-          })
-        )
+        const response = await client.getAuthKey({
+          authKeyId,
+        })
 
-        cv.permAuthKeyId = response.permAuthKeyId
+        cv.permAuthKeyId = response.authKey!.permAuthKeyId
       } catch (error) {
         if (error instanceof Error) {
           this.#logger.error(error)
@@ -178,22 +145,22 @@ export class AuthCache {
     this.getValue(authKeyId).permAuthKeyId = kId
   }
 
-  async putLayer(authKeyId: bigint, layer: number, ip: string): Promise<void> {
-    await client.setLayer({
+  async putLayer(authKeyId: bigint, layer: number, clientIp: string): Promise<void> {
+    await client.updateAuthKeyConnection({
       authKeyId,
       layer,
-      ip,
+      clientIp,
     })
   }
 
   async putInitConnection(
     authKeyId: bigint,
-    ip: string,
+    clientIp: string,
     message: TL.InitConnection
   ): Promise<void> {
-    await client.setInitConnection({
+    await client.createAuthKeyConnection({
       authKeyId,
-      ip,
+      clientIp,
       apiId: message.apiId,
       deviceModel: message.deviceModel,
       systemVersion: message.systemVersion,

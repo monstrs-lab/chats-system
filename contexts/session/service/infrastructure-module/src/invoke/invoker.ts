@@ -5,7 +5,7 @@ import type { SessionData }  from '../data/index.js'
 import { Injectable }        from '@nestjs/common'
 
 import { Primitive }         from '@chats-system/tl'
-import { client as auth }    from '@chats-system/auth-session-rpc-client'
+import { client as auth }    from '@chats-system/authkey-rpc-client'
 import { client as help }    from '@chats-system/help-rpc-client'
 import { client as updates } from '@chats-system/updates-rpc-client'
 import TL                    from '@chats-system/tl'
@@ -23,12 +23,12 @@ export class Invoker {
     metadata: InvokeRpcMetadata
   ): Promise<InstanceType<typeof TLObject>> {
     if (message instanceof TL.langpack.GetLangPack) {
-      const result = await auth.getLangPack({
+      const response = await auth.getAuthKeyConnection({
         authKeyId: sessionData.authKeyId,
       })
 
       return new TL.LangPackDifference({
-        langCode: result.langPack || message.langCode,
+        langCode: response?.authKeyConnection?.langPack || message.langCode,
         fromVersion: 0,
         version: 0,
         strings: [],

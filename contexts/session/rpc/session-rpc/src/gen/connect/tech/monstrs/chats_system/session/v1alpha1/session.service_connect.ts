@@ -5,10 +5,10 @@
 
 import { MethodKind }                from '@bufbuild/protobuf'
 
-import { QueryAuthKeyRequest }       from '../../auth_session/v1alpha1/auth-session.service_pb.js'
-import { QueryAuthKeyResponse }      from '../../auth_session/v1alpha1/auth-session.service_pb.js'
-import { SetAuthKeyRequest }         from '../../auth_session/v1alpha1/auth-session.service_pb.js'
-import { SetAuthKeyResponse }        from '../../auth_session/v1alpha1/auth-session.service_pb.js'
+import { CreateAuthKeyRequest }      from '../../authkey/v1alpha1/authkey.service_pb.js'
+import { CreateAuthKeyResponse }     from '../../authkey/v1alpha1/authkey.service_pb.js'
+import { GetAuthKeyRequest }         from '../../authkey/v1alpha1/authkey.service_pb.js'
+import { GetAuthKeyResponse }        from '../../authkey/v1alpha1/authkey.service_pb.js'
 import { CloseSessionRequest }       from './session.service_pb.js'
 import { CloseSessionResponse }      from './session.service_pb.js'
 import { CreateSessionRequest }      from './session.service_pb.js'
@@ -27,8 +27,8 @@ export const SessionService = {
      */
     queryAuthKey: {
       name: 'queryAuthKey',
-      I: QueryAuthKeyRequest,
-      O: QueryAuthKeyResponse,
+      I: GetAuthKeyRequest,
+      O: GetAuthKeyResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -36,8 +36,8 @@ export const SessionService = {
      */
     setAuthKey: {
       name: 'setAuthKey',
-      I: SetAuthKeyRequest,
-      O: SetAuthKeyResponse,
+      I: CreateAuthKeyRequest,
+      O: CreateAuthKeyResponse,
       kind: MethodKind.Unary,
     },
     /**

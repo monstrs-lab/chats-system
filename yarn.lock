@@ -728,12 +728,55 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chats-system/auth-session-infrastructure-module@workspace:0.0.1, @chats-system/auth-session-infrastructure-module@workspace:contexts/auth-session/service/infrastructure-module":
+"@chats-system/authkey-application-module@workspace:0.0.1, @chats-system/authkey-application-module@workspace:contexts/authkey/service/application-module":
   version: 0.0.0-use.local
-  resolution: "@chats-system/auth-session-infrastructure-module@workspace:contexts/auth-session/service/infrastructure-module"
+  resolution: "@chats-system/authkey-application-module@workspace:contexts/authkey/service/application-module"
+  dependencies:
+    "@chats-system/authkey-domain-module": "workspace:0.0.1"
+    "@nestjs/common": "npm:^10.2.10"
+    "@nestjs/core": "npm:^10.2.10"
+    "@nestjs/cqrs": "npm:^10.2.6"
+    "@nestjs/testing": "npm:^10.2.10"
+    "@types/node": "npm:^20.10.0"
+    rxjs: "npm:^7.8.1"
+  peerDependencies:
+    "@chats-system/authkey-domain-module": "workspace:0.0.1"
+    "@nestjs/common": ^10
+    "@nestjs/core": ^10
+    "@nestjs/cqrs": ^10
+    reflect-metadata: ^0.1
+    rxjs: ^7
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/authkey-domain-module@workspace:0.0.1, @chats-system/authkey-domain-module@workspace:contexts/authkey/service/domain-module":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/authkey-domain-module@workspace:contexts/authkey/service/domain-module"
+  dependencies:
+    "@nestjs/common": "npm:^10.2.10"
+    "@nestjs/core": "npm:^10.2.10"
+    "@nestjs/cqrs": "npm:^10.2.6"
+    "@nestjs/testing": "npm:^10.2.10"
+    "@types/node": "npm:^20.10.0"
+    crypto-random-bigint: "npm:^2.1.0"
+    rxjs: "npm:^7.8.1"
+  peerDependencies:
+    "@nestjs/common": ^10
+    "@nestjs/core": ^10
+    "@nestjs/cqrs": ^10
+    reflect-metadata: ^0.1
+    rxjs: ^7
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/authkey-infrastructure-module@workspace:0.0.1, @chats-system/authkey-infrastructure-module@workspace:contexts/authkey/service/infrastructure-module":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/authkey-infrastructure-module@workspace:contexts/authkey/service/infrastructure-module"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.4.2"
-    "@chats-system/auth-session-rpc": "workspace:0.0.1"
+    "@chats-system/authkey-application-module": "workspace:0.0.1"
+    "@chats-system/authkey-domain-module": "workspace:0.0.1"
+    "@chats-system/authkey-rpc": "workspace:0.0.1"
     "@chats-system/tl": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.1.3"
     "@connectrpc/connect-node": "npm:^1.1.3"
@@ -765,11 +808,9 @@ __metadata:
     "@types/express": "npm:^4.17.21"
     "@types/node": "npm:^20.10.0"
     "@types/uuid": "npm:^9.0.7"
-    ajv: "npm:^8.12.0"
-    bignumber.js: "npm:9.1.2"
     class-transformer: "npm:^0.5.1"
     class-validator: "npm:^0.14.0"
-    random-bigint: "npm:^0.0.1"
+    crypto-random-bigint: "npm:^2.1.0"
     reflect-metadata: "npm:^0.1.13"
     rxjs: "npm:^7.8.1"
     ts-node: "npm:^10.9.1"
@@ -777,7 +818,7 @@ __metadata:
     uuid: "npm:^9.0.1"
   peerDependencies:
     "@bufbuild/protobuf": ^1.3.1
-    "@chats-system/auth-session-rpc": "workspace:0.0.1"
+    "@chats-system/authkey-rpc": "workspace:0.0.1"
     "@connectrpc/connect": ^0.13
     "@connectrpc/connect-node": ^0.13
     "@mikro-orm/core": ^5.8.3
@@ -795,20 +836,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@chats-system/auth-session-rpc-client@workspace:0.0.1, @chats-system/auth-session-rpc-client@workspace:contexts/auth-session/rpc/auth-session-rpc-client":
+"@chats-system/authkey-rpc-client@workspace:0.0.1, @chats-system/authkey-rpc-client@workspace:contexts/authkey/rpc/authkey-rpc-client":
   version: 0.0.0-use.local
-  resolution: "@chats-system/auth-session-rpc-client@workspace:contexts/auth-session/rpc/auth-session-rpc-client"
+  resolution: "@chats-system/authkey-rpc-client@workspace:contexts/authkey/rpc/authkey-rpc-client"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.4.2"
-    "@chats-system/auth-session-rpc": "workspace:0.0.1"
+    "@chats-system/authkey-rpc": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.1.3"
     "@connectrpc/connect-node": "npm:^1.1.3"
   languageName: unknown
   linkType: soft
 
-"@chats-system/auth-session-rpc@workspace:0.0.1, @chats-system/auth-session-rpc@workspace:contexts/auth-session/rpc/auth-session-rpc":
+"@chats-system/authkey-rpc@workspace:0.0.1, @chats-system/authkey-rpc@workspace:contexts/authkey/rpc/authkey-rpc":
   version: 0.0.0-use.local
-  resolution: "@chats-system/auth-session-rpc@workspace:contexts/auth-session/rpc/auth-session-rpc"
+  resolution: "@chats-system/authkey-rpc@workspace:contexts/authkey/rpc/authkey-rpc"
   dependencies:
     "@bufbuild/buf": "npm:^1.28.1"
     "@bufbuild/protobuf": "npm:^1.4.2"
@@ -821,13 +862,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@chats-system/auth-session-service-entrypoint@workspace:contexts/auth-session/service/service-entrypoint":
+"@chats-system/authkey-service-entrypoint@workspace:contexts/authkey/service/service-entrypoint":
   version: 0.0.0-use.local
-  resolution: "@chats-system/auth-session-service-entrypoint@workspace:contexts/auth-session/service/service-entrypoint"
+  resolution: "@chats-system/authkey-service-entrypoint@workspace:contexts/authkey/service/service-entrypoint"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.4.2"
-    "@chats-system/auth-session-infrastructure-module": "workspace:0.0.1"
-    "@chats-system/auth-session-rpc": "workspace:0.0.1"
+    "@chats-system/authkey-infrastructure-module": "workspace:0.0.1"
+    "@chats-system/authkey-rpc": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.1.3"
     "@connectrpc/connect-node": "npm:^1.1.3"
     "@faker-js/faker": "npm:^8.3.1"
@@ -873,6 +914,7 @@ __metadata:
   resolution: "@chats-system/gateway-infrastructure-module@workspace:contexts/gateway/service/infrastructure-module"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.4.2"
+    "@chats-system/authkey-rpc-client": "workspace:0.0.1"
     "@chats-system/gateway-rpc": "workspace:0.0.1"
     "@chats-system/handshake": "workspace:0.0.1"
     "@chats-system/session-rpc-client": "workspace:0.0.1"
@@ -882,8 +924,8 @@ __metadata:
     "@faker-js/faker": "npm:^8.3.1"
     "@jest/globals": "npm:^29.7.0"
     "@monstrs/logger": "npm:^0.0.19"
-    "@monstrs/mtproto-codecs": "npm:^0.0.22"
-    "@monstrs/mtproto-core": "npm:^0.0.22"
+    "@monstrs/mtproto-codecs": "npm:^0.0.23"
+    "@monstrs/mtproto-core": "npm:^0.0.23"
     "@monstrs/mtproto-extensions": "npm:^0.0.3"
     "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
     "@monstrs/nestjs-connectrpc-errors": "npm:^0.0.3"
@@ -994,8 +1036,8 @@ __metadata:
     "@monstrs/buffer-utils": "npm:^0.0.6"
     "@monstrs/crypto-utils": "npm:^0.0.2"
     "@monstrs/logger": "npm:^0.0.19"
-    "@monstrs/mtproto-codecs": "npm:^0.0.22"
-    "@monstrs/mtproto-core": "npm:^0.0.22"
+    "@monstrs/mtproto-codecs": "npm:^0.0.23"
+    "@monstrs/mtproto-core": "npm:^0.0.23"
     "@monstrs/mtproto-crypto": "npm:^0.0.5"
     "@monstrs/mtproto-extensions": "npm:^0.0.3"
     "@monstrs/mtproto-tl-core": "npm:^0.0.8"
@@ -1296,7 +1338,7 @@ __metadata:
   resolution: "@chats-system/session-infrastructure-module@workspace:contexts/session/service/infrastructure-module"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.4.2"
-    "@chats-system/auth-session-rpc-client": "workspace:0.0.1"
+    "@chats-system/authkey-rpc-client": "workspace:0.0.1"
     "@chats-system/gateway-rpc-client": "workspace:0.0.1"
     "@chats-system/help-rpc-client": "workspace:0.0.1"
     "@chats-system/session-rpc": "workspace:0.0.1"
@@ -1309,7 +1351,7 @@ __metadata:
     "@monstrs/base-types": "npm:^0.0.2"
     "@monstrs/buffer-utils": "npm:^0.0.6"
     "@monstrs/logger": "npm:^0.0.19"
-    "@monstrs/mtproto-core": "npm:^0.0.22"
+    "@monstrs/mtproto-core": "npm:^0.0.23"
     "@monstrs/mtproto-extensions": "npm:^0.0.3"
     "@monstrs/mtproto-tl-core": "npm:^0.0.8"
     "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
@@ -1420,7 +1462,7 @@ __metadata:
   resolution: "@chats-system/standalone-service-entrypoint@workspace:applications/standalone/entrypoints/standalone-service-entrypoint"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.4.2"
-    "@chats-system/auth-session-infrastructure-module": "workspace:0.0.1"
+    "@chats-system/authkey-infrastructure-module": "workspace:0.0.1"
     "@chats-system/gateway-infrastructure-module": "workspace:0.0.1"
     "@chats-system/help-infrastructure-module": "workspace:0.0.1"
     "@chats-system/idgen-infrastructure-module": "workspace:0.0.1"
@@ -1452,6 +1494,7 @@ __metadata:
     "@nestjs/testing": "npm:^10.2.10"
     "@nestjs/websockets": "npm:^10.2.10"
     "@testcontainers/kafka": "npm:^10.3.2"
+    "@types/express": "npm:^4.17.21"
     "@types/node": "npm:^20.10.0"
     "@types/pg": "npm:^8.10.9"
     "@types/ws": "npm:^8.5.10"
@@ -2572,25 +2615,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/mtproto-codecs@npm:^0.0.22":
-  version: 0.0.22
-  resolution: "@monstrs/mtproto-codecs@npm:0.0.22"
+"@monstrs/mtproto-codecs@npm:^0.0.23":
+  version: 0.0.23
+  resolution: "@monstrs/mtproto-codecs@npm:0.0.23"
   dependencies:
     "@monstrs/buffer-utils": "npm:^0.0.6"
-    "@monstrs/mtproto-core": "npm:0.0.22"
-  checksum: 0c964a87fd19408fd7426aec02e881407113f3f0582ad978e62de1f9c04ee9acb70918c82e78c1a153ae7b6e14fb7d7e29b09bbe817072ef0911dc4d0f660612
+    "@monstrs/mtproto-core": "npm:0.0.23"
+  checksum: 3568554c3a2778b0b0fbdfb565e5fb5cafc9caaecc9a0a080f4075d7d70c1cf51b3fd3c7ad700a7e51eb9469fddb0d7aa985572c2af032dd9b703357890b22b7
   languageName: node
   linkType: hard
 
-"@monstrs/mtproto-core@npm:0.0.22, @monstrs/mtproto-core@npm:^0.0.22":
-  version: 0.0.22
-  resolution: "@monstrs/mtproto-core@npm:0.0.22"
+"@monstrs/mtproto-core@npm:0.0.23, @monstrs/mtproto-core@npm:^0.0.23":
+  version: 0.0.23
+  resolution: "@monstrs/mtproto-core@npm:0.0.23"
   dependencies:
     "@monstrs/bigint-utils": "npm:^0.0.2"
     "@monstrs/buffer-utils": "npm:^0.0.6"
     "@monstrs/mtproto-crypto": "npm:0.0.5"
     "@monstrs/mtproto-extensions": "npm:0.0.3"
-  checksum: 86a3af0a073402dd949e9c2c3c14462fb60b15b6c3a8451539254533c455ec9f5cbcc2df968a83df6fed964ea069d161716e2a0d4b16e316ccb89a5c29ba5d66
+  checksum: ac80bc02cde57266a27194346ddcf92e5654c1668847a948a14f77d599eb9ac6b309fb10064f27d465aefebb4eccbf35aa3e2a122e1ca122691e7eeb1905b276
   languageName: node
   linkType: hard
 
@@ -5575,6 +5618,15 @@ __metadata:
     shebang-command: "npm:^2.0.0"
     which: "npm:^2.0.1"
   checksum: 5738c312387081c98d69c98e105b6327b069197f864a60593245d64c8089c8a0a744e16349281210d56835bb9274130d825a78b2ad6853ca13cfbeffc0c31750
+  languageName: node
+  linkType: hard
+
+"crypto-random-bigint@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "crypto-random-bigint@npm:2.1.0"
+  dependencies:
+    uint-rng: "npm:^1.1.0"
+  checksum: fa4b83ebf0466fa7a983cf72a48990bb27d984689d4845676d155f69a092646f980ae7b3a9299da5130412ed3a97b50a4ebc3bfb7b65d76054138431273dd698
   languageName: node
   linkType: hard
 
@@ -11151,6 +11203,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tiny-webcrypto@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "tiny-webcrypto@npm:1.0.1"
+  checksum: 9f28ffa8b2cd82520c930c8471cbbfd8e81d345ae4f2319986462d54d6390387879bafcf3f5921e19f4bc9a9898128cb3dfa48b00a68b484257cd2bf473a1292
+  languageName: node
+  linkType: hard
+
 "titleize@npm:^3.0.0":
   version: 3.0.0
   resolution: "titleize@npm:3.0.0"
@@ -11473,6 +11532,15 @@ __metadata:
   dependencies:
     "@lukeed/csprng": "npm:^1.0.0"
   checksum: e9d02d0562c74e74b5a2519e586db9d7f8204978e476cddd191ee1a9efb85efafdbab2dbf3fc3dde0f5da01fd9da161f37d604dabf513447fd2c03d008f1324c
+  languageName: node
+  linkType: hard
+
+"uint-rng@npm:^1.1.0":
+  version: 1.2.0
+  resolution: "uint-rng@npm:1.2.0"
+  dependencies:
+    tiny-webcrypto: "npm:^1.0.1"
+  checksum: cb2dd54649392fa34846aa21c93db57be50aa43577f891f15c0917cb5fcb97699fdc82d2e3beec8d331532be1abe96b78f85dd56ff86da173abd8bae39785e2e
   languageName: node
   linkType: hard
 
