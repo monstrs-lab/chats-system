@@ -7,6 +7,7 @@ import * as handlers            from '../handlers/index.js'
 import { AuthCache }            from '../cache/index.js'
 import { RpcHandlerModule }     from '../rpc/index.js'
 import { SessionResponseQueue } from '../session/index.js'
+import { SessionInboundQueue } from '../session/index.js'
 import { SessionProcessor }     from '../session/index.js'
 import { SessionRpcQueue }      from '../session/index.js'
 import { SessionsManager }      from '../session/index.js'
@@ -21,6 +22,7 @@ export class SessionInfrastructureModule {
       providers: [
         AuthCache,
         SessionResponseQueue,
+        SessionInboundQueue,
         SessionProcessor,
         SessionRpcQueue,
         SessionsManager,

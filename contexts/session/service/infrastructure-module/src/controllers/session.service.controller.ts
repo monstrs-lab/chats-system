@@ -21,12 +21,13 @@ import { client }                        from '@chats-system/authkey-rpc-client'
 
 import { SessionData }                   from '../data/index.js'
 import { ConnectionData }                from '../data/index.js'
-import { SessionProcessor }              from '../session/index.js'
+import { SessionProcessor, SessionInboundQueue }              from '../session/index.js'
 
 @Controller()
 @ConnectRpcService(SessionService)
 export class SessionServiceController implements ServiceImpl<typeof SessionService> {
-  constructor(private readonly sessionProcessor: SessionProcessor) {}
+  constructor(private readonly sessionProcessor: SessionProcessor,
+    private readonly sessionInboundQueue: SessionInboundQueue) {}
 
   @ConnectRpcMethod()
   async queryAuthKey(request: GetAuthKeyRequest): Promise<GetAuthKeyResponse> {
@@ -44,11 +45,12 @@ export class SessionServiceController implements ServiceImpl<typeof SessionServi
       return new CreateSessionResponse({ success: false })
     }
 
-    this.sessionProcessor.processSessionNew(
+    this.sessionInboundQueue.push(
       new ConnectionData(
         request.client.authKeyId,
         request.client.sessionId,
-        request.client.serverId
+        request.client.serverId,
+        true
       )
     )
 
@@ -61,7 +63,7 @@ export class SessionServiceController implements ServiceImpl<typeof SessionServi
       return new CloseSessionResponse({ success: false })
     }
 
-    this.sessionProcessor.processSessionClose(
+    this.sessionInboundQueue.push(
       new ConnectionData(
         request.client.authKeyId,
         request.client.sessionId,
@@ -78,7 +80,7 @@ export class SessionServiceController implements ServiceImpl<typeof SessionServi
       return new SendDataToSessionResponse({ success: false })
     }
 
-    this.sessionProcessor.processSessionData(
+    this.sessionInboundQueue.push(
       new SessionData(
         request.data.authKeyId,
         request.data.sessionId,
