@@ -1,17 +1,16 @@
-import type { MikroOrmModuleOptions }   from '@mikro-orm/nestjs'
-import type { DynamicModule }           from '@nestjs/common'
-import type { OnModuleInit }            from '@nestjs/common'
+import type { MikroOrmModuleOptions } from '@mikro-orm/nestjs'
+import type { DynamicModule }         from '@nestjs/common'
+import type { OnModuleInit }          from '@nestjs/common'
 
-import { MikroORM }                     from '@mikro-orm/core'
-import { MikroOrmModule }               from '@mikro-orm/nestjs'
-import { PostgreSqlDriver }             from '@mikro-orm/postgresql'
-import { MikroORMConfigModule }         from '@monstrs/nestjs-mikro-orm-config'
-import { MikroORMConfig }               from '@monstrs/nestjs-mikro-orm-config'
-import { MikroORMRequestContextModule } from '@monstrs/nestjs-mikro-orm-request-context'
-import { Module }                       from '@nestjs/common'
+import { MikroORM }                   from '@mikro-orm/core'
+import { MikroOrmModule }             from '@mikro-orm/nestjs'
+import { PostgreSqlDriver }           from '@mikro-orm/postgresql'
+import { MikroORMConfigModule }       from '@monstrs/nestjs-mikro-orm-config'
+import { MikroORMConfig }             from '@monstrs/nestjs-mikro-orm-config'
+import { Module }                     from '@nestjs/common'
 
-import { entities }                     from '@chats-system/updates-infrastructure-module'
-import { migrations }                   from '@chats-system/updates-infrastructure-module'
+import { entities }                   from '@chats-system/updates-infrastructure-module'
+import { migrations }                 from '@chats-system/updates-infrastructure-module'
 
 @Module({})
 export class UpdatesServiceCoreModule implements OnModuleInit {
@@ -21,7 +20,6 @@ export class UpdatesServiceCoreModule implements OnModuleInit {
     return {
       module: UpdatesServiceCoreModule,
       imports: [
-        MikroORMRequestContextModule.forInterceptor(),
         MikroOrmModule.forRootAsync({
           imports: [
             MikroORMConfigModule.register({
