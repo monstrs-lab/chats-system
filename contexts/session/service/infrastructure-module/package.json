@@ -18,6 +18,7 @@
     "@chats-system/session-rpc": "workspace:0.0.1",
     "@chats-system/tl": "workspace:0.0.1",
     "@chats-system/updates-rpc-client": "workspace:0.0.1",
+    "@chats-system/user-rpc-client": "workspace:0.0.1",
     "@monstrs/buffer-utils": "^0.0.6",
     "@monstrs/logger": "^0.0.19",
     "@monstrs/mtproto-core": "^0.0.23",

@@ -14,11 +14,7 @@ export interface SessionAuthManagerSession {
 
 @Injectable()
 export class SessionAuthManager {
-  #sessions: Map<bigint, SessionAuthManagerSession>
-
-  constructor() {
-    this.#sessions = new Map()
-  }
+  #sessions: Map<bigint, SessionAuthManagerSession> = new Map()
 
   addNewSession(authKey: MTProtoAuthKey, sessionId: bigint, connectionId: string): boolean {
     if (this.#sessions.has(authKey.authKeyId)) {

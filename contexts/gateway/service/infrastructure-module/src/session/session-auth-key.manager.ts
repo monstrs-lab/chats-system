@@ -25,15 +25,19 @@ export class SessionAuthKeyManager extends MTProtoAuthKeyManager {
       return super.getAuthKey(authKeyId)
     }
 
-    const response = await client.getAuthKey({
+    const { authKey: savedAuthKey } = await client.getAuthKey({
       authKeyId,
     })
 
-    if (response?.authKey) {
-      return new MTProtoAuthKey(
-        Buffer.from(response.authKey.authKey),
-        this.toMTProtoAuthKeyType(response.authKey.authKeyType)
+    if (savedAuthKey) {
+      const authKey = new MTProtoAuthKey(
+        Buffer.from(savedAuthKey.authKey),
+        this.toMTProtoAuthKeyType(savedAuthKey.authKeyType)
       )
+
+      await super.setAuthKey(authKeyId, authKey)
+
+      return authKey
     }
 
     return undefined

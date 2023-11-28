@@ -1,6 +1,6 @@
-import type { ConnectionData }  from '../data/index.js'
 import type { SessionData }     from '../data/index.js'
 
+import { Logger }               from '@monstrs/logger'
 import { MTProtoMessageId }     from '@monstrs/mtproto-core'
 import { Injectable }           from '@nestjs/common'
 
@@ -8,14 +8,11 @@ import { BytesIO }              from '@chats-system/tl'
 import { MsgContainer }         from '@chats-system/tl'
 import { Primitive }            from '@chats-system/tl'
 import { TLObject }             from '@chats-system/tl'
+import { client }               from '@chats-system/authkey-rpc-client'
 import TL                       from '@chats-system/tl'
 
-import { AuthCache }            from '../cache/index.js'
-import { AuthSession }          from './auth.session.js'
 import { SessionResponseQueue } from './session-response.queue.js'
 import { SessionRpcQueue }      from './session-rpc.queue.js'
-import { Session }              from './session.js'
-import { SessionsManager }      from './session.manager.js'
 
 export interface SessionProcessorRawMessage<T> {
   messageId: bigint
@@ -34,72 +31,40 @@ const generateMessageSeqNo = (sequence: number, contentRelated: boolean): number
 
 @Injectable()
 export class SessionProcessor {
+  #logger = new Logger(SessionProcessor.name)
+
   constructor(
-    protected readonly authCache: AuthCache,
-    protected readonly authSessionsManager: SessionsManager,
     protected readonly responseQueue: SessionResponseQueue,
     protected readonly rpcQueue: SessionRpcQueue
   ) {}
 
-  async processSessionNew(connectionData: ConnectionData): Promise<void> {
-    if (!this.authSessionsManager.hasByAuthKeyId(connectionData.authKeyId)) {
-      this.authSessionsManager.setByAuthKeyId(connectionData.authKeyId, new AuthSession())
-    }
-
-    if (
-      !this.authSessionsManager
-        .getByAuthKeyId(connectionData.authKeyId)!
-        .hasSessionById(connectionData.sessionId)
-    ) {
-      this.authSessionsManager
-        .getByAuthKeyId(connectionData.authKeyId)!
-        .setSessionById(connectionData.sessionId, new Session())
-    }
-
-    this.authSessionsManager
-      .getByAuthKeyId(connectionData.authKeyId)!
-      .getSessionById(connectionData.sessionId)!
-      .newConnection()
-  }
-
-  async processSessionClose(connectionData: ConnectionData): Promise<void> {
-    if (this.authSessionsManager.hasByAuthKeyId(connectionData.authKeyId)) {
-      if (
-        this.authSessionsManager
-          .getByAuthKeyId(connectionData.authKeyId)!
-          .hasSessionById(connectionData.sessionId)
-      ) {
-        this.authSessionsManager
-          .getByAuthKeyId(connectionData.authKeyId)!
-          .getSessionById(connectionData.sessionId)!
-          .closeConnection()
-      }
-    }
-  }
-
   async processSessionData(sessionData: SessionData): Promise<void> {
-    this.processSessionNew(sessionData)
+    try {
+      const bytesIO = new BytesIO(Buffer.from(sessionData.payload))
 
-    const bytesIO = new BytesIO(Buffer.from(sessionData.payload))
+      const messageId = await Primitive.Long.read(bytesIO)
+      const seqNo = await Primitive.Int.read(bytesIO)
+      const messageLength = await Primitive.Int.read(bytesIO)
 
-    const messageId = await Primitive.Long.read(bytesIO)
-    const seqNo = await Primitive.Int.read(bytesIO)
-    const messageLength = await Primitive.Int.read(bytesIO)
+      const message = await TLObject.read(bytesIO)
 
-    const message = await TLObject.read(bytesIO)
+      const messages =
+        message instanceof MsgContainer
+          ? message.messages.map((msg) => ({
+              seqNo: msg.seqNo,
+              messageId: msg.msgId,
+              messageLength: msg.length,
+              message: msg.body,
+            }))
+          : [{ seqNo, messageId, messageLength, message }]
 
-    const messages =
-      message instanceof MsgContainer
-        ? message.messages.map((msg) => ({
-            seqNo: msg.seqNo,
-            messageId: msg.msgId,
-            messageLength: msg.length,
-            message: msg.body,
-          }))
-        : [{ seqNo, messageId, messageLength, message }]
-
-    for await (const msg of messages) {
-      await this.processMessage(sessionData, msg)
+      for await (const msg of messages) {
+        await this.processMessage(sessionData, msg)
+      }
+    } catch (error) {
+      if (error instanceof Error) {
+        this.#logger.error(error)
+      }
     }
   }
 
@@ -190,16 +155,6 @@ export class SessionProcessor {
     message: SessionProcessorRawMessage<TL.InvokeWithLayer>
   ): Promise<void> {
     if (message.message.query) {
-      this.authSessionsManager
-        .getByAuthKeyId(sessionData.authKeyId)
-        ?.setLayer(message.message.layer)
-
-      await this.authCache.putLayer(
-        sessionData.authKeyId,
-        message.message.layer,
-        sessionData.clientIp
-      )
-
       await this.processMessage(sessionData, { ...message, message: message.message.query })
     }
   }
@@ -209,11 +164,17 @@ export class SessionProcessor {
     message: SessionProcessorRawMessage<TL.InitConnection>
   ): Promise<void> {
     if (message.message.query) {
-      await this.authCache.putInitConnection(
-        sessionData.authKeyId,
-        sessionData.clientIp,
-        message.message
-      )
+      await client.createAuthKeyConnection({
+        authKeyId: sessionData.authKeyId,
+        clientIp: sessionData.clientIp,
+        apiId: message.message.apiId,
+        deviceModel: message.message.deviceModel,
+        systemVersion: message.message.systemVersion,
+        appVersion: message.message.appVersion,
+        systemLangCode: message.message.systemLangCode,
+        langPack: message.message.langPack,
+        langCode: message.message.langCode,
+      })
 
       await this.processMessage(sessionData, { ...message, message: message.message.query })
     }
@@ -244,37 +205,22 @@ export class SessionProcessor {
     sessionData: SessionData,
     message: SessionProcessorRawMessage<InstanceType<typeof TLObject>>
   ): Promise<void> {
-    const authSession = this.authSessionsManager.getByAuthKeyId(sessionData.authKeyId)!
+    const { authKeyUser } = await client.getAuthKeyUser({
+      authKeyId: sessionData.authKeyId,
+    })
 
-    if (authSession.getUserId() === 0n) {
-      if (!this.checkRpcWithoutLogin(message.message)) {
-        const authUserId = await this.authCache.getUserID(sessionData.authKeyId)
+    const authKeyUserId = authKeyUser?.userId || 0n
 
-        if (authUserId === 0n) {
-          const rpcError = new TL.RpcError({
-            errorCode: 401,
-            errorMessage: 'AUTH_KEY_INVALID',
-          })
+    if (authKeyUserId === 0n && !this.checkRpcWithoutLogin(message.message)) {
+      const rpcError = new TL.RpcError({
+        errorCode: 401,
+        errorMessage: 'AUTH_KEY_INVALID',
+      })
 
-          this.putRpcResultToResponseQueue(sessionData, message, rpcError)
-
-          return
-          // eslint-disable-next-line no-else-return
-        } else {
-          authSession.setUserId(authUserId)
-
-          if (authSession.getLayer() === 0) {
-            const layer = await this.authCache.getApiLayer(sessionData.authKeyId)
-
-            if (layer !== 0) {
-              authSession.setLayer(layer)
-            }
-          }
-        }
-      }
+      this.putRpcResultToResponseQueue(sessionData, message, rpcError)
+    } else {
+      this.putRpcRequestToQueue(sessionData, message)
     }
-
-    this.putRpcRequestToQueue(sessionData, message)
   }
 
   protected putRpcRequestToQueue(

@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/consistent-type-imports */
 
-import type { CreateSessionRequest }     from '@chats-system/session-rpc'
-import type { CloseSessionRequest }      from '@chats-system/session-rpc'
 import type { GetAuthKeyRequest }        from '@chats-system/session-rpc'
 import type { GetAuthKeyResponse }       from '@chats-system/session-rpc'
 import type { CreateAuthKeyRequest }     from '@chats-system/session-rpc'
@@ -20,7 +18,6 @@ import { SessionService }                from '@chats-system/session-rpc'
 import { client }                        from '@chats-system/authkey-rpc-client'
 
 import { SessionData }                   from '../data/index.js'
-import { ConnectionData }                from '../data/index.js'
 import { SessionProcessor }              from '../session/index.js'
 
 @Controller()
@@ -39,36 +36,12 @@ export class SessionServiceController implements ServiceImpl<typeof SessionServi
   }
 
   @ConnectRpcMethod()
-  async createSession(request: CreateSessionRequest): Promise<CreateSessionResponse> {
-    if (!request.client?.authKeyId) {
-      return new CreateSessionResponse({ success: false })
-    }
-
-    this.sessionProcessor.processSessionNew(
-      new ConnectionData(
-        request.client.authKeyId,
-        request.client.sessionId,
-        request.client.serverId
-      )
-    )
-
+  async createSession(): Promise<CreateSessionResponse> {
     return new CreateSessionResponse({ success: true })
   }
 
   @ConnectRpcMethod()
-  async closeSession(request: CloseSessionRequest): Promise<CloseSessionResponse> {
-    if (!request.client?.authKeyId) {
-      return new CloseSessionResponse({ success: false })
-    }
-
-    this.sessionProcessor.processSessionClose(
-      new ConnectionData(
-        request.client.authKeyId,
-        request.client.sessionId,
-        request.client.serverId
-      )
-    )
-
+  async closeSession(): Promise<CloseSessionResponse> {
     return new CloseSessionResponse({ success: true })
   }
 

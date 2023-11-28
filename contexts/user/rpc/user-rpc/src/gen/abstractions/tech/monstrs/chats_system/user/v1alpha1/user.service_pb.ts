@@ -3,7 +3,9 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { User } from './user.types_pb.js'
+import type { ImportedContacts } from './user.types_pb.js'
+import type { InputContact }     from './user.types_pb.js'
+import type { User }             from './user.types_pb.js'
 
 /**
  * @generated from message tech.monstrs.chats_system.user.v1alpha1.CreateUserRequest
@@ -63,4 +65,24 @@ export abstract class GetUserResponse {
    * @generated from field: tech.monstrs.chats_system.user.v1alpha1.User user = 1;
    */
   abstract readonly user?: User
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.user.v1alpha1.ImportContactsRequest
+ */
+export abstract class ImportContactsRequest {
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.user.v1alpha1.InputContact contacts = 1;
+   */
+  abstract readonly contacts: InputContact[]
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.user.v1alpha1.ImportContactsResponse
+ */
+export abstract class ImportContactsResponse {
+  /**
+   * @generated from field: tech.monstrs.chats_system.user.v1alpha1.ImportedContacts imported_contacts = 1;
+   */
+  abstract readonly importedContacts?: ImportedContacts
 }
