@@ -3,7 +3,6 @@ import type { OnGatewayConnection }         from '@nestjs/websockets'
 import type { OnGatewayInit }               from '@nestjs/websockets'
 import type { WebSocket }                   from 'ws'
 import type { WebSocketServer as WSServer } from 'ws'
-import type TL                              from '@chats-system/tl'
 
 import { Logger }                           from '@monstrs/logger'
 import { MTProtoObfuscadetCodec }           from '@monstrs/mtproto-codecs'
@@ -15,10 +14,11 @@ import { MTProtoState }                     from '@monstrs/mtproto-core'
 import { WebSocketGateway }                 from '@nestjs/websockets'
 import { v4 as uuid }                       from 'uuid'
 
-import { HandshakeReceiver }                from '@chats-system/handshake'
+import { Handshake }                        from '@chats-system/handshake'
 import { TLObject }                         from '@chats-system/tl'
 import { BytesIO }                          from '@chats-system/tl'
 import { client }                           from '@chats-system/session-rpc-client'
+import TL                                   from '@chats-system/tl'
 
 import { SessionAuthManager }               from '../session/index.js'
 import { SessionAuthKeyManager }            from '../session/index.js'
@@ -27,6 +27,7 @@ import { MTProtoGatewayClientSender }       from './mtproto-gateway-client.sende
 type MTProtoConnection = WebSocket & {
   id: string
   state: MTProtoState
+  handshake: Handshake
 }
 
 @WebSocketGateway({
@@ -52,19 +53,24 @@ export class MTProtoGateway implements OnGatewayConnection, OnGatewayInit {
   ): void {
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
     connection.on('message', async (data: Buffer): Promise<void> => {
-      try {
-        if (!connection.id) {
-          // eslint-disable-next-line no-param-reassign
-          connection.id = uuid()
-        }
+      if (!connection.id) {
+        // eslint-disable-next-line no-param-reassign
+        connection.id = uuid()
+      }
 
-        if (!connection.state) {
-          // eslint-disable-next-line no-param-reassign
-          connection.state = new MTProtoState(
-            new MTProtoObfuscadetCodec(data),
-            new SessionAuthKeyManager()
-          )
-        } else {
+      if (!connection.handshake) {
+        // eslint-disable-next-line no-param-reassign
+        connection.handshake = new Handshake()
+      }
+
+      if (!connection.state) {
+        // eslint-disable-next-line no-param-reassign
+        connection.state = new MTProtoState(
+          new MTProtoObfuscadetCodec(data),
+          new SessionAuthKeyManager()
+        )
+      } else {
+        try {
           const rawMessage = await connection.state.codec.receive(data, connection.state)
 
           if (rawMessage.getMessage() instanceof MTProtoUnencryptedRawMessage) {
@@ -72,10 +78,10 @@ export class MTProtoGateway implements OnGatewayConnection, OnGatewayInit {
           } else {
             await this.onEncryptedMessage(connection, rawMessage, request.socket.remoteAddress)
           }
-        }
-      } catch (error) {
-        if (error instanceof Error) {
-          this.#logger.error(error)
+        } catch (error) {
+          if (error instanceof Error) {
+            this.#logger.error(error)
+          }
         }
       }
     })
@@ -89,10 +95,10 @@ export class MTProtoGateway implements OnGatewayConnection, OnGatewayInit {
       new BytesIO(rawMessage.getMessage().getMessageData())
     )
 
-    try {
-      const result = await new HandshakeReceiver().handle(request, connection.state)
+    if (request instanceof TL.ReqPqMulti) {
+      const { resPQ } = await connection.handshake.handleReqPQMulti(request)
 
-      const bytes = result.write()
+      const bytes = resPQ.write()
 
       connection.send(
         await connection.state.codec.send(
@@ -106,12 +112,46 @@ export class MTProtoGateway implements OnGatewayConnection, OnGatewayInit {
           )
         )
       )
-    } catch (error) {
-      if (error instanceof Error) {
-        this.#logger.error(error)
-      }
+    }
 
-      connection.close()
+    if (request instanceof TL.ReqDhParams) {
+      const { serverDHParamsOk } = await connection.handshake.handleReqDHParams(request)
+
+      const bytes = serverDHParamsOk.write()
+
+      connection.send(
+        await connection.state.codec.send(
+          new MTProtoRawMessage(
+            new MTProtoUnencryptedRawMessage(
+              new MTProtoAuthKey(),
+              MTProtoMessageId.generate(),
+              bytes.length,
+              bytes
+            )
+          )
+        )
+      )
+    }
+
+    if (request instanceof TL.SetClientDhParams) {
+      const { dhGenOk, authKey } = await connection.handshake.handleSetClientDHParams(request)
+
+      await connection.state.authKeyManager.setAuthKey(authKey.authKeyId, authKey)
+
+      const bytes = dhGenOk.write()
+
+      connection.send(
+        await connection.state.codec.send(
+          new MTProtoRawMessage(
+            new MTProtoUnencryptedRawMessage(
+              new MTProtoAuthKey(),
+              MTProtoMessageId.generate(),
+              bytes.length,
+              bytes
+            )
+          )
+        )
+      )
     }
   }
 

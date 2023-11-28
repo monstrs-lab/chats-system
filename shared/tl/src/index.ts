@@ -1,8 +1,9 @@
 /* eslint-disable prefer-destructuring */
 
-import { Raw }    from '@tgsnake/core'
-import { Raws }   from '@tgsnake/core'
-import { Errors } from '@tgsnake/core'
+import { Raw }     from '@tgsnake/core'
+import { Raws }    from '@tgsnake/core'
+import { Errors }  from '@tgsnake/core'
+import { Cryptos } from '@tgsnake/core'
 
 export default Raw
 
@@ -26,3 +27,5 @@ export const Int256 = Primitive.Int256
 export const Long = Primitive.Long
 export const String = Primitive.String
 export const Vector = Primitive.Vector
+
+export const Prime = Cryptos.Prime

@@ -11,13 +11,15 @@
   "main": "src/index.ts",
   "dependencies": {
     "@chats-system/tl": "workspace:0.0.1",
-    "@monstrs/buffer-utils": "^0.0.6",
+    "@monstrs/bigint-utils": "^0.0.3",
+    "@monstrs/buffer-utils": "^0.0.7",
     "@monstrs/crypto-utils": "^0.0.2",
     "@monstrs/logger": "^0.0.19",
     "@monstrs/mtproto-codecs": "^0.0.23",
     "@monstrs/mtproto-core": "^0.0.23",
-    "@monstrs/mtproto-crypto": "^0.0.5",
-    "@monstrs/mtproto-extensions": "^0.0.3",
-    "@monstrs/mtproto-tl-core": "^0.0.8"
+    "@monstrs/mtproto-crypto": "^0.0.5"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0"
   }
 }

@@ -1276,14 +1276,14 @@ __metadata:
   resolution: "@chats-system/handshake@workspace:shared/handshake"
   dependencies:
     "@chats-system/tl": "workspace:0.0.1"
-    "@monstrs/buffer-utils": "npm:^0.0.6"
+    "@jest/globals": "npm:^29.7.0"
+    "@monstrs/bigint-utils": "npm:^0.0.3"
+    "@monstrs/buffer-utils": "npm:^0.0.7"
     "@monstrs/crypto-utils": "npm:^0.0.2"
     "@monstrs/logger": "npm:^0.0.19"
     "@monstrs/mtproto-codecs": "npm:^0.0.23"
     "@monstrs/mtproto-core": "npm:^0.0.23"
     "@monstrs/mtproto-crypto": "npm:^0.0.5"
-    "@monstrs/mtproto-extensions": "npm:^0.0.3"
-    "@monstrs/mtproto-tl-core": "npm:^0.0.8"
   languageName: unknown
   linkType: soft
 
@@ -1593,7 +1593,7 @@ __metadata:
     "@faker-js/faker": "npm:^8.3.1"
     "@jest/globals": "npm:^29.7.0"
     "@monstrs/base-types": "npm:^0.0.2"
-    "@monstrs/buffer-utils": "npm:^0.0.6"
+    "@monstrs/buffer-utils": "npm:^0.0.7"
     "@monstrs/logger": "npm:^0.0.19"
     "@monstrs/mtproto-core": "npm:^0.0.23"
     "@monstrs/mtproto-extensions": "npm:^0.0.3"
@@ -2875,12 +2875,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@monstrs/bigint-utils@npm:0.0.3, @monstrs/bigint-utils@npm:^0.0.3":
+  version: 0.0.3
+  resolution: "@monstrs/bigint-utils@npm:0.0.3"
+  checksum: 307aabcb2920dab49819ea1bcf9a0bf108bc6f6e4430ab977672db3abbdafef4f5cde09285a7430518e4b4aca56842426b02a3f50a444afce5601ec647514027
+  languageName: node
+  linkType: hard
+
 "@monstrs/buffer-utils@npm:^0.0.6":
   version: 0.0.6
   resolution: "@monstrs/buffer-utils@npm:0.0.6"
   dependencies:
     "@monstrs/bigint-utils": "npm:0.0.2"
   checksum: 85245c0dc2f76a5b0e0656f0b41d16177a53a97851852611cd41ad6a7fc5656b83100e0f8963359729897577453a5d6ea3775d98536b247123ee892e09860a41
+  languageName: node
+  linkType: hard
+
+"@monstrs/buffer-utils@npm:^0.0.7":
+  version: 0.0.7
+  resolution: "@monstrs/buffer-utils@npm:0.0.7"
+  dependencies:
+    "@monstrs/bigint-utils": "npm:0.0.3"
+  checksum: 4e1dea8dc0f7abc6097201716fc691b7d194aac6d44414738230f48096b204144318e976e8c556877ec279559ce7e43eff0ad565e96d5026aafd6aa7109df582
   languageName: node
   linkType: hard
 
