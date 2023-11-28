@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package tech.monstrs.chats_system.messages.v1alpha1;
+
+message Dialogs {
+  
+}

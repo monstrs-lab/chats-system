@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package tech.monstrs.chats_system.messages.v1alpha1;
+
+import "tech/monstrs/chats_system/messages/v1alpha1/messages.types.proto";
+
+service MessagesService {
+  rpc getDialogs (GetDialogsRequest) returns (GetDialogsRequest) {}
+}
+
+message InputPeerEmpty {
+
+}
+
+message GetDialogsRequest {
+  bool exclude_pinned = 1;
+  int32 folder_id = 2;
+  int32 offset_date = 3;
+  int32 offset_id = 4;
+  
+  oneof offset_peer {
+    InputPeerEmpty empty = 5;
+  }
+
+  int32 limit = 6;
+  int64 hash = 7;
+}
+
+message GetDialogsResponse {
+  Dialogs dialogs = 1;
+}
