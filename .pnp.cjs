@@ -3310,14 +3310,14 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/handshake", "workspace:shared/handshake"],\
           ["@chats-system/tl", "workspace:shared/tl"],\
-          ["@monstrs/buffer-utils", "npm:0.0.6"],\
+          ["@jest/globals", "npm:29.7.0"],\
+          ["@monstrs/bigint-utils", "npm:0.0.3"],\
+          ["@monstrs/buffer-utils", "npm:0.0.7"],\
           ["@monstrs/crypto-utils", "npm:0.0.2"],\
           ["@monstrs/logger", "npm:0.0.19"],\
           ["@monstrs/mtproto-codecs", "npm:0.0.23"],\
           ["@monstrs/mtproto-core", "npm:0.0.23"],\
-          ["@monstrs/mtproto-crypto", "npm:0.0.5"],\
-          ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
-          ["@monstrs/mtproto-tl-core", "npm:0.0.8"]\
+          ["@monstrs/mtproto-crypto", "npm:0.0.5"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -4091,7 +4091,7 @@ const RAW_RUNTIME_STATE =
           ["@faker-js/faker", "npm:8.3.1"],\
           ["@jest/globals", "npm:29.7.0"],\
           ["@monstrs/base-types", "npm:0.0.2"],\
-          ["@monstrs/buffer-utils", "npm:0.0.6"],\
+          ["@monstrs/buffer-utils", "npm:0.0.7"],\
           ["@monstrs/logger", "npm:0.0.19"],\
           ["@monstrs/mtproto-core", "npm:0.0.23"],\
           ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
@@ -4179,7 +4179,7 @@ const RAW_RUNTIME_STATE =
           ["@faker-js/faker", "npm:8.3.1"],\
           ["@jest/globals", "npm:29.7.0"],\
           ["@monstrs/base-types", "npm:0.0.2"],\
-          ["@monstrs/buffer-utils", "npm:0.0.6"],\
+          ["@monstrs/buffer-utils", "npm:0.0.7"],\
           ["@monstrs/logger", "npm:0.0.19"],\
           ["@monstrs/mtproto-core", "npm:0.0.23"],\
           ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
@@ -4266,7 +4266,7 @@ const RAW_RUNTIME_STATE =
           ["@faker-js/faker", "npm:8.3.1"],\
           ["@jest/globals", "npm:29.7.0"],\
           ["@monstrs/base-types", "npm:0.0.2"],\
-          ["@monstrs/buffer-utils", "npm:0.0.6"],\
+          ["@monstrs/buffer-utils", "npm:0.0.7"],\
           ["@monstrs/logger", "npm:0.0.19"],\
           ["@monstrs/mtproto-core", "npm:0.0.23"],\
           ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
@@ -9783,6 +9783,13 @@ const RAW_RUNTIME_STATE =
           ["@monstrs/bigint-utils", "npm:0.0.2"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:0.0.3", {\
+        "packageLocation": "./.yarn/cache/@monstrs-bigint-utils-npm-0.0.3-3c46bacecb-307aabcb29.zip/node_modules/@monstrs/bigint-utils/",\
+        "packageDependencies": [\
+          ["@monstrs/bigint-utils", "npm:0.0.3"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["@monstrs/buffer-utils", [\
@@ -9791,6 +9798,14 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@monstrs/buffer-utils", "npm:0.0.6"],\
           ["@monstrs/bigint-utils", "npm:0.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:0.0.7", {\
+        "packageLocation": "./.yarn/cache/@monstrs-buffer-utils-npm-0.0.7-bbb8be9832-4e1dea8dc0.zip/node_modules/@monstrs/buffer-utils/",\
+        "packageDependencies": [\
+          ["@monstrs/buffer-utils", "npm:0.0.7"],\
+          ["@monstrs/bigint-utils", "npm:0.0.3"]\
         ],\
         "linkType": "HARD"\
       }]\

@@ -1,1 +1,1 @@
-export * from './handshake.receiver.js'
+export * from './handshake.js'
