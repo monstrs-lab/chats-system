@@ -9,6 +9,8 @@ import { SendCodeRequest }  from './auth.service_pb.js'
 import { SendCodeResponse } from './auth.service_pb.js'
 import { SignInRequest }    from './auth.service_pb.js'
 import { SignInResponse }   from './auth.service_pb.js'
+import { SignUpRequest }    from './auth.service_pb.js'
+import { SignUpResponse }   from './auth.service_pb.js'
 
 /**
  * @generated from service tech.monstrs.chats_system.auth.v1alpha1.AuthService
@@ -32,6 +34,15 @@ export const AuthService = {
       name: 'signIn',
       I: SignInRequest,
       O: SignInResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.signUp
+     */
+    signUp: {
+      name: 'signUp',
+      I: SignUpRequest,
+      O: SignUpResponse,
       kind: MethodKind.Unary,
     },
   },

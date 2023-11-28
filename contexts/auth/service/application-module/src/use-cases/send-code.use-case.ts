@@ -31,7 +31,7 @@ export class SendCodeUseCase {
 
     const phoneNumber = parsedPhoneNumber.formatInternational()
 
-    const phoneRegistered = await this.userPort.isUserPhoneRegistered(phoneNumber)
+    const phoneRegistered = await this.userPort.isPhoneRegistered(phoneNumber)
 
     return this.sentCodeRepository.save(
       this.sentCodeFactory.createSentCode({

@@ -15,16 +15,19 @@
   "dependencies": {
     "@chats-system/auth-application-module": "workspace:0.0.1",
     "@chats-system/auth-domain-module": "workspace:0.0.1",
+    "@chats-system/auth-rpc": "workspace:0.0.1",
+    "@chats-system/authkey-rpc-client": "workspace:0.0.1",
     "@chats-system/core-rpc": "workspace:0.0.1",
     "@chats-system/tl": "workspace:0.0.1",
     "@chats-system/user-rpc-client": "workspace:0.0.1",
     "@monstrs/logger": "^0.0.19",
+    "@monstrs/mtproto-core": "^0.0.23",
     "crypto-random-bigint": "^2.1.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@bufbuild/protobuf": "^1.4.2",
-    "@chats-system/auth-rpc": "workspace:0.0.1",
+    "@chats-system/core-errors": "workspace:0.0.1",
     "@connectrpc/connect": "^1.1.3",
     "@connectrpc/connect-node": "^1.1.3",
     "@faker-js/faker": "^8.3.1",
@@ -58,7 +61,7 @@
   },
   "peerDependencies": {
     "@bufbuild/protobuf": "^1.3.1",
-    "@chats-system/auth-rpc": "workspace:0.0.1",
+    "@chats-system/core-errors": "workspace:0.0.1",
     "@connectrpc/connect": "^1.1.3",
     "@connectrpc/connect-node": "^1.1.3",
     "@mikro-orm/cli": "^5.9.4",

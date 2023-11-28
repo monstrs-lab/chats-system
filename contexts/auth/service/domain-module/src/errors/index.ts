@@ -1,1 +1,6 @@
 export * from './phone-number-invalid.error.js'
+export * from './phone-code-hash-empty.error.js'
+export * from './phone-code-invalid.error.js'
+export * from './phone-code-expired.error.js'
+export * from './first-name-invalid.error.js'
+export * from './user-invalid.error.js'

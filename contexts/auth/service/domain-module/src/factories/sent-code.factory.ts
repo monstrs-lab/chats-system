@@ -13,7 +13,7 @@ export class SentCodeFactory {
   createSentCode(sendCodeDto: SendCodeDto): SentCode {
     return new SentCode(
       random(63),
-      SentCodeState.SEND,
+      SentCodeState.SENT,
       sendCodeDto.authKeyId,
       sendCodeDto.sessionId,
       sendCodeDto.phone,

@@ -4,6 +4,7 @@ import parsePhoneNumber            from 'libphonenumber-js'
 import { SentCodeRepository }      from '@chats-system/auth-domain-module'
 import { Authorization }           from '@chats-system/auth-domain-module'
 import { PhoneNumberInvalidError } from '@chats-system/auth-domain-module'
+import { PhoneCodeInvalidError }   from '@chats-system/auth-domain-module'
 
 @Injectable()
 export class SignInUseCase {
@@ -23,11 +24,11 @@ export class SignInUseCase {
     const sentCode = await this.sentCodeRepository.getByCodeHash(phoneCodeHash)
 
     if (!sentCode) {
-      throw new Error('Sent code required')
+      throw new PhoneCodeInvalidError()
     }
 
     if (sentCode.phoneCode !== phoneCode) {
-      throw new Error('Invalid phone code')
+      throw new PhoneCodeInvalidError()
     }
 
     if (!sentCode.phoneRegistered) {
