@@ -15,6 +15,7 @@
     "@bufbuild/protobuf": "^1.4.2",
     "@chats-system/auth-infrastructure-module": "workspace:0.0.1",
     "@chats-system/authkey-infrastructure-module": "workspace:0.0.1",
+    "@chats-system/core-errors": "workspace:0.0.1",
     "@chats-system/gateway-infrastructure-module": "workspace:0.0.1",
     "@chats-system/help-infrastructure-module": "workspace:0.0.1",
     "@chats-system/idgen-infrastructure-module": "workspace:0.0.1",

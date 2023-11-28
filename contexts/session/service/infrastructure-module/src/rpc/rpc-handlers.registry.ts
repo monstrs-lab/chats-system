@@ -6,8 +6,13 @@ import type { Type }              from '@nestjs/common'
 import type { IRpcHandler }       from './rpc-handler.interfaces.js'
 import type { SessionMetadata }   from './rpc-handler.interfaces.js'
 
+import { ConnectError }           from '@connectrpc/connect'
 import { Injectable }             from '@nestjs/common'
 import { ModuleRef }              from '@nestjs/core'
+
+import { RpcError }               from '@chats-system/core-rpc'
+import { Exceptions }             from '@chats-system/tl'
+import TL                         from '@chats-system/tl'
 
 import { RPC_HANDLER_METADATA }   from './rpc-metadata.constants.js'
 
@@ -34,7 +39,29 @@ export class RpcHandlersRegistry {
       )
     }
 
-    return handler.execute(request, session, metadata)
+    try {
+      return await handler.execute(request, session, metadata)
+    } catch (error) {
+      if (error instanceof ConnectError) {
+        const rpcError = error.details.find((detail) => (detail as any).type === RpcError.typeName)
+
+        if (rpcError) {
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+          const rpcErrorMessage = RpcError.fromBinary((rpcError as any).value)
+
+          if (rpcErrorMessage) {
+            if ((Exceptions.Exceptions as any)[rpcErrorMessage.code][rpcErrorMessage.id]) {
+              return new TL.RpcError({
+                errorCode: rpcErrorMessage.code,
+                errorMessage: rpcErrorMessage.id,
+              })
+            }
+          }
+        }
+      }
+
+      throw error
+    }
   }
 
   register(handlers: Array<Type<IRpcHandler>>): void {

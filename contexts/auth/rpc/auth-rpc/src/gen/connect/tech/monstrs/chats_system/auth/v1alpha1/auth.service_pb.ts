@@ -187,3 +187,101 @@ export class SignInResponse extends Message<SignInResponse> {
     return proto3.util.equals(SignInResponse, a, b)
   }
 }
+
+/**
+ * @generated from message tech.monstrs.chats_system.auth.v1alpha1.SignUpRequest
+ */
+export class SignUpRequest extends Message<SignUpRequest> {
+  /**
+   * @generated from field: string phone = 1;
+   */
+  phone = ''
+
+  /**
+   * @generated from field: string phone_code_hash = 2;
+   */
+  phoneCodeHash = ''
+
+  /**
+   * @generated from field: string first_name = 3;
+   */
+  firstName = ''
+
+  /**
+   * @generated from field: string last_name = 4;
+   */
+  lastName = ''
+
+  constructor(data?: PartialMessage<SignUpRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.SignUpRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'phone', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'phone_code_hash', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: 'first_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: 'last_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SignUpRequest {
+    return new SignUpRequest().fromBinary(bytes, options)
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SignUpRequest {
+    return new SignUpRequest().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SignUpRequest {
+    return new SignUpRequest().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: SignUpRequest | PlainMessage<SignUpRequest> | undefined,
+    b: SignUpRequest | PlainMessage<SignUpRequest> | undefined
+  ): boolean {
+    return proto3.util.equals(SignUpRequest, a, b)
+  }
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.auth.v1alpha1.SignUpResponse
+ */
+export class SignUpResponse extends Message<SignUpResponse> {
+  /**
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.Authorization authorization = 1;
+   */
+  authorization?: Authorization
+
+  constructor(data?: PartialMessage<SignUpResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.auth.v1alpha1.SignUpResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'authorization', kind: 'message', T: Authorization, opt: true },
+  ])
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SignUpResponse {
+    return new SignUpResponse().fromBinary(bytes, options)
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SignUpResponse {
+    return new SignUpResponse().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SignUpResponse {
+    return new SignUpResponse().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: SignUpResponse | PlainMessage<SignUpResponse> | undefined,
+    b: SignUpResponse | PlainMessage<SignUpResponse> | undefined
+  ): boolean {
+    return proto3.util.equals(SignUpResponse, a, b)
+  }
+}

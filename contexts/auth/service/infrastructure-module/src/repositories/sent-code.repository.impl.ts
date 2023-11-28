@@ -39,4 +39,12 @@ export class SentCodeRepositoryImpl extends SentCodeRepository {
 
     return entity ? this.mapper.fromPersistence(entity) : undefined
   }
+
+  override async removeById(id: bigint): Promise<void> {
+    const entity = await this.repository.findOne({ id })
+
+    if (entity) {
+      await this.em.remove(entity).flush()
+    }
+  }
 }

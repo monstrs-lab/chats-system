@@ -6,12 +6,14 @@ import { Module }                 from '@nestjs/common'
 import { AuthApplicationModule }  from '@chats-system/auth-application-module'
 import { SentCodeRepository }     from '@chats-system/auth-domain-module'
 import { UserPort }               from '@chats-system/auth-domain-module'
+import { AuthKeyPort }            from '@chats-system/auth-domain-module'
 import { AuthDomainModule }       from '@chats-system/auth-domain-module'
 
 import * as controllers           from '../controllers/index.js'
 import * as entities              from '../entities/index.js'
 import * as mappers               from '../mappers/index.js'
 import { UserPortImpl }           from '../ports/index.js'
+import { AuthKeyPortImpl }        from '../ports/index.js'
 import { SentCodeRepositoryImpl } from '../repositories/index.js'
 
 @Module({})
@@ -36,6 +38,10 @@ export class AuthInfrastructureModule {
           provide: UserPort,
           useClass: UserPortImpl,
         },
+        {
+          provide: AuthKeyPort,
+          useClass: AuthKeyPortImpl,
+        },
       ],
       exports: [
         {
@@ -45,6 +51,10 @@ export class AuthInfrastructureModule {
         {
           provide: UserPort,
           useClass: UserPortImpl,
+        },
+        {
+          provide: AuthKeyPort,
+          useClass: AuthKeyPortImpl,
         },
       ],
     }

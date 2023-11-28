@@ -55,3 +55,38 @@ export abstract class SignInResponse {
    */
   abstract readonly authorization?: Authorization
 }
+
+/**
+ * @generated from message tech.monstrs.chats_system.auth.v1alpha1.SignUpRequest
+ */
+export abstract class SignUpRequest {
+  /**
+   * @generated from field: string phone = 1;
+   */
+  abstract readonly phone: string
+
+  /**
+   * @generated from field: string phone_code_hash = 2;
+   */
+  abstract readonly phoneCodeHash: string
+
+  /**
+   * @generated from field: string first_name = 3;
+   */
+  abstract readonly firstName: string
+
+  /**
+   * @generated from field: string last_name = 4;
+   */
+  abstract readonly lastName: string
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.auth.v1alpha1.SignUpResponse
+ */
+export abstract class SignUpResponse {
+  /**
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.Authorization authorization = 1;
+   */
+  abstract readonly authorization?: Authorization
+}

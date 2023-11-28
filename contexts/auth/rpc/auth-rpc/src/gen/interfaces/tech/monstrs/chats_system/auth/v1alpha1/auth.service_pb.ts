@@ -55,3 +55,38 @@ export interface SignInResponse {
    */
   authorization?: Authorization
 }
+
+/**
+ * @generated from message tech.monstrs.chats_system.auth.v1alpha1.SignUpRequest
+ */
+export interface SignUpRequest {
+  /**
+   * @generated from field: string phone = 1;
+   */
+  phone: string
+
+  /**
+   * @generated from field: string phone_code_hash = 2;
+   */
+  phoneCodeHash: string
+
+  /**
+   * @generated from field: string first_name = 3;
+   */
+  firstName: string
+
+  /**
+   * @generated from field: string last_name = 4;
+   */
+  lastName: string
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.auth.v1alpha1.SignUpResponse
+ */
+export interface SignUpResponse {
+  /**
+   * @generated from field: optional tech.monstrs.chats_system.auth.v1alpha1.Authorization authorization = 1;
+   */
+  authorization?: Authorization
+}
