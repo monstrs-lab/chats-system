@@ -7,6 +7,7 @@ import "tech/monstrs/chats_system/user/v1alpha1/user.types.proto";
 service UserService {
   rpc createUser (CreateUserRequest) returns (CreateUserResponse) {}
   rpc getUser (GetUserRequest) returns (GetUserResponse) {}
+  rpc importContacts (ImportContactsRequest) returns (ImportContactsResponse) {}
 }
 
 message CreateUserRequest {
@@ -27,4 +28,12 @@ message GetUserRequest {
 
 message GetUserResponse {
   User user = 1;
+}
+
+message ImportContactsRequest {
+  repeated InputContact contacts = 1;
+}
+
+message ImportContactsResponse {
+  ImportedContacts imported_contacts = 1;
 }

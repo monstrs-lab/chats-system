@@ -14,6 +14,8 @@ import { Message }                from '@bufbuild/protobuf'
 import { proto3 }                 from '@bufbuild/protobuf'
 import { protoInt64 }             from '@bufbuild/protobuf'
 
+import { ImportedContacts }       from './user.types_pb.js'
+import { InputContact }           from './user.types_pb.js'
 import { User }                   from './user.types_pb.js'
 
 /**
@@ -200,5 +202,100 @@ export class GetUserResponse extends Message<GetUserResponse> {
     b: GetUserResponse | PlainMessage<GetUserResponse> | undefined
   ): boolean {
     return proto3.util.equals(GetUserResponse, a, b)
+  }
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.user.v1alpha1.ImportContactsRequest
+ */
+export class ImportContactsRequest extends Message<ImportContactsRequest> {
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.user.v1alpha1.InputContact contacts = 1;
+   */
+  contacts: InputContact[] = []
+
+  constructor(data?: PartialMessage<ImportContactsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.user.v1alpha1.ImportContactsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'contacts', kind: 'message', T: InputContact, repeated: true },
+  ])
+
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>
+  ): ImportContactsRequest {
+    return new ImportContactsRequest().fromBinary(bytes, options)
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ImportContactsRequest {
+    return new ImportContactsRequest().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): ImportContactsRequest {
+    return new ImportContactsRequest().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: ImportContactsRequest | PlainMessage<ImportContactsRequest> | undefined,
+    b: ImportContactsRequest | PlainMessage<ImportContactsRequest> | undefined
+  ): boolean {
+    return proto3.util.equals(ImportContactsRequest, a, b)
+  }
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.user.v1alpha1.ImportContactsResponse
+ */
+export class ImportContactsResponse extends Message<ImportContactsResponse> {
+  /**
+   * @generated from field: tech.monstrs.chats_system.user.v1alpha1.ImportedContacts imported_contacts = 1;
+   */
+  importedContacts?: ImportedContacts
+
+  constructor(data?: PartialMessage<ImportContactsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.user.v1alpha1.ImportContactsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'imported_contacts', kind: 'message', T: ImportedContacts },
+  ])
+
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>
+  ): ImportContactsResponse {
+    return new ImportContactsResponse().fromBinary(bytes, options)
+  }
+
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>
+  ): ImportContactsResponse {
+    return new ImportContactsResponse().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): ImportContactsResponse {
+    return new ImportContactsResponse().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: ImportContactsResponse | PlainMessage<ImportContactsResponse> | undefined,
+    b: ImportContactsResponse | PlainMessage<ImportContactsResponse> | undefined
+  ): boolean {
+    return proto3.util.equals(ImportContactsResponse, a, b)
   }
 }

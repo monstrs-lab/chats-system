@@ -8,11 +8,11 @@ import { Logger }               from '@monstrs/logger'
 import { MTProtoMessageId }     from '@monstrs/mtproto-core'
 import { Injectable }           from '@nestjs/common'
 
+import { client }               from '@chats-system/authkey-rpc-client'
 import TL                       from '@chats-system/tl'
 
 import { RpcHandlersRegistry }  from '../rpc/index.js'
 import { SessionResponseQueue } from './session-response.queue.js'
-import { SessionsManager }      from './session.manager.js'
 
 const generateMessageSeqNo = (sequence: number, contentRelated: boolean): number => {
   if (contentRelated) {
@@ -40,7 +40,6 @@ export class SessionRpcQueue {
   #tasks: Array<SessionRpcTask> = []
 
   constructor(
-    private readonly sessionsManager: SessionsManager,
     private readonly responseQueue: SessionResponseQueue,
     private readonly rpcHandlersRegistry: RpcHandlersRegistry
   ) {
@@ -82,23 +81,25 @@ export class SessionRpcQueue {
 
     if (task) {
       try {
-        const session = this.sessionsManager.getByAuthKeyId(task.sessionData.authKeyId)!
+        const { authKeyUser } = await client.getAuthKeyUser({
+          authKeyId: task.sessionData.authKeyId,
+        })
 
         const metadata = {
           authKeyId: task.sessionData.authKeyId,
-          userId: session.getUserId(),
+          userId: authKeyUser?.userId || 0n,
           sessionId: task.sessionData.sessionId,
           clientMessageId: task.message.messageId,
           permAuthKeyId: task.sessionData.authKeyId,
           serverId: task.sessionData.gatewayId,
           clientIp: task.sessionData.clientIp,
-          layer: session.getLayer(),
-          client: session.getClient(),
-          langPack: session.getLangPack(),
+          layer: 166,
+          client: '',
+          langPack: '',
           receiveTime: Math.floor(Date.now() / 1000),
         }
 
-        const result = await await this.rpcHandlersRegistry.execute(
+        const result = await this.rpcHandlersRegistry.execute(
           task.message.message,
           task.sessionData,
           metadata
