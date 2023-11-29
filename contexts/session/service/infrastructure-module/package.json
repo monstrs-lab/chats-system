@@ -21,7 +21,7 @@
     "@chats-system/user-rpc-client": "workspace:0.0.1",
     "@monstrs/buffer-utils": "^0.0.7",
     "@monstrs/logger": "^0.0.19",
-    "@monstrs/mtproto-core": "^0.0.23",
+    "@monstrs/mtproto-core": "^0.0.24",
     "@monstrs/mtproto-extensions": "^0.0.3",
     "@monstrs/mtproto-tl-core": "^0.0.8",
     "@monstrs/nestjs-connectrpc-errors": "^0.0.3",
