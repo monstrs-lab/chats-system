@@ -1,4 +1,4 @@
-import type { MTProtoState }          from '@monstrs/mtproto-core'
+import type { MTProtoCodec }          from '@monstrs/mtproto-core'
 import type { WebSocketServer }       from 'ws'
 import type { WebSocket }             from 'ws'
 
@@ -27,15 +27,15 @@ export class MTProtoGatewayClientSender {
         this.#server.clients.forEach(async (client) => {
           const connection = client as WebSocket & {
             id: string
-            state: MTProtoState
+            codec: MTProtoCodec
           }
 
           if (connection.id === connectionId) {
             connection.send(
-              await connection.state.codec.send(
-                new MTProtoRawMessage(
+              await connection.codec.send(
+                await new MTProtoRawMessage(
                   new MTProtoEncryptedRawMessage(session.authKey, Buffer.from(message))
-                )
+                ).encode()
               )
             )
           }

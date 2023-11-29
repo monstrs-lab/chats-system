@@ -1,3 +1,4 @@
+import type { MTProtoCodec }                from '@monstrs/mtproto-core'
 import type { MTProtoEncryptedRawMessage }  from '@monstrs/mtproto-core'
 import type { OnGatewayConnection }         from '@nestjs/websockets'
 import type { OnGatewayInit }               from '@nestjs/websockets'
@@ -10,7 +11,6 @@ import { MTProtoUnencryptedRawMessage }     from '@monstrs/mtproto-core'
 import { MTProtoRawMessage }                from '@monstrs/mtproto-core'
 import { MTProtoAuthKey }                   from '@monstrs/mtproto-core'
 import { MTProtoMessageId }                 from '@monstrs/mtproto-core'
-import { MTProtoState }                     from '@monstrs/mtproto-core'
 import { WebSocketGateway }                 from '@nestjs/websockets'
 import { v4 as uuid }                       from 'uuid'
 
@@ -26,8 +26,10 @@ import { MTProtoGatewayClientSender }       from './mtproto-gateway-client.sende
 
 type MTProtoConnection = WebSocket & {
   id: string
-  state: MTProtoState
+  codec: MTProtoCodec
   handshake: Handshake
+  authKeyManager: SessionAuthKeyManager
+  sessionId: bigint
 }
 
 @WebSocketGateway({
@@ -56,6 +58,8 @@ export class MTProtoGateway implements OnGatewayConnection, OnGatewayInit {
       if (!connection.id) {
         // eslint-disable-next-line no-param-reassign
         connection.id = uuid()
+        // eslint-disable-next-line no-param-reassign
+        connection.authKeyManager = new SessionAuthKeyManager()
       }
 
       if (!connection.handshake) {
@@ -63,15 +67,16 @@ export class MTProtoGateway implements OnGatewayConnection, OnGatewayInit {
         connection.handshake = new Handshake()
       }
 
-      if (!connection.state) {
+      if (!connection.codec) {
         // eslint-disable-next-line no-param-reassign
-        connection.state = new MTProtoState(
-          new MTProtoObfuscadetCodec(data),
-          new SessionAuthKeyManager()
-        )
+        connection.codec = new MTProtoObfuscadetCodec(data)
       } else {
         try {
-          const rawMessage = await connection.state.codec.receive(data, connection.state)
+          const messageData = await connection.codec.receive(data)
+
+          const rawMessage = await MTProtoRawMessage.decode(messageData, {
+            authKeyManager: connection.authKeyManager,
+          })
 
           if (rawMessage.getMessage() instanceof MTProtoUnencryptedRawMessage) {
             await this.onUnencryptedMessage(connection, rawMessage)
@@ -101,15 +106,15 @@ export class MTProtoGateway implements OnGatewayConnection, OnGatewayInit {
       const bytes = resPQ.write()
 
       connection.send(
-        await connection.state.codec.send(
-          new MTProtoRawMessage(
+        await connection.codec.send(
+          await new MTProtoRawMessage(
             new MTProtoUnencryptedRawMessage(
               new MTProtoAuthKey(),
               MTProtoMessageId.generate(),
               bytes.length,
               bytes
             )
-          )
+          ).encode()
         )
       )
     }
@@ -120,15 +125,15 @@ export class MTProtoGateway implements OnGatewayConnection, OnGatewayInit {
       const bytes = serverDHParamsOk.write()
 
       connection.send(
-        await connection.state.codec.send(
-          new MTProtoRawMessage(
+        await connection.codec.send(
+          await new MTProtoRawMessage(
             new MTProtoUnencryptedRawMessage(
               new MTProtoAuthKey(),
               MTProtoMessageId.generate(),
               bytes.length,
               bytes
             )
-          )
+          ).encode()
         )
       )
     }
@@ -136,20 +141,20 @@ export class MTProtoGateway implements OnGatewayConnection, OnGatewayInit {
     if (request instanceof TL.SetClientDhParams) {
       const { dhGenOk, authKey } = await connection.handshake.handleSetClientDHParams(request)
 
-      await connection.state.authKeyManager.setAuthKey(authKey.authKeyId, authKey)
+      await connection.authKeyManager.setAuthKey(authKey.authKeyId, authKey)
 
       const bytes = dhGenOk.write()
 
       connection.send(
-        await connection.state.codec.send(
-          new MTProtoRawMessage(
+        await connection.codec.send(
+          await new MTProtoRawMessage(
             new MTProtoUnencryptedRawMessage(
               new MTProtoAuthKey(),
               MTProtoMessageId.generate(),
               bytes.length,
               bytes
             )
-          )
+          ).encode()
         )
       )
     }
@@ -163,9 +168,12 @@ export class MTProtoGateway implements OnGatewayConnection, OnGatewayInit {
     const message = rawMessage.getMessage() as MTProtoEncryptedRawMessage
     const body = message.getMessageData()
     const sessionId = body.readBigInt64BE(8)
-    const isNew = connection.state.sessionId !== sessionId
+    const isNew = connection.sessionId !== sessionId
 
     if (isNew) {
+      // eslint-disable-next-line no-param-reassign
+      connection.sessionId = sessionId
+
       if (this.sessionAuthManager.addNewSession(message.getAuthKey(), sessionId, connection.id)) {
         await client.createSession({
           client: {

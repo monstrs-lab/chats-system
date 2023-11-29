@@ -10,7 +10,7 @@
   },
   "main": "src/index.ts",
   "dependencies": {
-    "@monstrs/mtproto-core": "^0.0.23",
+    "@monstrs/mtproto-core": "^0.0.24",
     "crypto-random-bigint": "^2.1.0"
   },
   "devDependencies": {

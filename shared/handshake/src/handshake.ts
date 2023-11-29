@@ -206,7 +206,7 @@ export class Handshake {
       )
     }
 
-    const a = fromBufferToBigInt(Buffer.from(randomBytes(16)), false, true)
+    const a = fromBufferToBigInt(randomBytes(256))
     const gA = modExp(fromBufferToBigInt(dh2048G), a, fromBufferToBigInt(dh2048P))
 
     const serverDHInnerData = new TL.ServerDhInnerData({

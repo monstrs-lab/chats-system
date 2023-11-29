@@ -211,13 +211,17 @@ export class SessionProcessor {
 
     const authKeyUserId = authKeyUser?.userId || 0n
 
-    if (authKeyUserId === 0n && !this.checkRpcWithoutLogin(message.message)) {
-      const rpcError = new TL.RpcError({
-        errorCode: 401,
-        errorMessage: 'AUTH_KEY_INVALID',
-      })
+    if (authKeyUserId === 0n) {
+      if (this.checkRpcWithoutLogin(message.message)) {
+        this.putRpcRequestToQueue(sessionData, message)
+      } else {
+        const rpcError = new TL.RpcError({
+          errorCode: 401,
+          errorMessage: 'AUTH_KEY_INVALID',
+        })
 
-      this.putRpcResultToResponseQueue(sessionData, message, rpcError)
+        this.putRpcResultToResponseQueue(sessionData, message, rpcError)
+      }
     } else {
       this.putRpcRequestToQueue(sessionData, message)
     }
