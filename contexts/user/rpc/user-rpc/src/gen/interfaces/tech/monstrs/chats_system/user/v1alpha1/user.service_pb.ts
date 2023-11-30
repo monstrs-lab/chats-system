@@ -6,6 +6,7 @@
 import type { ImportedContacts } from './user.types_pb.js'
 import type { InputContact }     from './user.types_pb.js'
 import type { User }             from './user.types_pb.js'
+import type { UserContact }      from './user.types_pb.js'
 
 /**
  * @generated from message tech.monstrs.chats_system.user.v1alpha1.CreateUserRequest
@@ -85,4 +86,24 @@ export interface ImportContactsResponse {
    * @generated from field: tech.monstrs.chats_system.user.v1alpha1.ImportedContacts imported_contacts = 1;
    */
   importedContacts?: ImportedContacts
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.user.v1alpha1.GetUserContactsRequest
+ */
+export interface GetUserContactsRequest {
+  /**
+   * @generated from field: int64 user_id = 1;
+   */
+  userId: bigint
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.user.v1alpha1.GetUserContactsResponse
+ */
+export interface GetUserContactsResponse {
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.user.v1alpha1.UserContact user_contacts = 1;
+   */
+  userContacts: UserContact[]
 }

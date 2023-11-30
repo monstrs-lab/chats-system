@@ -39,6 +39,46 @@ export abstract class User {
 }
 
 /**
+ * @generated from message tech.monstrs.chats_system.user.v1alpha1.UserContact
+ */
+export abstract class UserContact {
+  /**
+   * @generated from field: int64 id = 1;
+   */
+  abstract readonly id: bigint
+
+  /**
+   * @generated from field: int64 owner_user_id = 2;
+   */
+  abstract readonly ownerUserId: bigint
+
+  /**
+   * @generated from field: int64 contact_user_id = 3;
+   */
+  abstract readonly contactUserId: bigint
+
+  /**
+   * @generated from field: string contact_phone = 4;
+   */
+  abstract readonly contactPhone: string
+
+  /**
+   * @generated from field: string first_name = 5;
+   */
+  abstract readonly firstName: string
+
+  /**
+   * @generated from field: string last_name = 6;
+   */
+  abstract readonly lastName: string
+
+  /**
+   * @generated from field: bool mutual = 7;
+   */
+  abstract readonly mutual: boolean
+}
+
+/**
  * @generated from message tech.monstrs.chats_system.user.v1alpha1.InputContact
  */
 export abstract class InputContact {

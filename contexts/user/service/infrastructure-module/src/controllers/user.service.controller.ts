@@ -1,25 +1,27 @@
 /* eslint-disable @typescript-eslint/consistent-type-imports */
 
-import type { CreateUserRequest }     from '@chats-system/user-rpc'
-import type { ImportContactsRequest } from '@chats-system/user-rpc'
-import type { GetUserRequest }        from '@chats-system/user-rpc'
-import type { ServiceImpl }           from '@connectrpc/connect'
-import type { HandlerContext }        from '@connectrpc/connect'
+import type { CreateUserRequest }      from '@chats-system/user-rpc'
+import type { GetUserContactsRequest } from '@chats-system/user-rpc'
+import type { ImportContactsRequest }  from '@chats-system/user-rpc'
+import type { GetUserRequest }         from '@chats-system/user-rpc'
+import type { ServiceImpl }            from '@connectrpc/connect'
+import type { HandlerContext }         from '@connectrpc/connect'
 
-import { CreateRequestContext }       from '@mikro-orm/core'
-import { MikroORM }                   from '@mikro-orm/core'
-import { ConnectRpcMethod }           from '@monstrs/nestjs-connectrpc'
-import { ConnectRpcService }          from '@monstrs/nestjs-connectrpc'
-import { Controller }                 from '@nestjs/common'
-import { Ctx }                        from '@nestjs/microservices'
-import { Payload }                    from '@nestjs/microservices'
+import { CreateRequestContext }        from '@mikro-orm/core'
+import { MikroORM }                    from '@mikro-orm/core'
+import { ConnectRpcMethod }            from '@monstrs/nestjs-connectrpc'
+import { ConnectRpcService }           from '@monstrs/nestjs-connectrpc'
+import { Controller }                  from '@nestjs/common'
+import { Ctx }                         from '@nestjs/microservices'
+import { Payload }                     from '@nestjs/microservices'
 
-import { RpcMetadata }                from '@chats-system/core-rpc'
-import { UserUseCases }               from '@chats-system/user-application-module'
-import { GetUserResponse }            from '@chats-system/user-rpc'
-import { ImportContactsResponse }     from '@chats-system/user-rpc'
-import { CreateUserResponse }         from '@chats-system/user-rpc'
-import { UserService }                from '@chats-system/user-rpc'
+import { RpcMetadata }                 from '@chats-system/core-rpc'
+import { UserUseCases }                from '@chats-system/user-application-module'
+import { GetUserResponse }             from '@chats-system/user-rpc'
+import { ImportContactsResponse }      from '@chats-system/user-rpc'
+import { CreateUserResponse }          from '@chats-system/user-rpc'
+import { GetUserContactsResponse }     from '@chats-system/user-rpc'
+import { UserService }                 from '@chats-system/user-rpc'
 
 @Controller()
 @ConnectRpcService(UserService)
@@ -52,6 +54,16 @@ export class UserServiceController implements ServiceImpl<typeof UserService> {
 
     return new GetUserResponse({
       user,
+    })
+  }
+
+  @ConnectRpcMethod()
+  @CreateRequestContext()
+  async getUserContacts(request: GetUserContactsRequest): Promise<GetUserContactsResponse> {
+    const userContacts = await this.userUseCases.getUserContacts.execute(request.userId)
+
+    return new GetUserContactsResponse({
+      userContacts,
     })
   }
 
