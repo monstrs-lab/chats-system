@@ -8,6 +8,7 @@ import { Logger }               from '@monstrs/logger'
 import { MTProtoMessageId }     from '@monstrs/mtproto-core'
 import { Injectable }           from '@nestjs/common'
 
+import { Vector }               from '@chats-system/tl'
 import { client }               from '@chats-system/authkey-rpc-client'
 import TL                       from '@chats-system/tl'
 
@@ -107,7 +108,13 @@ export class SessionRpcQueue {
 
         const rpcResult = new TL.RpcResult({
           reqMsgId: task.message.messageId,
-          result,
+          result: Array.isArray(result)
+            ? {
+                write(): Buffer {
+                  return Vector.write(result)
+                },
+              }
+            : result,
         })
 
         const bytes = rpcResult.write()

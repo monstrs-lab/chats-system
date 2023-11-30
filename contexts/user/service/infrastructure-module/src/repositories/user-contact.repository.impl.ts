@@ -41,6 +41,14 @@ export class UserContactRepositoryImpl extends UserContactRepository {
     return entity ? this.mapper.fromPersistence(entity) : undefined
   }
 
+  override async getByUserId(userId: bigint): Promise<Array<UserContact>> {
+    const entities = await this.repository.find({
+      ownerUserId: userId,
+    })
+
+    return entities.map((entity) => this.mapper.fromPersistence(entity))
+  }
+
   override async getByUserIdList(userId: bigint, ids: Array<bigint>): Promise<Array<UserContact>> {
     const entities = await this.repository.find({
       ownerUserId: userId,

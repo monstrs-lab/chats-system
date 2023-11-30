@@ -85,6 +85,82 @@ export class User extends Message<User> {
 }
 
 /**
+ * @generated from message tech.monstrs.chats_system.user.v1alpha1.UserContact
+ */
+export class UserContact extends Message<UserContact> {
+  /**
+   * @generated from field: int64 id = 1;
+   */
+  id = protoInt64.zero
+
+  /**
+   * @generated from field: int64 owner_user_id = 2;
+   */
+  ownerUserId = protoInt64.zero
+
+  /**
+   * @generated from field: int64 contact_user_id = 3;
+   */
+  contactUserId = protoInt64.zero
+
+  /**
+   * @generated from field: string contact_phone = 4;
+   */
+  contactPhone = ''
+
+  /**
+   * @generated from field: string first_name = 5;
+   */
+  firstName = ''
+
+  /**
+   * @generated from field: string last_name = 6;
+   */
+  lastName = ''
+
+  /**
+   * @generated from field: bool mutual = 7;
+   */
+  mutual = false
+
+  constructor(data?: PartialMessage<UserContact>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.user.v1alpha1.UserContact'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: 'owner_user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: 'contact_user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: 'contact_phone', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: 'first_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: 'last_name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: 'mutual', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
+  ])
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserContact {
+    return new UserContact().fromBinary(bytes, options)
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UserContact {
+    return new UserContact().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserContact {
+    return new UserContact().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: UserContact | PlainMessage<UserContact> | undefined,
+    b: UserContact | PlainMessage<UserContact> | undefined
+  ): boolean {
+    return proto3.util.equals(UserContact, a, b)
+  }
+}
+
+/**
  * @generated from message tech.monstrs.chats_system.user.v1alpha1.InputContact
  */
 export class InputContact extends Message<InputContact> {

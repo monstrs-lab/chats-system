@@ -5,6 +5,8 @@ export abstract class UserContactRepository {
 
   abstract getById(id: bigint): Promise<UserContact | undefined>
 
+  abstract getByUserId(id: bigint): Promise<Array<UserContact>>
+
   abstract getMyContactById(userId: bigint, contactId: bigint): Promise<UserContact | undefined>
 
   abstract getByUserIdList(userId: bigint, ids: Array<bigint>): Promise<Array<UserContact>>

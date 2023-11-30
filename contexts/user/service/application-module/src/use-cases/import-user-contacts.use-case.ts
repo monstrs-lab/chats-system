@@ -24,18 +24,19 @@ export class ImportUserContactsUseCase {
     const imported: Array<{ userId: bigint; clientId: bigint }> = []
     const updateIdList: Array<bigint> = []
 
+    const user = await this.userRepository.getById(userId)
     const users = await this.userRepository.getByPhoneList(contacts.map((contact) => contact.phone))
 
-    for await (const user of users) {
-      const contact = contacts.find((c) => c.phone === user.phone)
+    for await (const u of users) {
+      const contact = contacts.find((c) => c.phone === u.phone)
 
       if (contact) {
-        let importedContact = await this.userContactRepository.getMyContactById(userId, user.id)
+        let importedContact = await this.userContactRepository.getMyContactById(userId, u.id)
 
         if (!importedContact) {
           importedContact = this.userContactFactory.createUserContact({
             ownerUserId: userId,
-            contactUserId: user.id,
+            contactUserId: u.id,
             contactPhone: contact.phone,
             contactFirstName: contact.firstName,
             contactLastName: contact.lastName,
@@ -57,7 +58,9 @@ export class ImportUserContactsUseCase {
       updateIdList,
       popularInvites: [],
       retryContacts: [],
-      users: users.filter((user) => imported.find((contact) => contact.userId === user.id)),
+      users: users
+        .filter((u) => imported.find((contact) => contact.userId === u.id))
+        .concat([user!.toSelfUser()]),
     }
   }
 }

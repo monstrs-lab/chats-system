@@ -11,6 +11,16 @@ message User {
   optional int64 access_hash = 6;
 }
 
+message UserContact {
+  int64 id = 1;
+  int64 owner_user_id = 2;
+  int64 contact_user_id = 3;
+  string contact_phone = 4;
+  string first_name = 5;
+  string last_name = 6;
+  bool mutual = 7;
+}
+
 message InputContact {
   int64 client_id = 1;
   string phone = 2;
