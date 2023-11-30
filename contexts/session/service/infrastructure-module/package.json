@@ -15,6 +15,7 @@
     "@chats-system/core-rpc": "workspace:0.0.1",
     "@chats-system/gateway-rpc-client": "workspace:0.0.1",
     "@chats-system/help-rpc-client": "workspace:0.0.1",
+    "@chats-system/messages-rpc-client": "workspace:0.0.1",
     "@chats-system/session-rpc": "workspace:0.0.1",
     "@chats-system/tl": "workspace:0.0.1",
     "@chats-system/updates-rpc-client": "workspace:0.0.1",

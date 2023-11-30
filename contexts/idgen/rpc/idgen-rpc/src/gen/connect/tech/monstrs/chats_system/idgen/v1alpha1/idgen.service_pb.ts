@@ -3,16 +3,101 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions } from '@bufbuild/protobuf'
-import type { FieldList }         from '@bufbuild/protobuf'
-import type { JsonReadOptions }   from '@bufbuild/protobuf'
-import type { JsonValue }         from '@bufbuild/protobuf'
-import type { PartialMessage }    from '@bufbuild/protobuf'
-import type { PlainMessage }      from '@bufbuild/protobuf'
+import type { BinaryReadOptions }                                                                      from '@bufbuild/protobuf'
 
-import { Message }                from '@bufbuild/protobuf'
-import { proto3 }                 from '@bufbuild/protobuf'
-import { protoInt64 }             from '@bufbuild/protobuf'
+import type { FieldList }                                                           from '@bufbuild/protobuf'
+
+import type { JsonReadOptions }                                          from '@bufbuild/protobuf'
+
+import type { JsonValue }                               from '@bufbuild/protobuf'
+
+import type { PartialMessage }               from '@bufbuild/protobuf'
+
+import type { PlainMessage } from '@bufbuild/protobuf'
+
+import { Message }                                                                                     from '@bufbuild/protobuf'
+
+import { proto3 }                                                                             from '@bufbuild/protobuf'
+
+import { protoInt64 }                                                                 from '@bufbuild/protobuf'
+
+/**
+ * @generated from enum tech.monstrs.chats_system.idgen.v1alpha1.InputIdType
+ */
+export enum InputIdType {
+  /**
+   * @generated from enum value: ID = 0;
+   */
+  ID = 0,
+
+  /**
+   * @generated from enum value: IDS = 1;
+   */
+  IDS = 1,
+
+  /**
+   * @generated from enum value: SEQ_ID = 2;
+   */
+  SEQ_ID = 2,
+
+  /**
+   * @generated from enum value: SEQ_IDS = 3;
+   */
+  SEQ_IDS = 3,
+}
+// Retrieve enum metadata with: proto3.getEnumType(InputIdType)
+proto3.util.setEnumType(InputIdType, 'tech.monstrs.chats_system.idgen.v1alpha1.InputIdType', [
+  { no: 0, name: 'ID' },
+  { no: 1, name: 'IDS' },
+  { no: 2, name: 'SEQ_ID' },
+  { no: 3, name: 'SEQ_IDS' },
+])
+
+/**
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.IdValue
+ */
+export class IdValue extends Message<IdValue> {
+  /**
+   * @generated from field: int64 id = 1;
+   */
+  id = protoInt64.zero
+
+  /**
+   * @generated from field: repeated int64 ids = 2;
+   */
+  ids: bigint[] = []
+
+  constructor(data?: PartialMessage<IdValue>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.idgen.v1alpha1.IdValue'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: 'ids', kind: 'scalar', T: 3 /* ScalarType.INT64 */, repeated: true },
+  ])
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IdValue {
+    return new IdValue().fromBinary(bytes, options)
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): IdValue {
+    return new IdValue().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): IdValue {
+    return new IdValue().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: IdValue | PlainMessage<IdValue> | undefined,
+    b: IdValue | PlainMessage<IdValue> | undefined
+  ): boolean {
+    return proto3.util.equals(IdValue, a, b)
+  }
+}
 
 /**
  * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.InputId
@@ -24,12 +109,17 @@ export class InputId extends Message<InputId> {
   key = ''
 
   /**
-   * @generated from field: optional int32 num = 2;
+   * @generated from field: tech.monstrs.chats_system.idgen.v1alpha1.InputIdType type = 2;
+   */
+  type = InputIdType.ID
+
+  /**
+   * @generated from field: optional int32 num = 3;
    */
   num?: number
 
   /**
-   * @generated from field: optional int32 n = 3;
+   * @generated from field: optional int32 n = 4;
    */
   n?: number
 
@@ -42,8 +132,9 @@ export class InputId extends Message<InputId> {
   static readonly typeName = 'tech.monstrs.chats_system.idgen.v1alpha1.InputId'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: 'key', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'num', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
-    { no: 3, name: 'n', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 2, name: 'type', kind: 'enum', T: proto3.getEnumType(InputIdType) },
+    { no: 3, name: 'num', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 4, name: 'n', kind: 'scalar', T: 5 /* ScalarType.INT32 */, opt: true },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): InputId {
@@ -424,5 +515,103 @@ export class GetNextSeqIdResponse extends Message<GetNextSeqIdResponse> {
     b: GetNextSeqIdResponse | PlainMessage<GetNextSeqIdResponse> | undefined
   ): boolean {
     return proto3.util.equals(GetNextSeqIdResponse, a, b)
+  }
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetNextIdValuesRequest
+ */
+export class GetNextIdValuesRequest extends Message<GetNextIdValuesRequest> {
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.idgen.v1alpha1.InputId input_ids = 1;
+   */
+  inputIds: InputId[] = []
+
+  constructor(data?: PartialMessage<GetNextIdValuesRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.idgen.v1alpha1.GetNextIdValuesRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'input_ids', kind: 'message', T: InputId, repeated: true },
+  ])
+
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>
+  ): GetNextIdValuesRequest {
+    return new GetNextIdValuesRequest().fromBinary(bytes, options)
+  }
+
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>
+  ): GetNextIdValuesRequest {
+    return new GetNextIdValuesRequest().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): GetNextIdValuesRequest {
+    return new GetNextIdValuesRequest().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: GetNextIdValuesRequest | PlainMessage<GetNextIdValuesRequest> | undefined,
+    b: GetNextIdValuesRequest | PlainMessage<GetNextIdValuesRequest> | undefined
+  ): boolean {
+    return proto3.util.equals(GetNextIdValuesRequest, a, b)
+  }
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetNextIdValuesResponse
+ */
+export class GetNextIdValuesResponse extends Message<GetNextIdValuesResponse> {
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.idgen.v1alpha1.IdValue id_values = 1;
+   */
+  idValues: IdValue[] = []
+
+  constructor(data?: PartialMessage<GetNextIdValuesResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.idgen.v1alpha1.GetNextIdValuesResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'id_values', kind: 'message', T: IdValue, repeated: true },
+  ])
+
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>
+  ): GetNextIdValuesResponse {
+    return new GetNextIdValuesResponse().fromBinary(bytes, options)
+  }
+
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>
+  ): GetNextIdValuesResponse {
+    return new GetNextIdValuesResponse().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): GetNextIdValuesResponse {
+    return new GetNextIdValuesResponse().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: GetNextIdValuesResponse | PlainMessage<GetNextIdValuesResponse> | undefined,
+    b: GetNextIdValuesResponse | PlainMessage<GetNextIdValuesResponse> | undefined
+  ): boolean {
+    return proto3.util.equals(GetNextIdValuesResponse, a, b)
   }
 }

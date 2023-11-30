@@ -7,7 +7,13 @@ export class IdGen {
 
   static SEQ_UPDATES_NGEN_ID = 'seq_updates_ngen'
 
+  static MESSAGE_BOX_UPDATES_NGEN_ID = 'message_box_ngen'
+
   #logger = new Logger(IdGen.name)
+
+  async getNextId(): Promise<bigint | undefined> {
+    return this.#getNextId()
+  }
 
   async getCurrentSeqId(key: bigint): Promise<bigint | undefined> {
     return this.#getCurrentSeqId([IdGen.PTS_UPDATES_NGEN_ID, key.toString()].join('_'))
@@ -21,7 +27,10 @@ export class IdGen {
     return this.#getNextSeqId([IdGen.PTS_UPDATES_NGEN_ID, key.toString()].join('_'))
   }
 
-  // @ts-expect-error
+  async getNextMessageBoxUpdatesId(key: bigint): Promise<bigint | undefined> {
+    return this.#getNextSeqId([IdGen.MESSAGE_BOX_UPDATES_NGEN_ID, key.toString()].join('_'))
+  }
+
   async #getNextId(): Promise<bigint | undefined> {
     try {
       const response = await client.getNextId({})

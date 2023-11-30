@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package tech.monstrs.chats_system.core.v1alpha1;
+
+enum PeerType {
+  UNKNOWN = 0;
+  EMPTY           = 1;
+  SELF            = 2;
+  USER            = 3;
+  CHAT            = 4;
+  CHANNEL         = 5;
+  USERS           = 6;
+  CHATS           = 7;
+  ENCRYPTED_CHAT  = 8;
+  BROADCASTS      = 9;
+  USER_MESSAGE    = 10;
+  CHANNEL_MESSAGE = 12;
+}
+
+message Peer {
+  int64 self_id = 1;
+  PeerType peer_type = 2;
+  int64 peer_id = 3;
+  int64 access_hash = 5;
+}

@@ -5,6 +5,8 @@ import { ConnectRpcService }       from '@monstrs/nestjs-connectrpc'
 import { Controller }              from '@nestjs/common'
 
 import { GetCurrentSeqIdRequest }  from '@chats-system/idgen-rpc'
+import { GetNextIdValuesRequest }  from '@chats-system/idgen-rpc'
+import { GetNextIdValuesResponse } from '@chats-system/idgen-rpc'
 import { GetCurrentSeqIdResponse } from '@chats-system/idgen-rpc'
 import { GetNextSeqIdRequest }     from '@chats-system/idgen-rpc'
 import { GetNextSeqIdResponse }    from '@chats-system/idgen-rpc'
@@ -45,6 +47,13 @@ export class IdGenServiceController implements ServiceImpl<typeof IdGenService> 
   async getNextSeqId(request: GetNextSeqIdRequest): Promise<GetNextSeqIdResponse> {
     return new GetNextSeqIdResponse({
       seqId: await this.seqIdService.getNextSeqId(request.key),
+    })
+  }
+
+  @ConnectRpcMethod()
+  async getNextIdValues(request: GetNextIdValuesRequest): Promise<GetNextIdValuesResponse> {
+    return new GetNextIdValuesResponse({
+      idValues: await this.seqIdService.getNextIdValues(request.inputIds),
     })
   }
 }

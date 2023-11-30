@@ -3,15 +3,26 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { MethodKind }              from '@bufbuild/protobuf'
+import { MethodKind }                                                                                                                                                                                                                        from '@bufbuild/protobuf'
 
-import { GetCurrentSeqIdRequest }  from './idgen.service_pb.js'
-import { GetCurrentSeqIdResponse } from './idgen.service_pb.js'
-import { GetNextIdRequest }        from './idgen.service_pb.js'
-import { GetNextIdResponse }       from './idgen.service_pb.js'
-import { GetNextSeqIdRequest }     from './idgen.service_pb.js'
-import { GetNextSeqIdResponse }    from './idgen.service_pb.js'
-import { SetCurrentSeqIdRequest }  from './idgen.service_pb.js'
+import { GetCurrentSeqIdRequest }                                                                                                                                                                                                            from './idgen.service_pb.js'
+
+import { GetCurrentSeqIdResponse }                                                                                                                                                                                   from './idgen.service_pb.js'
+
+import { GetNextIdRequest }                                                                                                                                                                 from './idgen.service_pb.js'
+
+import { GetNextIdResponse }                                                                                                                                              from './idgen.service_pb.js'
+
+import { GetNextIdValuesRequest }                                                                                                                      from './idgen.service_pb.js'
+
+import { GetNextIdValuesResponse }                                                                                             from './idgen.service_pb.js'
+
+import { GetNextSeqIdRequest }                                                                        from './idgen.service_pb.js'
+
+import { GetNextSeqIdResponse }                                                  from './idgen.service_pb.js'
+
+import { SetCurrentSeqIdRequest }                          from './idgen.service_pb.js'
+
 import { SetCurrentSeqIdResponse } from './idgen.service_pb.js'
 
 /**
@@ -54,6 +65,15 @@ export const IdGenService = {
       name: 'getNextSeqId',
       I: GetNextSeqIdRequest,
       O: GetNextSeqIdResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc tech.monstrs.chats_system.idgen.v1alpha1.IdGenService.getNextIdValues
+     */
+    getNextIdValues: {
+      name: 'getNextIdValues',
+      I: GetNextIdValuesRequest,
+      O: GetNextIdValuesResponse,
       kind: MethodKind.Unary,
     },
   },

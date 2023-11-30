@@ -7,12 +7,26 @@ service IdGenService {
   rpc getCurrentSeqId (GetCurrentSeqIdRequest) returns (GetCurrentSeqIdResponse) {}
   rpc setCurrentSeqId (SetCurrentSeqIdRequest) returns (SetCurrentSeqIdResponse) {}
   rpc getNextSeqId (GetNextSeqIdRequest) returns (GetNextSeqIdResponse) {}
+  rpc getNextIdValues (GetNextIdValuesRequest) returns (GetNextIdValuesResponse) {}
+}
+
+enum InputIdType {
+  ID = 0;
+  IDS = 1;
+  SEQ_ID = 2;
+  SEQ_IDS = 3;
+}
+
+message IdValue {
+  int64 id = 1;
+  repeated int64 ids = 2;
 }
 
 message InputId {
   string key = 1;
-  optional int32 num = 2;
-  optional int32 n = 3;
+  InputIdType type = 2;
+  optional int32 num = 3;
+  optional int32 n = 4;
 }
 
 message GetNextIdRequest {
@@ -46,4 +60,12 @@ message GetNextSeqIdRequest {
 
 message GetNextSeqIdResponse {
   int64 seq_id = 1;
+}
+
+message GetNextIdValuesRequest {
+  repeated InputId input_ids = 1;
+}
+
+message GetNextIdValuesResponse {
+  repeated IdValue id_values = 1;
 }

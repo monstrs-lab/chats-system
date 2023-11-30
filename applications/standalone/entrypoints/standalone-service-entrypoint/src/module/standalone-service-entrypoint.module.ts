@@ -8,6 +8,7 @@ import { IdGenInfrastructureModule }   from '@chats-system/idgen-infrastructure-
 import { SessionInfrastructureModule } from '@chats-system/session-infrastructure-module'
 import { UpdatesInfrastructureModule } from '@chats-system/updates-infrastructure-module'
 import { UserInfrastructureModule }    from '@chats-system/user-infrastructure-module'
+import { MessagesInfrastructureModule } from '@chats-system/messages-infrastructure-module'
 
 import { StandaloneServiceCoreModule } from './standalone-service-core.module.js'
 
@@ -22,6 +23,7 @@ import { StandaloneServiceCoreModule } from './standalone-service-core.module.js
     UpdatesInfrastructureModule.register(),
     UserInfrastructureModule.register(),
     AuthInfrastructureModule.register(),
+    MessagesInfrastructureModule.register()
   ],
 })
 export class StandaloneServiceEntrypointModule {}

@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package tech.monstrs.chats_system.messages.v1alpha1;
+
+import "tech/monstrs/chats_system/core/v1alpha1/peer.types.proto";
+import "tech/monstrs/chats_system/messages/v1alpha1/messages.types.proto";
+
+service MessagesService {
+  rpc getDialogs (GetDialogsRequest) returns (GetDialogsResponse) {}
+  rpc sendMessage (SendMessageRequest) returns (SendMessageResponse) {}
+  rpc getHistory (GetHistoryRequest) returns (GetHistoryResponse) {}
+}
+
+message InputPeerEmpty {
+
+}
+
+message GetDialogsRequest {
+  int64 user_id = 1;
+
+  bool exclude_pinned = 2;
+  int32 folder_id = 3;
+  int32 offset_date = 4;
+  int32 offset_id = 5;
+  
+  oneof offset_peer {
+    InputPeerEmpty empty = 6;
+  }
+
+  int32 limit = 7;
+  int64 hash = 8;
+}
+
+message GetDialogsResponse {
+  repeated Dialog dialogs = 1;
+}
+
+message SendMessageRequest {
+  int64 user_id = 1;
+  tech.monstrs.chats_system.core.v1alpha1.Peer peer = 2;
+  OutboxMessage message = 3;
+}
+
+message SendMessageResponse {
+
+}
+
+message GetHistoryRequest {
+  int64 user_id = 1;
+  tech.monstrs.chats_system.core.v1alpha1.Peer peer = 2;
+}
+
+message GetHistoryResponse {
+  repeated Message messages = 1;
+}

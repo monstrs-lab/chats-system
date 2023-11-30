@@ -8,6 +8,10 @@ import { Injectable }                               from '@nestjs/common'
 import { Inject }                                   from '@nestjs/common'
 import FlakeIdGen                                   from 'flake-idgen'
 
+import { IdValue }                                  from '@chats-system/idgen-rpc'
+import { InputId }                                  from '@chats-system/idgen-rpc'
+import { InputIdType }                              from '@chats-system/idgen-rpc'
+
 import { SeqIdEntity }                              from '../entities/index.js'
 
 @Injectable()
@@ -61,6 +65,41 @@ export class SeqIdService {
     await this.em.persist(seqIdEntity).flush()
 
     return seqIdEntity.id
+  }
+
+  @CreateRequestContext()
+  async getNextIdValues(inputIds: Array<InputId>): Promise<Array<IdValue>> {
+    return Promise.all(
+      inputIds.map(async (inputId) => {
+        if (inputId.type === InputIdType.ID) {
+          return new IdValue({
+            id: this.nextId(),
+          })
+        }
+
+        if (inputId.type === InputIdType.IDS) {
+          return new IdValue({
+            ids: Array.from({ length: inputId.num! }).map(() => this.nextId()),
+          })
+        }
+
+        if (inputId.type === InputIdType.SEQ_ID) {
+          return new IdValue({
+            id: await this.getNextSeqId(inputId.key),
+          })
+        }
+
+        if (inputId.type === InputIdType.SEQ_IDS) {
+          return new IdValue({
+            ids: await Promise.all(
+              Array.from({ length: inputId.num! }).map(() => this.getNextSeqId(inputId.key))
+            ),
+          })
+        }
+
+        throw new Error('Inknown input type')
+      })
+    )
   }
 
   nextId(): bigint {
