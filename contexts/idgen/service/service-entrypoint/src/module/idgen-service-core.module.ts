@@ -1,44 +1,15 @@
-import type { MikroOrmModuleOptions } from '@mikro-orm/nestjs'
-import type { DynamicModule }         from '@nestjs/common'
-import type { OnModuleInit }          from '@nestjs/common'
+import type { DynamicModule } from '@nestjs/common'
 
-import { MikroORM }                   from '@mikro-orm/core'
-import { MikroOrmModule }             from '@mikro-orm/nestjs'
-import { PostgreSqlDriver }           from '@mikro-orm/postgresql'
-import { MikroORMConfigModule }       from '@monstrs/nestjs-mikro-orm-config'
-import { MikroORMConfig }             from '@monstrs/nestjs-mikro-orm-config'
-import { Module }                     from '@nestjs/common'
-
-import { entities }                   from '@chats-system/idgen-infrastructure-module'
-import { migrations }                 from '@chats-system/idgen-infrastructure-module'
+import { RedisModule }        from '@monstrs/nestjs-redis'
+import { Module }             from '@nestjs/common'
 
 @Module({})
-export class IdGenServiceCoreModule implements OnModuleInit {
-  constructor(private readonly orm: MikroORM) {}
-
+export class IdGenServiceCoreModule {
   static register(): DynamicModule {
     return {
       module: IdGenServiceCoreModule,
-      imports: [
-        MikroOrmModule.forRootAsync({
-          imports: [
-            MikroORMConfigModule.register({
-              driver: PostgreSqlDriver,
-              migrationsTableName: 'mikro_orm_migrations_idgen',
-              migrationsList: migrations,
-              entities,
-            }),
-          ],
-          useFactory: async (mikroORMConfig: MikroORMConfig): Promise<MikroOrmModuleOptions> =>
-            mikroORMConfig.createMikroOrmOptions(),
-          inject: [MikroORMConfig],
-        }),
-      ],
-      exports: [MikroOrmModule],
+      imports: [RedisModule.register({}, true)],
+      exports: [RedisModule],
     }
-  }
-
-  async onModuleInit(): Promise<void> {
-    await this.orm.getMigrator().up()
   }
 }

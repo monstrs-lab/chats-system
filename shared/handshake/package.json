@@ -11,10 +11,10 @@
   "main": "src/index.ts",
   "dependencies": {
     "@chats-system/tl": "workspace:0.0.1",
-    "@monstrs/bigint-utils": "^0.0.3",
-    "@monstrs/buffer-utils": "^0.0.7",
+    "@monstrs/bigint-utils": "^0.0.4",
+    "@monstrs/buffer-utils": "^0.0.8",
     "@monstrs/crypto-utils": "^0.0.2",
-    "@monstrs/logger": "^0.0.19",
+    "@monstrs/logger": "^0.0.20",
     "@monstrs/mtproto-codecs": "^0.0.25",
     "@monstrs/mtproto-core": "^0.0.24",
     "@monstrs/mtproto-crypto": "^0.0.5"

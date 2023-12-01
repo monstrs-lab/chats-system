@@ -3,7 +3,7 @@ import type { DynamicModule } from '@nestjs/common'
 import { MikroOrmModule }     from '@mikro-orm/nestjs'
 import { Module }             from '@nestjs/common'
 
-import { IdGen }              from '@chats-system/idgen'
+import { IdGenClientModule }  from '@chats-system/idgen-client-module'
 
 import * as controllers       from '../controllers/index.js'
 import * as entities          from '../entities/index.js'
@@ -14,13 +14,7 @@ export class UpdatesInfrastructureModule {
     return {
       module: UpdatesInfrastructureModule,
       controllers: Object.values(controllers),
-      imports: [MikroOrmModule.forFeature(Object.values(entities))],
-      providers: [
-        {
-          provide: IdGen,
-          useClass: IdGen,
-        },
-      ],
+      imports: [MikroOrmModule.forFeature(Object.values(entities)), IdGenClientModule.register()],
     }
   }
 }

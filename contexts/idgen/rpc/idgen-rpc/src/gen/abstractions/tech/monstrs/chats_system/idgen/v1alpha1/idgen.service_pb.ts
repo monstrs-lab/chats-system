@@ -4,64 +4,9 @@
 // @ts-nocheck
 
 /**
- * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.InputId
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.Sequence
  */
-export abstract class InputId {
-  /**
-   * @generated from field: string key = 1;
-   */
-  abstract readonly key: string
-
-  /**
-   * @generated from field: optional int32 num = 2;
-   */
-  abstract readonly num?: number
-
-  /**
-   * @generated from field: optional int32 n = 3;
-   */
-  abstract readonly n?: number
-}
-
-/**
- * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetNextIdRequest
- */
-export abstract class GetNextIdRequest {}
-
-/**
- * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetNextIdResponse
- */
-export abstract class GetNextIdResponse {
-  /**
-   * @generated from field: int64 next_id = 1;
-   */
-  abstract readonly nextId: bigint
-}
-
-/**
- * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetCurrentSeqIdRequest
- */
-export abstract class GetCurrentSeqIdRequest {
-  /**
-   * @generated from field: tech.monstrs.chats_system.idgen.v1alpha1.InputId id = 1;
-   */
-  abstract readonly id?: InputId
-}
-
-/**
- * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetCurrentSeqIdResponse
- */
-export abstract class GetCurrentSeqIdResponse {
-  /**
-   * @generated from field: int64 seq_id = 1;
-   */
-  abstract readonly seqId: bigint
-}
-
-/**
- * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.SetCurrentSeqIdRequest
- */
-export abstract class SetCurrentSeqIdRequest {
+export abstract class Sequence {
   /**
    * @generated from field: string key = 1;
    */
@@ -74,9 +19,39 @@ export abstract class SetCurrentSeqIdRequest {
 }
 
 /**
- * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.SetCurrentSeqIdResponse
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.SequenceQuery
  */
-export abstract class SetCurrentSeqIdResponse {
+export abstract class SequenceQuery {
+  /**
+   * @generated from field: string key = 1;
+   */
+  abstract readonly key: string
+
+  /**
+   * @generated from field: optional int32 increment = 2;
+   */
+  abstract readonly increment?: number
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.SetCurrentSequenceIdRequest
+ */
+export abstract class SetCurrentSequenceIdRequest {
+  /**
+   * @generated from field: string key = 1;
+   */
+  abstract readonly key: string
+
+  /**
+   * @generated from field: int64 id = 2;
+   */
+  abstract readonly id: bigint
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.SetCurrentSequenceIdResponse
+ */
+export abstract class SetCurrentSequenceIdResponse {
   /**
    * @generated from field: bool success = 1;
    */
@@ -84,21 +59,81 @@ export abstract class SetCurrentSeqIdResponse {
 }
 
 /**
- * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetNextSeqIdRequest
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetCurrentSequenceIdRequest
  */
-export abstract class GetNextSeqIdRequest {
+export abstract class GetCurrentSequenceIdRequest {
   /**
-   * @generated from field: string key = 1;
+   * @generated from field: tech.monstrs.chats_system.idgen.v1alpha1.SequenceQuery query = 1;
    */
-  abstract readonly key: string
+  abstract readonly query?: SequenceQuery
 }
 
 /**
- * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetNextSeqIdResponse
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetCurrentSequenceIdResponse
  */
-export abstract class GetNextSeqIdResponse {
+export abstract class GetCurrentSequenceIdResponse {
   /**
-   * @generated from field: int64 seq_id = 1;
+   * @generated from field: tech.monstrs.chats_system.idgen.v1alpha1.Sequence sequence = 1;
    */
-  abstract readonly seqId: bigint
+  abstract readonly sequence?: Sequence
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetCurrentSequenceIdsRequest
+ */
+export abstract class GetCurrentSequenceIdsRequest {
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.idgen.v1alpha1.SequenceQuery queries = 1;
+   */
+  abstract readonly queries: SequenceQuery[]
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetCurrentSequenceIdsResponse
+ */
+export abstract class GetCurrentSequenceIdsResponse {
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.idgen.v1alpha1.Sequence sequences = 1;
+   */
+  abstract readonly sequences: Sequence[]
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetNextSequenceIdRequest
+ */
+export abstract class GetNextSequenceIdRequest {
+  /**
+   * @generated from field: tech.monstrs.chats_system.idgen.v1alpha1.SequenceQuery query = 1;
+   */
+  abstract readonly query?: SequenceQuery
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetNextSequenceIdResponse
+ */
+export abstract class GetNextSequenceIdResponse {
+  /**
+   * @generated from field: tech.monstrs.chats_system.idgen.v1alpha1.Sequence sequence = 1;
+   */
+  abstract readonly sequence?: Sequence
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetNextSequenceIdsRequest
+ */
+export abstract class GetNextSequenceIdsRequest {
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.idgen.v1alpha1.SequenceQuery queries = 1;
+   */
+  abstract readonly queries: SequenceQuery[]
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetNextSequenceIdsResponse
+ */
+export abstract class GetNextSequenceIdsResponse {
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.idgen.v1alpha1.Sequence sequences = 1;
+   */
+  abstract readonly sequences: Sequence[]
 }

@@ -4,64 +4,9 @@
 // @ts-nocheck
 
 /**
- * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.InputId
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.Sequence
  */
-export interface InputId {
-  /**
-   * @generated from field: string key = 1;
-   */
-  key: string
-
-  /**
-   * @generated from field: optional int32 num = 2;
-   */
-  num?: number
-
-  /**
-   * @generated from field: optional int32 n = 3;
-   */
-  n?: number
-}
-
-/**
- * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetNextIdRequest
- */
-export interface GetNextIdRequest {}
-
-/**
- * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetNextIdResponse
- */
-export interface GetNextIdResponse {
-  /**
-   * @generated from field: int64 next_id = 1;
-   */
-  nextId: bigint
-}
-
-/**
- * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetCurrentSeqIdRequest
- */
-export interface GetCurrentSeqIdRequest {
-  /**
-   * @generated from field: tech.monstrs.chats_system.idgen.v1alpha1.InputId id = 1;
-   */
-  id?: InputId
-}
-
-/**
- * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetCurrentSeqIdResponse
- */
-export interface GetCurrentSeqIdResponse {
-  /**
-   * @generated from field: int64 seq_id = 1;
-   */
-  seqId: bigint
-}
-
-/**
- * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.SetCurrentSeqIdRequest
- */
-export interface SetCurrentSeqIdRequest {
+export interface Sequence {
   /**
    * @generated from field: string key = 1;
    */
@@ -74,9 +19,39 @@ export interface SetCurrentSeqIdRequest {
 }
 
 /**
- * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.SetCurrentSeqIdResponse
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.SequenceQuery
  */
-export interface SetCurrentSeqIdResponse {
+export interface SequenceQuery {
+  /**
+   * @generated from field: string key = 1;
+   */
+  key: string
+
+  /**
+   * @generated from field: optional int32 increment = 2;
+   */
+  increment?: number
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.SetCurrentSequenceIdRequest
+ */
+export interface SetCurrentSequenceIdRequest {
+  /**
+   * @generated from field: string key = 1;
+   */
+  key: string
+
+  /**
+   * @generated from field: int64 id = 2;
+   */
+  id: bigint
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.SetCurrentSequenceIdResponse
+ */
+export interface SetCurrentSequenceIdResponse {
   /**
    * @generated from field: bool success = 1;
    */
@@ -84,21 +59,81 @@ export interface SetCurrentSeqIdResponse {
 }
 
 /**
- * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetNextSeqIdRequest
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetCurrentSequenceIdRequest
  */
-export interface GetNextSeqIdRequest {
+export interface GetCurrentSequenceIdRequest {
   /**
-   * @generated from field: string key = 1;
+   * @generated from field: tech.monstrs.chats_system.idgen.v1alpha1.SequenceQuery query = 1;
    */
-  key: string
+  query?: SequenceQuery
 }
 
 /**
- * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetNextSeqIdResponse
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetCurrentSequenceIdResponse
  */
-export interface GetNextSeqIdResponse {
+export interface GetCurrentSequenceIdResponse {
   /**
-   * @generated from field: int64 seq_id = 1;
+   * @generated from field: tech.monstrs.chats_system.idgen.v1alpha1.Sequence sequence = 1;
    */
-  seqId: bigint
+  sequence?: Sequence
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetCurrentSequenceIdsRequest
+ */
+export interface GetCurrentSequenceIdsRequest {
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.idgen.v1alpha1.SequenceQuery queries = 1;
+   */
+  queries: SequenceQuery[]
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetCurrentSequenceIdsResponse
+ */
+export interface GetCurrentSequenceIdsResponse {
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.idgen.v1alpha1.Sequence sequences = 1;
+   */
+  sequences: Sequence[]
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetNextSequenceIdRequest
+ */
+export interface GetNextSequenceIdRequest {
+  /**
+   * @generated from field: tech.monstrs.chats_system.idgen.v1alpha1.SequenceQuery query = 1;
+   */
+  query?: SequenceQuery
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetNextSequenceIdResponse
+ */
+export interface GetNextSequenceIdResponse {
+  /**
+   * @generated from field: tech.monstrs.chats_system.idgen.v1alpha1.Sequence sequence = 1;
+   */
+  sequence?: Sequence
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetNextSequenceIdsRequest
+ */
+export interface GetNextSequenceIdsRequest {
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.idgen.v1alpha1.SequenceQuery queries = 1;
+   */
+  queries: SequenceQuery[]
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.idgen.v1alpha1.GetNextSequenceIdsResponse
+ */
+export interface GetNextSequenceIdsResponse {
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.idgen.v1alpha1.Sequence sequences = 1;
+   */
+  sequences: Sequence[]
 }

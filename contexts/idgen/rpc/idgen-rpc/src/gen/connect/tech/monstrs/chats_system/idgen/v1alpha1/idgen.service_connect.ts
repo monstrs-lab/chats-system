@@ -3,16 +3,18 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { MethodKind }              from '@bufbuild/protobuf'
+import { MethodKind }                    from '@bufbuild/protobuf'
 
-import { GetCurrentSeqIdRequest }  from './idgen.service_pb.js'
-import { GetCurrentSeqIdResponse } from './idgen.service_pb.js'
-import { GetNextIdRequest }        from './idgen.service_pb.js'
-import { GetNextIdResponse }       from './idgen.service_pb.js'
-import { GetNextSeqIdRequest }     from './idgen.service_pb.js'
-import { GetNextSeqIdResponse }    from './idgen.service_pb.js'
-import { SetCurrentSeqIdRequest }  from './idgen.service_pb.js'
-import { SetCurrentSeqIdResponse } from './idgen.service_pb.js'
+import { GetCurrentSequenceIdRequest }   from './idgen.service_pb.js'
+import { GetCurrentSequenceIdResponse }  from './idgen.service_pb.js'
+import { GetCurrentSequenceIdsRequest }  from './idgen.service_pb.js'
+import { GetCurrentSequenceIdsResponse } from './idgen.service_pb.js'
+import { GetNextSequenceIdRequest }      from './idgen.service_pb.js'
+import { GetNextSequenceIdResponse }     from './idgen.service_pb.js'
+import { GetNextSequenceIdsRequest }     from './idgen.service_pb.js'
+import { GetNextSequenceIdsResponse }    from './idgen.service_pb.js'
+import { SetCurrentSequenceIdRequest }   from './idgen.service_pb.js'
+import { SetCurrentSequenceIdResponse }  from './idgen.service_pb.js'
 
 /**
  * @generated from service tech.monstrs.chats_system.idgen.v1alpha1.IdGenService
@@ -21,39 +23,48 @@ export const IdGenService = {
   typeName: 'tech.monstrs.chats_system.idgen.v1alpha1.IdGenService',
   methods: {
     /**
-     * @generated from rpc tech.monstrs.chats_system.idgen.v1alpha1.IdGenService.getNextId
+     * @generated from rpc tech.monstrs.chats_system.idgen.v1alpha1.IdGenService.SetCurrentSequenceId
      */
-    getNextId: {
-      name: 'getNextId',
-      I: GetNextIdRequest,
-      O: GetNextIdResponse,
+    setCurrentSequenceId: {
+      name: 'SetCurrentSequenceId',
+      I: SetCurrentSequenceIdRequest,
+      O: SetCurrentSequenceIdResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.idgen.v1alpha1.IdGenService.getCurrentSeqId
+     * @generated from rpc tech.monstrs.chats_system.idgen.v1alpha1.IdGenService.GetCurrentSequenceId
      */
-    getCurrentSeqId: {
-      name: 'getCurrentSeqId',
-      I: GetCurrentSeqIdRequest,
-      O: GetCurrentSeqIdResponse,
+    getCurrentSequenceId: {
+      name: 'GetCurrentSequenceId',
+      I: GetCurrentSequenceIdRequest,
+      O: GetCurrentSequenceIdResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.idgen.v1alpha1.IdGenService.setCurrentSeqId
+     * @generated from rpc tech.monstrs.chats_system.idgen.v1alpha1.IdGenService.GetCurrentSequenceIds
      */
-    setCurrentSeqId: {
-      name: 'setCurrentSeqId',
-      I: SetCurrentSeqIdRequest,
-      O: SetCurrentSeqIdResponse,
+    getCurrentSequenceIds: {
+      name: 'GetCurrentSequenceIds',
+      I: GetCurrentSequenceIdsRequest,
+      O: GetCurrentSequenceIdsResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.idgen.v1alpha1.IdGenService.getNextSeqId
+     * @generated from rpc tech.monstrs.chats_system.idgen.v1alpha1.IdGenService.GetNextSequenceId
      */
-    getNextSeqId: {
-      name: 'getNextSeqId',
-      I: GetNextSeqIdRequest,
-      O: GetNextSeqIdResponse,
+    getNextSequenceId: {
+      name: 'GetNextSequenceId',
+      I: GetNextSequenceIdRequest,
+      O: GetNextSequenceIdResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc tech.monstrs.chats_system.idgen.v1alpha1.IdGenService.GetNextSequenceIds
+     */
+    getNextSequenceIds: {
+      name: 'GetNextSequenceIds',
+      I: GetNextSequenceIdsRequest,
+      O: GetNextSequenceIdsResponse,
       kind: MethodKind.Unary,
     },
   },

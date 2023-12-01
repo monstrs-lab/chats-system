@@ -4,43 +4,32 @@ import { ConnectRpcMethod }  from '@monstrs/nestjs-connectrpc'
 import { ConnectRpcService } from '@monstrs/nestjs-connectrpc'
 import { Controller }        from '@nestjs/common'
 
-import { IdGen }             from '@chats-system/idgen'
+import { IdGenClient }       from '@chats-system/idgen-client-module'
 import { GetStateRequest }   from '@chats-system/updates-rpc'
 import { State }             from '@chats-system/updates-rpc'
 import { GetStateResponse }  from '@chats-system/updates-rpc'
 import { UpdatesService }    from '@chats-system/updates-rpc'
 
-const bigintToNumber = (target: bigint): number => {
-  const buf = Buffer.alloc(9)
-  buf.writeBigInt64BE(target)
-
-  return Math.round(buf.readInt32BE())
-}
-
 @Controller()
 @ConnectRpcService(UpdatesService)
 export class UpdatesServiceController implements ServiceImpl<typeof UpdatesService> {
-  constructor(private readonly idGen: IdGen) {}
+  constructor(private readonly idGenClient: IdGenClient) {}
 
   @ConnectRpcMethod()
   async getState(request: GetStateRequest): Promise<GetStateResponse> {
-    let pts = await this.idGen.getCurrentPtsId(request.userId)
+    let pts = await this.idGenClient.getCurrentPtsId(request.userId)
 
-    if (!pts || pts === 0n) {
-      pts = await this.idGen.getNextPtsId(request.userId)
+    if (pts === 0) {
+      pts = await this.idGenClient.getNextPtsId(request.userId)
     }
 
-    let seq = await this.idGen.getCurrentSeqId(request.authKeyId)
-
-    if (!seq || seq === 0n) {
-      seq = -1n
-    }
+    const seq = await this.idGenClient.getCurrentSequenceId(request.authKeyId)
 
     return new GetStateResponse({
       state: new State({
-        pts: pts ? bigintToNumber(pts) : 0,
+        pts,
         qts: 0,
-        seq: bigintToNumber(seq),
+        seq: seq === 0 ? -1 : seq,
         date: Math.floor(Date.now() / 1000),
         unreadCount: 0,
       }),
