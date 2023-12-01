@@ -7,6 +7,7 @@ import { MikroOrmModule }             from '@mikro-orm/nestjs'
 import { PostgreSqlDriver }           from '@mikro-orm/postgresql'
 import { MikroORMConfigModule }       from '@monstrs/nestjs-mikro-orm-config'
 import { MikroORMConfig }             from '@monstrs/nestjs-mikro-orm-config'
+import { RedisModule }                from '@monstrs/nestjs-redis'
 import { Module }                     from '@nestjs/common'
 
 import { entities }                   from '../entities/index.js'
@@ -21,6 +22,7 @@ export class StandaloneServiceCoreModule implements OnModuleInit {
       global: true,
       module: StandaloneServiceCoreModule,
       imports: [
+        RedisModule.register({}, true),
         MikroOrmModule.forRootAsync({
           imports: [
             MikroORMConfigModule.register({
@@ -35,7 +37,7 @@ export class StandaloneServiceCoreModule implements OnModuleInit {
           inject: [MikroORMConfig],
         }),
       ],
-      exports: [MikroOrmModule],
+      exports: [MikroOrmModule, RedisModule],
     }
   }
 

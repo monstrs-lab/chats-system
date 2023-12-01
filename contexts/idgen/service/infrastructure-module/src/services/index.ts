@@ -1,1 +1,1 @@
-export * from './seq-id.service.js'
+export * from './sequence-id.service.js'

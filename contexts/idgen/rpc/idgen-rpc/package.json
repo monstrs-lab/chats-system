@@ -12,14 +12,15 @@
   },
   "main": "src/index.ts",
   "scripts": {
+    "buf:format": "buf format --write",
     "buf:generate": "buf generate proto --include-imports",
     "buf:lint": "buf lint proto",
     "buf:update": "buf mod update proto"
   },
   "devDependencies": {
     "@bufbuild/buf": "^1.28.1",
-    "@bufbuild/protobuf": "^1.4.2",
-    "@bufbuild/protoc-gen-es": "^1.4.2",
+    "@bufbuild/protobuf": "^1.5.0",
+    "@bufbuild/protoc-gen-es": "^1.5.0",
     "@connectrpc/protoc-gen-connect-es": "^1.1.3",
     "@monstrs/protoc-gen-abstractions": "^0.0.5",
     "@monstrs/protoc-gen-interfaces": "^0.0.4"

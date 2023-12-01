@@ -3,47 +3,60 @@ syntax = "proto3";
 package tech.monstrs.chats_system.idgen.v1alpha1;
 
 service IdGenService {
-  rpc getNextId (GetNextIdRequest) returns (GetNextIdResponse) {}
-  rpc getCurrentSeqId (GetCurrentSeqIdRequest) returns (GetCurrentSeqIdResponse) {}
-  rpc setCurrentSeqId (SetCurrentSeqIdRequest) returns (SetCurrentSeqIdResponse) {}
-  rpc getNextSeqId (GetNextSeqIdRequest) returns (GetNextSeqIdResponse) {}
+  rpc SetCurrentSequenceId(SetCurrentSequenceIdRequest) returns (SetCurrentSequenceIdResponse) {}
+  rpc GetCurrentSequenceId(GetCurrentSequenceIdRequest) returns (GetCurrentSequenceIdResponse) {}
+  rpc GetCurrentSequenceIds(GetCurrentSequenceIdsRequest) returns (GetCurrentSequenceIdsResponse) {}
+  rpc GetNextSequenceId(GetNextSequenceIdRequest) returns (GetNextSequenceIdResponse) {}
+  rpc GetNextSequenceIds(GetNextSequenceIdsRequest) returns (GetNextSequenceIdsResponse) {}
 }
 
-message InputId {
-  string key = 1;
-  optional int32 num = 2;
-  optional int32 n = 3;
-}
-
-message GetNextIdRequest {
-
-}
-
-message GetNextIdResponse {
-  int64 next_id = 1;
-}
-
-message GetCurrentSeqIdRequest {
-  InputId id = 1;
-}
-
-message GetCurrentSeqIdResponse {
-  int64 seq_id = 1;
-}
-
-message SetCurrentSeqIdRequest {
+message Sequence {
   string key = 1;
   int64 id = 2;
 }
 
-message SetCurrentSeqIdResponse {
+message SequenceQuery {
+  string key = 1;
+  optional int32 increment = 2;
+}
+
+message SetCurrentSequenceIdRequest {
+  string key = 1;
+  int64 id = 2;
+}
+
+message SetCurrentSequenceIdResponse {
   bool success = 1;
 }
 
-message GetNextSeqIdRequest {
-  string key = 1;
+message GetCurrentSequenceIdRequest {
+  SequenceQuery query = 1;
 }
 
-message GetNextSeqIdResponse {
-  int64 seq_id = 1;
+message GetCurrentSequenceIdResponse {
+  Sequence sequence = 1;
+}
+
+message GetCurrentSequenceIdsRequest {
+  repeated SequenceQuery queries = 1;
+}
+
+message GetCurrentSequenceIdsResponse {
+  repeated Sequence sequences = 1;
+}
+
+message GetNextSequenceIdRequest {
+  SequenceQuery query = 1;
+}
+
+message GetNextSequenceIdResponse {
+  Sequence sequence = 1;
+}
+
+message GetNextSequenceIdsRequest {
+  repeated SequenceQuery queries = 1;
+}
+
+message GetNextSequenceIdsResponse {
+  repeated Sequence sequences = 1;
 }
