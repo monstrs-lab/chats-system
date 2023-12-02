@@ -1,4 +1,3 @@
-import type { PromiseClient }         from '@connectrpc/connect'
 import type { MikroOrmModuleOptions } from '@mikro-orm/nestjs'
 import type { INestMicroservice }     from '@nestjs/common'
 import type { StartedTestContainer }  from 'testcontainers'
@@ -11,8 +10,6 @@ import { ServerProtocol }             from '@monstrs/nestjs-connectrpc'
 import { MikroORMConfigModule }       from '@monstrs/nestjs-mikro-orm-config'
 import { MikroORMConfig }             from '@monstrs/nestjs-mikro-orm-config'
 import { Test }                       from '@nestjs/testing'
-import { createPromiseClient }        from '@connectrpc/connect'
-import { createGrpcTransport }        from '@connectrpc/connect-node'
 import { faker }                      from '@faker-js/faker'
 import { describe }                   from '@jest/globals'
 import { afterAll }                   from '@jest/globals'
@@ -23,8 +20,9 @@ import { GenericContainer }           from 'testcontainers'
 import { Wait }                       from 'testcontainers'
 import getPort                        from 'get-port'
 
+import { UserClientModule }           from '@chats-system/user-client-module'
+import { UserClient }                 from '@chats-system/user-client-module'
 import { UserInfrastructureModule }   from '@chats-system/user-infrastructure-module'
-import { UserService }                from '@chats-system/user-rpc/connect'
 import { entities }                   from '@chats-system/user-infrastructure-module'
 import { migrations }                 from '@chats-system/user-infrastructure-module'
 
@@ -33,7 +31,7 @@ describe('user', () => {
     describe('rpc', () => {
       let postgres: StartedTestContainer
       let service: INestMicroservice
-      let client: PromiseClient<typeof UserService>
+      let client: UserClient
 
       beforeAll(async () => {
         postgres = await new GenericContainer('bitnami/postgresql')
@@ -49,6 +47,10 @@ describe('user', () => {
 
         const testingModule = await Test.createTestingModule({
           imports: [
+            UserClientModule.register({
+              baseUrl: `http://localhost:${port}`,
+              idleConnectionTimeoutMs: 1000,
+            }),
             UserInfrastructureModule.register(),
             MikroOrmModule.forRootAsync({
               imports: [
@@ -77,14 +79,7 @@ describe('user', () => {
 
         await service.listen()
 
-        client = createPromiseClient(
-          UserService,
-          createGrpcTransport({
-            httpVersion: '2',
-            baseUrl: `http://localhost:${port}`,
-            idleConnectionTimeoutMs: 1000,
-          })
-        )
+        client = testingModule.get(UserClient)
       })
 
       afterAll(async () => {
@@ -127,6 +122,33 @@ describe('user', () => {
           expect(user?.firstName).toBe(request.firstName)
           expect(user?.lastName).toBe(request.lastName)
           expect(user?.phone).toBe(request.phone)
+        })
+      })
+
+      describe('get users', () => {
+        it('check get users', async () => {
+          const request = {
+            secretKeyId: faker.number.bigInt({ min: 1 }),
+            firstName: faker.person.firstName(),
+            lastName: faker.person.lastName(),
+            phone: faker.phone.number(),
+          }
+
+          const { user: user1 } = await client.createUser(request)
+          const { user: user2 } = await client.createUser(request)
+
+          const users = await client.loadUsers([user2!.id, user1!.id])
+
+          expect(users.at(0)).toEqual(
+            expect.objectContaining({
+              id: user2!.id,
+            })
+          )
+          expect(users.at(1)).toEqual(
+            expect.objectContaining({
+              id: user1!.id,
+            })
+          )
         })
       })
     })

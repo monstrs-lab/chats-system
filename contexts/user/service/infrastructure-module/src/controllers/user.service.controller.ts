@@ -4,6 +4,7 @@ import type { CreateUserRequest }      from '@chats-system/user-rpc'
 import type { GetUserContactsRequest } from '@chats-system/user-rpc'
 import type { ImportContactsRequest }  from '@chats-system/user-rpc'
 import type { GetUserRequest }         from '@chats-system/user-rpc'
+import type { GetUsersRequest }        from '@chats-system/user-rpc'
 import type { ServiceImpl }            from '@connectrpc/connect'
 import type { HandlerContext }         from '@connectrpc/connect'
 
@@ -18,6 +19,7 @@ import { Payload }                     from '@nestjs/microservices'
 import { RpcMetadata }                 from '@chats-system/core-rpc'
 import { UserUseCases }                from '@chats-system/user-application-module'
 import { GetUserResponse }             from '@chats-system/user-rpc'
+import { GetUsersResponse }            from '@chats-system/user-rpc'
 import { ImportContactsResponse }      from '@chats-system/user-rpc'
 import { CreateUserResponse }          from '@chats-system/user-rpc'
 import { GetUserContactsResponse }     from '@chats-system/user-rpc'
@@ -54,6 +56,16 @@ export class UserServiceController implements ServiceImpl<typeof UserService> {
 
     return new GetUserResponse({
       user,
+    })
+  }
+
+  @ConnectRpcMethod()
+  @CreateRequestContext()
+  async getUsers(request: GetUsersRequest): Promise<GetUsersResponse> {
+    const users = await this.userUseCases.getUsers.execute(request.userIds)
+
+    return new GetUsersResponse({
+      users,
     })
   }
 

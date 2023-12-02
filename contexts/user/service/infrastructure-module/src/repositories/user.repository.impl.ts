@@ -24,7 +24,7 @@ export class UserRepositoryImpl extends UserRepository {
     super()
   }
 
-  async save(user: User): Promise<User> {
+  override async save(user: User): Promise<User> {
     const exists = (await this.repository.findOne({ id: user.id })) || new UserEntity()
 
     await this.em.persist(this.mapper.toPersistence(user, exists)).flush()
@@ -32,12 +32,28 @@ export class UserRepositoryImpl extends UserRepository {
     return user
   }
 
-  async getById(id: bigint): Promise<User | undefined> {
+  override async getById(id: bigint): Promise<User | undefined> {
     const entity = await this.repository.findOne({
       id,
     })
 
     return entity ? this.mapper.fromPersistence(entity) : undefined
+  }
+
+  override async getByIds(userIds: Array<bigint>): Promise<Array<User>> {
+    const entities = await this.repository.find({
+      id: {
+        $in: userIds,
+      },
+    })
+
+    const entitiesById: Map<bigint, UserEntity> = entities.reduce((result, entity) => {
+      result.set(entity.id, entity)
+
+      return result
+    }, new Map())
+
+    return userIds.map((userId) => this.mapper.fromPersistence(entitiesById.get(userId)!))
   }
 
   override async getByPhone(phone: string): Promise<User | undefined> {
