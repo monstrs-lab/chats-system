@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@bufbuild/protobuf": "^1.5.0",
+    "@chats-system/user-client-module": "workspace:0.0.1",
     "@chats-system/user-infrastructure-module": "workspace:0.0.1",
     "@chats-system/user-rpc": "workspace:0.0.1",
     "@connectrpc/connect": "^1.1.3",

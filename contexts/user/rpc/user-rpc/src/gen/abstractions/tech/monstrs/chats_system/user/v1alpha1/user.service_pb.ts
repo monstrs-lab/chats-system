@@ -69,6 +69,26 @@ export abstract class GetUserResponse {
 }
 
 /**
+ * @generated from message tech.monstrs.chats_system.user.v1alpha1.GetUsersRequest
+ */
+export abstract class GetUsersRequest {
+  /**
+   * @generated from field: repeated int64 user_ids = 1;
+   */
+  abstract readonly userIds: bigint[]
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.user.v1alpha1.GetUsersResponse
+ */
+export abstract class GetUsersResponse {
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.user.v1alpha1.User users = 1;
+   */
+  abstract readonly users: User[]
+}
+
+/**
  * @generated from message tech.monstrs.chats_system.user.v1alpha1.ImportContactsRequest
  */
 export abstract class ImportContactsRequest {

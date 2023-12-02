@@ -3,7 +3,9 @@ import type { User } from '../entities/index.js'
 export abstract class UserRepository {
   abstract save(user: User): Promise<User>
 
-  abstract getById(authKeyId: bigint): Promise<User | undefined>
+  abstract getById(userId: bigint): Promise<User | undefined>
+
+  abstract getByIds(userIds: Array<bigint>): Promise<Array<User>>
 
   abstract getByPhone(phone: string): Promise<User | undefined>
 
