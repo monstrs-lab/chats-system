@@ -1,4 +1,4 @@
-import type { RpcMetadata }        from '@chats-system/core-rpc'
+import type { RpcMetadata }        from '@chats-system/rpc'
 
 import { randomBytes }             from 'node:crypto'
 

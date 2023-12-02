@@ -13,7 +13,7 @@
     "orm": "node --loader ts-node/esm --loader $(pwd)/../../../../.pnp.loader.mjs --loader $(pwd)/../../../../.pnp-ts.loader.mjs $(yarn bin mikro-orm)"
   },
   "dependencies": {
-    "@chats-system/core-rpc": "workspace:0.0.1",
+    "@chats-system/rpc": "workspace:0.0.1",
     "@chats-system/tl": "workspace:0.0.1",
     "@chats-system/user-application-module": "workspace:0.0.1",
     "@chats-system/user-domain-module": "workspace:0.0.1",

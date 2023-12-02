@@ -17,7 +17,7 @@
     "@chats-system/auth-domain-module": "workspace:0.0.1",
     "@chats-system/auth-rpc": "workspace:0.0.1",
     "@chats-system/authkey-rpc-client": "workspace:0.0.1",
-    "@chats-system/core-rpc": "workspace:0.0.1",
+    "@chats-system/rpc": "workspace:0.0.1",
     "@chats-system/tl": "workspace:0.0.1",
     "@chats-system/user-rpc-client": "workspace:0.0.1",
     "@monstrs/logger": "^0.0.20",

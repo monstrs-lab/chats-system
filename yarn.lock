@@ -752,7 +752,7 @@ __metadata:
   dependencies:
     "@chats-system/auth-domain-module": "workspace:0.0.1"
     "@chats-system/core-errors": "workspace:0.0.1"
-    "@chats-system/core-rpc": "workspace:0.0.1"
+    "@chats-system/rpc": "workspace:0.0.1"
     "@monstrs/mtproto-core": "npm:^0.0.24"
     "@nestjs/common": "npm:^10.2.10"
     "@nestjs/core": "npm:^10.2.10"
@@ -805,7 +805,7 @@ __metadata:
     "@chats-system/auth-rpc": "workspace:0.0.1"
     "@chats-system/authkey-rpc-client": "workspace:0.0.1"
     "@chats-system/core-errors": "workspace:0.0.1"
-    "@chats-system/core-rpc": "workspace:0.0.1"
+    "@chats-system/rpc": "workspace:0.0.1"
     "@chats-system/tl": "workspace:0.0.1"
     "@chats-system/user-rpc-client": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.1.3"
@@ -1131,7 +1131,7 @@ __metadata:
   resolution: "@chats-system/core-errors@workspace:contexts/core/packages/errors"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.5.0"
-    "@chats-system/core-rpc": "workspace:0.0.1"
+    "@chats-system/rpc": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.1.3"
     "@nestjs/common": "npm:^10.2.10"
     "@nestjs/core": "npm:^10.2.10"
@@ -1141,7 +1141,7 @@ __metadata:
     rxjs: "npm:^7.8.1"
   peerDependencies:
     "@bufbuild/protobuf": ^1.4.2
-    "@chats-system/core-rpc": "workspace:0.0.1"
+    "@chats-system/rpc": "workspace:0.0.1"
     "@connectrpc/connect": ^1.1.3
     "@nestjs/common": ^10
     "@nestjs/core": ^10
@@ -1149,21 +1149,6 @@ __metadata:
     "@nestjs/websockets": ^10.2.10
     reflect-metadata: ^0.1
     rxjs: ^7
-  languageName: unknown
-  linkType: soft
-
-"@chats-system/core-rpc@workspace:0.0.1, @chats-system/core-rpc@workspace:contexts/core/rpc/core-rpc":
-  version: 0.0.0-use.local
-  resolution: "@chats-system/core-rpc@workspace:contexts/core/rpc/core-rpc"
-  dependencies:
-    "@bufbuild/buf": "npm:^1.28.1"
-    "@bufbuild/protobuf": "npm:^1.5.0"
-    "@bufbuild/protoc-gen-es": "npm:^1.5.0"
-    "@connectrpc/protoc-gen-connect-es": "npm:^1.1.3"
-    "@monstrs/protoc-gen-abstractions": "npm:^0.0.5"
-    "@monstrs/protoc-gen-interfaces": "npm:^0.0.4"
-  peerDependencies:
-    "@bufbuild/protobuf": ^1
   languageName: unknown
   linkType: soft
 
@@ -1635,14 +1620,29 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@chats-system/rpc@workspace:0.0.1, @chats-system/rpc@workspace:shared/rpc":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/rpc@workspace:shared/rpc"
+  dependencies:
+    "@bufbuild/buf": "npm:^1.28.1"
+    "@bufbuild/protobuf": "npm:^1.5.0"
+    "@bufbuild/protoc-gen-es": "npm:^1.5.0"
+    "@connectrpc/protoc-gen-connect-es": "npm:^1.1.3"
+    "@monstrs/protoc-gen-abstractions": "npm:^0.0.5"
+    "@monstrs/protoc-gen-interfaces": "npm:^0.0.4"
+  peerDependencies:
+    "@bufbuild/protobuf": ^1
+  languageName: unknown
+  linkType: soft
+
 "@chats-system/session-application-module@workspace:0.0.1, @chats-system/session-application-module@workspace:contexts/session/service/application-module":
   version: 0.0.0-use.local
   resolution: "@chats-system/session-application-module@workspace:contexts/session/service/application-module"
   dependencies:
     "@chats-system/auth-rpc-client": "workspace:0.0.1"
     "@chats-system/authkey-rpc-client": "workspace:0.0.1"
-    "@chats-system/core-rpc": "workspace:0.0.1"
     "@chats-system/help-rpc-client": "workspace:0.0.1"
+    "@chats-system/rpc": "workspace:0.0.1"
     "@chats-system/tl": "workspace:0.0.1"
     "@chats-system/tl-rpc": "workspace:0.0.1"
     "@chats-system/updates-rpc-client": "workspace:0.0.1"
@@ -1671,9 +1671,9 @@ __metadata:
     "@bufbuild/protobuf": "npm:^1.5.0"
     "@chats-system/auth-rpc-client": "workspace:0.0.1"
     "@chats-system/authkey-rpc-client": "workspace:0.0.1"
-    "@chats-system/core-rpc": "workspace:0.0.1"
     "@chats-system/gateway-rpc-client": "workspace:0.0.1"
     "@chats-system/help-rpc-client": "workspace:0.0.1"
+    "@chats-system/rpc": "workspace:0.0.1"
     "@chats-system/session-application-module": "workspace:0.0.1"
     "@chats-system/session-rpc": "workspace:0.0.1"
     "@chats-system/tl": "workspace:0.0.1"
@@ -1857,7 +1857,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@chats-system/tl-rpc@workspace:shared/tl-rpc"
   dependencies:
-    "@chats-system/core-rpc": "workspace:0.0.1"
+    "@chats-system/rpc": "workspace:0.0.1"
     "@chats-system/tl": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.1.3"
     "@nestjs/common": "npm:^10.2.10"
@@ -2136,7 +2136,7 @@ __metadata:
   resolution: "@chats-system/user-infrastructure-module@workspace:contexts/user/service/infrastructure-module"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.5.0"
-    "@chats-system/core-rpc": "workspace:0.0.1"
+    "@chats-system/rpc": "workspace:0.0.1"
     "@chats-system/tl": "workspace:0.0.1"
     "@chats-system/user-application-module": "workspace:0.0.1"
     "@chats-system/user-domain-module": "workspace:0.0.1"

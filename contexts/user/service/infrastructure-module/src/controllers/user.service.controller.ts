@@ -16,7 +16,7 @@ import { Controller }                  from '@nestjs/common'
 import { Ctx }                         from '@nestjs/microservices'
 import { Payload }                     from '@nestjs/microservices'
 
-import { RpcMetadata }                 from '@chats-system/core-rpc'
+import { RpcMetadata }                 from '@chats-system/rpc'
 import { UserUseCases }                from '@chats-system/user-application-module'
 import { GetUserResponse }             from '@chats-system/user-rpc'
 import { GetUsersResponse }            from '@chats-system/user-rpc'

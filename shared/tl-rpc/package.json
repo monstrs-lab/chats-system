@@ -10,7 +10,7 @@
   },
   "main": "src/index.ts",
   "dependencies": {
-    "@chats-system/core-rpc": "workspace:0.0.1",
+    "@chats-system/rpc": "workspace:0.0.1",
     "@chats-system/tl": "workspace:0.0.1"
   },
   "devDependencies": {
