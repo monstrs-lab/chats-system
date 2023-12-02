@@ -85,6 +85,6 @@ export class SignUpUseCase {
 
     await this.sentCodeRepository.removeById(sentCode.id)
 
-    return new Authorization(user)
+    return new Authorization(user.id)
   }
 }

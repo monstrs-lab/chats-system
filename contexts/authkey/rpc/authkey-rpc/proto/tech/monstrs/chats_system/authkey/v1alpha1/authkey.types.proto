@@ -8,32 +8,31 @@ enum AuthKeyType {
   TEMP = 2;
   MEDIA_TEMP = 3;
 }
-  
+
 message AuthKey {
-	int64 auth_key_id = 1;
-	bytes auth_key = 2;
-	AuthKeyType auth_key_type = 3;
-	int64 perm_auth_key_id = 4;
-	int64 temp_auth_key_id = 5;
-	int64 media_temp_auth_key_id = 6;
+  int64 auth_key_id = 1;
+  bytes auth_key = 2;
+  AuthKeyType auth_key_type = 3;
+  int64 perm_auth_key_id = 4;
+  int64 temp_auth_key_id = 5;
+  int64 media_temp_auth_key_id = 6;
 }
 
 message AuthKeyUser {
   int64 auth_key_id = 1;
   int64 user_id = 2;
 }
-  
 
 message AuthKeyConnection {
-	int64 auth_key_id = 1;
-	int32 layer = 2;
-	int32 api_id = 3;
-	string client_ip = 4;
-	string device_model = 5;
-	string system_version = 6;
-	string app_version = 7;
-	string system_lang_code = 8;
-	string lang_pack = 9;
-	string lang_code = 10;
-	optional string params = 11;
+  int64 auth_key_id = 1;
+  int32 layer = 2;
+  int32 api_id = 3;
+  string client_ip = 4;
+  string device_model = 5;
+  string system_version = 6;
+  string app_version = 7;
+  string system_lang_code = 8;
+  string lang_pack = 9;
+  string lang_code = 10;
+  optional string params = 11;
 }

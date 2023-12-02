@@ -1,3 +1,3 @@
 export class Authorization {
-  constructor(public readonly user?: { id: bigint }) {}
+  constructor(public readonly userId?: bigint) {}
 }

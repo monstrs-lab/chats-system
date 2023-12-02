@@ -2,6 +2,8 @@ import type { DynamicModule }   from '@nestjs/common'
 
 import { Module }               from '@nestjs/common'
 
+import { UserClientModule }     from '@chats-system/user-client-module'
+
 import * as controllers         from '../controllers/index.js'
 import * as handlers            from '../handlers/index.js'
 import { RpcHandlerModule }     from '../rpc/index.js'
@@ -14,7 +16,7 @@ export class SessionInfrastructureModule {
   static register(): DynamicModule {
     return {
       module: SessionInfrastructureModule,
-      imports: [RpcHandlerModule.register()],
+      imports: [RpcHandlerModule.register(), UserClientModule.register()],
       controllers: Object.values(controllers),
       providers: [
         SessionResponseQueue,

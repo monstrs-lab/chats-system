@@ -37,3 +37,98 @@ export abstract class User {
    */
   abstract readonly accessHash?: bigint
 }
+
+/**
+ * @generated from message tech.monstrs.chats_system.user.v1alpha1.UserContact
+ */
+export abstract class UserContact {
+  /**
+   * @generated from field: int64 id = 1;
+   */
+  abstract readonly id: bigint
+
+  /**
+   * @generated from field: int64 owner_user_id = 2;
+   */
+  abstract readonly ownerUserId: bigint
+
+  /**
+   * @generated from field: int64 contact_user_id = 3;
+   */
+  abstract readonly contactUserId: bigint
+
+  /**
+   * @generated from field: string contact_phone = 4;
+   */
+  abstract readonly contactPhone: string
+
+  /**
+   * @generated from field: string first_name = 5;
+   */
+  abstract readonly firstName: string
+
+  /**
+   * @generated from field: string last_name = 6;
+   */
+  abstract readonly lastName: string
+
+  /**
+   * @generated from field: bool mutual = 7;
+   */
+  abstract readonly mutual: boolean
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.user.v1alpha1.InputContact
+ */
+export abstract class InputContact {
+  /**
+   * @generated from field: int64 client_id = 1;
+   */
+  abstract readonly clientId: bigint
+
+  /**
+   * @generated from field: string phone = 2;
+   */
+  abstract readonly phone: string
+
+  /**
+   * @generated from field: string first_name = 3;
+   */
+  abstract readonly firstName: string
+
+  /**
+   * @generated from field: string last_name = 4;
+   */
+  abstract readonly lastName: string
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.user.v1alpha1.ImportedContact
+ */
+export abstract class ImportedContact {
+  /**
+   * @generated from field: int64 client_id = 1;
+   */
+  abstract readonly clientId: bigint
+
+  /**
+   * @generated from field: int64 user_id = 2;
+   */
+  abstract readonly userId: bigint
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.user.v1alpha1.ImportedContacts
+ */
+export abstract class ImportedContacts {
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.user.v1alpha1.ImportedContact imported = 1;
+   */
+  abstract readonly imported: ImportedContact[]
+
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.user.v1alpha1.User users = 2;
+   */
+  abstract readonly users: User[]
+}

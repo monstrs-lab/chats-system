@@ -7,4 +7,6 @@ export abstract class UserPort {
     firstName: string,
     lastName: string
   ): Promise<{ id: bigint } | undefined>
+
+  abstract getByPhone(phone: string): Promise<{ id: bigint } | undefined>
 }

@@ -1,6 +1,7 @@
 import type { SessionMetadata } from '../rpc/index.js'
 
 import { RpcMetadata }          from '@chats-system/core-rpc'
+import { UserClient }           from '@chats-system/user-client-module'
 import { client }               from '@chats-system/auth-rpc-client'
 import TL                       from '@chats-system/tl'
 
@@ -8,6 +9,8 @@ import { RpcHandler }           from '../rpc/index.js'
 
 @RpcHandler(TL.auth.SignUp)
 export class AuthSignUpHandler {
+  constructor(private readonly userClient: UserClient) {}
+
   async execute(
     request: TL.auth.SignUp,
     _: SessionMetadata,
@@ -27,14 +30,14 @@ export class AuthSignUpHandler {
       }
     )
 
-    if (!response.authorization?.user) {
+    if (!response.authorization?.userId) {
       return new TL.auth.AuthorizationSignUpRequired({})
     }
 
+    const user = await this.userClient.loadUser(response.authorization.userId)
+
     return new TL.auth.Authorization({
-      user: new TL.User({
-        id: response.authorization.user.id,
-      }),
+      user: new TL.User(user),
     })
   }
 }

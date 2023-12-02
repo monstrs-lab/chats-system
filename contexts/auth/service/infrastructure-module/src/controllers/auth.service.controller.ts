@@ -39,9 +39,14 @@ export class AuthServiceController implements ServiceImpl<typeof AuthService> {
     @Payload() request: SendCodeRequest,
     @Ctx() context: HandlerContext
   ): Promise<SendCodeResponse> {
+    const metadata = RpcMetadata.fromBinary(
+      Buffer.from(context.requestHeader.get('metadata')!, 'base64')
+    )
+
     const sentCode = await this.authUseCases.sendCode.execute(
       request.phone,
-      RpcMetadata.fromBinary(Buffer.from(context.requestHeader.get('metadata')!, 'base64'))
+      metadata.authKeyId,
+      metadata.sessionId
     )
 
     return new SendCodeResponse({
@@ -51,11 +56,19 @@ export class AuthServiceController implements ServiceImpl<typeof AuthService> {
 
   @ConnectRpcMethod()
   @CreateRequestContext()
-  async signIn(@Payload() request: SignInRequest): Promise<SignInResponse> {
+  async signIn(
+    @Payload() request: SignInRequest,
+    @Ctx() context: HandlerContext
+  ): Promise<SignInResponse> {
+    const metadata = RpcMetadata.fromBinary(
+      Buffer.from(context.requestHeader.get('metadata')!, 'base64')
+    )
+
     const authorization = await this.authUseCases.signIn.execute(
       request.phone,
       request.phoneCode,
-      request.phoneCodeHash
+      request.phoneCodeHash,
+      metadata.authKeyId
     )
 
     return new SignInResponse({

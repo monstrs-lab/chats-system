@@ -5,9 +5,9 @@ package tech.monstrs.chats_system.auth.v1alpha1;
 import "tech/monstrs/chats_system/auth/v1alpha1/auth.types.proto";
 
 service AuthService {
-  rpc sendCode (SendCodeRequest) returns (SendCodeResponse) {}
-  rpc signIn (SignInRequest) returns (SignInResponse) {}
-  rpc signUp (SignUpRequest) returns (SignUpResponse) {}
+  rpc SendCode(SendCodeRequest) returns (SendCodeResponse) {}
+  rpc SignIn(SignInRequest) returns (SignInResponse) {}
+  rpc SignUp(SignUpRequest) returns (SignUpResponse) {}
 }
 
 message SendCodeRequest {

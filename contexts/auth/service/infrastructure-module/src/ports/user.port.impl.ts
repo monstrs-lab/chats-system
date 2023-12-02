@@ -26,4 +26,10 @@ export class UserPortImpl extends UserPort {
 
     return user
   }
+
+  override async getByPhone(phone: string): Promise<{ id: bigint } | undefined> {
+    const { user } = await client.getUser({ phone })
+
+    return user
+  }
 }
