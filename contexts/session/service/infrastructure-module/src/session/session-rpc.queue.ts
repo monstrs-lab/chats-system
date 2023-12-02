@@ -1,19 +1,19 @@
-import type { TLObject }        from '@chats-system/tl'
+import type { TLObject }         from '@chats-system/tl'
 
-import type { SessionData }     from '../data/index.js'
+import type { SessionData }      from '../data/index.js'
 
-import { setTimeout }           from 'node:timers/promises'
+import { setTimeout }            from 'node:timers/promises'
 
-import { Logger }               from '@monstrs/logger'
-import { MTProtoMessageId }     from '@monstrs/mtproto-core'
-import { Injectable }           from '@nestjs/common'
+import { Logger }                from '@monstrs/logger'
+import { MTProtoMessageId }      from '@monstrs/mtproto-core'
+import { Injectable }            from '@nestjs/common'
 
-import { Vector }               from '@chats-system/tl'
-import { client }               from '@chats-system/authkey-rpc-client'
-import TL                       from '@chats-system/tl'
+import { Vector }                from '@chats-system/tl'
+import { TLRpcHandlersRegistry } from '@chats-system/tl-rpc'
+import { client }                from '@chats-system/authkey-rpc-client'
+import TL                        from '@chats-system/tl'
 
-import { RpcHandlersRegistry }  from '../rpc/index.js'
-import { SessionResponseQueue } from './session-response.queue.js'
+import { SessionResponseQueue }  from './session-response.queue.js'
 
 const generateMessageSeqNo = (sequence: number, contentRelated: boolean): number => {
   if (contentRelated) {
@@ -42,7 +42,7 @@ export class SessionRpcQueue {
 
   constructor(
     private readonly responseQueue: SessionResponseQueue,
-    private readonly rpcHandlersRegistry: RpcHandlersRegistry
+    private readonly tlRpcHandlersRegistry: TLRpcHandlersRegistry
   ) {
     this.start()
   }
@@ -100,7 +100,7 @@ export class SessionRpcQueue {
           receiveTime: Math.floor(Date.now() / 1000),
         }
 
-        const result = await this.rpcHandlersRegistry.execute(
+        const result = await this.tlRpcHandlersRegistry.execute(
           task.message.message,
           task.sessionData,
           metadata
