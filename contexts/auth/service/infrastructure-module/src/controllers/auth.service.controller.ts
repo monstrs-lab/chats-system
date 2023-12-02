@@ -21,7 +21,7 @@ import { SignUpResponse }          from '@chats-system/auth-rpc'
 import { SignInResponse }          from '@chats-system/auth-rpc'
 import { AuthService }             from '@chats-system/auth-rpc'
 import { RpcErrorExceptionFilter } from '@chats-system/core-errors'
-import { RpcMetadata }             from '@chats-system/core-rpc'
+import { RpcMetadata }             from '@chats-system/rpc'
 
 @Controller()
 @ConnectRpcService(AuthService)

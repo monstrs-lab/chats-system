@@ -12,9 +12,9 @@
   "dependencies": {
     "@chats-system/auth-rpc-client": "workspace:0.0.1",
     "@chats-system/authkey-rpc-client": "workspace:0.0.1",
-    "@chats-system/core-rpc": "workspace:0.0.1",
     "@chats-system/gateway-rpc-client": "workspace:0.0.1",
     "@chats-system/help-rpc-client": "workspace:0.0.1",
+    "@chats-system/rpc": "workspace:0.0.1",
     "@chats-system/session-application-module": "workspace:0.0.1",
     "@chats-system/session-rpc": "workspace:0.0.1",
     "@chats-system/tl": "workspace:0.0.1",

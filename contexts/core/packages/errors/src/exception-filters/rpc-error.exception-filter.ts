@@ -7,7 +7,7 @@ import { Catch }                  from '@nestjs/common'
 import { RpcException }           from '@nestjs/microservices'
 import { BaseRpcExceptionFilter } from '@nestjs/microservices'
 
-import { RpcError }               from '@chats-system/core-rpc'
+import { RpcError }               from '@chats-system/rpc'
 
 import { CoreError }              from '../errors/index.js'
 

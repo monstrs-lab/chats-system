@@ -1,4 +1,4 @@
-import type { RpcMetadata }  from '@chats-system/core-rpc'
+import type { RpcMetadata }  from '@chats-system/rpc'
 import type { TLRpcSession } from '@chats-system/tl-rpc'
 
 import { TLRpcHandler }      from '@chats-system/tl-rpc'

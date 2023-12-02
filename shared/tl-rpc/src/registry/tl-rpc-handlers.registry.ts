@@ -9,7 +9,7 @@ import { ConnectError }            from '@connectrpc/connect'
 import { Injectable }              from '@nestjs/common'
 import { ModuleRef }               from '@nestjs/core'
 
-import { RpcError }                from '@chats-system/core-rpc'
+import { RpcError }                from '@chats-system/rpc'
 import { Exceptions }              from '@chats-system/tl'
 import TL                          from '@chats-system/tl'
 

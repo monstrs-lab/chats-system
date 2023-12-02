@@ -1,5 +1,5 @@
 {
-  "name": "@chats-system/core-rpc",
+  "name": "@chats-system/rpc",
   "version": "0.0.1",
   "license": "MIT",
   "type": "module",
@@ -12,6 +12,7 @@
   },
   "main": "src/index.ts",
   "scripts": {
+    "buf:format": "buf format --write",
     "buf:generate": "buf generate proto --include-imports",
     "buf:lint": "buf lint proto",
     "buf:update": "buf mod update proto"

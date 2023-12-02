@@ -10,7 +10,7 @@
   },
   "main": "src/index.ts",
   "dependencies": {
-    "@chats-system/core-rpc": "workspace:0.0.1",
+    "@chats-system/rpc": "workspace:0.0.1",
     "@monstrs/mtproto-core": "^0.0.24",
     "libphonenumber-js": "^1.10.51"
   },

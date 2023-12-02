@@ -1,6 +1,6 @@
 import type { TLRpcSession } from '@chats-system/tl-rpc'
 
-import { RpcMetadata }       from '@chats-system/core-rpc'
+import { RpcMetadata }       from '@chats-system/rpc'
 import { TLRpcHandler }      from '@chats-system/tl-rpc'
 import { UserClient }        from '@chats-system/user-client-module'
 import { client }            from '@chats-system/auth-rpc-client'
