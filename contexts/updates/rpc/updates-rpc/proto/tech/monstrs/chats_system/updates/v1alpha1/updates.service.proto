@@ -3,7 +3,7 @@ syntax = "proto3";
 package tech.monstrs.chats_system.updates.v1alpha1;
 
 service UpdatesService {
-  rpc getState (GetStateRequest) returns (GetStateResponse) {}
+  rpc GetState(GetStateRequest) returns (GetStateResponse) {}
 }
 
 message State {
