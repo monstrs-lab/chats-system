@@ -3,9 +3,8 @@ syntax = "proto3";
 package tech.monstrs.chats_system.help.v1alpha1;
 
 service HelpService {
-  rpc getConfig (GetConfigRequest) returns (GetConfigResponse) {}
-  rpc getNearestDc (GetNearestDcRequest) returns (GetNearestDcResponse) {}
-  rpc getCountriesList (GetCountriesListRequest) returns (GetCountriesListResponse) {}
+  rpc GetConfig(GetConfigRequest) returns (GetConfigResponse) {}
+  rpc GetCountriesList(GetCountriesListRequest) returns (GetCountriesListResponse) {}
 }
 
 message CountryCode {
@@ -22,28 +21,20 @@ message Country {
   optional bool hidden = 5;
 }
 
-message NearestDc {
-  string country = 1;
-  int32 this_dc = 2;
-  int32 nearest_dc = 3;
-}
-
 message DcOption {
   int32 id = 1;
-  string ipAddress = 2;
+  string ip_address = 2;
   int32 port = 3;
   optional bool ipv6 = 4;
-  optional bool mediaOnly = 5;
-  optional bool tcpoOnly = 6;
+  optional bool media_only = 5;
+  optional bool tcpo_only = 6;
   optional bool cdn = 7;
   optional bool static = 8;
-  optional bool thisPortOnly = 9;
+  optional bool this_port_only = 9;
   optional bytes secret = 10;
 }
 
-message Reaction {
-
-}
+message Reaction {}
 
 message Config {
   int32 date = 1;
@@ -95,20 +86,10 @@ message Config {
   optional Reaction reactions_default = 47;
 }
 
-message GetConfigRequest {
-
-}
+message GetConfigRequest {}
 
 message GetConfigResponse {
   Config config = 1;
-}
-
-message GetNearestDcRequest {
-
-}
-
-message GetNearestDcResponse {
-  NearestDc nearest_dc = 1;
 }
 
 message GetCountriesListRequest {
