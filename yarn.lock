@@ -1829,12 +1829,54 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@chats-system/updates-application-module@workspace:0.0.1, @chats-system/updates-application-module@workspace:contexts/updates/service/application-module":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/updates-application-module@workspace:contexts/updates/service/application-module"
+  dependencies:
+    "@chats-system/updates-domain-module": "workspace:0.0.1"
+    "@nestjs/common": "npm:^10.2.10"
+    "@nestjs/core": "npm:^10.2.10"
+    "@nestjs/cqrs": "npm:^10.2.6"
+    "@nestjs/testing": "npm:^10.2.10"
+    "@types/node": "npm:^20.10.2"
+    rxjs: "npm:^7.8.1"
+  peerDependencies:
+    "@chats-system/updates-domain-module": "workspace:0.0.1"
+    "@nestjs/common": ^10
+    "@nestjs/core": ^10
+    "@nestjs/cqrs": ^10
+    reflect-metadata: ^0.1
+    rxjs: ^7
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/updates-domain-module@workspace:0.0.1, @chats-system/updates-domain-module@workspace:contexts/updates/service/domain-module":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/updates-domain-module@workspace:contexts/updates/service/domain-module"
+  dependencies:
+    "@nestjs/common": "npm:^10.2.10"
+    "@nestjs/core": "npm:^10.2.10"
+    "@nestjs/cqrs": "npm:^10.2.6"
+    "@nestjs/testing": "npm:^10.2.10"
+    "@types/node": "npm:^20.10.2"
+    rxjs: "npm:^7.8.1"
+  peerDependencies:
+    "@nestjs/common": ^10
+    "@nestjs/core": ^10
+    "@nestjs/cqrs": ^10
+    reflect-metadata: ^0.1
+    rxjs: ^7
+  languageName: unknown
+  linkType: soft
+
 "@chats-system/updates-infrastructure-module@workspace:0.0.1, @chats-system/updates-infrastructure-module@workspace:contexts/updates/service/infrastructure-module":
   version: 0.0.0-use.local
   resolution: "@chats-system/updates-infrastructure-module@workspace:contexts/updates/service/infrastructure-module"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.5.0"
     "@chats-system/idgen-client-module": "workspace:0.0.1"
+    "@chats-system/updates-application-module": "workspace:0.0.1"
+    "@chats-system/updates-domain-module": "workspace:0.0.1"
     "@chats-system/updates-rpc": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.1.3"
     "@connectrpc/connect-node": "npm:^1.1.3"
@@ -1870,6 +1912,8 @@ __metadata:
     uuid: "npm:^9.0.1"
   peerDependencies:
     "@bufbuild/protobuf": ^1.3.1
+    "@chats-system/updates-application-module": "workspace:0.0.1"
+    "@chats-system/updates-domain-module": "workspace:0.0.1"
     "@chats-system/updates-rpc": "workspace:0.0.1"
     "@connectrpc/connect": ^1.1.3
     "@connectrpc/connect-node": ^1.1.3
