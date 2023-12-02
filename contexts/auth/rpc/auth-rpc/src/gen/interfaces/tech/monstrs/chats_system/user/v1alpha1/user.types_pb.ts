@@ -37,3 +37,98 @@ export interface User {
    */
   accessHash?: bigint
 }
+
+/**
+ * @generated from message tech.monstrs.chats_system.user.v1alpha1.UserContact
+ */
+export interface UserContact {
+  /**
+   * @generated from field: int64 id = 1;
+   */
+  id: bigint
+
+  /**
+   * @generated from field: int64 owner_user_id = 2;
+   */
+  ownerUserId: bigint
+
+  /**
+   * @generated from field: int64 contact_user_id = 3;
+   */
+  contactUserId: bigint
+
+  /**
+   * @generated from field: string contact_phone = 4;
+   */
+  contactPhone: string
+
+  /**
+   * @generated from field: string first_name = 5;
+   */
+  firstName: string
+
+  /**
+   * @generated from field: string last_name = 6;
+   */
+  lastName: string
+
+  /**
+   * @generated from field: bool mutual = 7;
+   */
+  mutual: boolean
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.user.v1alpha1.InputContact
+ */
+export interface InputContact {
+  /**
+   * @generated from field: int64 client_id = 1;
+   */
+  clientId: bigint
+
+  /**
+   * @generated from field: string phone = 2;
+   */
+  phone: string
+
+  /**
+   * @generated from field: string first_name = 3;
+   */
+  firstName: string
+
+  /**
+   * @generated from field: string last_name = 4;
+   */
+  lastName: string
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.user.v1alpha1.ImportedContact
+ */
+export interface ImportedContact {
+  /**
+   * @generated from field: int64 client_id = 1;
+   */
+  clientId: bigint
+
+  /**
+   * @generated from field: int64 user_id = 2;
+   */
+  userId: bigint
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.user.v1alpha1.ImportedContacts
+ */
+export interface ImportedContacts {
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.user.v1alpha1.ImportedContact imported = 1;
+   */
+  imported: ImportedContact[]
+
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.user.v1alpha1.User users = 2;
+   */
+  users: User[]
+}

@@ -19,28 +19,28 @@ export const AuthService = {
   typeName: 'tech.monstrs.chats_system.auth.v1alpha1.AuthService',
   methods: {
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.sendCode
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.SendCode
      */
     sendCode: {
-      name: 'sendCode',
+      name: 'SendCode',
       I: SendCodeRequest,
       O: SendCodeResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.signIn
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.SignIn
      */
     signIn: {
-      name: 'signIn',
+      name: 'SignIn',
       I: SignInRequest,
       O: SignInResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.signUp
+     * @generated from rpc tech.monstrs.chats_system.auth.v1alpha1.AuthService.SignUp
      */
     signUp: {
-      name: 'signUp',
+      name: 'SignUp',
       I: SignUpRequest,
       O: SignUpResponse,
       kind: MethodKind.Unary,

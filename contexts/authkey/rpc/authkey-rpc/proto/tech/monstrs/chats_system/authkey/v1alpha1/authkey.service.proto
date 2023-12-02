@@ -5,13 +5,13 @@ package tech.monstrs.chats_system.authkey.v1alpha1;
 import "tech/monstrs/chats_system/authkey/v1alpha1/authkey.types.proto";
 
 service AuthKeyService {
-  rpc createAuthKey (CreateAuthKeyRequest) returns (CreateAuthKeyResponse) {}
-  rpc createAuthKeyUser (CreateAuthKeyUserRequest) returns (CreateAuthKeyUserResponse) {}
-  rpc createAuthKeyConnection (CreateAuthKeyConnectionRequest) returns (CreateAuthKeyConnectionResponse) {}
-  rpc updateAuthKeyConnection (UpdateAuthKeyConnectionRequest) returns (UpdateAuthKeyConnectionResponse) {}
-  rpc getAuthKey (GetAuthKeyRequest) returns (GetAuthKeyResponse) {}
-  rpc getAuthKeyConnection (GetAuthKeyConnectionRequest) returns (GetAuthKeyConnectionResponse) {}
-  rpc getAuthKeyUser (GetAuthKeyUserRequest) returns (GetAuthKeyUserResponse) {}
+  rpc CreateAuthKey(CreateAuthKeyRequest) returns (CreateAuthKeyResponse) {}
+  rpc CreateAuthKeyUser(CreateAuthKeyUserRequest) returns (CreateAuthKeyUserResponse) {}
+  rpc CreateAuthKeyConnection(CreateAuthKeyConnectionRequest) returns (CreateAuthKeyConnectionResponse) {}
+  rpc UpdateAuthKeyConnection(UpdateAuthKeyConnectionRequest) returns (UpdateAuthKeyConnectionResponse) {}
+  rpc GetAuthKey(GetAuthKeyRequest) returns (GetAuthKeyResponse) {}
+  rpc GetAuthKeyConnection(GetAuthKeyConnectionRequest) returns (GetAuthKeyConnectionResponse) {}
+  rpc GetAuthKeyUser(GetAuthKeyUserRequest) returns (GetAuthKeyUserResponse) {}
 }
 
 message CreateAuthKeyRequest {

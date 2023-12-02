@@ -3,8 +3,6 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { User } from '../../user/v1alpha1/user.types_pb.js'
-
 /**
  * @generated from message tech.monstrs.chats_system.auth.v1alpha1.SentCode
  */
@@ -25,7 +23,7 @@ export interface SentCode {
  */
 export interface Authorization {
   /**
-   * @generated from field: optional tech.monstrs.chats_system.user.v1alpha1.User user = 1;
+   * @generated from field: optional int64 user_id = 1;
    */
-  user?: User
+  userId?: bigint
 }

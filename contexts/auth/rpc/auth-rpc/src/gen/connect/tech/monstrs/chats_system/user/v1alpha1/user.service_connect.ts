@@ -3,12 +3,18 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { MethodKind }         from '@bufbuild/protobuf'
+import { MethodKind }              from '@bufbuild/protobuf'
 
-import { CreateUserRequest }  from './user.service_pb.js'
-import { CreateUserResponse } from './user.service_pb.js'
-import { GetUserRequest }     from './user.service_pb.js'
-import { GetUserResponse }    from './user.service_pb.js'
+import { CreateUserRequest }       from './user.service_pb.js'
+import { CreateUserResponse }      from './user.service_pb.js'
+import { GetUserContactsRequest }  from './user.service_pb.js'
+import { GetUserContactsResponse } from './user.service_pb.js'
+import { GetUserRequest }          from './user.service_pb.js'
+import { GetUserResponse }         from './user.service_pb.js'
+import { GetUsersRequest }         from './user.service_pb.js'
+import { GetUsersResponse }        from './user.service_pb.js'
+import { ImportContactsRequest }   from './user.service_pb.js'
+import { ImportContactsResponse }  from './user.service_pb.js'
 
 /**
  * @generated from service tech.monstrs.chats_system.user.v1alpha1.UserService
@@ -17,21 +23,48 @@ export const UserService = {
   typeName: 'tech.monstrs.chats_system.user.v1alpha1.UserService',
   methods: {
     /**
-     * @generated from rpc tech.monstrs.chats_system.user.v1alpha1.UserService.createUser
+     * @generated from rpc tech.monstrs.chats_system.user.v1alpha1.UserService.CreateUser
      */
     createUser: {
-      name: 'createUser',
+      name: 'CreateUser',
       I: CreateUserRequest,
       O: CreateUserResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.user.v1alpha1.UserService.getUser
+     * @generated from rpc tech.monstrs.chats_system.user.v1alpha1.UserService.GetUser
      */
     getUser: {
-      name: 'getUser',
+      name: 'GetUser',
       I: GetUserRequest,
       O: GetUserResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc tech.monstrs.chats_system.user.v1alpha1.UserService.GetUsers
+     */
+    getUsers: {
+      name: 'GetUsers',
+      I: GetUsersRequest,
+      O: GetUsersResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc tech.monstrs.chats_system.user.v1alpha1.UserService.GetUserContacts
+     */
+    getUserContacts: {
+      name: 'GetUserContacts',
+      I: GetUserContactsRequest,
+      O: GetUserContactsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc tech.monstrs.chats_system.user.v1alpha1.UserService.ImportContacts
+     */
+    importContacts: {
+      name: 'ImportContacts',
+      I: ImportContactsRequest,
+      O: ImportContactsResponse,
       kind: MethodKind.Unary,
     },
   },

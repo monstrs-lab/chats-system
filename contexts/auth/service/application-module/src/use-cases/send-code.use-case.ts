@@ -1,8 +1,6 @@
 import type { SentCode }           from '@chats-system/auth-domain-module'
-import type { RpcMetadata }        from '@chats-system/core-rpc'
 
 import { Injectable }              from '@nestjs/common'
-// import type { CreateSentCodeDto } from '@chats-system/auth-domain-module'
 import parsePhoneNumber            from 'libphonenumber-js'
 
 import { SentCodeRepository }      from '@chats-system/auth-domain-module'
@@ -18,7 +16,7 @@ export class SendCodeUseCase {
     private readonly userPort: UserPort
   ) {}
 
-  async execute(phone: string, metadata: RpcMetadata): Promise<SentCode> {
+  async execute(phone: string, authKeyId: bigint, sessionId: bigint): Promise<SentCode> {
     const parsedPhoneNumber = parsePhoneNumber(phone.startsWith('+') ? phone : `+${phone}`)
 
     if (!parsedPhoneNumber?.isValid()) {
@@ -35,8 +33,8 @@ export class SendCodeUseCase {
 
     return this.sentCodeRepository.save(
       this.sentCodeFactory.createSentCode({
-        authKeyId: metadata.authKeyId,
-        sessionId: metadata.sessionId,
+        authKeyId,
+        sessionId,
         phone: phoneNumber,
         phoneRegistered,
       })
