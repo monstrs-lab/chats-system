@@ -98,6 +98,14 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:contexts/help/rpc/help-rpc-client"\
     },\
     {\
+      "name": "@chats-system/help-application-module",\
+      "reference": "workspace:contexts/help/service/application-module"\
+    },\
+    {\
+      "name": "@chats-system/help-domain-module",\
+      "reference": "workspace:contexts/help/service/domain-module"\
+    },\
+    {\
       "name": "@chats-system/help-infrastructure-module",\
       "reference": "workspace:contexts/help/service/infrastructure-module"\
     },\
@@ -212,6 +220,8 @@ const RAW_RUNTIME_STATE =
     ["@chats-system/gateway-rpc-client", ["virtual:1dfd087603ebb4a858ced72d1bf582eaf14b35d15fa069341981f24b105d92d177f97b38e6c4c2f4f68413195c705939a4c0691f1ef686bda87b1c17837a45b8#workspace:contexts/gateway/rpc/gateway-rpc-client", "workspace:contexts/gateway/rpc/gateway-rpc-client"]],\
     ["@chats-system/gateway-service-entrypoint", ["workspace:contexts/gateway/service/service-entrypoint"]],\
     ["@chats-system/handshake", ["workspace:shared/handshake"]],\
+    ["@chats-system/help-application-module", ["virtual:1132da8e7ff295ce1bae092eb3767ebcae7258c8704e7a4c4d38d9d23e4a778e01891d8e17ab20cd0133a6ea3661422e7ab91b9cbe3c36e6b04f277a66c2577b#workspace:contexts/help/service/application-module", "virtual:2601976cbbe08b7431b682a48ea3e3841ed11adf109466013cece49cf3edd56262b9b1e46cfb27a33a3606f75535b527c4ccc536a5b58e80a2f1567b61f7bc11#workspace:contexts/help/service/application-module", "virtual:5ca511885fdae616cdd4607e8b92d9f86867e465cde9a2ee4d8c5ad380dbe6dc2d83caab5c66801eaa4812477a61a33fb68077f51ea08c29f178de20bb65cf53#workspace:contexts/help/service/application-module", "workspace:contexts/help/service/application-module"]],\
+    ["@chats-system/help-domain-module", ["virtual:1132da8e7ff295ce1bae092eb3767ebcae7258c8704e7a4c4d38d9d23e4a778e01891d8e17ab20cd0133a6ea3661422e7ab91b9cbe3c36e6b04f277a66c2577b#workspace:contexts/help/service/domain-module", "virtual:179953b2c303dbe798f81ce8962c1cb8ec8ab183639f3ad08747bc4965e3c4d013abab5b3c3e2f9478ee2e3923f69bf97eb883a744ddeb421399f58d23466179#workspace:contexts/help/service/domain-module", "virtual:2601976cbbe08b7431b682a48ea3e3841ed11adf109466013cece49cf3edd56262b9b1e46cfb27a33a3606f75535b527c4ccc536a5b58e80a2f1567b61f7bc11#workspace:contexts/help/service/domain-module", "virtual:5ca511885fdae616cdd4607e8b92d9f86867e465cde9a2ee4d8c5ad380dbe6dc2d83caab5c66801eaa4812477a61a33fb68077f51ea08c29f178de20bb65cf53#workspace:contexts/help/service/domain-module", "workspace:contexts/help/service/domain-module"]],\
     ["@chats-system/help-infrastructure-module", ["virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/help/service/infrastructure-module", "virtual:e80f86fd31e278e95c8d781c3918678628b157ac31a8f0986a93e6698f6097809c2974d44e6dcec746afeada6e5e00517f2e44196d27e15f7495360afabd0f9c#workspace:contexts/help/service/infrastructure-module", "workspace:contexts/help/service/infrastructure-module"]],\
     ["@chats-system/help-rpc", ["virtual:5ca511885fdae616cdd4607e8b92d9f86867e465cde9a2ee4d8c5ad380dbe6dc2d83caab5c66801eaa4812477a61a33fb68077f51ea08c29f178de20bb65cf53#workspace:contexts/help/rpc/help-rpc", "workspace:contexts/help/rpc/help-rpc"]],\
     ["@chats-system/help-rpc-client", ["virtual:1dfd087603ebb4a858ced72d1bf582eaf14b35d15fa069341981f24b105d92d177f97b38e6c4c2f4f68413195c705939a4c0691f1ef686bda87b1c17837a45b8#workspace:contexts/help/rpc/help-rpc-client", "workspace:contexts/help/rpc/help-rpc-client"]],\
@@ -3339,12 +3349,279 @@ const RAW_RUNTIME_STATE =
         "linkType": "SOFT"\
       }]\
     ]],\
+    ["@chats-system/help-application-module", [\
+      ["virtual:1132da8e7ff295ce1bae092eb3767ebcae7258c8704e7a4c4d38d9d23e4a778e01891d8e17ab20cd0133a6ea3661422e7ab91b9cbe3c36e6b04f277a66c2577b#workspace:contexts/help/service/application-module", {\
+        "packageLocation": "./.yarn/__virtual__/@chats-system-help-application-module-virtual-4ee4966afb/1/contexts/help/service/application-module/",\
+        "packageDependencies": [\
+          ["@chats-system/help-application-module", "virtual:1132da8e7ff295ce1bae092eb3767ebcae7258c8704e7a4c4d38d9d23e4a778e01891d8e17ab20cd0133a6ea3661422e7ab91b9cbe3c36e6b04f277a66c2577b#workspace:contexts/help/service/application-module"],\
+          ["@chats-system/help-domain-module", "virtual:1132da8e7ff295ce1bae092eb3767ebcae7258c8704e7a4c4d38d9d23e4a778e01891d8e17ab20cd0133a6ea3661422e7ab91b9cbe3c36e6b04f277a66c2577b#workspace:contexts/help/service/domain-module"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/core", "virtual:e80f86fd31e278e95c8d781c3918678628b157ac31a8f0986a93e6698f6097809c2974d44e6dcec746afeada6e5e00517f2e44196d27e15f7495360afabd0f9c#npm:10.2.10"],\
+          ["@nestjs/cqrs", "virtual:e80f86fd31e278e95c8d781c3918678628b157ac31a8f0986a93e6698f6097809c2974d44e6dcec746afeada6e5e00517f2e44196d27e15f7495360afabd0f9c#npm:10.2.6"],\
+          ["@nestjs/testing", "virtual:4ee4966afbff3160440066f808bcab15ee9f670ce185500b3927ff04d58e288f935ddd7b5c25a5ff8ecb4c9167ef0db5d5b2065fa2658187fa4c35b90eb70af4#npm:10.2.10"],\
+          ["@types/chats-system__help-domain-module", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__cqrs", null],\
+          ["@types/node", "npm:20.10.2"],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@chats-system/help-domain-module",\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/cqrs",\
+          "@types/chats-system__help-domain-module",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__cqrs",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:2601976cbbe08b7431b682a48ea3e3841ed11adf109466013cece49cf3edd56262b9b1e46cfb27a33a3606f75535b527c4ccc536a5b58e80a2f1567b61f7bc11#workspace:contexts/help/service/application-module", {\
+        "packageLocation": "./.yarn/__virtual__/@chats-system-help-application-module-virtual-b3ecaff6a2/1/contexts/help/service/application-module/",\
+        "packageDependencies": [\
+          ["@chats-system/help-application-module", "virtual:2601976cbbe08b7431b682a48ea3e3841ed11adf109466013cece49cf3edd56262b9b1e46cfb27a33a3606f75535b527c4ccc536a5b58e80a2f1567b61f7bc11#workspace:contexts/help/service/application-module"],\
+          ["@chats-system/help-domain-module", "virtual:2601976cbbe08b7431b682a48ea3e3841ed11adf109466013cece49cf3edd56262b9b1e46cfb27a33a3606f75535b527c4ccc536a5b58e80a2f1567b61f7bc11#workspace:contexts/help/service/domain-module"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/core", "virtual:2601976cbbe08b7431b682a48ea3e3841ed11adf109466013cece49cf3edd56262b9b1e46cfb27a33a3606f75535b527c4ccc536a5b58e80a2f1567b61f7bc11#npm:10.2.10"],\
+          ["@nestjs/cqrs", "virtual:2601976cbbe08b7431b682a48ea3e3841ed11adf109466013cece49cf3edd56262b9b1e46cfb27a33a3606f75535b527c4ccc536a5b58e80a2f1567b61f7bc11#npm:10.2.6"],\
+          ["@nestjs/testing", "virtual:b3ecaff6a2cdf667e0ad1af5aa4fd2d171f48d421a507758d4f0968e24d6110937e75b6d69ed95578c36927cfca5f4ea7678d9435923b051d7e4f1d726b2d4e6#npm:10.2.10"],\
+          ["@types/chats-system__help-domain-module", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__cqrs", null],\
+          ["@types/node", "npm:20.10.2"],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@chats-system/help-domain-module",\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/cqrs",\
+          "@types/chats-system__help-domain-module",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__cqrs",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:5ca511885fdae616cdd4607e8b92d9f86867e465cde9a2ee4d8c5ad380dbe6dc2d83caab5c66801eaa4812477a61a33fb68077f51ea08c29f178de20bb65cf53#workspace:contexts/help/service/application-module", {\
+        "packageLocation": "./.yarn/__virtual__/@chats-system-help-application-module-virtual-6608ad0fbb/1/contexts/help/service/application-module/",\
+        "packageDependencies": [\
+          ["@chats-system/help-application-module", "virtual:5ca511885fdae616cdd4607e8b92d9f86867e465cde9a2ee4d8c5ad380dbe6dc2d83caab5c66801eaa4812477a61a33fb68077f51ea08c29f178de20bb65cf53#workspace:contexts/help/service/application-module"],\
+          ["@chats-system/help-domain-module", "virtual:5ca511885fdae616cdd4607e8b92d9f86867e465cde9a2ee4d8c5ad380dbe6dc2d83caab5c66801eaa4812477a61a33fb68077f51ea08c29f178de20bb65cf53#workspace:contexts/help/service/domain-module"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/cqrs", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.6"],\
+          ["@nestjs/testing", "virtual:c9bff1500efc25f3260e7194734e9ed446c0cd3c83842d5ea8a4417b25f2f03ef359393538434ac305441466c339a18c289b4ba27a492a640aef5aa291231634#npm:10.2.10"],\
+          ["@types/chats-system__help-domain-module", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__cqrs", null],\
+          ["@types/node", "npm:20.10.2"],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@chats-system/help-domain-module",\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/cqrs",\
+          "@types/chats-system__help-domain-module",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__cqrs",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["workspace:contexts/help/service/application-module", {\
+        "packageLocation": "./contexts/help/service/application-module/",\
+        "packageDependencies": [\
+          ["@chats-system/help-application-module", "workspace:contexts/help/service/application-module"],\
+          ["@chats-system/help-domain-module", "virtual:179953b2c303dbe798f81ce8962c1cb8ec8ab183639f3ad08747bc4965e3c4d013abab5b3c3e2f9478ee2e3923f69bf97eb883a744ddeb421399f58d23466179#workspace:contexts/help/service/domain-module"],\
+          ["@nestjs/common", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
+          ["@nestjs/core", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
+          ["@nestjs/cqrs", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.6"],\
+          ["@nestjs/testing", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
+          ["@types/node", "npm:20.10.2"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@chats-system/help-domain-module", [\
+      ["virtual:1132da8e7ff295ce1bae092eb3767ebcae7258c8704e7a4c4d38d9d23e4a778e01891d8e17ab20cd0133a6ea3661422e7ab91b9cbe3c36e6b04f277a66c2577b#workspace:contexts/help/service/domain-module", {\
+        "packageLocation": "./.yarn/__virtual__/@chats-system-help-domain-module-virtual-16c220c52e/1/contexts/help/service/domain-module/",\
+        "packageDependencies": [\
+          ["@chats-system/help-domain-module", "virtual:1132da8e7ff295ce1bae092eb3767ebcae7258c8704e7a4c4d38d9d23e4a778e01891d8e17ab20cd0133a6ea3661422e7ab91b9cbe3c36e6b04f277a66c2577b#workspace:contexts/help/service/domain-module"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/core", "virtual:e80f86fd31e278e95c8d781c3918678628b157ac31a8f0986a93e6698f6097809c2974d44e6dcec746afeada6e5e00517f2e44196d27e15f7495360afabd0f9c#npm:10.2.10"],\
+          ["@nestjs/cqrs", "virtual:e80f86fd31e278e95c8d781c3918678628b157ac31a8f0986a93e6698f6097809c2974d44e6dcec746afeada6e5e00517f2e44196d27e15f7495360afabd0f9c#npm:10.2.6"],\
+          ["@nestjs/testing", "virtual:4ee4966afbff3160440066f808bcab15ee9f670ce185500b3927ff04d58e288f935ddd7b5c25a5ff8ecb4c9167ef0db5d5b2065fa2658187fa4c35b90eb70af4#npm:10.2.10"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__cqrs", null],\
+          ["@types/node", "npm:20.10.2"],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["crypto-random-bigint", "npm:2.1.0"],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/cqrs",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__cqrs",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:179953b2c303dbe798f81ce8962c1cb8ec8ab183639f3ad08747bc4965e3c4d013abab5b3c3e2f9478ee2e3923f69bf97eb883a744ddeb421399f58d23466179#workspace:contexts/help/service/domain-module", {\
+        "packageLocation": "./.yarn/__virtual__/@chats-system-help-domain-module-virtual-7e35f84850/1/contexts/help/service/domain-module/",\
+        "packageDependencies": [\
+          ["@chats-system/help-domain-module", "virtual:179953b2c303dbe798f81ce8962c1cb8ec8ab183639f3ad08747bc4965e3c4d013abab5b3c3e2f9478ee2e3923f69bf97eb883a744ddeb421399f58d23466179#workspace:contexts/help/service/domain-module"],\
+          ["@nestjs/common", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
+          ["@nestjs/core", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
+          ["@nestjs/cqrs", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.6"],\
+          ["@nestjs/testing", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__cqrs", null],\
+          ["@types/node", "npm:20.10.2"],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["crypto-random-bigint", "npm:2.1.0"],\
+          ["reflect-metadata", null],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/cqrs",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__cqrs",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:2601976cbbe08b7431b682a48ea3e3841ed11adf109466013cece49cf3edd56262b9b1e46cfb27a33a3606f75535b527c4ccc536a5b58e80a2f1567b61f7bc11#workspace:contexts/help/service/domain-module", {\
+        "packageLocation": "./.yarn/__virtual__/@chats-system-help-domain-module-virtual-2f40c7e9f4/1/contexts/help/service/domain-module/",\
+        "packageDependencies": [\
+          ["@chats-system/help-domain-module", "virtual:2601976cbbe08b7431b682a48ea3e3841ed11adf109466013cece49cf3edd56262b9b1e46cfb27a33a3606f75535b527c4ccc536a5b58e80a2f1567b61f7bc11#workspace:contexts/help/service/domain-module"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/core", "virtual:2601976cbbe08b7431b682a48ea3e3841ed11adf109466013cece49cf3edd56262b9b1e46cfb27a33a3606f75535b527c4ccc536a5b58e80a2f1567b61f7bc11#npm:10.2.10"],\
+          ["@nestjs/cqrs", "virtual:2601976cbbe08b7431b682a48ea3e3841ed11adf109466013cece49cf3edd56262b9b1e46cfb27a33a3606f75535b527c4ccc536a5b58e80a2f1567b61f7bc11#npm:10.2.6"],\
+          ["@nestjs/testing", "virtual:b3ecaff6a2cdf667e0ad1af5aa4fd2d171f48d421a507758d4f0968e24d6110937e75b6d69ed95578c36927cfca5f4ea7678d9435923b051d7e4f1d726b2d4e6#npm:10.2.10"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__cqrs", null],\
+          ["@types/node", "npm:20.10.2"],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["crypto-random-bigint", "npm:2.1.0"],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/cqrs",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__cqrs",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:5ca511885fdae616cdd4607e8b92d9f86867e465cde9a2ee4d8c5ad380dbe6dc2d83caab5c66801eaa4812477a61a33fb68077f51ea08c29f178de20bb65cf53#workspace:contexts/help/service/domain-module", {\
+        "packageLocation": "./.yarn/__virtual__/@chats-system-help-domain-module-virtual-a823817000/1/contexts/help/service/domain-module/",\
+        "packageDependencies": [\
+          ["@chats-system/help-domain-module", "virtual:5ca511885fdae616cdd4607e8b92d9f86867e465cde9a2ee4d8c5ad380dbe6dc2d83caab5c66801eaa4812477a61a33fb68077f51ea08c29f178de20bb65cf53#workspace:contexts/help/service/domain-module"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/cqrs", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.6"],\
+          ["@nestjs/testing", "virtual:c9bff1500efc25f3260e7194734e9ed446c0cd3c83842d5ea8a4417b25f2f03ef359393538434ac305441466c339a18c289b4ba27a492a640aef5aa291231634#npm:10.2.10"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__cqrs", null],\
+          ["@types/node", "npm:20.10.2"],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["crypto-random-bigint", "npm:2.1.0"],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/cqrs",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__cqrs",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["workspace:contexts/help/service/domain-module", {\
+        "packageLocation": "./contexts/help/service/domain-module/",\
+        "packageDependencies": [\
+          ["@chats-system/help-domain-module", "workspace:contexts/help/service/domain-module"],\
+          ["@nestjs/common", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
+          ["@nestjs/core", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
+          ["@nestjs/cqrs", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.6"],\
+          ["@nestjs/testing", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
+          ["@types/node", "npm:20.10.2"],\
+          ["crypto-random-bigint", "npm:2.1.0"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
     ["@chats-system/help-infrastructure-module", [\
       ["virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/help/service/infrastructure-module", {\
         "packageLocation": "./.yarn/__virtual__/@chats-system-help-infrastructure-module-virtual-5ca511885f/1/contexts/help/service/infrastructure-module/",\
         "packageDependencies": [\
           ["@chats-system/help-infrastructure-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/help/service/infrastructure-module"],\
           ["@bufbuild/protobuf", "npm:1.5.0"],\
+          ["@chats-system/help-application-module", "virtual:5ca511885fdae616cdd4607e8b92d9f86867e465cde9a2ee4d8c5ad380dbe6dc2d83caab5c66801eaa4812477a61a33fb68077f51ea08c29f178de20bb65cf53#workspace:contexts/help/service/application-module"],\
+          ["@chats-system/help-domain-module", "virtual:5ca511885fdae616cdd4607e8b92d9f86867e465cde9a2ee4d8c5ad380dbe6dc2d83caab5c66801eaa4812477a61a33fb68077f51ea08c29f178de20bb65cf53#workspace:contexts/help/service/domain-module"],\
           ["@chats-system/help-rpc", "virtual:5ca511885fdae616cdd4607e8b92d9f86867e465cde9a2ee4d8c5ad380dbe6dc2d83caab5c66801eaa4812477a61a33fb68077f51ea08c29f178de20bb65cf53#workspace:contexts/help/rpc/help-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
@@ -3369,6 +3646,8 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/platform-express", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
           ["@nestjs/testing", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
           ["@types/bufbuild__protobuf", null],\
+          ["@types/chats-system__help-application-module", null],\
+          ["@types/chats-system__help-domain-module", null],\
           ["@types/chats-system__help-rpc", null],\
           ["@types/class-transformer", null],\
           ["@types/class-validator", null],\
@@ -3394,6 +3673,7 @@ const RAW_RUNTIME_STATE =
           ["@types/uuid", "npm:9.0.7"],\
           ["class-transformer", "npm:0.5.1"],\
           ["class-validator", "npm:0.14.0"],\
+          ["countries-list", "npm:3.0.6"],\
           ["reflect-metadata", "npm:0.1.13"],\
           ["rxjs", "npm:7.8.1"],\
           ["ts-node", "virtual:def7aae208f5b2868c884172e7d3c7dd4ce75b13232c07d0b7a7ec485224492ec603e85ac533f0271bb023d37bf6d1cae174a7dbfde35b0df369b9dd0df8ff5b#npm:10.9.1"],\
@@ -3418,6 +3698,8 @@ const RAW_RUNTIME_STATE =
           "@nestjs/cqrs",\
           "@nestjs/microservices",\
           "@types/bufbuild__protobuf",\
+          "@types/chats-system__help-application-module",\
+          "@types/chats-system__help-domain-module",\
           "@types/chats-system__help-rpc",\
           "@types/class-transformer",\
           "@types/class-validator",\
@@ -3450,6 +3732,8 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/help-infrastructure-module", "virtual:e80f86fd31e278e95c8d781c3918678628b157ac31a8f0986a93e6698f6097809c2974d44e6dcec746afeada6e5e00517f2e44196d27e15f7495360afabd0f9c#workspace:contexts/help/service/infrastructure-module"],\
           ["@bufbuild/protobuf", "npm:1.5.0"],\
+          ["@chats-system/help-application-module", "virtual:1132da8e7ff295ce1bae092eb3767ebcae7258c8704e7a4c4d38d9d23e4a778e01891d8e17ab20cd0133a6ea3661422e7ab91b9cbe3c36e6b04f277a66c2577b#workspace:contexts/help/service/application-module"],\
+          ["@chats-system/help-domain-module", "virtual:1132da8e7ff295ce1bae092eb3767ebcae7258c8704e7a4c4d38d9d23e4a778e01891d8e17ab20cd0133a6ea3661422e7ab91b9cbe3c36e6b04f277a66c2577b#workspace:contexts/help/service/domain-module"],\
           ["@chats-system/help-rpc", "virtual:5ca511885fdae616cdd4607e8b92d9f86867e465cde9a2ee4d8c5ad380dbe6dc2d83caab5c66801eaa4812477a61a33fb68077f51ea08c29f178de20bb65cf53#workspace:contexts/help/rpc/help-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
@@ -3474,6 +3758,8 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/platform-express", "virtual:e80f86fd31e278e95c8d781c3918678628b157ac31a8f0986a93e6698f6097809c2974d44e6dcec746afeada6e5e00517f2e44196d27e15f7495360afabd0f9c#npm:10.2.10"],\
           ["@nestjs/testing", "virtual:e80f86fd31e278e95c8d781c3918678628b157ac31a8f0986a93e6698f6097809c2974d44e6dcec746afeada6e5e00517f2e44196d27e15f7495360afabd0f9c#npm:10.2.10"],\
           ["@types/bufbuild__protobuf", null],\
+          ["@types/chats-system__help-application-module", null],\
+          ["@types/chats-system__help-domain-module", null],\
           ["@types/chats-system__help-rpc", null],\
           ["@types/class-transformer", null],\
           ["@types/class-validator", null],\
@@ -3499,6 +3785,7 @@ const RAW_RUNTIME_STATE =
           ["@types/uuid", "npm:9.0.7"],\
           ["class-transformer", "npm:0.5.1"],\
           ["class-validator", "npm:0.14.0"],\
+          ["countries-list", "npm:3.0.6"],\
           ["reflect-metadata", "npm:0.1.13"],\
           ["rxjs", "npm:7.8.1"],\
           ["ts-node", "virtual:def7aae208f5b2868c884172e7d3c7dd4ce75b13232c07d0b7a7ec485224492ec603e85ac533f0271bb023d37bf6d1cae174a7dbfde35b0df369b9dd0df8ff5b#npm:10.9.1"],\
@@ -3524,6 +3811,8 @@ const RAW_RUNTIME_STATE =
           "@nestjs/cqrs",\
           "@nestjs/microservices",\
           "@types/bufbuild__protobuf",\
+          "@types/chats-system__help-application-module",\
+          "@types/chats-system__help-domain-module",\
           "@types/chats-system__help-rpc",\
           "@types/class-transformer",\
           "@types/class-validator",\
@@ -3556,6 +3845,8 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/help-infrastructure-module", "workspace:contexts/help/service/infrastructure-module"],\
           ["@bufbuild/protobuf", "npm:1.5.0"],\
+          ["@chats-system/help-application-module", "virtual:2601976cbbe08b7431b682a48ea3e3841ed11adf109466013cece49cf3edd56262b9b1e46cfb27a33a3606f75535b527c4ccc536a5b58e80a2f1567b61f7bc11#workspace:contexts/help/service/application-module"],\
+          ["@chats-system/help-domain-module", "virtual:2601976cbbe08b7431b682a48ea3e3841ed11adf109466013cece49cf3edd56262b9b1e46cfb27a33a3606f75535b527c4ccc536a5b58e80a2f1567b61f7bc11#workspace:contexts/help/service/domain-module"],\
           ["@chats-system/help-rpc", "virtual:5ca511885fdae616cdd4607e8b92d9f86867e465cde9a2ee4d8c5ad380dbe6dc2d83caab5c66801eaa4812477a61a33fb68077f51ea08c29f178de20bb65cf53#workspace:contexts/help/rpc/help-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
@@ -3584,6 +3875,7 @@ const RAW_RUNTIME_STATE =
           ["@types/uuid", "npm:9.0.7"],\
           ["class-transformer", "npm:0.5.1"],\
           ["class-validator", "npm:0.14.0"],\
+          ["countries-list", "npm:3.0.6"],\
           ["reflect-metadata", "npm:0.1.13"],\
           ["rxjs", "npm:7.8.1"],\
           ["ts-node", "virtual:def7aae208f5b2868c884172e7d3c7dd4ce75b13232c07d0b7a7ec485224492ec603e85ac533f0271bb023d37bf6d1cae174a7dbfde35b0df369b9dd0df8ff5b#npm:10.9.1"],\
@@ -15486,6 +15778,32 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:4ee4966afbff3160440066f808bcab15ee9f670ce185500b3927ff04d58e288f935ddd7b5c25a5ff8ecb4c9167ef0db5d5b2065fa2658187fa4c35b90eb70af4#npm:10.2.10", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-testing-virtual-84a282e91b/0/cache/@nestjs-testing-npm-10.2.10-bb3433a42b-2221310546.zip/node_modules/@nestjs/testing/",\
+        "packageDependencies": [\
+          ["@nestjs/testing", "virtual:4ee4966afbff3160440066f808bcab15ee9f670ce185500b3927ff04d58e288f935ddd7b5c25a5ff8ecb4c9167ef0db5d5b2065fa2658187fa4c35b90eb70af4#npm:10.2.10"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/core", "virtual:e80f86fd31e278e95c8d781c3918678628b157ac31a8f0986a93e6698f6097809c2974d44e6dcec746afeada6e5e00517f2e44196d27e15f7495360afabd0f9c#npm:10.2.10"],\
+          ["@nestjs/microservices", null],\
+          ["@nestjs/platform-express", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__microservices", null],\
+          ["@types/nestjs__platform-express", null],\
+          ["tslib", "npm:2.6.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/microservices",\
+          "@nestjs/platform-express",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__microservices",\
+          "@types/nestjs__platform-express"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:690407a8d86dc802e6089752b2c7705fe10a2f6c49dfe1a05e4789a4979d4c37bc26efc784142215157a5b1c8f8c0bf6cc0c4ab3183e6d15598d098f7efb88d2#npm:10.2.10", {\
         "packageLocation": "./.yarn/__virtual__/@nestjs-testing-virtual-4aecc0ef2c/0/cache/@nestjs-testing-npm-10.2.10-bb3433a42b-2221310546.zip/node_modules/@nestjs/testing/",\
         "packageDependencies": [\
@@ -15674,6 +15992,32 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/testing", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
           ["@nestjs/common", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
           ["@nestjs/core", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
+          ["@nestjs/microservices", null],\
+          ["@nestjs/platform-express", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__microservices", null],\
+          ["@types/nestjs__platform-express", null],\
+          ["tslib", "npm:2.6.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/microservices",\
+          "@nestjs/platform-express",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__microservices",\
+          "@types/nestjs__platform-express"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:b3ecaff6a2cdf667e0ad1af5aa4fd2d171f48d421a507758d4f0968e24d6110937e75b6d69ed95578c36927cfca5f4ea7678d9435923b051d7e4f1d726b2d4e6#npm:10.2.10", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-testing-virtual-bf476206cb/0/cache/@nestjs-testing-npm-10.2.10-bb3433a42b-2221310546.zip/node_modules/@nestjs/testing/",\
+        "packageDependencies": [\
+          ["@nestjs/testing", "virtual:b3ecaff6a2cdf667e0ad1af5aa4fd2d171f48d421a507758d4f0968e24d6110937e75b6d69ed95578c36927cfca5f4ea7678d9435923b051d7e4f1d726b2d4e6#npm:10.2.10"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/core", "virtual:2601976cbbe08b7431b682a48ea3e3841ed11adf109466013cece49cf3edd56262b9b1e46cfb27a33a3606f75535b527c4ccc536a5b58e80a2f1567b61f7bc11#npm:10.2.10"],\
           ["@nestjs/microservices", null],\
           ["@nestjs/platform-express", null],\
           ["@types/nestjs__common", null],\
@@ -19528,6 +19872,15 @@ const RAW_RUNTIME_STATE =
         "packagePeers": [\
           "@types/typescript",\
           "typescript"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["countries-list", [\
+      ["npm:3.0.6", {\
+        "packageLocation": "./.yarn/cache/countries-list-npm-3.0.6-e04a1b5947-8c2a64c01e.zip/node_modules/countries-list/",\
+        "packageDependencies": [\
+          ["countries-list", "npm:3.0.6"]\
         ],\
         "linkType": "HARD"\
       }]\

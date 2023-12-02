@@ -54,26 +54,6 @@ export interface Country {
 }
 
 /**
- * @generated from message tech.monstrs.chats_system.help.v1alpha1.NearestDc
- */
-export interface NearestDc {
-  /**
-   * @generated from field: string country = 1;
-   */
-  country: string
-
-  /**
-   * @generated from field: int32 this_dc = 2;
-   */
-  thisDc: number
-
-  /**
-   * @generated from field: int32 nearest_dc = 3;
-   */
-  nearestDc: number
-}
-
-/**
  * @generated from message tech.monstrs.chats_system.help.v1alpha1.DcOption
  */
 export interface DcOption {
@@ -83,7 +63,7 @@ export interface DcOption {
   id: number
 
   /**
-   * @generated from field: string ipAddress = 2;
+   * @generated from field: string ip_address = 2;
    */
   ipAddress: string
 
@@ -98,12 +78,12 @@ export interface DcOption {
   ipv6?: boolean
 
   /**
-   * @generated from field: optional bool mediaOnly = 5;
+   * @generated from field: optional bool media_only = 5;
    */
   mediaOnly?: boolean
 
   /**
-   * @generated from field: optional bool tcpoOnly = 6;
+   * @generated from field: optional bool tcpo_only = 6;
    */
   tcpoOnly?: boolean
 
@@ -118,7 +98,7 @@ export interface DcOption {
   static?: boolean
 
   /**
-   * @generated from field: optional bool thisPortOnly = 9;
+   * @generated from field: optional bool this_port_only = 9;
    */
   thisPortOnly?: boolean
 
@@ -386,21 +366,6 @@ export interface GetConfigResponse {
    * @generated from field: tech.monstrs.chats_system.help.v1alpha1.Config config = 1;
    */
   config?: Config
-}
-
-/**
- * @generated from message tech.monstrs.chats_system.help.v1alpha1.GetNearestDcRequest
- */
-export interface GetNearestDcRequest {}
-
-/**
- * @generated from message tech.monstrs.chats_system.help.v1alpha1.GetNearestDcResponse
- */
-export interface GetNearestDcResponse {
-  /**
-   * @generated from field: tech.monstrs.chats_system.help.v1alpha1.NearestDc nearest_dc = 1;
-   */
-  nearestDc?: NearestDc
 }
 
 /**

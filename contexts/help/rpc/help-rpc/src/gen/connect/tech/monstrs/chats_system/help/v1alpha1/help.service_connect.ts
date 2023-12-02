@@ -9,8 +9,6 @@ import { GetConfigRequest }         from './help.service_pb.js'
 import { GetConfigResponse }        from './help.service_pb.js'
 import { GetCountriesListRequest }  from './help.service_pb.js'
 import { GetCountriesListResponse } from './help.service_pb.js'
-import { GetNearestDcRequest }      from './help.service_pb.js'
-import { GetNearestDcResponse }     from './help.service_pb.js'
 
 /**
  * @generated from service tech.monstrs.chats_system.help.v1alpha1.HelpService
@@ -19,28 +17,19 @@ export const HelpService = {
   typeName: 'tech.monstrs.chats_system.help.v1alpha1.HelpService',
   methods: {
     /**
-     * @generated from rpc tech.monstrs.chats_system.help.v1alpha1.HelpService.getConfig
+     * @generated from rpc tech.monstrs.chats_system.help.v1alpha1.HelpService.GetConfig
      */
     getConfig: {
-      name: 'getConfig',
+      name: 'GetConfig',
       I: GetConfigRequest,
       O: GetConfigResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc tech.monstrs.chats_system.help.v1alpha1.HelpService.getNearestDc
-     */
-    getNearestDc: {
-      name: 'getNearestDc',
-      I: GetNearestDcRequest,
-      O: GetNearestDcResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc tech.monstrs.chats_system.help.v1alpha1.HelpService.getCountriesList
+     * @generated from rpc tech.monstrs.chats_system.help.v1alpha1.HelpService.GetCountriesList
      */
     getCountriesList: {
-      name: 'getCountriesList',
+      name: 'GetCountriesList',
       I: GetCountriesListRequest,
       O: GetCountriesListResponse,
       kind: MethodKind.Unary,

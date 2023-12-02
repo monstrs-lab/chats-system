@@ -54,26 +54,6 @@ export abstract class Country {
 }
 
 /**
- * @generated from message tech.monstrs.chats_system.help.v1alpha1.NearestDc
- */
-export abstract class NearestDc {
-  /**
-   * @generated from field: string country = 1;
-   */
-  abstract readonly country: string
-
-  /**
-   * @generated from field: int32 this_dc = 2;
-   */
-  abstract readonly thisDc: number
-
-  /**
-   * @generated from field: int32 nearest_dc = 3;
-   */
-  abstract readonly nearestDc: number
-}
-
-/**
  * @generated from message tech.monstrs.chats_system.help.v1alpha1.DcOption
  */
 export abstract class DcOption {
@@ -83,7 +63,7 @@ export abstract class DcOption {
   abstract readonly id: number
 
   /**
-   * @generated from field: string ipAddress = 2;
+   * @generated from field: string ip_address = 2;
    */
   abstract readonly ipAddress: string
 
@@ -98,12 +78,12 @@ export abstract class DcOption {
   abstract readonly ipv6?: boolean
 
   /**
-   * @generated from field: optional bool mediaOnly = 5;
+   * @generated from field: optional bool media_only = 5;
    */
   abstract readonly mediaOnly?: boolean
 
   /**
-   * @generated from field: optional bool tcpoOnly = 6;
+   * @generated from field: optional bool tcpo_only = 6;
    */
   abstract readonly tcpoOnly?: boolean
 
@@ -118,7 +98,7 @@ export abstract class DcOption {
   abstract readonly static?: boolean
 
   /**
-   * @generated from field: optional bool thisPortOnly = 9;
+   * @generated from field: optional bool this_port_only = 9;
    */
   abstract readonly thisPortOnly?: boolean
 
@@ -386,21 +366,6 @@ export abstract class GetConfigResponse {
    * @generated from field: tech.monstrs.chats_system.help.v1alpha1.Config config = 1;
    */
   abstract readonly config?: Config
-}
-
-/**
- * @generated from message tech.monstrs.chats_system.help.v1alpha1.GetNearestDcRequest
- */
-export abstract class GetNearestDcRequest {}
-
-/**
- * @generated from message tech.monstrs.chats_system.help.v1alpha1.GetNearestDcResponse
- */
-export abstract class GetNearestDcResponse {
-  /**
-   * @generated from field: tech.monstrs.chats_system.help.v1alpha1.NearestDc nearest_dc = 1;
-   */
-  abstract readonly nearestDc?: NearestDc
 }
 
 /**
