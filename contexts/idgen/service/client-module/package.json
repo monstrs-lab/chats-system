@@ -11,7 +11,7 @@
   "main": "src/index.ts",
   "dependencies": {
     "@chats-system/idgen-rpc-client": "workspace:0.0.1",
-    "@monstrs/bigint-utils": "^0.0.4",
+    "@monstrs/bigint-utils": "^0.0.5",
     "@monstrs/logger": "^0.0.20",
     "dataloader": "^2.2.2",
     "flake-idgen": "^1.4.0"

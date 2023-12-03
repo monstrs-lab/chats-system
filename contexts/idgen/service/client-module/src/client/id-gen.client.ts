@@ -18,6 +18,8 @@ export class IdGenClient {
 
   static SEQ_UPDATES_NGEN_ID = 'seq_updates_ngen'
 
+  static MESSAGE_BOX_NGEN_ID = 'message_box_ngen'
+
   protected flakeIdGen: FlakeIdGen = new FlakeIdGen()
 
   constructor(
@@ -78,6 +80,12 @@ export class IdGenClient {
   async getNextPtsId(key: bigint): Promise<number> {
     return this.loadNextSequenceIdNumber(
       [IdGenClient.PTS_UPDATES_NGEN_ID, key.toString()].join('_')
+    )
+  }
+
+  async getNextMessageBoxId(key: bigint): Promise<number> {
+    return this.loadNextSequenceIdNumber(
+      [IdGenClient.MESSAGE_BOX_NGEN_ID, key.toString()].join('_')
     )
   }
 }
