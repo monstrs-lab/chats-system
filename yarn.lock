@@ -1280,8 +1280,8 @@ __metadata:
   dependencies:
     "@chats-system/tl": "workspace:0.0.1"
     "@jest/globals": "npm:^29.7.0"
-    "@monstrs/bigint-utils": "npm:^0.0.4"
-    "@monstrs/buffer-utils": "npm:^0.0.8"
+    "@monstrs/bigint-utils": "npm:^0.0.5"
+    "@monstrs/buffer-utils": "npm:^0.0.9"
     "@monstrs/crypto-utils": "npm:^0.0.2"
     "@monstrs/logger": "npm:^0.0.20"
     "@monstrs/mtproto-codecs": "npm:^0.0.25"
@@ -1482,7 +1482,7 @@ __metadata:
     "@chats-system/idgen-rpc-client": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.1.3"
     "@connectrpc/connect-node": "npm:^1.1.3"
-    "@monstrs/bigint-utils": "npm:^0.0.4"
+    "@monstrs/bigint-utils": "npm:^0.0.5"
     "@monstrs/logger": "npm:^0.0.20"
     "@nestjs/common": "npm:^10.2.10"
     "@nestjs/core": "npm:^10.2.10"
@@ -1620,6 +1620,145 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@chats-system/messages-application-module@workspace:0.0.1, @chats-system/messages-application-module@workspace:contexts/messages/service/application-module":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/messages-application-module@workspace:contexts/messages/service/application-module"
+  dependencies:
+    "@chats-system/messages-domain-module": "workspace:0.0.1"
+    "@nestjs/common": "npm:^10.2.10"
+    "@nestjs/core": "npm:^10.2.10"
+    "@nestjs/cqrs": "npm:^10.2.6"
+    "@nestjs/testing": "npm:^10.2.10"
+    "@types/node": "npm:^20.10.2"
+    rxjs: "npm:^7.8.1"
+  peerDependencies:
+    "@chats-system/messages-domain-module": "workspace:0.0.1"
+    "@nestjs/common": ^10
+    "@nestjs/core": ^10
+    "@nestjs/cqrs": ^10
+    reflect-metadata: ^0.1
+    rxjs: ^7
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/messages-domain-module@workspace:0.0.1, @chats-system/messages-domain-module@workspace:contexts/messages/service/domain-module":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/messages-domain-module@workspace:contexts/messages/service/domain-module"
+  dependencies:
+    "@nestjs/common": "npm:^10.2.10"
+    "@nestjs/core": "npm:^10.2.10"
+    "@nestjs/cqrs": "npm:^10.2.6"
+    "@nestjs/testing": "npm:^10.2.10"
+    "@types/node": "npm:^20.10.2"
+    crypto-random-bigint: "npm:^2.1.0"
+    rxjs: "npm:^7.8.1"
+  peerDependencies:
+    "@nestjs/common": ^10
+    "@nestjs/core": ^10
+    "@nestjs/cqrs": ^10
+    reflect-metadata: ^0.1
+    rxjs: ^7
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/messages-infrastructure-module@workspace:0.0.1, @chats-system/messages-infrastructure-module@workspace:contexts/messages/service/infrastructure-module":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/messages-infrastructure-module@workspace:contexts/messages/service/infrastructure-module"
+  dependencies:
+    "@bufbuild/protobuf": "npm:^1.5.0"
+    "@chats-system/idgen-client-module": "workspace:0.0.1"
+    "@chats-system/messages-application-module": "workspace:0.0.1"
+    "@chats-system/messages-domain-module": "workspace:0.0.1"
+    "@chats-system/messages-rpc": "workspace:0.0.1"
+    "@connectrpc/connect": "npm:^1.1.3"
+    "@connectrpc/connect-node": "npm:^1.1.3"
+    "@faker-js/faker": "npm:^8.3.1"
+    "@jest/globals": "npm:^29.7.0"
+    "@mikro-orm/cli": "npm:^5.9.4"
+    "@mikro-orm/core": "npm:^5.9.4"
+    "@mikro-orm/entity-generator": "npm:^5.9.4"
+    "@mikro-orm/knex": "npm:^5.9.4"
+    "@mikro-orm/migrations": "npm:^5.9.4"
+    "@mikro-orm/nestjs": "npm:^5.2.2"
+    "@mikro-orm/postgresql": "npm:^5.9.4"
+    "@mikro-orm/seeder": "npm:^5.9.4"
+    "@monstrs/base-types": "npm:^0.0.2"
+    "@monstrs/logger": "npm:^0.0.20"
+    "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
+    "@monstrs/nestjs-mikro-orm-config": "npm:^0.1.3"
+    "@nestjs/common": "npm:^10.2.10"
+    "@nestjs/core": "npm:^10.2.10"
+    "@nestjs/cqrs": "npm:^10.2.6"
+    "@nestjs/microservices": "npm:^10.2.10"
+    "@nestjs/platform-express": "npm:^10.2.10"
+    "@nestjs/testing": "npm:^10.2.10"
+    "@types/express": "npm:^4.17.21"
+    "@types/node": "npm:^20.10.2"
+    "@types/uuid": "npm:^9.0.7"
+    class-transformer: "npm:^0.5.1"
+    class-validator: "npm:^0.14.0"
+    countries-list: "npm:^3.0.6"
+    reflect-metadata: "npm:^0.1.13"
+    rxjs: "npm:^7.8.1"
+    ts-node: "npm:^10.9.1"
+    typescript: "npm:^5.3.2"
+    uuid: "npm:^9.0.1"
+  peerDependencies:
+    "@bufbuild/protobuf": ^1.3.1
+    "@chats-system/messages-application-module": "workspace:0.0.1"
+    "@chats-system/messages-domain-module": "workspace:0.0.1"
+    "@chats-system/messages-rpc": "workspace:0.0.1"
+    "@connectrpc/connect": ^1.1.3
+    "@connectrpc/connect-node": ^1.1.3
+    "@mikro-orm/cli": ^5.9.4
+    "@mikro-orm/core": ^5.9.4
+    "@mikro-orm/entity-generator": ^5.9.4
+    "@mikro-orm/knex": ^5.9.4
+    "@mikro-orm/migrations": ^5.9.4
+    "@mikro-orm/nestjs": ^5.2.2
+    "@mikro-orm/postgresql": ^5.9.4
+    "@mikro-orm/seeder": ^5.9.4
+    "@monstrs/nestjs-connectrpc": ^0.0.3
+    "@nestjs/common": ^10
+    "@nestjs/core": ^10
+    "@nestjs/cqrs": ^10
+    "@nestjs/microservices": ^10
+    class-transformer: ^0.5
+    class-validator: ^0.14
+    reflect-metadata: ^0.1
+    rxjs: ^7
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/messages-rpc-client@workspace:0.0.1, @chats-system/messages-rpc-client@workspace:contexts/messages/rpc/messages-rpc-client":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/messages-rpc-client@workspace:contexts/messages/rpc/messages-rpc-client"
+  dependencies:
+    "@bufbuild/protobuf": "npm:^1.5.0"
+    "@chats-system/messages-rpc": "workspace:0.0.1"
+    "@connectrpc/connect": "npm:^1.1.3"
+    "@connectrpc/connect-node": "npm:^1.1.3"
+  peerDependencies:
+    "@connectrpc/connect": ^1.1.3
+    "@connectrpc/connect-node": ^1.1.3
+  languageName: unknown
+  linkType: soft
+
+"@chats-system/messages-rpc@workspace:0.0.1, @chats-system/messages-rpc@workspace:contexts/messages/rpc/messages-rpc":
+  version: 0.0.0-use.local
+  resolution: "@chats-system/messages-rpc@workspace:contexts/messages/rpc/messages-rpc"
+  dependencies:
+    "@bufbuild/buf": "npm:^1.28.1"
+    "@bufbuild/protobuf": "npm:^1.5.0"
+    "@bufbuild/protoc-gen-es": "npm:^1.5.0"
+    "@connectrpc/protoc-gen-connect-es": "npm:^1.1.3"
+    "@monstrs/protoc-gen-abstractions": "npm:^0.0.5"
+    "@monstrs/protoc-gen-interfaces": "npm:^0.0.4"
+  peerDependencies:
+    "@bufbuild/protobuf": ^1
+  languageName: unknown
+  linkType: soft
+
 "@chats-system/rpc@workspace:0.0.1, @chats-system/rpc@workspace:shared/rpc":
   version: 0.0.0-use.local
   resolution: "@chats-system/rpc@workspace:shared/rpc"
@@ -1642,6 +1781,7 @@ __metadata:
     "@chats-system/auth-rpc-client": "workspace:0.0.1"
     "@chats-system/authkey-rpc-client": "workspace:0.0.1"
     "@chats-system/help-rpc-client": "workspace:0.0.1"
+    "@chats-system/messages-rpc-client": "workspace:0.0.1"
     "@chats-system/rpc": "workspace:0.0.1"
     "@chats-system/tl": "workspace:0.0.1"
     "@chats-system/tl-rpc": "workspace:0.0.1"
@@ -1686,7 +1826,7 @@ __metadata:
     "@faker-js/faker": "npm:^8.3.1"
     "@jest/globals": "npm:^29.7.0"
     "@monstrs/base-types": "npm:^0.0.2"
-    "@monstrs/buffer-utils": "npm:^0.0.8"
+    "@monstrs/buffer-utils": "npm:^0.0.9"
     "@monstrs/logger": "npm:^0.0.20"
     "@monstrs/mtproto-core": "npm:^0.0.24"
     "@monstrs/mtproto-extensions": "npm:^0.0.3"
@@ -1805,6 +1945,7 @@ __metadata:
     "@chats-system/gateway-infrastructure-module": "workspace:0.0.1"
     "@chats-system/help-infrastructure-module": "workspace:0.0.1"
     "@chats-system/idgen-infrastructure-module": "workspace:0.0.1"
+    "@chats-system/messages-infrastructure-module": "workspace:0.0.1"
     "@chats-system/session-infrastructure-module": "workspace:0.0.1"
     "@chats-system/updates-infrastructure-module": "workspace:0.0.1"
     "@chats-system/user-infrastructure-module": "workspace:0.0.1"
@@ -3060,10 +3201,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/bigint-utils@npm:0.0.4, @monstrs/bigint-utils@npm:^0.0.4":
-  version: 0.0.4
-  resolution: "@monstrs/bigint-utils@npm:0.0.4"
-  checksum: 3c6fdb41dbc3d630b0cf7586a14cb6863a5577e2380524f592766c0c627a507353333b622d46b0c8b73f926b5db729e142b1ef0443dd336ca2888c0a0dd2cdb4
+"@monstrs/bigint-utils@npm:0.0.5, @monstrs/bigint-utils@npm:^0.0.5":
+  version: 0.0.5
+  resolution: "@monstrs/bigint-utils@npm:0.0.5"
+  checksum: 43ebffbc3301de53f9b9393b1ed0e2f0a7f6f6b5eae5ca0d578bc819c1c8edc378ac9f938ed924425bebef9ab307df86dd20b8450c82e18e4c474267d8d2793c
   languageName: node
   linkType: hard
 
@@ -3076,12 +3217,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/buffer-utils@npm:^0.0.8":
-  version: 0.0.8
-  resolution: "@monstrs/buffer-utils@npm:0.0.8"
+"@monstrs/buffer-utils@npm:^0.0.9":
+  version: 0.0.9
+  resolution: "@monstrs/buffer-utils@npm:0.0.9"
   dependencies:
-    "@monstrs/bigint-utils": "npm:0.0.4"
-  checksum: 7bf10505c055a67868015a4b2d3d891d6dafb06749ea938400930eb45a9e40aeb79f41cd3539700dbb69030dce3a8e52f186be41188f57d56adc26644852a0a4
+    "@monstrs/bigint-utils": "npm:0.0.5"
+  checksum: 417a5336187897fd1c1a5218e604ca5b4e3adf6282c972df91b733f24820cf19e97ae008a7eefc80955505987a20f22f445027e552a78d0aaba4740f00db4fe1
   languageName: node
   linkType: hard
 

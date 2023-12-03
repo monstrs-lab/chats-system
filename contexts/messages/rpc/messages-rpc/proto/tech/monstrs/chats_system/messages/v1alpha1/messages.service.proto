@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package tech.monstrs.chats_system.messages.v1alpha1;
+
+import "tech/monstrs/chats_system/messages/v1alpha1/messages.types.proto";
+
+service MessagesService {
+  rpc SendMessage(SendMessageRequest) returns (SendMessageResponse) {}
+  rpc GetUserDialogs(GetUserDialogsRequest) returns (GetUserDialogsResponse) {}
+  rpc GetUserMessages(GetUserMessagesRequest) returns (GetUserMessagesResponse) {}
+  rpc GetUserPeerMessages(GetUserPeerMessagesRequest) returns (GetUserPeerMessagesResponse) {}
+}
+
+message InputPeerEmpty {}
+
+message GetUserDialogsRequest {
+  int64 user_id = 1;
+
+  bool exclude_pinned = 2;
+  int32 folder_id = 3;
+  int32 offset_date = 4;
+  int32 offset_id = 5;
+
+  oneof offset_peer {
+    InputPeerEmpty empty = 6;
+  }
+
+  int32 limit = 7;
+  int64 hash = 8;
+}
+
+message GetUserDialogsResponse {
+  repeated Dialog dialogs = 1;
+}
+
+message SendMessageRequest {
+  int64 user_id = 1;
+  Peer peer = 2;
+  OutboxMessage message = 3;
+}
+
+message SendMessageResponse {}
+
+message GetUserMessagesRequest {
+  int64 user_id = 1;
+  repeated int32 message_ids = 2;
+}
+
+message GetUserMessagesResponse {
+  repeated Message messages = 1;
+}
+
+message GetUserPeerMessagesRequest {
+  int64 user_id = 1;
+  Peer peer = 2;
+}
+
+message GetUserPeerMessagesResponse {
+  repeated Message messages = 1;
+}
