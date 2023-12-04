@@ -31,8 +31,13 @@ export class SendMessageUseCase {
     date: number,
     message: string,
     messageData: object
-  ): Promise<void> {
-    const { dialogMessageId, outboxMessageId, inboxMessageId } =
+  ): Promise<{
+    outboxMessage: Message
+    inboxMessage: Message
+    ptsCount: number
+    pts: number
+  }> {
+    const { dialogMessageId, outboxMessageId, inboxMessageId, pts } =
       await this.idGenPort.createMessageIds(fromId, peerId)
 
     if (dialogMessageId === 0n || outboxMessageId === 0 || inboxMessageId === 0) {
@@ -77,6 +82,13 @@ export class SendMessageUseCase {
       [outboxMessage, inboxMessage],
       [outboxDialog, inboxDialog]
     )
+
+    return {
+      outboxMessage,
+      inboxMessage,
+      ptsCount: 1,
+      pts,
+    }
   }
 
   async createDialog(

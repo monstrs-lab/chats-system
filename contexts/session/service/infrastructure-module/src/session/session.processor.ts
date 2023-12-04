@@ -11,6 +11,7 @@ import { TLObject }             from '@chats-system/tl'
 import { client }               from '@chats-system/authkey-rpc-client'
 import TL                       from '@chats-system/tl'
 
+import { SessionRegistry }      from '../registry/index.js'
 import { SessionResponseQueue } from './session-response.queue.js'
 import { SessionRpcQueue }      from './session-rpc.queue.js'
 
@@ -34,6 +35,7 @@ export class SessionProcessor {
   #logger = new Logger(SessionProcessor.name)
 
   constructor(
+    protected readonly sessionRegistry: SessionRegistry,
     protected readonly responseQueue: SessionResponseQueue,
     protected readonly rpcQueue: SessionRpcQueue
   ) {}
@@ -223,6 +225,7 @@ export class SessionProcessor {
         this.putRpcResultToResponseQueue(sessionData, message, rpcError)
       }
     } else {
+      this.sessionRegistry.set(authKeyUserId, sessionData)
       this.putRpcRequestToQueue(sessionData, message)
     }
   }

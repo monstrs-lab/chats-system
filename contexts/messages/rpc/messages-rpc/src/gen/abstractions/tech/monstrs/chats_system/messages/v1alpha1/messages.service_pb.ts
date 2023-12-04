@@ -99,7 +99,27 @@ export abstract class SendMessageRequest {
 /**
  * @generated from message tech.monstrs.chats_system.messages.v1alpha1.SendMessageResponse
  */
-export abstract class SendMessageResponse {}
+export abstract class SendMessageResponse {
+  /**
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Message outbox_message = 1;
+   */
+  abstract readonly outboxMessage?: Message
+
+  /**
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Message inbox_message = 2;
+   */
+  abstract readonly inboxMessage?: Message
+
+  /**
+   * @generated from field: int32 pts = 3;
+   */
+  abstract readonly pts: number
+
+  /**
+   * @generated from field: int32 pts_count = 4;
+   */
+  abstract readonly ptsCount: number
+}
 
 /**
  * @generated from message tech.monstrs.chats_system.messages.v1alpha1.GetUserMessagesRequest
