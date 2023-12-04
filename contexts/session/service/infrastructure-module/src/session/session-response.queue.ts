@@ -67,7 +67,7 @@ export class SessionResponseQueue {
 
         seqNo.writeInt32LE(task.message.seqNo, 0)
         messageLength.writeInt32LE(task.message.messageLength, 0)
-        salt.writeBigInt64BE(task.sessionData.sessionId, 0)
+        salt.writeBigInt64BE(task.sessionData.salt, 0)
         sessionId.writeBigInt64BE(task.sessionData.sessionId, 0)
         messageId.writeBigInt64LE(task.message.messageId, 0)
 

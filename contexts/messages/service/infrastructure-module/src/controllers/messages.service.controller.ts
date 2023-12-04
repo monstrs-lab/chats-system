@@ -32,17 +32,43 @@ export class MessagesServiceController implements ServiceImpl<typeof MessagesSer
   @ConnectRpcMethod()
   @CreateRequestContext()
   async sendMessage(request: SendMessageRequest): Promise<SendMessageResponse> {
-    await this.messagesUseCases.sendMessage.execute(
-      request.userId,
-      request.peer!.peerId,
-      request.peer!.peerType,
-      request.message!.randomId,
-      request.message!.message!.date,
-      request.message!.message!.message,
-      request.message!.message!
-    )
+    const { outboxMessage, inboxMessage, ptsCount, pts } =
+      await this.messagesUseCases.sendMessage.execute(
+        request.userId,
+        request.peer!.peerId,
+        request.peer!.peerType,
+        request.message!.randomId,
+        request.message!.message!.date,
+        request.message!.message!.message,
+        request.message!.message!
+      )
 
-    return new SendMessageResponse()
+    return new SendMessageResponse({
+      outboxMessage: {
+        ...outboxMessage,
+        peer: {
+          peerType: outboxMessage.peerType,
+          peerId: outboxMessage.peerId,
+        },
+        from: {
+          peerType: PeerType.USER,
+          peerId: outboxMessage.userId,
+        },
+      },
+      inboxMessage: {
+        ...inboxMessage,
+        peer: {
+          peerType: inboxMessage.peerType,
+          peerId: inboxMessage.peerId,
+        },
+        from: {
+          peerType: PeerType.USER,
+          peerId: inboxMessage.userId,
+        },
+      },
+      ptsCount,
+      pts,
+    })
   }
 
   @ConnectRpcMethod()

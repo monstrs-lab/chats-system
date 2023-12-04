@@ -39,7 +39,12 @@ message SendMessageRequest {
   OutboxMessage message = 3;
 }
 
-message SendMessageResponse {}
+message SendMessageResponse {
+  Message outbox_message = 1;
+  Message inbox_message = 2;
+  int32 pts = 3;
+  int32 pts_count = 4;
+}
 
 message GetUserMessagesRequest {
   int64 user_id = 1;

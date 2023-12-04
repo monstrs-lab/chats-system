@@ -256,6 +256,26 @@ export class SendMessageRequest extends Message<SendMessageRequest> {
  * @generated from message tech.monstrs.chats_system.messages.v1alpha1.SendMessageResponse
  */
 export class SendMessageResponse extends Message<SendMessageResponse> {
+  /**
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Message outbox_message = 1;
+   */
+  outboxMessage?: Message$1
+
+  /**
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Message inbox_message = 2;
+   */
+  inboxMessage?: Message$1
+
+  /**
+   * @generated from field: int32 pts = 3;
+   */
+  pts = 0
+
+  /**
+   * @generated from field: int32 pts_count = 4;
+   */
+  ptsCount = 0
+
   constructor(data?: PartialMessage<SendMessageResponse>) {
     super()
     proto3.util.initPartial(data, this)
@@ -263,7 +283,12 @@ export class SendMessageResponse extends Message<SendMessageResponse> {
 
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'tech.monstrs.chats_system.messages.v1alpha1.SendMessageResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'outbox_message', kind: 'message', T: Message$1 },
+    { no: 2, name: 'inbox_message', kind: 'message', T: Message$1 },
+    { no: 3, name: 'pts', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: 'pts_count', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+  ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SendMessageResponse {
     return new SendMessageResponse().fromBinary(bytes, options)
