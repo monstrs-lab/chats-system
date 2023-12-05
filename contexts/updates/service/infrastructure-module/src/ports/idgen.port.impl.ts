@@ -1,6 +1,6 @@
 import type { IdGenClient } from '@chats-system/idgen-client-module'
 
-import { IdGenPort }        from '@chats-system/updates-domain-module'
+import { IdGenPort }        from '@chats-system/updates-application-module'
 
 export class IdGenPortImpl extends IdGenPort {
   constructor(private readonly idGenClient: IdGenClient) {

@@ -18,6 +18,7 @@
     "@chats-system/core-errors": "workspace:0.0.1",
     "@chats-system/gateway-infrastructure-module": "workspace:0.0.1",
     "@chats-system/help-infrastructure-module": "workspace:0.0.1",
+    "@chats-system/idgen-client-module": "workspace:0.0.1",
     "@chats-system/idgen-infrastructure-module": "workspace:0.0.1",
     "@chats-system/messages-infrastructure-module": "workspace:0.0.1",
     "@chats-system/session-infrastructure-module": "workspace:0.0.1",

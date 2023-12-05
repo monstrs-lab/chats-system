@@ -3,7 +3,8 @@ import type { State }   from '@chats-system/updates-domain-module'
 import { Injectable }   from '@nestjs/common'
 
 import { StateFactory } from '@chats-system/updates-domain-module'
-import { IdGenPort }    from '@chats-system/updates-domain-module'
+
+import { IdGenPort }    from '../ports/index.js'
 
 @Injectable()
 export class GetStateUseCase {

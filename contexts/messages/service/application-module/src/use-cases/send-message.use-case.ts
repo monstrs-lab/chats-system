@@ -28,15 +28,15 @@ export class SendMessageUseCase {
     peerId: bigint,
     peerType: PeerType,
     randomId: bigint,
-    date: number,
-    message: string,
-    messageData: object
+    message: string
   ): Promise<{
     outboxMessage: Message
     inboxMessage: Message
     ptsCount: number
     pts: number
   }> {
+    const date = Math.floor(Date.now() / 1000) // TODO: change to date
+
     const { dialogMessageId, outboxMessageId, inboxMessageId, pts } =
       await this.idGenPort.createMessageIds(fromId, peerId)
 
@@ -46,10 +46,6 @@ export class SendMessageUseCase {
 
     const dialogId = DialogId.create(peerType, fromId, peerId)
 
-    if (!dialogId) {
-      throw new Error('Internal server error: empty dialog id')
-    }
-
     const outboxMessage = await this.createOutboxMessage(
       fromId,
       peerId,
@@ -57,7 +53,7 @@ export class SendMessageUseCase {
       dialogId,
       dialogMessageId,
       outboxMessageId,
-      messageData,
+      { message },
       message,
       date
     )
@@ -70,7 +66,7 @@ export class SendMessageUseCase {
       dialogMessageId,
       randomId,
       inboxMessageId,
-      messageData,
+      { message },
       message,
       date
     )
@@ -112,7 +108,12 @@ export class SendMessageUseCase {
       })
     }
 
-    return this.dialogFactory.updateDialog(dialog, topMessage, BigInt(date), unreadCount)
+    return this.dialogFactory.updateDialog(
+      dialog,
+      topMessage,
+      BigInt(date),
+      unreadCount > 0 ? dialog.unreadCount + unreadCount : unreadCount
+    )
   }
 
   async createOutboxMessage(

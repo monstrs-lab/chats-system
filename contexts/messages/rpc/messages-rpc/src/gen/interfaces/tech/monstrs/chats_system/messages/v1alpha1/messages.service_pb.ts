@@ -3,15 +3,64 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { Dialog }        from './messages.types_pb.js'
-import type { Message }       from './messages.types_pb.js'
-import type { OutboxMessage } from './messages.types_pb.js'
-import type { Peer }          from './messages.types_pb.js'
+import type { Dialog }  from './messages.types_pb.js'
+import type { Message } from './messages.types_pb.js'
+import type { Peer }    from './messages.types_pb.js'
 
 /**
  * @generated from message tech.monstrs.chats_system.messages.v1alpha1.InputPeerEmpty
  */
 export interface InputPeerEmpty {}
+
+/**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.SendMessageRequest
+ */
+export interface SendMessageRequest {
+  /**
+   * @generated from field: int64 user_id = 1;
+   */
+  userId: bigint
+
+  /**
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Peer peer = 2;
+   */
+  peer?: Peer
+
+  /**
+   * @generated from field: int64 random_id = 3;
+   */
+  randomId: bigint
+
+  /**
+   * @generated from field: string message = 4;
+   */
+  message: string
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.SendMessageResponse
+ */
+export interface SendMessageResponse {
+  /**
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Message outbox_message = 1;
+   */
+  outboxMessage?: Message
+
+  /**
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Message inbox_message = 2;
+   */
+  inboxMessage?: Message
+
+  /**
+   * @generated from field: int32 pts = 3;
+   */
+  pts: number
+
+  /**
+   * @generated from field: int32 pts_count = 4;
+   */
+  ptsCount: number
+}
 
 /**
  * @generated from message tech.monstrs.chats_system.messages.v1alpha1.GetUserDialogsRequest
@@ -74,51 +123,6 @@ export interface GetUserDialogsResponse {
    * @generated from field: repeated tech.monstrs.chats_system.messages.v1alpha1.Dialog dialogs = 1;
    */
   dialogs: Dialog[]
-}
-
-/**
- * @generated from message tech.monstrs.chats_system.messages.v1alpha1.SendMessageRequest
- */
-export interface SendMessageRequest {
-  /**
-   * @generated from field: int64 user_id = 1;
-   */
-  userId: bigint
-
-  /**
-   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Peer peer = 2;
-   */
-  peer?: Peer
-
-  /**
-   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.OutboxMessage message = 3;
-   */
-  message?: OutboxMessage
-}
-
-/**
- * @generated from message tech.monstrs.chats_system.messages.v1alpha1.SendMessageResponse
- */
-export interface SendMessageResponse {
-  /**
-   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Message outbox_message = 1;
-   */
-  outboxMessage?: Message
-
-  /**
-   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Message inbox_message = 2;
-   */
-  inboxMessage?: Message
-
-  /**
-   * @generated from field: int32 pts = 3;
-   */
-  pts: number
-
-  /**
-   * @generated from field: int32 pts_count = 4;
-   */
-  ptsCount: number
 }
 
 /**

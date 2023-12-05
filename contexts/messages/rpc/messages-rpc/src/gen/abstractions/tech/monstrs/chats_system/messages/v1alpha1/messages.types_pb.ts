@@ -207,33 +207,3 @@ export abstract class Message {
    */
   abstract readonly message: string
 }
-
-/**
- * @generated from message tech.monstrs.chats_system.messages.v1alpha1.OutboxMessage
- */
-export abstract class OutboxMessage {
-  /**
-   * @generated from field: bool no_webpage = 1;
-   */
-  abstract readonly noWebpage: boolean
-
-  /**
-   * @generated from field: bool background = 2;
-   */
-  abstract readonly background: boolean
-
-  /**
-   * @generated from field: int32 schedule_date = 3;
-   */
-  abstract readonly scheduleDate: number
-
-  /**
-   * @generated from field: int64 random_id = 4;
-   */
-  abstract readonly randomId: bigint
-
-  /**
-   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Message message = 5;
-   */
-  abstract readonly message?: Message
-}

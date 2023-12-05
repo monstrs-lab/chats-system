@@ -43,6 +43,7 @@ describe('idgen', () => {
               baseUrl: `http://localhost:${port}`,
               idleConnectionTimeoutMs: 1000,
             }),
+            IdGenClientModule.attach(),
             IdGenInfrastructureModule.register(),
             RedisModule.register(
               {

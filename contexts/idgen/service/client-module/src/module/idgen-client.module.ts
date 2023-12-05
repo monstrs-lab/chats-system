@@ -1,12 +1,10 @@
-import type { DynamicModule } from '@nestjs/common'
+import type { DynamicModule }    from '@nestjs/common'
 
-import { Module }             from '@nestjs/common'
+import { Module }                from '@nestjs/common'
 
-import { createClient }       from '@chats-system/idgen-rpc-client'
-
-import * as dataloaders       from '../dataloaders/index.js'
-import { IdGenClient }        from '../client/index.js'
-import { RPC_CLIENT_TOKEN }   from '../constants/index.js'
+import * as dataloaders          from '../dataloaders/index.js'
+import { IdGenClient }           from '../client/index.js'
+import { IdGenClientCoreModule } from './idgen-client.core.module.js'
 
 @Module({})
 export class IdGenClientModule {
@@ -15,14 +13,14 @@ export class IdGenClientModule {
   ): DynamicModule {
     return {
       module: IdGenClientModule,
-      providers: [
-        ...Object.values(dataloaders),
-        IdGenClient,
-        {
-          provide: RPC_CLIENT_TOKEN,
-          useValue: createClient(options),
-        },
-      ],
+      imports: [IdGenClientCoreModule.register(options)],
+    }
+  }
+
+  static attach(): DynamicModule {
+    return {
+      module: IdGenClientModule,
+      providers: [IdGenClient, ...Object.values(dataloaders)],
       exports: [IdGenClient],
     }
   }

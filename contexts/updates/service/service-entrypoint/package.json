@@ -13,6 +13,8 @@
   },
   "devDependencies": {
     "@bufbuild/protobuf": "^1.5.0",
+    "@chats-system/idgen-client-module": "workspace:0.0.1",
+    "@chats-system/updates-client-module": "workspace:0.0.1",
     "@chats-system/updates-infrastructure-module": "workspace:0.0.1",
     "@chats-system/updates-rpc": "workspace:0.0.1",
     "@connectrpc/connect": "^1.1.3",

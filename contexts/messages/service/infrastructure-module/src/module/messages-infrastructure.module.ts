@@ -29,9 +29,9 @@ export class MessagesInfrastructureModule {
       controllers: Object.values(controllers),
       imports: [
         MikroOrmModule.forFeature(Object.values(entities)),
-        IdGenClientModule.register(),
         MessagesApplicationModule.register(),
         MessagesDomainModule.register(),
+        IdGenClientModule.attach(),
       ],
       providers: [
         ...Object.values(mappers),
