@@ -6,7 +6,7 @@ export class DialogId {
     public readonly b: bigint
   ) {}
 
-  static create(peerType: PeerType, fromId: bigint, peerId: bigint): DialogId | undefined {
+  static create(peerType: PeerType, fromId: bigint, peerId: bigint): DialogId {
     if (peerType === PeerType.SELF) {
       return new DialogId(fromId, fromId)
     }
@@ -27,6 +27,6 @@ export class DialogId {
       return new DialogId(BigInt(peerType) * -1n, peerId)
     }
 
-    return undefined
+    throw new Error('Dialog id: Uknown peer type')
   }
 }

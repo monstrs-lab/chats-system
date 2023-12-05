@@ -59,4 +59,46 @@ export class DialogFactory {
       dialog.folderPinned
     )
   }
+
+  updateDialogReadInboxMaxId(dialog: Dialog, maxId: number, unreadCount: number): Dialog {
+    return new Dialog(
+      dialog.id,
+      dialog.userId,
+      dialog.peerType,
+      dialog.peerId,
+      dialog.date,
+      dialog.peerDialogId,
+      dialog.pinned,
+      dialog.topMessage,
+      maxId,
+      dialog.readOutboxMaxId,
+      unreadCount,
+      false,
+      dialog.unreadMentionsCount,
+      dialog.unreadReactionsCount,
+      dialog.folderId,
+      dialog.folderPinned
+    )
+  }
+
+  updateDialogReadOutboxMaxId(dialog: Dialog, maxId: number): Dialog {
+    return new Dialog(
+      dialog.id,
+      dialog.userId,
+      dialog.peerType,
+      dialog.peerId,
+      dialog.date,
+      dialog.peerDialogId,
+      dialog.pinned,
+      dialog.topMessage,
+      dialog.readInboxMaxId,
+      maxId,
+      dialog.unreadCount,
+      false,
+      dialog.unreadMentionsCount,
+      dialog.unreadReactionsCount,
+      dialog.folderId,
+      dialog.folderPinned
+    )
+  }
 }

@@ -3,52 +3,38 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions } from '@bufbuild/protobuf'
-import type { FieldList }         from '@bufbuild/protobuf'
-import type { JsonReadOptions }   from '@bufbuild/protobuf'
-import type { JsonValue }         from '@bufbuild/protobuf'
-import type { PartialMessage }    from '@bufbuild/protobuf'
-import type { PlainMessage }      from '@bufbuild/protobuf'
-
-import { Message }                from '@bufbuild/protobuf'
-import { proto3 }                 from '@bufbuild/protobuf'
-import { protoInt64 }             from '@bufbuild/protobuf'
-
-import { Dialog }                 from './messages.types_pb.js'
-import { Message as Message$1 }   from './messages.types_pb.js'
-import { OutboxMessage }          from './messages.types_pb.js'
-import { Peer }                   from './messages.types_pb.js'
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
+import { Dialog, Message as Message$1, OutboxMessage, Peer } from "./messages.types_pb.js";
 
 /**
  * @generated from message tech.monstrs.chats_system.messages.v1alpha1.InputPeerEmpty
  */
 export class InputPeerEmpty extends Message<InputPeerEmpty> {
   constructor(data?: PartialMessage<InputPeerEmpty>) {
-    super()
-    proto3.util.initPartial(data, this)
+    super();
+    proto3.util.initPartial(data, this);
   }
 
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'tech.monstrs.chats_system.messages.v1alpha1.InputPeerEmpty'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "tech.monstrs.chats_system.messages.v1alpha1.InputPeerEmpty";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): InputPeerEmpty {
-    return new InputPeerEmpty().fromBinary(bytes, options)
+    return new InputPeerEmpty().fromBinary(bytes, options);
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): InputPeerEmpty {
-    return new InputPeerEmpty().fromJson(jsonValue, options)
+    return new InputPeerEmpty().fromJson(jsonValue, options);
   }
 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): InputPeerEmpty {
-    return new InputPeerEmpty().fromJsonString(jsonString, options)
+    return new InputPeerEmpty().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: InputPeerEmpty | PlainMessage<InputPeerEmpty> | undefined,
-    b: InputPeerEmpty | PlainMessage<InputPeerEmpty> | undefined
-  ): boolean {
-    return proto3.util.equals(InputPeerEmpty, a, b)
+  static equals(a: InputPeerEmpty | PlainMessage<InputPeerEmpty> | undefined, b: InputPeerEmpty | PlainMessage<InputPeerEmpty> | undefined): boolean {
+    return proto3.util.equals(InputPeerEmpty, a, b);
   }
 }
 
@@ -59,92 +45,81 @@ export class GetUserDialogsRequest extends Message<GetUserDialogsRequest> {
   /**
    * @generated from field: int64 user_id = 1;
    */
-  userId = protoInt64.zero
+  userId = protoInt64.zero;
 
   /**
    * @generated from field: bool exclude_pinned = 2;
    */
-  excludePinned = false
+  excludePinned = false;
 
   /**
    * @generated from field: int32 folder_id = 3;
    */
-  folderId = 0
+  folderId = 0;
 
   /**
    * @generated from field: int32 offset_date = 4;
    */
-  offsetDate = 0
+  offsetDate = 0;
 
   /**
    * @generated from field: int32 offset_id = 5;
    */
-  offsetId = 0
+  offsetId = 0;
 
   /**
    * @generated from oneof tech.monstrs.chats_system.messages.v1alpha1.GetUserDialogsRequest.offset_peer
    */
-  offsetPeer:
-    | {
-        /**
-         * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.InputPeerEmpty empty = 6;
-         */
-        value: InputPeerEmpty
-        case: 'empty'
-      }
-    | { case: undefined; value?: undefined } = { case: undefined }
+  offsetPeer: {
+    /**
+     * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.InputPeerEmpty empty = 6;
+     */
+    value: InputPeerEmpty;
+    case: "empty";
+  } | { case: undefined; value?: undefined } = { case: undefined };
 
   /**
    * @generated from field: int32 limit = 7;
    */
-  limit = 0
+  limit = 0;
 
   /**
    * @generated from field: int64 hash = 8;
    */
-  hash = protoInt64.zero
+  hash = protoInt64.zero;
 
   constructor(data?: PartialMessage<GetUserDialogsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
+    super();
+    proto3.util.initPartial(data, this);
   }
 
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'tech.monstrs.chats_system.messages.v1alpha1.GetUserDialogsRequest'
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "tech.monstrs.chats_system.messages.v1alpha1.GetUserDialogsRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: 'exclude_pinned', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
-    { no: 3, name: 'folder_id', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 4, name: 'offset_date', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 5, name: 'offset_id', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 6, name: 'empty', kind: 'message', T: InputPeerEmpty, oneof: 'offset_peer' },
-    { no: 7, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 8, name: 'hash', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-  ])
+    { no: 1, name: "user_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "exclude_pinned", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "folder_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "offset_date", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "offset_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "empty", kind: "message", T: InputPeerEmpty, oneof: "offset_peer" },
+    { no: 7, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "hash", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>
-  ): GetUserDialogsRequest {
-    return new GetUserDialogsRequest().fromBinary(bytes, options)
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetUserDialogsRequest {
+    return new GetUserDialogsRequest().fromBinary(bytes, options);
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetUserDialogsRequest {
-    return new GetUserDialogsRequest().fromJson(jsonValue, options)
+    return new GetUserDialogsRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>
-  ): GetUserDialogsRequest {
-    return new GetUserDialogsRequest().fromJsonString(jsonString, options)
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetUserDialogsRequest {
+    return new GetUserDialogsRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: GetUserDialogsRequest | PlainMessage<GetUserDialogsRequest> | undefined,
-    b: GetUserDialogsRequest | PlainMessage<GetUserDialogsRequest> | undefined
-  ): boolean {
-    return proto3.util.equals(GetUserDialogsRequest, a, b)
+  static equals(a: GetUserDialogsRequest | PlainMessage<GetUserDialogsRequest> | undefined, b: GetUserDialogsRequest | PlainMessage<GetUserDialogsRequest> | undefined): boolean {
+    return proto3.util.equals(GetUserDialogsRequest, a, b);
   }
 }
 
@@ -155,45 +130,33 @@ export class GetUserDialogsResponse extends Message<GetUserDialogsResponse> {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.messages.v1alpha1.Dialog dialogs = 1;
    */
-  dialogs: Dialog[] = []
+  dialogs: Dialog[] = [];
 
   constructor(data?: PartialMessage<GetUserDialogsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
+    super();
+    proto3.util.initPartial(data, this);
   }
 
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'tech.monstrs.chats_system.messages.v1alpha1.GetUserDialogsResponse'
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "tech.monstrs.chats_system.messages.v1alpha1.GetUserDialogsResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'dialogs', kind: 'message', T: Dialog, repeated: true },
-  ])
+    { no: 1, name: "dialogs", kind: "message", T: Dialog, repeated: true },
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>
-  ): GetUserDialogsResponse {
-    return new GetUserDialogsResponse().fromBinary(bytes, options)
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetUserDialogsResponse {
+    return new GetUserDialogsResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>
-  ): GetUserDialogsResponse {
-    return new GetUserDialogsResponse().fromJson(jsonValue, options)
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetUserDialogsResponse {
+    return new GetUserDialogsResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>
-  ): GetUserDialogsResponse {
-    return new GetUserDialogsResponse().fromJsonString(jsonString, options)
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetUserDialogsResponse {
+    return new GetUserDialogsResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: GetUserDialogsResponse | PlainMessage<GetUserDialogsResponse> | undefined,
-    b: GetUserDialogsResponse | PlainMessage<GetUserDialogsResponse> | undefined
-  ): boolean {
-    return proto3.util.equals(GetUserDialogsResponse, a, b)
+  static equals(a: GetUserDialogsResponse | PlainMessage<GetUserDialogsResponse> | undefined, b: GetUserDialogsResponse | PlainMessage<GetUserDialogsResponse> | undefined): boolean {
+    return proto3.util.equals(GetUserDialogsResponse, a, b);
   }
 }
 
@@ -204,51 +167,45 @@ export class SendMessageRequest extends Message<SendMessageRequest> {
   /**
    * @generated from field: int64 user_id = 1;
    */
-  userId = protoInt64.zero
+  userId = protoInt64.zero;
 
   /**
    * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Peer peer = 2;
    */
-  peer?: Peer
+  peer?: Peer;
 
   /**
    * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.OutboxMessage message = 3;
    */
-  message?: OutboxMessage
+  message?: OutboxMessage;
 
   constructor(data?: PartialMessage<SendMessageRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
+    super();
+    proto3.util.initPartial(data, this);
   }
 
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'tech.monstrs.chats_system.messages.v1alpha1.SendMessageRequest'
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "tech.monstrs.chats_system.messages.v1alpha1.SendMessageRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: 'peer', kind: 'message', T: Peer },
-    { no: 3, name: 'message', kind: 'message', T: OutboxMessage },
-  ])
+    { no: 1, name: "user_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "peer", kind: "message", T: Peer },
+    { no: 3, name: "message", kind: "message", T: OutboxMessage },
+  ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SendMessageRequest {
-    return new SendMessageRequest().fromBinary(bytes, options)
+    return new SendMessageRequest().fromBinary(bytes, options);
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SendMessageRequest {
-    return new SendMessageRequest().fromJson(jsonValue, options)
+    return new SendMessageRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>
-  ): SendMessageRequest {
-    return new SendMessageRequest().fromJsonString(jsonString, options)
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SendMessageRequest {
+    return new SendMessageRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: SendMessageRequest | PlainMessage<SendMessageRequest> | undefined,
-    b: SendMessageRequest | PlainMessage<SendMessageRequest> | undefined
-  ): boolean {
-    return proto3.util.equals(SendMessageRequest, a, b)
+  static equals(a: SendMessageRequest | PlainMessage<SendMessageRequest> | undefined, b: SendMessageRequest | PlainMessage<SendMessageRequest> | undefined): boolean {
+    return proto3.util.equals(SendMessageRequest, a, b);
   }
 }
 
@@ -259,57 +216,51 @@ export class SendMessageResponse extends Message<SendMessageResponse> {
   /**
    * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Message outbox_message = 1;
    */
-  outboxMessage?: Message$1
+  outboxMessage?: Message$1;
 
   /**
    * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Message inbox_message = 2;
    */
-  inboxMessage?: Message$1
+  inboxMessage?: Message$1;
 
   /**
    * @generated from field: int32 pts = 3;
    */
-  pts = 0
+  pts = 0;
 
   /**
    * @generated from field: int32 pts_count = 4;
    */
-  ptsCount = 0
+  ptsCount = 0;
 
   constructor(data?: PartialMessage<SendMessageResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
+    super();
+    proto3.util.initPartial(data, this);
   }
 
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'tech.monstrs.chats_system.messages.v1alpha1.SendMessageResponse'
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "tech.monstrs.chats_system.messages.v1alpha1.SendMessageResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'outbox_message', kind: 'message', T: Message$1 },
-    { no: 2, name: 'inbox_message', kind: 'message', T: Message$1 },
-    { no: 3, name: 'pts', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 4, name: 'pts_count', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-  ])
+    { no: 1, name: "outbox_message", kind: "message", T: Message$1 },
+    { no: 2, name: "inbox_message", kind: "message", T: Message$1 },
+    { no: 3, name: "pts", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "pts_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SendMessageResponse {
-    return new SendMessageResponse().fromBinary(bytes, options)
+    return new SendMessageResponse().fromBinary(bytes, options);
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SendMessageResponse {
-    return new SendMessageResponse().fromJson(jsonValue, options)
+    return new SendMessageResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>
-  ): SendMessageResponse {
-    return new SendMessageResponse().fromJsonString(jsonString, options)
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SendMessageResponse {
+    return new SendMessageResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: SendMessageResponse | PlainMessage<SendMessageResponse> | undefined,
-    b: SendMessageResponse | PlainMessage<SendMessageResponse> | undefined
-  ): boolean {
-    return proto3.util.equals(SendMessageResponse, a, b)
+  static equals(a: SendMessageResponse | PlainMessage<SendMessageResponse> | undefined, b: SendMessageResponse | PlainMessage<SendMessageResponse> | undefined): boolean {
+    return proto3.util.equals(SendMessageResponse, a, b);
   }
 }
 
@@ -320,51 +271,39 @@ export class GetUserMessagesRequest extends Message<GetUserMessagesRequest> {
   /**
    * @generated from field: int64 user_id = 1;
    */
-  userId = protoInt64.zero
+  userId = protoInt64.zero;
 
   /**
    * @generated from field: repeated int32 message_ids = 2;
    */
-  messageIds: number[] = []
+  messageIds: number[] = [];
 
   constructor(data?: PartialMessage<GetUserMessagesRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
+    super();
+    proto3.util.initPartial(data, this);
   }
 
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'tech.monstrs.chats_system.messages.v1alpha1.GetUserMessagesRequest'
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "tech.monstrs.chats_system.messages.v1alpha1.GetUserMessagesRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: 'message_ids', kind: 'scalar', T: 5 /* ScalarType.INT32 */, repeated: true },
-  ])
+    { no: 1, name: "user_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "message_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>
-  ): GetUserMessagesRequest {
-    return new GetUserMessagesRequest().fromBinary(bytes, options)
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetUserMessagesRequest {
+    return new GetUserMessagesRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>
-  ): GetUserMessagesRequest {
-    return new GetUserMessagesRequest().fromJson(jsonValue, options)
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetUserMessagesRequest {
+    return new GetUserMessagesRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>
-  ): GetUserMessagesRequest {
-    return new GetUserMessagesRequest().fromJsonString(jsonString, options)
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetUserMessagesRequest {
+    return new GetUserMessagesRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: GetUserMessagesRequest | PlainMessage<GetUserMessagesRequest> | undefined,
-    b: GetUserMessagesRequest | PlainMessage<GetUserMessagesRequest> | undefined
-  ): boolean {
-    return proto3.util.equals(GetUserMessagesRequest, a, b)
+  static equals(a: GetUserMessagesRequest | PlainMessage<GetUserMessagesRequest> | undefined, b: GetUserMessagesRequest | PlainMessage<GetUserMessagesRequest> | undefined): boolean {
+    return proto3.util.equals(GetUserMessagesRequest, a, b);
   }
 }
 
@@ -375,45 +314,33 @@ export class GetUserMessagesResponse extends Message<GetUserMessagesResponse> {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.messages.v1alpha1.Message messages = 1;
    */
-  messages: Message$1[] = []
+  messages: Message$1[] = [];
 
   constructor(data?: PartialMessage<GetUserMessagesResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
+    super();
+    proto3.util.initPartial(data, this);
   }
 
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'tech.monstrs.chats_system.messages.v1alpha1.GetUserMessagesResponse'
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "tech.monstrs.chats_system.messages.v1alpha1.GetUserMessagesResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'messages', kind: 'message', T: Message$1, repeated: true },
-  ])
+    { no: 1, name: "messages", kind: "message", T: Message$1, repeated: true },
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>
-  ): GetUserMessagesResponse {
-    return new GetUserMessagesResponse().fromBinary(bytes, options)
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetUserMessagesResponse {
+    return new GetUserMessagesResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>
-  ): GetUserMessagesResponse {
-    return new GetUserMessagesResponse().fromJson(jsonValue, options)
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetUserMessagesResponse {
+    return new GetUserMessagesResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>
-  ): GetUserMessagesResponse {
-    return new GetUserMessagesResponse().fromJsonString(jsonString, options)
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetUserMessagesResponse {
+    return new GetUserMessagesResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: GetUserMessagesResponse | PlainMessage<GetUserMessagesResponse> | undefined,
-    b: GetUserMessagesResponse | PlainMessage<GetUserMessagesResponse> | undefined
-  ): boolean {
-    return proto3.util.equals(GetUserMessagesResponse, a, b)
+  static equals(a: GetUserMessagesResponse | PlainMessage<GetUserMessagesResponse> | undefined, b: GetUserMessagesResponse | PlainMessage<GetUserMessagesResponse> | undefined): boolean {
+    return proto3.util.equals(GetUserMessagesResponse, a, b);
   }
 }
 
@@ -424,52 +351,39 @@ export class GetUserPeerMessagesRequest extends Message<GetUserPeerMessagesReque
   /**
    * @generated from field: int64 user_id = 1;
    */
-  userId = protoInt64.zero
+  userId = protoInt64.zero;
 
   /**
    * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Peer peer = 2;
    */
-  peer?: Peer
+  peer?: Peer;
 
   constructor(data?: PartialMessage<GetUserPeerMessagesRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
+    super();
+    proto3.util.initPartial(data, this);
   }
 
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName =
-    'tech.monstrs.chats_system.messages.v1alpha1.GetUserPeerMessagesRequest'
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "tech.monstrs.chats_system.messages.v1alpha1.GetUserPeerMessagesRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: 'peer', kind: 'message', T: Peer },
-  ])
+    { no: 1, name: "user_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "peer", kind: "message", T: Peer },
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>
-  ): GetUserPeerMessagesRequest {
-    return new GetUserPeerMessagesRequest().fromBinary(bytes, options)
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetUserPeerMessagesRequest {
+    return new GetUserPeerMessagesRequest().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>
-  ): GetUserPeerMessagesRequest {
-    return new GetUserPeerMessagesRequest().fromJson(jsonValue, options)
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetUserPeerMessagesRequest {
+    return new GetUserPeerMessagesRequest().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>
-  ): GetUserPeerMessagesRequest {
-    return new GetUserPeerMessagesRequest().fromJsonString(jsonString, options)
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetUserPeerMessagesRequest {
+    return new GetUserPeerMessagesRequest().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: GetUserPeerMessagesRequest | PlainMessage<GetUserPeerMessagesRequest> | undefined,
-    b: GetUserPeerMessagesRequest | PlainMessage<GetUserPeerMessagesRequest> | undefined
-  ): boolean {
-    return proto3.util.equals(GetUserPeerMessagesRequest, a, b)
+  static equals(a: GetUserPeerMessagesRequest | PlainMessage<GetUserPeerMessagesRequest> | undefined, b: GetUserPeerMessagesRequest | PlainMessage<GetUserPeerMessagesRequest> | undefined): boolean {
+    return proto3.util.equals(GetUserPeerMessagesRequest, a, b);
   }
 }
 
@@ -480,45 +394,125 @@ export class GetUserPeerMessagesResponse extends Message<GetUserPeerMessagesResp
   /**
    * @generated from field: repeated tech.monstrs.chats_system.messages.v1alpha1.Message messages = 1;
    */
-  messages: Message$1[] = []
+  messages: Message$1[] = [];
 
   constructor(data?: PartialMessage<GetUserPeerMessagesResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
+    super();
+    proto3.util.initPartial(data, this);
   }
 
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName =
-    'tech.monstrs.chats_system.messages.v1alpha1.GetUserPeerMessagesResponse'
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "tech.monstrs.chats_system.messages.v1alpha1.GetUserPeerMessagesResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'messages', kind: 'message', T: Message$1, repeated: true },
-  ])
+    { no: 1, name: "messages", kind: "message", T: Message$1, repeated: true },
+  ]);
 
-  static fromBinary(
-    bytes: Uint8Array,
-    options?: Partial<BinaryReadOptions>
-  ): GetUserPeerMessagesResponse {
-    return new GetUserPeerMessagesResponse().fromBinary(bytes, options)
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetUserPeerMessagesResponse {
+    return new GetUserPeerMessagesResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(
-    jsonValue: JsonValue,
-    options?: Partial<JsonReadOptions>
-  ): GetUserPeerMessagesResponse {
-    return new GetUserPeerMessagesResponse().fromJson(jsonValue, options)
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetUserPeerMessagesResponse {
+    return new GetUserPeerMessagesResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>
-  ): GetUserPeerMessagesResponse {
-    return new GetUserPeerMessagesResponse().fromJsonString(jsonString, options)
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetUserPeerMessagesResponse {
+    return new GetUserPeerMessagesResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: GetUserPeerMessagesResponse | PlainMessage<GetUserPeerMessagesResponse> | undefined,
-    b: GetUserPeerMessagesResponse | PlainMessage<GetUserPeerMessagesResponse> | undefined
-  ): boolean {
-    return proto3.util.equals(GetUserPeerMessagesResponse, a, b)
+  static equals(a: GetUserPeerMessagesResponse | PlainMessage<GetUserPeerMessagesResponse> | undefined, b: GetUserPeerMessagesResponse | PlainMessage<GetUserPeerMessagesResponse> | undefined): boolean {
+    return proto3.util.equals(GetUserPeerMessagesResponse, a, b);
   }
 }
+
+/**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.ReadUserMessagesRequest
+ */
+export class ReadUserMessagesRequest extends Message<ReadUserMessagesRequest> {
+  /**
+   * @generated from field: int64 user_id = 1;
+   */
+  userId = protoInt64.zero;
+
+  /**
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Peer peer = 2;
+   */
+  peer?: Peer;
+
+  /**
+   * @generated from field: int32 max_id = 3;
+   */
+  maxId = 0;
+
+  constructor(data?: PartialMessage<ReadUserMessagesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "tech.monstrs.chats_system.messages.v1alpha1.ReadUserMessagesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "peer", kind: "message", T: Peer },
+    { no: 3, name: "max_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReadUserMessagesRequest {
+    return new ReadUserMessagesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReadUserMessagesRequest {
+    return new ReadUserMessagesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReadUserMessagesRequest {
+    return new ReadUserMessagesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReadUserMessagesRequest | PlainMessage<ReadUserMessagesRequest> | undefined, b: ReadUserMessagesRequest | PlainMessage<ReadUserMessagesRequest> | undefined): boolean {
+    return proto3.util.equals(ReadUserMessagesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.ReadUserMessagesResponse
+ */
+export class ReadUserMessagesResponse extends Message<ReadUserMessagesResponse> {
+  /**
+   * @generated from field: int32 pts = 1;
+   */
+  pts = 0;
+
+  /**
+   * @generated from field: int32 pts_count = 2;
+   */
+  ptsCount = 0;
+
+  constructor(data?: PartialMessage<ReadUserMessagesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "tech.monstrs.chats_system.messages.v1alpha1.ReadUserMessagesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pts", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "pts_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReadUserMessagesResponse {
+    return new ReadUserMessagesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReadUserMessagesResponse {
+    return new ReadUserMessagesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReadUserMessagesResponse {
+    return new ReadUserMessagesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReadUserMessagesResponse | PlainMessage<ReadUserMessagesResponse> | undefined, b: ReadUserMessagesResponse | PlainMessage<ReadUserMessagesResponse> | undefined): boolean {
+    return proto3.util.equals(ReadUserMessagesResponse, a, b);
+  }
+}
+

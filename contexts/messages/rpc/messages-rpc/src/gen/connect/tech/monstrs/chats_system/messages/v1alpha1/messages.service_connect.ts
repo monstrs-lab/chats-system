@@ -3,28 +3,20 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { MethodKind }                  from '@bufbuild/protobuf'
-
-import { GetUserDialogsRequest }       from './messages.service_pb.js'
-import { GetUserDialogsResponse }      from './messages.service_pb.js'
-import { GetUserMessagesRequest }      from './messages.service_pb.js'
-import { GetUserMessagesResponse }     from './messages.service_pb.js'
-import { GetUserPeerMessagesRequest }  from './messages.service_pb.js'
-import { GetUserPeerMessagesResponse } from './messages.service_pb.js'
-import { SendMessageRequest }          from './messages.service_pb.js'
-import { SendMessageResponse }         from './messages.service_pb.js'
+import { GetUserDialogsRequest, GetUserDialogsResponse, GetUserMessagesRequest, GetUserMessagesResponse, GetUserPeerMessagesRequest, GetUserPeerMessagesResponse, ReadUserMessagesRequest, ReadUserMessagesResponse, SendMessageRequest, SendMessageResponse } from "./messages.service_pb.js";
+import { MethodKind } from "@bufbuild/protobuf";
 
 /**
  * @generated from service tech.monstrs.chats_system.messages.v1alpha1.MessagesService
  */
 export const MessagesService = {
-  typeName: 'tech.monstrs.chats_system.messages.v1alpha1.MessagesService',
+  typeName: "tech.monstrs.chats_system.messages.v1alpha1.MessagesService",
   methods: {
     /**
      * @generated from rpc tech.monstrs.chats_system.messages.v1alpha1.MessagesService.SendMessage
      */
     sendMessage: {
-      name: 'SendMessage',
+      name: "SendMessage",
       I: SendMessageRequest,
       O: SendMessageResponse,
       kind: MethodKind.Unary,
@@ -33,16 +25,25 @@ export const MessagesService = {
      * @generated from rpc tech.monstrs.chats_system.messages.v1alpha1.MessagesService.GetUserDialogs
      */
     getUserDialogs: {
-      name: 'GetUserDialogs',
+      name: "GetUserDialogs",
       I: GetUserDialogsRequest,
       O: GetUserDialogsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc tech.monstrs.chats_system.messages.v1alpha1.MessagesService.ReadUserMessages
+     */
+    readUserMessages: {
+      name: "ReadUserMessages",
+      I: ReadUserMessagesRequest,
+      O: ReadUserMessagesResponse,
       kind: MethodKind.Unary,
     },
     /**
      * @generated from rpc tech.monstrs.chats_system.messages.v1alpha1.MessagesService.GetUserMessages
      */
     getUserMessages: {
-      name: 'GetUserMessages',
+      name: "GetUserMessages",
       I: GetUserMessagesRequest,
       O: GetUserMessagesResponse,
       kind: MethodKind.Unary,
@@ -51,10 +52,11 @@ export const MessagesService = {
      * @generated from rpc tech.monstrs.chats_system.messages.v1alpha1.MessagesService.GetUserPeerMessages
      */
     getUserPeerMessages: {
-      name: 'GetUserPeerMessages',
+      name: "GetUserPeerMessages",
       I: GetUserPeerMessagesRequest,
       O: GetUserPeerMessagesResponse,
       kind: MethodKind.Unary,
     },
-  },
-} as const
+  }
+} as const;
+

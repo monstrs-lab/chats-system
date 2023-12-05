@@ -75,22 +75,23 @@ export interface Peer {
   /**
    * @generated from field: int64 self_id = 1;
    */
-  selfId: bigint
+  selfId: bigint;
 
   /**
    * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.PeerType peer_type = 2;
    */
-  peerType: PeerType
+  peerType: PeerType;
 
   /**
    * @generated from field: int64 peer_id = 3;
    */
-  peerId: bigint
+  peerId: bigint;
 
   /**
    * @generated from field: int64 access_hash = 5;
    */
-  accessHash: bigint
+  accessHash: bigint;
+
 }
 
 /**
@@ -100,77 +101,78 @@ export interface Dialog {
   /**
    * @generated from field: int64 id = 1;
    */
-  id: bigint
+  id: bigint;
 
   /**
    * @generated from field: int64 user_id = 2;
    */
-  userId: bigint
+  userId: bigint;
 
   /**
    * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Peer peer = 3;
    */
-  peer?: Peer
+  peer?: Peer;
 
   /**
    * @generated from field: int64 peer_dialog_id = 4;
    */
-  peerDialogId: bigint
+  peerDialogId: bigint;
 
   /**
    * @generated from field: int64 date = 5;
    */
-  date: bigint
+  date: bigint;
 
   /**
    * @generated from field: bool pinned = 6;
    */
-  pinned: boolean
+  pinned: boolean;
 
   /**
    * @generated from field: int32 top_message = 7;
    */
-  topMessage: number
+  topMessage: number;
 
   /**
    * @generated from field: int32 read_inbox_max_id = 8;
    */
-  readInboxMaxId: number
+  readInboxMaxId: number;
 
   /**
    * @generated from field: int32 read_outbox_max_id = 9;
    */
-  readOutboxMaxId: number
+  readOutboxMaxId: number;
 
   /**
    * @generated from field: int32 unread_count = 10;
    */
-  unreadCount: number
+  unreadCount: number;
 
   /**
    * @generated from field: bool unread_mark = 11;
    */
-  unreadMark: boolean
+  unreadMark: boolean;
 
   /**
    * @generated from field: int32 unread_mentions_count = 12;
    */
-  unreadMentionsCount: number
+  unreadMentionsCount: number;
 
   /**
    * @generated from field: int32 unread_reactions_count = 13;
    */
-  unreadReactionsCount: number
+  unreadReactionsCount: number;
 
   /**
    * @generated from field: int32 folder_id = 14;
    */
-  folderId: number
+  folderId: number;
 
   /**
    * @generated from field: int64 folder_pinned = 15;
    */
-  folderPinned: bigint
+  folderPinned: bigint;
+
 }
 
 /**
@@ -180,32 +182,33 @@ export interface Message {
   /**
    * @generated from field: int64 id = 1;
    */
-  id: bigint
+  id: bigint;
 
   /**
    * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Peer from = 2;
    */
-  from?: Peer
+  from?: Peer;
 
   /**
    * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Peer peer = 3;
    */
-  peer?: Peer
+  peer?: Peer;
 
   /**
    * @generated from field: int32 message_id = 4;
    */
-  messageId: number
+  messageId: number;
 
   /**
    * @generated from field: int32 date = 5;
    */
-  date: number
+  date: number;
 
   /**
    * @generated from field: string message = 6;
    */
-  message: string
+  message: string;
+
 }
 
 /**
@@ -215,25 +218,27 @@ export interface OutboxMessage {
   /**
    * @generated from field: bool no_webpage = 1;
    */
-  noWebpage: boolean
+  noWebpage: boolean;
 
   /**
    * @generated from field: bool background = 2;
    */
-  background: boolean
+  background: boolean;
 
   /**
    * @generated from field: int32 schedule_date = 3;
    */
-  scheduleDate: number
+  scheduleDate: number;
 
   /**
    * @generated from field: int64 random_id = 4;
    */
-  randomId: bigint
+  randomId: bigint;
 
   /**
    * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Message message = 5;
    */
-  message?: Message
+  message?: Message;
+
 }
+

@@ -33,7 +33,7 @@ export class MessagesGetDialogsHandler {
       dialogs: dialogs.map(
         (dialog) =>
           new TL.Dialog({
-            pinned: false,
+            pinned: dialog.pinned,
             unreadMark: dialog.unreadMark,
             peer: this.getDialogPeer(dialog),
             topMessage: Number(dialog.topMessage),
@@ -43,7 +43,7 @@ export class MessagesGetDialogsHandler {
             unreadReactionsCount: 0,
             unreadMentionsCount: 0,
             notifySettings: new TL.PeerNotifySettings({}),
-            pts: undefined,
+            pts: 0,
             draft: undefined,
             folderId: dialog.folderId,
           })

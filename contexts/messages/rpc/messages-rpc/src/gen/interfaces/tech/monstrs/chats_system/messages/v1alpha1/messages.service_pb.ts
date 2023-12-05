@@ -3,15 +3,13 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { Dialog }        from './messages.types_pb.js'
-import type { Message }       from './messages.types_pb.js'
-import type { OutboxMessage } from './messages.types_pb.js'
-import type { Peer }          from './messages.types_pb.js'
+import type { Dialog, Message, OutboxMessage, Peer } from "./messages.types_pb.js";
 
 /**
  * @generated from message tech.monstrs.chats_system.messages.v1alpha1.InputPeerEmpty
  */
-export interface InputPeerEmpty {}
+export interface InputPeerEmpty {
+}
 
 /**
  * @generated from message tech.monstrs.chats_system.messages.v1alpha1.GetUserDialogsRequest
@@ -20,50 +18,49 @@ export interface GetUserDialogsRequest {
   /**
    * @generated from field: int64 user_id = 1;
    */
-  userId: bigint
+  userId: bigint;
 
   /**
    * @generated from field: bool exclude_pinned = 2;
    */
-  excludePinned: boolean
+  excludePinned: boolean;
 
   /**
    * @generated from field: int32 folder_id = 3;
    */
-  folderId: number
+  folderId: number;
 
   /**
    * @generated from field: int32 offset_date = 4;
    */
-  offsetDate: number
+  offsetDate: number;
 
   /**
    * @generated from field: int32 offset_id = 5;
    */
-  offsetId: number
+  offsetId: number;
 
   /**
    * @generated from oneof tech.monstrs.chats_system.messages.v1alpha1.GetUserDialogsRequest.offset_peer
    */
-  offsetPeer:
-    | {
-        /**
-         * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.InputPeerEmpty empty = 6;
-         */
-        value: InputPeerEmpty
-        case: 'empty'
-      }
-    | { case: undefined; value?: undefined }
+  offsetPeer: {
+    /**
+     * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.InputPeerEmpty empty = 6;
+     */
+    value: InputPeerEmpty;
+    case: "empty";
+  } | { case: undefined; value?: undefined };
 
   /**
    * @generated from field: int32 limit = 7;
    */
-  limit: number
+  limit: number;
 
   /**
    * @generated from field: int64 hash = 8;
    */
-  hash: bigint
+  hash: bigint;
+
 }
 
 /**
@@ -73,7 +70,8 @@ export interface GetUserDialogsResponse {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.messages.v1alpha1.Dialog dialogs = 1;
    */
-  dialogs: Dialog[]
+  dialogs: Dialog[];
+
 }
 
 /**
@@ -83,17 +81,18 @@ export interface SendMessageRequest {
   /**
    * @generated from field: int64 user_id = 1;
    */
-  userId: bigint
+  userId: bigint;
 
   /**
    * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Peer peer = 2;
    */
-  peer?: Peer
+  peer?: Peer;
 
   /**
    * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.OutboxMessage message = 3;
    */
-  message?: OutboxMessage
+  message?: OutboxMessage;
+
 }
 
 /**
@@ -103,22 +102,23 @@ export interface SendMessageResponse {
   /**
    * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Message outbox_message = 1;
    */
-  outboxMessage?: Message
+  outboxMessage?: Message;
 
   /**
    * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Message inbox_message = 2;
    */
-  inboxMessage?: Message
+  inboxMessage?: Message;
 
   /**
    * @generated from field: int32 pts = 3;
    */
-  pts: number
+  pts: number;
 
   /**
    * @generated from field: int32 pts_count = 4;
    */
-  ptsCount: number
+  ptsCount: number;
+
 }
 
 /**
@@ -128,12 +128,13 @@ export interface GetUserMessagesRequest {
   /**
    * @generated from field: int64 user_id = 1;
    */
-  userId: bigint
+  userId: bigint;
 
   /**
    * @generated from field: repeated int32 message_ids = 2;
    */
-  messageIds: number[]
+  messageIds: number[];
+
 }
 
 /**
@@ -143,7 +144,8 @@ export interface GetUserMessagesResponse {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.messages.v1alpha1.Message messages = 1;
    */
-  messages: Message[]
+  messages: Message[];
+
 }
 
 /**
@@ -153,12 +155,13 @@ export interface GetUserPeerMessagesRequest {
   /**
    * @generated from field: int64 user_id = 1;
    */
-  userId: bigint
+  userId: bigint;
 
   /**
    * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Peer peer = 2;
    */
-  peer?: Peer
+  peer?: Peer;
+
 }
 
 /**
@@ -168,5 +171,44 @@ export interface GetUserPeerMessagesResponse {
   /**
    * @generated from field: repeated tech.monstrs.chats_system.messages.v1alpha1.Message messages = 1;
    */
-  messages: Message[]
+  messages: Message[];
+
 }
+
+/**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.ReadUserMessagesRequest
+ */
+export interface ReadUserMessagesRequest {
+  /**
+   * @generated from field: int64 user_id = 1;
+   */
+  userId: bigint;
+
+  /**
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Peer peer = 2;
+   */
+  peer?: Peer;
+
+  /**
+   * @generated from field: int32 max_id = 3;
+   */
+  maxId: number;
+
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.ReadUserMessagesResponse
+ */
+export interface ReadUserMessagesResponse {
+  /**
+   * @generated from field: int32 pts = 1;
+   */
+  pts: number;
+
+  /**
+   * @generated from field: int32 pts_count = 2;
+   */
+  ptsCount: number;
+
+}
+

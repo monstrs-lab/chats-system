@@ -8,4 +8,8 @@ export abstract class IdGenPort {
     inboxMessageId: number
     pts: number
   }>
+
+  abstract getCurrentPtsId(userId: bigint): Promise<number>
+
+  abstract getNextPtsId(userId: bigint): Promise<number>
 }

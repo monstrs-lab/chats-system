@@ -3,16 +3,8 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions } from '@bufbuild/protobuf'
-import type { FieldList }         from '@bufbuild/protobuf'
-import type { JsonReadOptions }   from '@bufbuild/protobuf'
-import type { JsonValue }         from '@bufbuild/protobuf'
-import type { PartialMessage }    from '@bufbuild/protobuf'
-import type { PlainMessage }      from '@bufbuild/protobuf'
-
-import { Message as Message$1 }   from '@bufbuild/protobuf'
-import { proto3 }                 from '@bufbuild/protobuf'
-import { protoInt64 }             from '@bufbuild/protobuf'
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import { Message as Message$1, proto3, protoInt64 } from "@bufbuild/protobuf";
 
 /**
  * @generated from enum tech.monstrs.chats_system.messages.v1alpha1.PeerType
@@ -79,20 +71,20 @@ export enum PeerType {
   CHANNEL_MESSAGE = 12,
 }
 // Retrieve enum metadata with: proto3.getEnumType(PeerType)
-proto3.util.setEnumType(PeerType, 'tech.monstrs.chats_system.messages.v1alpha1.PeerType', [
-  { no: 0, name: 'UNKNOWN' },
-  { no: 1, name: 'EMPTY' },
-  { no: 2, name: 'SELF' },
-  { no: 3, name: 'USER' },
-  { no: 4, name: 'CHAT' },
-  { no: 5, name: 'CHANNEL' },
-  { no: 6, name: 'USERS' },
-  { no: 7, name: 'CHATS' },
-  { no: 8, name: 'ENCRYPTED_CHAT' },
-  { no: 9, name: 'BROADCASTS' },
-  { no: 10, name: 'USER_MESSAGE' },
-  { no: 12, name: 'CHANNEL_MESSAGE' },
-])
+proto3.util.setEnumType(PeerType, "tech.monstrs.chats_system.messages.v1alpha1.PeerType", [
+  { no: 0, name: "UNKNOWN" },
+  { no: 1, name: "EMPTY" },
+  { no: 2, name: "SELF" },
+  { no: 3, name: "USER" },
+  { no: 4, name: "CHAT" },
+  { no: 5, name: "CHANNEL" },
+  { no: 6, name: "USERS" },
+  { no: 7, name: "CHATS" },
+  { no: 8, name: "ENCRYPTED_CHAT" },
+  { no: 9, name: "BROADCASTS" },
+  { no: 10, name: "USER_MESSAGE" },
+  { no: 12, name: "CHANNEL_MESSAGE" },
+]);
 
 /**
  * @generated from message tech.monstrs.chats_system.messages.v1alpha1.Peer
@@ -101,54 +93,51 @@ export class Peer extends Message$1<Peer> {
   /**
    * @generated from field: int64 self_id = 1;
    */
-  selfId = protoInt64.zero
+  selfId = protoInt64.zero;
 
   /**
    * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.PeerType peer_type = 2;
    */
-  peerType = PeerType.UNKNOWN
+  peerType = PeerType.UNKNOWN;
 
   /**
    * @generated from field: int64 peer_id = 3;
    */
-  peerId = protoInt64.zero
+  peerId = protoInt64.zero;
 
   /**
    * @generated from field: int64 access_hash = 5;
    */
-  accessHash = protoInt64.zero
+  accessHash = protoInt64.zero;
 
   constructor(data?: PartialMessage<Peer>) {
-    super()
-    proto3.util.initPartial(data, this)
+    super();
+    proto3.util.initPartial(data, this);
   }
 
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'tech.monstrs.chats_system.messages.v1alpha1.Peer'
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "tech.monstrs.chats_system.messages.v1alpha1.Peer";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'self_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: 'peer_type', kind: 'enum', T: proto3.getEnumType(PeerType) },
-    { no: 3, name: 'peer_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 5, name: 'access_hash', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-  ])
+    { no: 1, name: "self_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "peer_type", kind: "enum", T: proto3.getEnumType(PeerType) },
+    { no: 3, name: "peer_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "access_hash", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Peer {
-    return new Peer().fromBinary(bytes, options)
+    return new Peer().fromBinary(bytes, options);
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Peer {
-    return new Peer().fromJson(jsonValue, options)
+    return new Peer().fromJson(jsonValue, options);
   }
 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Peer {
-    return new Peer().fromJsonString(jsonString, options)
+    return new Peer().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: Peer | PlainMessage<Peer> | undefined,
-    b: Peer | PlainMessage<Peer> | undefined
-  ): boolean {
-    return proto3.util.equals(Peer, a, b)
+  static equals(a: Peer | PlainMessage<Peer> | undefined, b: Peer | PlainMessage<Peer> | undefined): boolean {
+    return proto3.util.equals(Peer, a, b);
   }
 }
 
@@ -159,120 +148,117 @@ export class Dialog extends Message$1<Dialog> {
   /**
    * @generated from field: int64 id = 1;
    */
-  id = protoInt64.zero
+  id = protoInt64.zero;
 
   /**
    * @generated from field: int64 user_id = 2;
    */
-  userId = protoInt64.zero
+  userId = protoInt64.zero;
 
   /**
    * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Peer peer = 3;
    */
-  peer?: Peer
+  peer?: Peer;
 
   /**
    * @generated from field: int64 peer_dialog_id = 4;
    */
-  peerDialogId = protoInt64.zero
+  peerDialogId = protoInt64.zero;
 
   /**
    * @generated from field: int64 date = 5;
    */
-  date = protoInt64.zero
+  date = protoInt64.zero;
 
   /**
    * @generated from field: bool pinned = 6;
    */
-  pinned = false
+  pinned = false;
 
   /**
    * @generated from field: int32 top_message = 7;
    */
-  topMessage = 0
+  topMessage = 0;
 
   /**
    * @generated from field: int32 read_inbox_max_id = 8;
    */
-  readInboxMaxId = 0
+  readInboxMaxId = 0;
 
   /**
    * @generated from field: int32 read_outbox_max_id = 9;
    */
-  readOutboxMaxId = 0
+  readOutboxMaxId = 0;
 
   /**
    * @generated from field: int32 unread_count = 10;
    */
-  unreadCount = 0
+  unreadCount = 0;
 
   /**
    * @generated from field: bool unread_mark = 11;
    */
-  unreadMark = false
+  unreadMark = false;
 
   /**
    * @generated from field: int32 unread_mentions_count = 12;
    */
-  unreadMentionsCount = 0
+  unreadMentionsCount = 0;
 
   /**
    * @generated from field: int32 unread_reactions_count = 13;
    */
-  unreadReactionsCount = 0
+  unreadReactionsCount = 0;
 
   /**
    * @generated from field: int32 folder_id = 14;
    */
-  folderId = 0
+  folderId = 0;
 
   /**
    * @generated from field: int64 folder_pinned = 15;
    */
-  folderPinned = protoInt64.zero
+  folderPinned = protoInt64.zero;
 
   constructor(data?: PartialMessage<Dialog>) {
-    super()
-    proto3.util.initPartial(data, this)
+    super();
+    proto3.util.initPartial(data, this);
   }
 
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'tech.monstrs.chats_system.messages.v1alpha1.Dialog'
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "tech.monstrs.chats_system.messages.v1alpha1.Dialog";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 3, name: 'peer', kind: 'message', T: Peer },
-    { no: 4, name: 'peer_dialog_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 5, name: 'date', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 6, name: 'pinned', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
-    { no: 7, name: 'top_message', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 8, name: 'read_inbox_max_id', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 9, name: 'read_outbox_max_id', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 10, name: 'unread_count', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 11, name: 'unread_mark', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
-    { no: 12, name: 'unread_mentions_count', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 13, name: 'unread_reactions_count', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 14, name: 'folder_id', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 15, name: 'folder_pinned', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-  ])
+    { no: 1, name: "id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "peer", kind: "message", T: Peer },
+    { no: 4, name: "peer_dialog_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "date", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "pinned", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "top_message", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "read_inbox_max_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "read_outbox_max_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "unread_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "unread_mark", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 12, name: "unread_mentions_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 13, name: "unread_reactions_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 14, name: "folder_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 15, name: "folder_pinned", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Dialog {
-    return new Dialog().fromBinary(bytes, options)
+    return new Dialog().fromBinary(bytes, options);
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Dialog {
-    return new Dialog().fromJson(jsonValue, options)
+    return new Dialog().fromJson(jsonValue, options);
   }
 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Dialog {
-    return new Dialog().fromJsonString(jsonString, options)
+    return new Dialog().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: Dialog | PlainMessage<Dialog> | undefined,
-    b: Dialog | PlainMessage<Dialog> | undefined
-  ): boolean {
-    return proto3.util.equals(Dialog, a, b)
+  static equals(a: Dialog | PlainMessage<Dialog> | undefined, b: Dialog | PlainMessage<Dialog> | undefined): boolean {
+    return proto3.util.equals(Dialog, a, b);
   }
 }
 
@@ -283,66 +269,63 @@ export class Message extends Message$1<Message> {
   /**
    * @generated from field: int64 id = 1;
    */
-  id = protoInt64.zero
+  id = protoInt64.zero;
 
   /**
    * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Peer from = 2;
    */
-  from?: Peer
+  from?: Peer;
 
   /**
    * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Peer peer = 3;
    */
-  peer?: Peer
+  peer?: Peer;
 
   /**
    * @generated from field: int32 message_id = 4;
    */
-  messageId = 0
+  messageId = 0;
 
   /**
    * @generated from field: int32 date = 5;
    */
-  date = 0
+  date = 0;
 
   /**
    * @generated from field: string message = 6;
    */
-  message = ''
+  message = "";
 
   constructor(data?: PartialMessage<Message>) {
-    super()
-    proto3.util.initPartial(data, this)
+    super();
+    proto3.util.initPartial(data, this);
   }
 
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'tech.monstrs.chats_system.messages.v1alpha1.Message'
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "tech.monstrs.chats_system.messages.v1alpha1.Message";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: 'from', kind: 'message', T: Peer },
-    { no: 3, name: 'peer', kind: 'message', T: Peer },
-    { no: 4, name: 'message_id', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 5, name: 'date', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 6, name: 'message', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
+    { no: 1, name: "id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "from", kind: "message", T: Peer },
+    { no: 3, name: "peer", kind: "message", T: Peer },
+    { no: 4, name: "message_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "date", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Message {
-    return new Message().fromBinary(bytes, options)
+    return new Message().fromBinary(bytes, options);
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Message {
-    return new Message().fromJson(jsonValue, options)
+    return new Message().fromJson(jsonValue, options);
   }
 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Message {
-    return new Message().fromJsonString(jsonString, options)
+    return new Message().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: Message | PlainMessage<Message> | undefined,
-    b: Message | PlainMessage<Message> | undefined
-  ): boolean {
-    return proto3.util.equals(Message, a, b)
+  static equals(a: Message | PlainMessage<Message> | undefined, b: Message | PlainMessage<Message> | undefined): boolean {
+    return proto3.util.equals(Message, a, b);
   }
 }
 
@@ -353,59 +336,57 @@ export class OutboxMessage extends Message$1<OutboxMessage> {
   /**
    * @generated from field: bool no_webpage = 1;
    */
-  noWebpage = false
+  noWebpage = false;
 
   /**
    * @generated from field: bool background = 2;
    */
-  background = false
+  background = false;
 
   /**
    * @generated from field: int32 schedule_date = 3;
    */
-  scheduleDate = 0
+  scheduleDate = 0;
 
   /**
    * @generated from field: int64 random_id = 4;
    */
-  randomId = protoInt64.zero
+  randomId = protoInt64.zero;
 
   /**
    * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Message message = 5;
    */
-  message?: Message
+  message?: Message;
 
   constructor(data?: PartialMessage<OutboxMessage>) {
-    super()
-    proto3.util.initPartial(data, this)
+    super();
+    proto3.util.initPartial(data, this);
   }
 
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'tech.monstrs.chats_system.messages.v1alpha1.OutboxMessage'
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "tech.monstrs.chats_system.messages.v1alpha1.OutboxMessage";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'no_webpage', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
-    { no: 2, name: 'background', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
-    { no: 3, name: 'schedule_date', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 4, name: 'random_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 5, name: 'message', kind: 'message', T: Message },
-  ])
+    { no: 1, name: "no_webpage", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "background", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "schedule_date", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "random_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "message", kind: "message", T: Message },
+  ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OutboxMessage {
-    return new OutboxMessage().fromBinary(bytes, options)
+    return new OutboxMessage().fromBinary(bytes, options);
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OutboxMessage {
-    return new OutboxMessage().fromJson(jsonValue, options)
+    return new OutboxMessage().fromJson(jsonValue, options);
   }
 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OutboxMessage {
-    return new OutboxMessage().fromJsonString(jsonString, options)
+    return new OutboxMessage().fromJsonString(jsonString, options);
   }
 
-  static equals(
-    a: OutboxMessage | PlainMessage<OutboxMessage> | undefined,
-    b: OutboxMessage | PlainMessage<OutboxMessage> | undefined
-  ): boolean {
-    return proto3.util.equals(OutboxMessage, a, b)
+  static equals(a: OutboxMessage | PlainMessage<OutboxMessage> | undefined, b: OutboxMessage | PlainMessage<OutboxMessage> | undefined): boolean {
+    return proto3.util.equals(OutboxMessage, a, b);
   }
 }
+

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/consistent-type-imports */
 
-import type { GetUserDialogsRequest }      from '@chats-system/messages-rpc'
+import { GetUserDialogsRequest, ReadUserMessagesRequest, ReadUserMessagesResponse }      from '@chats-system/messages-rpc'
 import type { GetUserMessagesRequest }     from '@chats-system/messages-rpc'
 import type { GetUserPeerMessagesRequest } from '@chats-system/messages-rpc'
 import type { SendMessageRequest }         from '@chats-system/messages-rpc'
@@ -136,5 +136,13 @@ export class MessagesServiceController implements ServiceImpl<typeof MessagesSer
         },
       })),
     })
+  }
+
+  @ConnectRpcMethod()
+  @CreateRequestContext()
+  async readUserMessages(request: ReadUserMessagesRequest): Promise<ReadUserMessagesResponse> {
+    const { pts, ptsCount } = await this.messagesUseCases.readUserMessages.execute(request.userId, request.peer!, request.maxId)
+
+    return new ReadUserMessagesResponse({ pts, ptsCount })
   }
 }
