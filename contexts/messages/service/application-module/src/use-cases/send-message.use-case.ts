@@ -165,7 +165,7 @@ export class SendMessageUseCase {
       dialogMessageId,
       randomId,
       peerType,
-      peerId,
+      peerId: fromId,
       senderUserId: fromId,
       messageFilterType: MessageFilterType.EMPTY,
       messageData,
