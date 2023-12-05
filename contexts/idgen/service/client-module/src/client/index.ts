@@ -1,1 +1,1 @@
-export * from './id-gen.client.js'
+export * from './idgen.client.js'

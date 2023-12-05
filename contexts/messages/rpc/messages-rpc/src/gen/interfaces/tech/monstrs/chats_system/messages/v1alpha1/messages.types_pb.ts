@@ -207,33 +207,3 @@ export interface Message {
    */
   message: string
 }
-
-/**
- * @generated from message tech.monstrs.chats_system.messages.v1alpha1.OutboxMessage
- */
-export interface OutboxMessage {
-  /**
-   * @generated from field: bool no_webpage = 1;
-   */
-  noWebpage: boolean
-
-  /**
-   * @generated from field: bool background = 2;
-   */
-  background: boolean
-
-  /**
-   * @generated from field: int32 schedule_date = 3;
-   */
-  scheduleDate: number
-
-  /**
-   * @generated from field: int64 random_id = 4;
-   */
-  randomId: bigint
-
-  /**
-   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Message message = 5;
-   */
-  message?: Message
-}

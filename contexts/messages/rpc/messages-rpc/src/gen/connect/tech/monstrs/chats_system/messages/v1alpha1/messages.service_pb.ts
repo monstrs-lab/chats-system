@@ -16,7 +16,6 @@ import { protoInt64 }             from '@bufbuild/protobuf'
 
 import { Dialog }                 from './messages.types_pb.js'
 import { Message as Message$1 }   from './messages.types_pb.js'
-import { OutboxMessage }          from './messages.types_pb.js'
 import { Peer }                   from './messages.types_pb.js'
 
 /**
@@ -49,6 +48,128 @@ export class InputPeerEmpty extends Message<InputPeerEmpty> {
     b: InputPeerEmpty | PlainMessage<InputPeerEmpty> | undefined
   ): boolean {
     return proto3.util.equals(InputPeerEmpty, a, b)
+  }
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.SendMessageRequest
+ */
+export class SendMessageRequest extends Message<SendMessageRequest> {
+  /**
+   * @generated from field: int64 user_id = 1;
+   */
+  userId = protoInt64.zero
+
+  /**
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Peer peer = 2;
+   */
+  peer?: Peer
+
+  /**
+   * @generated from field: int64 random_id = 3;
+   */
+  randomId = protoInt64.zero
+
+  /**
+   * @generated from field: string message = 4;
+   */
+  message = ''
+
+  constructor(data?: PartialMessage<SendMessageRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.messages.v1alpha1.SendMessageRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: 'peer', kind: 'message', T: Peer },
+    { no: 3, name: 'random_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: 'message', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SendMessageRequest {
+    return new SendMessageRequest().fromBinary(bytes, options)
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SendMessageRequest {
+    return new SendMessageRequest().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): SendMessageRequest {
+    return new SendMessageRequest().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: SendMessageRequest | PlainMessage<SendMessageRequest> | undefined,
+    b: SendMessageRequest | PlainMessage<SendMessageRequest> | undefined
+  ): boolean {
+    return proto3.util.equals(SendMessageRequest, a, b)
+  }
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.SendMessageResponse
+ */
+export class SendMessageResponse extends Message<SendMessageResponse> {
+  /**
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Message outbox_message = 1;
+   */
+  outboxMessage?: Message$1
+
+  /**
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Message inbox_message = 2;
+   */
+  inboxMessage?: Message$1
+
+  /**
+   * @generated from field: int32 pts = 3;
+   */
+  pts = 0
+
+  /**
+   * @generated from field: int32 pts_count = 4;
+   */
+  ptsCount = 0
+
+  constructor(data?: PartialMessage<SendMessageResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.messages.v1alpha1.SendMessageResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'outbox_message', kind: 'message', T: Message$1 },
+    { no: 2, name: 'inbox_message', kind: 'message', T: Message$1 },
+    { no: 3, name: 'pts', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: 'pts_count', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+  ])
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SendMessageResponse {
+    return new SendMessageResponse().fromBinary(bytes, options)
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SendMessageResponse {
+    return new SendMessageResponse().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): SendMessageResponse {
+    return new SendMessageResponse().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: SendMessageResponse | PlainMessage<SendMessageResponse> | undefined,
+    b: SendMessageResponse | PlainMessage<SendMessageResponse> | undefined
+  ): boolean {
+    return proto3.util.equals(SendMessageResponse, a, b)
   }
 }
 
@@ -194,122 +315,6 @@ export class GetUserDialogsResponse extends Message<GetUserDialogsResponse> {
     b: GetUserDialogsResponse | PlainMessage<GetUserDialogsResponse> | undefined
   ): boolean {
     return proto3.util.equals(GetUserDialogsResponse, a, b)
-  }
-}
-
-/**
- * @generated from message tech.monstrs.chats_system.messages.v1alpha1.SendMessageRequest
- */
-export class SendMessageRequest extends Message<SendMessageRequest> {
-  /**
-   * @generated from field: int64 user_id = 1;
-   */
-  userId = protoInt64.zero
-
-  /**
-   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Peer peer = 2;
-   */
-  peer?: Peer
-
-  /**
-   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.OutboxMessage message = 3;
-   */
-  message?: OutboxMessage
-
-  constructor(data?: PartialMessage<SendMessageRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'tech.monstrs.chats_system.messages.v1alpha1.SendMessageRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: 'peer', kind: 'message', T: Peer },
-    { no: 3, name: 'message', kind: 'message', T: OutboxMessage },
-  ])
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SendMessageRequest {
-    return new SendMessageRequest().fromBinary(bytes, options)
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SendMessageRequest {
-    return new SendMessageRequest().fromJson(jsonValue, options)
-  }
-
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>
-  ): SendMessageRequest {
-    return new SendMessageRequest().fromJsonString(jsonString, options)
-  }
-
-  static equals(
-    a: SendMessageRequest | PlainMessage<SendMessageRequest> | undefined,
-    b: SendMessageRequest | PlainMessage<SendMessageRequest> | undefined
-  ): boolean {
-    return proto3.util.equals(SendMessageRequest, a, b)
-  }
-}
-
-/**
- * @generated from message tech.monstrs.chats_system.messages.v1alpha1.SendMessageResponse
- */
-export class SendMessageResponse extends Message<SendMessageResponse> {
-  /**
-   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Message outbox_message = 1;
-   */
-  outboxMessage?: Message$1
-
-  /**
-   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Message inbox_message = 2;
-   */
-  inboxMessage?: Message$1
-
-  /**
-   * @generated from field: int32 pts = 3;
-   */
-  pts = 0
-
-  /**
-   * @generated from field: int32 pts_count = 4;
-   */
-  ptsCount = 0
-
-  constructor(data?: PartialMessage<SendMessageResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'tech.monstrs.chats_system.messages.v1alpha1.SendMessageResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'outbox_message', kind: 'message', T: Message$1 },
-    { no: 2, name: 'inbox_message', kind: 'message', T: Message$1 },
-    { no: 3, name: 'pts', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 4, name: 'pts_count', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-  ])
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SendMessageResponse {
-    return new SendMessageResponse().fromBinary(bytes, options)
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SendMessageResponse {
-    return new SendMessageResponse().fromJson(jsonValue, options)
-  }
-
-  static fromJsonString(
-    jsonString: string,
-    options?: Partial<JsonReadOptions>
-  ): SendMessageResponse {
-    return new SendMessageResponse().fromJsonString(jsonString, options)
-  }
-
-  static equals(
-    a: SendMessageResponse | PlainMessage<SendMessageResponse> | undefined,
-    b: SendMessageResponse | PlainMessage<SendMessageResponse> | undefined
-  ): boolean {
-    return proto3.util.equals(SendMessageResponse, a, b)
   }
 }
 

@@ -22,13 +22,8 @@ export class MessagesSendMessageHandler {
     const { outboxMessage, inboxMessage, ptsCount, pts } = await client.sendMessage({
       userId: metadata.userId,
       peer: this.getPeer(request.peer),
-      message: {
-        ...request,
-        message: {
-          message: request.message,
-          date: Math.floor(Date.now() / 1000),
-        },
-      },
+      randomId: request.randomId,
+      message: request.message,
     })
 
     const { users } = await userClient.getUsers({

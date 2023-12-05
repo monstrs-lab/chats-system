@@ -10,6 +10,8 @@ import { MikroORMConfig }             from '@monstrs/nestjs-mikro-orm-config'
 import { RedisModule }                from '@monstrs/nestjs-redis'
 import { Module }                     from '@nestjs/common'
 
+import { IdGenClientModule }          from '@chats-system/idgen-client-module'
+
 import { entities }                   from '../entities/index.js'
 import { migrations }                 from '../migrations/index.js'
 
@@ -22,6 +24,7 @@ export class StandaloneServiceCoreModule implements OnModuleInit {
       global: true,
       module: StandaloneServiceCoreModule,
       imports: [
+        IdGenClientModule.register(),
         RedisModule.register({}, true),
         MikroOrmModule.forRootAsync({
           imports: [

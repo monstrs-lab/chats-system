@@ -6,10 +6,7 @@ export class CreateDialogDto {
     public readonly peerType: PeerType,
     public readonly peerId: bigint,
     public readonly date: bigint,
-    public readonly topMessage?: number,
-    public readonly readInboxMaxId?: number,
-    public readonly readOutboxMaxId?: number,
-    public readonly unreadCount?: number,
-    public readonly unreadMark?: boolean
+    public readonly topMessage: number,
+    public readonly unreadCount: number
   ) {}
 }

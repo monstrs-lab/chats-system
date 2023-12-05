@@ -37,10 +37,8 @@ export class MessagesServiceController implements ServiceImpl<typeof MessagesSer
         request.userId,
         request.peer!.peerId,
         request.peer!.peerType,
-        request.message!.randomId,
-        request.message!.message!.date,
-        request.message!.message!.message,
-        request.message!.message!
+        request.randomId,
+        request.message
       )
 
     return new SendMessageResponse({

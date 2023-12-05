@@ -28,25 +28,6 @@ export class IdGenClient {
     private readonly nextSequenceIdDataLoader: NextSequenceIdDataLoader
   ) {}
 
-  async setCurrentSequenceId(key: string, id: bigint): Promise<boolean> {
-    const { success } = await this.client.setCurrentSequenceId({
-      key,
-      id,
-    })
-
-    return success
-  }
-
-  async getRandomId(): Promise<bigint> {
-    return this.flakeIdGen.next().readBigInt64BE()
-  }
-
-  async getCurrentSequenceId(key: bigint): Promise<number> {
-    return this.loadCurrentSequenceIdNumber(
-      [IdGenClient.SEQ_UPDATES_NGEN_ID, key.toString()].join('_')
-    )
-  }
-
   async loadCurrentSequenceId(key: string): Promise<bigint> {
     const sequence = await this.currentSequenceIdDataLoader.load(new SequenceQuery({ key }))
 
@@ -69,6 +50,25 @@ export class IdGenClient {
     const sequence = await this.nextSequenceIdDataLoader.load(new SequenceQuery({ key, increment }))
 
     return fromBigIntToNumber(sequence.id)
+  }
+
+  async setCurrentSequenceId(key: string, id: bigint): Promise<boolean> {
+    const { success } = await this.client.setCurrentSequenceId({
+      key,
+      id,
+    })
+
+    return success
+  }
+
+  async getRandomId(): Promise<bigint> {
+    return this.flakeIdGen.next().readBigInt64BE()
+  }
+
+  async getCurrentSequenceId(key: bigint): Promise<number> {
+    return this.loadCurrentSequenceIdNumber(
+      [IdGenClient.SEQ_UPDATES_NGEN_ID, key.toString()].join('_')
+    )
   }
 
   async getCurrentPtsId(key: bigint): Promise<number> {
