@@ -63,6 +63,51 @@ export abstract class SendMessageResponse {
 }
 
 /**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.ReadUserMessagesRequest
+ */
+export abstract class ReadUserMessagesRequest {
+  /**
+   * @generated from field: int64 user_id = 1;
+   */
+  abstract readonly userId: bigint
+
+  /**
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Peer peer = 2;
+   */
+  abstract readonly peer?: Peer
+
+  /**
+   * @generated from field: int32 max_id = 3;
+   */
+  abstract readonly maxId: number
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.ReadUserMessagesResponse
+ */
+export abstract class ReadUserMessagesResponse {
+  /**
+   * @generated from field: int32 pts = 1;
+   */
+  abstract readonly pts: number
+
+  /**
+   * @generated from field: int32 pts_count = 2;
+   */
+  abstract readonly ptsCount: number
+
+  /**
+   * @generated from field: int32 max_id = 3;
+   */
+  abstract readonly maxId: number
+
+  /**
+   * @generated from field: int32 still_unread_count = 4;
+   */
+  abstract readonly stillUnreadCount: number
+}
+
+/**
  * @generated from message tech.monstrs.chats_system.messages.v1alpha1.GetUserDialogsRequest
  */
 export abstract class GetUserDialogsRequest {

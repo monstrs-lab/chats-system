@@ -265,7 +265,7 @@ const RAW_RUNTIME_STATE =
     ["@chats-system/authkey-rpc", ["virtual:2a6b9aed11f7e38ada65e8dc446428da1fdcc08dc5e62d165d4eacc12e2b04d62fca5b918d79f0305a2204a64216a13fbf4ae5b0a661ad647780dd914b6c8af5#workspace:contexts/authkey/rpc/authkey-rpc", "workspace:contexts/authkey/rpc/authkey-rpc"]],\
     ["@chats-system/authkey-rpc-client", ["virtual:4379ee11aca1180072772d4177583e109ff7f8769cf264d2e8676f3be8ae9a57ffb8fa192628b7ebcc664656c7f81f4739696ad59e08da55de0eeb00330d7c46#workspace:contexts/authkey/rpc/authkey-rpc-client", "virtual:def7aae208f5b2868c884172e7d3c7dd4ce75b13232c07d0b7a7ec485224492ec603e85ac533f0271bb023d37bf6d1cae174a7dbfde35b0df369b9dd0df8ff5b#workspace:contexts/authkey/rpc/authkey-rpc-client", "workspace:contexts/authkey/rpc/authkey-rpc-client"]],\
     ["@chats-system/authkey-service-entrypoint", ["workspace:contexts/authkey/service/service-entrypoint"]],\
-    ["@chats-system/core-errors", ["virtual:0c7048dfa7ad9964f73a280deb3032c0a4dae8a2fa7a03fd80afba489b93156936e86e9d779931958bcd383dc0ae56a0f54eb0c1c382c8d44aab863d3b905c79#workspace:contexts/core/packages/errors", "virtual:0c9d0a5ead5ad9667cb77cc5f14951d31f56a0684ad6c81997a0c0152e975a1f59a21c41a9b3ede0da1e1ba6cf96e0a8cab879f687a0d4ba8aab63c134d9496f#workspace:contexts/core/packages/errors", "virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#workspace:contexts/core/packages/errors", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#workspace:contexts/core/packages/errors", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/core/packages/errors", "workspace:contexts/core/packages/errors"]],\
+    ["@chats-system/core-errors", ["virtual:0c7048dfa7ad9964f73a280deb3032c0a4dae8a2fa7a03fd80afba489b93156936e86e9d779931958bcd383dc0ae56a0f54eb0c1c382c8d44aab863d3b905c79#workspace:contexts/core/packages/errors", "virtual:0c9d0a5ead5ad9667cb77cc5f14951d31f56a0684ad6c81997a0c0152e975a1f59a21c41a9b3ede0da1e1ba6cf96e0a8cab879f687a0d4ba8aab63c134d9496f#workspace:contexts/core/packages/errors", "virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#workspace:contexts/core/packages/errors", "virtual:893c7b6fe646a99e07270f1cb4b32af405c07e918603585a8b6723001b4b966ee150adb5e621178b9551c7476d58219affac54c293f06a891a267036ed8f04bc#workspace:contexts/core/packages/errors", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#workspace:contexts/core/packages/errors", "virtual:b9fd2d46daadec71d1c9c8308887531b4e23e4a5f9bb27f96c4a3174d7aa19c08c3ec19f5a77fca20e8b17d1773f7ecdb00e02d47656421e2b4a4525e1f273e1#workspace:contexts/core/packages/errors", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/core/packages/errors", "virtual:dd7e03bfd3679634bcffe63f43f1b8f631a1df11ba4e4b9874cfbca51066023dc5b974b358ddd3dc431d4d7b077d50a19bab26fa5b23e51d75500f7adf1f1dd4#workspace:contexts/core/packages/errors", "workspace:contexts/core/packages/errors"]],\
     ["@chats-system/gateway-infrastructure-module", ["virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#workspace:contexts/gateway/service/infrastructure-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/gateway/service/infrastructure-module", "workspace:contexts/gateway/service/infrastructure-module"]],\
     ["@chats-system/gateway-rpc", ["virtual:dfbe61e4f62815636492187a2d22f09104bc50655360901d3c2612cff2679b9b143fb8ae49f6c937247857761621d3c101a726fd0253082e5db2253f31d5e318#workspace:contexts/gateway/rpc/gateway-rpc", "workspace:contexts/gateway/rpc/gateway-rpc"]],\
     ["@chats-system/gateway-rpc-client", ["virtual:1dfd087603ebb4a858ced72d1bf582eaf14b35d15fa069341981f24b105d92d177f97b38e6c4c2f4f68413195c705939a4c0691f1ef686bda87b1c17837a45b8#workspace:contexts/gateway/rpc/gateway-rpc-client", "workspace:contexts/gateway/rpc/gateway-rpc-client"]],\
@@ -2986,6 +2986,46 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
+      ["virtual:893c7b6fe646a99e07270f1cb4b32af405c07e918603585a8b6723001b4b966ee150adb5e621178b9551c7476d58219affac54c293f06a891a267036ed8f04bc#workspace:contexts/core/packages/errors", {\
+        "packageLocation": "./.yarn/__virtual__/@chats-system-core-errors-virtual-268e40a4a3/1/contexts/core/packages/errors/",\
+        "packageDependencies": [\
+          ["@chats-system/core-errors", "virtual:893c7b6fe646a99e07270f1cb4b32af405c07e918603585a8b6723001b4b966ee150adb5e621178b9551c7476d58219affac54c293f06a891a267036ed8f04bc#workspace:contexts/core/packages/errors"],\
+          ["@bufbuild/protobuf", "npm:1.5.0"],\
+          ["@chats-system/rpc", "virtual:def7aae208f5b2868c884172e7d3c7dd4ce75b13232c07d0b7a7ec485224492ec603e85ac533f0271bb023d37bf6d1cae174a7dbfde35b0df369b9dd0df8ff5b#workspace:shared/rpc"],\
+          ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/core", "virtual:ba1452747dd0b16b8f64ac6c444bafd5e3b25de00ba05e8b3697ae91f1f2870373209c91795bc461babbc9756d22817d8a22c86857631df00e78da1356e552d0#npm:10.2.10"],\
+          ["@nestjs/microservices", "virtual:268e40a4a30e1b2ad5cd8732775e37be67269e429e3e4fe822916dc8b19c7b091eb261c344d415a9eb15dd962af8c0094a6b67e08a0d927dabbbcf3cda4b727c#npm:10.2.10"],\
+          ["@nestjs/websockets", "virtual:268e40a4a30e1b2ad5cd8732775e37be67269e429e3e4fe822916dc8b19c7b091eb261c344d415a9eb15dd962af8c0094a6b67e08a0d927dabbbcf3cda4b727c#npm:10.2.10"],\
+          ["@types/bufbuild__protobuf", null],\
+          ["@types/chats-system__rpc", null],\
+          ["@types/connectrpc__connect", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__microservices", null],\
+          ["@types/nestjs__websockets", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/bufbuild__protobuf",\
+          "@types/chats-system__rpc",\
+          "@types/connectrpc__connect",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__microservices",\
+          "@types/nestjs__websockets",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "SOFT"\
+      }],\
       ["virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#workspace:contexts/core/packages/errors", {\
         "packageLocation": "./.yarn/__virtual__/@chats-system-core-errors-virtual-9968a4461f/1/contexts/core/packages/errors/",\
         "packageDependencies": [\
@@ -3026,6 +3066,46 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
+      ["virtual:b9fd2d46daadec71d1c9c8308887531b4e23e4a5f9bb27f96c4a3174d7aa19c08c3ec19f5a77fca20e8b17d1773f7ecdb00e02d47656421e2b4a4525e1f273e1#workspace:contexts/core/packages/errors", {\
+        "packageLocation": "./.yarn/__virtual__/@chats-system-core-errors-virtual-54428e183c/1/contexts/core/packages/errors/",\
+        "packageDependencies": [\
+          ["@chats-system/core-errors", "virtual:b9fd2d46daadec71d1c9c8308887531b4e23e4a5f9bb27f96c4a3174d7aa19c08c3ec19f5a77fca20e8b17d1773f7ecdb00e02d47656421e2b4a4525e1f273e1#workspace:contexts/core/packages/errors"],\
+          ["@bufbuild/protobuf", "npm:1.5.0"],\
+          ["@chats-system/rpc", "virtual:def7aae208f5b2868c884172e7d3c7dd4ce75b13232c07d0b7a7ec485224492ec603e85ac533f0271bb023d37bf6d1cae174a7dbfde35b0df369b9dd0df8ff5b#workspace:shared/rpc"],\
+          ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/microservices", "virtual:54428e183c62ff566573189971874a2c511dcd3f9d7257999c1f1dc4b911b009afae904aa65374b93e6570b42b855f8ff3f9efc9d1ac914b3f1b7e498c5e42bb#npm:10.2.10"],\
+          ["@nestjs/websockets", "virtual:54428e183c62ff566573189971874a2c511dcd3f9d7257999c1f1dc4b911b009afae904aa65374b93e6570b42b855f8ff3f9efc9d1ac914b3f1b7e498c5e42bb#npm:10.2.10"],\
+          ["@types/bufbuild__protobuf", null],\
+          ["@types/chats-system__rpc", null],\
+          ["@types/connectrpc__connect", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__microservices", null],\
+          ["@types/nestjs__websockets", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/bufbuild__protobuf",\
+          "@types/chats-system__rpc",\
+          "@types/connectrpc__connect",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__microservices",\
+          "@types/nestjs__websockets",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "SOFT"\
+      }],\
       ["virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/core/packages/errors", {\
         "packageLocation": "./.yarn/__virtual__/@chats-system-core-errors-virtual-b893436b44/1/contexts/core/packages/errors/",\
         "packageDependencies": [\
@@ -3056,6 +3136,46 @@ const RAW_RUNTIME_STATE =
           "@nestjs/core",\
           "@nestjs/microservices",\
           "@nestjs/websockets",\
+          "@types/bufbuild__protobuf",\
+          "@types/chats-system__rpc",\
+          "@types/connectrpc__connect",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__microservices",\
+          "@types/nestjs__websockets",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:dd7e03bfd3679634bcffe63f43f1b8f631a1df11ba4e4b9874cfbca51066023dc5b974b358ddd3dc431d4d7b077d50a19bab26fa5b23e51d75500f7adf1f1dd4#workspace:contexts/core/packages/errors", {\
+        "packageLocation": "./.yarn/__virtual__/@chats-system-core-errors-virtual-d6fe9c762b/1/contexts/core/packages/errors/",\
+        "packageDependencies": [\
+          ["@chats-system/core-errors", "virtual:dd7e03bfd3679634bcffe63f43f1b8f631a1df11ba4e4b9874cfbca51066023dc5b974b358ddd3dc431d4d7b077d50a19bab26fa5b23e51d75500f7adf1f1dd4#workspace:contexts/core/packages/errors"],\
+          ["@bufbuild/protobuf", "npm:1.5.0"],\
+          ["@chats-system/rpc", "virtual:def7aae208f5b2868c884172e7d3c7dd4ce75b13232c07d0b7a7ec485224492ec603e85ac533f0271bb023d37bf6d1cae174a7dbfde35b0df369b9dd0df8ff5b#workspace:shared/rpc"],\
+          ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.1.3"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/core", "virtual:e4d34d02ec1c2dcd85d1ac4c4f98d127db6832dfa95ae0c459f293d65c586a87bb6d8c6a64eb2bf3305ce75cfb0d3854af4e21d5adeb8b5e153a988a828f9c48#npm:10.2.10"],\
+          ["@nestjs/microservices", "virtual:d6fe9c762b0143af94afd1c41a6c15822bb7fd7597ed669fd2f958bfbb511e48a845aa5e8c1ebca95297dc74ba859a336a4c7cad65604e098d1e9207ab59a430#npm:10.2.10"],\
+          ["@nestjs/websockets", "virtual:d6fe9c762b0143af94afd1c41a6c15822bb7fd7597ed669fd2f958bfbb511e48a845aa5e8c1ebca95297dc74ba859a336a4c7cad65604e098d1e9207ab59a430#npm:10.2.10"],\
+          ["@types/bufbuild__protobuf", null],\
+          ["@types/chats-system__rpc", null],\
+          ["@types/connectrpc__connect", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__microservices", null],\
+          ["@types/nestjs__websockets", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
           "@types/bufbuild__protobuf",\
           "@types/chats-system__rpc",\
           "@types/connectrpc__connect",\
@@ -4871,6 +4991,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@chats-system-messages-domain-module-virtual-b9fd2d46da/1/contexts/messages/service/domain-module/",\
         "packageDependencies": [\
           ["@chats-system/messages-domain-module", "virtual:274c9a393205626e23cf54c63fd6a6767bbc8431d8b79280a10ff9d575563fda9ab01f1ee1a608c07190c39d5c4d54a09ca987db60a8c3f741ecef120a5f1864#workspace:contexts/messages/service/domain-module"],\
+          ["@chats-system/core-errors", "virtual:b9fd2d46daadec71d1c9c8308887531b4e23e4a5f9bb27f96c4a3174d7aa19c08c3ec19f5a77fca20e8b17d1773f7ecdb00e02d47656421e2b4a4525e1f273e1#workspace:contexts/core/packages/errors"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
           ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
           ["@nestjs/cqrs", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.6"],\
@@ -4903,6 +5024,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@chats-system-messages-domain-module-virtual-893c7b6fe6/1/contexts/messages/service/domain-module/",\
         "packageDependencies": [\
           ["@chats-system/messages-domain-module", "virtual:73ac9c2020af0be8fdef35d24c8e156ca132857c1baedecaa60484bab4aa6676271e366f8da74bd35d7a92af893bf7923c2ae472d52cbe5bdb1fbd8069b94bbf#workspace:contexts/messages/service/domain-module"],\
+          ["@chats-system/core-errors", "virtual:893c7b6fe646a99e07270f1cb4b32af405c07e918603585a8b6723001b4b966ee150adb5e621178b9551c7476d58219affac54c293f06a891a267036ed8f04bc#workspace:contexts/core/packages/errors"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
           ["@nestjs/core", "virtual:ba1452747dd0b16b8f64ac6c444bafd5e3b25de00ba05e8b3697ae91f1f2870373209c91795bc461babbc9756d22817d8a22c86857631df00e78da1356e552d0#npm:10.2.10"],\
           ["@nestjs/cqrs", "virtual:ba1452747dd0b16b8f64ac6c444bafd5e3b25de00ba05e8b3697ae91f1f2870373209c91795bc461babbc9756d22817d8a22c86857631df00e78da1356e552d0#npm:10.2.6"],\
@@ -4935,6 +5057,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@chats-system-messages-domain-module-virtual-12684fabd6/1/contexts/messages/service/domain-module/",\
         "packageDependencies": [\
           ["@chats-system/messages-domain-module", "virtual:92d9d0354d419585a03c1562b7d536451700026be9d4cab1ae6499f438f33f3ee2422ca2a98efbd55c178f9a0ed2f490a63826c0c8bc7f51003bce828053007b#workspace:contexts/messages/service/domain-module"],\
+          ["@chats-system/core-errors", "virtual:0c9d0a5ead5ad9667cb77cc5f14951d31f56a0684ad6c81997a0c0152e975a1f59a21c41a9b3ede0da1e1ba6cf96e0a8cab879f687a0d4ba8aab63c134d9496f#workspace:contexts/core/packages/errors"],\
           ["@nestjs/common", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
           ["@nestjs/core", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
           ["@nestjs/cqrs", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.6"],\
@@ -4967,6 +5090,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@chats-system-messages-domain-module-virtual-dd7e03bfd3/1/contexts/messages/service/domain-module/",\
         "packageDependencies": [\
           ["@chats-system/messages-domain-module", "virtual:e4d34d02ec1c2dcd85d1ac4c4f98d127db6832dfa95ae0c459f293d65c586a87bb6d8c6a64eb2bf3305ce75cfb0d3854af4e21d5adeb8b5e153a988a828f9c48#workspace:contexts/messages/service/domain-module"],\
+          ["@chats-system/core-errors", "virtual:dd7e03bfd3679634bcffe63f43f1b8f631a1df11ba4e4b9874cfbca51066023dc5b974b358ddd3dc431d4d7b077d50a19bab26fa5b23e51d75500f7adf1f1dd4#workspace:contexts/core/packages/errors"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
           ["@nestjs/core", "virtual:e4d34d02ec1c2dcd85d1ac4c4f98d127db6832dfa95ae0c459f293d65c586a87bb6d8c6a64eb2bf3305ce75cfb0d3854af4e21d5adeb8b5e153a988a828f9c48#npm:10.2.10"],\
           ["@nestjs/cqrs", "virtual:e4d34d02ec1c2dcd85d1ac4c4f98d127db6832dfa95ae0c459f293d65c586a87bb6d8c6a64eb2bf3305ce75cfb0d3854af4e21d5adeb8b5e153a988a828f9c48#npm:10.2.6"],\
@@ -4999,6 +5123,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./contexts/messages/service/domain-module/",\
         "packageDependencies": [\
           ["@chats-system/messages-domain-module", "workspace:contexts/messages/service/domain-module"],\
+          ["@chats-system/core-errors", "virtual:0c9d0a5ead5ad9667cb77cc5f14951d31f56a0684ad6c81997a0c0152e975a1f59a21c41a9b3ede0da1e1ba6cf96e0a8cab879f687a0d4ba8aab63c134d9496f#workspace:contexts/core/packages/errors"],\
           ["@nestjs/common", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
           ["@nestjs/core", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
           ["@nestjs/cqrs", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.6"],\
@@ -16753,6 +16878,67 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:268e40a4a30e1b2ad5cd8732775e37be67269e429e3e4fe822916dc8b19c7b091eb261c344d415a9eb15dd962af8c0094a6b67e08a0d927dabbbcf3cda4b727c#npm:10.2.10", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-microservices-virtual-970bea568f/0/cache/@nestjs-microservices-npm-10.2.10-b988c5c3ee-419e727f1c.zip/node_modules/@nestjs/microservices/",\
+        "packageDependencies": [\
+          ["@nestjs/microservices", "virtual:268e40a4a30e1b2ad5cd8732775e37be67269e429e3e4fe822916dc8b19c7b091eb261c344d415a9eb15dd962af8c0094a6b67e08a0d927dabbbcf3cda4b727c#npm:10.2.10"],\
+          ["@grpc/grpc-js", "npm:1.9.9"],\
+          ["@grpc/proto-loader", "npm:0.7.10"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/core", "virtual:ba1452747dd0b16b8f64ac6c444bafd5e3b25de00ba05e8b3697ae91f1f2870373209c91795bc461babbc9756d22817d8a22c86857631df00e78da1356e552d0#npm:10.2.10"],\
+          ["@nestjs/websockets", "virtual:268e40a4a30e1b2ad5cd8732775e37be67269e429e3e4fe822916dc8b19c7b091eb261c344d415a9eb15dd962af8c0094a6b67e08a0d927dabbbcf3cda4b727c#npm:10.2.10"],\
+          ["@types/amqp-connection-manager", null],\
+          ["@types/amqplib", null],\
+          ["@types/cache-manager", null],\
+          ["@types/grpc__grpc-js", null],\
+          ["@types/ioredis", null],\
+          ["@types/kafkajs", null],\
+          ["@types/mqtt", null],\
+          ["@types/nats", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__websockets", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["amqp-connection-manager", null],\
+          ["amqplib", null],\
+          ["cache-manager", null],\
+          ["ioredis", "npm:5.3.2"],\
+          ["iterare", "npm:1.2.1"],\
+          ["kafkajs", "npm:2.2.4"],\
+          ["mqtt", null],\
+          ["nats", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"],\
+          ["tslib", "npm:2.6.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/websockets",\
+          "@types/amqp-connection-manager",\
+          "@types/amqplib",\
+          "@types/cache-manager",\
+          "@types/grpc__grpc-js",\
+          "@types/ioredis",\
+          "@types/kafkajs",\
+          "@types/mqtt",\
+          "@types/nats",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__websockets",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "amqp-connection-manager",\
+          "amqplib",\
+          "cache-manager",\
+          "mqtt",\
+          "nats",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:3bf85de47f4729ca46504c6851297871eaea18bcc1e820b1be0997657ec4afd4da5f2dec443a58aa2adfad672719a47e7cd8e986afbde7d51e65cb5ab8f55193#npm:10.2.10", {\
         "packageLocation": "./.yarn/__virtual__/@nestjs-microservices-virtual-d3f5d8495b/0/cache/@nestjs-microservices-npm-10.2.10-b988c5c3ee-419e727f1c.zip/node_modules/@nestjs/microservices/",\
         "packageDependencies": [\
@@ -16778,6 +16964,67 @@ const RAW_RUNTIME_STATE =
           ["amqp-connection-manager", null],\
           ["amqplib", null],\
           ["cache-manager", "npm:5.3.1"],\
+          ["ioredis", "npm:5.3.2"],\
+          ["iterare", "npm:1.2.1"],\
+          ["kafkajs", "npm:2.2.4"],\
+          ["mqtt", null],\
+          ["nats", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"],\
+          ["tslib", "npm:2.6.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/websockets",\
+          "@types/amqp-connection-manager",\
+          "@types/amqplib",\
+          "@types/cache-manager",\
+          "@types/grpc__grpc-js",\
+          "@types/ioredis",\
+          "@types/kafkajs",\
+          "@types/mqtt",\
+          "@types/nats",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__websockets",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "amqp-connection-manager",\
+          "amqplib",\
+          "cache-manager",\
+          "mqtt",\
+          "nats",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:54428e183c62ff566573189971874a2c511dcd3f9d7257999c1f1dc4b911b009afae904aa65374b93e6570b42b855f8ff3f9efc9d1ac914b3f1b7e498c5e42bb#npm:10.2.10", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-microservices-virtual-8c61cc237a/0/cache/@nestjs-microservices-npm-10.2.10-b988c5c3ee-419e727f1c.zip/node_modules/@nestjs/microservices/",\
+        "packageDependencies": [\
+          ["@nestjs/microservices", "virtual:54428e183c62ff566573189971874a2c511dcd3f9d7257999c1f1dc4b911b009afae904aa65374b93e6570b42b855f8ff3f9efc9d1ac914b3f1b7e498c5e42bb#npm:10.2.10"],\
+          ["@grpc/grpc-js", "npm:1.9.9"],\
+          ["@grpc/proto-loader", "npm:0.7.10"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/websockets", "virtual:54428e183c62ff566573189971874a2c511dcd3f9d7257999c1f1dc4b911b009afae904aa65374b93e6570b42b855f8ff3f9efc9d1ac914b3f1b7e498c5e42bb#npm:10.2.10"],\
+          ["@types/amqp-connection-manager", null],\
+          ["@types/amqplib", null],\
+          ["@types/cache-manager", null],\
+          ["@types/grpc__grpc-js", null],\
+          ["@types/ioredis", null],\
+          ["@types/kafkajs", null],\
+          ["@types/mqtt", null],\
+          ["@types/nats", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__websockets", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["amqp-connection-manager", null],\
+          ["amqplib", null],\
+          ["cache-manager", null],\
           ["ioredis", "npm:5.3.2"],\
           ["iterare", "npm:1.2.1"],\
           ["kafkajs", "npm:2.2.4"],\
@@ -17311,6 +17558,67 @@ const RAW_RUNTIME_STATE =
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
           ["@nestjs/core", "virtual:c85f5049b1121c9d16bcd71125eafa814c1f34b834cc8ac1b0976885200cb8366b5da54dc89079884acb0efb8f806ab422e14a2f3a7f97fc109d6f459f121444#npm:10.2.10"],\
           ["@nestjs/websockets", null],\
+          ["@types/amqp-connection-manager", null],\
+          ["@types/amqplib", null],\
+          ["@types/cache-manager", null],\
+          ["@types/grpc__grpc-js", null],\
+          ["@types/ioredis", null],\
+          ["@types/kafkajs", null],\
+          ["@types/mqtt", null],\
+          ["@types/nats", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__websockets", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["amqp-connection-manager", null],\
+          ["amqplib", null],\
+          ["cache-manager", null],\
+          ["ioredis", "npm:5.3.2"],\
+          ["iterare", "npm:1.2.1"],\
+          ["kafkajs", "npm:2.2.4"],\
+          ["mqtt", null],\
+          ["nats", null],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"],\
+          ["tslib", "npm:2.6.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/websockets",\
+          "@types/amqp-connection-manager",\
+          "@types/amqplib",\
+          "@types/cache-manager",\
+          "@types/grpc__grpc-js",\
+          "@types/ioredis",\
+          "@types/kafkajs",\
+          "@types/mqtt",\
+          "@types/nats",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__websockets",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "amqp-connection-manager",\
+          "amqplib",\
+          "cache-manager",\
+          "mqtt",\
+          "nats",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:d6fe9c762b0143af94afd1c41a6c15822bb7fd7597ed669fd2f958bfbb511e48a845aa5e8c1ebca95297dc74ba859a336a4c7cad65604e098d1e9207ab59a430#npm:10.2.10", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-microservices-virtual-7759d9a119/0/cache/@nestjs-microservices-npm-10.2.10-b988c5c3ee-419e727f1c.zip/node_modules/@nestjs/microservices/",\
+        "packageDependencies": [\
+          ["@nestjs/microservices", "virtual:d6fe9c762b0143af94afd1c41a6c15822bb7fd7597ed669fd2f958bfbb511e48a845aa5e8c1ebca95297dc74ba859a336a4c7cad65604e098d1e9207ab59a430#npm:10.2.10"],\
+          ["@grpc/grpc-js", "npm:1.9.9"],\
+          ["@grpc/proto-loader", "npm:0.7.10"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/core", "virtual:e4d34d02ec1c2dcd85d1ac4c4f98d127db6832dfa95ae0c459f293d65c586a87bb6d8c6a64eb2bf3305ce75cfb0d3854af4e21d5adeb8b5e153a988a828f9c48#npm:10.2.10"],\
+          ["@nestjs/websockets", "virtual:d6fe9c762b0143af94afd1c41a6c15822bb7fd7597ed669fd2f958bfbb511e48a845aa5e8c1ebca95297dc74ba859a336a4c7cad65604e098d1e9207ab59a430#npm:10.2.10"],\
           ["@types/amqp-connection-manager", null],\
           ["@types/amqplib", null],\
           ["@types/cache-manager", null],\
@@ -18295,12 +18603,81 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:2203ca10f01aef894ad1462a51094dacb2a1aceeeaaee4679f68b766dc54c92fc93da7fdb01d5bba32b9fa4b0e7b66cc02fc841e26cbc2ad769f0f3a07d33fed#npm:10.2.10", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-platform-socket.io-virtual-547b3062d0/0/cache/@nestjs-platform-socket.io-npm-10.2.10-b6f2126d7c-3da796b553.zip/node_modules/@nestjs/platform-socket.io/",\
+        "packageDependencies": [\
+          ["@nestjs/platform-socket.io", "virtual:2203ca10f01aef894ad1462a51094dacb2a1aceeeaaee4679f68b766dc54c92fc93da7fdb01d5bba32b9fa4b0e7b66cc02fc841e26cbc2ad769f0f3a07d33fed#npm:10.2.10"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/websockets", "virtual:54428e183c62ff566573189971874a2c511dcd3f9d7257999c1f1dc4b911b009afae904aa65374b93e6570b42b855f8ff3f9efc9d1ac914b3f1b7e498c5e42bb#npm:10.2.10"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__websockets", null],\
+          ["@types/rxjs", null],\
+          ["rxjs", "npm:7.8.1"],\
+          ["socket.io", "npm:4.7.2"],\
+          ["tslib", "npm:2.6.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/websockets",\
+          "@types/nestjs__common",\
+          "@types/nestjs__websockets",\
+          "@types/rxjs",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:3bf85de47f4729ca46504c6851297871eaea18bcc1e820b1be0997657ec4afd4da5f2dec443a58aa2adfad672719a47e7cd8e986afbde7d51e65cb5ab8f55193#npm:10.2.10", {\
         "packageLocation": "./.yarn/__virtual__/@nestjs-platform-socket.io-virtual-5c7a97d8ab/0/cache/@nestjs-platform-socket.io-npm-10.2.10-b6f2126d7c-3da796b553.zip/node_modules/@nestjs/platform-socket.io/",\
         "packageDependencies": [\
           ["@nestjs/platform-socket.io", "virtual:3bf85de47f4729ca46504c6851297871eaea18bcc1e820b1be0997657ec4afd4da5f2dec443a58aa2adfad672719a47e7cd8e986afbde7d51e65cb5ab8f55193#npm:10.2.10"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
           ["@nestjs/websockets", "virtual:3bf85de47f4729ca46504c6851297871eaea18bcc1e820b1be0997657ec4afd4da5f2dec443a58aa2adfad672719a47e7cd8e986afbde7d51e65cb5ab8f55193#npm:10.2.10"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__websockets", null],\
+          ["@types/rxjs", null],\
+          ["rxjs", "npm:7.8.1"],\
+          ["socket.io", "npm:4.7.2"],\
+          ["tslib", "npm:2.6.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/websockets",\
+          "@types/nestjs__common",\
+          "@types/nestjs__websockets",\
+          "@types/rxjs",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:3e06946670ddae334640c08c6b72559bd2d66895452659781ceabf7cc05d02282deb1cc291efb5e6d592fd2776a214803c2166bceb360a312b4ba8a535488b42#npm:10.2.10", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-platform-socket.io-virtual-db596aad19/0/cache/@nestjs-platform-socket.io-npm-10.2.10-b6f2126d7c-3da796b553.zip/node_modules/@nestjs/platform-socket.io/",\
+        "packageDependencies": [\
+          ["@nestjs/platform-socket.io", "virtual:3e06946670ddae334640c08c6b72559bd2d66895452659781ceabf7cc05d02282deb1cc291efb5e6d592fd2776a214803c2166bceb360a312b4ba8a535488b42#npm:10.2.10"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/websockets", "virtual:d6fe9c762b0143af94afd1c41a6c15822bb7fd7597ed669fd2f958bfbb511e48a845aa5e8c1ebca95297dc74ba859a336a4c7cad65604e098d1e9207ab59a430#npm:10.2.10"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__websockets", null],\
+          ["@types/rxjs", null],\
+          ["rxjs", "npm:7.8.1"],\
+          ["socket.io", "npm:4.7.2"],\
+          ["tslib", "npm:2.6.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/websockets",\
+          "@types/nestjs__common",\
+          "@types/nestjs__websockets",\
+          "@types/rxjs",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:68d467e8af3f49ac4170ba06717bd3c3c45b7a04b7a343607f525e34ac2643e64978379ffed0c4c126f92943efd50ee0c73af5651c6e1dfc2ea8d29f9979f681#npm:10.2.10", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-platform-socket.io-virtual-857a9b6f65/0/cache/@nestjs-platform-socket.io-npm-10.2.10-b6f2126d7c-3da796b553.zip/node_modules/@nestjs/platform-socket.io/",\
+        "packageDependencies": [\
+          ["@nestjs/platform-socket.io", "virtual:68d467e8af3f49ac4170ba06717bd3c3c45b7a04b7a343607f525e34ac2643e64978379ffed0c4c126f92943efd50ee0c73af5651c6e1dfc2ea8d29f9979f681#npm:10.2.10"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/websockets", "virtual:268e40a4a30e1b2ad5cd8732775e37be67269e429e3e4fe822916dc8b19c7b091eb261c344d415a9eb15dd962af8c0094a6b67e08a0d927dabbbcf3cda4b727c#npm:10.2.10"],\
           ["@types/nestjs__common", null],\
           ["@types/nestjs__websockets", null],\
           ["@types/rxjs", null],\
@@ -19595,6 +19972,37 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["virtual:268e40a4a30e1b2ad5cd8732775e37be67269e429e3e4fe822916dc8b19c7b091eb261c344d415a9eb15dd962af8c0094a6b67e08a0d927dabbbcf3cda4b727c#npm:10.2.10", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-websockets-virtual-68d467e8af/0/cache/@nestjs-websockets-npm-10.2.10-5095aa4baa-24195764e9.zip/node_modules/@nestjs/websockets/",\
+        "packageDependencies": [\
+          ["@nestjs/websockets", "virtual:268e40a4a30e1b2ad5cd8732775e37be67269e429e3e4fe822916dc8b19c7b091eb261c344d415a9eb15dd962af8c0094a6b67e08a0d927dabbbcf3cda4b727c#npm:10.2.10"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/core", "virtual:ba1452747dd0b16b8f64ac6c444bafd5e3b25de00ba05e8b3697ae91f1f2870373209c91795bc461babbc9756d22817d8a22c86857631df00e78da1356e552d0#npm:10.2.10"],\
+          ["@nestjs/platform-socket.io", "virtual:68d467e8af3f49ac4170ba06717bd3c3c45b7a04b7a343607f525e34ac2643e64978379ffed0c4c126f92943efd50ee0c73af5651c6e1dfc2ea8d29f9979f681#npm:10.2.10"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__platform-socket.io", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["iterare", "npm:1.2.1"],\
+          ["object-hash", "npm:3.0.0"],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"],\
+          ["tslib", "npm:2.6.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__platform-socket.io",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:3bf85de47f4729ca46504c6851297871eaea18bcc1e820b1be0997657ec4afd4da5f2dec443a58aa2adfad672719a47e7cd8e986afbde7d51e65cb5ab8f55193#npm:10.2.10", {\
         "packageLocation": "./.yarn/__virtual__/@nestjs-websockets-virtual-0d7cdbeb16/0/cache/@nestjs-websockets-npm-10.2.10-5095aa4baa-24195764e9.zip/node_modules/@nestjs/websockets/",\
         "packageDependencies": [\
@@ -19617,6 +20025,37 @@ const RAW_RUNTIME_STATE =
           "@nestjs/common",\
           "@nestjs/core",\
           "@nestjs/platform-socket.io",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__platform-socket.io",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:54428e183c62ff566573189971874a2c511dcd3f9d7257999c1f1dc4b911b009afae904aa65374b93e6570b42b855f8ff3f9efc9d1ac914b3f1b7e498c5e42bb#npm:10.2.10", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-websockets-virtual-2203ca10f0/0/cache/@nestjs-websockets-npm-10.2.10-5095aa4baa-24195764e9.zip/node_modules/@nestjs/websockets/",\
+        "packageDependencies": [\
+          ["@nestjs/websockets", "virtual:54428e183c62ff566573189971874a2c511dcd3f9d7257999c1f1dc4b911b009afae904aa65374b93e6570b42b855f8ff3f9efc9d1ac914b3f1b7e498c5e42bb#npm:10.2.10"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/platform-socket.io", "virtual:2203ca10f01aef894ad1462a51094dacb2a1aceeeaaee4679f68b766dc54c92fc93da7fdb01d5bba32b9fa4b0e7b66cc02fc841e26cbc2ad769f0f3a07d33fed#npm:10.2.10"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__platform-socket.io", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["iterare", "npm:1.2.1"],\
+          ["object-hash", "npm:3.0.0"],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"],\
+          ["tslib", "npm:2.6.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
           "@types/nestjs__common",\
           "@types/nestjs__core",\
           "@types/nestjs__platform-socket.io",\
@@ -19775,6 +20214,37 @@ const RAW_RUNTIME_STATE =
           "@nestjs/common",\
           "@nestjs/core",\
           "@nestjs/platform-socket.io",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__platform-socket.io",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:d6fe9c762b0143af94afd1c41a6c15822bb7fd7597ed669fd2f958bfbb511e48a845aa5e8c1ebca95297dc74ba859a336a4c7cad65604e098d1e9207ab59a430#npm:10.2.10", {\
+        "packageLocation": "./.yarn/__virtual__/@nestjs-websockets-virtual-3e06946670/0/cache/@nestjs-websockets-npm-10.2.10-5095aa4baa-24195764e9.zip/node_modules/@nestjs/websockets/",\
+        "packageDependencies": [\
+          ["@nestjs/websockets", "virtual:d6fe9c762b0143af94afd1c41a6c15822bb7fd7597ed669fd2f958bfbb511e48a845aa5e8c1ebca95297dc74ba859a336a4c7cad65604e098d1e9207ab59a430#npm:10.2.10"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
+          ["@nestjs/core", "virtual:e4d34d02ec1c2dcd85d1ac4c4f98d127db6832dfa95ae0c459f293d65c586a87bb6d8c6a64eb2bf3305ce75cfb0d3854af4e21d5adeb8b5e153a988a828f9c48#npm:10.2.10"],\
+          ["@nestjs/platform-socket.io", "virtual:3e06946670ddae334640c08c6b72559bd2d66895452659781ceabf7cc05d02282deb1cc291efb5e6d592fd2776a214803c2166bceb360a312b4ba8a535488b42#npm:10.2.10"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__platform-socket.io", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["iterare", "npm:1.2.1"],\
+          ["object-hash", "npm:3.0.0"],\
+          ["reflect-metadata", "npm:0.1.13"],\
+          ["rxjs", "npm:7.8.1"],\
+          ["tslib", "npm:2.6.2"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
           "@types/nestjs__common",\
           "@types/nestjs__core",\
           "@types/nestjs__platform-socket.io",\

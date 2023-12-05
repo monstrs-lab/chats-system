@@ -6,6 +6,7 @@ import "tech/monstrs/chats_system/messages/v1alpha1/messages.types.proto";
 
 service MessagesService {
   rpc SendMessage(SendMessageRequest) returns (SendMessageResponse) {}
+  rpc ReadUserMessages(ReadUserMessagesRequest) returns (ReadUserMessagesResponse) {}
   rpc GetUserDialogs(GetUserDialogsRequest) returns (GetUserDialogsResponse) {}
   rpc GetUserMessages(GetUserMessagesRequest) returns (GetUserMessagesResponse) {}
   rpc GetUserPeerMessages(GetUserPeerMessagesRequest) returns (GetUserPeerMessagesResponse) {}
@@ -25,6 +26,19 @@ message SendMessageResponse {
   Message inbox_message = 2;
   int32 pts = 3;
   int32 pts_count = 4;
+}
+
+message ReadUserMessagesRequest {
+  int64 user_id = 1;
+  Peer peer = 2;
+  int32 max_id = 3;
+}
+
+message ReadUserMessagesResponse {
+  int32 pts = 1;
+  int32 pts_count = 2;
+  int32 max_id = 3;
+  int32 still_unread_count = 4;
 }
 
 message GetUserDialogsRequest {

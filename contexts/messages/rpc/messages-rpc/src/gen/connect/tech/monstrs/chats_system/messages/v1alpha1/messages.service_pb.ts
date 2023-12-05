@@ -174,6 +174,134 @@ export class SendMessageResponse extends Message<SendMessageResponse> {
 }
 
 /**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.ReadUserMessagesRequest
+ */
+export class ReadUserMessagesRequest extends Message<ReadUserMessagesRequest> {
+  /**
+   * @generated from field: int64 user_id = 1;
+   */
+  userId = protoInt64.zero
+
+  /**
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Peer peer = 2;
+   */
+  peer?: Peer
+
+  /**
+   * @generated from field: int32 max_id = 3;
+   */
+  maxId = 0
+
+  constructor(data?: PartialMessage<ReadUserMessagesRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.messages.v1alpha1.ReadUserMessagesRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: 'peer', kind: 'message', T: Peer },
+    { no: 3, name: 'max_id', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+  ])
+
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>
+  ): ReadUserMessagesRequest {
+    return new ReadUserMessagesRequest().fromBinary(bytes, options)
+  }
+
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>
+  ): ReadUserMessagesRequest {
+    return new ReadUserMessagesRequest().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): ReadUserMessagesRequest {
+    return new ReadUserMessagesRequest().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: ReadUserMessagesRequest | PlainMessage<ReadUserMessagesRequest> | undefined,
+    b: ReadUserMessagesRequest | PlainMessage<ReadUserMessagesRequest> | undefined
+  ): boolean {
+    return proto3.util.equals(ReadUserMessagesRequest, a, b)
+  }
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.ReadUserMessagesResponse
+ */
+export class ReadUserMessagesResponse extends Message<ReadUserMessagesResponse> {
+  /**
+   * @generated from field: int32 pts = 1;
+   */
+  pts = 0
+
+  /**
+   * @generated from field: int32 pts_count = 2;
+   */
+  ptsCount = 0
+
+  /**
+   * @generated from field: int32 max_id = 3;
+   */
+  maxId = 0
+
+  /**
+   * @generated from field: int32 still_unread_count = 4;
+   */
+  stillUnreadCount = 0
+
+  constructor(data?: PartialMessage<ReadUserMessagesResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'tech.monstrs.chats_system.messages.v1alpha1.ReadUserMessagesResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'pts', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: 'pts_count', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'max_id', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: 'still_unread_count', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+  ])
+
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>
+  ): ReadUserMessagesResponse {
+    return new ReadUserMessagesResponse().fromBinary(bytes, options)
+  }
+
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>
+  ): ReadUserMessagesResponse {
+    return new ReadUserMessagesResponse().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): ReadUserMessagesResponse {
+    return new ReadUserMessagesResponse().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: ReadUserMessagesResponse | PlainMessage<ReadUserMessagesResponse> | undefined,
+    b: ReadUserMessagesResponse | PlainMessage<ReadUserMessagesResponse> | undefined
+  ): boolean {
+    return proto3.util.equals(ReadUserMessagesResponse, a, b)
+  }
+}
+
+/**
  * @generated from message tech.monstrs.chats_system.messages.v1alpha1.GetUserDialogsRequest
  */
 export class GetUserDialogsRequest extends Message<GetUserDialogsRequest> {

@@ -30,4 +30,12 @@ export class IdGenPortImpl extends IdGenPort {
       pts: pts || 0,
     }
   }
+
+  override async getCurrentPtsId(userId: bigint): Promise<number> {
+    return this.idGenClient.getCurrentPtsId(userId)
+  }
+
+  override async getNextPtsId(userId: bigint): Promise<number> {
+    return this.idGenClient.getNextPtsId(userId)
+  }
 }
