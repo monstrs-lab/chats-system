@@ -6,19 +6,28 @@ import type { TLRpcMetadata }       from '@chats-system/tl-rpc'
 import { PeerType }                 from '@chats-system/messages-rpc-client'
 import { TLRpcHandler }             from '@chats-system/tl-rpc'
 import { client as messagesClient } from '@chats-system/messages-rpc-client'
+import { client as updatesClient }  from '@chats-system/updates-rpc-client'
 import { client as userClient }     from '@chats-system/user-rpc-client'
 import TL                           from '@chats-system/tl'
 
-@TLRpcHandler(TL.messages.GetDialogs)
-export class MessagesGetDialogsHandler {
+@TLRpcHandler(TL.messages.GetPeerDialogs)
+export class MessagesGetPeerDialogsHandler {
   async execute(
-    _: TL.messages.GetDialogs,
+    request: TL.messages.GetPeerDialogs,
     __: TLRpcSession,
     metadata: TLRpcMetadata
-  ): Promise<TL.messages.Dialogs> {
-    const { dialogs = [] } = await messagesClient.getUserDialogs({
+  ): Promise<TL.messages.PeerDialogs> {
+    const { state } = await updatesClient.getState({
+      authKeyId: metadata.authKeyId,
       userId: metadata.userId,
     })
+
+    const { dialogs: allDialogs = [] } = await messagesClient.getUserDialogs({
+      userId: metadata.userId,
+    })
+
+    const dialogs = allDialogs.filter((dialog) =>
+      request.peers.find((peer) => (peer as any).userId === dialog.peer?.peerId))
 
     const { users } = await userClient.getUsers({
       userIds: dialogs.map((dialog) => dialog.peer!.peerId).concat([metadata.userId]),
@@ -29,7 +38,8 @@ export class MessagesGetDialogsHandler {
       messageIds: dialogs.map((dialog) => dialog.topMessage),
     })
 
-    return new TL.messages.Dialogs({
+    return new TL.messages.PeerDialogs({
+      state: new TL.updates.State(state!),
       dialogs: dialogs.map(
         (dialog) =>
           new TL.Dialog({

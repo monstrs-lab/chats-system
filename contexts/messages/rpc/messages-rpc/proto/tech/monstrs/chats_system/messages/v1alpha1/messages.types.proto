@@ -49,4 +49,5 @@ message Message {
   int32 message_id = 4;
   int32 date = 5;
   string message = 6;
+  int64 sender_user_id = 7;
 }

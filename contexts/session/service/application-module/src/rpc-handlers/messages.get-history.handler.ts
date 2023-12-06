@@ -39,7 +39,7 @@ export class MessagesGetHistoryHandler {
             message: message.message,
             fromId: this.getTLPeer(message.from!),
             peerId: this.getTLPeer(message.peer!),
-            out: message.peer?.peerId !== metadata.userId,
+            out: message.senderUserId === metadata.userId,
             date: message.date,
             fwdFrom: undefined,
             replyTo: undefined,

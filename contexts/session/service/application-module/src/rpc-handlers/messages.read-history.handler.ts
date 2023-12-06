@@ -18,7 +18,7 @@ export class MessagesReadHistoryHandler {
     request: TL.messages.ReadHistory,
     __: TLRpcSession,
     metadata: TLRpcMetadata
-  ): Promise<TL.Updates> {
+  ): Promise<TL.messages.AffectedMessages> {
     const { ptsCount, pts, stillUnreadCount, maxId } = await client.readUserMessages({
       userId: metadata.userId,
       peer: this.getPeer(request.peer),
@@ -33,8 +33,28 @@ export class MessagesReadHistoryHandler {
       this.getPeer(request.peer).peerId,
       new TL.Updates({
         updates: [
-          new TL.UpdateReadHistoryInbox({
+          new TL.UpdateReadHistoryOutbox({
             peer: this.getTLInputPeer(request.peer),
+            pts,
+            ptsCount,
+            maxId,
+          }),
+        ],
+        users: users.map((user) => new TL.User(user)),
+        chats: [],
+        date: Math.floor(Date.now() / 1000),
+        seq: 1,
+      })
+    )
+
+    await this.sessionPort.send(
+      metadata.userId,
+      new TL.Updates({
+        updates: [
+          new TL.UpdateReadHistoryInbox({
+            peer: new TL.PeerUser({
+              userId: metadata.userId,
+            }),
             pts,
             ptsCount,
             maxId,
@@ -48,17 +68,9 @@ export class MessagesReadHistoryHandler {
       })
     )
 
-    return new TL.Updates({
-      updates: [
-        new TL.messages.AffectedMessages({
-          pts,
-          ptsCount,
-        }),
-      ],
-      users: [],
-      chats: [],
-      date: Math.floor(Date.now() / 1000),
-      seq: 0,
+    return new TL.messages.AffectedMessages({
+      pts,
+      ptsCount,
     })
   }
 
