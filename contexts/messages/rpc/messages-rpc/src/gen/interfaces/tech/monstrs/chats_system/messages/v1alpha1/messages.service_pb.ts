@@ -63,6 +63,51 @@ export interface SendMessageResponse {
 }
 
 /**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.ReadUserMessagesRequest
+ */
+export interface ReadUserMessagesRequest {
+  /**
+   * @generated from field: int64 user_id = 1;
+   */
+  userId: bigint
+
+  /**
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.Peer peer = 2;
+   */
+  peer?: Peer
+
+  /**
+   * @generated from field: int32 max_id = 3;
+   */
+  maxId: number
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.ReadUserMessagesResponse
+ */
+export interface ReadUserMessagesResponse {
+  /**
+   * @generated from field: int32 pts = 1;
+   */
+  pts: number
+
+  /**
+   * @generated from field: int32 pts_count = 2;
+   */
+  ptsCount: number
+
+  /**
+   * @generated from field: int32 max_id = 3;
+   */
+  maxId: number
+
+  /**
+   * @generated from field: int32 still_unread_count = 4;
+   */
+  stillUnreadCount: number
+}
+
+/**
  * @generated from message tech.monstrs.chats_system.messages.v1alpha1.GetUserDialogsRequest
  */
 export interface GetUserDialogsRequest {

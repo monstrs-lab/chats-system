@@ -10,6 +10,7 @@
   },
   "main": "src/index.ts",
   "dependencies": {
+    "@chats-system/core-errors": "workspace:0.0.1",
     "crypto-random-bigint": "^2.1.0"
   },
   "devDependencies": {

@@ -3,6 +3,7 @@
 import type { GetUserDialogsRequest }      from '@chats-system/messages-rpc'
 import type { GetUserMessagesRequest }     from '@chats-system/messages-rpc'
 import type { GetUserPeerMessagesRequest } from '@chats-system/messages-rpc'
+import type { ReadUserMessagesRequest }    from '@chats-system/messages-rpc'
 import type { SendMessageRequest }         from '@chats-system/messages-rpc'
 import type { ServiceImpl }                from '@connectrpc/connect'
 
@@ -16,6 +17,7 @@ import { MessagesUseCases }                from '@chats-system/messages-applicat
 import { GetUserDialogsResponse }          from '@chats-system/messages-rpc'
 import { GetUserMessagesResponse }         from '@chats-system/messages-rpc'
 import { GetUserPeerMessagesResponse }     from '@chats-system/messages-rpc'
+import { ReadUserMessagesResponse }        from '@chats-system/messages-rpc'
 import { SendMessageResponse }             from '@chats-system/messages-rpc'
 import { MessagesService }                 from '@chats-system/messages-rpc'
 import { PeerType }                        from '@chats-system/messages-rpc'
@@ -67,6 +69,19 @@ export class MessagesServiceController implements ServiceImpl<typeof MessagesSer
       ptsCount,
       pts,
     })
+  }
+
+  @ConnectRpcMethod()
+  @CreateRequestContext()
+  async readUserMessages(request: ReadUserMessagesRequest): Promise<ReadUserMessagesResponse> {
+    const { pts, ptsCount, stillUnreadCount, maxId } =
+      await this.messagesUseCases.readUserMessages.execute(
+        request.userId,
+        request.peer!,
+        request.maxId
+      )
+
+    return new ReadUserMessagesResponse({ pts, ptsCount, stillUnreadCount, maxId })
   }
 
   @ConnectRpcMethod()

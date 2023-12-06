@@ -11,6 +11,8 @@ import { GetUserMessagesRequest }      from './messages.service_pb.js'
 import { GetUserMessagesResponse }     from './messages.service_pb.js'
 import { GetUserPeerMessagesRequest }  from './messages.service_pb.js'
 import { GetUserPeerMessagesResponse } from './messages.service_pb.js'
+import { ReadUserMessagesRequest }     from './messages.service_pb.js'
+import { ReadUserMessagesResponse }    from './messages.service_pb.js'
 import { SendMessageRequest }          from './messages.service_pb.js'
 import { SendMessageResponse }         from './messages.service_pb.js'
 
@@ -27,6 +29,15 @@ export const MessagesService = {
       name: 'SendMessage',
       I: SendMessageRequest,
       O: SendMessageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc tech.monstrs.chats_system.messages.v1alpha1.MessagesService.ReadUserMessages
+     */
+    readUserMessages: {
+      name: 'ReadUserMessages',
+      I: ReadUserMessagesRequest,
+      O: ReadUserMessagesResponse,
       kind: MethodKind.Unary,
     },
     /**

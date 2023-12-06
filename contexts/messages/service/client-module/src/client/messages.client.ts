@@ -1,15 +1,17 @@
-import type { PartialMessage }         from '@bufbuild/protobuf'
-import type { MessagesService }        from '@chats-system/messages-rpc-client'
-import type { SendMessageRequest }     from '@chats-system/messages-rpc-client'
-import type { SendMessageResponse }    from '@chats-system/messages-rpc-client'
-import type { GetUserDialogsRequest }  from '@chats-system/messages-rpc-client'
-import type { GetUserDialogsResponse } from '@chats-system/messages-rpc-client'
-import type { PromiseClient }          from '@connectrpc/connect' // eslint-disable-line @typescript-eslint/consistent-type-imports
+import type { PartialMessage }           from '@bufbuild/protobuf'
+import type { MessagesService }          from '@chats-system/messages-rpc-client'
+import type { ReadUserMessagesRequest }  from '@chats-system/messages-rpc-client'
+import type { ReadUserMessagesResponse } from '@chats-system/messages-rpc-client'
+import type { SendMessageRequest }       from '@chats-system/messages-rpc-client'
+import type { SendMessageResponse }      from '@chats-system/messages-rpc-client'
+import type { GetUserDialogsRequest }    from '@chats-system/messages-rpc-client'
+import type { GetUserDialogsResponse }   from '@chats-system/messages-rpc-client'
+import type { PromiseClient }            from '@connectrpc/connect' // eslint-disable-line @typescript-eslint/consistent-type-imports
 
-import { Inject }                      from '@nestjs/common'
-import { Injectable }                  from '@nestjs/common'
+import { Inject }                        from '@nestjs/common'
+import { Injectable }                    from '@nestjs/common'
 
-import { MESSAGES_CLIENT_TOKEN }       from '../constants/index.js'
+import { MESSAGES_CLIENT_TOKEN }         from '../constants/index.js'
 
 @Injectable()
 export class MessagesClient {
@@ -25,5 +27,11 @@ export class MessagesClient {
     request: PartialMessage<GetUserDialogsRequest>
   ): Promise<GetUserDialogsResponse> {
     return this.client.getUserDialogs(request)
+  }
+
+  async readUserMessages(
+    request: PartialMessage<ReadUserMessagesRequest>
+  ): Promise<ReadUserMessagesResponse> {
+    return this.client.readUserMessages(request)
   }
 }

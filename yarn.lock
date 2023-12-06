@@ -1671,6 +1671,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@chats-system/messages-domain-module@workspace:contexts/messages/service/domain-module"
   dependencies:
+    "@chats-system/core-errors": "workspace:0.0.1"
     "@nestjs/common": "npm:^10.2.10"
     "@nestjs/core": "npm:^10.2.10"
     "@nestjs/cqrs": "npm:^10.2.6"

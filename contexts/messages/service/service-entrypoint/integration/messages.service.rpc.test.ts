@@ -231,7 +231,7 @@ describe('messages', () => {
         })
 
         it('check update inbox dialog', async () => {
-          const { inboxMessage, outboxMessage } = await client.sendMessage({
+          const { inboxMessage } = await client.sendMessage({
             userId: faker.number.bigInt({ min: 1 }),
             peer: {
               peerType: PeerType.USER,
@@ -241,10 +241,10 @@ describe('messages', () => {
           })
 
           await client.sendMessage({
-            userId: outboxMessage?.from?.peerId,
+            userId: inboxMessage?.peer?.peerId,
             peer: {
               peerType: PeerType.USER,
-              peerId: outboxMessage?.peer?.peerId,
+              peerId: inboxMessage?.from?.peerId,
             },
             message: faker.word.sample(),
           })
@@ -260,6 +260,42 @@ describe('messages', () => {
           expect(dialog.readOutboxMaxId).toBe(0)
           expect(dialog.unreadCount).toBe(2)
           expect(dialog.userId).toBe(inboxMessage?.from?.peerId)
+        })
+
+        it('check read dialog', async () => {
+          const { inboxMessage } = await client.sendMessage({
+            userId: faker.number.bigInt({ min: 1 }),
+            peer: {
+              peerType: PeerType.USER,
+              peerId: faker.number.bigInt({ min: 1 }),
+            },
+            message: faker.word.sample(),
+          })
+
+          await client.readUserMessages({
+            userId: inboxMessage?.from?.peerId,
+            peer: {
+              peerType: PeerType.USER,
+              peerId: inboxMessage?.peer?.peerId,
+            },
+            maxId: 1,
+          })
+
+          const {
+            dialogs: [inboxDialog],
+          } = await client.getUserDialogs({
+            userId: inboxMessage?.from?.peerId,
+          })
+
+          const {
+            dialogs: [outboxDialog],
+          } = await client.getUserDialogs({
+            userId: inboxMessage?.peer?.peerId,
+          })
+
+          expect(inboxDialog.readInboxMaxId).toBe(1)
+          expect(inboxDialog.unreadCount).toBe(0)
+          expect(outboxDialog.readOutboxMaxId).toBe(1)
         })
       })
     })
