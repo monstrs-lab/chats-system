@@ -206,4 +206,9 @@ export interface Message {
    * @generated from field: string message = 6;
    */
   message: string
+
+  /**
+   * @generated from field: int64 sender_user_id = 7;
+   */
+  senderUserId: bigint
 }
