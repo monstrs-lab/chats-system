@@ -21,7 +21,7 @@
     "@chats-system/tl": "workspace:0.0.1",
     "@chats-system/user-rpc-client": "workspace:0.0.1",
     "@monstrs/logger": "^0.0.20",
-    "@monstrs/mtproto-core": "^0.0.24",
+    "@monstrs/mtproto-core": "^0.0.25",
     "crypto-random-bigint": "^2.1.0",
     "uuid": "^9.0.1"
   },

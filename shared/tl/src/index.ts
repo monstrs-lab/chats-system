@@ -14,6 +14,7 @@ export const MsgContainer = Raws.MsgContainer
 export const TLObject = Raws.TLObject
 export const Primitive = Raws.Primitive
 export const Exceptions = Errors.Exceptions
+export const RPCError = Errors.RPCError
 
 export const BoolTrue = Primitive.BoolTrue
 export const BoolFalse = Primitive.BoolFalse

@@ -2,6 +2,8 @@ import type { DynamicModule }       from '@nestjs/common'
 
 import { Module }                   from '@nestjs/common'
 
+import { AuthKeyClientModule }      from '@chats-system/authkey-client-module'
+import { GatewayClientModule }      from '@chats-system/gateway-client-module'
 import { SessionApplicationModule } from '@chats-system/session-application-module'
 import { SessionPort }              from '@chats-system/session-application-module'
 import { TLRpcModule }              from '@chats-system/tl-rpc'
@@ -19,7 +21,12 @@ export class SessionInfrastructureModule {
     return {
       global: true,
       module: SessionInfrastructureModule,
-      imports: [TLRpcModule.register(), SessionApplicationModule.register()],
+      imports: [
+        TLRpcModule.register(),
+        SessionApplicationModule.register(),
+        AuthKeyClientModule.attach(),
+        GatewayClientModule.attach(),
+      ],
       controllers: Object.values(controllers),
       providers: [
         SessionResponseQueue,

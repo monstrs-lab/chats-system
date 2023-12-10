@@ -10,8 +10,9 @@ import * as rpchandlers       from '../rpc-handlers/index.js'
 export class SessionApplicationModule {
   static register(): DynamicModule {
     return {
+      global: true,
       module: SessionApplicationModule,
-      imports: [UserClientModule.register()],
+      imports: [UserClientModule.attach()],
       providers: [...Object.values(rpchandlers)],
     }
   }

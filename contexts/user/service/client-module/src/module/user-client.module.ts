@@ -1,12 +1,10 @@
-import type { DynamicModule } from '@nestjs/common'
+import type { DynamicModule }   from '@nestjs/common'
 
-import { Module }             from '@nestjs/common'
+import { Module }               from '@nestjs/common'
 
-import { createClient }       from '@chats-system/user-rpc-client'
-
-import * as dataloaders       from '../dataloaders/index.js'
-import { UserClient }         from '../client/index.js'
-import { RPC_CLIENT_TOKEN }   from '../constants/index.js'
+import * as dataloaders         from '../dataloaders/index.js'
+import { UserClient }           from '../client/index.js'
+import { UserClientCoreModule } from './user-client.core.module.js'
 
 @Module({})
 export class UserClientModule {
@@ -15,14 +13,14 @@ export class UserClientModule {
   ): DynamicModule {
     return {
       module: UserClientModule,
-      providers: [
-        ...Object.values(dataloaders),
-        UserClient,
-        {
-          provide: RPC_CLIENT_TOKEN,
-          useValue: createClient(options),
-        },
-      ],
+      imports: [UserClientCoreModule.register(options)],
+    }
+  }
+
+  static attach(): DynamicModule {
+    return {
+      module: UserClientModule,
+      providers: [UserClient, ...Object.values(dataloaders)],
       exports: [UserClient],
     }
   }

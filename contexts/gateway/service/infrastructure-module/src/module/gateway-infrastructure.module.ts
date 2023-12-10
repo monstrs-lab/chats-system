@@ -1,11 +1,15 @@
-import type { DynamicModule }         from '@nestjs/common'
+import type { DynamicModule }    from '@nestjs/common'
 
-import { Module }                     from '@nestjs/common'
+import { Module }                from '@nestjs/common'
 
-import * as controllers               from '../controllers/index.js'
-import { MTProtoGateway }             from '../gateway/index.js'
-import { MTProtoGatewayClientSender } from '../gateway/index.js'
-import { SessionAuthManager }         from '../session/index.js'
+import { AuthKeyClientModule }   from '@chats-system/authkey-client-module'
+import { SessionClientModule }   from '@chats-system/session-client-module'
+
+import * as controllers          from '../controllers/index.js'
+import { ConnectionRegistry }    from '../connection/index.js'
+import { MTProtoGateway }        from '../gateway/index.js'
+import { SessionAuthManager }    from '../session/index.js'
+import { SessionAuthKeyManager } from '../session/index.js'
 
 @Module({})
 export class GatewayInfrastructureModule {
@@ -13,7 +17,8 @@ export class GatewayInfrastructureModule {
     return {
       module: GatewayInfrastructureModule,
       controllers: Object.values(controllers),
-      providers: [MTProtoGateway, SessionAuthManager, MTProtoGatewayClientSender],
+      imports: [AuthKeyClientModule.attach(), SessionClientModule.attach()],
+      providers: [ConnectionRegistry, MTProtoGateway, SessionAuthManager, SessionAuthKeyManager],
     }
   }
 }
