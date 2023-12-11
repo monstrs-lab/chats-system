@@ -1,4 +1,6 @@
 import type { PartialMessage }          from '@bufbuild/protobuf'
+import type { GetUsersRequest }         from '@chats-system/user-rpc-client'
+import type { GetUsersResponse }        from '@chats-system/user-rpc-client'
 import type { UserService }             from '@chats-system/user-rpc-client'
 import type { User }                    from '@chats-system/user-rpc-client'
 import type { CreateUserRequest }       from '@chats-system/user-rpc-client'
@@ -36,6 +38,10 @@ export class UserClient {
 
   async getUser(request: PartialMessage<GetUserRequest>): Promise<GetUserResponse> {
     return this.client.getUser(request)
+  }
+
+  async getUsers(request: PartialMessage<GetUsersRequest>): Promise<GetUsersResponse> {
+    return this.client.getUsers(request)
   }
 
   async getUserContacts(

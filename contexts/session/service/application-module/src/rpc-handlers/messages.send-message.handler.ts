@@ -1,32 +1,36 @@
-import type { Peer }            from '@chats-system/messages-rpc-client'
-import type { TLRpcSession }    from '@chats-system/tl-rpc'
-import type { TLRpcMetadata }   from '@chats-system/tl-rpc'
+import type { Peer }          from '@chats-system/messages-rpc-client'
+import type { TLRpcSession }  from '@chats-system/tl-rpc'
+import type { TLRpcMetadata } from '@chats-system/tl-rpc'
 
-import { PeerType }             from '@chats-system/messages-rpc-client'
-import { TLRpcHandler }         from '@chats-system/tl-rpc'
-import { client }               from '@chats-system/messages-rpc-client'
-import { client as userClient } from '@chats-system/user-rpc-client'
-import TL                       from '@chats-system/tl'
+import { MessagesClient }     from '@chats-system/messages-client-module'
+import { PeerType }           from '@chats-system/messages-rpc-client'
+import { TLRpcHandler }       from '@chats-system/tl-rpc'
+import { UserClient }         from '@chats-system/user-client-module'
+import TL                     from '@chats-system/tl'
 
-import { SessionPort }          from '../ports/index.js'
+import { SessionPort }        from '../ports/index.js'
 
 @TLRpcHandler(TL.messages.SendMessage)
 export class MessagesSendMessageHandler {
-  constructor(private readonly sessionPort: SessionPort) {}
+  constructor(
+    private readonly sessionPort: SessionPort,
+    private readonly messagesClient: MessagesClient,
+    private readonly userClient: UserClient
+  ) {}
 
   async execute(
     request: TL.messages.SendMessage,
     __: TLRpcSession,
     metadata: TLRpcMetadata
   ): Promise<TL.Updates> {
-    const { outboxMessage, inboxMessage, ptsCount, pts } = await client.sendMessage({
+    const { outboxMessage, inboxMessage, ptsCount, pts } = await this.messagesClient.sendMessage({
       userId: metadata.userId,
       peer: this.getPeer(request.peer),
       randomId: request.randomId,
       message: request.message,
     })
 
-    const { users } = await userClient.getUsers({
+    const { users } = await this.userClient.getUsers({
       userIds: [metadata.userId, this.getPeer(request.peer).peerId],
     })
 

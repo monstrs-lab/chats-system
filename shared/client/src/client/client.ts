@@ -1,11 +1,11 @@
 import type { MTProtoAuthKey }     from '@monstrs/mtproto-core'
-import type TL                     from '@chats-system/tl'
 
 import type { AbstractStorage }    from '../storage/index.js'
 
 import { setTimeout }              from 'node:timers/promises'
 
 import { HandshakeSender }         from '@chats-system/handshake'
+import TL                          from '@chats-system/tl'
 
 import { ClientDisconnectedError } from '../errors/index.js'
 import { Connection }              from '../network/index.js'
@@ -25,9 +25,44 @@ export class Client {
 
   private session?: Session
 
+  private updateHandlers: Set<(update: TL.TypeUpdate) => void> = new Set()
+
   constructor(address: string) {
     this.storage = new MemoryStorage()
     this.address = address
+  }
+
+  async getAuthKey(): Promise<MTProtoAuthKey | undefined> {
+    return this.storage.getAuthKey()
+  }
+
+  addUpdateHandler(callback: (update: TL.TypeUpdate) => void): void {
+    this.updateHandlers.add(callback)
+  }
+
+  removeUpdateHandler(callback: (update: TL.TypeUpdate) => void): void {
+    this.updateHandlers.delete(callback)
+  }
+
+  async start(): Promise<void> {
+    if (!(await this.storage.getAuthKey())) {
+      await this.storage.setAuthKey(await this.auth())
+    }
+
+    this.session = new Session(this.address, (await this.storage.getAuthKey())!, (
+      update: TL.TypeUpdate
+    ) => {
+      this.handleUpdate(update)
+    })
+
+    await this.session.start()
+  }
+
+  async stop(): Promise<void> {
+    if (this.session) {
+      this.session.stop()
+      this.session = undefined
+    }
   }
 
   async invoke<T extends TL.TypesTLRequest>(
@@ -40,24 +75,19 @@ export class Client {
       throw new ClientDisconnectedError()
     }
 
-    return this.session.invoke(query, retries, timeout, sleepTreshold)
-  }
+    const result = await this.session.invoke(query, retries, timeout, sleepTreshold)
 
-  async start(): Promise<void> {
-    if (!(await this.storage.getAuthKey())) {
-      await this.storage.setAuthKey(await this.auth())
+    if (result instanceof TL.RpcResult) {
+      return result.result as T['__response__']
     }
 
-    this.session = new Session(this.address, (await this.storage.getAuthKey())!)
-
-    await this.session.start()
+    throw new Error('Unknown invoke type')
   }
 
-  async stop(): Promise<void> {
-    if (this.session) {
-      this.session.stop()
-      this.session = undefined
-    }
+  protected handleUpdate(update: TL.TypeUpdate): void {
+    this.updateHandlers.forEach((callback) => {
+      callback(update)
+    })
   }
 
   protected async auth(): Promise<MTProtoAuthKey> {

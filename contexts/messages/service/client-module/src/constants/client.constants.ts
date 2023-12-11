@@ -1,1 +1,1 @@
-export const MESSAGES_CLIENT_TOKEN = Symbol('messages-client-token')
+export const MESSAGES_CLIENT_TOKEN = 'messages-client-token'
