@@ -11,7 +11,9 @@
   "main": "src/index.ts",
   "dependencies": {
     "@chats-system/auth-rpc-client": "workspace:0.0.1",
+    "@chats-system/authkey-client-module": "workspace:0.0.1",
     "@chats-system/authkey-rpc-client": "workspace:0.0.1",
+    "@chats-system/gateway-client-module": "workspace:0.0.1",
     "@chats-system/gateway-rpc-client": "workspace:0.0.1",
     "@chats-system/help-rpc-client": "workspace:0.0.1",
     "@chats-system/rpc": "workspace:0.0.1",
@@ -24,7 +26,7 @@
     "@chats-system/user-rpc-client": "workspace:0.0.1",
     "@monstrs/buffer-utils": "^0.0.9",
     "@monstrs/logger": "^0.0.20",
-    "@monstrs/mtproto-core": "^0.0.24",
+    "@monstrs/mtproto-core": "^0.0.25",
     "@monstrs/mtproto-extensions": "^0.0.3",
     "@monstrs/mtproto-tl-core": "^0.0.8",
     "@monstrs/nestjs-connectrpc-errors": "^0.0.3",

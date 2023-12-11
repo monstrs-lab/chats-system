@@ -51,6 +51,7 @@ describe('user', () => {
               baseUrl: `http://localhost:${port}`,
               idleConnectionTimeoutMs: 1000,
             }),
+            UserClientModule.attach(),
             UserInfrastructureModule.register(),
             MikroOrmModule.forRootAsync({
               imports: [

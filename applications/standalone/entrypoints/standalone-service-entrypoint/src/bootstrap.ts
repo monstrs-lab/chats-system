@@ -7,7 +7,7 @@ import { WsAdapter }                         from '@nestjs/platform-ws'
 import { StandaloneServiceEntrypointModule } from './module/index.js'
 
 const bootstrap = async (): Promise<void> => {
-  const app = await NestFactory.create(StandaloneServiceEntrypointModule, {
+  const app = await NestFactory.create(StandaloneServiceEntrypointModule.build(), {
     logger: new NestLogger(),
   })
 

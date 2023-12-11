@@ -1,28 +1,27 @@
-import type { MTProtoCodec }                from '@monstrs/mtproto-core'
-import type { MTProtoEncryptedRawMessage }  from '@monstrs/mtproto-core'
-import type { OnGatewayConnection }         from '@nestjs/websockets'
-import type { OnGatewayInit }               from '@nestjs/websockets'
-import type { WebSocket }                   from 'ws'
-import type { WebSocketServer as WSServer } from 'ws'
+import type { MTProtoCodec }               from '@monstrs/mtproto-core'
+import type { MTProtoEncryptedRawMessage } from '@monstrs/mtproto-core'
+import type { OnGatewayConnection }        from '@nestjs/websockets'
+import type { OnGatewayDisconnect }        from '@nestjs/websockets'
+import type { WebSocket }                  from 'ws'
 
-import { Logger }                           from '@monstrs/logger'
-import { MTProtoObfuscadetCodec }           from '@monstrs/mtproto-codecs'
-import { MTProtoUnencryptedRawMessage }     from '@monstrs/mtproto-core'
-import { MTProtoRawMessage }                from '@monstrs/mtproto-core'
-import { MTProtoAuthKey }                   from '@monstrs/mtproto-core'
-import { MTProtoMessageId }                 from '@monstrs/mtproto-core'
-import { WebSocketGateway }                 from '@nestjs/websockets'
-import { v4 as uuid }                       from 'uuid'
+import { Logger }                          from '@monstrs/logger'
+import { MTProtoObfuscatedCodec }          from '@monstrs/mtproto-codecs'
+import { MTProtoUnencryptedRawMessage }    from '@monstrs/mtproto-core'
+import { MTProtoRawMessage }               from '@monstrs/mtproto-core'
+import { MTProtoAuthKey }                  from '@monstrs/mtproto-core'
+import { MTProtoMessageId }                from '@monstrs/mtproto-core'
+import { WebSocketGateway }                from '@nestjs/websockets'
+import { v4 as uuid }                      from 'uuid'
 
-import { Handshake }                        from '@chats-system/handshake'
-import { TLObject }                         from '@chats-system/tl'
-import { BytesIO }                          from '@chats-system/tl'
-import { client }                           from '@chats-system/session-rpc-client'
-import TL                                   from '@chats-system/tl'
+import { Handshake }                       from '@chats-system/handshake'
+import { SessionClient }                   from '@chats-system/session-client-module'
+import { TLObject }                        from '@chats-system/tl'
+import { BytesIO }                         from '@chats-system/tl'
+import TL                                  from '@chats-system/tl'
 
-import { SessionAuthManager }               from '../session/index.js'
-import { SessionAuthKeyManager }            from '../session/index.js'
-import { MTProtoGatewayClientSender }       from './mtproto-gateway-client.sender.js'
+import { ConnectionRegistry }              from '../connection/index.js'
+import { SessionAuthManager }              from '../session/index.js'
+import { SessionAuthKeyManager }           from '../session/index.js'
 
 type MTProtoConnection = WebSocket & {
   id: string
@@ -36,40 +35,41 @@ type MTProtoConnection = WebSocket & {
   cors: {
     origin: '*',
   },
+  clientTracking: false,
 })
-export class MTProtoGateway implements OnGatewayConnection, OnGatewayInit {
+export class MTProtoGateway implements OnGatewayConnection, OnGatewayDisconnect {
   #logger = new Logger(MTProtoGateway.name)
 
   constructor(
+    private readonly sessionAuthKeyManager: SessionAuthKeyManager,
     private readonly sessionAuthManager: SessionAuthManager,
-    private readonly clientSender: MTProtoGatewayClientSender
+    private readonly connectionRegistry: ConnectionRegistry,
+    private readonly sessionClient: SessionClient
   ) {}
-
-  afterInit(server: WSServer): void {
-    this.clientSender.setServer(server)
-  }
 
   handleConnection(
     connection: MTProtoConnection,
     request: { socket: { remoteAddress: string } }
   ): void {
+    if (!connection.id) {
+      // eslint-disable-next-line no-param-reassign
+      connection.id = uuid()
+      // eslint-disable-next-line no-param-reassign
+      connection.authKeyManager = this.sessionAuthKeyManager
+    }
+
+    if (!connection.handshake) {
+      // eslint-disable-next-line no-param-reassign
+      connection.handshake = new Handshake()
+    }
+
+    this.connectionRegistry.addConnection(connection.id, connection)
+
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
     connection.on('message', async (data: Buffer): Promise<void> => {
-      if (!connection.id) {
-        // eslint-disable-next-line no-param-reassign
-        connection.id = uuid()
-        // eslint-disable-next-line no-param-reassign
-        connection.authKeyManager = new SessionAuthKeyManager()
-      }
-
-      if (!connection.handshake) {
-        // eslint-disable-next-line no-param-reassign
-        connection.handshake = new Handshake()
-      }
-
       if (!connection.codec) {
         // eslint-disable-next-line no-param-reassign
-        connection.codec = new MTProtoObfuscadetCodec(data)
+        connection.codec = new MTProtoObfuscatedCodec(data)
       } else {
         try {
           const messageData = await connection.codec.receive(data)
@@ -90,6 +90,10 @@ export class MTProtoGateway implements OnGatewayConnection, OnGatewayInit {
         }
       }
     })
+  }
+
+  handleDisconnect(connection: MTProtoConnection): void {
+    this.connectionRegistry.removeConnection(connection.id)
   }
 
   async onUnencryptedMessage(
@@ -175,7 +179,7 @@ export class MTProtoGateway implements OnGatewayConnection, OnGatewayInit {
       connection.sessionId = sessionId
 
       if (this.sessionAuthManager.addNewSession(message.getAuthKey(), sessionId, connection.id)) {
-        await client.createSession({
+        await this.sessionClient.createSession({
           client: {
             serverId: '127.0.0.1',
             authKeyId: message.getAuthKey().authKeyId,
@@ -186,7 +190,7 @@ export class MTProtoGateway implements OnGatewayConnection, OnGatewayInit {
       }
     }
 
-    await client.sendDataToSession({
+    await this.sessionClient.sendDataToSession({
       data: {
         serverId: '127.0.0.1',
         authKeyId: message.getAuthKey().authKeyId,

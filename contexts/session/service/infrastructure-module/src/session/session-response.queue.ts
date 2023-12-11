@@ -5,7 +5,7 @@ import { setTimeout }       from 'node:timers/promises'
 import { Logger }           from '@monstrs/logger'
 import { Injectable }       from '@nestjs/common'
 
-import { client }           from '@chats-system/gateway-rpc-client'
+import { GatewayClient }    from '@chats-system/gateway-client-module'
 
 export interface SessionResponseMessage {
   messageId: bigint
@@ -27,7 +27,7 @@ export class SessionResponseQueue {
 
   #tasks: Array<SessionResponseTask> = []
 
-  constructor() {
+  constructor(private readonly gatewayClient: GatewayClient) {
     this.start()
   }
 
@@ -80,7 +80,7 @@ export class SessionResponseQueue {
           task.message.message,
         ])
 
-        await client.sendData({
+        await this.gatewayClient.sendData({
           authKeyId: task.sessionData.authKeyId,
           sessionId: task.sessionData.sessionId,
           payload,

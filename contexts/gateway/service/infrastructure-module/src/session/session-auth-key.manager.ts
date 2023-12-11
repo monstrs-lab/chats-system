@@ -1,16 +1,22 @@
 import { MTProtoAuthKey }        from '@monstrs/mtproto-core'
 import { MTProtoAuthKeyType }    from '@monstrs/mtproto-core'
 import { MTProtoAuthKeyManager } from '@monstrs/mtproto-core'
+import { Injectable }            from '@nestjs/common'
 
+import { AuthKeyClient }         from '@chats-system/authkey-client-module'
 import { AuthKeyType }           from '@chats-system/authkey-rpc-client'
-import { client }                from '@chats-system/authkey-rpc-client'
 
+@Injectable()
 export class SessionAuthKeyManager extends MTProtoAuthKeyManager {
+  constructor(private readonly authKeyClient: AuthKeyClient) {
+    super()
+  }
+
   override async setAuthKey(authKeyId: bigint, authKey: MTProtoAuthKey): Promise<void> {
     const exists = await super.getAuthKey(authKeyId)
 
     if (!exists) {
-      await client.createAuthKey({
+      await this.authKeyClient.createAuthKey({
         authKeyId,
         authKey: authKey.key,
         authKeyType: this.toAuthKeyType(authKey.type),
@@ -25,7 +31,7 @@ export class SessionAuthKeyManager extends MTProtoAuthKeyManager {
       return super.getAuthKey(authKeyId)
     }
 
-    const { authKey: savedAuthKey } = await client.getAuthKey({
+    const { authKey: savedAuthKey } = await this.authKeyClient.getAuthKey({
       authKeyId,
     })
 

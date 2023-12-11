@@ -1,1 +1,1 @@
-export const RPC_CLIENT_TOKEN = Symbol('rpc-client-token')
+export const USER_CLIENT_TOKEN = 'user-client-token'

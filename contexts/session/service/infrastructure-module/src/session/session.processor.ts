@@ -4,11 +4,11 @@ import { Logger }               from '@monstrs/logger'
 import { MTProtoMessageId }     from '@monstrs/mtproto-core'
 import { Injectable }           from '@nestjs/common'
 
+import { AuthKeyClient }        from '@chats-system/authkey-client-module'
 import { BytesIO }              from '@chats-system/tl'
 import { MsgContainer }         from '@chats-system/tl'
 import { Primitive }            from '@chats-system/tl'
 import { TLObject }             from '@chats-system/tl'
-import { client }               from '@chats-system/authkey-rpc-client'
 import TL                       from '@chats-system/tl'
 
 import { SessionRegistry }      from '../registry/index.js'
@@ -37,7 +37,8 @@ export class SessionProcessor {
   constructor(
     protected readonly sessionRegistry: SessionRegistry,
     protected readonly responseQueue: SessionResponseQueue,
-    protected readonly rpcQueue: SessionRpcQueue
+    protected readonly rpcQueue: SessionRpcQueue,
+    protected readonly authKeyClient: AuthKeyClient
   ) {}
 
   async processSessionData(sessionData: SessionData): Promise<void> {
@@ -166,7 +167,7 @@ export class SessionProcessor {
     message: SessionProcessorRawMessage<TL.InitConnection>
   ): Promise<void> {
     if (message.message.query) {
-      await client.createAuthKeyConnection({
+      await this.authKeyClient.createAuthKeyConnection({
         authKeyId: sessionData.authKeyId,
         clientIp: sessionData.clientIp,
         apiId: message.message.apiId,
@@ -207,7 +208,7 @@ export class SessionProcessor {
     sessionData: SessionData,
     message: SessionProcessorRawMessage<InstanceType<typeof TLObject>>
   ): Promise<void> {
-    const { authKeyUser } = await client.getAuthKeyUser({
+    const { authKeyUser } = await this.authKeyClient.getAuthKeyUser({
       authKeyId: sessionData.authKeyId,
     })
 

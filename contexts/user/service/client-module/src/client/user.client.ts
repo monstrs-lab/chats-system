@@ -14,13 +14,13 @@ import type { PromiseClient }           from '@connectrpc/connect' // eslint-dis
 import { Inject }                       from '@nestjs/common'
 import { Injectable }                   from '@nestjs/common'
 
-import { RPC_CLIENT_TOKEN }             from '../constants/index.js'
+import { USER_CLIENT_TOKEN }            from '../constants/index.js'
 import { UserDataLoader }               from '../dataloaders/index.js'
 
 @Injectable()
 export class UserClient {
   constructor(
-    @Inject(RPC_CLIENT_TOKEN) protected readonly client: PromiseClient<typeof UserService>,
+    @Inject(USER_CLIENT_TOKEN) protected readonly client: PromiseClient<typeof UserService>,
     private readonly userDataLoader: UserDataLoader
   ) {}
 

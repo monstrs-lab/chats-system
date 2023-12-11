@@ -11,7 +11,7 @@
   "main": "src/index.ts",
   "dependencies": {
     "@chats-system/rpc": "workspace:0.0.1",
-    "@monstrs/mtproto-core": "^0.0.24",
+    "@monstrs/mtproto-core": "^0.0.25",
     "libphonenumber-js": "^1.10.51"
   },
   "devDependencies": {
