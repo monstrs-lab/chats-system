@@ -34,7 +34,8 @@ export class Session {
 
   constructor(
     protected readonly address: string,
-    protected readonly authKey: MTProtoAuthKey
+    protected readonly authKey: MTProtoAuthKey,
+    protected readonly onUpdate?: (update: TL.TypeUpdates) => void
   ) {
     this.id = random(63)
     this.messageFactory = new MTProtoMessageFactory()
@@ -186,6 +187,8 @@ export class Session {
       if (result) {
         result.resolve(message)
       }
+    } else if (message instanceof TL.Updates) {
+      this.onUpdate?.(message)
     } else {
       throw new Error('Handle unknown type')
     }

@@ -8,9 +8,9 @@ import { Logger }                from '@monstrs/logger'
 import { MTProtoMessageId }      from '@monstrs/mtproto-core'
 import { Injectable }            from '@nestjs/common'
 
+import { AuthKeyClient }         from '@chats-system/authkey-client-module'
 import { Vector }                from '@chats-system/tl'
 import { TLRpcHandlersRegistry } from '@chats-system/tl-rpc'
-import { client }                from '@chats-system/authkey-rpc-client'
 import TL                        from '@chats-system/tl'
 
 import { SessionResponseQueue }  from './session-response.queue.js'
@@ -41,6 +41,7 @@ export class SessionRpcQueue {
   #tasks: Array<SessionRpcTask> = []
 
   constructor(
+    private readonly authKeyClient: AuthKeyClient,
     private readonly responseQueue: SessionResponseQueue,
     private readonly tlRpcHandlersRegistry: TLRpcHandlersRegistry
   ) {
@@ -82,7 +83,7 @@ export class SessionRpcQueue {
 
     if (task) {
       try {
-        const { authKeyUser } = await client.getAuthKeyUser({
+        const { authKeyUser } = await this.authKeyClient.getAuthKeyUser({
           authKeyId: task.sessionData.authKeyId,
         })
 
