@@ -34,7 +34,7 @@
           }
         }
       },
-      "required": ["email", "name"],
+      "required": ["phone", "name"],
       "additionalProperties": false
     }
   }

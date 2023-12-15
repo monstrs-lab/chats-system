@@ -1,5 +1,1 @@
-import type { ReactElement } from 'react'
-
-import React                 from 'react'
-
-export default (): ReactElement => <div>login</div>
+export { AuthLoginPage as default } from '@chats-system/demo-auth-login-page'

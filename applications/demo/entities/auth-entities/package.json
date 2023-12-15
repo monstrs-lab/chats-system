@@ -1,0 +1,36 @@
+{
+  "name": "@chats-system/demo-auth-entities",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./src/index.ts"
+  },
+  "main": "src/index.ts",
+  "dependencies": {
+    "@monstrs/next-identity-integration": "^0.0.42",
+    "@ui-proto/button": "^0.2.5",
+    "@ui-proto/input": "^0.2.5",
+    "@ui-proto/layout": "^0.2.5",
+    "@ui-proto/text": "^0.2.5"
+  },
+  "devDependencies": {
+    "@effector/next": "^0.7.0",
+    "@ory/kratos-client": "^1.0.0",
+    "@types/react": "^18.2.43",
+    "effector": "^23.0.0",
+    "effector-react": "^23.0.1",
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-intl": "^6.5.5"
+  },
+  "peerDependencies": {
+    "effector": "^22",
+    "effector-react": "^22",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-intl": "^6"
+  }
+}
