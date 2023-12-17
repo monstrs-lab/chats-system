@@ -1,5 +1,5 @@
 {
-  "name": "@chats-system/demo-auth-login-page",
+  "name": "@chats-system/demo-dialog-page",
   "version": "0.0.1",
   "private": true,
   "license": "MIT",
@@ -10,7 +10,7 @@
   },
   "main": "src/index.ts",
   "dependencies": {
-    "@chats-system/demo-auth-entities": "workspace:0.0.1"
+    "@chats-system/client": "workspace:0.0.1"
   },
   "devDependencies": {
     "@effector/next": "^0.7.0",

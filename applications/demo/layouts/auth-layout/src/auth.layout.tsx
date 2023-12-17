@@ -1,12 +1,12 @@
-import type { ReactElement }                       from 'react'
+import type { ReactElement }     from 'react'
 
-import { Row }                                     from '@ui-proto/layout'
-import { Column }                             from '@ui-proto/layout'
-import { Layout }                     from '@ui-proto/layout'
-import { BackgroundPlaceholder }                   from '@ui-proto/placeholder'
-import { ImagePlaceholder } from '@ui-proto/placeholder'
-import { Text }                                    from '@ui-proto/text'
-import React                                       from 'react'
+import { Row }                   from '@ui-proto/layout'
+import { Column }                from '@ui-proto/layout'
+import { Layout }                from '@ui-proto/layout'
+import { BackgroundPlaceholder } from '@ui-proto/placeholder'
+import { ImagePlaceholder }      from '@ui-proto/placeholder'
+import { Text }                  from '@ui-proto/text'
+import React                     from 'react'
 
 export interface AuthLayoutProps {
   children: ReactElement
@@ -30,7 +30,7 @@ export const AuthLayout = ({ children }: AuthLayoutProps): ReactElement => (
           <Layout flexGrow={1} />
           <Layout width='100%'>
             <Row>
-            <Layout flexGrow={1} />
+              <Layout flexGrow={1} />
               <Layout flexGrow={1}>{children}</Layout>
               <Layout flexGrow={1} />
             </Row>

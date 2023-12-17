@@ -11,17 +11,22 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
+    "buffer": "^6.0.3",
     "next": "^14.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intl": "^6.5.5",
-    "sharp": "^0.33.0"
+    "sharp": "^0.33.0",
+    "timers-browserify": "^2.0.12"
   },
   "devDependencies": {
+    "@chats-system/authkey-rpc-client": "workspace:0.0.1",
     "@chats-system/demo-auth-layout": "workspace:0.0.1",
     "@chats-system/demo-auth-login-page": "workspace:0.0.1",
     "@chats-system/demo-auth-registration-page": "workspace:0.0.1",
+    "@chats-system/demo-dialog-page": "workspace:0.0.1",
     "@chats-system/demo-root-layout": "workspace:0.0.1",
+    "@chats-system/user-rpc-client": "workspace:0.0.1",
     "@effector/next": "^0.7.0",
     "@types/node": "^20.10.4",
     "@types/react": "^18.2.43",

@@ -17,9 +17,9 @@
     "async-mutex": "^0.4.0",
     "crypto-random-bigint": "^2.1.0",
     "p-timeout": "^6.1.2",
-    "ws": "^8.15.0"
+    "websocket": "^1.0.34"
   },
   "devDependencies": {
-    "@types/ws": "^8.5.10"
+    "@types/websocket": "^1.0.10"
   }
 }

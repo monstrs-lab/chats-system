@@ -17,7 +17,7 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
     }
   }
 
-  return NextResponse.redirect('http://localhost:3000/?return_to=http://localhost:3000')
+  return NextResponse.redirect('http://localhost:3001/auth/login?return_to=http://localhost:3001')
 }
 
 export const config = {

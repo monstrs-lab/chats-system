@@ -6,8 +6,8 @@ serve:
     cors:
       enabled: true
       allowed_origins:
-        - http://localhost:3000
-        - http://127.0.0.1:3000
+        - http://localhost:3001
+        - http://127.0.0.1:3001
       debug: true
   admin:
     base_url: http://kratos:4434/
@@ -17,10 +17,10 @@ session:
     required_aal: aal1
 
 selfservice:
-  default_browser_return_url: http://127.0.0.1:3000/
+  default_browser_return_url: http://127.0.0.1:3001/
   allowed_return_urls:
     - http://127.0.0.1:4444
-    - http://127.0.0.1:3000
+    - http://127.0.0.1:3001
 
   methods:
     password:
@@ -36,34 +36,34 @@ selfservice:
 
   flows:
     error:
-      ui_url: http://127.0.0.1:3000/auth/error
+      ui_url: http://127.0.0.1:3001/auth/error
 
     settings:
-      ui_url: http://127.0.0.1:3000/profile/settings
+      ui_url: http://127.0.0.1:3001/profile/settings
       privileged_session_max_age: 15m
       required_aal: aal1
 
     recovery:
       enabled: true
-      ui_url: http://127.0.0.1:3000/profile/recovery
+      ui_url: http://127.0.0.1:3001/profile/recovery
 
     verification:
       enabled: true
-      ui_url: http://127.0.0.1:3000/auth/verification
+      ui_url: http://127.0.0.1:3001/auth/verification
       after:
-        default_browser_return_url: http://127.0.0.1:3000/
+        default_browser_return_url: http://127.0.0.1:3001/
 
     logout:
       after:
-        default_browser_return_url: http://127.0.0.1:3000/auth/login
+        default_browser_return_url: http://127.0.0.1:3001/auth/login
 
     login:
-      ui_url: http://127.0.0.1:3000/auth/login
+      ui_url: http://127.0.0.1:3001/auth/login
       lifespan: 10m
 
     registration:
       lifespan: 10m
-      ui_url: http://127.0.0.1:3000/auth/registration
+      ui_url: http://127.0.0.1:3001/auth/registration
       after:
         password:
           hooks:

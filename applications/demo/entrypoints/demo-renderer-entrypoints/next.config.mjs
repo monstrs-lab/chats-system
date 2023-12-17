@@ -14,7 +14,7 @@ export default withVanillaExtract({
     esmExternals: 'loose',
   },
   typescript: { ignoreBuildErrors: true },
-  webpack: (config) => {
+  webpack: (config, context) => {
     // eslint-disable-next-line no-param-reassign
     config.resolve.extensionAlias = {
       '.js': ['.js', '.ts'],
@@ -28,7 +28,31 @@ export default withVanillaExtract({
       ...config.resolve.alias,
       effector: require.resolve('effector'),
       'effector-react': require.resolve('effector-react'),
+      'timers/promises': require.resolve('timers-browserify'),
+      buffer: require.resolve('buffer/'),
     }
+
+    // eslint-disable-next-line no-param-reassign
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      net: false,
+    }
+
+    // eslint-disable-next-line no-param-reassign
+    config.plugins = config.plugins ?? []
+
+    config.plugins.push(
+      new context.webpack.NormalModuleReplacementPlugin(/^node:/, (resource) => {
+        // eslint-disable-next-line no-param-reassign
+        resource.request = resource.request.replace(/^node:/, '')
+      })
+    )
+
+    config.plugins.push(
+      new context.webpack.ProvidePlugin({
+        Buffer: ['buffer', 'Buffer'],
+      })
+    )
 
     return config
   },
