@@ -10,7 +10,11 @@
   },
   "main": "src/index.ts",
   "dependencies": {
-    "@chats-system/client": "workspace:0.0.1"
+    "@chats-system/client": "workspace:0.0.1",
+    "@chats-system/tl": "workspace:0.0.1",
+    "@ui-proto/button": "^0.2.5",
+    "@ui-proto/input": "^0.2.5",
+    "@ui-proto/layout": "^0.2.5"
   },
   "devDependencies": {
     "@effector/next": "^0.7.0",

@@ -735,7 +735,7 @@ __metadata:
     "@chats-system/auth-domain-module": "workspace:0.0.1"
     "@chats-system/core-errors": "workspace:0.0.1"
     "@chats-system/rpc": "workspace:0.0.1"
-    "@monstrs/mtproto-core": "npm:^0.0.25"
+    "@monstrs/mtproto-core": "npm:^0.0.26"
     "@nestjs/common": "npm:^10.2.10"
     "@nestjs/core": "npm:^10.2.10"
     "@nestjs/cqrs": "npm:^10.2.6"
@@ -759,7 +759,7 @@ __metadata:
   resolution: "@chats-system/auth-domain-module@workspace:contexts/auth/service/domain-module"
   dependencies:
     "@chats-system/core-errors": "workspace:0.0.1"
-    "@monstrs/mtproto-core": "npm:^0.0.25"
+    "@monstrs/mtproto-core": "npm:^0.0.26"
     "@nestjs/common": "npm:^10.2.10"
     "@nestjs/core": "npm:^10.2.10"
     "@nestjs/cqrs": "npm:^10.2.6"
@@ -804,7 +804,7 @@ __metadata:
     "@mikro-orm/seeder": "npm:^5.9.4"
     "@monstrs/base-types": "npm:^0.0.2"
     "@monstrs/logger": "npm:^0.0.20"
-    "@monstrs/mtproto-core": "npm:^0.0.25"
+    "@monstrs/mtproto-core": "npm:^0.0.26"
     "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
     "@monstrs/nestjs-mikro-orm-config": "npm:^0.1.3"
     "@nestjs/common": "npm:^10.2.10"
@@ -1140,8 +1140,8 @@ __metadata:
   dependencies:
     "@chats-system/handshake": "workspace:0.0.1"
     "@chats-system/tl": "workspace:0.0.1"
-    "@monstrs/mtproto-codecs": "npm:^0.0.29"
-    "@monstrs/mtproto-core": "npm:^0.0.25"
+    "@monstrs/mtproto-codecs": "npm:^0.0.30"
+    "@monstrs/mtproto-core": "npm:^0.0.26"
     "@types/websocket": "npm:^1.0.10"
     async-mutex: "npm:^0.4.0"
     crypto-random-bigint: "npm:^2.1.0"
@@ -1274,9 +1274,13 @@ __metadata:
   resolution: "@chats-system/demo-dialog-page@workspace:applications/demo/pages/dialog-page"
   dependencies:
     "@chats-system/client": "workspace:0.0.1"
+    "@chats-system/tl": "workspace:0.0.1"
     "@effector/next": "npm:^0.7.0"
     "@ory/kratos-client": "npm:^1.0.0"
     "@types/react": "npm:^18.2.43"
+    "@ui-proto/button": "npm:^0.2.5"
+    "@ui-proto/input": "npm:^0.2.5"
+    "@ui-proto/layout": "npm:^0.2.5"
     effector: "npm:^23.0.0"
     effector-react: "npm:^23.0.1"
     next: "npm:^14.0.4"
@@ -1383,8 +1387,8 @@ __metadata:
     "@faker-js/faker": "npm:^8.3.1"
     "@jest/globals": "npm:^29.7.0"
     "@monstrs/logger": "npm:^0.0.20"
-    "@monstrs/mtproto-codecs": "npm:^0.0.29"
-    "@monstrs/mtproto-core": "npm:^0.0.25"
+    "@monstrs/mtproto-codecs": "npm:^0.0.30"
+    "@monstrs/mtproto-core": "npm:^0.0.26"
     "@monstrs/mtproto-extensions": "npm:^0.0.3"
     "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
     "@monstrs/nestjs-connectrpc-errors": "npm:^0.0.3"
@@ -1500,8 +1504,8 @@ __metadata:
     "@monstrs/buffer-utils": "npm:^0.0.9"
     "@monstrs/crypto-utils": "npm:^0.0.2"
     "@monstrs/logger": "npm:^0.0.20"
-    "@monstrs/mtproto-codecs": "npm:^0.0.29"
-    "@monstrs/mtproto-core": "npm:^0.0.25"
+    "@monstrs/mtproto-codecs": "npm:^0.0.30"
+    "@monstrs/mtproto-core": "npm:^0.0.26"
     "@monstrs/mtproto-crypto": "npm:^0.0.5"
   languageName: unknown
   linkType: soft
@@ -2151,7 +2155,7 @@ __metadata:
     "@monstrs/base-types": "npm:^0.0.2"
     "@monstrs/buffer-utils": "npm:^0.0.9"
     "@monstrs/logger": "npm:^0.0.20"
-    "@monstrs/mtproto-core": "npm:^0.0.25"
+    "@monstrs/mtproto-core": "npm:^0.0.26"
     "@monstrs/mtproto-extensions": "npm:^0.0.3"
     "@monstrs/mtproto-tl-core": "npm:^0.0.8"
     "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
@@ -4333,25 +4337,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monstrs/mtproto-codecs@npm:^0.0.29":
-  version: 0.0.29
-  resolution: "@monstrs/mtproto-codecs@npm:0.0.29"
+"@monstrs/mtproto-codecs@npm:^0.0.30":
+  version: 0.0.30
+  resolution: "@monstrs/mtproto-codecs@npm:0.0.30"
   dependencies:
     "@monstrs/buffer-utils": "npm:^0.0.6"
-    "@monstrs/mtproto-core": "npm:0.0.25"
-  checksum: 785dc6c3a8cf739086c1ca0343f8bdcdbca551abfb660143bfd8830348c4b73cd616685c74ba7d2c07b0900e0c1ee08cbeb7193a0b4caa3a2b36c1c14c4ec7a6
+    "@monstrs/mtproto-core": "npm:0.0.26"
+  checksum: e8e4831da0579a787244634302efc19edfe7765b2d5e58be345f8457466aa8ca87a0ce4d3e0c2cdcec1690980b540e2a74cedd149ff8020954b6f15f48edd889
   languageName: node
   linkType: hard
 
-"@monstrs/mtproto-core@npm:0.0.25, @monstrs/mtproto-core@npm:^0.0.25":
-  version: 0.0.25
-  resolution: "@monstrs/mtproto-core@npm:0.0.25"
+"@monstrs/mtproto-core@npm:0.0.26, @monstrs/mtproto-core@npm:^0.0.26":
+  version: 0.0.26
+  resolution: "@monstrs/mtproto-core@npm:0.0.26"
   dependencies:
     "@monstrs/bigint-utils": "npm:^0.0.2"
     "@monstrs/buffer-utils": "npm:^0.0.6"
     "@monstrs/mtproto-crypto": "npm:0.0.5"
     "@monstrs/mtproto-extensions": "npm:0.0.3"
-  checksum: 5f75ba621ff890706afc8f9eb50b3d3959bf6ddd5124f2810fab40d7048117988b810ffdfbea95be37f2dcf4b849dfe76fcb53f8c34b68a7bc2788c8e45ec1fe
+  checksum: 67003f017b36cb4c83e4ea886b7fda5963c108455d146d578c0720f0d566410941485849941fd89515455fb30ea6a6d3b02c10cba1e25aaa32812fecf08c6474
   languageName: node
   linkType: hard
 
@@ -7568,11 +7572,6 @@ __metadata:
     "@monstrs/tools-runtime": "npm:^0.2.17"
     "@types/node": "npm:^20.10.4"
     typescript: "npm:^5.3.3"
-  dependenciesMeta:
-    "@monstrs/mtproto-codecs@0.0.29":
-      unplugged: true
-    "@monstrs/mtproto-core@0.0.25":
-      unplugged: true
   languageName: unknown
   linkType: soft
 

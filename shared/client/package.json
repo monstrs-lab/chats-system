@@ -12,8 +12,8 @@
   "dependencies": {
     "@chats-system/handshake": "workspace:0.0.1",
     "@chats-system/tl": "workspace:0.0.1",
-    "@monstrs/mtproto-codecs": "^0.0.29",
-    "@monstrs/mtproto-core": "^0.0.25",
+    "@monstrs/mtproto-codecs": "^0.0.30",
+    "@monstrs/mtproto-core": "^0.0.26",
     "async-mutex": "^0.4.0",
     "crypto-random-bigint": "^2.1.0",
     "p-timeout": "^6.1.2",

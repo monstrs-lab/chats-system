@@ -1518,7 +1518,7 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/auth-domain-module", "virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#workspace:contexts/auth/service/domain-module"],\
           ["@chats-system/core-errors", "virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#workspace:contexts/core/packages/errors"],\
           ["@chats-system/rpc", "virtual:def7aae208f5b2868c884172e7d3c7dd4ce75b13232c07d0b7a7ec485224492ec603e85ac533f0271bb023d37bf6d1cae174a7dbfde35b0df369b9dd0df8ff5b#workspace:shared/rpc"],\
-          ["@monstrs/mtproto-core", "npm:0.0.25"],\
+          ["@monstrs/mtproto-core", "npm:0.0.26"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
           ["@nestjs/core", "virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#npm:10.2.10"],\
           ["@nestjs/cqrs", "virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#npm:10.2.6"],\
@@ -1560,7 +1560,7 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/auth-domain-module", "virtual:def7aae208f5b2868c884172e7d3c7dd4ce75b13232c07d0b7a7ec485224492ec603e85ac533f0271bb023d37bf6d1cae174a7dbfde35b0df369b9dd0df8ff5b#workspace:contexts/auth/service/domain-module"],\
           ["@chats-system/core-errors", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/core/packages/errors"],\
           ["@chats-system/rpc", "virtual:def7aae208f5b2868c884172e7d3c7dd4ce75b13232c07d0b7a7ec485224492ec603e85ac533f0271bb023d37bf6d1cae174a7dbfde35b0df369b9dd0df8ff5b#workspace:shared/rpc"],\
-          ["@monstrs/mtproto-core", "npm:0.0.25"],\
+          ["@monstrs/mtproto-core", "npm:0.0.26"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
           ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
           ["@nestjs/cqrs", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.6"],\
@@ -1602,7 +1602,7 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/auth-domain-module", "virtual:ea9ab99ac6dcb7c67bbb394838a64a6166f89a93796d322c6f1ff36df1de81ef929e6639052f73c0f2763a8a6101feb31e29bc280971a73feb569cffce510091#workspace:contexts/auth/service/domain-module"],\
           ["@chats-system/core-errors", "virtual:0c7048dfa7ad9964f73a280deb3032c0a4dae8a2fa7a03fd80afba489b93156936e86e9d779931958bcd383dc0ae56a0f54eb0c1c382c8d44aab863d3b905c79#workspace:contexts/core/packages/errors"],\
           ["@chats-system/rpc", "virtual:def7aae208f5b2868c884172e7d3c7dd4ce75b13232c07d0b7a7ec485224492ec603e85ac533f0271bb023d37bf6d1cae174a7dbfde35b0df369b9dd0df8ff5b#workspace:shared/rpc"],\
-          ["@monstrs/mtproto-core", "npm:0.0.25"],\
+          ["@monstrs/mtproto-core", "npm:0.0.26"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
           ["@nestjs/core", "virtual:0c7048dfa7ad9964f73a280deb3032c0a4dae8a2fa7a03fd80afba489b93156936e86e9d779931958bcd383dc0ae56a0f54eb0c1c382c8d44aab863d3b905c79#npm:10.2.10"],\
           ["@nestjs/cqrs", "virtual:0c7048dfa7ad9964f73a280deb3032c0a4dae8a2fa7a03fd80afba489b93156936e86e9d779931958bcd383dc0ae56a0f54eb0c1c382c8d44aab863d3b905c79#npm:10.2.6"],\
@@ -1644,7 +1644,7 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/auth-domain-module", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#workspace:contexts/auth/service/domain-module"],\
           ["@chats-system/core-errors", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#workspace:contexts/core/packages/errors"],\
           ["@chats-system/rpc", "virtual:def7aae208f5b2868c884172e7d3c7dd4ce75b13232c07d0b7a7ec485224492ec603e85ac533f0271bb023d37bf6d1cae174a7dbfde35b0df369b9dd0df8ff5b#workspace:shared/rpc"],\
-          ["@monstrs/mtproto-core", "npm:0.0.25"],\
+          ["@monstrs/mtproto-core", "npm:0.0.26"],\
           ["@nestjs/common", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
           ["@nestjs/core", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
           ["@nestjs/cqrs", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.6"],\
@@ -1662,7 +1662,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/auth-domain-module", "virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#workspace:contexts/auth/service/domain-module"],\
           ["@chats-system/core-errors", "virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#workspace:contexts/core/packages/errors"],\
-          ["@monstrs/mtproto-core", "npm:0.0.25"],\
+          ["@monstrs/mtproto-core", "npm:0.0.26"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
           ["@nestjs/core", "virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#npm:10.2.10"],\
           ["@nestjs/cqrs", "virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#npm:10.2.6"],\
@@ -1699,7 +1699,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/auth-domain-module", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#workspace:contexts/auth/service/domain-module"],\
           ["@chats-system/core-errors", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#workspace:contexts/core/packages/errors"],\
-          ["@monstrs/mtproto-core", "npm:0.0.25"],\
+          ["@monstrs/mtproto-core", "npm:0.0.26"],\
           ["@nestjs/common", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
           ["@nestjs/core", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
           ["@nestjs/cqrs", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.6"],\
@@ -1736,7 +1736,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/auth-domain-module", "virtual:def7aae208f5b2868c884172e7d3c7dd4ce75b13232c07d0b7a7ec485224492ec603e85ac533f0271bb023d37bf6d1cae174a7dbfde35b0df369b9dd0df8ff5b#workspace:contexts/auth/service/domain-module"],\
           ["@chats-system/core-errors", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/core/packages/errors"],\
-          ["@monstrs/mtproto-core", "npm:0.0.25"],\
+          ["@monstrs/mtproto-core", "npm:0.0.26"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
           ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
           ["@nestjs/cqrs", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.6"],\
@@ -1773,7 +1773,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/auth-domain-module", "virtual:ea9ab99ac6dcb7c67bbb394838a64a6166f89a93796d322c6f1ff36df1de81ef929e6639052f73c0f2763a8a6101feb31e29bc280971a73feb569cffce510091#workspace:contexts/auth/service/domain-module"],\
           ["@chats-system/core-errors", "virtual:0c7048dfa7ad9964f73a280deb3032c0a4dae8a2fa7a03fd80afba489b93156936e86e9d779931958bcd383dc0ae56a0f54eb0c1c382c8d44aab863d3b905c79#workspace:contexts/core/packages/errors"],\
-          ["@monstrs/mtproto-core", "npm:0.0.25"],\
+          ["@monstrs/mtproto-core", "npm:0.0.26"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
           ["@nestjs/core", "virtual:0c7048dfa7ad9964f73a280deb3032c0a4dae8a2fa7a03fd80afba489b93156936e86e9d779931958bcd383dc0ae56a0f54eb0c1c382c8d44aab863d3b905c79#npm:10.2.10"],\
           ["@nestjs/cqrs", "virtual:0c7048dfa7ad9964f73a280deb3032c0a4dae8a2fa7a03fd80afba489b93156936e86e9d779931958bcd383dc0ae56a0f54eb0c1c382c8d44aab863d3b905c79#npm:10.2.6"],\
@@ -1810,7 +1810,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/auth-domain-module", "workspace:contexts/auth/service/domain-module"],\
           ["@chats-system/core-errors", "virtual:0c9d0a5ead5ad9667cb77cc5f14951d31f56a0684ad6c81997a0c0152e975a1f59a21c41a9b3ede0da1e1ba6cf96e0a8cab879f687a0d4ba8aab63c134d9496f#workspace:contexts/core/packages/errors"],\
-          ["@monstrs/mtproto-core", "npm:0.0.25"],\
+          ["@monstrs/mtproto-core", "npm:0.0.26"],\
           ["@nestjs/common", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
           ["@nestjs/core", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.10"],\
           ["@nestjs/cqrs", "virtual:a9d1bde0323cf9cdf0583c226e964b8c52196f36e61bbac81c4a93fe6dfa57bf5a43f96832f5ce2b425e49f5fb8f3a4f2859491db2cbb8b0095159806b5e9f62#npm:10.2.6"],\
@@ -1850,7 +1850,7 @@ const RAW_RUNTIME_STATE =
           ["@mikro-orm/seeder", "virtual:0c7048dfa7ad9964f73a280deb3032c0a4dae8a2fa7a03fd80afba489b93156936e86e9d779931958bcd383dc0ae56a0f54eb0c1c382c8d44aab863d3b905c79#npm:5.9.4"],\
           ["@monstrs/base-types", "npm:0.0.2"],\
           ["@monstrs/logger", "npm:0.0.20"],\
-          ["@monstrs/mtproto-core", "npm:0.0.25"],\
+          ["@monstrs/mtproto-core", "npm:0.0.26"],\
           ["@monstrs/nestjs-connectrpc", "virtual:0c7048dfa7ad9964f73a280deb3032c0a4dae8a2fa7a03fd80afba489b93156936e86e9d779931958bcd383dc0ae56a0f54eb0c1c382c8d44aab863d3b905c79#npm:0.0.3"],\
           ["@monstrs/nestjs-mikro-orm-config", "virtual:0c7048dfa7ad9964f73a280deb3032c0a4dae8a2fa7a03fd80afba489b93156936e86e9d779931958bcd383dc0ae56a0f54eb0c1c382c8d44aab863d3b905c79#npm:0.1.3"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
@@ -1965,7 +1965,7 @@ const RAW_RUNTIME_STATE =
           ["@mikro-orm/seeder", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:5.9.4"],\
           ["@monstrs/base-types", "npm:0.0.2"],\
           ["@monstrs/logger", "npm:0.0.20"],\
-          ["@monstrs/mtproto-core", "npm:0.0.25"],\
+          ["@monstrs/mtproto-core", "npm:0.0.26"],\
           ["@monstrs/nestjs-connectrpc", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:0.0.3"],\
           ["@monstrs/nestjs-mikro-orm-config", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:0.1.3"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
@@ -2080,7 +2080,7 @@ const RAW_RUNTIME_STATE =
           ["@mikro-orm/seeder", "virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#npm:5.9.4"],\
           ["@monstrs/base-types", "npm:0.0.2"],\
           ["@monstrs/logger", "npm:0.0.20"],\
-          ["@monstrs/mtproto-core", "npm:0.0.25"],\
+          ["@monstrs/mtproto-core", "npm:0.0.26"],\
           ["@monstrs/nestjs-connectrpc", "virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#npm:0.0.3"],\
           ["@monstrs/nestjs-mikro-orm-config", "virtual:6d7490efae96347f4f75ac46ed03f4235de792b64f3a845034a1e506bc729409b6dce79ec16d1f944e6d07774bb948525583e4742da281748b04c6fe3820474a#npm:0.1.3"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.10"],\
@@ -3305,8 +3305,8 @@ const RAW_RUNTIME_STATE =
           ["@chats-system/client", "workspace:shared/client"],\
           ["@chats-system/handshake", "workspace:shared/handshake"],\
           ["@chats-system/tl", "workspace:shared/tl"],\
-          ["@monstrs/mtproto-codecs", "npm:0.0.29"],\
-          ["@monstrs/mtproto-core", "npm:0.0.25"],\
+          ["@monstrs/mtproto-codecs", "npm:0.0.30"],\
+          ["@monstrs/mtproto-core", "npm:0.0.26"],\
           ["@types/websocket", "npm:1.0.10"],\
           ["async-mutex", "npm:0.4.0"],\
           ["crypto-random-bigint", "npm:2.1.0"],\
@@ -3922,6 +3922,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/demo-dialog-page", "virtual:796df7178480337aa0dd17aeb0388e499b4f9667a44102fdbc79ec9c117fe5acc0c63a8380def75941f550ebbf604d9a0aab8c850568a4751238c4332e701074#workspace:applications/demo/pages/dialog-page"],\
           ["@chats-system/client", "workspace:shared/client"],\
+          ["@chats-system/tl", "workspace:shared/tl"],\
           ["@effector/next", "virtual:e76447b2085a143aab53bd995167b07eda1285f2682e203bef23afbd6748f7c94810e5871b763ac2445bf1e5aee8593a81d7743fbc84a2dde106fc970942aa91#npm:0.7.0"],\
           ["@ory/kratos-client", "npm:1.0.0"],\
           ["@types/effector", null],\
@@ -3929,6 +3930,9 @@ const RAW_RUNTIME_STATE =
           ["@types/react", "npm:18.2.43"],\
           ["@types/react-dom", "npm:18.2.17"],\
           ["@types/react-intl", null],\
+          ["@ui-proto/button", "virtual:bb4a5a74125727737405e37acb147285689426acf84607c6ca920f48359ca229ebc17f0bceb25e503fe184cf928d8e044076a2e94aeb3d61073c42c5cc568ef5#npm:0.2.5"],\
+          ["@ui-proto/input", "virtual:bb4a5a74125727737405e37acb147285689426acf84607c6ca920f48359ca229ebc17f0bceb25e503fe184cf928d8e044076a2e94aeb3d61073c42c5cc568ef5#npm:0.2.5"],\
+          ["@ui-proto/layout", "virtual:7595cc52bf427f9e343473f7e7946275f59cca6cebe2adc91660cf90981a5dcae9e0c8aac9f7e279c6ab0ada0ef949dda4f67a9343e9ce6e23c7d84948c5d9ae#npm:0.2.5"],\
           ["effector", "npm:23.0.0"],\
           ["effector-react", "virtual:e76447b2085a143aab53bd995167b07eda1285f2682e203bef23afbd6748f7c94810e5871b763ac2445bf1e5aee8593a81d7743fbc84a2dde106fc970942aa91#npm:23.0.1"],\
           ["next", "virtual:796df7178480337aa0dd17aeb0388e499b4f9667a44102fdbc79ec9c117fe5acc0c63a8380def75941f550ebbf604d9a0aab8c850568a4751238c4332e701074#npm:14.0.4"],\
@@ -3955,9 +3959,13 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/demo-dialog-page", "workspace:applications/demo/pages/dialog-page"],\
           ["@chats-system/client", "workspace:shared/client"],\
+          ["@chats-system/tl", "workspace:shared/tl"],\
           ["@effector/next", "virtual:e76447b2085a143aab53bd995167b07eda1285f2682e203bef23afbd6748f7c94810e5871b763ac2445bf1e5aee8593a81d7743fbc84a2dde106fc970942aa91#npm:0.7.0"],\
           ["@ory/kratos-client", "npm:1.0.0"],\
           ["@types/react", "npm:18.2.43"],\
+          ["@ui-proto/button", "virtual:e76447b2085a143aab53bd995167b07eda1285f2682e203bef23afbd6748f7c94810e5871b763ac2445bf1e5aee8593a81d7743fbc84a2dde106fc970942aa91#npm:0.2.5"],\
+          ["@ui-proto/input", "virtual:e76447b2085a143aab53bd995167b07eda1285f2682e203bef23afbd6748f7c94810e5871b763ac2445bf1e5aee8593a81d7743fbc84a2dde106fc970942aa91#npm:0.2.5"],\
+          ["@ui-proto/layout", "virtual:e76447b2085a143aab53bd995167b07eda1285f2682e203bef23afbd6748f7c94810e5871b763ac2445bf1e5aee8593a81d7743fbc84a2dde106fc970942aa91#npm:0.2.5"],\
           ["effector", "npm:23.0.0"],\
           ["effector-react", "virtual:e76447b2085a143aab53bd995167b07eda1285f2682e203bef23afbd6748f7c94810e5871b763ac2445bf1e5aee8593a81d7743fbc84a2dde106fc970942aa91#npm:23.0.1"],\
           ["next", "virtual:e76447b2085a143aab53bd995167b07eda1285f2682e203bef23afbd6748f7c94810e5871b763ac2445bf1e5aee8593a81d7743fbc84a2dde106fc970942aa91#npm:14.0.4"],\
@@ -4214,8 +4222,8 @@ const RAW_RUNTIME_STATE =
           ["@faker-js/faker", "npm:8.3.1"],\
           ["@jest/globals", "npm:29.7.0"],\
           ["@monstrs/logger", "npm:0.0.20"],\
-          ["@monstrs/mtproto-codecs", "npm:0.0.29"],\
-          ["@monstrs/mtproto-core", "npm:0.0.25"],\
+          ["@monstrs/mtproto-codecs", "npm:0.0.30"],\
+          ["@monstrs/mtproto-core", "npm:0.0.26"],\
           ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
           ["@monstrs/nestjs-connectrpc", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#npm:0.0.3"],\
           ["@monstrs/nestjs-connectrpc-errors", "virtual:7f82297873259a0a60cf275b1db7557b87dda938a85dd17fff2c7c9838346deba09cf9c5158e57324e9a63f663006d2e1d28cf1ddd46f1a330bc8d5ecfba3936#npm:0.0.3"],\
@@ -4297,8 +4305,8 @@ const RAW_RUNTIME_STATE =
           ["@faker-js/faker", "npm:8.3.1"],\
           ["@jest/globals", "npm:29.7.0"],\
           ["@monstrs/logger", "npm:0.0.20"],\
-          ["@monstrs/mtproto-codecs", "npm:0.0.29"],\
-          ["@monstrs/mtproto-core", "npm:0.0.25"],\
+          ["@monstrs/mtproto-codecs", "npm:0.0.30"],\
+          ["@monstrs/mtproto-core", "npm:0.0.26"],\
           ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
           ["@monstrs/nestjs-connectrpc", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:0.0.3"],\
           ["@monstrs/nestjs-connectrpc-errors", "virtual:dfbe61e4f62815636492187a2d22f09104bc50655360901d3c2612cff2679b9b143fb8ae49f6c937247857761621d3c101a726fd0253082e5db2253f31d5e318#npm:0.0.3"],\
@@ -4380,8 +4388,8 @@ const RAW_RUNTIME_STATE =
           ["@faker-js/faker", "npm:8.3.1"],\
           ["@jest/globals", "npm:29.7.0"],\
           ["@monstrs/logger", "npm:0.0.20"],\
-          ["@monstrs/mtproto-codecs", "npm:0.0.29"],\
-          ["@monstrs/mtproto-core", "npm:0.0.25"],\
+          ["@monstrs/mtproto-codecs", "npm:0.0.30"],\
+          ["@monstrs/mtproto-core", "npm:0.0.26"],\
           ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
           ["@monstrs/nestjs-connectrpc", "virtual:9e882501ecd5efcf844b4864bd49121b45317d9b35b65457b3b3aaf8ce3851b3a5925a87eecfbcc2575f066c2b4e44c01774eba257717f854d5a5d1b6593d86f#npm:0.0.3"],\
           ["@monstrs/nestjs-connectrpc-errors", "virtual:9e882501ecd5efcf844b4864bd49121b45317d9b35b65457b3b3aaf8ce3851b3a5925a87eecfbcc2575f066c2b4e44c01774eba257717f854d5a5d1b6593d86f#npm:0.0.3"],\
@@ -4523,8 +4531,8 @@ const RAW_RUNTIME_STATE =
           ["@monstrs/buffer-utils", "npm:0.0.9"],\
           ["@monstrs/crypto-utils", "npm:0.0.2"],\
           ["@monstrs/logger", "npm:0.0.20"],\
-          ["@monstrs/mtproto-codecs", "npm:0.0.29"],\
-          ["@monstrs/mtproto-core", "npm:0.0.25"],\
+          ["@monstrs/mtproto-codecs", "npm:0.0.30"],\
+          ["@monstrs/mtproto-core", "npm:0.0.26"],\
           ["@monstrs/mtproto-crypto", "npm:0.0.5"]\
         ],\
         "linkType": "SOFT"\
@@ -7127,7 +7135,7 @@ const RAW_RUNTIME_STATE =
           ["@monstrs/base-types", "npm:0.0.2"],\
           ["@monstrs/buffer-utils", "npm:0.0.9"],\
           ["@monstrs/logger", "npm:0.0.20"],\
-          ["@monstrs/mtproto-core", "npm:0.0.25"],\
+          ["@monstrs/mtproto-core", "npm:0.0.26"],\
           ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
           ["@monstrs/mtproto-tl-core", "npm:0.0.8"],\
           ["@monstrs/nestjs-connectrpc", "virtual:a45b73e4ddea4b585aef9acec377f5481565662c46b28915812d889a1a3c2ccded76a762511eb0b2869e5eaa8546d900a1453e44611b35adc9d8fee701e387ae#npm:0.0.3"],\
@@ -7220,7 +7228,7 @@ const RAW_RUNTIME_STATE =
           ["@monstrs/base-types", "npm:0.0.2"],\
           ["@monstrs/buffer-utils", "npm:0.0.9"],\
           ["@monstrs/logger", "npm:0.0.20"],\
-          ["@monstrs/mtproto-core", "npm:0.0.25"],\
+          ["@monstrs/mtproto-core", "npm:0.0.26"],\
           ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
           ["@monstrs/mtproto-tl-core", "npm:0.0.8"],\
           ["@monstrs/nestjs-connectrpc", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:0.0.3"],\
@@ -7312,7 +7320,7 @@ const RAW_RUNTIME_STATE =
           ["@monstrs/base-types", "npm:0.0.2"],\
           ["@monstrs/buffer-utils", "npm:0.0.9"],\
           ["@monstrs/logger", "npm:0.0.20"],\
-          ["@monstrs/mtproto-core", "npm:0.0.25"],\
+          ["@monstrs/mtproto-core", "npm:0.0.26"],\
           ["@monstrs/mtproto-extensions", "npm:0.0.3"],\
           ["@monstrs/mtproto-tl-core", "npm:0.0.8"],\
           ["@monstrs/nestjs-connectrpc", "virtual:690407a8d86dc802e6089752b2c7705fe10a2f6c49dfe1a05e4789a4979d4c37bc26efc784142215157a5b1c8f8c0bf6cc0c4ab3183e6d15598d098f7efb88d2#npm:0.0.3"],\
@@ -15022,21 +15030,21 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@monstrs/mtproto-codecs", [\
-      ["npm:0.0.29", {\
-        "packageLocation": "./.yarn/unplugged/@monstrs-mtproto-codecs-npm-0.0.29-8a7c52cf61/node_modules/@monstrs/mtproto-codecs/",\
+      ["npm:0.0.30", {\
+        "packageLocation": "./.yarn/cache/@monstrs-mtproto-codecs-npm-0.0.30-e9c48bc91e-e8e4831da0.zip/node_modules/@monstrs/mtproto-codecs/",\
         "packageDependencies": [\
-          ["@monstrs/mtproto-codecs", "npm:0.0.29"],\
+          ["@monstrs/mtproto-codecs", "npm:0.0.30"],\
           ["@monstrs/buffer-utils", "npm:0.0.6"],\
-          ["@monstrs/mtproto-core", "npm:0.0.25"]\
+          ["@monstrs/mtproto-core", "npm:0.0.26"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@monstrs/mtproto-core", [\
-      ["npm:0.0.25", {\
-        "packageLocation": "./.yarn/unplugged/@monstrs-mtproto-core-npm-0.0.25-c8803031e6/node_modules/@monstrs/mtproto-core/",\
+      ["npm:0.0.26", {\
+        "packageLocation": "./.yarn/cache/@monstrs-mtproto-core-npm-0.0.26-dcdfd128a5-67003f017b.zip/node_modules/@monstrs/mtproto-core/",\
         "packageDependencies": [\
-          ["@monstrs/mtproto-core", "npm:0.0.25"],\
+          ["@monstrs/mtproto-core", "npm:0.0.26"],\
           ["@monstrs/bigint-utils", "npm:0.0.2"],\
           ["@monstrs/buffer-utils", "npm:0.0.6"],\
           ["@monstrs/mtproto-crypto", "npm:0.0.5"],\
