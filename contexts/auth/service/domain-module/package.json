@@ -10,7 +10,7 @@
   },
   "main": "src/index.ts",
   "dependencies": {
-    "@monstrs/mtproto-core": "^0.0.25",
+    "@monstrs/mtproto-core": "^0.0.26",
     "crypto-random-bigint": "^2.1.0"
   },
   "devDependencies": {
@@ -19,7 +19,7 @@
     "@nestjs/core": "^10.2.10",
     "@nestjs/cqrs": "^10.2.6",
     "@nestjs/testing": "^10.2.10",
-    "@types/node": "^20.10.2",
+    "@types/node": "^20.10.4",
     "rxjs": "^7.8.1"
   },
   "peerDependencies": {

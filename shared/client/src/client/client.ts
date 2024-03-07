@@ -19,18 +19,14 @@ export class Client {
 
   static SLEEP_TRESHOLD = 10_000
 
-  private storage: AbstractStorage
-
-  private address: string
-
   private session?: Session
 
   private updateHandlers: Set<(update: TL.TypeUpdate) => void> = new Set()
 
-  constructor(address: string) {
-    this.storage = new MemoryStorage()
-    this.address = address
-  }
+  constructor(
+    private readonly address: string,
+    private readonly storage: AbstractStorage = new MemoryStorage()
+  ) {}
 
   async getAuthKey(): Promise<MTProtoAuthKey | undefined> {
     return this.storage.getAuthKey()
@@ -44,9 +40,9 @@ export class Client {
     this.updateHandlers.delete(callback)
   }
 
-  async start(): Promise<void> {
+  async start(): Promise<MTProtoAuthKey> {
     if (!(await this.storage.getAuthKey())) {
-      await this.storage.setAuthKey(await this.auth())
+      await this.storage.setAuthKey(await this.handshake())
     }
 
     this.session = new Session(this.address, (await this.storage.getAuthKey())!, (
@@ -56,6 +52,8 @@ export class Client {
     })
 
     await this.session.start()
+
+    return (await this.storage.getAuthKey())!
   }
 
   async stop(): Promise<void> {
@@ -90,7 +88,7 @@ export class Client {
     })
   }
 
-  protected async auth(): Promise<MTProtoAuthKey> {
+  protected async handshake(): Promise<MTProtoAuthKey> {
     // eslint-disable-next-line no-constant-condition
     while (true) {
       const connection = new Connection(this.address)

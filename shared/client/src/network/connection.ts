@@ -21,12 +21,11 @@ export class Connection {
 
   async connect(): Promise<void> {
     if (!this.client) {
-      // eslint-disable-next-line no-plusplus
-      for (let i = 0; i < Connection.MAX_RETRIES; i++) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/naming-convention
+      for await (const _ of Array.from({ length: Connection.MAX_RETRIES })) {
         this.client = new Client()
 
         try {
-          // eslint-disable-next-line no-await-in-loop
           await this.client.connect(this.address)
 
           break
@@ -37,7 +36,6 @@ export class Connection {
           this.client.destroy()
           this.client = undefined
 
-          // eslint-disable-next-line no-await-in-loop
           await setTimeout(2000)
         }
       }

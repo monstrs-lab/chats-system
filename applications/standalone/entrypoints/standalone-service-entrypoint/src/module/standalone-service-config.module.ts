@@ -15,6 +15,7 @@ import { GatewayClientModule }        from '@chats-system/gateway-client-module'
 import { IdGenClientModule }          from '@chats-system/idgen-client-module'
 import { MessagesClientModule }       from '@chats-system/messages-client-module'
 import { SessionClientModule }        from '@chats-system/session-client-module'
+import { UpdatesClientModule }        from '@chats-system/updates-client-module'
 import { UserClientModule }           from '@chats-system/user-client-module'
 
 import { entities }                   from '../entities/index.js'
@@ -35,6 +36,7 @@ export class StandaloneServiceConfigModule implements OnModuleInit {
         SessionClientModule.register(),
         GatewayClientModule.register(),
         MessagesClientModule.register(),
+        UpdatesClientModule.register(),
         RedisModule.register({}, true),
         MikroOrmModule.forRootAsync({
           imports: [

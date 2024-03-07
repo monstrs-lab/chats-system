@@ -1,48 +1,61 @@
-import WebSocket                   from 'ws'
+import type { IMessageEvent }           from 'websocket'
 
-import { ClientDisconnectedError } from '../errors/index.js'
+import { EventEmitter }                 from 'node:events'
 
-export class Client {
-  private client?: WebSocket
+import { w3cwebsocket as W3CWebSocket } from 'websocket'
+
+import { ClientDisconnectedError }      from '../errors/index.js'
+
+export class Client extends EventEmitter {
+  private client?: W3CWebSocket
 
   async connect(address: string): Promise<void> {
-    this.client = new WebSocket(address)
+    this.client = new W3CWebSocket(address)
+    this.client.binaryType = 'arraybuffer'
 
     return new Promise((resolve, reject) => {
-      this.client!.once('open', () => {
-        resolve()
-      })
+      this.client!.onopen = (): void => {
+        this.client!.onmessage = (message: IMessageEvent): void => {
+          this.emit('message', Buffer.from(message.data as SharedArrayBuffer))
+        }
 
-      this.client!.once('error', (error) => {
+        this.client!.onclose = (): void => {
+          this.emit('close')
+        }
+
+        resolve()
+      }
+
+      this.client!.onerror = (error): void => {
         reject(error)
-        this.client!.terminate()
-      })
+
+        this.client = undefined
+      }
     })
   }
 
   destroy(): void {
     if (this.client) {
-      this.client.removeAllListeners()
+      this.removeAllListeners()
       this.client.close()
-      this.client.terminate()
       this.client = undefined
     }
   }
 
   async recv(): Promise<Buffer> {
-    if (this.client?.readyState !== WebSocket.OPEN) {
+    if (this.client?.readyState !== W3CWebSocket.OPEN) {
       throw new ClientDisconnectedError()
     }
 
     return new Promise((resolve) => {
-      this.client!.once('message', (data: Buffer) => {
+      this.on('message', (data: Buffer) => {
         resolve(data)
       })
     })
   }
 
   async send(data: Buffer): Promise<void> {
-    if (this.client?.readyState !== WebSocket.OPEN) {
+    if (this.client?.readyState !== W3CWebSocket.OPEN) {
       throw new ClientDisconnectedError()
     }
 
@@ -50,13 +63,13 @@ export class Client {
   }
 
   onData(listener: (data: Buffer) => Promise<void>): void {
-    this.client?.on('message', (data: Buffer) => {
+    this.on('message', (data: Buffer) => {
       listener(data)
     })
   }
 
   onClose(listener: () => Promise<void>): void {
-    this.client?.on('close', () => {
+    this.on('close', () => {
       listener()
     })
   }
