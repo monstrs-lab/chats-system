@@ -1,17 +1,15 @@
 import type { PromiseClient }          from '@connectrpc/connect'
-import type { MikroOrmModuleOptions }  from '@mikro-orm/nestjs'
 import type { INestMicroservice }      from '@nestjs/common'
 import type { StartedTestContainer }   from 'testcontainers'
 
 import { randomBytes }                 from 'node:crypto'
 
 import { MikroORM }                    from '@mikro-orm/core'
+import { Migrator }                    from '@mikro-orm/migrations'
 import { MikroOrmModule }              from '@mikro-orm/nestjs'
 import { PostgreSqlDriver }            from '@mikro-orm/postgresql'
 import { ConnectRpcServer }            from '@monstrs/nestjs-connectrpc'
 import { ServerProtocol }              from '@monstrs/nestjs-connectrpc'
-import { MikroORMConfigModule }        from '@monstrs/nestjs-mikro-orm-config'
-import { MikroORMConfig }              from '@monstrs/nestjs-mikro-orm-config'
 import { Test }                        from '@nestjs/testing'
 import { createPromiseClient }         from '@connectrpc/connect'
 import { createGrpcTransport }         from '@connectrpc/connect-node'
@@ -53,18 +51,22 @@ describe('authkey', () => {
         const testingModule = await Test.createTestingModule({
           imports: [
             AuthKeyInfrastructureModule.register(),
-            MikroOrmModule.forRootAsync({
-              imports: [
-                MikroORMConfigModule.register({
-                  driver: PostgreSqlDriver,
-                  port: postgres.getMappedPort(5432),
-                  migrationsList: migrations,
-                  entities,
-                }),
-              ],
-              useFactory: async (mikroORMConfig: MikroORMConfig): Promise<MikroOrmModuleOptions> =>
-                mikroORMConfig.createMikroOrmOptions(),
-              inject: [MikroORMConfig],
+            MikroOrmModule.forRoot({
+              driver: PostgreSqlDriver,
+              port: postgres.getMappedPort(5432),
+              dbName: 'db',
+              user: 'postgres',
+              password: 'password',
+              entities: Object.values(entities),
+              forceUndefined: true,
+              migrations: {
+                disableForeignKeys: false,
+                migrationsList: Object.keys(migrations).map((name: string) => ({
+                  class: migrations[name as keyof typeof migrations],
+                  name,
+                })),
+              },
+              extensions: [Migrator],
             }),
           ],
         }).compile()

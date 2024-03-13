@@ -1,0 +1,138 @@
+{
+  "constructors": [
+    {
+      "id": 880243653,
+      "predicate": "pong",
+      "params": [
+        { "name": "msg_id", "type": "long" },
+        { "name": "ping_id", "type": "long" }
+      ],
+      "type": "Pong"
+    },
+    {
+      "id": 85337187,
+      "predicate": "resPQ",
+      "params": [
+        { "name": "nonce", "type": "int128" },
+        { "name": "server_nonce", "type": "int128" },
+        { "name": "pq", "type": "bytes" },
+        { "name": "server_public_key_fingerprints", "type": "Vector<long>" }
+      ],
+      "type": "ResPQ"
+    },
+    {
+      "id": 2851430293,
+      "predicate": "p_q_inner_data",
+      "params": [
+        { "name": "pq", "type": "bytes" },
+        { "name": "p", "type": "bytes" },
+        { "name": "q", "type": "bytes" },
+        { "name": "nonce", "type": "int128" },
+        { "name": "server_nonce", "type": "int128" },
+        { "name": "new_nonce", "type": "int256" }
+      ],
+      "type": "P_Q_inner_data"
+    },
+    {
+      "id": 3504867164,
+      "predicate": "server_DH_params_ok",
+      "params": [
+        { "name": "nonce", "type": "int128" },
+        { "name": "server_nonce", "type": "int128" },
+        { "name": "encrypted_answer", "type": "bytes" }
+      ],
+      "type": "Server_DH_Params"
+    },
+    {
+      "id": 3045658042,
+      "predicate": "server_DH_inner_data",
+      "params": [
+        { "name": "nonce", "type": "int128" },
+        { "name": "server_nonce", "type": "int128" },
+        { "name": "g", "type": "int" },
+        { "name": "dh_prime", "type": "bytes" },
+        { "name": "g_a", "type": "bytes" },
+        { "name": "server_time", "type": "int" }
+      ],
+      "type": "Server_DH_inner_data"
+    },
+    {
+      "id": 1715713620,
+      "predicate": "client_DH_inner_data",
+      "params": [
+        { "name": "nonce", "type": "int128" },
+        { "name": "server_nonce", "type": "int128" },
+        { "name": "retry_id", "type": "long" },
+        { "name": "g_b", "type": "bytes" }
+      ],
+      "type": "Client_DH_Inner_Data"
+    },
+    {
+      "id": 1003222836,
+      "predicate": "dh_gen_ok",
+      "params": [
+        { "name": "nonce", "type": "int128" },
+        { "name": "server_nonce", "type": "int128" },
+        { "name": "new_nonce_hash1", "type": "int128" }
+      ],
+      "type": "Set_client_DH_params_answer"
+    },
+    {
+      "id": 1188831161,
+      "predicate": "dh_gen_retry",
+      "params": [
+        { "name": "nonce", "type": "int128" },
+        { "name": "server_nonce", "type": "int128" },
+        { "name": "new_nonce_hash2", "type": "int128" }
+      ],
+      "type": "Set_client_DH_params_answer"
+    },
+    {
+      "id": 2795351554,
+      "predicate": "dh_gen_fail",
+      "params": [
+        { "name": "nonce", "type": "int128" },
+        { "name": "server_nonce", "type": "int128" },
+        { "name": "new_nonce_hash3", "type": "int128" }
+      ],
+      "type": "Set_client_DH_params_answer"
+    }
+  ],
+  "methods": [
+    {
+      "id": 3195965169,
+      "method": "req_pq_multi",
+      "params": [{ "name": "nonce", "type": "int128" }],
+      "type": "ResPQ"
+    },
+    {
+      "id": 3608339646,
+      "method": "req_DH_params",
+      "params": [
+        { "name": "nonce", "type": "int128" },
+        { "name": "server_nonce", "type": "int128" },
+        { "name": "p", "type": "bytes" },
+        { "name": "q", "type": "bytes" },
+        { "name": "public_key_fingerprint", "type": "long" },
+        { "name": "encrypted_data", "type": "bytes" }
+      ],
+      "type": "Server_DH_Params"
+    },
+    {
+      "id": 4110704415,
+      "method": "set_client_DH_params",
+      "params": [
+        { "name": "nonce", "type": "int128" },
+        { "name": "server_nonce", "type": "int128" },
+        { "name": "encrypted_data", "type": "bytes" }
+      ],
+      "type": "Set_client_DH_params_answer"
+    },
+    {
+      "id": 2059302892,
+      "method": "ping",
+      "params": [{ "name": "ping_id", "type": "long" }],
+      "type": "Pong"
+    }
+  ]
+}

@@ -9,7 +9,7 @@ import { AuthKeyType }      from '@chats-system/authkey-domain-module'
 import { NativeBigIntType } from '../types/index.js'
 
 @Entity({ tableName: 'auth_keys' })
-export class AuthKeyEntity extends BaseEntity<AuthKeyEntity, 'authKeyId'> {
+export class AuthKeyEntity extends BaseEntity {
   @PrimaryKey({ type: NativeBigIntType })
   authKeyId!: bigint
 

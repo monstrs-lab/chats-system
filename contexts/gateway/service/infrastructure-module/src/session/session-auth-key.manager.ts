@@ -4,7 +4,7 @@ import { MTProtoAuthKeyManager } from '@monstrs/mtproto-core'
 import { Injectable }            from '@nestjs/common'
 
 import { AuthKeyClient }         from '@chats-system/authkey-client-module'
-import { AuthKeyType }           from '@chats-system/authkey-rpc-client'
+import { AuthKeyType }           from '@chats-system/authkey-client-module'
 
 @Injectable()
 export class SessionAuthKeyManager extends MTProtoAuthKeyManager {

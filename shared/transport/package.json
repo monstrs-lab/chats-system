@@ -1,0 +1,24 @@
+{
+  "name": "@chats-system/transport",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./src/index.ts"
+  },
+  "main": "src/index.ts",
+  "scripts": {
+    "generate": "yarn generate:json && yarn generate:typescript",
+    "generate:json": "yarn dlx tl-to-json chats-system.schema.tl chats-system.schema.json",
+    "generate:typescript": "yarn tl-to-typescript --schema chats-system.schema.json --output ./src"
+  },
+  "dependencies": {
+    "@monstrs/mtproto-tl-core": "^0.0.11",
+    "@monstrs/mtproto-tl-primitives": "^0.0.4"
+  },
+  "devDependencies": {
+    "@monstrs/mtproto-tl-to-typescript": "^0.0.14"
+  }
+}
