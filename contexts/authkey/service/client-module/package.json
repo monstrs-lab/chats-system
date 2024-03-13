@@ -15,12 +15,12 @@
     "dataloader": "^2.2.2"
   },
   "devDependencies": {
-    "@bufbuild/protobuf": "^1.5.1",
-    "@connectrpc/connect": "^1.1.4",
-    "@connectrpc/connect-node": "^1.1.4",
-    "@nestjs/common": "^10.2.10",
-    "@nestjs/core": "^10.2.10",
-    "reflect-metadata": "^0.1.14",
+    "@bufbuild/protobuf": "^1.7.2",
+    "@connectrpc/connect": "^1.4.0",
+    "@connectrpc/connect-node": "^1.4.0",
+    "@nestjs/common": "^10.3.3",
+    "@nestjs/core": "^10.3.3",
+    "reflect-metadata": "^0.2.1",
     "rxjs": "^7.8.1"
   },
   "peerDependencies": {

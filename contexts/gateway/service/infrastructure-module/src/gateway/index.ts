@@ -1,1 +1,1 @@
-export * from './mtproto.gateway.js'
+export * from './chats-system.gateway.js'

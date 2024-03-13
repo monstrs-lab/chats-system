@@ -8,7 +8,7 @@ import { NativeBigIntType } from '../types/index.js'
 
 @Entity({ tableName: 'auth_key_users' })
 @Unique({ properties: ['authKeyId', 'userId'] })
-export class AuthKeyUserEntity extends BaseEntity<AuthKeyUserEntity, 'id'> {
+export class AuthKeyUserEntity extends BaseEntity {
   @PrimaryKey({ type: NativeBigIntType })
   id!: bigint
 

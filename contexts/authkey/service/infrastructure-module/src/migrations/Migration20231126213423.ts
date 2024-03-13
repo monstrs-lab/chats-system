@@ -17,4 +17,7 @@ export class Migration20231126213423 extends Migration {
       'alter table "auth_key_users" add constraint "auth_key_users_auth_key_id_user_id_unique" unique ("auth_key_id", "user_id");'
     )
   }
+
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  override async down(): Promise<void> {}
 }

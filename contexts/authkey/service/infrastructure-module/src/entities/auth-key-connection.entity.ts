@@ -6,7 +6,7 @@ import { BaseEntity }       from '@mikro-orm/core'
 import { NativeBigIntType } from '../types/index.js'
 
 @Entity({ tableName: 'auth_key_connections' })
-export class AuthKeyConnectionEntity extends BaseEntity<AuthKeyConnectionEntity, 'authKeyId'> {
+export class AuthKeyConnectionEntity extends BaseEntity {
   @PrimaryKey({ type: NativeBigIntType })
   authKeyId!: bigint
 

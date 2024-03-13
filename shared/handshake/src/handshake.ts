@@ -1,6 +1,7 @@
 import { randomBytes }                 from 'node:crypto'
 import { createHash }                  from 'node:crypto'
 
+import * as Primitives                 from '@monstrs/mtproto-tl-primitives'
 import { MTProtoAuthKeyType }          from '@monstrs/mtproto-core'
 import { MTProtoKeyPair }              from '@monstrs/mtproto-core'
 import { MTProtoAuthKey }              from '@monstrs/mtproto-core'
@@ -12,10 +13,7 @@ import { fromBigIntToBuffer }          from '@monstrs/buffer-utils'
 import { modExp }                      from '@monstrs/crypto-utils'
 import { calculateNonceHash }          from '@monstrs/mtproto-crypto'
 
-import { TLObject }                    from '@chats-system/tl'
-import { BytesIO }                     from '@chats-system/tl'
-import { Prime }                       from '@chats-system/tl'
-import TL                              from '@chats-system/tl'
+import * as Transport                  from '@chats-system/transport'
 
 import { HandshakeState }              from './handshake.state.js'
 import { key }                         from './handshake.constants.js'
@@ -28,8 +26,8 @@ import { q }                           from './handshake.constants.js'
 export class Handshake {
   #state = new HandshakeState()
 
-  async sendReqPQMulti(): Promise<{ reqPQMulti: TL.ReqPqMulti }> {
-    const reqPQMulti = new TL.ReqPqMulti({
+  async sendReqPQMulti(): Promise<{ reqPQMulti: Transport.ReqPqMulti }> {
+    const reqPQMulti = new Transport.ReqPqMulti({
       nonce: fromBufferToBigInt(Buffer.from(randomBytes(16)), false, true),
     })
 
@@ -38,8 +36,8 @@ export class Handshake {
     return { reqPQMulti }
   }
 
-  async handleReqPQMulti(reqPQ: TL.ReqPqMulti): Promise<{ resPQ: TL.ResPQ }> {
-    const resPQ = new TL.ResPQ({
+  async handleReqPQMulti(reqPQ: Transport.ReqPqMulti): Promise<{ resPQ: Transport.ResPQ }> {
+    const resPQ = new Transport.ResPQ({
       nonce: reqPQ.nonce,
       serverNonce: fromBufferToBigInt(Buffer.from(randomBytes(16)), false, true),
       pq,
@@ -52,7 +50,7 @@ export class Handshake {
     return { resPQ }
   }
 
-  async handleResPQ(resPQ: TL.ResPQ): Promise<{ reqDhParams: TL.ReqDhParams }> {
+  async handleResPQ(resPQ: Transport.ResPQ): Promise<{ reqDhParams: Transport.ReqDHParams }> {
     const nonce = this.#state.getNonce()
 
     if (!nonce) {
@@ -60,7 +58,7 @@ export class Handshake {
     }
 
     const pqValue = fromBufferToBigInt(resPQ.pq, false, true)
-    const g = Prime.decompose(pqValue)
+    const g = Primitives.Prime.decompose(pqValue)
 
     const [pValue, qValue] = [BigInt(g), BigInt(pqValue / g)].sort((a: bigint, b: bigint) => {
       if (a > b) return 1
@@ -73,7 +71,7 @@ export class Handshake {
 
     const newNonce = fromBufferToBigInt(Buffer.from(randomBytes(32)), false, true)
 
-    const pqInnerData = new TL.PQInnerData({
+    const pqInnerData = new Transport.PQInnerData({
       pq: resPQ.pq,
       p: pBytes,
       q: qBytes,
@@ -119,7 +117,7 @@ export class Handshake {
       throw new Error('Could create a secure encrypted key')
     }
 
-    const reqDhParams = new TL.ReqDhParams({
+    const reqDhParams = new Transport.ReqDHParams({
       nonce,
       serverNonce: resPQ.serverNonce,
       p: pBytes,
@@ -135,8 +133,8 @@ export class Handshake {
   }
 
   async handleReqDHParams(
-    reqDHParams: TL.ReqDhParams
-  ): Promise<{ serverDHParamsOk: TL.ServerDhParamsOk }> {
+    reqDHParams: Transport.ReqDHParams
+  ): Promise<{ serverDHParamsOk: Transport.ServerDHParamsOk }> {
     if (reqDHParams.nonce !== this.#state.getNonce()) {
       throw new Error(
         `ReqDHParams: invalid nonce, require ${this.#state.getNonce()!}, received ${
@@ -184,9 +182,9 @@ export class Handshake {
     const dataPadReversed = dataWithHash.subarray(0, dataWithHash.length - 32)
     const dataWithPadding = Buffer.from(dataPadReversed).reverse()
 
-    const innerData = await TLObject.read(new BytesIO(dataWithPadding))
+    const innerData = await Transport.registry.read(new Primitives.BytesIO(dataWithPadding))
 
-    if (!(innerData instanceof TL.PQInnerData)) {
+    if (!(innerData instanceof Transport.PQInnerData)) {
       throw new Error(`ReqDHParams: invalid pq inner data ${innerData.constructor.name}`)
     }
 
@@ -209,7 +207,7 @@ export class Handshake {
     const a = fromBufferToBigInt(randomBytes(256))
     const gA = modExp(fromBufferToBigInt(dh2048G), a, fromBufferToBigInt(dh2048P))
 
-    const serverDHInnerData = new TL.ServerDhInnerData({
+    const serverDHInnerData = new Transport.ServerDHInnerData({
       nonce: reqDHParams.nonce,
       serverNonce: reqDHParams.serverNonce,
       g: dh2048G[0],
@@ -227,7 +225,7 @@ export class Handshake {
 
     const bytes = serverDHInnerData.write()
 
-    const serverDHParamsOk = new TL.ServerDhParamsOk({
+    const serverDHParamsOk = new Transport.ServerDHParamsOk({
       nonce: reqDHParams.nonce,
       serverNonce: reqDHParams.serverNonce,
       encryptedAnswer: igeEncode.encrypt(
@@ -242,8 +240,8 @@ export class Handshake {
   }
 
   async handleServerDhParams(
-    serverDhParams: TL.ServerDhParamsOk
-  ): Promise<{ setClientDhParams: TL.SetClientDhParams; authKey: MTProtoAuthKey }> {
+    serverDhParams: Transport.ServerDHParamsOk
+  ): Promise<{ setClientDhParams: Transport.SetClientDHParams; authKey: MTProtoAuthKey }> {
     const keyPair = MTProtoKeyPair.fromNonce(
       this.#state.getServerNonce()!,
       this.#state.getNewNonce()!
@@ -252,11 +250,11 @@ export class Handshake {
     const ige = new IGE(keyPair.key, keyPair.iv)
     const answerWithHash = ige.decrypt(serverDhParams.encryptedAnswer)
 
-    const answer = new BytesIO(answerWithHash)
+    const answer = new Primitives.BytesIO(answerWithHash)
 
     answer.seek(20, 1)
 
-    const serverDhInnerData: TL.ServerDhInnerData = await TLObject.read(answer)
+    const serverDhInnerData: Transport.ServerDHInnerData = await Transport.registry.read(answer)
 
     const dhPrime = fromBufferToBigInt(serverDhInnerData.dhPrime, false, false)
 
@@ -266,7 +264,7 @@ export class Handshake {
     const gb = modExp(BigInt(serverDhInnerData.g), b, dhPrime)
     const gab = modExp(ga, b, dhPrime)
 
-    const clientDhInnerData = new TL.ClientDhInnerData({
+    const clientDhInnerData = new Transport.ClientDHInnerData({
       nonce: this.#state.getNonce()!,
       serverNonce: this.#state.getServerNonce()!,
       retryId: BigInt(0),
@@ -284,7 +282,7 @@ export class Handshake {
 
     const authKey = new MTProtoAuthKey(fromBigIntToByteArrayBuffer(gab))
 
-    const setClientDhParams = new TL.SetClientDhParams({
+    const setClientDhParams = new Transport.SetClientDHParams({
       nonce: this.#state.getNonce()!,
       serverNonce: this.#state.getServerNonce()!,
       encryptedData: clientDhEncrypted,
@@ -294,8 +292,8 @@ export class Handshake {
   }
 
   async handleSetClientDHParams(
-    setClientDHParams: TL.SetClientDhParams
-  ): Promise<{ dhGenOk: TL.DhGenOk; authKey: MTProtoAuthKey }> {
+    setClientDHParams: Transport.SetClientDHParams
+  ): Promise<{ dhGenOk: Transport.DhGenOk; authKey: MTProtoAuthKey }> {
     if (setClientDHParams.nonce !== this.#state.getNonce()) {
       throw new Error(
         `SetClientDHParams: invalid nonce, require ${this.#state.getNonce()!}, received ${
@@ -321,9 +319,9 @@ export class Handshake {
     const clientDhEncrypted = igeEncode.decrypt(setClientDHParams.encryptedData)
     const clientDh = clientDhEncrypted.subarray(20, clientDhEncrypted.length)
 
-    const clientDHInnerData = await TLObject.read(new BytesIO(clientDh))
+    const clientDHInnerData = await Transport.registry.read(new Primitives.BytesIO(clientDh))
 
-    if (!(clientDHInnerData instanceof TL.ClientDhInnerData)) {
+    if (!(clientDHInnerData instanceof Transport.ClientDHInnerData)) {
       throw new Error(
         `SetClientDHParams: invalid pq inner data ${clientDHInnerData.constructor.name}`
       )
@@ -353,7 +351,7 @@ export class Handshake {
 
     const authKey = new MTProtoAuthKey(fromBigIntToByteArrayBuffer(gab), MTProtoAuthKeyType.PERM)
 
-    const dhGenOk = new TL.DhGenOk({
+    const dhGenOk = new Transport.DhGenOk({
       nonce: setClientDHParams.nonce,
       serverNonce: setClientDHParams.serverNonce,
       newNonceHash1: calculateNonceHash(this.#state.getNewNonce()!, authKey.auxHash, 1),

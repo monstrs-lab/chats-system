@@ -11,15 +11,12 @@
   "main": "src/index.ts",
   "dependencies": {
     "@chats-system/handshake": "workspace:0.0.1",
-    "@chats-system/tl": "workspace:0.0.1",
-    "@monstrs/mtproto-codecs": "^0.0.30",
-    "@monstrs/mtproto-core": "^0.0.26",
-    "async-mutex": "^0.4.0",
+    "@chats-system/transport": "workspace:0.0.1",
+    "@monstrs/mtproto-codecs": "^0.0.32",
+    "@monstrs/mtproto-core": "^0.0.27",
+    "@monstrs/mtproto-tl-core": "^0.0.11",
+    "@monstrs/mtproto-tl-primitives": "^0.0.4",
     "crypto-random-bigint": "^2.1.0",
-    "p-timeout": "^6.1.2",
-    "websocket": "^1.0.34"
-  },
-  "devDependencies": {
-    "@types/websocket": "^1.0.10"
+    "socket.io-client": "^4.7.4"
   }
 }

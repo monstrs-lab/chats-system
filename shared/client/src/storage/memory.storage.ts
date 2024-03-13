@@ -1,15 +1,15 @@
-import type { MTProtoAuthKey } from '@monstrs/mtproto-core'
+import type { StorageData } from './abstract.storage.js'
 
-import { AbstractStorage }     from './abstract.storage.js'
+import { AbstractStorage }  from './abstract.storage.js'
 
 export class MemoryStorage extends AbstractStorage {
-  #authKey?: MTProtoAuthKey
+  #metadata: StorageData | undefined
 
-  override async setAuthKey(authKey: MTProtoAuthKey): Promise<void> {
-    this.#authKey = authKey
+  protected override async read(): Promise<StorageData | undefined> {
+    return this.#metadata
   }
 
-  override async getAuthKey(): Promise<MTProtoAuthKey | undefined> {
-    return this.#authKey
+  protected override async write(metadata: StorageData): Promise<void> {
+    this.#metadata = metadata
   }
 }
