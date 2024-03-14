@@ -18,21 +18,6 @@ export class AuthKeyUserEntity extends BaseEntity {
   @Property({ type: NativeBigIntType })
   userId!: bigint
 
-  @Property({ type: NativeBigIntType, default: 0 })
-  hash!: bigint
-
-  @Property({ default: false })
-  deleted!: boolean
-
-  @Property({ defaultRaw: 'now()' })
-  dateCreated!: Date
-
-  @Property({ defaultRaw: 'now()' })
-  dateActive!: Date
-
-  @Property({ defaultRaw: 'now()' })
+  @Property()
   createdAt!: Date
-
-  @Property({ onUpdate: () => new Date() })
-  updatedAt: Date = new Date()
 }

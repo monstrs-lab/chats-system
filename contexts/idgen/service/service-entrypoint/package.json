@@ -12,7 +12,7 @@
     "start": "yarn node dist/index.js"
   },
   "devDependencies": {
-    "@bufbuild/protobuf": "^1.7.2",
+    "@bufbuild/protobuf": "^1.8.0",
     "@chats-system/idgen-client-module": "workspace:0.0.1",
     "@chats-system/idgen-infrastructure-module": "workspace:0.0.1",
     "@chats-system/idgen-rpc": "workspace:0.0.1",

@@ -1,14 +1,18 @@
-import { PostgreSqlDriver }      from '@mikro-orm/postgresql'
-import { MikroORMConfigBuilder } from '@monstrs/nestjs-mikro-orm-config'
+import type { Options }     from '@mikro-orm/postgresql'
 
-import * as entities             from './entities/index.js'
-import * as migrations           from './migrations/index.js'
+import { Migrator }         from '@mikro-orm/migrations'
+import { PostgreSqlDriver } from '@mikro-orm/postgresql'
 
-export default MikroORMConfigBuilder.build({
+import * as entities        from './entities/index.js'
+import * as migrations      from './migrations/index.js'
+
+const options: Options = {
   driver: PostgreSqlDriver,
+  dbName: 'db',
+  user: 'postgres',
+  password: 'password',
   entities: Object.values(entities),
   migrations: {
-    tableName: 'mikro_orm_migrations_auth_key',
     disableForeignKeys: false,
     migrationsList: Object.keys(migrations).map((name: string) => ({
       class: migrations[name as keyof typeof migrations],
@@ -17,4 +21,7 @@ export default MikroORMConfigBuilder.build({
     pathTs: './src/migrations',
     emit: 'ts',
   },
-})
+  extensions: [Migrator],
+}
+
+export default options

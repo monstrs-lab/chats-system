@@ -1,188 +1,116 @@
 /* eslint-disable @typescript-eslint/consistent-type-imports */
 
-import type { CreateAuthKeyRequest }           from '@chats-system/authkey-rpc'
-import type { GetAuthKeyUserRequest }          from '@chats-system/authkey-rpc'
-import type { CreateAuthKeyConnectionRequest } from '@chats-system/authkey-rpc'
-import type { UpdateAuthKeyConnectionRequest } from '@chats-system/authkey-rpc'
-import type { CreateAuthKeyUserRequest }       from '@chats-system/authkey-rpc'
-import type { GetAuthKeyRequest }              from '@chats-system/authkey-rpc'
-import type { GetAuthKeyConnectionRequest }    from '@chats-system/authkey-rpc'
-import type { ServiceImpl }                    from '@connectrpc/connect'
+import type { PartialMessage }            from '@bufbuild/protobuf'
+import type { AuthKey }                   from '@chats-system/authkey-domain-module'
+import type { AuthKeyUser }               from '@chats-system/authkey-domain-module'
+import type { CreateAuthKeyRequest }      from '@chats-system/authkey-rpc'
+import type { GetAuthKeyUserRequest }     from '@chats-system/authkey-rpc'
+import type { CreateAuthKeyUserRequest }  from '@chats-system/authkey-rpc'
+import type { GetAuthKeyRequest }         from '@chats-system/authkey-rpc'
+import type { ServiceImpl }               from '@connectrpc/connect'
 
-import { CreateRequestContext }                from '@mikro-orm/core'
-import { MikroORM }                            from '@mikro-orm/core'
-import { ConnectRpcMethod }                    from '@monstrs/nestjs-connectrpc'
-import { ConnectRpcService }                   from '@monstrs/nestjs-connectrpc'
-import { Controller }                          from '@nestjs/common'
+import { CreateRequestContext }           from '@mikro-orm/core'
+import { MikroORM }                       from '@mikro-orm/core'
+import { ConnectRpcMethod }               from '@monstrs/nestjs-connectrpc'
+import { ConnectRpcService }              from '@monstrs/nestjs-connectrpc'
+import { Validator }                      from '@monstrs/nestjs-validation'
+import { Controller }                     from '@nestjs/common'
+import { QueryBus }                       from '@nestjs/cqrs'
+import { CommandBus }                     from '@nestjs/cqrs'
+import random                             from 'crypto-random-bigint'
 
-import { AuthKeyUseCases }                     from '@chats-system/authkey-application-module'
-import { GetAuthKeyResponse }                  from '@chats-system/authkey-rpc'
-import { GetAuthKeyUserResponse }              from '@chats-system/authkey-rpc'
-import { GetAuthKeyConnectionResponse }        from '@chats-system/authkey-rpc'
-import { CreateAuthKeyResponse }               from '@chats-system/authkey-rpc'
-import { CreateAuthKeyConnectionResponse }     from '@chats-system/authkey-rpc'
-import { UpdateAuthKeyConnectionResponse }     from '@chats-system/authkey-rpc'
-import { CreateAuthKeyUserResponse }           from '@chats-system/authkey-rpc'
-import { AuthKeyService }                      from '@chats-system/authkey-rpc'
+import { CreateAuthKeyCommand }           from '@chats-system/authkey-application-module'
+import { CreateAuthKeyUserCommand }       from '@chats-system/authkey-application-module'
+import { GetAuthKeyByIdQuery }            from '@chats-system/authkey-application-module'
+import { GetAuthKeyUserByAuthKeyIdQuery } from '@chats-system/authkey-application-module'
+import { GetAuthKeyResponse }             from '@chats-system/authkey-rpc'
+import { GetAuthKeyUserResponse }         from '@chats-system/authkey-rpc'
+import { CreateAuthKeyResponse }          from '@chats-system/authkey-rpc'
+import { CreateAuthKeyUserResponse }      from '@chats-system/authkey-rpc'
+import { AuthKeyService }                 from '@chats-system/authkey-rpc'
+
+import { CreateAuthKeyPayload }           from '../payloads/index.js'
+import { CreateAuthKeyUserPayload }       from '../payloads/index.js'
+import { GetAuthKeyPayload }              from '../payloads/index.js'
+import { GetAuthKeyUserPayload }          from '../payloads/index.js'
+import { CreateAuthKeySerializer }        from '../serializers/index.js'
+import { CreateAuthKeyUserSerializer }    from '../serializers/index.js'
+import { GetAuthKeySerializer }           from '../serializers/index.js'
 
 @Controller()
 @ConnectRpcService(AuthKeyService)
 export class AuthKeyServiceController implements ServiceImpl<typeof AuthKeyService> {
   constructor(
-    private readonly authKeyUseCases: AuthKeyUseCases,
+    private readonly queryBus: QueryBus,
+    private readonly commandBus: CommandBus,
+    private readonly validator: Validator,
     // @ts-expect-error
     private readonly orm: MikroORM
   ) {}
 
   @ConnectRpcMethod()
   @CreateRequestContext()
-  async createAuthKey(request: CreateAuthKeyRequest): Promise<CreateAuthKeyResponse> {
-    const authKey = await this.authKeyUseCases.createAuthKey.execute({
-      authKeyId: request.authKeyId,
-      authKeyType: request.authKeyType,
-      authKey: Buffer.from(request.authKey),
-    })
+  async createAuthKey(
+    request: CreateAuthKeyRequest
+  ): Promise<PartialMessage<CreateAuthKeyResponse>> {
+    const payload = new CreateAuthKeyPayload(request)
 
-    return new CreateAuthKeyResponse({
-      authKey,
-    })
+    await this.validator.validate(payload)
+
+    await this.commandBus.execute(new CreateAuthKeyCommand(payload.id, payload.key))
+
+    return new CreateAuthKeySerializer(
+      await this.queryBus.execute<GetAuthKeyByIdQuery, AuthKey>(new GetAuthKeyByIdQuery(payload.id))
+    )
   }
 
   @ConnectRpcMethod()
   @CreateRequestContext()
-  async createAuthKeyConnection(
-    request: CreateAuthKeyConnectionRequest
-  ): Promise<CreateAuthKeyConnectionResponse> {
-    const authKeyConnection = await this.authKeyUseCases.createAuthKeyConnection.execute({
-      authKeyId: request.authKeyId,
-      layer: request.layer,
-      apiId: request.apiId,
-      deviceModel: request.deviceModel,
-      systemVersion: request.systemVersion,
-      appVersion: request.appVersion,
-      systemLangCode: request.systemLangCode,
-      langPack: request.langPack,
-      langCode: request.langCode,
-      clientIp: request.clientIp,
-      params: JSON.parse(request.params || '{}'),
-    })
+  async createAuthKeyUser(
+    request: CreateAuthKeyUserRequest
+  ): Promise<PartialMessage<CreateAuthKeyUserResponse>> {
+    const payload = new CreateAuthKeyUserPayload(request)
 
-    return new CreateAuthKeyConnectionResponse({
-      authKeyConnection: {
-        authKeyId: authKeyConnection.authKeyId,
-        layer: authKeyConnection.layer,
-        apiId: authKeyConnection.apiId,
-        deviceModel: authKeyConnection.deviceModel,
-        systemVersion: authKeyConnection.systemVersion,
-        appVersion: authKeyConnection.appVersion,
-        systemLangCode: authKeyConnection.systemLangCode,
-        langPack: authKeyConnection.langPack,
-        langCode: authKeyConnection.langCode,
-        clientIp: authKeyConnection.clientIp,
-        params: JSON.stringify(authKeyConnection.params || {}),
-      },
-    })
-  }
+    await this.validator.validate(payload)
 
-  @ConnectRpcMethod()
-  @CreateRequestContext()
-  async updateAuthKeyConnection(
-    request: UpdateAuthKeyConnectionRequest
-  ): Promise<UpdateAuthKeyConnectionResponse> {
-    const authKeyConnection = await this.authKeyUseCases.updateAuthKeyConnection.execute(
-      request.authKeyId,
-      {
-        layer: request.layer,
-        apiId: request.apiId,
-        deviceModel: request.deviceModel,
-        systemVersion: request.systemVersion,
-        appVersion: request.appVersion,
-        systemLangCode: request.systemLangCode,
-        langPack: request.langPack,
-        langCode: request.langCode,
-        clientIp: request.clientIp,
-        params: JSON.parse(request.params || '{}'),
-      }
+    await this.commandBus.execute(
+      new CreateAuthKeyUserCommand(random(63), payload.authKeyId, payload.userId)
     )
 
-    if (!authKeyConnection) {
-      return new UpdateAuthKeyConnectionResponse({})
-    }
-
-    return new UpdateAuthKeyConnectionResponse({
-      authKeyConnection: {
-        authKeyId: authKeyConnection.authKeyId,
-        layer: authKeyConnection.layer,
-        apiId: authKeyConnection.apiId,
-        deviceModel: authKeyConnection.deviceModel,
-        systemVersion: authKeyConnection.systemVersion,
-        appVersion: authKeyConnection.appVersion,
-        systemLangCode: authKeyConnection.systemLangCode,
-        langPack: authKeyConnection.langPack,
-        langCode: authKeyConnection.langCode,
-        clientIp: authKeyConnection.clientIp,
-        params: JSON.stringify(authKeyConnection.params || {}),
-      },
-    })
-  }
-
-  @ConnectRpcMethod()
-  @CreateRequestContext()
-  async createAuthKeyUser(request: CreateAuthKeyUserRequest): Promise<CreateAuthKeyUserResponse> {
-    const authKeyUser = await this.authKeyUseCases.createAuthKeyUser.execute(request)
-
-    return new CreateAuthKeyUserResponse({
-      hash: authKeyUser.hash,
-    })
-  }
-
-  @ConnectRpcMethod()
-  @CreateRequestContext()
-  async getAuthKey(request: GetAuthKeyRequest): Promise<GetAuthKeyResponse> {
-    const authKey = await this.authKeyUseCases.getAuthKeyById.execute(request.authKeyId)
-
-    return new GetAuthKeyResponse({
-      authKey,
-    })
-  }
-
-  @ConnectRpcMethod()
-  @CreateRequestContext()
-  async getAuthKeyConnection(
-    request: GetAuthKeyConnectionRequest
-  ): Promise<GetAuthKeyConnectionResponse> {
-    const authKeyConnection = await this.authKeyUseCases.getAuthKeyConnectionKeyById.execute(
-      request.authKeyId
+    return new CreateAuthKeyUserSerializer(
+      await this.queryBus.execute<GetAuthKeyUserByAuthKeyIdQuery, AuthKeyUser>(
+        new GetAuthKeyUserByAuthKeyIdQuery(payload.authKeyId)
+      )
     )
-
-    if (!authKeyConnection) {
-      return new GetAuthKeyConnectionResponse({})
-    }
-
-    return new GetAuthKeyConnectionResponse({
-      authKeyConnection: {
-        authKeyId: authKeyConnection.authKeyId,
-        layer: authKeyConnection.layer,
-        apiId: authKeyConnection.apiId,
-        deviceModel: authKeyConnection.deviceModel,
-        systemVersion: authKeyConnection.systemVersion,
-        appVersion: authKeyConnection.appVersion,
-        systemLangCode: authKeyConnection.systemLangCode,
-        langPack: authKeyConnection.langPack,
-        langCode: authKeyConnection.langCode,
-        clientIp: authKeyConnection.clientIp,
-        params: JSON.stringify(authKeyConnection.params || {}),
-      },
-    })
   }
 
   @ConnectRpcMethod()
   @CreateRequestContext()
-  async getAuthKeyUser(request: GetAuthKeyUserRequest): Promise<GetAuthKeyUserResponse> {
-    const authKeyUser = await this.authKeyUseCases.getAuthKeyUserKeyById.execute(request.authKeyId)
+  async getAuthKey(request: GetAuthKeyRequest): Promise<PartialMessage<GetAuthKeyResponse>> {
+    const payload = new GetAuthKeyPayload(request)
 
-    return new GetAuthKeyUserResponse({
-      authKeyUser,
-    })
+    await this.validator.validate(payload)
+
+    return new GetAuthKeySerializer(
+      await this.queryBus.execute<GetAuthKeyByIdQuery, AuthKey>(
+        new GetAuthKeyByIdQuery(payload.authKeyId)
+      )
+    )
+  }
+
+  @ConnectRpcMethod()
+  @CreateRequestContext()
+  async getAuthKeyUser(
+    request: GetAuthKeyUserRequest
+  ): Promise<PartialMessage<GetAuthKeyUserResponse>> {
+    const payload = new GetAuthKeyUserPayload(request)
+
+    await this.validator.validate(payload)
+
+    return new CreateAuthKeyUserSerializer(
+      await this.queryBus.execute<GetAuthKeyUserByAuthKeyIdQuery, AuthKeyUser>(
+        new GetAuthKeyUserByAuthKeyIdQuery(payload.authKeyId)
+      )
+    )
   }
 }

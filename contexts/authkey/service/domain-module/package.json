@@ -10,6 +10,7 @@
   },
   "main": "src/index.ts",
   "dependencies": {
+    "@monstrs/guard-clause": "^0.0.8",
     "crypto-random-bigint": "^2.1.0"
   },
   "devDependencies": {

@@ -10,6 +10,7 @@ import { MikroOrmModule }              from '@mikro-orm/nestjs'
 import { PostgreSqlDriver }            from '@mikro-orm/postgresql'
 import { ConnectRpcServer }            from '@monstrs/nestjs-connectrpc'
 import { ServerProtocol }              from '@monstrs/nestjs-connectrpc'
+import { CqrsModule }                  from '@nestjs/cqrs'
 import { Test }                        from '@nestjs/testing'
 import { createPromiseClient }         from '@connectrpc/connect'
 import { createGrpcTransport }         from '@connectrpc/connect-node'
@@ -25,7 +26,6 @@ import getPort                         from 'get-port'
 
 import { AuthKeyInfrastructureModule } from '@chats-system/authkey-infrastructure-module'
 import { AuthKeyService }              from '@chats-system/authkey-rpc/connect'
-import { AuthKeyType }                 from '@chats-system/authkey-rpc/connect'
 import { entities }                    from '@chats-system/authkey-infrastructure-module'
 import { migrations }                  from '@chats-system/authkey-infrastructure-module'
 
@@ -50,6 +50,7 @@ describe('authkey', () => {
 
         const testingModule = await Test.createTestingModule({
           imports: [
+            CqrsModule.forRoot(),
             AuthKeyInfrastructureModule.register(),
             MikroOrmModule.forRoot({
               driver: PostgreSqlDriver,
@@ -100,59 +101,29 @@ describe('authkey', () => {
       describe('create auth key', () => {
         it('check create', async () => {
           const request = {
-            authKeyId: faker.number.bigInt({ min: 1 }),
-            authKey: randomBytes(256),
+            id: faker.number.bigInt({ min: 1 }),
+            key: randomBytes(256),
           }
 
           const { authKey } = await client.createAuthKey(request)
 
-          expect(authKey?.authKeyId).toBe(request.authKeyId)
-          expect(authKey?.authKeyType).toBe(AuthKeyType.UNKNOWN)
-          expect(Buffer.from(authKey!.authKey).toString('hex')).toBe(
-            request.authKey.toString('hex')
-          )
+          expect(authKey?.id).toBe(request.id)
+          expect(Buffer.from(authKey!.key).toString('hex')).toBe(request.key.toString('hex'))
         })
+      })
 
-        it('check create perm type', async () => {
+      describe('create auth key user', () => {
+        it('check create', async () => {
           const request = {
             authKeyId: faker.number.bigInt({ min: 1 }),
-            authKeyType: AuthKeyType.PERM,
-            authKey: randomBytes(256),
+            userId: faker.number.bigInt({ min: 1 }),
           }
 
-          const { authKey } = await client.createAuthKey(request)
+          const { authKeyUser } = await client.createAuthKeyUser(request)
 
-          expect(authKey?.authKeyId).toBe(request.authKeyId)
-          expect(authKey?.permAuthKeyId).toBe(request.authKeyId)
-          expect(authKey?.authKeyType).toBe(request.authKeyType)
-        })
-
-        it('check create temp type', async () => {
-          const request = {
-            authKeyId: faker.number.bigInt({ min: 1 }),
-            authKeyType: AuthKeyType.TEMP,
-            authKey: randomBytes(256),
-          }
-
-          const { authKey } = await client.createAuthKey(request)
-
-          expect(authKey?.authKeyId).toBe(request.authKeyId)
-          expect(authKey?.tempAuthKeyId).toBe(request.authKeyId)
-          expect(authKey?.authKeyType).toBe(request.authKeyType)
-        })
-
-        it('check create media temp type', async () => {
-          const request = {
-            authKeyId: faker.number.bigInt({ min: 1 }),
-            authKeyType: AuthKeyType.MEDIA_TEMP,
-            authKey: randomBytes(256),
-          }
-
-          const { authKey } = await client.createAuthKey(request)
-
-          expect(authKey?.authKeyId).toBe(request.authKeyId)
-          expect(authKey?.mediaTempAuthKeyId).toBe(request.authKeyId)
-          expect(authKey?.authKeyType).toBe(request.authKeyType)
+          expect(authKeyUser?.id).toBeDefined()
+          expect(authKeyUser?.authKeyId).toBe(request.authKeyId)
+          expect(authKeyUser?.userId).toBe(request.userId)
         })
       })
     })

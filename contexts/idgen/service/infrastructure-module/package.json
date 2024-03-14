@@ -14,7 +14,7 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@bufbuild/protobuf": "^1.7.2",
+    "@bufbuild/protobuf": "^1.8.0",
     "@chats-system/idgen-rpc": "workspace:0.0.1",
     "@connectrpc/connect": "^1.4.0",
     "@connectrpc/connect-node": "^1.4.0",

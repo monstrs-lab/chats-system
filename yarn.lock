@@ -700,24 +700,42 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bufbuild/protoc-gen-es@npm:^1.7.2":
-  version: 1.7.2
-  resolution: "@bufbuild/protoc-gen-es@npm:1.7.2"
+"@bufbuild/protobuf@npm:1.8.0, @bufbuild/protobuf@npm:^1.8.0":
+  version: 1.8.0
+  resolution: "@bufbuild/protobuf@npm:1.8.0"
+  checksum: 10c0/1f8a5a780f6272e7e8d8bb835c2b474485bf9e92213bef96f0fcd550fd77db064c145a5dabdc7b2121167c530fd28b09723d144a6c6baff88296ce6f5860808d
+  languageName: node
+  linkType: hard
+
+"@bufbuild/protoc-gen-es@npm:^1.8.0":
+  version: 1.8.0
+  resolution: "@bufbuild/protoc-gen-es@npm:1.8.0"
   dependencies:
-    "@bufbuild/protobuf": "npm:^1.7.2"
-    "@bufbuild/protoplugin": "npm:1.7.2"
+    "@bufbuild/protobuf": "npm:^1.8.0"
+    "@bufbuild/protoplugin": "npm:1.8.0"
   peerDependencies:
-    "@bufbuild/protobuf": 1.7.2
+    "@bufbuild/protobuf": 1.8.0
   peerDependenciesMeta:
     "@bufbuild/protobuf":
       optional: true
   bin:
     protoc-gen-es: bin/protoc-gen-es
-  checksum: 10c0/f56f1e7c3a7a37fadb15bff2ffca5fb148f139ceceee5734dffe71f7016868d4eb980513589df4f191adaf494fa35c8db4f161b5d9a474f5bdaa66a39997d557
+  checksum: 10c0/dd75d0d4146d0ce30656c8f25484acf565056b81eb350a177266d5ac82f2046e9960e8189167dc24e66426e09afb8534cc75d7d5a5fdb683be58ef726b72dd33
   languageName: node
   linkType: hard
 
-"@bufbuild/protoplugin@npm:1.7.2, @bufbuild/protoplugin@npm:^1.3.1, @bufbuild/protoplugin@npm:^1.7.2":
+"@bufbuild/protoplugin@npm:1.8.0":
+  version: 1.8.0
+  resolution: "@bufbuild/protoplugin@npm:1.8.0"
+  dependencies:
+    "@bufbuild/protobuf": "npm:1.8.0"
+    "@typescript/vfs": "npm:^1.4.0"
+    typescript: "npm:4.5.2"
+  checksum: 10c0/bc2cd66f079dd396ad629d69a17be78720fc660ac492fc825f8afc5112ba8241b79c4eb5858b2abd17b6ec1d6bce09ad181102e240cc142048627664d87c5b92
+  languageName: node
+  linkType: hard
+
+"@bufbuild/protoplugin@npm:^1.3.1, @bufbuild/protoplugin@npm:^1.7.2":
   version: 1.7.2
   resolution: "@bufbuild/protoplugin@npm:1.7.2"
   dependencies:
@@ -753,7 +771,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@chats-system/authkey-client-module@workspace:contexts/authkey/service/client-module"
   dependencies:
-    "@bufbuild/protobuf": "npm:^1.7.2"
+    "@bufbuild/protobuf": "npm:^1.8.0"
     "@chats-system/authkey-rpc-client": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.4.0"
     "@connectrpc/connect-node": "npm:^1.4.0"
@@ -779,6 +797,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@chats-system/authkey-domain-module@workspace:contexts/authkey/service/domain-module"
   dependencies:
+    "@monstrs/guard-clause": "npm:^0.0.8"
     "@nestjs/common": "npm:^10.3.3"
     "@nestjs/core": "npm:^10.3.3"
     "@nestjs/cqrs": "npm:^10.2.7"
@@ -799,8 +818,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@chats-system/authkey-infrastructure-module@workspace:contexts/authkey/service/infrastructure-module"
   dependencies:
-    "@bufbuild/protobuf": "npm:^1.7.2"
+    "@bufbuild/protobuf": "npm:^1.8.0"
     "@chats-system/authkey-application-module": "workspace:0.0.1"
+    "@chats-system/authkey-client-module": "workspace:0.0.1"
     "@chats-system/authkey-domain-module": "workspace:0.0.1"
     "@chats-system/authkey-rpc": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.4.0"
@@ -819,6 +839,7 @@ __metadata:
     "@monstrs/logger": "npm:^0.0.20"
     "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
     "@monstrs/nestjs-mikro-orm-config": "npm:^0.1.3"
+    "@monstrs/nestjs-validation": "npm:^0.1.1"
     "@nestjs/common": "npm:^10.3.3"
     "@nestjs/core": "npm:^10.3.3"
     "@nestjs/cqrs": "npm:^10.2.7"
@@ -846,7 +867,7 @@ __metadata:
     "@mikro-orm/entity-generator": ^6
     "@mikro-orm/knex": ^6
     "@mikro-orm/migrations": ^6
-    "@mikro-orm/nestjs": ^6
+    "@mikro-orm/nestjs": ^5
     "@mikro-orm/postgresql": ^6
     "@mikro-orm/seeder": ^6
     "@monstrs/nestjs-connectrpc": ^0.0.3
@@ -865,7 +886,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@chats-system/authkey-rpc-client@workspace:contexts/authkey/rpc/authkey-rpc-client"
   dependencies:
-    "@bufbuild/protobuf": "npm:^1.7.2"
+    "@bufbuild/protobuf": "npm:^1.8.0"
     "@chats-system/authkey-rpc": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.4.0"
     "@connectrpc/connect-node": "npm:^1.4.0"
@@ -880,8 +901,8 @@ __metadata:
   resolution: "@chats-system/authkey-rpc@workspace:contexts/authkey/rpc/authkey-rpc"
   dependencies:
     "@bufbuild/buf": "npm:^1.30.0"
-    "@bufbuild/protobuf": "npm:^1.7.2"
-    "@bufbuild/protoc-gen-es": "npm:^1.7.2"
+    "@bufbuild/protobuf": "npm:^1.8.0"
+    "@bufbuild/protoc-gen-es": "npm:^1.8.0"
     "@connectrpc/protoc-gen-connect-es": "npm:^1.4.0"
     "@monstrs/protoc-gen-abstractions": "npm:^0.0.5"
     "@monstrs/protoc-gen-interfaces": "npm:^0.0.4"
@@ -894,7 +915,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@chats-system/authkey-service-entrypoint@workspace:contexts/authkey/service/service-entrypoint"
   dependencies:
-    "@bufbuild/protobuf": "npm:^1.7.2"
+    "@bufbuild/protobuf": "npm:^1.8.0"
     "@chats-system/authkey-infrastructure-module": "workspace:0.0.1"
     "@chats-system/authkey-rpc": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.4.0"
@@ -910,6 +931,7 @@ __metadata:
     "@mikro-orm/postgresql": "npm:^6.1.9"
     "@mikro-orm/seeder": "npm:^6.1.9"
     "@monstrs/nestjs-connectrpc": "npm:^0.0.3"
+    "@monstrs/nestjs-cqrs": "npm:^0.0.4"
     "@monstrs/nestjs-logger": "npm:^0.4.2"
     "@monstrs/nestjs-mikro-orm-config": "npm:^0.1.3"
     "@monstrs/protobuf-rpc": "npm:0.0.7"
@@ -955,7 +977,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@chats-system/gateway-infrastructure-module@workspace:contexts/gateway/service/infrastructure-module"
   dependencies:
-    "@bufbuild/protobuf": "npm:^1.7.2"
+    "@bufbuild/protobuf": "npm:^1.8.0"
     "@chats-system/authkey-client-module": "workspace:0.0.1"
     "@chats-system/handshake": "workspace:0.0.1"
     "@chats-system/transport": "workspace:0.0.1"
@@ -1010,7 +1032,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@chats-system/gateway-service-entrypoint@workspace:contexts/gateway/service/service-entrypoint"
   dependencies:
-    "@bufbuild/protobuf": "npm:^1.7.2"
+    "@bufbuild/protobuf": "npm:^1.8.0"
     "@chats-system/authkey-client-module": "workspace:0.0.1"
     "@chats-system/client": "workspace:0.0.1"
     "@chats-system/gateway-infrastructure-module": "workspace:0.0.1"
@@ -1066,7 +1088,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@chats-system/idgen-client-module@workspace:contexts/idgen/service/client-module"
   dependencies:
-    "@bufbuild/protobuf": "npm:^1.7.2"
+    "@bufbuild/protobuf": "npm:^1.8.0"
     "@chats-system/idgen-rpc-client": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.4.0"
     "@connectrpc/connect-node": "npm:^1.4.0"
@@ -1095,7 +1117,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@chats-system/idgen-infrastructure-module@workspace:contexts/idgen/service/infrastructure-module"
   dependencies:
-    "@bufbuild/protobuf": "npm:^1.7.2"
+    "@bufbuild/protobuf": "npm:^1.8.0"
     "@chats-system/idgen-rpc": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.4.0"
     "@connectrpc/connect-node": "npm:^1.4.0"
@@ -1144,7 +1166,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@chats-system/idgen-rpc-client@workspace:contexts/idgen/rpc/idgen-rpc-client"
   dependencies:
-    "@bufbuild/protobuf": "npm:^1.7.2"
+    "@bufbuild/protobuf": "npm:^1.8.0"
     "@chats-system/idgen-rpc": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.4.0"
     "@connectrpc/connect-node": "npm:^1.4.0"
@@ -1159,8 +1181,8 @@ __metadata:
   resolution: "@chats-system/idgen-rpc@workspace:contexts/idgen/rpc/idgen-rpc"
   dependencies:
     "@bufbuild/buf": "npm:^1.30.0"
-    "@bufbuild/protobuf": "npm:^1.7.2"
-    "@bufbuild/protoc-gen-es": "npm:^1.7.2"
+    "@bufbuild/protobuf": "npm:^1.8.0"
+    "@bufbuild/protoc-gen-es": "npm:^1.8.0"
     "@connectrpc/protoc-gen-connect-es": "npm:^1.4.0"
     "@monstrs/protoc-gen-abstractions": "npm:^0.0.5"
     "@monstrs/protoc-gen-interfaces": "npm:^0.0.4"
@@ -1173,7 +1195,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@chats-system/idgen-service-entrypoint@workspace:contexts/idgen/service/service-entrypoint"
   dependencies:
-    "@bufbuild/protobuf": "npm:^1.7.2"
+    "@bufbuild/protobuf": "npm:^1.8.0"
     "@chats-system/idgen-client-module": "workspace:0.0.1"
     "@chats-system/idgen-infrastructure-module": "workspace:0.0.1"
     "@chats-system/idgen-rpc": "workspace:0.0.1"
@@ -1212,7 +1234,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@chats-system/standalone-service-entrypoint@workspace:applications/standalone/entrypoints/standalone-service-entrypoint"
   dependencies:
-    "@bufbuild/protobuf": "npm:^1.7.2"
+    "@bufbuild/protobuf": "npm:^1.8.0"
     "@chats-system/authkey-client-module": "workspace:0.0.1"
     "@chats-system/authkey-infrastructure-module": "workspace:0.0.1"
     "@chats-system/client": "workspace:0.0.1"
@@ -2047,6 +2069,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@monstrs/guard-clause@npm:^0.0.8":
+  version: 0.0.8
+  resolution: "@monstrs/guard-clause@npm:0.0.8"
+  dependencies:
+    ajv: "npm:^8.12.0"
+    validator: "npm:^13.9.0"
+  checksum: 10c0/42cfec61c7d301da20781c6cbb87bbf68d887e287fc75b7f494ac018f297837a7074eafdd340d5f422a44c30a4eb0ab24c67058ba6b6aa02aee4ab7f2bd305f3
+  languageName: node
+  linkType: hard
+
 "@monstrs/jest-resolver@npm:0.3.3":
   version: 0.3.3
   resolution: "@monstrs/jest-resolver@npm:0.3.3"
@@ -2234,6 +2266,19 @@ __metadata:
     reflect-metadata: ^0.1
     rxjs: ^7
   checksum: 10c0/a5f121326afc64634e4ba0f0fddfc9da229b232489aeff8f97c758fe5c9be70715403e7165ef9144adb51423c2b3206d75f7fb617855f539c0947c1d47984de8
+  languageName: node
+  linkType: hard
+
+"@monstrs/nestjs-cqrs@npm:^0.0.4":
+  version: 0.0.4
+  resolution: "@monstrs/nestjs-cqrs@npm:0.0.4"
+  peerDependencies:
+    "@nestjs/common": ^10
+    "@nestjs/core": ^10
+    "@nestjs/cqrs": ^10
+    reflect-metadata: ^0.1
+    rxjs: ^7
+  checksum: 10c0/79363369d87eaa9734a534ae84e8a8603c1fc00fb297825ab624238406164ae2a004c4fe8378d0ce3b1f6f1b82f8f7028a311683f26fc8a6d68ba1a131330ce2
   languageName: node
   linkType: hard
 

@@ -24,7 +24,7 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@bufbuild/protobuf": "^1.7.2",
+    "@bufbuild/protobuf": "^1.8.0",
     "@connectrpc/connect": "^1.4.0",
     "@connectrpc/connect-node": "^1.4.0",
     "@faker-js/faker": "^8.4.1",

@@ -12,7 +12,7 @@
     "start": "yarn node dist/index.js"
   },
   "devDependencies": {
-    "@bufbuild/protobuf": "^1.7.2",
+    "@bufbuild/protobuf": "^1.8.0",
     "@chats-system/authkey-client-module": "workspace:0.0.1",
     "@chats-system/authkey-infrastructure-module": "workspace:0.0.1",
     "@chats-system/client": "workspace:0.0.1",

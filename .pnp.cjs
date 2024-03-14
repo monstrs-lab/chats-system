@@ -90,7 +90,7 @@ const RAW_RUNTIME_STATE =
   "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
   "fallbackExclusionList": [\
     ["@chats-system/authkey-application-module", ["virtual:49d0ed333bc92d9d8f32acc9a36274b462f6cff21ec073b01812fee776de792273c7f7e1dcf6b4c860986f74946297c3b47fb0e04e912b408ec112ee3e0b8d17#workspace:contexts/authkey/service/application-module", "virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#workspace:contexts/authkey/service/application-module", "virtual:cfe72c248a270bedee4df84e81be9ef109d559b0ebdd20528d66dc2ed8affa7c20d7fe10994a0c410c063335228910e79c82f56a1cf0bedb6a52a0d1d408d950#workspace:contexts/authkey/service/application-module", "workspace:contexts/authkey/service/application-module"]],\
-    ["@chats-system/authkey-client-module", ["virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#workspace:contexts/authkey/service/client-module", "virtual:9e882501ecd5efcf844b4864bd49121b45317d9b35b65457b3b3aaf8ce3851b3a5925a87eecfbcc2575f066c2b4e44c01774eba257717f854d5a5d1b6593d86f#workspace:contexts/authkey/service/client-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/authkey/service/client-module", "workspace:contexts/authkey/service/client-module"]],\
+    ["@chats-system/authkey-client-module", ["virtual:49d0ed333bc92d9d8f32acc9a36274b462f6cff21ec073b01812fee776de792273c7f7e1dcf6b4c860986f74946297c3b47fb0e04e912b408ec112ee3e0b8d17#workspace:contexts/authkey/service/client-module", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#workspace:contexts/authkey/service/client-module", "virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#workspace:contexts/authkey/service/client-module", "virtual:9e882501ecd5efcf844b4864bd49121b45317d9b35b65457b3b3aaf8ce3851b3a5925a87eecfbcc2575f066c2b4e44c01774eba257717f854d5a5d1b6593d86f#workspace:contexts/authkey/service/client-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/authkey/service/client-module", "workspace:contexts/authkey/service/client-module"]],\
     ["@chats-system/authkey-domain-module", ["virtual:1dddde44622417eb2211d3e8b6f72703182ef467287660665380772d67255d5317f54ba3c0a8b9c77e849ed0a601c176478626ea7221700661b33b4478799dac#workspace:contexts/authkey/service/domain-module", "virtual:49d0ed333bc92d9d8f32acc9a36274b462f6cff21ec073b01812fee776de792273c7f7e1dcf6b4c860986f74946297c3b47fb0e04e912b408ec112ee3e0b8d17#workspace:contexts/authkey/service/domain-module", "virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#workspace:contexts/authkey/service/domain-module", "virtual:cfe72c248a270bedee4df84e81be9ef109d559b0ebdd20528d66dc2ed8affa7c20d7fe10994a0c410c063335228910e79c82f56a1cf0bedb6a52a0d1d408d950#workspace:contexts/authkey/service/domain-module", "workspace:contexts/authkey/service/domain-module"]],\
     ["@chats-system/authkey-infrastructure-module", ["virtual:017f3b08e30200badd8147798a8d49d16cb6ed5602644e793087814a34c32484f8ee85d15386bce4648734fe7f5a07b2103f64c279a8796406341dad715f0de1#workspace:contexts/authkey/service/infrastructure-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/authkey/service/infrastructure-module", "workspace:contexts/authkey/service/infrastructure-module"]],\
     ["@chats-system/authkey-rpc", ["virtual:c9f928ce7275fe0d39e5ee6986c559b01c3a7179887d1877dc2871df9ac321755b0cd679d4dcadaec421bf4f75fb4061a6c88a98ac882d123699b88909820118#workspace:contexts/authkey/rpc/authkey-rpc", "workspace:contexts/authkey/rpc/authkey-rpc"]],\
@@ -1213,22 +1213,29 @@ const RAW_RUNTIME_STATE =
           ["@bufbuild/protobuf", "npm:1.7.2"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:1.8.0", {\
+        "packageLocation": "./.yarn/cache/@bufbuild-protobuf-npm-1.8.0-4c9f06a7f2-1f8a5a780f.zip/node_modules/@bufbuild/protobuf/",\
+        "packageDependencies": [\
+          ["@bufbuild/protobuf", "npm:1.8.0"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["@bufbuild/protoc-gen-es", [\
-      ["npm:1.7.2", {\
-        "packageLocation": "./.yarn/unplugged/@bufbuild-protoc-gen-es-virtual-aa1c014e0c/node_modules/@bufbuild/protoc-gen-es/",\
+      ["npm:1.8.0", {\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-protoc-gen-es-virtual-9d309f192f/node_modules/@bufbuild/protoc-gen-es/",\
         "packageDependencies": [\
-          ["@bufbuild/protoc-gen-es", "npm:1.7.2"]\
+          ["@bufbuild/protoc-gen-es", "npm:1.8.0"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:1.7.2", {\
-        "packageLocation": "./.yarn/unplugged/@bufbuild-protoc-gen-es-virtual-aa1c014e0c/node_modules/@bufbuild/protoc-gen-es/",\
+      ["virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:1.8.0", {\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-protoc-gen-es-virtual-9d309f192f/node_modules/@bufbuild/protoc-gen-es/",\
         "packageDependencies": [\
-          ["@bufbuild/protoc-gen-es", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:1.7.2"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
-          ["@bufbuild/protoplugin", "npm:1.7.2"],\
+          ["@bufbuild/protoc-gen-es", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:1.8.0"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
+          ["@bufbuild/protoplugin", "npm:1.8.0"],\
           ["@types/bufbuild__protobuf", null]\
         ],\
         "packagePeers": [\
@@ -1244,6 +1251,16 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@bufbuild/protoplugin", "npm:1.7.2"],\
           ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@typescript/vfs", "npm:1.5.0"],\
+          ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:1.8.0", {\
+        "packageLocation": "./.yarn/cache/@bufbuild-protoplugin-npm-1.8.0-6baea70dae-bc2cd66f07.zip/node_modules/@bufbuild/protoplugin/",\
+        "packageDependencies": [\
+          ["@bufbuild/protoplugin", "npm:1.8.0"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@typescript/vfs", "npm:1.5.0"],\
           ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
         ],\
@@ -1372,11 +1389,55 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@chats-system/authkey-client-module", [\
+      ["virtual:49d0ed333bc92d9d8f32acc9a36274b462f6cff21ec073b01812fee776de792273c7f7e1dcf6b4c860986f74946297c3b47fb0e04e912b408ec112ee3e0b8d17#workspace:contexts/authkey/service/client-module", {\
+        "packageLocation": "./.yarn/__virtual__/@chats-system-authkey-client-module-virtual-5633fed6b4/1/contexts/authkey/service/client-module/",\
+        "packageDependencies": [\
+          ["@chats-system/authkey-client-module", "virtual:49d0ed333bc92d9d8f32acc9a36274b462f6cff21ec073b01812fee776de792273c7f7e1dcf6b4c860986f74946297c3b47fb0e04e912b408ec112ee3e0b8d17#workspace:contexts/authkey/service/client-module"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
+          ["@chats-system/authkey-rpc-client", "virtual:fb86d6157f71fbdcd6b90d00ff83aa9e9065a7235af1126b37cc06d61595c84bdf4831f0363cbb1d6016f1e3ab22f7f666af5039780f52de4bec3bc069aa0013#workspace:contexts/authkey/rpc/authkey-rpc-client"],\
+          ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
+          ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
+          ["@monstrs/logger", "npm:0.0.20"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
+          ["@nestjs/core", "virtual:017f3b08e30200badd8147798a8d49d16cb6ed5602644e793087814a34c32484f8ee85d15386bce4648734fe7f5a07b2103f64c279a8796406341dad715f0de1#npm:10.3.3"],\
+          ["@nestjs/microservices", "virtual:017f3b08e30200badd8147798a8d49d16cb6ed5602644e793087814a34c32484f8ee85d15386bce4648734fe7f5a07b2103f64c279a8796406341dad715f0de1#npm:10.3.3"],\
+          ["@types/bufbuild__protobuf", null],\
+          ["@types/connectrpc__connect", null],\
+          ["@types/connectrpc__connect-node", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__microservices", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["dataloader", "npm:2.2.2"],\
+          ["reflect-metadata", "npm:0.2.1"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@bufbuild/protobuf",\
+          "@connectrpc/connect-node",\
+          "@connectrpc/connect",\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/microservices",\
+          "@types/bufbuild__protobuf",\
+          "@types/connectrpc__connect-node",\
+          "@types/connectrpc__connect",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__microservices",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "SOFT"\
+      }],\
       ["virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#workspace:contexts/authkey/service/client-module", {\
         "packageLocation": "./.yarn/__virtual__/@chats-system-authkey-client-module-virtual-4a49b0168f/1/contexts/authkey/service/client-module/",\
         "packageDependencies": [\
           ["@chats-system/authkey-client-module", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#workspace:contexts/authkey/service/client-module"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/authkey-rpc-client", "virtual:fb86d6157f71fbdcd6b90d00ff83aa9e9065a7235af1126b37cc06d61595c84bdf4831f0363cbb1d6016f1e3ab22f7f666af5039780f52de4bec3bc069aa0013#workspace:contexts/authkey/rpc/authkey-rpc-client"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
@@ -1416,11 +1477,55 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
+      ["virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#workspace:contexts/authkey/service/client-module", {\
+        "packageLocation": "./.yarn/__virtual__/@chats-system-authkey-client-module-virtual-dfee84cfee/1/contexts/authkey/service/client-module/",\
+        "packageDependencies": [\
+          ["@chats-system/authkey-client-module", "virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#workspace:contexts/authkey/service/client-module"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
+          ["@chats-system/authkey-rpc-client", "virtual:fb86d6157f71fbdcd6b90d00ff83aa9e9065a7235af1126b37cc06d61595c84bdf4831f0363cbb1d6016f1e3ab22f7f666af5039780f52de4bec3bc069aa0013#workspace:contexts/authkey/rpc/authkey-rpc-client"],\
+          ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
+          ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
+          ["@monstrs/logger", "npm:0.0.20"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
+          ["@nestjs/core", "virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#npm:10.3.3"],\
+          ["@nestjs/microservices", "virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#npm:10.3.3"],\
+          ["@types/bufbuild__protobuf", null],\
+          ["@types/connectrpc__connect", null],\
+          ["@types/connectrpc__connect-node", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__microservices", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["dataloader", "npm:2.2.2"],\
+          ["reflect-metadata", "npm:0.2.1"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@bufbuild/protobuf",\
+          "@connectrpc/connect-node",\
+          "@connectrpc/connect",\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/microservices",\
+          "@types/bufbuild__protobuf",\
+          "@types/connectrpc__connect-node",\
+          "@types/connectrpc__connect",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__microservices",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "SOFT"\
+      }],\
       ["virtual:9e882501ecd5efcf844b4864bd49121b45317d9b35b65457b3b3aaf8ce3851b3a5925a87eecfbcc2575f066c2b4e44c01774eba257717f854d5a5d1b6593d86f#workspace:contexts/authkey/service/client-module", {\
         "packageLocation": "./.yarn/__virtual__/@chats-system-authkey-client-module-virtual-3710cd378e/1/contexts/authkey/service/client-module/",\
         "packageDependencies": [\
           ["@chats-system/authkey-client-module", "virtual:9e882501ecd5efcf844b4864bd49121b45317d9b35b65457b3b3aaf8ce3851b3a5925a87eecfbcc2575f066c2b4e44c01774eba257717f854d5a5d1b6593d86f#workspace:contexts/authkey/service/client-module"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/authkey-rpc-client", "virtual:fb86d6157f71fbdcd6b90d00ff83aa9e9065a7235af1126b37cc06d61595c84bdf4831f0363cbb1d6016f1e3ab22f7f666af5039780f52de4bec3bc069aa0013#workspace:contexts/authkey/rpc/authkey-rpc-client"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
@@ -1464,7 +1569,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@chats-system-authkey-client-module-virtual-fb86d6157f/1/contexts/authkey/service/client-module/",\
         "packageDependencies": [\
           ["@chats-system/authkey-client-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/authkey/service/client-module"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/authkey-rpc-client", "virtual:fb86d6157f71fbdcd6b90d00ff83aa9e9065a7235af1126b37cc06d61595c84bdf4831f0363cbb1d6016f1e3ab22f7f666af5039780f52de4bec3bc069aa0013#workspace:contexts/authkey/rpc/authkey-rpc-client"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
@@ -1508,7 +1613,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./contexts/authkey/service/client-module/",\
         "packageDependencies": [\
           ["@chats-system/authkey-client-module", "workspace:contexts/authkey/service/client-module"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/authkey-rpc-client", "virtual:fb86d6157f71fbdcd6b90d00ff83aa9e9065a7235af1126b37cc06d61595c84bdf4831f0363cbb1d6016f1e3ab22f7f666af5039780f52de4bec3bc069aa0013#workspace:contexts/authkey/rpc/authkey-rpc-client"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
@@ -1527,6 +1632,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@chats-system-authkey-domain-module-virtual-ba9909cb20/1/contexts/authkey/service/domain-module/",\
         "packageDependencies": [\
           ["@chats-system/authkey-domain-module", "virtual:1dddde44622417eb2211d3e8b6f72703182ef467287660665380772d67255d5317f54ba3c0a8b9c77e849ed0a601c176478626ea7221700661b33b4478799dac#workspace:contexts/authkey/service/domain-module"],\
+          ["@monstrs/guard-clause", "npm:0.0.8"],\
           ["@nestjs/common", "virtual:1dddde44622417eb2211d3e8b6f72703182ef467287660665380772d67255d5317f54ba3c0a8b9c77e849ed0a601c176478626ea7221700661b33b4478799dac#npm:10.3.3"],\
           ["@nestjs/core", "virtual:1dddde44622417eb2211d3e8b6f72703182ef467287660665380772d67255d5317f54ba3c0a8b9c77e849ed0a601c176478626ea7221700661b33b4478799dac#npm:10.3.3"],\
           ["@nestjs/cqrs", "virtual:1dddde44622417eb2211d3e8b6f72703182ef467287660665380772d67255d5317f54ba3c0a8b9c77e849ed0a601c176478626ea7221700661b33b4478799dac#npm:10.2.7"],\
@@ -1559,6 +1665,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@chats-system-authkey-domain-module-virtual-c51ac303ca/1/contexts/authkey/service/domain-module/",\
         "packageDependencies": [\
           ["@chats-system/authkey-domain-module", "virtual:49d0ed333bc92d9d8f32acc9a36274b462f6cff21ec073b01812fee776de792273c7f7e1dcf6b4c860986f74946297c3b47fb0e04e912b408ec112ee3e0b8d17#workspace:contexts/authkey/service/domain-module"],\
+          ["@monstrs/guard-clause", "npm:0.0.8"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
           ["@nestjs/core", "virtual:017f3b08e30200badd8147798a8d49d16cb6ed5602644e793087814a34c32484f8ee85d15386bce4648734fe7f5a07b2103f64c279a8796406341dad715f0de1#npm:10.3.3"],\
           ["@nestjs/cqrs", "virtual:017f3b08e30200badd8147798a8d49d16cb6ed5602644e793087814a34c32484f8ee85d15386bce4648734fe7f5a07b2103f64c279a8796406341dad715f0de1#npm:10.2.7"],\
@@ -1591,6 +1698,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@chats-system-authkey-domain-module-virtual-e9b7551a11/1/contexts/authkey/service/domain-module/",\
         "packageDependencies": [\
           ["@chats-system/authkey-domain-module", "virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#workspace:contexts/authkey/service/domain-module"],\
+          ["@monstrs/guard-clause", "npm:0.0.8"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
           ["@nestjs/core", "virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#npm:10.3.3"],\
           ["@nestjs/cqrs", "virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#npm:10.2.7"],\
@@ -1623,6 +1731,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@chats-system-authkey-domain-module-virtual-55fec252c5/1/contexts/authkey/service/domain-module/",\
         "packageDependencies": [\
           ["@chats-system/authkey-domain-module", "virtual:cfe72c248a270bedee4df84e81be9ef109d559b0ebdd20528d66dc2ed8affa7c20d7fe10994a0c410c063335228910e79c82f56a1cf0bedb6a52a0d1d408d950#workspace:contexts/authkey/service/domain-module"],\
+          ["@monstrs/guard-clause", "npm:0.0.8"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
           ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
           ["@nestjs/cqrs", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
@@ -1655,6 +1764,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./contexts/authkey/service/domain-module/",\
         "packageDependencies": [\
           ["@chats-system/authkey-domain-module", "workspace:contexts/authkey/service/domain-module"],\
+          ["@monstrs/guard-clause", "npm:0.0.8"],\
           ["@nestjs/common", "virtual:1dddde44622417eb2211d3e8b6f72703182ef467287660665380772d67255d5317f54ba3c0a8b9c77e849ed0a601c176478626ea7221700661b33b4478799dac#npm:10.3.3"],\
           ["@nestjs/core", "virtual:1dddde44622417eb2211d3e8b6f72703182ef467287660665380772d67255d5317f54ba3c0a8b9c77e849ed0a601c176478626ea7221700661b33b4478799dac#npm:10.3.3"],\
           ["@nestjs/cqrs", "virtual:1dddde44622417eb2211d3e8b6f72703182ef467287660665380772d67255d5317f54ba3c0a8b9c77e849ed0a601c176478626ea7221700661b33b4478799dac#npm:10.2.7"],\
@@ -1671,8 +1781,9 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@chats-system-authkey-infrastructure-module-virtual-49d0ed333b/1/contexts/authkey/service/infrastructure-module/",\
         "packageDependencies": [\
           ["@chats-system/authkey-infrastructure-module", "virtual:017f3b08e30200badd8147798a8d49d16cb6ed5602644e793087814a34c32484f8ee85d15386bce4648734fe7f5a07b2103f64c279a8796406341dad715f0de1#workspace:contexts/authkey/service/infrastructure-module"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/authkey-application-module", "virtual:49d0ed333bc92d9d8f32acc9a36274b462f6cff21ec073b01812fee776de792273c7f7e1dcf6b4c860986f74946297c3b47fb0e04e912b408ec112ee3e0b8d17#workspace:contexts/authkey/service/application-module"],\
+          ["@chats-system/authkey-client-module", "virtual:49d0ed333bc92d9d8f32acc9a36274b462f6cff21ec073b01812fee776de792273c7f7e1dcf6b4c860986f74946297c3b47fb0e04e912b408ec112ee3e0b8d17#workspace:contexts/authkey/service/client-module"],\
           ["@chats-system/authkey-domain-module", "virtual:49d0ed333bc92d9d8f32acc9a36274b462f6cff21ec073b01812fee776de792273c7f7e1dcf6b4c860986f74946297c3b47fb0e04e912b408ec112ee3e0b8d17#workspace:contexts/authkey/service/domain-module"],\
           ["@chats-system/authkey-rpc", "virtual:c9f928ce7275fe0d39e5ee6986c559b01c3a7179887d1877dc2871df9ac321755b0cd679d4dcadaec421bf4f75fb4061a6c88a98ac882d123699b88909820118#workspace:contexts/authkey/rpc/authkey-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
@@ -1691,6 +1802,7 @@ const RAW_RUNTIME_STATE =
           ["@monstrs/logger", "npm:0.0.20"],\
           ["@monstrs/nestjs-connectrpc", "virtual:017f3b08e30200badd8147798a8d49d16cb6ed5602644e793087814a34c32484f8ee85d15386bce4648734fe7f5a07b2103f64c279a8796406341dad715f0de1#npm:0.0.3"],\
           ["@monstrs/nestjs-mikro-orm-config", "virtual:017f3b08e30200badd8147798a8d49d16cb6ed5602644e793087814a34c32484f8ee85d15386bce4648734fe7f5a07b2103f64c279a8796406341dad715f0de1#npm:0.1.3"],\
+          ["@monstrs/nestjs-validation", "virtual:49d0ed333bc92d9d8f32acc9a36274b462f6cff21ec073b01812fee776de792273c7f7e1dcf6b4c860986f74946297c3b47fb0e04e912b408ec112ee3e0b8d17#npm:0.1.1"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
           ["@nestjs/core", "virtual:017f3b08e30200badd8147798a8d49d16cb6ed5602644e793087814a34c32484f8ee85d15386bce4648734fe7f5a07b2103f64c279a8796406341dad715f0de1#npm:10.3.3"],\
           ["@nestjs/cqrs", "virtual:017f3b08e30200badd8147798a8d49d16cb6ed5602644e793087814a34c32484f8ee85d15386bce4648734fe7f5a07b2103f64c279a8796406341dad715f0de1#npm:10.2.7"],\
@@ -1780,8 +1892,9 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@chats-system-authkey-infrastructure-module-virtual-cfe72c248a/1/contexts/authkey/service/infrastructure-module/",\
         "packageDependencies": [\
           ["@chats-system/authkey-infrastructure-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/authkey/service/infrastructure-module"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/authkey-application-module", "virtual:cfe72c248a270bedee4df84e81be9ef109d559b0ebdd20528d66dc2ed8affa7c20d7fe10994a0c410c063335228910e79c82f56a1cf0bedb6a52a0d1d408d950#workspace:contexts/authkey/service/application-module"],\
+          ["@chats-system/authkey-client-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/authkey/service/client-module"],\
           ["@chats-system/authkey-domain-module", "virtual:cfe72c248a270bedee4df84e81be9ef109d559b0ebdd20528d66dc2ed8affa7c20d7fe10994a0c410c063335228910e79c82f56a1cf0bedb6a52a0d1d408d950#workspace:contexts/authkey/service/domain-module"],\
           ["@chats-system/authkey-rpc", "virtual:c9f928ce7275fe0d39e5ee6986c559b01c3a7179887d1877dc2871df9ac321755b0cd679d4dcadaec421bf4f75fb4061a6c88a98ac882d123699b88909820118#workspace:contexts/authkey/rpc/authkey-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
@@ -1800,6 +1913,7 @@ const RAW_RUNTIME_STATE =
           ["@monstrs/logger", "npm:0.0.20"],\
           ["@monstrs/nestjs-connectrpc", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:0.0.3"],\
           ["@monstrs/nestjs-mikro-orm-config", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:0.1.3"],\
+          ["@monstrs/nestjs-validation", "virtual:cfe72c248a270bedee4df84e81be9ef109d559b0ebdd20528d66dc2ed8affa7c20d7fe10994a0c410c063335228910e79c82f56a1cf0bedb6a52a0d1d408d950#npm:0.1.1"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
           ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
           ["@nestjs/cqrs", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
@@ -1888,8 +2002,9 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./contexts/authkey/service/infrastructure-module/",\
         "packageDependencies": [\
           ["@chats-system/authkey-infrastructure-module", "workspace:contexts/authkey/service/infrastructure-module"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/authkey-application-module", "virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#workspace:contexts/authkey/service/application-module"],\
+          ["@chats-system/authkey-client-module", "virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#workspace:contexts/authkey/service/client-module"],\
           ["@chats-system/authkey-domain-module", "virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#workspace:contexts/authkey/service/domain-module"],\
           ["@chats-system/authkey-rpc", "virtual:c9f928ce7275fe0d39e5ee6986c559b01c3a7179887d1877dc2871df9ac321755b0cd679d4dcadaec421bf4f75fb4061a6c88a98ac882d123699b88909820118#workspace:contexts/authkey/rpc/authkey-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
@@ -1908,6 +2023,7 @@ const RAW_RUNTIME_STATE =
           ["@monstrs/logger", "npm:0.0.20"],\
           ["@monstrs/nestjs-connectrpc", "virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#npm:0.0.3"],\
           ["@monstrs/nestjs-mikro-orm-config", "virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#npm:0.1.3"],\
+          ["@monstrs/nestjs-validation", "virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#npm:0.1.1"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
           ["@nestjs/core", "virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#npm:10.3.3"],\
           ["@nestjs/cqrs", "virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#npm:10.2.7"],\
@@ -1935,8 +2051,8 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/authkey-rpc", "virtual:c9f928ce7275fe0d39e5ee6986c559b01c3a7179887d1877dc2871df9ac321755b0cd679d4dcadaec421bf4f75fb4061a6c88a98ac882d123699b88909820118#workspace:contexts/authkey/rpc/authkey-rpc"],\
           ["@bufbuild/buf", "npm:1.30.0"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
-          ["@bufbuild/protoc-gen-es", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
+          ["@bufbuild/protoc-gen-es", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:1.8.0"],\
           ["@connectrpc/protoc-gen-connect-es", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:1.4.0"],\
           ["@monstrs/protoc-gen-abstractions", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:0.0.5"],\
           ["@monstrs/protoc-gen-interfaces", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:0.0.4"],\
@@ -1953,8 +2069,8 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/authkey-rpc", "workspace:contexts/authkey/rpc/authkey-rpc"],\
           ["@bufbuild/buf", "npm:1.30.0"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
-          ["@bufbuild/protoc-gen-es", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
+          ["@bufbuild/protoc-gen-es", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:1.8.0"],\
           ["@connectrpc/protoc-gen-connect-es", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:1.4.0"],\
           ["@monstrs/protoc-gen-abstractions", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:0.0.5"],\
           ["@monstrs/protoc-gen-interfaces", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:0.0.4"]\
@@ -1967,7 +2083,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@chats-system-authkey-rpc-client-virtual-c9f928ce72/1/contexts/authkey/rpc/authkey-rpc-client/",\
         "packageDependencies": [\
           ["@chats-system/authkey-rpc-client", "virtual:fb86d6157f71fbdcd6b90d00ff83aa9e9065a7235af1126b37cc06d61595c84bdf4831f0363cbb1d6016f1e3ab22f7f666af5039780f52de4bec3bc069aa0013#workspace:contexts/authkey/rpc/authkey-rpc-client"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/authkey-rpc", "virtual:c9f928ce7275fe0d39e5ee6986c559b01c3a7179887d1877dc2871df9ac321755b0cd679d4dcadaec421bf4f75fb4061a6c88a98ac882d123699b88909820118#workspace:contexts/authkey/rpc/authkey-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
@@ -1986,7 +2102,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./contexts/authkey/rpc/authkey-rpc-client/",\
         "packageDependencies": [\
           ["@chats-system/authkey-rpc-client", "workspace:contexts/authkey/rpc/authkey-rpc-client"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/authkey-rpc", "virtual:c9f928ce7275fe0d39e5ee6986c559b01c3a7179887d1877dc2871df9ac321755b0cd679d4dcadaec421bf4f75fb4061a6c88a98ac882d123699b88909820118#workspace:contexts/authkey/rpc/authkey-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"]\
@@ -1999,7 +2115,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./contexts/authkey/service/service-entrypoint/",\
         "packageDependencies": [\
           ["@chats-system/authkey-service-entrypoint", "workspace:contexts/authkey/service/service-entrypoint"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/authkey-infrastructure-module", "virtual:017f3b08e30200badd8147798a8d49d16cb6ed5602644e793087814a34c32484f8ee85d15386bce4648734fe7f5a07b2103f64c279a8796406341dad715f0de1#workspace:contexts/authkey/service/infrastructure-module"],\
           ["@chats-system/authkey-rpc", "virtual:c9f928ce7275fe0d39e5ee6986c559b01c3a7179887d1877dc2871df9ac321755b0cd679d4dcadaec421bf4f75fb4061a6c88a98ac882d123699b88909820118#workspace:contexts/authkey/rpc/authkey-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
@@ -2015,6 +2131,7 @@ const RAW_RUNTIME_STATE =
           ["@mikro-orm/postgresql", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:6.1.9"],\
           ["@mikro-orm/seeder", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:6.1.9"],\
           ["@monstrs/nestjs-connectrpc", "virtual:017f3b08e30200badd8147798a8d49d16cb6ed5602644e793087814a34c32484f8ee85d15386bce4648734fe7f5a07b2103f64c279a8796406341dad715f0de1#npm:0.0.3"],\
+          ["@monstrs/nestjs-cqrs", "virtual:017f3b08e30200badd8147798a8d49d16cb6ed5602644e793087814a34c32484f8ee85d15386bce4648734fe7f5a07b2103f64c279a8796406341dad715f0de1#npm:0.0.4"],\
           ["@monstrs/nestjs-logger", "virtual:017f3b08e30200badd8147798a8d49d16cb6ed5602644e793087814a34c32484f8ee85d15386bce4648734fe7f5a07b2103f64c279a8796406341dad715f0de1#npm:0.4.2"],\
           ["@monstrs/nestjs-mikro-orm-config", "virtual:017f3b08e30200badd8147798a8d49d16cb6ed5602644e793087814a34c32484f8ee85d15386bce4648734fe7f5a07b2103f64c279a8796406341dad715f0de1#npm:0.1.3"],\
           ["@monstrs/protobuf-rpc", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:0.0.7"],\
@@ -2064,7 +2181,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@chats-system-gateway-infrastructure-module-virtual-7f82297873/1/contexts/gateway/service/infrastructure-module/",\
         "packageDependencies": [\
           ["@chats-system/gateway-infrastructure-module", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#workspace:contexts/gateway/service/infrastructure-module"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/authkey-client-module", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#workspace:contexts/authkey/service/client-module"],\
           ["@chats-system/handshake", "workspace:shared/handshake"],\
           ["@chats-system/transport", "workspace:shared/transport"],\
@@ -2146,7 +2263,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@chats-system-gateway-infrastructure-module-virtual-dfbe61e4f6/1/contexts/gateway/service/infrastructure-module/",\
         "packageDependencies": [\
           ["@chats-system/gateway-infrastructure-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/gateway/service/infrastructure-module"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/authkey-client-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/authkey/service/client-module"],\
           ["@chats-system/handshake", "workspace:shared/handshake"],\
           ["@chats-system/transport", "workspace:shared/transport"],\
@@ -2162,7 +2279,7 @@ const RAW_RUNTIME_STATE =
           ["@monstrs/mtproto-tl-primitives", "npm:0.0.4"],\
           ["@monstrs/nestjs-connectrpc", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:0.0.3"],\
           ["@monstrs/nestjs-connectrpc-errors", "virtual:dfbe61e4f62815636492187a2d22f09104bc50655360901d3c2612cff2679b9b143fb8ae49f6c937247857761621d3c101a726fd0253082e5db2253f31d5e318#npm:0.0.3"],\
-          ["@monstrs/nestjs-validation", "virtual:dfbe61e4f62815636492187a2d22f09104bc50655360901d3c2612cff2679b9b143fb8ae49f6c937247857761621d3c101a726fd0253082e5db2253f31d5e318#npm:0.1.1"],\
+          ["@monstrs/nestjs-validation", "virtual:cfe72c248a270bedee4df84e81be9ef109d559b0ebdd20528d66dc2ed8affa7c20d7fe10994a0c410c063335228910e79c82f56a1cf0bedb6a52a0d1d408d950#npm:0.1.1"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
           ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
           ["@nestjs/cqrs", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.2.7"],\
@@ -2228,7 +2345,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./contexts/gateway/service/infrastructure-module/",\
         "packageDependencies": [\
           ["@chats-system/gateway-infrastructure-module", "workspace:contexts/gateway/service/infrastructure-module"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/authkey-client-module", "virtual:9e882501ecd5efcf844b4864bd49121b45317d9b35b65457b3b3aaf8ce3851b3a5925a87eecfbcc2575f066c2b4e44c01774eba257717f854d5a5d1b6593d86f#workspace:contexts/authkey/service/client-module"],\
           ["@chats-system/handshake", "workspace:shared/handshake"],\
           ["@chats-system/transport", "workspace:shared/transport"],\
@@ -2271,7 +2388,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./contexts/gateway/service/service-entrypoint/",\
         "packageDependencies": [\
           ["@chats-system/gateway-service-entrypoint", "workspace:contexts/gateway/service/service-entrypoint"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/authkey-client-module", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#workspace:contexts/authkey/service/client-module"],\
           ["@chats-system/client", "workspace:shared/client"],\
           ["@chats-system/gateway-infrastructure-module", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#workspace:contexts/gateway/service/infrastructure-module"],\
@@ -2331,7 +2448,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@chats-system-idgen-client-module-virtual-5f58aa91ec/1/contexts/idgen/service/client-module/",\
         "packageDependencies": [\
           ["@chats-system/idgen-client-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/idgen/service/client-module"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/idgen-rpc-client", "virtual:5f58aa91ec2f3d5c088043ac064f1ddb81ebff20d12c6cb6508b227f4d6c27defd63a328c3badb9aaec88fb0cd882fd17c20a2a11cc3a7b982f60a09bde19cdf#workspace:contexts/idgen/rpc/idgen-rpc-client"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
@@ -2378,7 +2495,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@chats-system-idgen-client-module-virtual-51f2c62f83/1/contexts/idgen/service/client-module/",\
         "packageDependencies": [\
           ["@chats-system/idgen-client-module", "virtual:d992522ee7bb5eb43f7e0e80c32dbeca038fb04919064f59aee8a5f5ae521f147684c9a7520836f07b806db1bfa361a1aafaea5b2fe6f644ce4e71b99f4ae7bc#workspace:contexts/idgen/service/client-module"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/idgen-rpc-client", "virtual:5f58aa91ec2f3d5c088043ac064f1ddb81ebff20d12c6cb6508b227f4d6c27defd63a328c3badb9aaec88fb0cd882fd17c20a2a11cc3a7b982f60a09bde19cdf#workspace:contexts/idgen/rpc/idgen-rpc-client"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
@@ -2425,7 +2542,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./contexts/idgen/service/client-module/",\
         "packageDependencies": [\
           ["@chats-system/idgen-client-module", "workspace:contexts/idgen/service/client-module"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/idgen-rpc-client", "virtual:5f58aa91ec2f3d5c088043ac064f1ddb81ebff20d12c6cb6508b227f4d6c27defd63a328c3badb9aaec88fb0cd882fd17c20a2a11cc3a7b982f60a09bde19cdf#workspace:contexts/idgen/rpc/idgen-rpc-client"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
@@ -2447,7 +2564,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@chats-system-idgen-infrastructure-module-virtual-5fa2334500/1/contexts/idgen/service/infrastructure-module/",\
         "packageDependencies": [\
           ["@chats-system/idgen-infrastructure-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/idgen/service/infrastructure-module"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/idgen-rpc", "virtual:2c1777e7e7b504743f63352d5884972dae5951d4425d1cbb1c21796712bc5f5d9b9d8d5bae0af15fe8ae7910a64385859aab1427f9eb65abbbdeb3e45d2ba06f#workspace:contexts/idgen/rpc/idgen-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
@@ -2524,7 +2641,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@chats-system-idgen-infrastructure-module-virtual-410f0616fa/1/contexts/idgen/service/infrastructure-module/",\
         "packageDependencies": [\
           ["@chats-system/idgen-infrastructure-module", "virtual:d992522ee7bb5eb43f7e0e80c32dbeca038fb04919064f59aee8a5f5ae521f147684c9a7520836f07b806db1bfa361a1aafaea5b2fe6f644ce4e71b99f4ae7bc#workspace:contexts/idgen/service/infrastructure-module"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/idgen-rpc", "virtual:2c1777e7e7b504743f63352d5884972dae5951d4425d1cbb1c21796712bc5f5d9b9d8d5bae0af15fe8ae7910a64385859aab1427f9eb65abbbdeb3e45d2ba06f#workspace:contexts/idgen/rpc/idgen-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
@@ -2602,7 +2719,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./contexts/idgen/service/infrastructure-module/",\
         "packageDependencies": [\
           ["@chats-system/idgen-infrastructure-module", "workspace:contexts/idgen/service/infrastructure-module"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/idgen-rpc", "virtual:2c1777e7e7b504743f63352d5884972dae5951d4425d1cbb1c21796712bc5f5d9b9d8d5bae0af15fe8ae7910a64385859aab1427f9eb65abbbdeb3e45d2ba06f#workspace:contexts/idgen/rpc/idgen-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
@@ -2639,8 +2756,8 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/idgen-rpc", "virtual:2c1777e7e7b504743f63352d5884972dae5951d4425d1cbb1c21796712bc5f5d9b9d8d5bae0af15fe8ae7910a64385859aab1427f9eb65abbbdeb3e45d2ba06f#workspace:contexts/idgen/rpc/idgen-rpc"],\
           ["@bufbuild/buf", "npm:1.30.0"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
-          ["@bufbuild/protoc-gen-es", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
+          ["@bufbuild/protoc-gen-es", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:1.8.0"],\
           ["@connectrpc/protoc-gen-connect-es", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:1.4.0"],\
           ["@monstrs/protoc-gen-abstractions", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:0.0.5"],\
           ["@monstrs/protoc-gen-interfaces", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:0.0.4"],\
@@ -2657,8 +2774,8 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@chats-system/idgen-rpc", "workspace:contexts/idgen/rpc/idgen-rpc"],\
           ["@bufbuild/buf", "npm:1.30.0"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
-          ["@bufbuild/protoc-gen-es", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
+          ["@bufbuild/protoc-gen-es", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:1.8.0"],\
           ["@connectrpc/protoc-gen-connect-es", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:1.4.0"],\
           ["@monstrs/protoc-gen-abstractions", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:0.0.5"],\
           ["@monstrs/protoc-gen-interfaces", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:0.0.4"]\
@@ -2671,7 +2788,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@chats-system-idgen-rpc-client-virtual-2c1777e7e7/1/contexts/idgen/rpc/idgen-rpc-client/",\
         "packageDependencies": [\
           ["@chats-system/idgen-rpc-client", "virtual:5f58aa91ec2f3d5c088043ac064f1ddb81ebff20d12c6cb6508b227f4d6c27defd63a328c3badb9aaec88fb0cd882fd17c20a2a11cc3a7b982f60a09bde19cdf#workspace:contexts/idgen/rpc/idgen-rpc-client"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/idgen-rpc", "virtual:2c1777e7e7b504743f63352d5884972dae5951d4425d1cbb1c21796712bc5f5d9b9d8d5bae0af15fe8ae7910a64385859aab1427f9eb65abbbdeb3e45d2ba06f#workspace:contexts/idgen/rpc/idgen-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
@@ -2690,7 +2807,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./contexts/idgen/rpc/idgen-rpc-client/",\
         "packageDependencies": [\
           ["@chats-system/idgen-rpc-client", "workspace:contexts/idgen/rpc/idgen-rpc-client"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/idgen-rpc", "virtual:2c1777e7e7b504743f63352d5884972dae5951d4425d1cbb1c21796712bc5f5d9b9d8d5bae0af15fe8ae7910a64385859aab1427f9eb65abbbdeb3e45d2ba06f#workspace:contexts/idgen/rpc/idgen-rpc"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"]\
@@ -2703,7 +2820,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./contexts/idgen/service/service-entrypoint/",\
         "packageDependencies": [\
           ["@chats-system/idgen-service-entrypoint", "workspace:contexts/idgen/service/service-entrypoint"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/idgen-client-module", "virtual:d992522ee7bb5eb43f7e0e80c32dbeca038fb04919064f59aee8a5f5ae521f147684c9a7520836f07b806db1bfa361a1aafaea5b2fe6f644ce4e71b99f4ae7bc#workspace:contexts/idgen/service/client-module"],\
           ["@chats-system/idgen-infrastructure-module", "virtual:d992522ee7bb5eb43f7e0e80c32dbeca038fb04919064f59aee8a5f5ae521f147684c9a7520836f07b806db1bfa361a1aafaea5b2fe6f644ce4e71b99f4ae7bc#workspace:contexts/idgen/service/infrastructure-module"],\
           ["@chats-system/idgen-rpc", "virtual:2c1777e7e7b504743f63352d5884972dae5951d4425d1cbb1c21796712bc5f5d9b9d8d5bae0af15fe8ae7910a64385859aab1427f9eb65abbbdeb3e45d2ba06f#workspace:contexts/idgen/rpc/idgen-rpc"],\
@@ -2744,7 +2861,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./applications/standalone/entrypoints/standalone-service-entrypoint/",\
         "packageDependencies": [\
           ["@chats-system/standalone-service-entrypoint", "workspace:applications/standalone/entrypoints/standalone-service-entrypoint"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@chats-system/authkey-client-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/authkey/service/client-module"],\
           ["@chats-system/authkey-infrastructure-module", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#workspace:contexts/authkey/service/infrastructure-module"],\
           ["@chats-system/client", "workspace:shared/client"],\
@@ -2821,7 +2938,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@connectrpc-connect-virtual-dbc1a7251a/0/cache/@connectrpc-connect-npm-1.4.0-5073e7e989-6006e4aef6.zip/node_modules/@connectrpc/connect/",\
         "packageDependencies": [\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@types/bufbuild__protobuf", null]\
         ],\
         "packagePeers": [\
@@ -2843,7 +2960,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@connectrpc-connect-node-virtual-707bf0028c/0/cache/@connectrpc-connect-node-npm-1.4.0-215ee814b5-8699e3cb8d.zip/node_modules/@connectrpc/connect-node/",\
         "packageDependencies": [\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@types/bufbuild__protobuf", null],\
           ["@types/connectrpc__connect", null],\
@@ -2871,7 +2988,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@connectrpc/protoc-gen-connect-es", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:1.4.0"],\
           ["@bufbuild/protobuf", "npm:1.7.2"],\
-          ["@bufbuild/protoc-gen-es", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:1.7.2"],\
+          ["@bufbuild/protoc-gen-es", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:1.8.0"],\
           ["@bufbuild/protoplugin", "npm:1.7.2"],\
           ["@connectrpc/connect", null],\
           ["@types/bufbuild__protoc-gen-es", null],\
@@ -3895,6 +4012,15 @@ const RAW_RUNTIME_STATE =
           ["validator", "npm:13.11.0"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:0.0.8", {\
+        "packageLocation": "./.yarn/cache/@monstrs-guard-clause-npm-0.0.8-024da6b5ee-42cfec61c7.zip/node_modules/@monstrs/guard-clause/",\
+        "packageDependencies": [\
+          ["@monstrs/guard-clause", "npm:0.0.8"],\
+          ["ajv", "npm:8.12.0"],\
+          ["validator", "npm:13.11.0"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["@monstrs/jest-resolver", [\
@@ -4082,7 +4208,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-connectrpc-virtual-11ce9cc550/0/cache/@monstrs-nestjs-connectrpc-npm-0.0.3-8af127544a-a5f121326a.zip/node_modules/@monstrs/nestjs-connectrpc/",\
         "packageDependencies": [\
           ["@monstrs/nestjs-connectrpc", "virtual:017f3b08e30200badd8147798a8d49d16cb6ed5602644e793087814a34c32484f8ee85d15386bce4648734fe7f5a07b2103f64c279a8796406341dad715f0de1#npm:0.0.3"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
@@ -4127,7 +4253,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-connectrpc-virtual-3bc39c095a/0/cache/@monstrs-nestjs-connectrpc-npm-0.0.3-8af127544a-a5f121326a.zip/node_modules/@monstrs/nestjs-connectrpc/",\
         "packageDependencies": [\
           ["@monstrs/nestjs-connectrpc", "virtual:6d2cb80794e8c7b3e0201f35383d266d88e32c81b0e5c7fa9e95647f2cb94acdd66ae6a166f35dacc1edfffe15f119d8ef42cc6fb53a4d51ad5384469b293522#npm:0.0.3"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
@@ -4172,7 +4298,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-connectrpc-virtual-8879bfcf2a/0/cache/@monstrs-nestjs-connectrpc-npm-0.0.3-8af127544a-a5f121326a.zip/node_modules/@monstrs/nestjs-connectrpc/",\
         "packageDependencies": [\
           ["@monstrs/nestjs-connectrpc", "virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#npm:0.0.3"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
@@ -4217,7 +4343,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-connectrpc-virtual-4a7c424a23/0/cache/@monstrs-nestjs-connectrpc-npm-0.0.3-8af127544a-a5f121326a.zip/node_modules/@monstrs/nestjs-connectrpc/",\
         "packageDependencies": [\
           ["@monstrs/nestjs-connectrpc", "virtual:9e882501ecd5efcf844b4864bd49121b45317d9b35b65457b3b3aaf8ce3851b3a5925a87eecfbcc2575f066c2b4e44c01774eba257717f854d5a5d1b6593d86f#npm:0.0.3"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
@@ -4262,7 +4388,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-connectrpc-virtual-e392bd37af/0/cache/@monstrs-nestjs-connectrpc-npm-0.0.3-8af127544a-a5f121326a.zip/node_modules/@monstrs/nestjs-connectrpc/",\
         "packageDependencies": [\
           ["@monstrs/nestjs-connectrpc", "virtual:d73060c4e81c4330330d4f9a6826aea55e18ed83388ce113021255ca798c9a0aa1e799d7520a3f0485b31a47ab8f30f87c1a3bb350bd203e0d05c1b6f0a95143#npm:0.0.3"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
@@ -4307,7 +4433,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-connectrpc-virtual-e044e58811/0/cache/@monstrs-nestjs-connectrpc-npm-0.0.3-8af127544a-a5f121326a.zip/node_modules/@monstrs/nestjs-connectrpc/",\
         "packageDependencies": [\
           ["@monstrs/nestjs-connectrpc", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:0.0.3"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
@@ -4352,7 +4478,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-connectrpc-virtual-cbd31d5c01/0/cache/@monstrs-nestjs-connectrpc-npm-0.0.3-8af127544a-a5f121326a.zip/node_modules/@monstrs/nestjs-connectrpc/",\
         "packageDependencies": [\
           ["@monstrs/nestjs-connectrpc", "virtual:d992522ee7bb5eb43f7e0e80c32dbeca038fb04919064f59aee8a5f5ae521f147684c9a7520836f07b806db1bfa361a1aafaea5b2fe6f644ce4e71b99f4ae7bc#npm:0.0.3"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@connectrpc/connect-node", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
@@ -4505,7 +4631,7 @@ const RAW_RUNTIME_STATE =
           ["@connectrpc/connect", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:1.4.0"],\
           ["@monstrs/core-errors", "npm:0.0.2"],\
           ["@monstrs/guard-clause", "npm:0.0.7"],\
-          ["@monstrs/nestjs-validation", "virtual:dfbe61e4f62815636492187a2d22f09104bc50655360901d3c2612cff2679b9b143fb8ae49f6c937247857761621d3c101a726fd0253082e5db2253f31d5e318#npm:0.1.1"],\
+          ["@monstrs/nestjs-validation", "virtual:cfe72c248a270bedee4df84e81be9ef109d559b0ebdd20528d66dc2ed8affa7c20d7fe10994a0c410c063335228910e79c82f56a1cf0bedb6a52a0d1d408d950#npm:0.1.1"],\
           ["@monstrs/protobuf-rpc", "virtual:ea3a50369c24e2ea43db88e2e1ab4dc11b3f2b02d7748f2de9fda0877f808d223f38874dd89e9c87a3d7ae24ea2140b78ba036750945c713a0ac0b7ce0513c0f#npm:0.0.6"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
           ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
@@ -4541,6 +4667,44 @@ const RAW_RUNTIME_STATE =
           "@types/rxjs",\
           "class-transformer",\
           "class-validator",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@monstrs/nestjs-cqrs", [\
+      ["npm:0.0.4", {\
+        "packageLocation": "./.yarn/cache/@monstrs-nestjs-cqrs-npm-0.0.4-182368e646-79363369d8.zip/node_modules/@monstrs/nestjs-cqrs/",\
+        "packageDependencies": [\
+          ["@monstrs/nestjs-cqrs", "npm:0.0.4"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:017f3b08e30200badd8147798a8d49d16cb6ed5602644e793087814a34c32484f8ee85d15386bce4648734fe7f5a07b2103f64c279a8796406341dad715f0de1#npm:0.0.4", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-cqrs-virtual-d348ea37d6/0/cache/@monstrs-nestjs-cqrs-npm-0.0.4-182368e646-79363369d8.zip/node_modules/@monstrs/nestjs-cqrs/",\
+        "packageDependencies": [\
+          ["@monstrs/nestjs-cqrs", "virtual:017f3b08e30200badd8147798a8d49d16cb6ed5602644e793087814a34c32484f8ee85d15386bce4648734fe7f5a07b2103f64c279a8796406341dad715f0de1#npm:0.0.4"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
+          ["@nestjs/core", "virtual:017f3b08e30200badd8147798a8d49d16cb6ed5602644e793087814a34c32484f8ee85d15386bce4648734fe7f5a07b2103f64c279a8796406341dad715f0de1#npm:10.3.3"],\
+          ["@nestjs/cqrs", "virtual:017f3b08e30200badd8147798a8d49d16cb6ed5602644e793087814a34c32484f8ee85d15386bce4648734fe7f5a07b2103f64c279a8796406341dad715f0de1#npm:10.2.7"],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/nestjs__cqrs", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["reflect-metadata", "npm:0.2.1"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@nestjs/cqrs",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/nestjs__cqrs",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
           "reflect-metadata",\
           "rxjs"\
         ],\
@@ -4907,6 +5071,72 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
+      ["virtual:49d0ed333bc92d9d8f32acc9a36274b462f6cff21ec073b01812fee776de792273c7f7e1dcf6b4c860986f74946297c3b47fb0e04e912b408ec112ee3e0b8d17#npm:0.1.1", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-validation-virtual-17eb2fe862/0/cache/@monstrs-nestjs-validation-npm-0.1.1-a7d3b47896-e28c73e414.zip/node_modules/@monstrs/nestjs-validation/",\
+        "packageDependencies": [\
+          ["@monstrs/nestjs-validation", "virtual:49d0ed333bc92d9d8f32acc9a36274b462f6cff21ec073b01812fee776de792273c7f7e1dcf6b4c860986f74946297c3b47fb0e04e912b408ec112ee3e0b8d17#npm:0.1.1"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
+          ["@nestjs/core", "virtual:017f3b08e30200badd8147798a8d49d16cb6ed5602644e793087814a34c32484f8ee85d15386bce4648734fe7f5a07b2103f64c279a8796406341dad715f0de1#npm:10.3.3"],\
+          ["@types/class-transformer", null],\
+          ["@types/class-validator", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["class-transformer", "npm:0.5.1"],\
+          ["class-validator", "npm:0.14.1"],\
+          ["reflect-metadata", "npm:0.2.1"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/class-transformer",\
+          "@types/class-validator",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "class-transformer",\
+          "class-validator",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#npm:0.1.1", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-validation-virtual-35c2ba6c45/0/cache/@monstrs-nestjs-validation-npm-0.1.1-a7d3b47896-e28c73e414.zip/node_modules/@monstrs/nestjs-validation/",\
+        "packageDependencies": [\
+          ["@monstrs/nestjs-validation", "virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#npm:0.1.1"],\
+          ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
+          ["@nestjs/core", "virtual:6f2f9ce078fdd57cf06cad0c8dcfa5a1a61e20c64166aeacfc4abff9a31f03986692bc2d37937653572c30a40f2cb33ba4483fc62b68c8a22888b929315d9cc2#npm:10.3.3"],\
+          ["@types/class-transformer", null],\
+          ["@types/class-validator", null],\
+          ["@types/nestjs__common", null],\
+          ["@types/nestjs__core", null],\
+          ["@types/reflect-metadata", null],\
+          ["@types/rxjs", null],\
+          ["class-transformer", "npm:0.5.1"],\
+          ["class-validator", "npm:0.14.1"],\
+          ["reflect-metadata", "npm:0.2.1"],\
+          ["rxjs", "npm:7.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@nestjs/common",\
+          "@nestjs/core",\
+          "@types/class-transformer",\
+          "@types/class-validator",\
+          "@types/nestjs__common",\
+          "@types/nestjs__core",\
+          "@types/reflect-metadata",\
+          "@types/rxjs",\
+          "class-transformer",\
+          "class-validator",\
+          "reflect-metadata",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:7f82297873259a0a60cf275b1db7557b87dda938a85dd17fff2c7c9838346deba09cf9c5158e57324e9a63f663006d2e1d28cf1ddd46f1a330bc8d5ecfba3936#npm:0.1.1", {\
         "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-validation-virtual-27a1a8bdd9/0/cache/@monstrs-nestjs-validation-npm-0.1.1-a7d3b47896-e28c73e414.zip/node_modules/@monstrs/nestjs-validation/",\
         "packageDependencies": [\
@@ -4973,10 +5203,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["virtual:dfbe61e4f62815636492187a2d22f09104bc50655360901d3c2612cff2679b9b143fb8ae49f6c937247857761621d3c101a726fd0253082e5db2253f31d5e318#npm:0.1.1", {\
-        "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-validation-virtual-6cb1bc0a93/0/cache/@monstrs-nestjs-validation-npm-0.1.1-a7d3b47896-e28c73e414.zip/node_modules/@monstrs/nestjs-validation/",\
+      ["virtual:cfe72c248a270bedee4df84e81be9ef109d559b0ebdd20528d66dc2ed8affa7c20d7fe10994a0c410c063335228910e79c82f56a1cf0bedb6a52a0d1d408d950#npm:0.1.1", {\
+        "packageLocation": "./.yarn/__virtual__/@monstrs-nestjs-validation-virtual-5000559f24/0/cache/@monstrs-nestjs-validation-npm-0.1.1-a7d3b47896-e28c73e414.zip/node_modules/@monstrs/nestjs-validation/",\
         "packageDependencies": [\
-          ["@monstrs/nestjs-validation", "virtual:dfbe61e4f62815636492187a2d22f09104bc50655360901d3c2612cff2679b9b143fb8ae49f6c937247857761621d3c101a726fd0253082e5db2253f31d5e318#npm:0.1.1"],\
+          ["@monstrs/nestjs-validation", "virtual:cfe72c248a270bedee4df84e81be9ef109d559b0ebdd20528d66dc2ed8affa7c20d7fe10994a0c410c063335228910e79c82f56a1cf0bedb6a52a0d1d408d950#npm:0.1.1"],\
           ["@nestjs/common", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
           ["@nestjs/core", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:10.3.3"],\
           ["@types/class-transformer", null],\
@@ -5026,7 +5256,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@monstrs-protobuf-rpc-virtual-db9e5b5ab4/0/cache/@monstrs-protobuf-rpc-npm-0.0.7-b4dc0ede7a-74cef1d746.zip/node_modules/@monstrs/protobuf-rpc/",\
         "packageDependencies": [\
           ["@monstrs/protobuf-rpc", "virtual:d75a3b0f9edacb53537e479743e5fa88240a25d2d0812be6bbff2299a67b052545079ec7d364ff4082f15209ff7e498c3c5a22637500cb131631738a00f5a3b1#npm:0.0.7"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@types/bufbuild__protobuf", null]\
         ],\
         "packagePeers": [\
@@ -5060,7 +5290,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@monstrs-protoc-gen-abstractions-virtual-4314019be6/0/cache/@monstrs-protoc-gen-abstractions-npm-0.0.5-3eadd16bfe-fcb2b3e9d8.zip/node_modules/@monstrs/protoc-gen-abstractions/",\
         "packageDependencies": [\
           ["@monstrs/protoc-gen-abstractions", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:0.0.5"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@bufbuild/protoplugin", "npm:1.7.2"],\
           ["@types/bufbuild__protobuf", null]\
         ],\
@@ -5083,7 +5313,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@monstrs-protoc-gen-interfaces-virtual-3c91111af6/0/cache/@monstrs-protoc-gen-interfaces-npm-0.0.4-4e7e6d7429-d02c45f21e.zip/node_modules/@monstrs/protoc-gen-interfaces/",\
         "packageDependencies": [\
           ["@monstrs/protoc-gen-interfaces", "virtual:23f4f83a85b4bb7fe440c2a495b2181073cc7aea238699dd712515bf7e3a15cc75061d9d09f50aa62514ed9b8a8332729a91cbe3f24eb5539a3c37c113335edc#npm:0.0.4"],\
-          ["@bufbuild/protobuf", "npm:1.7.2"],\
+          ["@bufbuild/protobuf", "npm:1.8.0"],\
           ["@bufbuild/protoplugin", "npm:1.7.2"],\
           ["@types/bufbuild__protobuf", null]\
         ],\

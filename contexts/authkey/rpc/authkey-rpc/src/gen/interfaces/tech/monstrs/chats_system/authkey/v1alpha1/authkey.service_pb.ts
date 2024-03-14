@@ -3,29 +3,22 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { AuthKey }           from './authkey.types_pb.js'
-import type { AuthKeyConnection } from './authkey.types_pb.js'
-import type { AuthKeyType }       from './authkey.types_pb.js'
-import type { AuthKeyUser }       from './authkey.types_pb.js'
+import type { AuthKey }     from './authkey.types_pb.js'
+import type { AuthKeyUser } from './authkey.types_pb.js'
 
 /**
  * @generated from message tech.monstrs.chats_system.authkey.v1alpha1.CreateAuthKeyRequest
  */
 export interface CreateAuthKeyRequest {
   /**
-   * @generated from field: int64 auth_key_id = 1;
+   * @generated from field: int64 id = 1;
    */
-  authKeyId: bigint
+  id: bigint
 
   /**
-   * @generated from field: bytes auth_key = 2;
+   * @generated from field: bytes key = 2;
    */
-  authKey: Uint8Array
-
-  /**
-   * @generated from field: tech.monstrs.chats_system.authkey.v1alpha1.AuthKeyType auth_key_type = 3;
-   */
-  authKeyType: AuthKeyType
+  key: Uint8Array
 }
 
 /**
@@ -58,149 +51,9 @@ export interface CreateAuthKeyUserRequest {
  */
 export interface CreateAuthKeyUserResponse {
   /**
-   * @generated from field: int64 hash = 1;
+   * @generated from field: tech.monstrs.chats_system.authkey.v1alpha1.AuthKeyUser auth_key_user = 1;
    */
-  hash: bigint
-}
-
-/**
- * @generated from message tech.monstrs.chats_system.authkey.v1alpha1.CreateAuthKeyConnectionRequest
- */
-export interface CreateAuthKeyConnectionRequest {
-  /**
-   * @generated from field: int64 auth_key_id = 1;
-   */
-  authKeyId: bigint
-
-  /**
-   * @generated from field: string client_ip = 2;
-   */
-  clientIp: string
-
-  /**
-   * @generated from field: int32 layer = 3;
-   */
-  layer: number
-
-  /**
-   * @generated from field: int32 api_id = 4;
-   */
-  apiId: number
-
-  /**
-   * @generated from field: string device_model = 5;
-   */
-  deviceModel: string
-
-  /**
-   * @generated from field: string system_version = 6;
-   */
-  systemVersion: string
-
-  /**
-   * @generated from field: string app_version = 7;
-   */
-  appVersion: string
-
-  /**
-   * @generated from field: string system_lang_code = 8;
-   */
-  systemLangCode: string
-
-  /**
-   * @generated from field: string lang_pack = 9;
-   */
-  langPack: string
-
-  /**
-   * @generated from field: string lang_code = 10;
-   */
-  langCode: string
-
-  /**
-   * @generated from field: optional string params = 11;
-   */
-  params?: string
-}
-
-/**
- * @generated from message tech.monstrs.chats_system.authkey.v1alpha1.CreateAuthKeyConnectionResponse
- */
-export interface CreateAuthKeyConnectionResponse {
-  /**
-   * @generated from field: tech.monstrs.chats_system.authkey.v1alpha1.AuthKeyConnection auth_key_connection = 1;
-   */
-  authKeyConnection?: AuthKeyConnection
-}
-
-/**
- * @generated from message tech.monstrs.chats_system.authkey.v1alpha1.UpdateAuthKeyConnectionRequest
- */
-export interface UpdateAuthKeyConnectionRequest {
-  /**
-   * @generated from field: int64 auth_key_id = 1;
-   */
-  authKeyId: bigint
-
-  /**
-   * @generated from field: optional string client_ip = 2;
-   */
-  clientIp?: string
-
-  /**
-   * @generated from field: optional int32 layer = 3;
-   */
-  layer?: number
-
-  /**
-   * @generated from field: optional int32 api_id = 4;
-   */
-  apiId?: number
-
-  /**
-   * @generated from field: optional string device_model = 5;
-   */
-  deviceModel?: string
-
-  /**
-   * @generated from field: optional string system_version = 6;
-   */
-  systemVersion?: string
-
-  /**
-   * @generated from field: optional string app_version = 7;
-   */
-  appVersion?: string
-
-  /**
-   * @generated from field: optional string system_lang_code = 8;
-   */
-  systemLangCode?: string
-
-  /**
-   * @generated from field: optional string lang_pack = 9;
-   */
-  langPack?: string
-
-  /**
-   * @generated from field: optional string lang_code = 10;
-   */
-  langCode?: string
-
-  /**
-   * @generated from field: optional string params = 11;
-   */
-  params?: string
-}
-
-/**
- * @generated from message tech.monstrs.chats_system.authkey.v1alpha1.UpdateAuthKeyConnectionResponse
- */
-export interface UpdateAuthKeyConnectionResponse {
-  /**
-   * @generated from field: tech.monstrs.chats_system.authkey.v1alpha1.AuthKeyConnection auth_key_connection = 1;
-   */
-  authKeyConnection?: AuthKeyConnection
+  authKeyUser?: AuthKeyUser
 }
 
 /**
@@ -221,26 +74,6 @@ export interface GetAuthKeyResponse {
    * @generated from field: tech.monstrs.chats_system.authkey.v1alpha1.AuthKey auth_key = 1;
    */
   authKey?: AuthKey
-}
-
-/**
- * @generated from message tech.monstrs.chats_system.authkey.v1alpha1.GetAuthKeyConnectionRequest
- */
-export interface GetAuthKeyConnectionRequest {
-  /**
-   * @generated from field: int64 auth_key_id = 1;
-   */
-  authKeyId: bigint
-}
-
-/**
- * @generated from message tech.monstrs.chats_system.authkey.v1alpha1.GetAuthKeyConnectionResponse
- */
-export interface GetAuthKeyConnectionResponse {
-  /**
-   * @generated from field: tech.monstrs.chats_system.authkey.v1alpha1.AuthKeyConnection auth_key_connection = 1;
-   */
-  authKeyConnection?: AuthKeyConnection
 }
 
 /**

@@ -7,6 +7,7 @@ import { MikroOrmModule }      from '@mikro-orm/nestjs'
 import { PostgreSqlDriver }    from '@mikro-orm/postgresql'
 import { RedisModule }         from '@monstrs/nestjs-redis'
 import { Module }              from '@nestjs/common'
+import { CqrsModule }          from '@nestjs/cqrs'
 
 import { AuthKeyClientModule } from '@chats-system/authkey-client-module'
 import { IdGenClientModule }   from '@chats-system/idgen-client-module'
@@ -23,6 +24,7 @@ export class StandaloneServiceConfigModule implements OnModuleInit {
       global: true,
       module: StandaloneServiceConfigModule,
       imports: [
+        CqrsModule.forRoot(),
         IdGenClientModule.register(),
         AuthKeyClientModule.register(),
         RedisModule.register({}, true),

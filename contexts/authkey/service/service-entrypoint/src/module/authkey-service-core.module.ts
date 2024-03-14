@@ -6,6 +6,7 @@ import { Migrator }           from '@mikro-orm/migrations'
 import { MikroOrmModule }     from '@mikro-orm/nestjs'
 import { PostgreSqlDriver }   from '@mikro-orm/postgresql'
 import { Module }             from '@nestjs/common'
+import { CqrsModule }         from '@nestjs/cqrs'
 
 import { entities }           from '@chats-system/authkey-infrastructure-module'
 import { migrations }         from '@chats-system/authkey-infrastructure-module'
@@ -18,6 +19,7 @@ export class AuthKeyServiceCoreModule implements OnModuleInit {
     return {
       module: AuthKeyServiceCoreModule,
       imports: [
+        CqrsModule.forRoot(),
         MikroOrmModule.forRoot({
           driver: PostgreSqlDriver,
           host: process.env.DB_HOST || 'localhost',
