@@ -7,7 +7,7 @@ import { EntityManager as PostgreSqlEntityManager } from '@mikro-orm/postgresql'
 import { Injectable }                               from '@nestjs/common'
 import { Inject }                                   from '@nestjs/common'
 
-import { AuthKeyRepository }                        from '@chats-system/authkey-domain-module'
+import { AuthKeyRepository }                        from '@chats-system/authkey-application-module'
 
 import { AuthKeyEntity }                            from '../entities/index.js'
 import { AuthKeyMapper }                            from '../mappers/index.js'
@@ -25,17 +25,16 @@ export class AuthKeyRepositoryImpl extends AuthKeyRepository {
   }
 
   async save(authKey: AuthKey): Promise<AuthKey> {
-    const exists =
-      (await this.repository.findOne({ authKeyId: authKey.authKeyId })) || new AuthKeyEntity()
+    const exists = (await this.repository.findOne({ id: authKey.id })) || new AuthKeyEntity()
 
     await this.em.persist(this.mapper.toPersistence(authKey, exists)).flush()
 
     return authKey
   }
 
-  async getById(authKeyId: bigint): Promise<AuthKey | undefined> {
+  async findById(id: bigint): Promise<AuthKey | undefined> {
     const entity = await this.repository.findOne({
-      authKeyId,
+      id,
     })
 
     return entity ? this.mapper.fromPersistence(entity) : undefined

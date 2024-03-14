@@ -4,7 +4,6 @@ import { MTProtoAuthKeyManager } from '@monstrs/mtproto-core'
 import { Injectable }            from '@nestjs/common'
 
 import { AuthKeyClient }         from '@chats-system/authkey-client-module'
-import { AuthKeyType }           from '@chats-system/authkey-client-module'
 
 @Injectable()
 export class SessionAuthKeyManager extends MTProtoAuthKeyManager {
@@ -17,9 +16,8 @@ export class SessionAuthKeyManager extends MTProtoAuthKeyManager {
 
     if (!exists) {
       await this.authKeyClient.createAuthKey({
-        authKeyId,
-        authKey: authKey.key,
-        authKeyType: this.toAuthKeyType(authKey.type),
+        id: authKeyId,
+        key: authKey.key,
       })
 
       await super.setAuthKey(authKeyId, authKey)
@@ -36,10 +34,7 @@ export class SessionAuthKeyManager extends MTProtoAuthKeyManager {
     })
 
     if (savedAuthKey) {
-      const authKey = new MTProtoAuthKey(
-        Buffer.from(savedAuthKey.authKey),
-        this.toMTProtoAuthKeyType(savedAuthKey.authKeyType)
-      )
+      const authKey = new MTProtoAuthKey(Buffer.from(savedAuthKey.key), MTProtoAuthKeyType.PERM)
 
       await super.setAuthKey(authKeyId, authKey)
 
@@ -47,37 +42,5 @@ export class SessionAuthKeyManager extends MTProtoAuthKeyManager {
     }
 
     return undefined
-  }
-
-  protected toAuthKeyType(keyType: MTProtoAuthKeyType): AuthKeyType {
-    if (keyType === MTProtoAuthKeyType.PERM) {
-      return AuthKeyType.PERM
-    }
-
-    if (keyType === MTProtoAuthKeyType.TEMP) {
-      return AuthKeyType.TEMP
-    }
-
-    if (keyType === MTProtoAuthKeyType.MEDIA_TEMP) {
-      return AuthKeyType.MEDIA_TEMP
-    }
-
-    return AuthKeyType.UNKNOWN
-  }
-
-  protected toMTProtoAuthKeyType(keyType: AuthKeyType): MTProtoAuthKeyType {
-    if (keyType === AuthKeyType.PERM) {
-      return MTProtoAuthKeyType.PERM
-    }
-
-    if (keyType === AuthKeyType.TEMP) {
-      return MTProtoAuthKeyType.TEMP
-    }
-
-    if (keyType === AuthKeyType.MEDIA_TEMP) {
-      return MTProtoAuthKeyType.MEDIA_TEMP
-    }
-
-    return MTProtoAuthKeyType.UNKNOWN
   }
 }

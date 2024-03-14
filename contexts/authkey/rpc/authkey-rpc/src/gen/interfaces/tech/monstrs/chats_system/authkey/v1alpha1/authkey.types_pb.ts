@@ -4,63 +4,18 @@
 // @ts-nocheck
 
 /**
- * @generated from enum tech.monstrs.chats_system.authkey.v1alpha1.AuthKeyType
- */
-export enum AuthKeyType {
-  /**
-   * @generated from enum value: UNKNOWN = 0;
-   */
-  UNKNOWN = 0,
-
-  /**
-   * @generated from enum value: PERM = 1;
-   */
-  PERM = 1,
-
-  /**
-   * @generated from enum value: TEMP = 2;
-   */
-  TEMP = 2,
-
-  /**
-   * @generated from enum value: MEDIA_TEMP = 3;
-   */
-  MEDIA_TEMP = 3,
-}
-
-/**
  * @generated from message tech.monstrs.chats_system.authkey.v1alpha1.AuthKey
  */
 export interface AuthKey {
   /**
-   * @generated from field: int64 auth_key_id = 1;
+   * @generated from field: int64 id = 1;
    */
-  authKeyId: bigint
+  id: bigint
 
   /**
-   * @generated from field: bytes auth_key = 2;
+   * @generated from field: bytes key = 2;
    */
-  authKey: Uint8Array
-
-  /**
-   * @generated from field: tech.monstrs.chats_system.authkey.v1alpha1.AuthKeyType auth_key_type = 3;
-   */
-  authKeyType: AuthKeyType
-
-  /**
-   * @generated from field: int64 perm_auth_key_id = 4;
-   */
-  permAuthKeyId: bigint
-
-  /**
-   * @generated from field: int64 temp_auth_key_id = 5;
-   */
-  tempAuthKeyId: bigint
-
-  /**
-   * @generated from field: int64 media_temp_auth_key_id = 6;
-   */
-  mediaTempAuthKeyId: bigint
+  key: Uint8Array
 }
 
 /**
@@ -68,72 +23,17 @@ export interface AuthKey {
  */
 export interface AuthKeyUser {
   /**
-   * @generated from field: int64 auth_key_id = 1;
+   * @generated from field: int64 id = 1;
+   */
+  id: bigint
+
+  /**
+   * @generated from field: int64 auth_key_id = 2;
    */
   authKeyId: bigint
 
   /**
-   * @generated from field: int64 user_id = 2;
+   * @generated from field: int64 user_id = 3;
    */
   userId: bigint
-}
-
-/**
- * @generated from message tech.monstrs.chats_system.authkey.v1alpha1.AuthKeyConnection
- */
-export interface AuthKeyConnection {
-  /**
-   * @generated from field: int64 auth_key_id = 1;
-   */
-  authKeyId: bigint
-
-  /**
-   * @generated from field: int32 layer = 2;
-   */
-  layer: number
-
-  /**
-   * @generated from field: int32 api_id = 3;
-   */
-  apiId: number
-
-  /**
-   * @generated from field: string client_ip = 4;
-   */
-  clientIp: string
-
-  /**
-   * @generated from field: string device_model = 5;
-   */
-  deviceModel: string
-
-  /**
-   * @generated from field: string system_version = 6;
-   */
-  systemVersion: string
-
-  /**
-   * @generated from field: string app_version = 7;
-   */
-  appVersion: string
-
-  /**
-   * @generated from field: string system_lang_code = 8;
-   */
-  systemLangCode: string
-
-  /**
-   * @generated from field: string lang_pack = 9;
-   */
-  langPack: string
-
-  /**
-   * @generated from field: string lang_code = 10;
-   */
-  langCode: string
-
-  /**
-   * @generated from field: optional string params = 11;
-   */
-  params?: string
 }

@@ -9,6 +9,7 @@ import { PostgreSqlDriver }            from '@mikro-orm/postgresql'
 import { ConnectRpcServer }            from '@monstrs/nestjs-connectrpc'
 import { ServerProtocol }              from '@monstrs/nestjs-connectrpc'
 import { RedisModule }                 from '@monstrs/nestjs-redis'
+import { CqrsModule }                  from '@nestjs/cqrs'
 import { IoAdapter }                   from '@nestjs/platform-socket.io'
 import { Test }                        from '@nestjs/testing'
 import { describe }                    from '@jest/globals'
@@ -59,6 +60,7 @@ describe('standalone', () => {
 
     const testingModule = await Test.createTestingModule({
       imports: [
+        CqrsModule.forRoot(),
         IdGenClientModule.register({
           baseUrl: `http://localhost:${servicePort}`,
           idleConnectionTimeoutMs: 1000,
