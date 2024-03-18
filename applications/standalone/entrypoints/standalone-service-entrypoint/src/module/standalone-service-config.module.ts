@@ -11,6 +11,7 @@ import { CqrsModule }          from '@nestjs/cqrs'
 
 import { AuthKeyClientModule } from '@chats-system/authkey-client-module'
 import { IdGenClientModule }   from '@chats-system/idgen-client-module'
+import { UsersClientModule }   from '@chats-system/users-client-module'
 
 import { entities }            from '../entities/index.js'
 import { migrations }          from '../migrations/index.js'
@@ -26,6 +27,7 @@ export class StandaloneServiceConfigModule implements OnModuleInit {
       imports: [
         CqrsModule.forRoot(),
         IdGenClientModule.register(),
+        UsersClientModule.register(),
         AuthKeyClientModule.register(),
         RedisModule.register({}, true),
         MikroOrmModule.forRoot({
