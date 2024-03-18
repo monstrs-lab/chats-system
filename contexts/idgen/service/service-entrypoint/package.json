@@ -33,7 +33,7 @@
     "@nestjs/testing": "^10.3.3",
     "@nestjs/websockets": "^10.3.3",
     "@testcontainers/kafka": "^10.7.2",
-    "@types/node": "^20.11.27",
+    "@types/node": "^20.11.28",
     "@types/pg": "^8.11.2",
     "cache-manager": "^5.4.0",
     "class-transformer": "^0.5.1",

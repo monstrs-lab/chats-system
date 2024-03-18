@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package tech.monstrs.chats_system.users.v1alpha1;
+
+import "tech/monstrs/queries/v1alpha1/queries.proto";
+
+service UsersService {
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse) {}
+  rpc ListUsers(ListUsersRequest) returns (ListUsersResponse) {}
+}
+
+message User {
+  int64 id = 1;
+  string external_id = 2;
+  string first_name = 3;
+  string last_name = 4;
+}
+
+message CreateUserRequest {
+  string external_id = 1;
+  string first_name = 2;
+  string last_name = 3;
+}
+
+message CreateUserResponse {
+  User user = 1;
+}
+
+message ListUsersRequest {
+  message UsersQuery {
+    tech.monstrs.queries.v1alpha1.Query.Int64 id = 1;
+    tech.monstrs.queries.v1alpha1.Query.ID external_id = 2;
+  }
+
+  tech.monstrs.queries.v1alpha1.Query.Pager pager = 1;
+  tech.monstrs.queries.v1alpha1.Query.Order order = 2;
+  UsersQuery query = 3;
+}
+
+message ListUsersResponse {
+  repeated User users = 1;
+}

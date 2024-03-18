@@ -5,6 +5,7 @@ import { Module }                      from '@nestjs/common'
 import { AuthKeyInfrastructureModule } from '@chats-system/authkey-infrastructure-module'
 import { GatewayInfrastructureModule } from '@chats-system/gateway-infrastructure-module'
 import { IdGenInfrastructureModule }   from '@chats-system/idgen-infrastructure-module'
+import { UsersInfrastructureModule }   from '@chats-system/users-infrastructure-module'
 
 @Module({})
 export class StandaloneServiceCoreModule {
@@ -15,6 +16,7 @@ export class StandaloneServiceCoreModule {
         GatewayInfrastructureModule.register(),
         AuthKeyInfrastructureModule.register(),
         IdGenInfrastructureModule.register(),
+        UsersInfrastructureModule.register(),
       ],
     }
   }
