@@ -12,6 +12,7 @@ import { RedisModule }                 from '@monstrs/nestjs-redis'
 import { CqrsModule }                  from '@nestjs/cqrs'
 import { IoAdapter }                   from '@nestjs/platform-socket.io'
 import { Test }                        from '@nestjs/testing'
+import { faker }                       from '@faker-js/faker'
 import { describe }                    from '@jest/globals'
 import { afterAll }                    from '@jest/globals'
 import { beforeAll }                   from '@jest/globals'
@@ -25,6 +26,8 @@ import * as Transport                  from '@chats-system/transport'
 import { AuthKeyClientModule }         from '@chats-system/authkey-client-module'
 import { ChatsSystemClient }           from '@chats-system/client'
 import { IdGenClientModule }           from '@chats-system/idgen-client-module'
+import { UsersClient }                 from '@chats-system/users-client-module'
+import { UsersClientModule }           from '@chats-system/users-client-module'
 
 import { StandaloneServiceCoreModule } from '../src/module/index.js'
 import { entities }                    from '../src/entities/index.js'
@@ -69,6 +72,10 @@ describe('standalone', () => {
           baseUrl: `http://localhost:${servicePort}`,
           idleConnectionTimeoutMs: 1000,
         }),
+        UsersClientModule.register({
+          baseUrl: `http://localhost:${servicePort}`,
+          idleConnectionTimeoutMs: 1000,
+        }),
         RedisModule.register({}, true),
         MikroOrmModule.forRoot({
           driver: PostgreSqlDriver,
@@ -106,7 +113,19 @@ describe('standalone', () => {
     await app.listen(appPort)
     await service.listen()
 
-    client = new ChatsSystemClient(`ws://localhost:${appPort}`)
+    const { user } = await testingModule.get(UsersClient).createUser({
+      externalId: faker.string.uuid(),
+      firstName: faker.person.firstName(),
+      lastName: faker.person.lastName(),
+    })
+
+    client = new ChatsSystemClient(`ws://localhost:${appPort}`, {
+      io: {
+        extraHeaders: {
+          'x-user': user!.externalId,
+        },
+      },
+    })
   })
 
   afterAll(async () => {
@@ -116,7 +135,7 @@ describe('standalone', () => {
     await redis.stop()
   })
 
-  it('check connect', async () => {
+  it('check connect client', async () => {
     await client.connect()
 
     expect(client.isConnected()).toBe(true)
