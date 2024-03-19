@@ -1,8 +1,8 @@
-import type { AuthKeyClient }             from '@chats-system/authkey-client-module'
 import type { INestApplication }          from '@nestjs/common'
 
 import { IoAdapter }                      from '@nestjs/platform-socket.io'
 import { Test }                           from '@nestjs/testing'
+import { faker }                          from '@faker-js/faker'
 import { afterEach }                      from '@jest/globals'
 import { describe }                       from '@jest/globals'
 import { afterAll }                       from '@jest/globals'
@@ -13,16 +13,19 @@ import { jest }                           from '@jest/globals'
 import getPort                            from 'get-port'
 
 import * as Transport                     from '@chats-system/transport'
-import { AUTH_KEY_CLIENT_TOKEN }          from '@chats-system/authkey-client-module'
+import { AuthKeyClient }                  from '@chats-system/authkey-client-module'
 import { CreateAuthKeyResponse }          from '@chats-system/authkey-client-module'
 import { GetAuthKeyResponse }             from '@chats-system/authkey-client-module'
 import { ChatsSystemClient }              from '@chats-system/client'
+import { UsersClient }                    from '@chats-system/users-client-module'
+import { User }                           from '@chats-system/users-client-module'
 
 import { GatewayServiceEntrypointModule } from '../src/gateway-service-entrypoint.module.js'
 
 describe('gateway', () => {
   let app: INestApplication
   let client: ChatsSystemClient
+  let usersClient: UsersClient
   let authKeysClient: AuthKeyClient
 
   beforeAll(async () => {
@@ -38,8 +41,15 @@ describe('gateway', () => {
 
     await app.listen(port)
 
-    authKeysClient = testingModule.get(AUTH_KEY_CLIENT_TOKEN)
-    client = new ChatsSystemClient(`ws://localhost:${port}`)
+    authKeysClient = testingModule.get(AuthKeyClient)
+    usersClient = testingModule.get(UsersClient)
+    client = new ChatsSystemClient(`ws://localhost:${port}`, {
+      io: {
+        extraHeaders: {
+          'X-USER': faker.string.uuid(),
+        },
+      },
+    })
   })
 
   afterAll(async () => {
@@ -51,6 +61,15 @@ describe('gateway', () => {
   })
 
   it('check connect', async () => {
+    jest.spyOn(usersClient, 'loadUserByExternalId').mockImplementation(async (externalId: string) =>
+      Promise.resolve(
+        new User({
+          id: faker.number.bigInt(),
+          externalId,
+          firstName: faker.person.firstName(),
+          lastName: faker.person.lastName(),
+        })
+      ))
     jest
       .spyOn(authKeysClient, 'getAuthKey')
       .mockImplementation(async () => Promise.resolve(new GetAuthKeyResponse({})))

@@ -4,6 +4,7 @@ import type { OnApplicationBootstrap } from '@nestjs/common'
 import { Module }                      from '@nestjs/common'
 
 import { AuthKeyClientModule }         from '@chats-system/authkey-client-module'
+import { UsersClientModule }           from '@chats-system/users-client-module'
 
 import * as rpchandlers                from '../rpc-handlers/index.js'
 import { ChatsSystemGateway }          from '../gateway/index.js'
@@ -21,7 +22,7 @@ export class GatewayInfrastructureModule implements OnApplicationBootstrap {
   static register(): DynamicModule {
     return {
       module: GatewayInfrastructureModule,
-      imports: [AuthKeyClientModule.attach()],
+      imports: [AuthKeyClientModule.attach(), UsersClientModule.attach()],
       providers: [
         TLRpcMetadataExplorer,
         TLRpcHandlersRegistry,

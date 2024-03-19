@@ -53,11 +53,19 @@ export class ChatsSystemClient {
   constructor(uri: string, options?: ChatsSystemClientOptions) {
     this.id = random(63)
 
-    this.socket = io(uri, { ...(options?.io || {}), autoConnect: false })
     this.storage = options?.storage || new MemoryStorage()
     this.codec = MTProtoObfuscatedCodec.init()
     this.messageFactory = new MTProtoMessageFactory()
     this.handshake = new Handshake()
+
+    this.socket = io(uri, {
+      ...(options?.io || {}),
+      autoConnect: false,
+      query: {
+        ...(options?.io?.query || {}),
+        header: this.codec.header.toString('base64'),
+      },
+    })
   }
 
   isConnected(): boolean {
@@ -109,13 +117,11 @@ export class ChatsSystemClient {
   }
 
   protected async onConnect(): Promise<void> {
-    await this.socket.send(this.codec.header)
-
     if (!(await this.storage.getAuthKey())) {
       const { reqPQMulti } = await this.handshake.sendReqPQMulti()
 
       const resPQData: Buffer = await this.socket.emitWithAck(
-        'message',
+        'handshake',
         await this.codec.send(
           await new MTProtoRawMessage(
             new MTProtoUnencryptedRawMessage(
@@ -143,7 +149,7 @@ export class ChatsSystemClient {
       const { reqDhParams } = await this.handshake.handleResPQ(resPQ)
 
       const serverDHParamsOkData: Buffer = await this.socket.emitWithAck(
-        'message',
+        'handshake',
         await this.codec.send(
           await new MTProtoRawMessage(
             new MTProtoUnencryptedRawMessage(
@@ -175,7 +181,7 @@ export class ChatsSystemClient {
         await this.handshake.handleServerDhParams(serverDHParamsOk)
 
       await this.socket.emitWithAck(
-        'message',
+        'handshake',
         await this.codec.send(
           await new MTProtoRawMessage(
             new MTProtoUnencryptedRawMessage(
