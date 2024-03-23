@@ -3,6 +3,10 @@
 /* eslint-disable */
 // @ts-nocheck
 
+import type { Query_Int64 } from '../../../queries/v1alpha1/queries_pb.js'
+import type { Query_Order } from '../../../queries/v1alpha1/queries_pb.js'
+import type { Query_Pager } from '../../../queries/v1alpha1/queries_pb.js'
+
 /**
  * @generated from enum tech.monstrs.chats_system.messages.v1alpha1.PeerType
  */
@@ -49,6 +53,96 @@ export enum PeerType {
 }
 
 /**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.Dialog
+ */
+export abstract class Dialog {
+  /**
+   * @generated from field: int64 id = 1;
+   */
+  abstract readonly id: bigint
+
+  /**
+   * @generated from field: int64 user_id = 2;
+   */
+  abstract readonly userId: bigint
+
+  /**
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.PeerType peer_type = 3;
+   */
+  abstract readonly peerType: PeerType
+
+  /**
+   * @generated from field: int64 peer_id = 4;
+   */
+  abstract readonly peerId: bigint
+
+  /**
+   * @generated from field: int64 top_message_id = 5;
+   */
+  abstract readonly topMessageId: bigint
+
+  /**
+   * @generated from field: int64 read_inbox_max_id = 6;
+   */
+  abstract readonly readInboxMaxId: bigint
+
+  /**
+   * @generated from field: int64 read_outbox_max_id = 7;
+   */
+  abstract readonly readOutboxMaxId: bigint
+
+  /**
+   * @generated from field: int32 unread_count = 8;
+   */
+  abstract readonly unreadCount: number
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.Message
+ */
+export abstract class Message {
+  /**
+   * @generated from field: int64 id = 1;
+   */
+  abstract readonly id: bigint
+
+  /**
+   * @generated from field: int64 random_id = 2;
+   */
+  abstract readonly randomId: bigint
+
+  /**
+   * @generated from field: int64 user_id = 3;
+   */
+  abstract readonly userId: bigint
+
+  /**
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.PeerType peer_type = 4;
+   */
+  abstract readonly peerType: PeerType
+
+  /**
+   * @generated from field: int64 peer_id = 5;
+   */
+  abstract readonly peerId: bigint
+
+  /**
+   * @generated from field: int64 dialog_id1 = 6;
+   */
+  abstract readonly dialogId1: bigint
+
+  /**
+   * @generated from field: int64 dialog_id2 = 7;
+   */
+  abstract readonly dialogId2: bigint
+
+  /**
+   * @generated from field: string message = 8;
+   */
+  abstract readonly message: string
+}
+
+/**
  * @generated from message tech.monstrs.chats_system.messages.v1alpha1.SendMessageRequest
  */
 export abstract class SendMessageRequest {
@@ -82,3 +176,103 @@ export abstract class SendMessageRequest {
  * @generated from message tech.monstrs.chats_system.messages.v1alpha1.SendMessageResponse
  */
 export abstract class SendMessageResponse {}
+
+/**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.ListDialogsRequest
+ */
+export abstract class ListDialogsRequest {
+  /**
+   * @generated from field: tech.monstrs.queries.v1alpha1.Query.Pager pager = 1;
+   */
+  abstract readonly pager?: Query_Pager
+
+  /**
+   * @generated from field: tech.monstrs.queries.v1alpha1.Query.Order order = 2;
+   */
+  abstract readonly order?: Query_Order
+
+  /**
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.ListDialogsRequest.DialogsQuery query = 3;
+   */
+  abstract readonly query?: ListDialogsRequest_DialogsQuery
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.ListDialogsRequest.DialogsQuery
+ */
+export abstract class ListDialogsRequest_DialogsQuery {
+  /**
+   * @generated from field: tech.monstrs.queries.v1alpha1.Query.Int64 id = 1;
+   */
+  abstract readonly id?: Query_Int64
+
+  /**
+   * @generated from field: tech.monstrs.queries.v1alpha1.Query.Int64 user_id = 2;
+   */
+  abstract readonly userId?: Query_Int64
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.ListDialogsResponse
+ */
+export abstract class ListDialogsResponse {
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.messages.v1alpha1.Dialog dialogs = 1;
+   */
+  abstract readonly dialogs: Dialog[]
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.ListMessagesRequest
+ */
+export abstract class ListMessagesRequest {
+  /**
+   * @generated from field: tech.monstrs.queries.v1alpha1.Query.Pager pager = 1;
+   */
+  abstract readonly pager?: Query_Pager
+
+  /**
+   * @generated from field: tech.monstrs.queries.v1alpha1.Query.Order order = 2;
+   */
+  abstract readonly order?: Query_Order
+
+  /**
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.ListMessagesRequest.MessagesQuery query = 3;
+   */
+  abstract readonly query?: ListMessagesRequest_MessagesQuery
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.ListMessagesRequest.MessagesQuery
+ */
+export abstract class ListMessagesRequest_MessagesQuery {
+  /**
+   * @generated from field: tech.monstrs.queries.v1alpha1.Query.Int64 id = 1;
+   */
+  abstract readonly id?: Query_Int64
+
+  /**
+   * @generated from field: tech.monstrs.queries.v1alpha1.Query.Int64 user_id = 2;
+   */
+  abstract readonly userId?: Query_Int64
+
+  /**
+   * @generated from field: tech.monstrs.queries.v1alpha1.Query.Int64 dialog_id1 = 3;
+   */
+  abstract readonly dialogId1?: Query_Int64
+
+  /**
+   * @generated from field: tech.monstrs.queries.v1alpha1.Query.Int64 dialog_id2 = 4;
+   */
+  abstract readonly dialogId2?: Query_Int64
+}
+
+/**
+ * @generated from message tech.monstrs.chats_system.messages.v1alpha1.ListMessagesResponse
+ */
+export abstract class ListMessagesResponse {
+  /**
+   * @generated from field: repeated tech.monstrs.chats_system.messages.v1alpha1.Message messages = 1;
+   */
+  abstract readonly messages: Message[]
+}

@@ -3,10 +3,14 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { MethodKind }          from '@bufbuild/protobuf'
+import { MethodKind }           from '@bufbuild/protobuf'
 
-import { SendMessageRequest }  from './messages.service_pb.js'
-import { SendMessageResponse } from './messages.service_pb.js'
+import { ListDialogsRequest }   from './messages.service_pb.js'
+import { ListDialogsResponse }  from './messages.service_pb.js'
+import { ListMessagesRequest }  from './messages.service_pb.js'
+import { ListMessagesResponse } from './messages.service_pb.js'
+import { SendMessageRequest }   from './messages.service_pb.js'
+import { SendMessageResponse }  from './messages.service_pb.js'
 
 /**
  * @generated from service tech.monstrs.chats_system.messages.v1alpha1.MessagesService
@@ -21,6 +25,24 @@ export const MessagesService = {
       name: 'SendMessage',
       I: SendMessageRequest,
       O: SendMessageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc tech.monstrs.chats_system.messages.v1alpha1.MessagesService.ListDialogs
+     */
+    listDialogs: {
+      name: 'ListDialogs',
+      I: ListDialogsRequest,
+      O: ListDialogsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc tech.monstrs.chats_system.messages.v1alpha1.MessagesService.ListMessages
+     */
+    listMessages: {
+      name: 'ListMessages',
+      I: ListMessagesRequest,
+      O: ListMessagesResponse,
       kind: MethodKind.Unary,
     },
   },

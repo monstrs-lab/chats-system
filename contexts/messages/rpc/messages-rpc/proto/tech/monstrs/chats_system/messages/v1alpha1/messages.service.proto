@@ -6,6 +6,8 @@ import "tech/monstrs/queries/v1alpha1/queries.proto";
 
 service MessagesService {
   rpc SendMessage(SendMessageRequest) returns (SendMessageResponse) {}
+  rpc ListDialogs(ListDialogsRequest) returns (ListDialogsResponse) {}
+  rpc ListMessages(ListMessagesRequest) returns (ListMessagesResponse) {}
 }
 
 enum PeerType {
@@ -19,6 +21,28 @@ enum PeerType {
   CHATS = 7;
 }
 
+message Dialog {
+  int64 id = 1;
+  int64 user_id = 2;
+  PeerType peer_type = 3;
+  int64 peer_id = 4;
+  int64 top_message_id = 5;
+  int64 read_inbox_max_id = 6;
+  int64 read_outbox_max_id = 7;
+  int32 unread_count = 8;
+}
+
+message Message {
+  int64 id = 1;
+  int64 random_id = 2;
+  int64 user_id = 3;
+  PeerType peer_type = 4;
+  int64 peer_id = 5;
+  int64 dialog_id1 = 6;
+  int64 dialog_id2 = 7;
+  string message = 8;
+}
+
 message SendMessageRequest {
   int64 random_id = 1;
   int64 from_id = 2;
@@ -28,4 +52,36 @@ message SendMessageRequest {
 }
 
 message SendMessageResponse {
+}
+
+message ListDialogsRequest {
+  message DialogsQuery {
+    tech.monstrs.queries.v1alpha1.Query.Int64 id = 1;
+    tech.monstrs.queries.v1alpha1.Query.Int64 user_id = 2;
+  }
+
+  tech.monstrs.queries.v1alpha1.Query.Pager pager = 1;
+  tech.monstrs.queries.v1alpha1.Query.Order order = 2;
+  DialogsQuery query = 3;
+}
+
+message ListDialogsResponse {
+  repeated Dialog dialogs = 1;
+}
+
+message ListMessagesRequest {
+  message MessagesQuery {
+    tech.monstrs.queries.v1alpha1.Query.Int64 id = 1;
+    tech.monstrs.queries.v1alpha1.Query.Int64 user_id = 2;
+    tech.monstrs.queries.v1alpha1.Query.Int64 dialog_id1 = 3;
+    tech.monstrs.queries.v1alpha1.Query.Int64 dialog_id2 = 4;
+  }
+
+  tech.monstrs.queries.v1alpha1.Query.Pager pager = 1;
+  tech.monstrs.queries.v1alpha1.Query.Order order = 2;
+  MessagesQuery query = 3;
+}
+
+message ListMessagesResponse {
+  repeated Message messages = 1;
 }

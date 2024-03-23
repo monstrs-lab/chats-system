@@ -1,9 +1,12 @@
+import type { FindMessagesByQuery }                 from '@chats-system/messages-application-module'
+import type { FindMessagesByQueryResult }           from '@chats-system/messages-application-module'
 import type { Message }                             from '@chats-system/messages-domain-module'
 
 import { EntityRepository }                         from '@mikro-orm/core'
 import { EntityManager }                            from '@mikro-orm/core'
 import { InjectRepository }                         from '@mikro-orm/nestjs'
 import { EntityManager as PostgreSqlEntityManager } from '@mikro-orm/postgresql'
+import { MikroORMQueryBuilder }                     from '@monstrs/mikro-orm-query-builder'
 import { Injectable }                               from '@nestjs/common'
 import { Inject }                                   from '@nestjs/common'
 
@@ -38,5 +41,27 @@ export class MessageRepositoryImpl extends MessageRepository {
     })
 
     return entity ? this.mapper.fromPersistence(entity) : undefined
+  }
+
+  async findByQuery({
+    pager,
+    order,
+    query,
+  }: FindMessagesByQuery): Promise<FindMessagesByQueryResult> {
+    const [messages, hasNextPage] = await new MikroORMQueryBuilder<MessageEntity>(
+      this.em.createQueryBuilder(MessageEntity)
+    )
+      .bigint('id', query?.id)
+      .bigint('userId', query?.userId)
+      .bigint('dialogId1', query?.dialogId1)
+      .bigint('dialogId2', query?.dialogId2)
+      .order(order)
+      .pager(pager)
+      .execute()
+
+    return {
+      messages: messages.map((message) => this.mapper.fromPersistence(message)),
+      hasNextPage,
+    }
   }
 }
