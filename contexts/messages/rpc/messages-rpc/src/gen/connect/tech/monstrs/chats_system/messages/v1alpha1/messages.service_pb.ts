@@ -166,37 +166,42 @@ export class Message extends Message$1<Message> {
   id = protoInt64.zero
 
   /**
-   * @generated from field: int64 random_id = 2;
+   * @generated from field: int64 message_id = 2;
+   */
+  messageId = protoInt64.zero
+
+  /**
+   * @generated from field: int64 random_id = 3;
    */
   randomId = protoInt64.zero
 
   /**
-   * @generated from field: int64 user_id = 3;
+   * @generated from field: int64 user_id = 4;
    */
   userId = protoInt64.zero
 
   /**
-   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.PeerType peer_type = 4;
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.PeerType peer_type = 5;
    */
   peerType = PeerType.UNKNOWN
 
   /**
-   * @generated from field: int64 peer_id = 5;
+   * @generated from field: int64 peer_id = 6;
    */
   peerId = protoInt64.zero
 
   /**
-   * @generated from field: int64 dialog_id1 = 6;
+   * @generated from field: int64 dialog_id1 = 7;
    */
   dialogId1 = protoInt64.zero
 
   /**
-   * @generated from field: int64 dialog_id2 = 7;
+   * @generated from field: int64 dialog_id2 = 8;
    */
   dialogId2 = protoInt64.zero
 
   /**
-   * @generated from field: string message = 8;
+   * @generated from field: string message = 9;
    */
   message = ''
 
@@ -209,13 +214,14 @@ export class Message extends Message$1<Message> {
   static readonly typeName = 'tech.monstrs.chats_system.messages.v1alpha1.Message'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: 'id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: 'random_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 3, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 4, name: 'peer_type', kind: 'enum', T: proto3.getEnumType(PeerType) },
-    { no: 5, name: 'peer_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 6, name: 'dialog_id1', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 7, name: 'dialog_id2', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
-    { no: 8, name: 'message', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'message_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: 'random_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: 'user_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: 'peer_type', kind: 'enum', T: proto3.getEnumType(PeerType) },
+    { no: 6, name: 'peer_id', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 7, name: 'dialog_id1', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 8, name: 'dialog_id2', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: 'message', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Message {

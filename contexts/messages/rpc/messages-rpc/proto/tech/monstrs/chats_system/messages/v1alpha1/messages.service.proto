@@ -34,13 +34,14 @@ message Dialog {
 
 message Message {
   int64 id = 1;
-  int64 random_id = 2;
-  int64 user_id = 3;
-  PeerType peer_type = 4;
-  int64 peer_id = 5;
-  int64 dialog_id1 = 6;
-  int64 dialog_id2 = 7;
-  string message = 8;
+  int64 message_id = 2;
+  int64 random_id = 3;
+  int64 user_id = 4;
+  PeerType peer_type = 5;
+  int64 peer_id = 6;
+  int64 dialog_id1 = 7;
+  int64 dialog_id2 = 8;
+  string message = 9;
 }
 
 message SendMessageRequest {

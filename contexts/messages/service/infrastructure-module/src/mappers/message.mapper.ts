@@ -13,6 +13,7 @@ export class MessageMapper {
   fromPersistence(entity: MessageEntity): Message {
     const properties: Omit<ExtractProperties<Message>, 'autoCommit'> = {
       id: entity.id,
+      messageId: entity.messageId,
       randomId: entity.randomId,
       userId: entity.userId,
       peerType: entity.peerType,
@@ -28,6 +29,7 @@ export class MessageMapper {
 
   toPersistence(message: Message, entity: MessageEntity): MessageEntity {
     entity.id = message.id
+    entity.messageId = message.messageId
     entity.randomId = message.randomId
     entity.userId = message.userId
     entity.peerType = message.peerType

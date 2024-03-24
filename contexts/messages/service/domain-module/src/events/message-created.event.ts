@@ -2,6 +2,7 @@ import type { PeerType } from '../enums/index.js'
 
 export class MessageCreatedEvent {
   constructor(
+    public readonly id: bigint,
     public readonly messageId: bigint,
     public readonly randomId: bigint,
     public readonly userId: bigint,

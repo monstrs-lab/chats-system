@@ -1,12 +1,15 @@
 import { Guard }               from '@monstrs/guard-clause'
 import { Against }             from '@monstrs/guard-clause'
 import { AggregateRoot }       from '@nestjs/cqrs'
+import random                  from 'crypto-random-bigint'
 
 import { PeerType }            from '../enums/index.js'
 import { MessageCreatedEvent } from '../events/index.js'
 
 export class Message extends AggregateRoot {
   #id!: bigint
+
+  #messageId!: bigint
 
   #randomId!: bigint
 
@@ -30,6 +33,14 @@ export class Message extends AggregateRoot {
 
   private set id(id: bigint) {
     this.#id = id
+  }
+
+  get messageId(): bigint {
+    return this.#messageId
+  }
+
+  private set messageId(messageId: bigint) {
+    this.#messageId = messageId
   }
 
   get randomId(): bigint {
@@ -98,7 +109,7 @@ export class Message extends AggregateRoot {
 
   @Guard()
   create(
-    @Against('id').NotBigInt() id: bigint,
+    @Against('messageId').NotBigInt() messageId: bigint,
     @Against('randomId').NotBigInt() randomId: bigint,
     @Against('userId').NotBigInt() userId: bigint,
     @Against('peerType').NotEnum(PeerType) peerType: PeerType,
@@ -109,7 +120,8 @@ export class Message extends AggregateRoot {
   ): Message {
     this.apply(
       new MessageCreatedEvent(
-        id,
+        random(63),
+        messageId,
         randomId,
         userId,
         peerType,
@@ -125,7 +137,8 @@ export class Message extends AggregateRoot {
   }
 
   protected onMessageCreatedEvent(event: MessageCreatedEvent): void {
-    this.#id = event.userId
+    this.#id = event.id
+    this.#messageId = event.messageId
     this.#randomId = event.randomId
     this.#userId = event.userId
     this.#peerType = event.peerType

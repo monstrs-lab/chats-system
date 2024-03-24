@@ -11,6 +11,10 @@ export class MessageSerializer extends rpc.Message {
     return this.serializable.id
   }
 
+  get messageId(): bigint {
+    return this.serializable.messageId
+  }
+
   get randomId(): bigint {
     return this.serializable.randomId
   }

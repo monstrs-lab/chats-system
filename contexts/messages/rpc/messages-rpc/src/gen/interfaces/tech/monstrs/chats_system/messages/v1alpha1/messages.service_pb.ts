@@ -107,37 +107,42 @@ export interface Message {
   id: bigint
 
   /**
-   * @generated from field: int64 random_id = 2;
+   * @generated from field: int64 message_id = 2;
+   */
+  messageId: bigint
+
+  /**
+   * @generated from field: int64 random_id = 3;
    */
   randomId: bigint
 
   /**
-   * @generated from field: int64 user_id = 3;
+   * @generated from field: int64 user_id = 4;
    */
   userId: bigint
 
   /**
-   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.PeerType peer_type = 4;
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.PeerType peer_type = 5;
    */
   peerType: PeerType
 
   /**
-   * @generated from field: int64 peer_id = 5;
+   * @generated from field: int64 peer_id = 6;
    */
   peerId: bigint
 
   /**
-   * @generated from field: int64 dialog_id1 = 6;
+   * @generated from field: int64 dialog_id1 = 7;
    */
   dialogId1: bigint
 
   /**
-   * @generated from field: int64 dialog_id2 = 7;
+   * @generated from field: int64 dialog_id2 = 8;
    */
   dialogId2: bigint
 
   /**
-   * @generated from field: string message = 8;
+   * @generated from field: string message = 9;
    */
   message: string
 }

@@ -45,7 +45,7 @@ export class SendMessageCommandHandler implements ICommandHandler<SendMessageCom
       command.randomId,
       command.peerId,
       command.peerType,
-      command.peerId,
+      command.fromId,
       dialogId.a,
       dialogId.b,
       command.message
@@ -85,7 +85,7 @@ export class SendMessageCommandHandler implements ICommandHandler<SendMessageCom
         inboxMessageId,
         0n,
         0n,
-        0
+        1
       )
     } else {
       inboxDialog.newMessage(inboxMessageId)

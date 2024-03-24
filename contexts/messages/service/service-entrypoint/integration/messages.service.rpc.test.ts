@@ -10,6 +10,7 @@ import { ServerProtocol }               from '@monstrs/nestjs-connectrpc'
 import { CqrsModule }                   from '@nestjs/cqrs'
 import { Test }                         from '@nestjs/testing'
 import { faker }                        from '@faker-js/faker'
+import { beforeEach }                   from '@jest/globals'
 import { describe }                     from '@jest/globals'
 import { afterAll }                     from '@jest/globals'
 import { afterEach }                    from '@jest/globals'
@@ -103,11 +104,7 @@ describe('messages', () => {
         await postgres.stop()
       })
 
-      afterEach(async () => {
-        jest.clearAllMocks()
-      })
-
-      it('check send message', async () => {
+      beforeEach(async () => {
         jest
           .spyOn(idGenClient, 'getRandomId')
           .mockImplementation(async () => Promise.resolve(faker.number.bigInt()))
@@ -115,7 +112,13 @@ describe('messages', () => {
         jest
           .spyOn(idGenClient, 'getNextMessageBoxId')
           .mockImplementation(async () => Promise.resolve(1n))
+      })
 
+      afterEach(async () => {
+        jest.clearAllMocks()
+      })
+
+      it('check send message', async () => {
         await expect(
           client.sendMessage({
             randomId: faker.number.bigInt(),
@@ -125,6 +128,126 @@ describe('messages', () => {
             message: faker.word.sample(),
           })
         ).resolves.toBeTruthy()
+      })
+
+      it('check create outbox dialog', async () => {
+        const fromId = faker.number.bigInt()
+        const peerId = faker.number.bigInt()
+
+        await client.sendMessage({
+          fromId,
+          peerId,
+          randomId: faker.number.bigInt(),
+          peerType: PeerType.USER,
+          message: faker.word.sample(),
+        })
+
+        await expect(client.listUserDialogs(fromId)).resolves.toEqual(
+          expect.objectContaining({
+            dialogs: expect.arrayContaining([
+              expect.objectContaining({
+                userId: fromId,
+                peerType: PeerType.USER,
+                peerId,
+                topMessageId: 1n,
+                readInboxMaxId: 0n,
+                readOutboxMaxId: 0n,
+                unreadCount: 0,
+              }),
+            ]),
+          })
+        )
+      })
+
+      it('check create inbox dialog', async () => {
+        const fromId = faker.number.bigInt()
+        const peerId = faker.number.bigInt()
+
+        await client.sendMessage({
+          fromId,
+          peerId,
+          randomId: faker.number.bigInt(),
+          peerType: PeerType.USER,
+          message: faker.word.sample(),
+        })
+
+        await expect(client.listUserDialogs(peerId)).resolves.toEqual(
+          expect.objectContaining({
+            dialogs: expect.arrayContaining([
+              expect.objectContaining({
+                userId: peerId,
+                peerType: PeerType.USER,
+                peerId: fromId,
+                topMessageId: 1n,
+                readInboxMaxId: 0n,
+                readOutboxMaxId: 0n,
+                unreadCount: 1,
+              }),
+            ]),
+          })
+        )
+      })
+
+      it('check create outbox message', async () => {
+        const fromId = faker.number.bigInt()
+        const peerId = faker.number.bigInt()
+        const randomId = faker.number.bigInt()
+        const message = faker.word.sample()
+
+        await client.sendMessage({
+          fromId,
+          peerId,
+          randomId,
+          peerType: PeerType.USER,
+          message,
+        })
+
+        await expect(client.listUserPeerMessages(fromId, PeerType.USER, peerId)).resolves.toEqual(
+          expect.objectContaining({
+            messages: expect.arrayContaining([
+              expect.objectContaining({
+                messageId: 1n,
+                randomId,
+                userId: fromId,
+                peerId,
+                dialogId1: fromId,
+                dialogId2: peerId,
+                message,
+              }),
+            ]),
+          })
+        )
+      })
+
+      it('check create inbox message', async () => {
+        const fromId = faker.number.bigInt()
+        const peerId = faker.number.bigInt()
+        const randomId = faker.number.bigInt()
+        const message = faker.word.sample()
+
+        await client.sendMessage({
+          fromId,
+          peerId,
+          randomId,
+          peerType: PeerType.USER,
+          message,
+        })
+
+        await expect(client.listUserPeerMessages(peerId, PeerType.USER, fromId)).resolves.toEqual(
+          expect.objectContaining({
+            messages: expect.arrayContaining([
+              expect.objectContaining({
+                messageId: 1n,
+                randomId,
+                userId: peerId,
+                peerId: fromId,
+                dialogId1: fromId,
+                dialogId2: peerId,
+                message,
+              }),
+            ]),
+          })
+        )
       })
     })
   })

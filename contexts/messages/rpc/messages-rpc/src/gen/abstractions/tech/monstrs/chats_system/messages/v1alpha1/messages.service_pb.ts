@@ -107,37 +107,42 @@ export abstract class Message {
   abstract readonly id: bigint
 
   /**
-   * @generated from field: int64 random_id = 2;
+   * @generated from field: int64 message_id = 2;
+   */
+  abstract readonly messageId: bigint
+
+  /**
+   * @generated from field: int64 random_id = 3;
    */
   abstract readonly randomId: bigint
 
   /**
-   * @generated from field: int64 user_id = 3;
+   * @generated from field: int64 user_id = 4;
    */
   abstract readonly userId: bigint
 
   /**
-   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.PeerType peer_type = 4;
+   * @generated from field: tech.monstrs.chats_system.messages.v1alpha1.PeerType peer_type = 5;
    */
   abstract readonly peerType: PeerType
 
   /**
-   * @generated from field: int64 peer_id = 5;
+   * @generated from field: int64 peer_id = 6;
    */
   abstract readonly peerId: bigint
 
   /**
-   * @generated from field: int64 dialog_id1 = 6;
+   * @generated from field: int64 dialog_id1 = 7;
    */
   abstract readonly dialogId1: bigint
 
   /**
-   * @generated from field: int64 dialog_id2 = 7;
+   * @generated from field: int64 dialog_id2 = 8;
    */
   abstract readonly dialogId2: bigint
 
   /**
-   * @generated from field: string message = 8;
+   * @generated from field: string message = 9;
    */
   abstract readonly message: string
 }

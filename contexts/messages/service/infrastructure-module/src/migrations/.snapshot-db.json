@@ -116,6 +116,15 @@
           "nullable": false,
           "mappedType": "bigint"
         },
+        "message_id": {
+          "name": "message_id",
+          "type": "bigint",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "mappedType": "bigint"
+        },
         "random_id": {
           "name": "random_id",
           "type": "bigint",
@@ -195,6 +204,22 @@
       "name": "messages",
       "schema": "public",
       "indexes": [
+        {
+          "keyName": "messages_user_id_dialog_id1_dialog_id2_index",
+          "columnNames": ["user_id", "dialog_id1", "dialog_id2"],
+          "composite": true,
+          "constraint": false,
+          "primary": false,
+          "unique": false
+        },
+        {
+          "keyName": "messages_user_id_message_id_unique",
+          "columnNames": ["user_id", "message_id"],
+          "composite": true,
+          "constraint": true,
+          "primary": false,
+          "unique": true
+        },
         {
           "keyName": "messages_pkey",
           "columnNames": ["id"],

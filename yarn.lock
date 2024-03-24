@@ -1241,6 +1241,7 @@ __metadata:
   resolution: "@chats-system/messages-client-module@workspace:contexts/messages/service/client-module"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.8.0"
+    "@chats-system/messages-domain-module": "workspace:0.0.1"
     "@chats-system/messages-rpc-client": "workspace:0.0.1"
     "@connectrpc/connect": "npm:^1.4.0"
     "@connectrpc/connect-node": "npm:^1.4.0"
