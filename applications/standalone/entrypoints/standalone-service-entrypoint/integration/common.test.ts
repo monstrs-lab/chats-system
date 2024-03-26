@@ -26,6 +26,7 @@ import * as Transport                  from '@chats-system/transport'
 import { AuthKeyClientModule }         from '@chats-system/authkey-client-module'
 import { ChatsSystemClient }           from '@chats-system/client'
 import { IdGenClientModule }           from '@chats-system/idgen-client-module'
+import { MessagesClientModule }        from '@chats-system/messages-client-module'
 import { UsersClient }                 from '@chats-system/users-client-module'
 import { UsersClientModule }           from '@chats-system/users-client-module'
 
@@ -76,7 +77,16 @@ describe('standalone', () => {
           baseUrl: `http://localhost:${servicePort}`,
           idleConnectionTimeoutMs: 1000,
         }),
-        RedisModule.register({}, true),
+        MessagesClientModule.register({
+          baseUrl: `http://localhost:${servicePort}`,
+          idleConnectionTimeoutMs: 1000,
+        }),
+        RedisModule.register(
+          {
+            port: redis.getMappedPort(6379),
+          },
+          true
+        ),
         MikroOrmModule.forRoot({
           driver: PostgreSqlDriver,
           port: postgres.getMappedPort(5432),
@@ -159,5 +169,25 @@ describe('standalone', () => {
         pingId: 0n,
       })
     )
+  })
+
+  it('check send message', async () => {
+    const result = new Promise((resolve) => {
+      client.on(Transport.SentMessage, (message: Transport.SentMessage) => {
+        resolve(message)
+      })
+    })
+
+    await client.send(
+      new Transport.SendMessage({
+        peer: new Transport.InputPeerUser({
+          userId: faker.number.bigInt(),
+        }),
+        randomId: faker.number.bigInt(),
+        message: faker.word.sample(),
+      })
+    )
+
+    await expect(result).resolves.toBeDefined()
   })
 })

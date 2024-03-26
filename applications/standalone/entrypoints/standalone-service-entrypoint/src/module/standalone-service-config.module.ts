@@ -1,20 +1,21 @@
-import type { DynamicModule }  from '@nestjs/common'
-import type { OnModuleInit }   from '@nestjs/common'
+import type { DynamicModule }   from '@nestjs/common'
+import type { OnModuleInit }    from '@nestjs/common'
 
-import { MikroORM }            from '@mikro-orm/core'
-import { Migrator }            from '@mikro-orm/migrations'
-import { MikroOrmModule }      from '@mikro-orm/nestjs'
-import { PostgreSqlDriver }    from '@mikro-orm/postgresql'
-import { RedisModule }         from '@monstrs/nestjs-redis'
-import { Module }              from '@nestjs/common'
-import { CqrsModule }          from '@nestjs/cqrs'
+import { MikroORM }             from '@mikro-orm/core'
+import { Migrator }             from '@mikro-orm/migrations'
+import { MikroOrmModule }       from '@mikro-orm/nestjs'
+import { PostgreSqlDriver }     from '@mikro-orm/postgresql'
+import { RedisModule }          from '@monstrs/nestjs-redis'
+import { Module }               from '@nestjs/common'
+import { CqrsModule }           from '@nestjs/cqrs'
 
-import { AuthKeyClientModule } from '@chats-system/authkey-client-module'
-import { IdGenClientModule }   from '@chats-system/idgen-client-module'
-import { UsersClientModule }   from '@chats-system/users-client-module'
+import { AuthKeyClientModule }  from '@chats-system/authkey-client-module'
+import { IdGenClientModule }    from '@chats-system/idgen-client-module'
+import { MessagesClientModule } from '@chats-system/messages-client-module'
+import { UsersClientModule }    from '@chats-system/users-client-module'
 
-import { entities }            from '../entities/index.js'
-import { migrations }          from '../migrations/index.js'
+import { entities }             from '../entities/index.js'
+import { migrations }           from '../migrations/index.js'
 
 @Module({})
 export class StandaloneServiceConfigModule implements OnModuleInit {
@@ -29,6 +30,7 @@ export class StandaloneServiceConfigModule implements OnModuleInit {
         IdGenClientModule.register(),
         UsersClientModule.register(),
         AuthKeyClientModule.register(),
+        MessagesClientModule.register(),
         RedisModule.register({}, true),
         MikroOrmModule.forRoot({
           driver: PostgreSqlDriver,

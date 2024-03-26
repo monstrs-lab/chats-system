@@ -17,6 +17,8 @@ import { AuthKeyClient }                  from '@chats-system/authkey-client-mod
 import { CreateAuthKeyResponse }          from '@chats-system/authkey-client-module'
 import { GetAuthKeyResponse }             from '@chats-system/authkey-client-module'
 import { ChatsSystemClient }              from '@chats-system/client'
+import { MessagesClient }                 from '@chats-system/messages-client-module'
+import { SendMessageResponse }            from '@chats-system/messages-client-module'
 import { UsersClient }                    from '@chats-system/users-client-module'
 import { User }                           from '@chats-system/users-client-module'
 
@@ -27,6 +29,7 @@ describe('gateway', () => {
   let client: ChatsSystemClient
   let usersClient: UsersClient
   let authKeysClient: AuthKeyClient
+  let messagesClient: MessagesClient
 
   beforeAll(async () => {
     const port = await getPort()
@@ -41,6 +44,7 @@ describe('gateway', () => {
 
     await app.listen(port)
 
+    messagesClient = testingModule.get(MessagesClient)
     authKeysClient = testingModule.get(AuthKeyClient)
     usersClient = testingModule.get(UsersClient)
     client = new ChatsSystemClient(`ws://localhost:${port}`, {
@@ -101,6 +105,43 @@ describe('gateway', () => {
     await expect(result).resolves.toEqual(
       expect.objectContaining({
         pingId: 0n,
+      })
+    )
+  })
+
+  it('check send message', async () => {
+    const sendMessage = jest.spyOn(messagesClient, 'sendMessage')
+
+    sendMessage.mockImplementation(async () => Promise.resolve(new SendMessageResponse({})))
+
+    const userId = faker.number.bigInt()
+    const randomId = faker.number.bigInt()
+    const message = faker.word.sample()
+
+    const result = new Promise((resolve) => {
+      client.on(Transport.SentMessage, (m: Transport.SentMessage) => {
+        resolve(m)
+      })
+    })
+
+    await client.send(
+      new Transport.SendMessage({
+        peer: new Transport.InputPeerUser({
+          userId,
+        }),
+        randomId,
+        message,
+      })
+    )
+
+    await expect(result).resolves.toBeDefined()
+
+    expect(sendMessage).toBeCalledTimes(1)
+    expect(sendMessage).toBeCalledWith(
+      expect.objectContaining({
+        peerId: userId,
+        randomId,
+        message,
       })
     )
   })

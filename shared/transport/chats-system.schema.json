@@ -96,6 +96,18 @@
         { "name": "new_nonce_hash3", "type": "int128" }
       ],
       "type": "Set_client_DH_params_answer"
+    },
+    {
+      "id": 3723011404,
+      "predicate": "inputPeerUser",
+      "params": [{ "name": "user_id", "type": "long" }],
+      "type": "InputPeer"
+    },
+    {
+      "id": 2523198847,
+      "predicate": "messages.sentMessage",
+      "params": [],
+      "type": "messages.SentMessage"
     }
   ],
   "methods": [
@@ -133,6 +145,16 @@
       "method": "ping",
       "params": [{ "name": "ping_id", "type": "long" }],
       "type": "Pong"
+    },
+    {
+      "id": 671943023,
+      "method": "messages.sendMessage",
+      "params": [
+        { "name": "peer", "type": "InputPeer" },
+        { "name": "message", "type": "string" },
+        { "name": "random_id", "type": "long" }
+      ],
+      "type": "messages.SentMessage"
     }
   ]
 }

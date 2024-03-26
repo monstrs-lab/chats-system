@@ -13,8 +13,8 @@
   },
   "devDependencies": {
     "@monstrs/tools-runtime": "^0.2.21",
-    "@types/node": "^20.11.29",
-    "typescript": "^5.4.2"
+    "@types/node": "^20.11.30",
+    "typescript": "^5.4.3"
   },
   "packageManager": "yarn@4.1.1",
   "tools": {

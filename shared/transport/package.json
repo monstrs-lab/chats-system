@@ -19,6 +19,6 @@
     "@monstrs/mtproto-tl-primitives": "^0.0.4"
   },
   "devDependencies": {
-    "@monstrs/mtproto-tl-to-typescript": "^0.0.14"
+    "@monstrs/mtproto-tl-to-typescript": "^0.0.15"
   }
 }
