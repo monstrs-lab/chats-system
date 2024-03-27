@@ -10,6 +10,7 @@ import { EntityManager as PostgreSqlEntityManager } from '@mikro-orm/postgresql'
 import { MikroORMQueryBuilder }                     from '@monstrs/mikro-orm-query-builder'
 import { Injectable }                               from '@nestjs/common'
 import { Inject }                                   from '@nestjs/common'
+import { EventBus }                                 from '@nestjs/cqrs'
 
 import { DialogRepository }                         from '@chats-system/messages-application-module'
 
@@ -23,7 +24,8 @@ export class DialogRepositoryImpl extends DialogRepository {
     private readonly repository: EntityRepository<DialogEntity>,
     @Inject(EntityManager)
     private readonly em: PostgreSqlEntityManager,
-    private readonly mapper: DialogMapper
+    private readonly mapper: DialogMapper,
+    private readonly eventBus: EventBus
   ) {
     super()
   }
@@ -32,6 +34,10 @@ export class DialogRepositoryImpl extends DialogRepository {
     const exists = (await this.repository.findOne({ id: dialog.id })) || new DialogEntity()
 
     await this.em.persist(this.mapper.toPersistence(dialog, exists)).flush()
+
+    if (dialog.getUncommittedEvents().length > 0) {
+      this.eventBus.publishAll(dialog.getUncommittedEvents())
+    }
 
     return dialog
   }

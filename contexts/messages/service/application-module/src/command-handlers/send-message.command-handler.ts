@@ -33,6 +33,7 @@ export class SendMessageCommandHandler implements ICommandHandler<SendMessageCom
       outboxMessageId,
       command.randomId,
       command.fromId,
+      command.fromId,
       command.peerType,
       command.peerId,
       dialogId.a,
@@ -43,6 +44,7 @@ export class SendMessageCommandHandler implements ICommandHandler<SendMessageCom
     const inboxMessage = new Message().create(
       inboxMessageId,
       command.randomId,
+      command.fromId,
       command.peerId,
       command.peerType,
       command.fromId,

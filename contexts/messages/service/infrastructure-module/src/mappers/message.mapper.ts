@@ -15,6 +15,7 @@ export class MessageMapper {
       id: entity.id,
       messageId: entity.messageId,
       randomId: entity.randomId,
+      fromId: entity.fromId,
       userId: entity.userId,
       peerType: entity.peerType,
       peerId: entity.peerId,
@@ -31,6 +32,7 @@ export class MessageMapper {
     entity.id = message.id
     entity.messageId = message.messageId
     entity.randomId = message.randomId
+    entity.fromId = message.fromId
     entity.userId = message.userId
     entity.peerType = message.peerType
     entity.peerId = message.peerId

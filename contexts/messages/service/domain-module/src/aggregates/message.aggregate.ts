@@ -13,6 +13,8 @@ export class Message extends AggregateRoot {
 
   #randomId!: bigint
 
+  #fromId!: bigint
+
   #userId!: bigint
 
   #peerType!: PeerType
@@ -49,6 +51,14 @@ export class Message extends AggregateRoot {
 
   private set randomId(randomId: bigint) {
     this.#randomId = randomId
+  }
+
+  get fromId(): bigint {
+    return this.#fromId
+  }
+
+  private set fromId(fromId: bigint) {
+    this.#fromId = fromId
   }
 
   get userId(): bigint {
@@ -111,6 +121,7 @@ export class Message extends AggregateRoot {
   create(
     @Against('messageId').NotBigInt() messageId: bigint,
     @Against('randomId').NotBigInt() randomId: bigint,
+    @Against('fromId').NotBigInt() fromId: bigint,
     @Against('userId').NotBigInt() userId: bigint,
     @Against('peerType').NotEnum(PeerType) peerType: PeerType,
     @Against('peerId').NotBigInt() peerId: bigint,
@@ -123,6 +134,7 @@ export class Message extends AggregateRoot {
         random(63),
         messageId,
         randomId,
+        fromId,
         userId,
         peerType,
         peerId,
@@ -140,6 +152,7 @@ export class Message extends AggregateRoot {
     this.#id = event.id
     this.#messageId = event.messageId
     this.#randomId = event.randomId
+    this.#fromId = event.fromId
     this.#userId = event.userId
     this.#peerType = event.peerType
     this.#peerId = event.peerId

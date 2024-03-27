@@ -24,6 +24,9 @@ export class MessageEntity extends BaseEntity {
   randomId!: bigint
 
   @Property({ type: NativeBigIntType })
+  fromId!: bigint
+
+  @Property({ type: NativeBigIntType })
   userId!: bigint
 
   @Enum({ items: () => PeerType, type: 'smallint', default: PeerType.UNKNOWN })

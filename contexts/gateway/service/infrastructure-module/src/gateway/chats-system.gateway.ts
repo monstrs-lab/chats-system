@@ -1,6 +1,10 @@
+/* eslint-disable @typescript-eslint/consistent-type-imports */
+
 import type { User }                    from '@chats-system/users-client-module'
+import type { OnModuleInit }            from '@nestjs/common'
 import type { OnGatewayConnection }     from '@nestjs/websockets'
 import type { Socket }                  from 'socket.io'
+import type { Server }                  from 'socket.io'
 
 import * as Primitives                  from '@monstrs/mtproto-tl-primitives'
 import { MTProtoObfuscatedCodec }       from '@monstrs/mtproto-codecs'
@@ -12,6 +16,7 @@ import { MTProtoMessageId }             from '@monstrs/mtproto-core'
 import { MTProtoMessageFactory }        from '@monstrs/mtproto-core'
 import { WebSocketGateway }             from '@nestjs/websockets'
 import { SubscribeMessage }             from '@nestjs/websockets'
+import { WebSocketServer }              from '@nestjs/websockets'
 
 import * as Transport                   from '@chats-system/transport'
 import { Handshake }                    from '@chats-system/handshake'
@@ -19,12 +24,15 @@ import { UsersClient }                  from '@chats-system/users-client-module'
 
 import { TLRpcHandlersRegistry }        from '../registry/index.js'
 import { SessionAuthKeyManager }        from '../session/index.js'
+import { ChatsSystemEmitter }           from './chats-system.emitter.js'
 
 export interface ChatsSystemGatewayState {
   messageFactory: MTProtoMessageFactory
   codec: MTProtoObfuscatedCodec
   handshake: Handshake
   user: User
+  sessionId?: bigint
+  authKey?: MTProtoAuthKey
 }
 
 export interface ChatsSystemGatewaySocket extends Socket {
@@ -36,8 +44,12 @@ export interface ChatsSystemGatewaySocket extends Socket {
     origin: '*',
   },
 })
-export class ChatsSystemGateway implements OnGatewayConnection {
+export class ChatsSystemGateway implements OnGatewayConnection, OnModuleInit {
+  @WebSocketServer()
+  server!: Server
+
   constructor(
+    private readonly chatsSystemEmitter: ChatsSystemEmitter,
     private readonly sessionAuthKeyManager: SessionAuthKeyManager,
     private readonly tlRpcHandlersRegistry: TLRpcHandlersRegistry,
     private readonly usersClient: UsersClient
@@ -125,6 +137,16 @@ export class ChatsSystemGateway implements OnGatewayConnection {
       rawMessage.getMessage().getMessageData()
     )
 
+    if (!socket.state.sessionId) {
+      // eslint-disable-next-line no-param-reassign
+      socket.state.sessionId = sessionId
+    }
+
+    if (!socket.state.authKey) {
+      // eslint-disable-next-line no-param-reassign
+      socket.state.authKey = rawMessage.getMessage().getAuthKey()
+    }
+
     const result = await this.tlRpcHandlersRegistry.execute(
       await Transport.registry.read(new Primitives.BytesIO(message)),
       {
@@ -175,5 +197,30 @@ export class ChatsSystemGateway implements OnGatewayConnection {
       codec: new MTProtoObfuscatedCodec(Buffer.from(codecHeader, 'base64')),
       user,
     }
+
+    this.server.of(user.id.toString()).adapter.on('update', (data: Buffer) => {
+      // eslint-disable-next-line @typescript-eslint/no-misused-promises
+      this.server.sockets.sockets.forEach(async (s): Promise<void> => {
+        const sock: ChatsSystemGatewaySocket = s as ChatsSystemGatewaySocket
+
+        if (sock.state.user.id === user.id) {
+          sock.emit(
+            'message',
+            await sock.state.codec.send(
+              await new MTProtoRawMessage(
+                new MTProtoEncryptedRawMessage(
+                  sock.state.authKey!,
+                  sock.state.messageFactory.encode(0n, sock.state.sessionId!, data)
+                )
+              ).encode()
+            )
+          )
+        }
+      })
+    })
+  }
+
+  onModuleInit(): void {
+    this.chatsSystemEmitter.register(this.server)
   }
 }

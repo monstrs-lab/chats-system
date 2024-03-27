@@ -18,6 +18,8 @@ import { ResPQ }             from './res-pq.js'
 import { ServerDHInnerData } from './server-dh-inner-data.js'
 import { ServerDHParamsOk }  from './server-dh-params-ok.js'
 import { SetClientDHParams } from './set-client-dh-params.js'
+import { UpdateMessageID }   from './update-message-id.js'
+import { Updates }           from './updates.js'
 
 export const registry = new TLRegistry(
   new Map<number, typeof TLObject>([
@@ -26,6 +28,7 @@ export const registry = new TLRegistry(
     [0x3bcbf734, DhGenOk],
     [0x46dc1fb9, DhGenRetry],
     [0xdde8a54c, InputPeerUser],
+    [0x280d096f, SendMessage],
     [0x9664f57f, SentMessage],
     [0xa9f55f95, PQInnerData],
     [0x7abe77ec, Ping],
@@ -36,6 +39,7 @@ export const registry = new TLRegistry(
     [0xb5890dba, ServerDHInnerData],
     [0xd0e8075c, ServerDHParamsOk],
     [0xf5045f1f, SetClientDHParams],
-    [0x280d096f, SendMessage],
+    [0x4e90bfd6, UpdateMessageID],
+    [0x74ae4240, Updates],
   ])
 )

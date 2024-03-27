@@ -1,8 +1,9 @@
 import { NestLogger }                     from '@monstrs/nestjs-logger'
 import { NestFactory }                    from '@nestjs/core'
-import { IoAdapter }                      from '@nestjs/platform-socket.io'
 
-import { GatewayServiceEntrypointModule } from './gateway-service-entrypoint.module.js'
+import { RedisStreamsIoAdapter }          from '@chats-system/redis-streams-io-adapter'
+
+import { GatewayServiceEntrypointModule } from './module/index.js'
 
 const bootstrap = async (): Promise<void> => {
   const app = await NestFactory.create(GatewayServiceEntrypointModule, {
@@ -11,7 +12,7 @@ const bootstrap = async (): Promise<void> => {
 
   app.enableShutdownHooks()
 
-  app.useWebSocketAdapter(new IoAdapter(app))
+  app.useWebSocketAdapter(new RedisStreamsIoAdapter(app))
 
   await app.listen(3000)
 

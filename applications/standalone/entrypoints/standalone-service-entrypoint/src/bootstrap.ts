@@ -2,7 +2,8 @@ import { ConnectRpcServer }                  from '@monstrs/nestjs-connectrpc'
 import { ServerProtocol }                    from '@monstrs/nestjs-connectrpc'
 import { NestLogger }                        from '@monstrs/nestjs-logger'
 import { NestFactory }                       from '@nestjs/core'
-import { IoAdapter }                         from '@nestjs/platform-socket.io'
+
+import { RedisStreamsIoAdapter }             from '@chats-system/redis-streams-io-adapter'
 
 import { StandaloneServiceEntrypointModule } from './module/index.js'
 
@@ -13,7 +14,7 @@ const bootstrap = async (): Promise<void> => {
 
   app.enableShutdownHooks()
 
-  app.useWebSocketAdapter(new IoAdapter(app))
+  app.useWebSocketAdapter(new RedisStreamsIoAdapter(app))
 
   app.connectMicroservice({
     strategy: new ConnectRpcServer({

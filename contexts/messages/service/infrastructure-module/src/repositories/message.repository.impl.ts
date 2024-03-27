@@ -9,6 +9,7 @@ import { EntityManager as PostgreSqlEntityManager } from '@mikro-orm/postgresql'
 import { MikroORMQueryBuilder }                     from '@monstrs/mikro-orm-query-builder'
 import { Injectable }                               from '@nestjs/common'
 import { Inject }                                   from '@nestjs/common'
+import { EventBus }                                 from '@nestjs/cqrs'
 
 import { MessageRepository }                        from '@chats-system/messages-application-module'
 
@@ -22,7 +23,8 @@ export class MessageRepositoryImpl extends MessageRepository {
     private readonly repository: EntityRepository<MessageEntity>,
     @Inject(EntityManager)
     private readonly em: PostgreSqlEntityManager,
-    private readonly mapper: MessageMapper
+    private readonly mapper: MessageMapper,
+    private readonly eventBus: EventBus
   ) {
     super()
   }
@@ -31,6 +33,10 @@ export class MessageRepositoryImpl extends MessageRepository {
     const exists = (await this.repository.findOne({ id: message.id })) || new MessageEntity()
 
     await this.em.persist(this.mapper.toPersistence(message, exists)).flush()
+
+    if (message.getUncommittedEvents().length > 0) {
+      this.eventBus.publishAll(message.getUncommittedEvents())
+    }
 
     return message
   }

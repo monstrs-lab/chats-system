@@ -16,6 +16,10 @@ dh_gen_fail#a69dae02 nonce:int128 server_nonce:int128 new_nonce_hash3:int128 = S
 
 inputPeerUser#dde8a54c user_id:long = InputPeer;
 
+updateMessageID#4e90bfd6 id:long random_id:long = Update;
+
+updates#74ae4240 updates:Vector<Update> = Updates;
+
 messages.sentMessage#9664f57f = messages.SentMessage;
 
 ---functions---

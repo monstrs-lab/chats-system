@@ -104,6 +104,21 @@
       "type": "InputPeer"
     },
     {
+      "id": 1318109142,
+      "predicate": "updateMessageID",
+      "params": [
+        { "name": "id", "type": "long" },
+        { "name": "random_id", "type": "long" }
+      ],
+      "type": "Update"
+    },
+    {
+      "id": 1957577280,
+      "predicate": "updates",
+      "params": [{ "name": "updates", "type": "Vector<Update>" }],
+      "type": "Updates"
+    },
+    {
       "id": 2523198847,
       "predicate": "messages.sentMessage",
       "params": [],

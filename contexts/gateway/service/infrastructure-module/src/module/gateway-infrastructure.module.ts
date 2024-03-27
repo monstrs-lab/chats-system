@@ -7,8 +7,10 @@ import { AuthKeyClientModule }         from '@chats-system/authkey-client-module
 import { MessagesClientModule }        from '@chats-system/messages-client-module'
 import { UsersClientModule }           from '@chats-system/users-client-module'
 
+import * as eventhandlers              from '../event-handlers/index.js'
 import * as rpchandlers                from '../rpc-handlers/index.js'
 import { ChatsSystemGateway }          from '../gateway/index.js'
+import { ChatsSystemEmitter }          from '../gateway/index.js'
 import { TLRpcMetadataExplorer }       from '../metadata/index.js'
 import { TLRpcHandlersRegistry }       from '../registry/index.js'
 import { SessionAuthKeyManager }       from '../session/index.js'
@@ -32,7 +34,9 @@ export class GatewayInfrastructureModule implements OnApplicationBootstrap {
         TLRpcMetadataExplorer,
         TLRpcHandlersRegistry,
         ChatsSystemGateway,
+        ChatsSystemEmitter,
         SessionAuthKeyManager,
+        ...Object.values(eventhandlers),
         ...Object.values(rpchandlers),
       ],
       exports: [TLRpcHandlersRegistry],

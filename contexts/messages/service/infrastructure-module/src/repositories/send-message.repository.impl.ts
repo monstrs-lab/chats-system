@@ -7,6 +7,7 @@ import { InjectRepository }                         from '@mikro-orm/nestjs'
 import { EntityManager as PostgreSqlEntityManager } from '@mikro-orm/postgresql'
 import { Injectable }                               from '@nestjs/common'
 import { Inject }                                   from '@nestjs/common'
+import { EventBus }                                 from '@nestjs/cqrs'
 
 import { SendMessageRepository }                    from '@chats-system/messages-application-module'
 
@@ -23,7 +24,8 @@ export class SendMessageRepositoryImpl extends SendMessageRepository {
     @Inject(EntityManager)
     private readonly em: PostgreSqlEntityManager,
     private readonly messageMapper: MessageMapper,
-    private readonly dialogMapper: DialogMapper
+    private readonly dialogMapper: DialogMapper,
+    private readonly eventBus: EventBus
   ) {
     super()
   }
@@ -51,5 +53,12 @@ export class SendMessageRepositoryImpl extends SendMessageRepository {
     await this.em.persist(this.messageMapper.toPersistence(inboxMessage, new MessageEntity()))
 
     await this.em.flush()
+
+    this.eventBus.publishAll([
+      ...outboxMessage.getUncommittedEvents(),
+      ...inboxMessage.getUncommittedEvents(),
+      ...outboxDialog.getUncommittedEvents(),
+      ...inboxDialog.getUncommittedEvents(),
+    ])
   }
 }

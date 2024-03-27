@@ -5,6 +5,7 @@ export class MessageCreatedEvent {
     public readonly id: bigint,
     public readonly messageId: bigint,
     public readonly randomId: bigint,
+    public readonly fromId: bigint,
     public readonly userId: bigint,
     public readonly peerType: PeerType,
     public readonly peerId: bigint,

@@ -134,6 +134,15 @@
           "nullable": false,
           "mappedType": "bigint"
         },
+        "from_id": {
+          "name": "from_id",
+          "type": "bigint",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "mappedType": "bigint"
+        },
         "user_id": {
           "name": "user_id",
           "type": "bigint",

@@ -10,7 +10,6 @@ import { ConnectRpcServer }            from '@monstrs/nestjs-connectrpc'
 import { ServerProtocol }              from '@monstrs/nestjs-connectrpc'
 import { RedisModule }                 from '@monstrs/nestjs-redis'
 import { CqrsModule }                  from '@nestjs/cqrs'
-import { IoAdapter }                   from '@nestjs/platform-socket.io'
 import { Test }                        from '@nestjs/testing'
 import { faker }                       from '@faker-js/faker'
 import { describe }                    from '@jest/globals'
@@ -27,6 +26,7 @@ import { AuthKeyClientModule }         from '@chats-system/authkey-client-module
 import { ChatsSystemClient }           from '@chats-system/client'
 import { IdGenClientModule }           from '@chats-system/idgen-client-module'
 import { MessagesClientModule }        from '@chats-system/messages-client-module'
+import { RedisStreamsIoAdapter }       from '@chats-system/redis-streams-io-adapter'
 import { UsersClient }                 from '@chats-system/users-client-module'
 import { UsersClientModule }           from '@chats-system/users-client-module'
 
@@ -118,7 +118,7 @@ describe('standalone', () => {
       }),
     })
 
-    app.useWebSocketAdapter(new IoAdapter(app))
+    app.useWebSocketAdapter(new RedisStreamsIoAdapter(app))
 
     await app.listen(appPort)
     await service.listen()
@@ -178,16 +178,34 @@ describe('standalone', () => {
       })
     })
 
+    const onUpdates = new Promise((resolve) => {
+      client.on(Transport.Updates, (message: Transport.Updates) => {
+        resolve(message)
+      })
+    })
+
+    const randomId = faker.number.bigInt()
+
     await client.send(
       new Transport.SendMessage({
         peer: new Transport.InputPeerUser({
           userId: faker.number.bigInt(),
         }),
-        randomId: faker.number.bigInt(),
         message: faker.word.sample(),
+        randomId,
       })
     )
 
     await expect(result).resolves.toBeDefined()
+
+    await expect(onUpdates).resolves.toEqual(
+      expect.objectContaining({
+        updates: expect.arrayContaining([
+          expect.objectContaining({
+            randomId,
+          }),
+        ]),
+      })
+    )
   })
 })
