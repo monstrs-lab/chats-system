@@ -96,6 +96,52 @@
         { "name": "new_nonce_hash3", "type": "int128" }
       ],
       "type": "Set_client_DH_params_answer"
+    },
+    {
+      "id": 1498486562,
+      "predicate": "peerUser",
+      "params": [{ "name": "user_id", "type": "long" }],
+      "type": "Peer"
+    },
+    {
+      "id": 3723011404,
+      "predicate": "inputPeerUser",
+      "params": [{ "name": "user_id", "type": "long" }],
+      "type": "InputPeer"
+    },
+    {
+      "id": 1318109142,
+      "predicate": "updateMessageID",
+      "params": [
+        { "name": "id", "type": "long" },
+        { "name": "random_id", "type": "long" }
+      ],
+      "type": "Update"
+    },
+    {
+      "id": 522914557,
+      "predicate": "updateNewMessage",
+      "params": [{ "name": "message", "type": "Message" }],
+      "type": "Update"
+    },
+    {
+      "id": 1957577280,
+      "predicate": "updates",
+      "params": [{ "name": "updates", "type": "Vector<Update>" }],
+      "type": "Updates"
+    },
+    {
+      "id": 1992213009,
+      "predicate": "message",
+      "params": [
+        { "name": "flags", "type": "#" },
+        { "name": "out", "type": "flags.1?true" },
+        { "name": "id", "type": "long" },
+        { "name": "from_id", "type": "flags.2?Peer" },
+        { "name": "peer_id", "type": "Peer" },
+        { "name": "message", "type": "string" }
+      ],
+      "type": "Message"
     }
   ],
   "methods": [
@@ -133,6 +179,16 @@
       "method": "ping",
       "params": [{ "name": "ping_id", "type": "long" }],
       "type": "Pong"
+    },
+    {
+      "id": 671943023,
+      "method": "messages.sendMessage",
+      "params": [
+        { "name": "peer", "type": "InputPeer" },
+        { "name": "message", "type": "string" },
+        { "name": "random_id", "type": "long" }
+      ],
+      "type": "Updates"
     }
   ]
 }

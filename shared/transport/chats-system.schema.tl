@@ -14,6 +14,16 @@ dh_gen_ok#3bcbf734 nonce:int128 server_nonce:int128 new_nonce_hash1:int128 = Set
 dh_gen_retry#46dc1fb9 nonce:int128 server_nonce:int128 new_nonce_hash2:int128 = Set_client_DH_params_answer;
 dh_gen_fail#a69dae02 nonce:int128 server_nonce:int128 new_nonce_hash3:int128 = Set_client_DH_params_answer;
 
+peerUser#59511722 user_id:long = Peer;
+inputPeerUser#dde8a54c user_id:long = InputPeer;
+
+updateMessageID#4e90bfd6 id:long random_id:long = Update;
+updateNewMessage#1f2b0afd message:Message = Update;
+
+updates#74ae4240 updates:Vector<Update> = Updates;
+
+message#76bec211 flags:# out:flags.1?true id:long from_id:flags.2?Peer peer_id:Peer message:string = Message;
+
 ---functions---
 
 req_pq_multi#be7e8ef1 nonce:int128 = ResPQ;
@@ -23,3 +33,5 @@ req_DH_params#d712e4be nonce:int128 server_nonce:int128 p:bytes q:bytes public_k
 set_client_DH_params#f5045f1f nonce:int128 server_nonce:int128 encrypted_data:bytes = Set_client_DH_params_answer;
 
 ping#7abe77ec ping_id:long = Pong;
+
+messages.sendMessage#280d096f peer:InputPeer message:string random_id:long = Updates;

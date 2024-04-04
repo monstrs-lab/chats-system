@@ -3,7 +3,6 @@ import type { PromiseClient }          from '@connectrpc/connect' // eslint-disa
 
 import { Inject }                      from '@nestjs/common'
 import { Injectable }                  from '@nestjs/common'
-import { fromBigIntToNumber }          from '@monstrs/bigint-utils'
 import FlakeIdGen                      from 'flake-idgen'
 
 import { SequenceQuery }               from '@chats-system/idgen-rpc-client'
@@ -34,10 +33,10 @@ export class IdGenClient {
     return sequence.id
   }
 
-  async loadCurrentSequenceIdNumber(key: string): Promise<number> {
+  async loadCurrentSequenceIdNumber(key: string): Promise<bigint> {
     const sequence = await this.currentSequenceIdDataLoader.load(new SequenceQuery({ key }))
 
-    return fromBigIntToNumber(sequence.id)
+    return sequence.id
   }
 
   async loadNextSequenceId(key: string, increment: number = 1): Promise<bigint> {
@@ -46,10 +45,10 @@ export class IdGenClient {
     return sequence.id
   }
 
-  async loadNextSequenceIdNumber(key: string, increment: number = 1): Promise<number> {
+  async loadNextSequenceIdNumber(key: string, increment: number = 1): Promise<bigint> {
     const sequence = await this.nextSequenceIdDataLoader.load(new SequenceQuery({ key, increment }))
 
-    return fromBigIntToNumber(sequence.id)
+    return sequence.id
   }
 
   async setCurrentSequenceId(key: string, id: bigint): Promise<boolean> {
@@ -65,25 +64,25 @@ export class IdGenClient {
     return this.flakeIdGen.next().readBigInt64BE()
   }
 
-  async getCurrentSequenceId(key: bigint): Promise<number> {
+  async getCurrentSequenceId(key: bigint): Promise<bigint> {
     return this.loadCurrentSequenceIdNumber(
       [IdGenClient.SEQ_UPDATES_NGEN_ID, key.toString()].join('_')
     )
   }
 
-  async getCurrentPtsId(key: bigint): Promise<number> {
+  async getCurrentPtsId(key: bigint): Promise<bigint> {
     return this.loadCurrentSequenceIdNumber(
       [IdGenClient.PTS_UPDATES_NGEN_ID, key.toString()].join('_')
     )
   }
 
-  async getNextPtsId(key: bigint): Promise<number> {
+  async getNextPtsId(key: bigint): Promise<bigint> {
     return this.loadNextSequenceIdNumber(
       [IdGenClient.PTS_UPDATES_NGEN_ID, key.toString()].join('_')
     )
   }
 
-  async getNextMessageBoxId(key: bigint): Promise<number> {
+  async getNextMessageBoxId(key: bigint): Promise<bigint> {
     return this.loadNextSequenceIdNumber(
       [IdGenClient.MESSAGE_BOX_NGEN_ID, key.toString()].join('_')
     )

@@ -13,6 +13,8 @@ export interface ServerDHInnerDataParams {
 export class ServerDHInnerData extends TLObject {
   override constructorId: number = 0xb5890dba
 
+  override type: string = 'ServerDHInnerData'
+
   nonce!: bigint
 
   serverNonce!: bigint

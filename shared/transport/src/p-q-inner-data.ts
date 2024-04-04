@@ -13,6 +13,8 @@ export interface PQInnerDataParams {
 export class PQInnerData extends TLObject {
   override constructorId: number = 0xa9f55f95
 
+  override type: string = 'PQInnerData'
+
   pq!: Buffer
 
   p!: Buffer

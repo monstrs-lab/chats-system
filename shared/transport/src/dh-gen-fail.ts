@@ -10,6 +10,8 @@ export interface DhGenFailParams {
 export class DhGenFail extends TLObject {
   override constructorId: number = 0xa69dae02
 
+  override type: string = 'SetClientDHParamsAnswer'
+
   nonce!: bigint
 
   serverNonce!: bigint

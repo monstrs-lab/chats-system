@@ -10,6 +10,8 @@ export interface DhGenOkParams {
 export class DhGenOk extends TLObject {
   override constructorId: number = 0x3bcbf734
 
+  override type: string = 'SetClientDHParamsAnswer'
+
   nonce!: bigint
 
   serverNonce!: bigint

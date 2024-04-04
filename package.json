@@ -13,8 +13,13 @@
   },
   "devDependencies": {
     "@monstrs/tools-runtime": "^0.2.21",
-    "@types/node": "^20.11.29",
-    "typescript": "^5.4.2"
+    "@types/node": "^20.12.4",
+    "typescript": "^5.4.3"
+  },
+  "dependenciesMeta": {
+    "@monstrs/mtproto-tl-primitives@0.0.4": {
+      "unplugged": true
+    }
   },
   "packageManager": "yarn@4.1.1",
   "tools": {

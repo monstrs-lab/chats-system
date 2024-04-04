@@ -10,6 +10,8 @@ export interface ServerDHParamsOkParams {
 export class ServerDHParamsOk extends TLObject {
   override constructorId: number = 0xd0e8075c
 
+  override type: string = 'ServerDHParams'
+
   nonce!: bigint
 
   serverNonce!: bigint

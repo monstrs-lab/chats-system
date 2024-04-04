@@ -13,6 +13,8 @@ export interface ReqDHParamsParams {
 export class ReqDHParams extends TLObject {
   override constructorId: number = 0xd712e4be
 
+  override type: string = 'ServerDHParams'
+
   nonce!: bigint
 
   serverNonce!: bigint

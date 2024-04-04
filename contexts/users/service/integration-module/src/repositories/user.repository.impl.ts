@@ -27,12 +27,12 @@ export class UserRepositoryImpl extends UserRepository {
     super()
   }
 
-  async save(authKey: User): Promise<User> {
-    const exists = (await this.repository.findOne({ id: authKey.id })) || new UserEntity()
+  async save(user: User): Promise<User> {
+    const exists = (await this.repository.findOne({ id: user.id })) || new UserEntity()
 
-    await this.em.persist(this.mapper.toPersistence(authKey, exists)).flush()
+    await this.em.persist(this.mapper.toPersistence(user, exists)).flush()
 
-    return authKey
+    return user
   }
 
   async findById(id: bigint): Promise<User | undefined> {
