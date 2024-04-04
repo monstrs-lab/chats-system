@@ -10,6 +10,8 @@ export interface SetClientDHParamsParams {
 export class SetClientDHParams extends TLObject {
   override constructorId: number = 0xf5045f1f
 
+  override type: string = 'SetClientDHParamsAnswer'
+
   nonce!: bigint
 
   serverNonce!: bigint

@@ -10,6 +10,8 @@ export interface DhGenRetryParams {
 export class DhGenRetry extends TLObject {
   override constructorId: number = 0x46dc1fb9
 
+  override type: string = 'SetClientDHParamsAnswer'
+
   nonce!: bigint
 
   serverNonce!: bigint

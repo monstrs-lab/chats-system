@@ -9,6 +9,8 @@ export interface PongParams {
 export class Pong extends TLObject {
   override constructorId: number = 0x347773c5
 
+  override type: string = 'Pong'
+
   msgId!: bigint
 
   pingId!: bigint

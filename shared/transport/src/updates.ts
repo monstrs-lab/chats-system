@@ -1,18 +1,20 @@
-import type { Update }     from './update.js'
+import type { TypeUpdate } from './update.type.js'
 
 import * as Primitive      from '@monstrs/mtproto-tl-primitives'
 import { TLObject }        from '@monstrs/mtproto-tl-core'
 
-import { UpdateMessageID } from './update-message-id.js'
+import { registry }        from './registry.js'
 
 export interface UpdatesParams {
-  updates: Array<Update>
+  updates: Array<TypeUpdate>
 }
 
 export class Updates extends TLObject {
   override constructorId: number = 0x74ae4240
 
-  updates!: Array<Update>
+  override type: string = 'Updates'
+
+  updates!: Array<TypeUpdate>
 
   constructor(params: UpdatesParams) {
     super(params)
@@ -21,7 +23,7 @@ export class Updates extends TLObject {
 
   static override async read(b: Primitive.BytesIO): Promise<Updates> {
     await Primitive.Int.read(b)
-    const updates = await Primitive.Vector.read(b, UpdateMessageID)
+    const updates = await Primitive.Vector.read(b, undefined, registry)
     return new Updates({ updates })
   }
 
@@ -29,12 +31,7 @@ export class Updates extends TLObject {
     const b: Primitive.BytesIO = new Primitive.BytesIO()
     b.write(Primitive.Int.write(this.constructorId, false))
     if (this.updates) {
-      b.write(
-        Primitive.Vector.write(this.updates, {
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return
-          write: (params) => params.write(),
-        })
-      )
+      b.write(Primitive.Vector.write(this.updates))
     }
     return b.buffer
   }

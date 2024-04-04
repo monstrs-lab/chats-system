@@ -14,8 +14,8 @@
     "@chats-system/transport": "workspace:0.0.1",
     "@monstrs/mtproto-codecs": "^0.0.32",
     "@monstrs/mtproto-core": "^0.0.27",
-    "@monstrs/mtproto-tl-core": "^0.0.11",
-    "@monstrs/mtproto-tl-primitives": "^0.0.4",
+    "@monstrs/mtproto-tl-core": "^0.0.13",
+    "@monstrs/mtproto-tl-primitives": "^0.0.6",
     "crypto-random-bigint": "^2.1.0",
     "socket.io-client": "^4.7.5"
   }

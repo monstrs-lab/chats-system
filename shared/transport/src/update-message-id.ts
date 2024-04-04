@@ -9,6 +9,8 @@ export interface UpdateMessageIDParams {
 export class UpdateMessageID extends TLObject {
   override constructorId: number = 0x4e90bfd6
 
+  override type: string = 'Update'
+
   id!: bigint
 
   randomId!: bigint
@@ -20,7 +22,6 @@ export class UpdateMessageID extends TLObject {
   }
 
   static override async read(b: Primitive.BytesIO): Promise<UpdateMessageID> {
-    await Primitive.Int.read(b)
     const id = await Primitive.Long.read(b)
     const randomId = await Primitive.Long.read(b)
     return new UpdateMessageID({ id, randomId })

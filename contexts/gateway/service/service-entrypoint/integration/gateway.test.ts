@@ -147,7 +147,7 @@ describe('gateway', () => {
     const message = faker.word.sample()
 
     const result = new Promise((resolve) => {
-      client.on(Transport.SentMessage, (m: Transport.SentMessage) => {
+      client.on(Transport.Updates, (m: Transport.Updates) => {
         resolve(m)
       })
     })

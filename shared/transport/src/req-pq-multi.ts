@@ -8,6 +8,8 @@ export interface ReqPqMultiParams {
 export class ReqPqMulti extends TLObject {
   override constructorId: number = 0xbe7e8ef1
 
+  override type: string = 'ResPQ'
+
   nonce!: bigint
 
   constructor(params: ReqPqMultiParams) {

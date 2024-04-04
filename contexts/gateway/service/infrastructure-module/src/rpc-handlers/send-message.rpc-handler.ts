@@ -13,7 +13,7 @@ export class SendMessageHandler {
   async execute(
     request: Transport.SendMessage,
     metadata: TLRpcMetadata
-  ): Promise<Transport.SentMessage> {
+  ): Promise<Transport.Updates> {
     await this.client.sendMessage({
       fromId: metadata.userId,
       randomId: request.randomId,
@@ -22,6 +22,6 @@ export class SendMessageHandler {
       message: request.message,
     })
 
-    return new Transport.SentMessage({})
+    return new Transport.Updates({ updates: [] })
   }
 }

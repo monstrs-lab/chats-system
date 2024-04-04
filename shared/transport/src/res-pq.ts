@@ -11,6 +11,8 @@ export interface ResPQParams {
 export class ResPQ extends TLObject {
   override constructorId: number = 0x05162463
 
+  override type: string = 'ResPQ'
+
   nonce!: bigint
 
   serverNonce!: bigint

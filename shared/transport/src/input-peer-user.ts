@@ -8,6 +8,8 @@ export interface InputPeerUserParams {
 export class InputPeerUser extends TLObject {
   override constructorId: number = 0xdde8a54c
 
+  override type: string = 'InputPeer'
+
   userId!: bigint
 
   constructor(params: InputPeerUserParams) {

@@ -8,6 +8,8 @@ export interface PingParams {
 export class Ping extends TLObject {
   override constructorId: number = 0x7abe77ec
 
+  override type: string = 'Pong'
+
   pingId!: bigint
 
   constructor(params: PingParams) {

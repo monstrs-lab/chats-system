@@ -98,6 +98,12 @@
       "type": "Set_client_DH_params_answer"
     },
     {
+      "id": 1498486562,
+      "predicate": "peerUser",
+      "params": [{ "name": "user_id", "type": "long" }],
+      "type": "Peer"
+    },
+    {
       "id": 3723011404,
       "predicate": "inputPeerUser",
       "params": [{ "name": "user_id", "type": "long" }],
@@ -113,16 +119,29 @@
       "type": "Update"
     },
     {
+      "id": 522914557,
+      "predicate": "updateNewMessage",
+      "params": [{ "name": "message", "type": "Message" }],
+      "type": "Update"
+    },
+    {
       "id": 1957577280,
       "predicate": "updates",
       "params": [{ "name": "updates", "type": "Vector<Update>" }],
       "type": "Updates"
     },
     {
-      "id": 2523198847,
-      "predicate": "messages.sentMessage",
-      "params": [],
-      "type": "messages.SentMessage"
+      "id": 1992213009,
+      "predicate": "message",
+      "params": [
+        { "name": "flags", "type": "#" },
+        { "name": "out", "type": "flags.1?true" },
+        { "name": "id", "type": "long" },
+        { "name": "from_id", "type": "flags.2?Peer" },
+        { "name": "peer_id", "type": "Peer" },
+        { "name": "message", "type": "string" }
+      ],
+      "type": "Message"
     }
   ],
   "methods": [
@@ -169,7 +188,7 @@
         { "name": "message", "type": "string" },
         { "name": "random_id", "type": "long" }
       ],
-      "type": "messages.SentMessage"
+      "type": "Updates"
     }
   ]
 }

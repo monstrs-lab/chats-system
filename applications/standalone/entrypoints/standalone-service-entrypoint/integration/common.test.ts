@@ -1,3 +1,4 @@
+import type { User }                   from '@chats-system/users-client-module'
 import type { INestApplication }       from '@nestjs/common'
 import type { INestMicroservice }      from '@nestjs/common'
 import type { StartedTestContainer }   from 'testcontainers'
@@ -39,7 +40,10 @@ describe('standalone', () => {
   let postgres: StartedTestContainer
   let service: INestMicroservice
   let app: INestApplication
-  let client: ChatsSystemClient
+  let user1: User
+  let user2: User
+  let client1: ChatsSystemClient
+  let client2: ChatsSystemClient
 
   beforeAll(async () => {
     postgres = await new GenericContainer('bitnami/postgresql')
@@ -123,16 +127,33 @@ describe('standalone', () => {
     await app.listen(appPort)
     await service.listen()
 
-    const { user } = await testingModule.get(UsersClient).createUser({
+    const { user: u1 } = await testingModule.get(UsersClient).createUser({
       externalId: faker.string.uuid(),
       firstName: faker.person.firstName(),
       lastName: faker.person.lastName(),
     })
 
-    client = new ChatsSystemClient(`ws://localhost:${appPort}`, {
+    const { user: u2 } = await testingModule.get(UsersClient).createUser({
+      externalId: faker.string.uuid(),
+      firstName: faker.person.firstName(),
+      lastName: faker.person.lastName(),
+    })
+
+    user1 = u1!
+    user2 = u2!
+
+    client1 = new ChatsSystemClient(`ws://localhost:${appPort}`, {
       io: {
         extraHeaders: {
-          'x-user': user!.externalId,
+          'x-user': user1!.externalId,
+        },
+      },
+    })
+
+    client2 = new ChatsSystemClient(`ws://localhost:${appPort}`, {
+      io: {
+        extraHeaders: {
+          'x-user': user2!.externalId,
         },
       },
     })
@@ -146,25 +167,33 @@ describe('standalone', () => {
   })
 
   it('check connect client', async () => {
-    await client.connect()
+    await client1.connect()
+    await client2.connect()
 
-    expect(client.isConnected()).toBe(true)
+    expect(client1.isConnected()).toBe(true)
+    expect(client2.isConnected()).toBe(true)
   })
 
   it('check ping', async () => {
-    const result = new Promise((resolve) => {
-      client.on(Transport.Pong, (message: Transport.Pong) => {
+    const onPong = new Promise((resolve) => {
+      client1.on(Transport.Pong, (message: Transport.Pong) => {
         resolve(message)
       })
     })
 
-    await client.send(
+    await client1.send(
       new Transport.Ping({
         pingId: 0n,
       })
     )
 
-    await expect(result).resolves.toEqual(
+    await client2.send(
+      new Transport.Ping({
+        pingId: 0n,
+      })
+    )
+
+    await expect(onPong).resolves.toEqual(
       expect.objectContaining({
         pingId: 0n,
       })
@@ -172,37 +201,64 @@ describe('standalone', () => {
   })
 
   it('check send message', async () => {
-    const result = new Promise((resolve) => {
-      client.on(Transport.SentMessage, (message: Transport.SentMessage) => {
+    const onSentMessage = new Promise((resolve) => {
+      client1.on(Transport.Updates, (message: Transport.Updates) => {
         resolve(message)
       })
     })
 
-    const onUpdates = new Promise((resolve) => {
-      client.on(Transport.Updates, (message: Transport.Updates) => {
+    const onUpdateMessageId = new Promise((resolve) => {
+      client1.on(Transport.Updates, (message: Transport.Updates) => {
+        resolve(message)
+      })
+    })
+
+    const onUpdateNewMessage = new Promise((resolve) => {
+      client2.on(Transport.Updates, (message: Transport.Updates) => {
         resolve(message)
       })
     })
 
     const randomId = faker.number.bigInt()
+    const message = faker.word.sample()
 
-    await client.send(
+    await client1.send(
       new Transport.SendMessage({
         peer: new Transport.InputPeerUser({
-          userId: faker.number.bigInt(),
+          userId: user2.id,
         }),
-        message: faker.word.sample(),
+        message,
         randomId,
       })
     )
 
-    await expect(result).resolves.toBeDefined()
+    await expect(onSentMessage).resolves.toBeDefined()
 
-    await expect(onUpdates).resolves.toEqual(
+    await expect(onUpdateMessageId).resolves.toEqual(
       expect.objectContaining({
         updates: expect.arrayContaining([
           expect.objectContaining({
             randomId,
+          }),
+        ]),
+      })
+    )
+
+    await expect(onUpdateNewMessage).resolves.toEqual(
+      expect.objectContaining({
+        updates: expect.arrayContaining([
+          expect.objectContaining({
+            message: expect.objectContaining({
+              message,
+              id: 1n,
+              out: false,
+              fromId: expect.objectContaining({
+                userId: user1.id,
+              }),
+              peerId: expect.objectContaining({
+                userId: user1.id,
+              }),
+            }),
           }),
         ]),
       })

@@ -1,12 +1,12 @@
-import type { InputPeer } from './input-peer.js'
+import type { TypeInputPeer } from './input-peer.type.js'
 
-import * as Primitive     from '@monstrs/mtproto-tl-primitives'
-import { TLObject }       from '@monstrs/mtproto-tl-core'
+import * as Primitive         from '@monstrs/mtproto-tl-primitives'
+import { TLObject }           from '@monstrs/mtproto-tl-core'
 
-import { registry }       from './registry.js'
+import { registry }           from './registry.js'
 
 export interface SendMessageParams {
-  peer: InputPeer
+  peer: TypeInputPeer
   message: string
   randomId: bigint
 }
@@ -14,7 +14,9 @@ export interface SendMessageParams {
 export class SendMessage extends TLObject {
   override constructorId: number = 0x280d096f
 
-  peer!: InputPeer
+  override type: string = 'Updates'
+
+  peer!: TypeInputPeer
 
   message!: string
 
@@ -28,7 +30,7 @@ export class SendMessage extends TLObject {
   }
 
   static override async read(b: Primitive.BytesIO): Promise<SendMessage> {
-    const peer: InputPeer = await registry.read(b)
+    const peer = await registry.read<TypeInputPeer>(b)
     const message = await Primitive.String.read(b)
     const randomId = await Primitive.Long.read(b)
     return new SendMessage({ peer, message, randomId })
