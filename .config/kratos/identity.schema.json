@@ -7,15 +7,25 @@
     "traits": {
       "type": "object",
       "properties": {
-        "phone": {
-          "title": "Phone",
+        "email": {
           "type": "string",
-          "format": "tel",
+          "format": "email",
+          "title": "E-Mail",
+          "minLength": 3,
           "ory.sh/kratos": {
             "credentials": {
               "password": {
                 "identifier": true
+              },
+              "totp": {
+                "account_name": true
               }
+            },
+            "verification": {
+              "via": "email"
+            },
+            "recovery": {
+              "via": "email"
             }
           }
         },
@@ -32,9 +42,17 @@
               "minLength": 2
             }
           }
+        },
+        "avatar": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string"
+            }
+          }
         }
       },
-      "required": ["phone", "name"],
+      "required": ["email", "name"],
       "additionalProperties": false
     }
   }
