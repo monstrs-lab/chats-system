@@ -135,6 +135,16 @@ services:
       - 'traefik.http.routers.oathkeeper.entrypoints=web-secure'
       - 'traefik.http.services.oathkeeper.loadbalancer.server.port=4455'
 
+  standalone:
+    image: node:19.9
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace:z
+    entrypoint: yarn workspace @chats-system/standalone-service-entrypoint dev
+    environment:
+      - REDIS_HOST=redis
+      - DB_HOST=db
+
   accounts:
     image: node:19.9
     working_dir: /workspace
