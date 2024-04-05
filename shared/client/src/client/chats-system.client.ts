@@ -5,6 +5,7 @@ import type { SocketOptions }           from 'socket.io-client'
 
 import type { AbstractStorage }         from '../storage/index.js'
 
+import { Buffer }                       from 'node:buffer'
 import { EventEmitter }                 from 'node:events'
 
 import * as Primitives                  from '@monstrs/mtproto-tl-primitives'
@@ -120,18 +121,20 @@ export class ChatsSystemClient {
     if (!(await this.storage.getAuthKey())) {
       const { reqPQMulti } = await this.handshake.sendReqPQMulti()
 
-      const resPQData: Buffer = await this.socket.emitWithAck(
-        'handshake',
-        await this.codec.send(
-          await new MTProtoRawMessage(
-            new MTProtoUnencryptedRawMessage(
-              new MTProtoAuthKey(),
-              MTProtoMessageId.generate(),
-              reqPQMulti.write().length,
-              reqPQMulti.write()
-            )
-          ).encode()
-        )
+      const resPQData: Buffer = Buffer.from(
+        (await this.socket.emitWithAck(
+          'handshake',
+          await this.codec.send(
+            await new MTProtoRawMessage(
+              new MTProtoUnencryptedRawMessage(
+                new MTProtoAuthKey(),
+                MTProtoMessageId.generate(),
+                reqPQMulti.write().length,
+                reqPQMulti.write()
+              )
+            ).encode()
+          )
+        )) as ArrayBuffer | Buffer
       )
 
       const resPQRawMessage = await MTProtoRawMessage.decode(await this.codec.receive(resPQData), {
@@ -148,18 +151,20 @@ export class ChatsSystemClient {
 
       const { reqDhParams } = await this.handshake.handleResPQ(resPQ)
 
-      const serverDHParamsOkData: Buffer = await this.socket.emitWithAck(
-        'handshake',
-        await this.codec.send(
-          await new MTProtoRawMessage(
-            new MTProtoUnencryptedRawMessage(
-              new MTProtoAuthKey(),
-              MTProtoMessageId.generate(),
-              reqDhParams.write().length,
-              reqDhParams.write()
-            )
-          ).encode()
-        )
+      const serverDHParamsOkData: Buffer = Buffer.from(
+        (await this.socket.emitWithAck(
+          'handshake',
+          await this.codec.send(
+            await new MTProtoRawMessage(
+              new MTProtoUnencryptedRawMessage(
+                new MTProtoAuthKey(),
+                MTProtoMessageId.generate(),
+                reqDhParams.write().length,
+                reqDhParams.write()
+              )
+            ).encode()
+          )
+        )) as ArrayBuffer | Buffer
       )
 
       const serverDHParamsOkRawMessage = await MTProtoRawMessage.decode(
@@ -200,7 +205,9 @@ export class ChatsSystemClient {
     this.connected = true
     this.events.emit('connected')
 
-    this.socket.on('message', this.onMessage)
+    this.socket.on('message', (data: ArrayBuffer | Buffer) => {
+      this.onMessage(Buffer.from(data))
+    })
   }
 
   protected async onDisconnect(): Promise<void> {

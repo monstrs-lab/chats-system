@@ -1,3 +1,5 @@
+import { Buffer }         from 'node:buffer'
+
 import { MTProtoAuthKey } from '@monstrs/mtproto-core'
 
 export interface StorageData {

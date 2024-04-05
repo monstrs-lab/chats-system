@@ -39,7 +39,7 @@ authenticators:
     config:
       subject: guest
 
-  bearer_token:
+  cookie_session:
     enabled: true
     config:
       check_session_url: http://kratos:4433/sessions/whoami

@@ -15,10 +15,10 @@
     "@monstrs/buffer-utils": "^0.0.9",
     "@monstrs/crypto-utils": "^0.0.2",
     "@monstrs/logger": "^0.0.20",
-    "@monstrs/mtproto-codecs": "^0.0.32",
-    "@monstrs/mtproto-core": "^0.0.27",
-    "@monstrs/mtproto-crypto": "^0.0.6",
-    "@monstrs/mtproto-tl-primitives": "^0.0.6"
+    "@monstrs/mtproto-codecs": "^0.0.33",
+    "@monstrs/mtproto-core": "^0.0.28",
+    "@monstrs/mtproto-crypto": "^0.0.7",
+    "@monstrs/mtproto-tl-primitives": "^0.0.7"
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0"

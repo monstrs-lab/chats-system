@@ -1,0 +1,20 @@
+{
+  "name": "@chats-system/operations",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./src/index.ts"
+  },
+  "main": "src/index.ts",
+  "dependencies": {
+    "@chats-system/client": "workspace:0.0.1",
+    "@chats-system/transport": "workspace:0.0.1",
+    "tldjs": "^2.3.1"
+  },
+  "devDependencies": {
+    "@types/tldjs": "^2.3.4"
+  }
+}

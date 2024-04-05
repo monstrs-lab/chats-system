@@ -1,3 +1,5 @@
+import { Buffer } from 'node:buffer'
+
 export const key = {
   fingerprint: BigInt('-6205835210776354611'),
   n: BigInt(

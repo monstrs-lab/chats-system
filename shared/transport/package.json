@@ -15,10 +15,10 @@
     "generate:typescript": "yarn tl-to-typescript --schema chats-system.schema.json --output ./src"
   },
   "dependencies": {
-    "@monstrs/mtproto-tl-core": "^0.0.13",
-    "@monstrs/mtproto-tl-primitives": "^0.0.6"
+    "@monstrs/mtproto-tl-core": "^0.0.14",
+    "@monstrs/mtproto-tl-primitives": "^0.0.7"
   },
   "devDependencies": {
-    "@monstrs/mtproto-tl-to-typescript": "^0.0.26"
+    "@monstrs/mtproto-tl-to-typescript": "^0.0.27"
   }
 }

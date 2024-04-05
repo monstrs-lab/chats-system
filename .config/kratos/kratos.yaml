@@ -12,6 +12,8 @@ serve:
     base_url: http://kratos:4434/
 
 session:
+  cookie:
+    domain: .chats-system.ru
   whoami:
     required_aal: aal1
 
