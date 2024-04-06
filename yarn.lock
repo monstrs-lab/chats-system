@@ -4053,7 +4053,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/websockets@npm:^10.3.7":
+"@nestjs/websockets@npm:*, @nestjs/websockets@npm:^10.3.7":
   version: 10.3.7
   resolution: "@nestjs/websockets@npm:10.3.7"
   dependencies:
