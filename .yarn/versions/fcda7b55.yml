@@ -1,0 +1,3 @@
+releases:
+  "@chats-system/accounts-renderer-entrypoint": patch
+  "@chats-system/app-renderer-entrypoint": patch
