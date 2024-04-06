@@ -1,0 +1,36 @@
+{
+  "name": "@chats-system/kratos-integration-service-entrypoint",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "yarn service build",
+    "dev": "yarn service dev",
+    "prepack": "run build",
+    "start": "yarn node dist/index.js"
+  },
+  "devDependencies": {
+    "@chats-system/kratos-integration-infrastructure-module": "workspace:0.0.1",
+    "@chats-system/users-client-module": "workspace:0.0.1",
+    "@faker-js/faker": "^8.4.1",
+    "@jest/globals": "^29.7.0",
+    "@monstrs/nestjs-logger": "^0.4.2",
+    "@nestjs/common": "^10.3.7",
+    "@nestjs/core": "^10.3.7",
+    "@nestjs/cqrs": "^10.2.7",
+    "@nestjs/microservices": "^10.3.7",
+    "@nestjs/platform-express": "^10.3.7",
+    "@nestjs/testing": "^10.3.7",
+    "@testcontainers/kafka": "^10.8.1",
+    "@types/node": "^20.12.4",
+    "cache-manager": "^5.5.1",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "get-port": "^7.1.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1",
+    "testcontainers": "^10.8.1"
+  }
+}

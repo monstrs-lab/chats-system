@@ -1,6 +1,32 @@
 version: '3.8'
 
 services:
+  yarn:
+    image: node:19.9
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    entrypoint: yarn
+
+  traefik:
+    image: traefik:v2.11
+    command:
+      - '--log.level=DEBUG'
+      - '--api.insecure=true'
+      - '--providers.docker=true'
+      - '--providers.docker.exposedbydefault=false'
+      - '--providers.file.directory=/etc/traefik/'
+      - '--providers.file.watch=true'
+      - '--entrypoints.web.address=:80'
+      - '--entrypoints.web-secure.address=:443'
+    ports:
+      - '80:80'
+      - '443:443'
+      - '8080:8080'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - .config/traefik:/etc/traefik
+
   db:
     image: bitnami/postgresql
     volumes:
@@ -78,9 +104,56 @@ services:
         aliases:
           - kratos-public
           - kratos-admin
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.kratos.tls=true'
+      - 'traefik.http.routers.kratos.rule=Host(`identity.chats-system.ru`)'
+      - 'traefik.http.routers.kratos.entrypoints=web-secure'
+      - 'traefik.http.services.kratos.loadbalancer.server.port=4433'
 
   mailslurper:
     image: oryd/mailslurper:latest-smtps
     ports:
       - '4436:4436'
       - '4437:4437'
+
+  oathkeeper:
+    image: oryd/oathkeeper:latest
+    container_name: oathkeeper
+    ports:
+      - '4455:4455'
+      - '4456:4456'
+    command: serve --config=/etc/config/oathkeeper/config.yaml
+    volumes:
+      - type: bind
+        source: .config/oathkeeper
+        target: /etc/config/oathkeeper
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.oathkeeper.tls=true'
+      - 'traefik.http.routers.oathkeeper.rule=Host(`chats.chats-system.ru`)'
+      - 'traefik.http.routers.oathkeeper.entrypoints=web-secure'
+      - 'traefik.http.services.oathkeeper.loadbalancer.server.port=4455'
+
+  standalone:
+    image: node:19.9
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace:z
+    entrypoint: yarn workspace @chats-system/standalone-service-entrypoint dev
+    environment:
+      - REDIS_HOST=redis
+      - DB_HOST=db
+
+  accounts:
+    image: node:19.9
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace:z
+    entrypoint: yarn workspace @chats-system/accounts-renderer-entrypoint dev
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.accounts.tls=true'
+      - 'traefik.http.routers.accounts.rule=Host(`accounts.chats-system.ru`)'
+      - 'traefik.http.routers.accounts.entrypoints=web-secure'
+      - 'traefik.http.services.accounts.loadbalancer.server.port=3000'

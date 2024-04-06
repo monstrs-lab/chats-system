@@ -50,5 +50,11 @@
     "noImplicitOverride": true,
     "skipLibCheck": true
   },
-  "include": ["project.types.d.ts", "applications/**/*", "contexts/**/*", "shared/**/*"]
+  "include": [
+    "project.types.d.ts",
+    "applications/**/*",
+    "integrations/**/*",
+    "contexts/**/*",
+    "shared/**/*"
+  ]
 }

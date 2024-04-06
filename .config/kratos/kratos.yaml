@@ -6,21 +6,22 @@ serve:
     cors:
       enabled: true
       allowed_origins:
-        - http://localhost:3001
-        - http://127.0.0.1:3001
+        - https://accounts.chats-system.ru
       debug: true
   admin:
     base_url: http://kratos:4434/
 
 session:
+  cookie:
+    domain: .chats-system.ru
   whoami:
     required_aal: aal1
 
 selfservice:
-  default_browser_return_url: http://127.0.0.1:3001/
+  default_browser_return_url: https://app.chats-system.ru
+
   allowed_return_urls:
-    - http://127.0.0.1:4444
-    - http://127.0.0.1:3001
+    - https://app.chats-system.ru
 
   methods:
     password:
@@ -36,37 +37,47 @@ selfservice:
 
   flows:
     error:
-      ui_url: http://127.0.0.1:3001/auth/error
+      ui_url: https://accounts.chats-system.ru/auth/error
 
     settings:
-      ui_url: http://127.0.0.1:3001/profile/settings
+      ui_url: https://accounts.chats-system.ru/profile/settings
       privileged_session_max_age: 15m
       required_aal: aal1
 
     recovery:
       enabled: true
-      ui_url: http://127.0.0.1:3001/profile/recovery
+      ui_url: https://accounts.chats-system.ru/profile/recovery
 
     verification:
       enabled: true
-      ui_url: http://127.0.0.1:3001/auth/verification
+      ui_url: https://accounts.chats-system.ru/auth/verification
       after:
-        default_browser_return_url: http://127.0.0.1:3001/
+        default_browser_return_url: https://app.chats-system.ru/
 
     logout:
       after:
-        default_browser_return_url: http://127.0.0.1:3001/auth/login
+        default_browser_return_url: https://accounts.chats-system.ru/auth/login
 
     login:
-      ui_url: http://127.0.0.1:3001/auth/login
+      ui_url: https://accounts.chats-system.ru/auth/login
       lifespan: 10m
+      after:
+        default_browser_return_url: https://app.chats-system.ru
 
     registration:
       lifespan: 10m
-      ui_url: http://127.0.0.1:3001/auth/registration
+      ui_url: https://accounts.chats-system.ru/auth/registration
       after:
+        default_browser_return_url: https://app.chats-system.ru
         password:
           hooks:
+            - hook: web_hook
+              config:
+                url: http://standalone:3000/kratos/registration/password/after
+                body: file:///etc/config/kratos/identity.hook.jsonnet
+                method: POST
+                response:
+                  parse: false
             - hook: session
 
 log:
