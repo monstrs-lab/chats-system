@@ -15,11 +15,11 @@
     "dataloader": "^2.2.2"
   },
   "devDependencies": {
-    "@bufbuild/protobuf": "^1.8.0",
+    "@bufbuild/protobuf": "^1.9.0",
     "@connectrpc/connect": "^1.4.0",
     "@connectrpc/connect-node": "^1.4.0",
-    "@nestjs/common": "^10.3.7",
-    "@nestjs/core": "^10.3.7",
+    "@nestjs/common": "^10.3.8",
+    "@nestjs/core": "^10.3.8",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   },

@@ -203,7 +203,7 @@ export default (): ReactElement => (
                   <Text fontSize='medium' pr='0.5x'>
                     Есть аккаунт?
                   </Text>
-                  <Link href='/auth/registration'>
+                  <Link href='/auth/login'>
                     <Text fontSize='medium' style={{ textDecoration: 'underline' }}>
                       Авторизуйтесь
                     </Text>
