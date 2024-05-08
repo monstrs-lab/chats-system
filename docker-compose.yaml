@@ -157,3 +157,16 @@ services:
       - 'traefik.http.routers.accounts.rule=Host(`accounts.chats-system.ru`)'
       - 'traefik.http.routers.accounts.entrypoints=web-secure'
       - 'traefik.http.services.accounts.loadbalancer.server.port=3000'
+
+  app:
+    image: node:19.9
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace:z
+    entrypoint: yarn workspace @chats-system/app-renderer-entrypoint renderer dev
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.app.tls=true'
+      - 'traefik.http.routers.app.rule=Host(`app.chats-system.ru`)'
+      - 'traefik.http.routers.app.entrypoints=web-secure'
+      - 'traefik.http.services.app.loadbalancer.server.port=3000'
